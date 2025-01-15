@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliMessageLog>
+    <Task name="Lattice_Synthesis">
+        <Message>
+            <ID>35002000</ID>
+            <Severity>Info</Severity>
+        </Message>
+        <Message>
+            <ID>35001781</ID>
+            <Severity>Info</Severity>
+        </Message>
+        <Message>
+            <ID>35901199</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(58): </Dynamic>
+            <Dynamic>lcd_init</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v</Navigation>
+            <Navigation>58</Navigation>
+        </Message>
+        <Message>
+            <ID>35901199</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(67): </Dynamic>
+            <Dynamic>lcd_init</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v</Navigation>
+            <Navigation>67</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(18): </Dynamic>
+            <Dynamic>spi_lcd</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v</Navigation>
+            <Navigation>18</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(11): </Dynamic>
+            <Dynamic>lcd_write</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(11): </Dynamic>
+            <Dynamic>control</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/control.v</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(17): </Dynamic>
+            <Dynamic>lcd_init</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v</Navigation>
+            <Navigation>17</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(11): </Dynamic>
+            <Dynamic>lcd_show_char</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>35901063</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279): </Dynamic>
+            <Dynamic>rom_8x4096</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v</Navigation>
+            <Navigation>279</Navigation>
+        </Message>
+        <Message>
+            <ID>35001714</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>rom_addr[11]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35931000</ID>
+            <Severity>Error</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279): </Dynamic>
+            <Dynamic>rom_addr[11]</Dynamic>
+            <Dynamic>rom_8x4096_inst</Dynamic>
+            <Dynamic>address[11]</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v</Navigation>
+            <Navigation>279</Navigation>
+        </Message>
+    </Task>
+</BaliMessageLog>
