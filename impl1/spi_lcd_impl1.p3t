@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "spi_lcd_impl1.log"
+-o "spi_lcd_impl1.csv"
+-pr "spi_lcd_impl1.prf"

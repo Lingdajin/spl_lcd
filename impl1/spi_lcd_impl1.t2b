@@ -1,0 +1,5 @@
+
+
+-g RamCfg:Reset
+
+-path "D:/CodeField/Verilog/Diamond_design/spi_lcd"  

@@ -15,20 +15,20 @@
 //****************************************************************************************//
 
 module lcd_init
-#(//仿真时调用
-    parameter   TIME100MS    = 23'd100,  //23'd5000_000  
-                TIME150MS    = 23'd150,  //23'd7500_000  
-                TIME120MS    = 23'd120,  //23'd6000_000  
-                TIMES4MAX    = 18'd51 ,  //320*240*2+13（设置窗口大小）=153_613 
+// #(//仿真时调用
+//     parameter   TIME100MS    = 23'd100,  //23'd5000_000  
+//                 TIME150MS    = 23'd150,  //23'd7500_000  
+//                 TIME120MS    = 23'd120,  //23'd6000_000  
+//                 TIMES4MAX    = 18'd51 ,  //320*240*2+13（设置窗口大小）=153_613 
+//                 DATA_IDLE    = 9'b0_0000_0000
+// )
+#(//驱动lcd时调用
+    parameter   TIME100MS    = 23'd5000_000,  //23'd5000_000  
+                TIME150MS    = 23'd7500_000,  //23'd7500_000  
+                TIME120MS    = 23'd6000_000,  //23'd6000_000  
+                TIMES4MAX    = 18'd153_613 ,  //320*240*2+13（设置窗口大小）=153_613   
                 DATA_IDLE    = 9'b0_0000_0000
 )
-// #(//驱动lcd时调用
-    // parameter   TIME100MS    = 23'd5000_000,  //23'd5000_000  
-                // TIME150MS    = 23'd7500_000,  //23'd7500_000  
-                // TIME120MS    = 23'd6000_000,  //23'd6000_000  
-                // TIMES4MAX    = 18'd153_613 ,  //320*240*2+13（设置窗口大小）=153_613   
-                // DATA_IDLE    = 9'b0_0000_0000
-// )
 (
     input   wire            sys_clk_50MHz ,
     input   wire            sys_rst_n     ,
@@ -152,8 +152,8 @@ always@(posedge sys_clk_50MHz or negedge sys_rst_n)
         case(cnt_s2_num)    //init_data[8] == 1'b1写数据； == 1'b0写命令
             	7'd0:  init_data <= 9'h011 ;
             7'd1:  init_data <= 9'h036 ;
-				//7'd2:  init_data <= 9'h100 ;   //竖屏显示
-            7'd2 :  init_data <= 9'h1a0;     //横屏显示
+				7'd2:  init_data <= 9'h100 ;   //竖屏显示
+            //7'd2 :  init_data <= 9'h1a0;     //横屏显示
 
             7'd3 :  init_data <= 9'h03a ; 
             7'd4 :  init_data <= 9'h105 ;                        
@@ -218,8 +218,8 @@ always@(posedge sys_clk_50MHz or negedge sys_rst_n)
             'd0 :  init_data <= 9'h029;
             //设置LCD显示方向
             'd1 :  init_data <= 9'h036;
-            //'d2 :  init_data <= 9'h100;   //竖屏显示
-            'd2 :  init_data <= 9'h1a0;     //横屏显示
+            'd2 :  init_data <= 9'h100;   //竖屏显示
+            //'d2 :  init_data <= 9'h1a0;     //横屏显示
             
             //LCD显示窗口设置
             'd3 :  init_data <= 9'h02a;

@@ -1,7 +1,7 @@
 -a "MachXO2"
 -d LCMXO2-4000HC
 -t CSBGA132
--s 4
+-s 5
 -frequency 200
 -optimization_goal Balanced
 -bram_utilization 100
@@ -26,7 +26,7 @@
 
 
 -use_io_insertion 1
--resolve_mixed_drivers 0
+-resolve_mixed_drivers  1
 -use_io_reg auto
 
 
@@ -37,9 +37,10 @@
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v"
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v"
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v"
-"D:/CodeField/Verilog/Diamond_design/spi_lcd/rom_8x4096.v"
-"D:/CodeField/Verilog/Diamond_design/spi_lcd/pll.v"
--top pll
+"D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v"
+"D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+"D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+-top spi_lcd
 
 
 -p "D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data" "D:/CodeField/Verilog/Diamond_design/spi_lcd/impl1" "D:/CodeField/Verilog/Diamond_design/spi_lcd"

@@ -1,0 +1,76 @@
+---------------------------------------------------
+Report for cell spi_lcd
+   Instance path: spi_lcd
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     201.00        100.0
+                                  LUT4	     333.00        100.0
+                                 IOBUF	          8        100.0
+                                PFUREG	        225        100.0
+                                RIPPLE	         27        100.0
+                                   EBR	          4        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+               show_string_number_ctrl	          1        14.3
+                                   pll	          1         0.0
+                             lcd_write	          1        11.7
+                         lcd_show_char	          1        23.7
+                              lcd_init	          1        41.3
+                               control	          1         2.6
+---------------------------------------------------
+Report for cell lcd_write
+   Instance path: spi_lcd/lcd_write_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      23.42        11.7
+                                  LUT4	      39.00        11.7
+                                PFUREG	         34        15.1
+---------------------------------------------------
+Report for cell show_string_number_ctrl
+   Instance path: spi_lcd/show_string_number_ctrl_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      28.83        14.3
+                                  LUT4	      53.00        15.9
+                                PFUREG	         48        21.3
+---------------------------------------------------
+Report for cell lcd_show_char
+   Instance path: spi_lcd/lcd_show_char_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      47.67        23.7
+                                  LUT4	      81.67        24.5
+                                PFUREG	         66        29.3
+                                RIPPLE	          5        18.5
+                                   EBR	          4        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                            rom_8x4096	          1         0.0
+---------------------------------------------------
+Report for cell rom_8x4096
+   Instance path: spi_lcd/lcd_show_char_inst/rom_8x4096_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                   EBR	          4        100.0
+---------------------------------------------------
+Report for cell pll
+   Instance path: spi_lcd/pll_u1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+---------------------------------------------------
+Report for cell lcd_init
+   Instance path: spi_lcd/lcd_init_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      82.92        41.3
+                                  LUT4	     119.67        35.9
+                                PFUREG	         67        29.8
+                                RIPPLE	         22        81.5
+---------------------------------------------------
+Report for cell control
+   Instance path: spi_lcd/control_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	       5.17         2.6
+                                  LUT4	       9.67         2.9
+                                PFUREG	         10         4.4

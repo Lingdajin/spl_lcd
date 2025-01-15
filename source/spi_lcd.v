@@ -52,7 +52,7 @@ pll pll_u1
 (
     .CLKI( sys_clk ), 
     .CLKOP( sys_clk_50MHz )
-)
+);
 
 lcd_write  lcd_write_inst
 (

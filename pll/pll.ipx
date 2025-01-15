@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="pll" module="PLL" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2024 01 05 17:02:28.957" version="5.8" type="Module" synthesis="lse" source_format="Verilog">
+  <Package>
+		<File name="pll.lpc" type="lpc" modified="2024 01 05 17:02:25.839"/>
+		<File name="pll.v" type="top_level_verilog" modified="2024 01 05 17:02:25.959"/>
+		<File name="pll_tmpl.v" type="template_verilog" modified="2024 01 05 17:02:25.959"/>
+  </Package>
+</DiamondModule>

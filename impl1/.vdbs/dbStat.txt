@@ -1,1 +1,1 @@
-pll_rtl.vdb
+spi_lcd_rtl.vdb

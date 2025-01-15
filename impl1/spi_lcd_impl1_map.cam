@@ -1,0 +1,42 @@
+[ START MERGED ]
+n1392 wr_done
+lcd_write_inst/n1 lcd_write_inst/mosi_N_65
+n2459 state_5
+lcd_init_inst/n5175 lcd_init_inst/state_2
+lcd_init_inst/n2462 lcd_init_inst/state_0
+lcd_init_inst/n1394 state_4
+lcd_show_char_inst/n2458 lcd_show_char_inst/state1_finish_flag_N_460
+lcd_show_char_inst/n2461 state_2_adj_549
+[ END MERGED ]
+[ START CLIPPED ]
+GND_net
+lcd_show_char_inst/rom_8x4096_inst/VCC_net
+lcd_init_inst/cnt_150ms_680_add_4_1/S0
+lcd_init_inst/cnt_150ms_680_add_4_1/CI
+lcd_init_inst/add_153_1/S0
+lcd_init_inst/add_153_1/CI
+lcd_init_inst/cnt_150ms_680_add_4_23/CO
+lcd_init_inst/add_153_19/S1
+lcd_init_inst/add_153_19/CO
+lcd_show_char_inst/add_671_cout/S1
+lcd_show_char_inst/add_671_cout/CO
+lcd_show_char_inst/add_671_1/S0
+lcd_show_char_inst/add_671_1/CI
+[ END CLIPPED ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Wed Jan 15 21:40:01 2025
+
+SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=DISABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE BACKGROUND_RECONFIG=OFF INBUF=ON ;
+LOCATE COMP "lcd_dc" SITE "P8" ;
+LOCATE COMP "lcd_rst" SITE "N8" ;
+LOCATE COMP "lcd_sclk" SITE "P7" ;
+LOCATE COMP "lcd_mosi" SITE "N7" ;
+LOCATE COMP "lcd_cs" SITE "N6" ;
+LOCATE COMP "lcd_led" SITE "G13" ;
+LOCATE COMP "sys_clk" SITE "C1" ;
+LOCATE COMP "sys_rst_n" SITE "N14" ;
+FREQUENCY NET "sys_clk_50MHz" 48.000000 MHz ;
+FREQUENCY NET "sys_clk_c" 12.000000 MHz ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]
