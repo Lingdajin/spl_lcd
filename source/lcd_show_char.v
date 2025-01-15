@@ -271,12 +271,6 @@ assign show_char_data = data;
 assign en_write_show_char = (state == STATE1 || cnt_rom_prepare == 'd5) ? 1'b1 : 1'b0;
 assign show_char_done = (state == DONE) ? 1'b1 : 1'b0;
 
-rom_8x4096	rom_8x4096_inst 
-(
-	.address    ( rom_addr ),
-	.clock      ( sys_clk ),
-	.q          ( rom_q )
-);
 
 rom_8x4096 rom_8x4096_inst (.Address( rom_addr ), .OutClock( sys_clk ), .OutClockEn( 1'b1 ), .Reset( 1'b1 ), 
     .Q( rom_q ));

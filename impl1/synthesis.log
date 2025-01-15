@@ -1,3 +1,15 @@
+synthesis:  version Diamond (64-bit) 3.13.0.56.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Wed Jan 15 20:14:14 2025
+
+
+Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui 
+
 Synthesis options:
 The -a option is MachXO2.
 The -s option is 4.
@@ -23,7 +35,7 @@ Using performance grade 4.
 
 INFO - synthesis: User-Selected Strategy Settings
 Optimization goal = Balanced
-Top-level module name = spi_lcd.
+Top-level module name = pll.
 Target frequency = 200.000000 MHz.
 Maximum fanout = 1000.
 Timing path count = 3
@@ -58,6 +70,8 @@ Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/rom_8x4096.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/pll.v
 NGD file = spi_lcd_impl1.ngd
 -sdc option: SDC file input not used.
 -lpf option: Output file option is ON.
@@ -75,17 +89,62 @@ Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_in
 WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(58): parameter declaration becomes local in lcd_init with formal parameter declaration list. VERI-1199
 WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(67): parameter declaration becomes local in lcd_init with formal parameter declaration list. VERI-1199
 Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/rom_8x4096.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/pll.v. VERI-1482
 Analyzing Verilog file D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
-Top module name (Verilog): spi_lcd
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(18): compiling module spi_lcd. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(11): compiling module lcd_write. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(11): compiling module control. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(17): compiling module lcd_init. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(11): compiling module lcd_show_char. VERI-1018
-WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279): instantiating unknown module rom_8x4096. VERI-1063
-WARNING - synthesis: Net rom_addr[11] has following drivers :
-	 instance rom_addr
+Top module name (Verilog): pll
+INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/pll.v(8): compiling module pll. VERI-1018
+INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1124): compiling module VLO. VERI-1018
+INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1730): compiling module EHXPLLJ(CLKFB_DIV=4,CLKOP_DIV=11,CLKOS_DIV=1,CLKOS2_DIV=1,CLKOS3_DIV=1,CLKOS_ENABLE="DISABLED",CLKOS2_ENABLE="DISABLED",CLKOS3_ENABLE="DISABLED",CLKOP_CPHASE=10,CLKOS_TRIM_POL="FALLING"). VERI-1018
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.44.
+Top-level module name = pll.
 
 
 
-ERROR - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279): net rom_addr[11] is constantly driven from multiple places at instance rom_8x4096_inst, on port address[11]. VDB-1000
+GSR will not be inferred because no asynchronous signal was found in the netlist.
+Applying 200.000000 MHz constraint to all clocks
+
+WARNING - synthesis: No user .sdc file.
+Results of NGD DRC are available in pll_drc.log.
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file spi_lcd_impl1.ngd.
+
+################### Begin Area Report (pll)######################
+Number of register bits => 0 of 4635 (0 % )
+EHXPLLJ => 1
+GSR => 1
+IB => 1
+OB => 1
+################### End Area Report ##################
+
+################### Begin BlackBox Report ######################
+TSALL => 1
+################### End BlackBox Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 2
+  Net : CLKOP_c, loads : 2
+  Net : CLKI_c, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 0
+Top 0 highest fanout Clock Enables:
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : CLKOP, loads : 0
+################### End Clock Report ##################
+
+Peak Memory Usage: 54.066  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 0.188  secs
+--------------------------------------------------------------

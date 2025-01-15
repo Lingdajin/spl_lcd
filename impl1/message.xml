@@ -28,65 +28,30 @@
         <Message>
             <ID>35901018</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(18): </Dynamic>
-            <Dynamic>spi_lcd</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v</Navigation>
-            <Navigation>18</Navigation>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/pll.v(8): </Dynamic>
+            <Dynamic>pll</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/pll.v</Navigation>
+            <Navigation>8</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(11): </Dynamic>
-            <Dynamic>lcd_write</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v</Navigation>
-            <Navigation>11</Navigation>
+            <Dynamic>D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1124): </Dynamic>
+            <Dynamic>VLO</Dynamic>
+            <Navigation>D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v</Navigation>
+            <Navigation>1124</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(11): </Dynamic>
-            <Dynamic>control</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/control.v</Navigation>
-            <Navigation>11</Navigation>
+            <Dynamic>D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1730): </Dynamic>
+            <Dynamic>EHXPLLJ(CLKFB_DIV=4,CLKOP_DIV=11,CLKOS_DIV=1,CLKOS2_DIV=1,CLKOS3_DIV=1,CLKOS_ENABLE=&quot;DISABLED&quot;,CLKOS2_ENABLE=&quot;DISABLED&quot;,CLKOS3_ENABLE=&quot;DISABLED&quot;,CLKOP_CPHASE=10,CLKOS_TRIM_POL=&quot;FALLING&quot;)</Dynamic>
+            <Navigation>D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v</Navigation>
+            <Navigation>1730</Navigation>
         </Message>
         <Message>
-            <ID>35901018</ID>
-            <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(17): </Dynamic>
-            <Dynamic>lcd_init</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v</Navigation>
-            <Navigation>17</Navigation>
-        </Message>
-        <Message>
-            <ID>35901018</ID>
-            <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(11): </Dynamic>
-            <Dynamic>lcd_show_char</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v</Navigation>
-            <Navigation>11</Navigation>
-        </Message>
-        <Message>
-            <ID>35901063</ID>
+            <ID>35001611</ID>
             <Severity>Warning</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279): </Dynamic>
-            <Dynamic>rom_8x4096</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v</Navigation>
-            <Navigation>279</Navigation>
-        </Message>
-        <Message>
-            <ID>35001714</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>rom_addr[11]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35931000</ID>
-            <Severity>Error</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279): </Dynamic>
-            <Dynamic>rom_addr[11]</Dynamic>
-            <Dynamic>rom_8x4096_inst</Dynamic>
-            <Dynamic>address[11]</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v</Navigation>
-            <Navigation>279</Navigation>
         </Message>
     </Task>
 </BaliMessageLog>

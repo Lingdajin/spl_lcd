@@ -1,0 +1,11 @@
+----------------------------------------------------------------------
+Report for cell pll.TECH
+Register bits:  0 of 4635 (0.000%)
+I/O cells:      2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            EHXPLLJ         1          100.0
+                                GSR         1          100.0
+                                 IB         1          100.0
+                                 OB         1          100.0
+                              TOTAL         4

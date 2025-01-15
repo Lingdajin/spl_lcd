@@ -2,7 +2,7 @@
 <BaliProject version="3.2" title="spi_lcd" device="LCMXO2-4000HC-4MG132C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="rom_8x4096"/>
+        <Options def_top="pll"/>
         <Source name="source/spi_lcd.v" type="Verilog" type_short="Verilog">
             <Options top_module="spi_lcd"/>
         </Source>
@@ -19,7 +19,10 @@
             <Options/>
         </Source>
         <Source name="rom_8x4096.v" type="Verilog" type_short="Verilog">
-            <Options top_module="rom_8x4096"/>
+            <Options/>
+        </Source>
+        <Source name="pll.v" type="Verilog" type_short="Verilog">
+            <Options top_module="pll"/>
         </Source>
         <Source name="spi_lcd.lpf" type="Logic Preference" type_short="LPF">
             <Options/>

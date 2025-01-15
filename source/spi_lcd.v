@@ -17,7 +17,7 @@
 
 module  spi_lcd
 (
-    input           sys_clk_50MHz ,
+    input           sys_clk ,
     input           sys_rst_n     ,
     
     output          lcd_rst       ,
@@ -27,6 +27,7 @@ module  spi_lcd
     output          lcd_cs        ,
     output          lcd_led
 );
+wire            sys_clk_50MHz;
 wire    [8:0]   data;   
 wire            en_write;
 wire            wr_done; 
@@ -46,6 +47,12 @@ wire            en_write_show_char ;
 wire            show_char_done     ;  
 
 assign  lcd_led = 1'b1;  
+
+pll pll_u1
+(
+    .CLKI( sys_clk ), 
+    .CLKOP( sys_clk_50MHz )
+)
 
 lcd_write  lcd_write_inst
 (
