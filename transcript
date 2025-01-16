@@ -211,3 +211,5 @@ run
 # Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
 run -continue
 run
+# End time: 00:07:36 on Jan 17,2025, Elapsed time: 3:45:47
+# Errors: 0, Warnings: 3
