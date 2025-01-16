@@ -1,4 +1,420 @@
 
+synthesis -f "spi_lcd_impl1_lattice.synproj"
+synthesis:  version Diamond (64-bit) 3.13.0.56.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Thu Jan 16 21:45:46 2025
+
+
+Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml 
+
+    <postMsg mid="35002000" type="Info"    dynamic="0" navigation="0"  />
+Synthesis options:
+The -a option is MachXO2.
+The -s option is 5.
+The -t option is CSBGA132.
+The -d option is LCMXO2-4000HC.
+Using package CSBGA132.
+Using performance grade 5.
+                                                          
+
+##########################################################
+
+### Lattice Family : MachXO2
+
+### Device  : LCMXO2-4000HC
+
+### Package : CSBGA132
+
+### Speed   : 5
+
+##########################################################
+
+                                                          
+
+    <postMsg mid="35001781" type="Info"    dynamic="0" navigation="0"  />
+Optimization goal = Balanced
+Top-level module name = spi_lcd.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p D:/CodeField/Verilog/Diamond_design/spi_lcd (searchpath added)
+-p D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data (searchpath added)
+-p D:/CodeField/Verilog/Diamond_design/spi_lcd/impl1 (searchpath added)
+-p D:/CodeField/Verilog/Diamond_design/spi_lcd (searchpath added)
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v
+NGD file = spi_lcd_impl1.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/control.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v. VERI-1482
+    <postMsg mid="35901199" type="Warning" dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(58): " arg1="lcd_init" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v" arg3="58"  />
+    <postMsg mid="35901199" type="Warning" dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(67): " arg1="lcd_init" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v" arg3="67"  />
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/pll/pll.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/rom/rom_8x4096.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/tb_pll.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd_tb.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/segment_led.v. VERI-1482
+Analyzing Verilog file D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
+Top module name (Verilog): spi_lcd
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(18): " arg1="spi_lcd" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v" arg3="18"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/pll/pll.v(8): " arg1="pll" arg2="d:/codefield/verilog/diamond_design/spi_lcd/pll/pll.v" arg3="8"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1124): " arg1="VLO" arg2="D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v" arg3="1124"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1730): " arg1="EHXPLLJ(CLKFB_DIV=4,CLKOP_DIV=11,CLKOS_DIV=1,CLKOS2_DIV=1,CLKOS3_DIV=1,CLKOS_ENABLE=&quot;DISABLED&quot;,CLKOS2_ENABLE=&quot;DISABLED&quot;,CLKOS3_ENABLE=&quot;DISABLED&quot;,CLKOP_CPHASE=10,CLKOS_TRIM_POL=&quot;FALLING&quot;)" arg2="D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v" arg3="1730"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(11): " arg1="lcd_write" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v" arg3="11"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(11): " arg1="control" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/control.v" arg3="11"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(17): " arg1="lcd_init" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v" arg3="17"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(11): " arg1="lcd_show_char" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v" arg3="11"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(2): " arg1="char_ram" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v" arg3="2"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(38): " arg1="show_string_number_ctrl" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v" arg3="38"  />
+Last elaborated design is spi_lcd()
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.44.
+Top-level module name = spi_lcd.
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\lcd_write_inst/cnt1" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 0000 -> 0000000000000001
+
+ 0001 -> 0000000000000010
+
+ 0010 -> 0000000000000100
+
+ 0011 -> 0000000000001000
+
+ 0100 -> 0000000000010000
+
+ 0101 -> 0000000000100000
+
+ 0110 -> 0000000001000000
+
+ 0111 -> 0000000010000000
+
+ 1000 -> 0000000100000000
+
+ 1001 -> 0000001000000000
+
+ 1010 -> 0000010000000000
+
+ 1011 -> 0000100000000000
+
+ 1100 -> 0001000000000000
+
+ 1101 -> 0010000000000000
+
+ 1110 -> 0100000000000000
+
+ 1111 -> 1000000000000000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\show_string_number_ctrl_inst/cnt_ascii_num" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 00000 -> 00000000000000000000000000000001
+
+ 00001 -> 00000000000000000000000000000010
+
+ 00010 -> 00000000000000000000000000000100
+
+ 00011 -> 00000000000000000000000000001000
+
+ 00100 -> 00000000000000000000000000010000
+
+ 00101 -> 00000000000000000000000000100000
+
+ 00110 -> 00000000000000000000000001000000
+
+ 00111 -> 00000000000000000000000010000000
+
+ 01000 -> 00000000000000000000000100000000
+
+ 01001 -> 00000000000000000000001000000000
+
+ 01010 -> 00000000000000000000010000000000
+
+ 01011 -> 00000000000000000000100000000000
+
+ 01100 -> 00000000000000000001000000000000
+
+ 01101 -> 00000000000000000010000000000000
+
+ 01110 -> 00000000000000000100000000000000
+
+ 01111 -> 00000000000000001000000000000000
+
+ 10000 -> 00000000000000010000000000000000
+
+ 10001 -> 00000000000000100000000000000000
+
+ 10010 -> 00000000000001000000000000000000
+
+ 10011 -> 00000000000010000000000000000000
+
+ 10100 -> 00000000000100000000000000000000
+
+ 10101 -> 00000000001000000000000000000000
+
+ 10110 -> 00000000010000000000000000000000
+
+ 10111 -> 00000000100000000000000000000000
+
+ 11000 -> 00000001000000000000000000000000
+
+ 11001 -> 00000010000000000000000000000000
+
+ 11010 -> 00000100000000000000000000000000
+
+ 11011 -> 00001000000000000000000000000000
+
+ 11100 -> 00010000000000000000000000000000
+
+ 11101 -> 00100000000000000000000000000000
+
+ 11110 -> 01000000000000000000000000000000
+
+ 11111 -> 10000000000000000000000000000000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\lcd_show_char_inst/cnt_set_windows" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 0000 -> 0000000000000001
+
+ 0001 -> 0000000000000010
+
+ 0010 -> 0000000000000100
+
+ 0011 -> 0000000000001000
+
+ 0100 -> 0000000000010000
+
+ 0101 -> 0000000000100000
+
+ 0110 -> 0000000001000000
+
+ 0111 -> 0000000010000000
+
+ 1000 -> 0000000100000000
+
+ 1001 -> 0000001000000000
+
+ 1010 -> 0000010000000000
+
+ 1011 -> 0000100000000000
+
+ 1100 -> 0001000000000000
+
+ 1101 -> 0010000000000000
+
+ 1110 -> 0100000000000000
+
+ 1111 -> 1000000000000000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\lcd_write_inst/state" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 0001 -> 0001
+
+ 0010 -> 0010
+
+ 0100 -> 0100
+
+ 1000 -> 1000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\lcd_init_inst/state" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 000001 -> 000001
+
+ 000010 -> 000010
+
+ 000100 -> 000100
+
+ 001000 -> 001000
+
+ 010000 -> 010000
+
+ 100000 -> 100000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\lcd_show_char_inst/state" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 0001 -> 0001
+
+ 0010 -> 0010
+
+ 0100 -> 0100
+
+ 1000 -> 1000
+
+
+
+
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="\show_string_number_ctrl_inst/start_y"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="\show_string_number_ctrl_inst/start_y"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="\show_string_number_ctrl_inst/start_y"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="\show_string_number_ctrl_inst/start_y"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="\show_string_number_ctrl_inst/start_y"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="\show_string_number_ctrl_inst/start_y"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="\show_string_number_ctrl_inst/start_y"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="\show_string_number_ctrl_inst/ascii_num"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="\show_string_number_ctrl_inst/start_x_"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="\show_string_number_ctrl_inst/start_x_"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="\show_string_number_ctrl_inst/start_x_"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="\show_string_number_ctrl_inst/start_x_"  />
+    <postMsg mid="35935013" type="Warning" dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(88): " arg1="\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v" arg3="88"  />
+GSR instance connected to net sys_rst_n_c.
+Applying 200.000000 MHz constraint to all clocks
+
+    <postMsg mid="35001611" type="Warning" dynamic="0" navigation="0"  />
+Results of NGD DRC are available in spi_lcd_drc.log.
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+DRC complete with no errors or warnings
+
+Design Results:
+   2017 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file spi_lcd_impl1.ngd.
+
+################### Begin Area Report (spi_lcd)######################
+Number of register bits => 213 of 4635 (4 % )
+CCU2D => 27
+EHXPLLJ => 1
+FD1P3AX => 52
+FD1P3AY => 1
+FD1P3IX => 74
+FD1P3JX => 1
+FD1S3AX => 32
+FD1S3AY => 1
+FD1S3IX => 49
+FD1S3JX => 3
+GSR => 1
+IB => 2
+L6MUX21 => 90
+LUT4 => 1361
+OB => 6
+PFUMX => 309
+ROM128X1A => 4
+################### End Area Report ##################
+
+################### Begin BlackBox Report ######################
+TSALL => 1
+################### End BlackBox Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 2
+  Net : pll_u1/sys_clk_50MHz, loads : 214
+  Net : sys_clk_c, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 18
+Top 10 highest fanout Clock Enables:
+  Net : show_string_number_ctrl_inst/sys_clk_50MHz_enable_103, loads : 19
+  Net : lcd_show_char_inst/cnt_set_windows_3__N_384, loads : 16
+  Net : lcd_write_inst/sys_clk_50MHz_enable_83, loads : 15
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_105, loads : 12
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_48, loads : 9
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_68, loads : 8
+  Net : lcd_init_inst/sys_clk_50MHz_enable_27, loads : 6
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_47, loads : 5
+  Net : sys_clk_50MHz_enable_51, loads : 1
+  Net : sys_clk_50MHz_enable_56, loads : 1
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : lcd_show_char_inst/rom_addr_3, loads : 509
+  Net : lcd_show_char_inst/rom_addr_0, loads : 502
+  Net : lcd_show_char_inst/rom_addr_4, loads : 454
+  Net : lcd_show_char_inst/rom_addr_2, loads : 406
+  Net : lcd_show_char_inst/rom_addr_1, loads : 386
+  Net : lcd_show_char_inst/rom_addr_5, loads : 281
+  Net : lcd_show_char_inst/rom_addr_6, loads : 153
+  Net : lcd_show_char_inst/rom_addr_7, loads : 80
+  Net : lcd_show_char_inst/rom_addr_8, loads : 42
+  Net : lcd_show_char_inst/char_ram_inst/n13784, loads : 30
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.180 MHz|    12 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+
+Peak Memory Usage: 168.379  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 3.828  secs
+--------------------------------------------------------------
+
 map -a "MachXO2" -p LCMXO2-4000HC -t CSBGA132 -s 5 -oc Commercial   "spi_lcd_impl1.ngd" -o "spi_lcd_impl1_map.ncd" -pr "spi_lcd_impl1.prf" -mp "spi_lcd_impl1.mrp" -lpf "D:/CodeField/Verilog/Diamond_design/spi_lcd/impl1/spi_lcd_impl1.lpf" -lpf "D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf"  -c 0           
 map:  version Diamond (64-bit) 3.13.0.56.2
 
@@ -47,12 +463,12 @@ Design Summary:
    Number of registers:    213 out of  4635 (5%)
       PFU registers:          213 out of  4320 (5%)
       PIO registers:            0 out of   315 (0%)
-   Number of SLICEs:       736 out of  2160 (34%)
-      SLICEs as Logic/ROM:    736 out of  2160 (34%)
+   Number of SLICEs:       732 out of  2160 (34%)
+      SLICEs as Logic/ROM:    732 out of  2160 (34%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         27 out of  2160 (1%)
-   Number of LUT4s:        1459 out of  4320 (34%)
-      Number used as logic LUTs:        1405
+   Number of LUT4s:        1450 out of  4320 (34%)
+      Number used as logic LUTs:        1396
       Number used as distributed RAM:     0
       Number used as ripple logic:       54
       Number used as shift registers:     0
@@ -80,61 +496,62 @@ Design Summary:
       1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
       2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
    Number of clocks:  2
-     Net sys_clk_50MHz: 132 loads, 132 rising, 0 falling (Driver: pll_u1/PLLInst_0 )
+     Net sys_clk_50MHz: 133 loads, 133 rising, 0 falling (Driver: pll_u1/PLLInst_0 )
      Net sys_clk_c: 1 loads, 1 rising, 0 falling (Driver: PIO sys_clk )
    Number of Clock Enables:  18
+     Net sys_clk_50MHz_enable_17: 2 loads, 2 LSLICEs
      Net lcd_write_inst/sys_clk_50MHz_enable_49: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_57: 2 loads, 2 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_86: 8 loads, 8 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_70: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_69: 10 loads, 10 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_28: 1 loads, 1 LSLICEs
+     Net lcd_write_inst/sys_clk_50MHz_enable_83: 8 loads, 8 LSLICEs
+     Net lcd_write_inst/sys_clk_50MHz_enable_67: 1 loads, 1 LSLICEs
+     Net sys_clk_50MHz_enable_66: 10 loads, 10 LSLICEs
+     Net sys_clk_50MHz_enable_51: 1 loads, 1 LSLICEs
      Net state_5: 4 loads, 4 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_40: 3 loads, 3 LSLICEs
+     Net sys_clk_50MHz_enable_52: 1 loads, 1 LSLICEs
+     Net sys_clk_50MHz_enable_56: 3 loads, 3 LSLICEs
+     Net lcd_init_inst/sys_clk_50MHz_enable_27: 3 loads, 3 LSLICEs
+     Net lcd_init_inst/sys_clk_50MHz_enable_30: 1 loads, 1 LSLICEs
      Net lcd_init_inst/lcd_rst_high_flag: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_50: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_12: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_54: 3 loads, 3 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_68: 6 loads, 6 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_46: 5 loads, 5 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_71: 5 loads, 5 LSLICEs
      Net lcd_show_char_inst/cnt_set_windows_3__N_384: 8 loads, 8 LSLICEs
      Net lcd_show_char_inst/sys_clk_50MHz_enable_47: 3 loads, 3 LSLICEs
-     Net show_string_number_ctrl_inst/sys_clk_50MHz_enable_105: 10 loads, 10 LSLICEs
-   Number of LSRs:  21
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_68: 5 loads, 5 LSLICEs
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_48: 5 loads, 5 LSLICEs
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_105: 6 loads, 6 LSLICEs
+     Net show_string_number_ctrl_inst/sys_clk_50MHz_enable_103: 10 loads, 10 LSLICEs
+   Number of LSRs:  22
      Net lcd_write_inst/state_3: 1 loads, 1 LSLICEs
      Net wr_done: 2 loads, 2 LSLICEs
-     Net n14041: 3 loads, 3 LSLICEs
+     Net lcd_write_inst/n13696: 3 loads, 3 LSLICEs
+     Net lcd_write_inst/n6874: 3 loads, 3 LSLICEs
      Net lcd_write_inst/state_0: 1 loads, 1 LSLICEs
      Net lcd_write_inst/state_1: 9 loads, 9 LSLICEs
      Net state_2: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/n6890: 3 loads, 3 LSLICEs
      Net lcd_write_inst/mosi_N_65: 1 loads, 1 LSLICEs
-     Net lcd_init_inst/cnt_150ms_22__N_221: 12 loads, 12 LSLICEs
-     Net state_5: 4 loads, 4 LSLICEs
-     Net state_2_adj_790: 4 loads, 4 LSLICEs
      Net state_4: 10 loads, 10 LSLICEs
-     Net lcd_init_inst/state_0: 1 loads, 1 LSLICEs
-     Net state_2_adj_791: 1 loads, 1 LSLICEs
+     Net state_2_adj_779: 1 loads, 1 LSLICEs
      Net length_num_flag: 2 loads, 2 LSLICEs
+     Net state_5: 4 loads, 4 LSLICEs
      Net state_3_N_368_1: 2 loads, 2 LSLICEs
+     Net state_2_adj_778: 4 loads, 4 LSLICEs
+     Net lcd_init_inst/state_0: 1 loads, 1 LSLICEs
+     Net lcd_init_inst/cnt_150ms_22__N_221: 12 loads, 12 LSLICEs
+     Net lcd_show_char_inst/state1_finish_flag_N_460: 1 loads, 1 LSLICEs
      Net lcd_show_char_inst/state_3_N_376_3: 4 loads, 4 LSLICEs
      Net lcd_show_char_inst/cnt_wr_color_data_5__N_439: 4 loads, 4 LSLICEs
-     Net lcd_show_char_inst/n6889: 1 loads, 1 LSLICEs
      Net state_3: 1 loads, 1 LSLICEs
+     Net lcd_show_char_inst/n6868: 1 loads, 1 LSLICEs
      Net show_string_number_ctrl_inst/cnt_ascii_num_4__N_514: 11 loads, 11 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net lcd_show_char_inst/rom_addr_3: 505 loads
-     Net lcd_show_char_inst/rom_addr_0: 493 loads
-     Net lcd_show_char_inst/rom_addr_4: 446 loads
-     Net lcd_show_char_inst/rom_addr_2: 393 loads
-     Net lcd_show_char_inst/rom_addr_1: 388 loads
-     Net lcd_show_char_inst/rom_addr_5: 284 loads
+     Net lcd_show_char_inst/rom_addr_3: 509 loads
+     Net lcd_show_char_inst/rom_addr_0: 502 loads
+     Net lcd_show_char_inst/rom_addr_4: 454 loads
+     Net lcd_show_char_inst/rom_addr_2: 406 loads
+     Net lcd_show_char_inst/rom_addr_1: 386 loads
+     Net lcd_show_char_inst/rom_addr_5: 282 loads
      Net lcd_show_char_inst/rom_addr_6: 153 loads
      Net lcd_show_char_inst/rom_addr_7: 80 loads
-     Net lcd_show_char_inst/rom_addr_8: 41 loads
-     Net cnt_s2_num_2: 40 loads
+     Net lcd_show_char_inst/rom_addr_8: 42 loads
+     Net cnt_s2_num_3: 38 loads
  
 
    Number of warnings:  11
@@ -159,7 +576,7 @@ Removing old design directory at request of -rem command line option to this pro
 Running par. Please wait . . .
 
 Lattice Place and Route Report for Design "spi_lcd_impl1_map.ncd"
-Thu Jan 16 21:04:11 2025
+Thu Jan 16 21:45:53 2025
 
 PAR: Place And Route Diamond (64-bit) 3.13.0.56.2.
 Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 spi_lcd_impl1_map.ncd spi_lcd_impl1.dir/5_1.ncd spi_lcd_impl1.prf
@@ -186,28 +603,28 @@ Device utilization summary:
    PIO (prelim)    8+4(JTAG)/280     4% used
                    8+4(JTAG)/105     11% bonded
 
-   SLICE            736/2160         34% used
+   SLICE            732/2160         33% used
 
    GSR                1/1           100% used
    PLL                1/2            50% used
 
 
-Number of Signals: 1511
-Number of Connections: 6123
+Number of Signals: 1493
+Number of Connections: 6105
 
 Pin Constraint Summary:
    8 out of 8 pins locked (100% locked).
 
 The following 1 signal is selected to use the primary clock routing resources:
-    sys_clk_50MHz (driver: pll_u1/PLLInst_0, clk load #: 131)
+    sys_clk_50MHz (driver: pll_u1/PLLInst_0, clk load #: 132)
 
 
 The following 5 signals are selected to use the secondary clock routing resources:
-    lcd_init_inst/cnt_150ms_22__N_221 (driver: lcd_init_inst/SLICE_61, clk load #: 0, sr load #: 12, ce load #: 0)
-    show_string_number_ctrl_inst/cnt_ascii_num_4__N_514 (driver: show_string_number_ctrl_inst/SLICE_745, clk load #: 0, sr load #: 11, ce load #: 0)
-    sys_clk_50MHz_enable_69 (driver: SLICE_422, clk load #: 0, sr load #: 0, ce load #: 10)
-    state_4 (driver: lcd_init_inst/SLICE_128, clk load #: 0, sr load #: 10, ce load #: 0)
-    show_string_number_ctrl_inst/sys_clk_50MHz_enable_105 (driver: show_string_number_ctrl_inst/SLICE_125, clk load #: 0, sr load #: 0, ce load #: 10)
+    lcd_init_inst/cnt_150ms_22__N_221 (driver: lcd_init_inst/SLICE_60, clk load #: 0, sr load #: 12, ce load #: 0)
+    show_string_number_ctrl_inst/cnt_ascii_num_4__N_514 (driver: show_string_number_ctrl_inst/SLICE_607, clk load #: 0, sr load #: 11, ce load #: 0)
+    state_4 (driver: lcd_init_inst/SLICE_129, clk load #: 0, sr load #: 10, ce load #: 0)
+    sys_clk_50MHz_enable_66 (driver: SLICE_742, clk load #: 0, sr load #: 0, ce load #: 10)
+    show_string_number_ctrl_inst/sys_clk_50MHz_enable_103 (driver: show_string_number_ctrl_inst/SLICE_126, clk load #: 0, sr load #: 0, ce load #: 10)
 
 Signal sys_rst_n_c is selected as Global Set/Reset.
 Starting Placer Phase 0.
@@ -215,14 +632,14 @@ Starting Placer Phase 0.
 Finished Placer Phase 0.  REAL time: 0 secs 
 
 Starting Placer Phase 1.
-......................
-Placer score = 284324.
-Finished Placer Phase 1.  REAL time: 5 secs 
+........................
+Placer score = 275743.
+Finished Placer Phase 1.  REAL time: 6 secs 
 
 Starting Placer Phase 2.
 .
-Placer score =  281042
-Finished Placer Phase 2.  REAL time: 5 secs 
+Placer score =  273822
+Finished Placer Phase 2.  REAL time: 6 secs 
 
 
 ------------------ Clock Report ------------------
@@ -234,12 +651,12 @@ Global Clock Resources:
   DCC        : 0 out of 8 (0%)
 
 Global Clocks:
-  PRIMARY "sys_clk_50MHz" from CLKOP on comp "pll_u1/PLLInst_0" on PLL site "LPLL", clk load = 131
-  SECONDARY "lcd_init_inst/cnt_150ms_22__N_221" from F1 on comp "lcd_init_inst/SLICE_61" on site "R12C17B", clk load = 0, ce load = 0, sr load = 12
-  SECONDARY "show_string_number_ctrl_inst/cnt_ascii_num_4__N_514" from Q0 on comp "show_string_number_ctrl_inst/SLICE_745" on site "R12C14A", clk load = 0, ce load = 0, sr load = 11
-  SECONDARY "sys_clk_50MHz_enable_69" from F1 on comp "SLICE_422" on site "R12C15A", clk load = 0, ce load = 10, sr load = 0
-  SECONDARY "state_4" from Q0 on comp "lcd_init_inst/SLICE_128" on site "R12C17A", clk load = 0, ce load = 0, sr load = 10
-  SECONDARY "show_string_number_ctrl_inst/sys_clk_50MHz_enable_105" from F1 on comp "show_string_number_ctrl_inst/SLICE_125" on site "R20C10A", clk load = 0, ce load = 10, sr load = 0
+  PRIMARY "sys_clk_50MHz" from CLKOP on comp "pll_u1/PLLInst_0" on PLL site "LPLL", clk load = 132
+  SECONDARY "lcd_init_inst/cnt_150ms_22__N_221" from F1 on comp "lcd_init_inst/SLICE_60" on site "R12C15C", clk load = 0, ce load = 0, sr load = 12
+  SECONDARY "show_string_number_ctrl_inst/cnt_ascii_num_4__N_514" from Q0 on comp "show_string_number_ctrl_inst/SLICE_607" on site "R12C15B", clk load = 0, ce load = 0, sr load = 11
+  SECONDARY "state_4" from Q0 on comp "lcd_init_inst/SLICE_129" on site "R12C15A", clk load = 0, ce load = 0, sr load = 10
+  SECONDARY "sys_clk_50MHz_enable_66" from F0 on comp "SLICE_742" on site "R20C10A", clk load = 0, ce load = 10, sr load = 0
+  SECONDARY "show_string_number_ctrl_inst/sys_clk_50MHz_enable_103" from F1 on comp "show_string_number_ctrl_inst/SLICE_126" on site "R12C15D", clk load = 0, ce load = 10, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
   SECONDARY: 5 out of 8 (62%)
@@ -268,16 +685,16 @@ I/O Bank Usage Summary:
 | 5        | 1 / 10 ( 10%) | 2.5V       | -         |
 +----------+---------------+------------+-----------+
 
-Total placer CPU time: 4 secs 
+Total placer CPU time: 5 secs 
 
 Dumping design to file spi_lcd_impl1.dir/5_1.ncd.
 
-0 connections routed; 6123 unrouted.
+0 connections routed; 6105 unrouted.
 Starting router resource preassignment
 
-Completed router resource preassignment. Real time: 6 secs 
+Completed router resource preassignment. Real time: 7 secs 
 
-Start NBR router at 21:04:17 01/16/25
+Start NBR router at 21:46:00 01/16/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -292,53 +709,56 @@ Note: NBR uses a different method to calculate timing slacks. The
       your design.                                               
 *****************************************************************
 
-Start NBR special constraint process at 21:04:17 01/16/25
+Start NBR special constraint process at 21:46:00 01/16/25
 
-Start NBR section for initial routing at 21:04:17 01/16/25
+Start NBR section for initial routing at 21:46:00 01/16/25
 Level 1, iteration 1
-0(0.00%) conflict; 5539(90.46%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 2.985ns/0.000ns; real time: 6 secs 
+0(0.00%) conflict; 5530(90.58%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 4.102ns/0.000ns; real time: 7 secs 
 Level 2, iteration 1
-0(0.00%) conflict; 5530(90.32%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 4.496ns/0.000ns; real time: 6 secs 
+0(0.00%) conflict; 5515(90.34%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 4.293ns/0.000ns; real time: 7 secs 
 Level 3, iteration 1
-0(0.00%) conflict; 5508(89.96%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.143ns/0.000ns; real time: 6 secs 
+0(0.00%) conflict; 5488(89.89%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 5.032ns/0.000ns; real time: 7 secs 
 Level 4, iteration 1
-270(0.11%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.417ns/0.000ns; real time: 7 secs 
+243(0.10%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 6.648ns/0.000ns; real time: 8 secs 
 
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 21:04:18 01/16/25
+Start NBR section for normal routing at 21:46:01 01/16/25
 Level 4, iteration 1
-122(0.05%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.404ns/0.000ns; real time: 8 secs 
+54(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 6.230ns/0.000ns; real time: 9 secs 
 Level 4, iteration 2
-47(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.404ns/0.000ns; real time: 8 secs 
+21(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 6.238ns/0.000ns; real time: 9 secs 
 Level 4, iteration 3
-13(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.404ns/0.000ns; real time: 8 secs 
+10(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 6.238ns/0.000ns; real time: 9 secs 
 Level 4, iteration 4
 3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.404ns/0.000ns; real time: 8 secs 
+Estimated worst slack/total negative slack<setup>: 6.238ns/0.000ns; real time: 9 secs 
 Level 4, iteration 5
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.404ns/0.000ns; real time: 8 secs 
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 6.238ns/0.000ns; real time: 9 secs 
 Level 4, iteration 6
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 6.238ns/0.000ns; real time: 9 secs 
+Level 4, iteration 7
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.404ns/0.000ns; real time: 8 secs 
+Estimated worst slack/total negative slack<setup>: 6.238ns/0.000ns; real time: 9 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 21:04:19 01/16/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 21:46:02 01/16/25
 
-Start NBR section for re-routing at 21:04:20 01/16/25
+Start NBR section for re-routing at 21:46:02 01/16/25
 Level 4, iteration 1
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 5.404ns/0.000ns; real time: 9 secs 
+Estimated worst slack/total negative slack<setup>: 6.238ns/0.000ns; real time: 9 secs 
 
-Start NBR section for post-routing at 21:04:20 01/16/25
+Start NBR section for post-routing at 21:46:02 01/16/25
 
 End NBR router with 0 unrouted connection
 
@@ -346,17 +766,17 @@ NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
   Number of connections with timing violations : 0 (0.00%)
-  Estimated worst slack<setup> : 5.404ns
+  Estimated worst slack<setup> : 6.238ns
   Timing score<setup> : 0
 -----------
 Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
 
 
 
-Total CPU time 7 secs 
-Total REAL time: 10 secs 
+Total CPU time 8 secs 
+Total REAL time: 11 secs 
 Completely routed.
-End of route.  6123 routed (100.00%); 0 unrouted.
+End of route.  6105 routed (100.00%); 0 unrouted.
 
 Hold time timing score: 0, hold timing errors: 0
 
@@ -367,14 +787,14 @@ Dumping design to file spi_lcd_impl1.dir/5_1.ncd.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = 5.404
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 6.238
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
 PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.304
 PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  time to completion: 7 secs 
-Total REAL time to completion: 10 secs 
+Total CPU  time to completion: 8 secs 
+Total REAL time to completion: 11 secs 
 
 par done!
 
@@ -411,7 +831,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2
-Thu Jan 16 21:04:22 2025
+Thu Jan 16 21:46:04 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -440,11 +860,11 @@ Timing summary (Setup):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 7533 paths, 2 nets, and 6116 connections (99.89% coverage)
+Constraints cover 7400 paths, 2 nets, and 6098 connections (99.89% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2
-Thu Jan 16 21:04:22 2025
+Thu Jan 16 21:46:05 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -473,7 +893,7 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 7533 paths, 2 nets, and 6116 connections (99.89% coverage)
+Constraints cover 7400 paths, 2 nets, and 6098 connections (99.89% coverage)
 
 
 
@@ -582,9 +1002,9 @@ Initialized UFM Pages:                     0 Page.
 =========
 Padding summary
 =========
-Padded 587776 bits for this design
+Padded 589568 bits for this design
 
 
-Total CPU Time: 1 secs 
+Total CPU Time: 2 secs 
 Total REAL Time: 2 secs 
 Peak Memory Usage: 278 MB

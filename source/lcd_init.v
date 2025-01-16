@@ -152,8 +152,8 @@ always@(posedge sys_clk_50MHz or negedge sys_rst_n)
         case(cnt_s2_num)    //init_data[8] == 1'b1写数据； == 1'b0写命令
             	7'd0:  init_data <= 9'h011 ;
             7'd1:  init_data <= 9'h036 ;
-				7'd2:  init_data <= 9'h108 ;   //竖屏显示
-            //7'd2 :  init_data <= 9'h1a0;     //横屏显示
+				//7'd2:  init_data <= 9'h100 ;   //竖屏显示
+            7'd2 :  init_data <= 9'h160;     //横屏显示
 
             7'd3 :  init_data <= 9'h03a ; 
             7'd4 :  init_data <= 9'h105 ;                        
@@ -218,23 +218,24 @@ always@(posedge sys_clk_50MHz or negedge sys_rst_n)
             'd0 :  init_data <= 9'h029;
             //设置LCD显示方向
             'd1 :  init_data <= 9'h036;
-            'd2 :  init_data <= 9'h108;   //竖屏显示
-            //'d2 :  init_data <= 9'h1a0;     //横屏显示
+            //'d2 :  init_data <= 9'h100;   //竖屏显示
+            'd2 :  init_data <= 9'h160;     //横屏显示
             
             //LCD显示窗口设置
+            //设置宽度
             'd3 :  init_data <= 9'h02a;
-                             
+            
             'd4 :  init_data <= 9'h100;
             'd5 :  init_data <= 9'h100;
-            'd6 :  init_data <= 9'h100;
-            'd7 :  init_data <= 9'h1ef;
-                             
+            'd6 :  init_data <= 9'h101;
+            'd7 :  init_data <= 9'h13f; 
+            //设置高度  
             'd8 :  init_data <= 9'h02b;
                              
             'd9 :  init_data <= 9'h100;
             'd10:  init_data <= 9'h100;
-            'd11:  init_data <= 9'h101;
-            'd12:  init_data <= 9'h13f;
+            'd11:  init_data <= 9'h100;
+            'd12:  init_data <= 9'h1ef;
                              
             'd13:  init_data <= 9'h02c;
             

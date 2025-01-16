@@ -253,9 +253,9 @@ always@(posedge sys_clk or negedge sys_rst_n)
             data <= {1'b1,WHITE[7:0]};
     else if(state == STATE2 && ((temp & 8'h01) == 'd1))
         if(cnt_wr_color_data[0] == 1'b0 )
-            data <= {1'b1,RED[15:8]};
+            data <= {1'b1,BLACK[15:8]};
         else
-            data <= {1'b1,RED[7:0]};
+            data <= {1'b1,BLACK[7:0]};
     else
         data <= data;   
 
