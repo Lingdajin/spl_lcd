@@ -5,13 +5,6 @@ Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Ju
 Top level modules:
 	lcd_write
 
-} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
-Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
--- Compiling module char_ram
-
-Top level modules:
-	char_ram
-
 } {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v
 Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
 -- Compiling module control

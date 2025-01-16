@@ -1,3 +1,7 @@
+/*
+ascii码取模
+注意！由于从空格开始取模，故在ascii码的基础上减去32才可正确调用
+*/
 `timescale 1 ns / 100 ps
 module char_ram (address, q);
 

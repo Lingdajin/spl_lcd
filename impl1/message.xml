@@ -182,18 +182,18 @@
         <Message>
             <ID>35901018</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(2): </Dynamic>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(6): </Dynamic>
             <Dynamic>char_ram</Dynamic>
             <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v</Navigation>
-            <Navigation>2</Navigation>
+            <Navigation>6</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(38): </Dynamic>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(53): </Dynamic>
             <Dynamic>show_string_number_ctrl</Dynamic>
             <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v</Navigation>
-            <Navigation>38</Navigation>
+            <Navigation>53</Navigation>
         </Message>
         <Message>
             <ID>35001774</ID>
@@ -276,12 +276,6 @@
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
-            <Dynamic>5</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/ascii_num</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>Warning</Severity>
             <Dynamic>8</Dynamic>
             <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
         </Message>
@@ -306,10 +300,10 @@
         <Message>
             <ID>35935013</ID>
             <Severity>Warning</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(88): </Dynamic>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103): </Dynamic>
             <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21</Dynamic>
             <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v</Navigation>
-            <Navigation>88</Navigation>
+            <Navigation>103</Navigation>
         </Message>
         <Message>
             <ID>35001611</ID>

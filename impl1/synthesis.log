@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Jan 16 21:45:46 2025
+Thu Jan 16 22:00:53 2025
 
 
 Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml 
@@ -113,8 +113,8 @@ INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(11): compiling module control. VERI-1018
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(17): compiling module lcd_init. VERI-1018
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(11): compiling module lcd_show_char. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(2): compiling module char_ram. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(38): compiling module show_string_number_ctrl. VERI-1018
+INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(6): compiling module char_ram. VERI-1018
+INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(53): compiling module show_string_number_ctrl. VERI-1018
 Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00a/data/xo2alib.ngl'...
 Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
 Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
@@ -306,12 +306,11 @@ WARNING - synthesis: Bit 3 of Register \show_string_number_ctrl_inst/start_y is 
 WARNING - synthesis: Bit 2 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
 WARNING - synthesis: Bit 1 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
 WARNING - synthesis: Bit 0 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 5 of Register \show_string_number_ctrl_inst/ascii_num is stuck at Zero
 WARNING - synthesis: Bit 8 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
 WARNING - synthesis: Bit 2 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
 WARNING - synthesis: Bit 1 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
 WARNING - synthesis: Bit 0 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
-WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(88): Register \show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21 is stuck at Zero. VDB-5013
+WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103): Register \show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21 is stuck at Zero. VDB-5013
 GSR instance connected to net sys_rst_n_c.
 Applying 200.000000 MHz constraint to all clocks
 
@@ -325,23 +324,23 @@ All blocks are expanded and NGD expansion is successful.
 Writing NGD file spi_lcd_impl1.ngd.
 
 ################### Begin Area Report (spi_lcd)######################
-Number of register bits => 213 of 4635 (4 % )
+Number of register bits => 214 of 4635 (4 % )
 CCU2D => 27
 EHXPLLJ => 1
-FD1P3AX => 52
+FD1P3AX => 53
 FD1P3AY => 1
 FD1P3IX => 74
 FD1P3JX => 1
-FD1S3AX => 32
+FD1S3AX => 33
 FD1S3AY => 1
-FD1S3IX => 49
+FD1S3IX => 48
 FD1S3JX => 3
 GSR => 1
 IB => 2
-L6MUX21 => 90
-LUT4 => 1361
+L6MUX21 => 94
+LUT4 => 1370
 OB => 6
-PFUMX => 309
+PFUMX => 298
 ROM128X1A => 4
 ################### End Area Report ##################
 
@@ -352,33 +351,33 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 2
-  Net : pll_u1/sys_clk_50MHz, loads : 214
+  Net : pll_u1/sys_clk_50MHz, loads : 215
   Net : sys_clk_c, loads : 1
 Clock Enable Nets
 Number of Clock Enables: 18
 Top 10 highest fanout Clock Enables:
-  Net : show_string_number_ctrl_inst/sys_clk_50MHz_enable_103, loads : 19
+  Net : show_string_number_ctrl_inst/sys_clk_50MHz_enable_105, loads : 19
   Net : lcd_show_char_inst/cnt_set_windows_3__N_384, loads : 16
-  Net : lcd_write_inst/sys_clk_50MHz_enable_83, loads : 15
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_105, loads : 12
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_48, loads : 9
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_68, loads : 8
-  Net : lcd_init_inst/sys_clk_50MHz_enable_27, loads : 6
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_47, loads : 5
-  Net : sys_clk_50MHz_enable_51, loads : 1
+  Net : lcd_write_inst/sys_clk_50MHz_enable_86, loads : 15
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_68, loads : 12
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_69, loads : 9
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_71, loads : 8
+  Net : lcd_init_inst/sys_clk_50MHz_enable_50, loads : 6
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_43, loads : 5
+  Net : sys_clk_50MHz_enable_52, loads : 1
   Net : sys_clk_50MHz_enable_56, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
   Net : lcd_show_char_inst/rom_addr_3, loads : 509
-  Net : lcd_show_char_inst/rom_addr_0, loads : 502
-  Net : lcd_show_char_inst/rom_addr_4, loads : 454
-  Net : lcd_show_char_inst/rom_addr_2, loads : 406
+  Net : lcd_show_char_inst/rom_addr_0, loads : 494
+  Net : lcd_show_char_inst/rom_addr_4, loads : 443
+  Net : lcd_show_char_inst/rom_addr_2, loads : 410
   Net : lcd_show_char_inst/rom_addr_1, loads : 386
   Net : lcd_show_char_inst/rom_addr_5, loads : 281
-  Net : lcd_show_char_inst/rom_addr_6, loads : 153
-  Net : lcd_show_char_inst/rom_addr_7, loads : 80
-  Net : lcd_show_char_inst/rom_addr_8, loads : 42
-  Net : lcd_show_char_inst/char_ram_inst/n13784, loads : 30
+  Net : lcd_show_char_inst/rom_addr_6, loads : 150
+  Net : lcd_show_char_inst/rom_addr_7, loads : 81
+  Net : lcd_show_char_inst/rom_addr_8, loads : 41
+  Net : lcd_show_char_inst/char_ram_inst/n13870, loads : 30
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -388,7 +387,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.180 MHz|    12 *
+clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.438 MHz|    12 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -396,8 +395,8 @@ clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.180 MHz|    12 *
 1 constraints not met.
 
 
-Peak Memory Usage: 168.379  MB
+Peak Memory Usage: 167.996  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 3.828  secs
+Elapsed CPU time for LSE flow : 3.906  secs
 --------------------------------------------------------------

@@ -12,7 +12,7 @@
 第一行中间显示“redstonebook”共12个字符；
 第二行为空；
 第三行最左边显示“rxdata:”共7个字符； 
-cnt1  字符  ascii码
+cnt1  字符  ascii码-32
 0     r     82
 1     e     69
 2     d     68
@@ -33,6 +33,21 @@ cnt1  字符  ascii码
 16    t     84
 17    a     65
 18    :     26
+
+cnt1  字符  ascii码-32
+0     H     40
+1     e     69
+2     l     76
+3     l     76
+4     o     79
+5           0
+6     W     55
+7     o     79
+8     r     82
+9     l     76
+10    d     68
+11    !     1
+
 */
 
 module show_string_number_ctrl
@@ -94,18 +109,18 @@ always@(posedge sys_clk or negedge sys_rst_n)
         ascii_num <= 'd0;
     else if(init_done)
         case(cnt_ascii_num)
-            0 : ascii_num <= 'd82;
+            0 : ascii_num <= 'd40;
             1 : ascii_num <= 'd69;
-            2 : ascii_num <= 'd68;
-            3 : ascii_num <= 'd83;
-            4 : ascii_num <= 'd84;
-            5 : ascii_num <= 'd79;
-            6 : ascii_num <= 'd78;
-            7 : ascii_num <= 'd69;
-            8 : ascii_num <= 'd66;
-            9 : ascii_num <= 'd79;
-            10: ascii_num <= 'd79;
-            11: ascii_num <= 'd75;
+            2 : ascii_num <= 'd76;
+            3 : ascii_num <= 'd76;
+            4 : ascii_num <= 'd79;
+            5 : ascii_num <= 'd0;
+            6 : ascii_num <= 'd55;
+            7 : ascii_num <= 'd79;
+            8 : ascii_num <= 'd82;
+            9 : ascii_num <= 'd76;
+            10: ascii_num <= 'd68;
+            11: ascii_num <= 'd1;
 
             12: ascii_num <= 'd82;
             13: ascii_num <= 'd83;
