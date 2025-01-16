@@ -248,13 +248,13 @@
             <ID>66011008</ID>
             <Severity>Warning</Severity>
             <Dynamic>
-   Signal=debug_led2_c_3 loads=8 clock_loads=2</Dynamic>
+   Signal=debug_led2_c_3 loads=9 clock_loads=2</Dynamic>
         </Message>
         <Message>
             <ID>66011008</ID>
             <Severity>Warning</Severity>
             <Dynamic>
-   Signal=debug_led2_c_3 loads=8 clock_loads=2</Dynamic>
+   Signal=debug_led2_c_3 loads=9 clock_loads=2</Dynamic>
         </Message>
     </Task>
     <Task name="Jedecgen">

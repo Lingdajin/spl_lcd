@@ -1,31 +1,31 @@
 [ START MERGED ]
 lcd_write_inst/n1 lcd_write_inst/mosi_N_76
-n1498 wr_done
-lcd_init_inst/n14586 state_2_adj_818
-lcd_init_inst/n1510 state_4
-lcd_init_inst/n7002 lcd_init_inst/state_0
-n6998 debug_led1_c_5
-lcd_show_char_inst/n7000 state_2_adj_819
-lcd_show_char_inst/n14591 lcd_show_char_inst/rom_addr_5
+n1533 wr_done
+lcd_init_inst/n14309 state_2_adj_800
+lcd_init_inst/n1545 state_4
+lcd_init_inst/n7054 lcd_init_inst/state_0
+n7048 debug_led1_c_5
+lcd_show_char_inst/n7052 state_2_adj_801
+lcd_show_char_inst/n14288 lcd_show_char_inst/rom_addr_5
 [ END MERGED ]
 [ START CLIPPED ]
-lcd_show_char_inst/add_2012_8/CO
-lcd_show_char_inst/mult_33_add_1_add_2_2/S0
-lcd_show_char_inst/mult_33_add_1_add_2_2/CI
-lcd_show_char_inst/mult_33_add_1_add_2_10/CO
-lcd_show_char_inst/add_2012_2/S0
-lcd_show_char_inst/add_2012_2/CI
-lcd_init_inst/cnt_150ms_719_add_4_1/S0
-lcd_init_inst/cnt_150ms_719_add_4_1/CI
+lcd_show_char_inst/add_2017_2/S0
+lcd_show_char_inst/add_2017_2/CI
+lcd_show_char_inst/add_2017_8/CO
+lcd_show_char_inst/mult_34_add_1_add_2_2/S0
+lcd_show_char_inst/mult_34_add_1_add_2_2/CI
+lcd_show_char_inst/mult_34_add_1_add_2_10/CO
 lcd_init_inst/add_153_1/S0
 lcd_init_inst/add_153_1/CI
-lcd_init_inst/cnt_150ms_719_add_4_23/CO
+lcd_init_inst/cnt_150ms_724_add_4_1/S0
+lcd_init_inst/cnt_150ms_724_add_4_1/CI
+lcd_init_inst/cnt_150ms_724_add_4_23/CO
 lcd_init_inst/add_153_19/S1
 lcd_init_inst/add_153_19/CO
 [ END CLIPPED ]
 [ START DESIGN PREFS ]
 SCHEMATIC START ;
-# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Thu Jan 16 18:48:10 2025
+# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Thu Jan 16 20:03:46 2025
 
 SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=DISABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE BACKGROUND_RECONFIG=OFF INBUF=ON ;
 LOCATE COMP "lcd_mosi" SITE "N7" ;

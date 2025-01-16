@@ -87,3 +87,13 @@ run -continue
 run -continue
 run -continue
 run
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/show_string_number_ctrl_inst/cnt_ascii_num
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/show_string_number_ctrl_inst/ascii_num
+restart
+run
+# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
+#    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
+# Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
+run -continue
