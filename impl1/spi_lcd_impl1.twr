@@ -13,7 +13,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2
-Thu Jan 16 22:01:12 2025
+Thu Jan 16 22:07:22 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -42,614 +42,614 @@ Preference: FREQUENCY NET "sys_clk_50MHz" 48.000000 MHz ;
 --------------------------------------------------------------------------------
 
 
-Passed: The following path meets requirements by 5.506ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i1  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/temp_i2  (to sys_clk_50MHz +)
-
-   Delay:              15.177ns  (32.2% logic, 67.8% route), 11 logic levels.
-
- Constraint Details:
-
-     15.177ns physical path delay lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89 meets
-     20.833ns delay constraint less
-      0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.506ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R12C14A.CLK to     R12C14A.Q0 lcd_show_char_inst/SLICE_26 (from sys_clk_50MHz)
-ROUTE       387     2.346     R12C14A.Q0 to      R8C24C.D1 lcd_show_char_inst/rom_addr_1
-CTOF_DEL    ---     0.452      R8C24C.D1 to      R8C24C.F1 lcd_show_char_inst/char_ram_inst/SLICE_578
-ROUTE        30     1.863      R8C24C.F1 to     R16C19C.D0 lcd_show_char_inst/char_ram_inst/n13870
-CTOF_DEL    ---     0.452     R16C19C.D0 to     R16C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         2     0.392     R16C19C.F0 to     R16C19C.C1 lcd_show_char_inst/char_ram_inst/n2573_adj_685
-CTOF_DEL    ---     0.452     R16C19C.C1 to     R16C19C.F1 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         1     0.851     R16C19C.F1 to     R16C18B.A0 lcd_show_char_inst/char_ram_inst/n12902
-CTOOFX_DEL  ---     0.661     R16C18B.A0 to   R16C18B.OFX0 lcd_show_char_inst/char_ram_inst/SLICE_142
-ROUTE         1     0.000   R16C18B.OFX0 to    R16C18A.FXA lcd_show_char_inst/char_ram_inst/n12903
-FXTOOFX_DE  ---     0.223    R16C18A.FXA to   R16C18A.OFX1 lcd_show_char_inst/char_ram_inst/i12473/SLICE_407
-ROUTE         1     0.839   R16C18A.OFX1 to     R15C17D.D0 lcd_show_char_inst/char_ram_inst/n12904
-CTOF_DEL    ---     0.452     R15C17D.D0 to     R15C17D.F0 lcd_show_char_inst/char_ram_inst/SLICE_751
-ROUTE         1     1.295     R15C17D.F0 to     R10C18C.D0 lcd_show_char_inst/char_ram_inst/n11988
-CTOOFX_DEL  ---     0.661     R10C18C.D0 to   R10C18C.OFX0 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     0.000   R10C18C.OFX0 to    R10C18C.FXB lcd_show_char_inst/char_ram_inst/n11996
-FXTOOFX_DE  ---     0.223    R10C18C.FXB to   R10C18C.OFX1 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     1.410   R10C18C.OFX1 to     R16C18C.C0 lcd_show_char_inst/char_ram_inst/n11997
-CTOF_DEL    ---     0.452     R16C18C.C0 to     R16C18C.F0 lcd_show_char_inst/char_ram_inst/SLICE_724
-ROUTE         1     1.292     R16C18C.F0 to     R16C15D.D0 lcd_show_char_inst/rom_q_2
-CTOF_DEL    ---     0.452     R16C15D.D0 to     R16C15D.F0 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F0 to    R16C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
-                  --------
-                   15.177   (32.2% logic, 67.8% route), 11 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_26:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R12C14A.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 5.652ns
+Passed: The following path meets requirements by 5.810ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
    Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i2  (from sys_clk_50MHz +)
    Destination:    FF         Data in        lcd_show_char_inst/temp_i2  (to sys_clk_50MHz +)
 
-   Delay:              15.031ns  (32.5% logic, 67.5% route), 11 logic levels.
+   Delay:              14.873ns  (31.4% logic, 68.6% route), 10 logic levels.
 
  Constraint Details:
 
-     15.031ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
+     14.873ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
      20.833ns delay constraint less
       0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.652ns
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.810ns
 
  Physical Path Details:
 
       Data path lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R14C14A.CLK to     R14C14A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
-ROUTE       411     2.200     R14C14A.Q0 to      R8C24C.C1 lcd_show_char_inst/rom_addr_2
-CTOF_DEL    ---     0.452      R8C24C.C1 to      R8C24C.F1 lcd_show_char_inst/char_ram_inst/SLICE_578
-ROUTE        30     1.863      R8C24C.F1 to     R16C19C.D0 lcd_show_char_inst/char_ram_inst/n13870
-CTOF_DEL    ---     0.452     R16C19C.D0 to     R16C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         2     0.392     R16C19C.F0 to     R16C19C.C1 lcd_show_char_inst/char_ram_inst/n2573_adj_685
-CTOF_DEL    ---     0.452     R16C19C.C1 to     R16C19C.F1 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         1     0.851     R16C19C.F1 to     R16C18B.A0 lcd_show_char_inst/char_ram_inst/n12902
-CTOOFX_DEL  ---     0.661     R16C18B.A0 to   R16C18B.OFX0 lcd_show_char_inst/char_ram_inst/SLICE_142
-ROUTE         1     0.000   R16C18B.OFX0 to    R16C18A.FXA lcd_show_char_inst/char_ram_inst/n12903
-FXTOOFX_DE  ---     0.223    R16C18A.FXA to   R16C18A.OFX1 lcd_show_char_inst/char_ram_inst/i12473/SLICE_407
-ROUTE         1     0.839   R16C18A.OFX1 to     R15C17D.D0 lcd_show_char_inst/char_ram_inst/n12904
-CTOF_DEL    ---     0.452     R15C17D.D0 to     R15C17D.F0 lcd_show_char_inst/char_ram_inst/SLICE_751
-ROUTE         1     1.295     R15C17D.F0 to     R10C18C.D0 lcd_show_char_inst/char_ram_inst/n11988
-CTOOFX_DEL  ---     0.661     R10C18C.D0 to   R10C18C.OFX0 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     0.000   R10C18C.OFX0 to    R10C18C.FXB lcd_show_char_inst/char_ram_inst/n11996
-FXTOOFX_DE  ---     0.223    R10C18C.FXB to   R10C18C.OFX1 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     1.410   R10C18C.OFX1 to     R16C18C.C0 lcd_show_char_inst/char_ram_inst/n11997
-CTOF_DEL    ---     0.452     R16C18C.C0 to     R16C18C.F0 lcd_show_char_inst/char_ram_inst/SLICE_724
-ROUTE         1     1.292     R16C18C.F0 to     R16C15D.D0 lcd_show_char_inst/rom_q_2
-CTOF_DEL    ---     0.452     R16C15D.D0 to     R16C15D.F0 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F0 to    R16C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
+REG_DEL     ---     0.409     R9C15A.CLK to      R9C15A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
+ROUTE       409     2.596      R9C15A.Q0 to     R20C24B.C1 lcd_show_char_inst/rom_addr_2
+CTOF_DEL    ---     0.452     R20C24B.C1 to     R20C24B.F1 lcd_show_char_inst/char_ram_inst/SLICE_562
+ROUTE        21     1.340     R20C24B.F1 to     R14C24C.D1 lcd_show_char_inst/char_ram_inst/n14134
+CTOF_DEL    ---     0.452     R14C24C.D1 to     R14C24C.F1 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         2     0.862     R14C24C.F1 to     R14C24C.A0 lcd_show_char_inst/n379
+CTOF_DEL    ---     0.452     R14C24C.A0 to     R14C24C.F0 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         1     1.180     R14C24C.F0 to     R13C25C.B1 lcd_show_char_inst/char_ram_inst/n12385
+CTOOFX_DEL  ---     0.661     R13C25C.B1 to   R13C25C.OFX0 lcd_show_char_inst/char_ram_inst/i12843/SLICE_337
+ROUTE         1     1.014   R13C25C.OFX0 to     R14C19C.D0 lcd_show_char_inst/char_ram_inst/n13363
+CTOF_DEL    ---     0.452     R14C19C.D0 to     R14C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_746
+ROUTE         1     1.393     R14C19C.F0 to     R16C23B.D1 lcd_show_char_inst/char_ram_inst/n12137
+CTOOFX_DEL  ---     0.661     R16C23B.D1 to   R16C23B.OFX0 lcd_show_char_inst/char_ram_inst/i11533/SLICE_229
+ROUTE         1     0.000   R16C23B.OFX0 to    R16C23A.FXA lcd_show_char_inst/char_ram_inst/n12147
+FXTOOFX_DE  ---     0.223    R16C23A.FXA to   R16C23A.OFX1 lcd_show_char_inst/char_ram_inst/i11534/SLICE_216
+ROUTE         1     1.281   R16C23A.OFX1 to     R14C16C.D1 lcd_show_char_inst/char_ram_inst/n12149
+CTOF_DEL    ---     0.452     R14C16C.D1 to     R14C16C.F1 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.541     R14C16C.F1 to     R14C15D.D0 lcd_show_char_inst/rom_q_2
+CTOF_DEL    ---     0.452     R14C15D.D0 to     R14C15D.F0 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F0 to    R14C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
                   --------
-                   15.031   (32.5% logic, 67.5% route), 11 logic levels.
+                   14.873   (31.4% logic, 68.6% route), 10 logic levels.
 
  Clock Skew Details: 
 
       Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_84:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R14C14A.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to     R9C15A.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
       Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
 
-Passed: The following path meets requirements by 5.695ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i3  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/temp_i3  (to sys_clk_50MHz +)
-
-   Delay:              14.988ns  (28.1% logic, 71.9% route), 9 logic levels.
-
- Constraint Details:
-
-     14.988ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
-     20.833ns delay constraint less
-      0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.695ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R14C14A.CLK to     R14C14A.Q1 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
-ROUTE       509     2.666     R14C14A.Q1 to     R10C20A.A1 lcd_show_char_inst/rom_addr_3
-CTOF_DEL    ---     0.452     R10C20A.A1 to     R10C20A.F1 lcd_show_char_inst/char_ram_inst/SLICE_652
-ROUTE         3     1.972     R10C20A.F1 to     R15C15C.C1 lcd_show_char_inst/char_ram_inst/n491
-CTOF_DEL    ---     0.452     R15C15C.C1 to     R15C15C.F1 lcd_show_char_inst/SLICE_518
-ROUTE         1     1.478     R15C15C.F1 to      R9C16D.D1 lcd_show_char_inst/char_ram_inst/n11756
-CTOOFX_DEL  ---     0.661      R9C16D.D1 to    R9C16D.OFX0 lcd_show_char_inst/char_ram_inst/i11323/SLICE_265
-ROUTE         1     1.283    R9C16D.OFX0 to      R9C20B.B0 lcd_show_char_inst/char_ram_inst/n11937
-CTOF_DEL    ---     0.452      R9C20B.B0 to      R9C20B.F0 lcd_show_char_inst/char_ram_inst/SLICE_748
-ROUTE         1     1.522      R9C20B.F0 to     R13C19D.C0 lcd_show_char_inst/char_ram_inst/n11952
-CTOOFX_DEL  ---     0.661     R13C19D.C0 to   R13C19D.OFX0 lcd_show_char_inst/char_ram_inst/i11350/SLICE_215
-ROUTE         1     0.000   R13C19D.OFX0 to    R13C19C.FXA lcd_show_char_inst/char_ram_inst/n11964
-FXTOOFX_DE  ---     0.223    R13C19C.FXA to   R13C19C.OFX1 lcd_show_char_inst/char_ram_inst/i11351/SLICE_202
-ROUTE         1     1.014   R13C19C.OFX1 to     R16C17B.D0 lcd_show_char_inst/char_ram_inst/n11966
-CTOF_DEL    ---     0.452     R16C17B.D0 to     R16C17B.F0 lcd_show_char_inst/char_ram_inst/SLICE_721
-ROUTE         1     0.839     R16C17B.F0 to     R16C15D.D1 lcd_show_char_inst/rom_q_3
-CTOF_DEL    ---     0.452     R16C15D.D1 to     R16C15D.F1 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F1 to    R16C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
-                  --------
-                   14.988   (28.1% logic, 71.9% route), 9 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_84:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R14C14A.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 5.711ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i1  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/temp_i6  (to sys_clk_50MHz +)
-
-   Delay:              14.972ns  (26.7% logic, 73.3% route), 8 logic levels.
-
- Constraint Details:
-
-     14.972ns physical path delay lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_91 meets
-     20.833ns delay constraint less
-      0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.711ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_91:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R12C14A.CLK to     R12C14A.Q0 lcd_show_char_inst/SLICE_26 (from sys_clk_50MHz)
-ROUTE       387     2.329     R12C14A.Q0 to     R17C23D.A0 lcd_show_char_inst/rom_addr_1
-CTOF_DEL    ---     0.452     R17C23D.A0 to     R17C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_468
-ROUTE        13     1.799     R17C23D.F0 to     R17C17D.C0 lcd_show_char_inst/n15116
-CTOF_DEL    ---     0.452     R17C17D.C0 to     R17C17D.F0 lcd_show_char_inst/SLICE_677
-ROUTE         1     1.834     R17C17D.F0 to     R17C23C.D0 lcd_show_char_inst/n12195
-CTOOFX_DEL  ---     0.661     R17C23C.D0 to   R17C23C.OFX0 lcd_show_char_inst/char_ram_inst/i11418/SLICE_297
-ROUTE         1     0.942   R17C23C.OFX0 to     R13C23B.D1 lcd_show_char_inst/char_ram_inst/n12032
-CTOF_DEL    ---     0.452     R13C23B.D1 to     R13C23B.F1 lcd_show_char_inst/char_ram_inst/SLICE_755
-ROUTE         1     2.318     R13C23B.F1 to     R17C18B.C0 lcd_show_char_inst/char_ram_inst/n12036
-CTOOFX_DEL  ---     0.661     R17C18B.C0 to   R17C18B.OFX0 lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_6_i3070/SLICE_230
-ROUTE         1     0.541   R17C18B.OFX0 to     R16C18C.D1 lcd_show_char_inst/char_ram_inst/n3070_adj_559
-CTOF_DEL    ---     0.452     R16C18C.D1 to     R16C18C.F1 lcd_show_char_inst/char_ram_inst/SLICE_724
-ROUTE         1     1.218     R16C18C.F1 to     R15C14D.D0 lcd_show_char_inst/rom_q_6
-CTOF_DEL    ---     0.452     R15C14D.D0 to     R15C14D.F0 lcd_show_char_inst/SLICE_91
-ROUTE         1     0.000     R15C14D.F0 to    R15C14D.DI0 lcd_show_char_inst/temp_7_N_345_6 (to sys_clk_50MHz)
-                  --------
-                   14.972   (26.7% logic, 73.3% route), 8 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_26:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R12C14A.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_91:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R15C14D.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 5.713ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i1  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/temp_i3  (to sys_clk_50MHz +)
-
-   Delay:              14.970ns  (29.6% logic, 70.4% route), 10 logic levels.
-
- Constraint Details:
-
-     14.970ns physical path delay lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89 meets
-     20.833ns delay constraint less
-      0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.713ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R12C14A.CLK to     R12C14A.Q0 lcd_show_char_inst/SLICE_26 (from sys_clk_50MHz)
-ROUTE       387     2.329     R12C14A.Q0 to     R17C23D.A0 lcd_show_char_inst/rom_addr_1
-CTOF_DEL    ---     0.452     R17C23D.A0 to     R17C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_468
-ROUTE        13     2.185     R17C23D.F0 to     R10C17C.D0 lcd_show_char_inst/n15116
-CTOF_DEL    ---     0.452     R10C17C.D0 to     R10C17C.F0 lcd_show_char_inst/char_ram_inst/SLICE_729
-ROUTE         1     1.857     R10C17C.F0 to     R13C26A.D1 lcd_show_char_inst/char_ram_inst/n1658
-CTOOFX_DEL  ---     0.661     R13C26A.D1 to   R13C26A.OFX0 lcd_show_char_inst/char_ram_inst/i11199/SLICE_226
-ROUTE         1     0.000   R13C26A.OFX0 to    R13C26A.FXB lcd_show_char_inst/char_ram_inst/n11813
-FXTOOFX_DE  ---     0.223    R13C26A.FXB to   R13C26A.OFX1 lcd_show_char_inst/char_ram_inst/i11199/SLICE_226
-ROUTE         1     0.954   R13C26A.OFX1 to     R13C23B.C0 lcd_show_char_inst/char_ram_inst/n11948
-CTOF_DEL    ---     0.452     R13C23B.C0 to     R13C23B.F0 lcd_show_char_inst/char_ram_inst/SLICE_755
-ROUTE         1     1.355     R13C23B.F0 to     R13C19C.B1 lcd_show_char_inst/char_ram_inst/n11958
-CTOOFX_DEL  ---     0.661     R13C19C.B1 to   R13C19C.OFX0 lcd_show_char_inst/char_ram_inst/i11351/SLICE_202
-ROUTE         1     0.000   R13C19C.OFX0 to    R13C19C.FXB lcd_show_char_inst/char_ram_inst/n11965
-FXTOOFX_DE  ---     0.223    R13C19C.FXB to   R13C19C.OFX1 lcd_show_char_inst/char_ram_inst/i11351/SLICE_202
-ROUTE         1     1.014   R13C19C.OFX1 to     R16C17B.D0 lcd_show_char_inst/char_ram_inst/n11966
-CTOF_DEL    ---     0.452     R16C17B.D0 to     R16C17B.F0 lcd_show_char_inst/char_ram_inst/SLICE_721
-ROUTE         1     0.839     R16C17B.F0 to     R16C15D.D1 lcd_show_char_inst/rom_q_3
-CTOF_DEL    ---     0.452     R16C15D.D1 to     R16C15D.F1 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F1 to    R16C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
-                  --------
-                   14.970   (29.6% logic, 70.4% route), 10 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_26:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R12C14A.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 5.778ns
+Passed: The following path meets requirements by 5.925ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
    Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i2  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/temp_i2  (to sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/temp_i3  (to sys_clk_50MHz +)
 
-   Delay:              14.905ns  (32.8% logic, 67.2% route), 11 logic levels.
+   Delay:              14.758ns  (31.6% logic, 68.4% route), 10 logic levels.
 
  Constraint Details:
 
-     14.905ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
+     14.758ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
      20.833ns delay constraint less
       0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.778ns
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.925ns
 
  Physical Path Details:
 
       Data path lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R14C14A.CLK to     R14C14A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
-ROUTE       411     2.318     R14C14A.Q0 to     R13C27B.B0 lcd_show_char_inst/rom_addr_2
-CTOF_DEL    ---     0.452     R13C27B.B0 to     R13C27B.F0 lcd_show_char_inst/char_ram_inst/SLICE_456
-ROUTE        11     1.619     R13C27B.F0 to     R16C19C.C0 lcd_show_char_inst/n15111
-CTOF_DEL    ---     0.452     R16C19C.C0 to     R16C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         2     0.392     R16C19C.F0 to     R16C19C.C1 lcd_show_char_inst/char_ram_inst/n2573_adj_685
-CTOF_DEL    ---     0.452     R16C19C.C1 to     R16C19C.F1 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         1     0.851     R16C19C.F1 to     R16C18B.A0 lcd_show_char_inst/char_ram_inst/n12902
-CTOOFX_DEL  ---     0.661     R16C18B.A0 to   R16C18B.OFX0 lcd_show_char_inst/char_ram_inst/SLICE_142
-ROUTE         1     0.000   R16C18B.OFX0 to    R16C18A.FXA lcd_show_char_inst/char_ram_inst/n12903
-FXTOOFX_DE  ---     0.223    R16C18A.FXA to   R16C18A.OFX1 lcd_show_char_inst/char_ram_inst/i12473/SLICE_407
-ROUTE         1     0.839   R16C18A.OFX1 to     R15C17D.D0 lcd_show_char_inst/char_ram_inst/n12904
-CTOF_DEL    ---     0.452     R15C17D.D0 to     R15C17D.F0 lcd_show_char_inst/char_ram_inst/SLICE_751
-ROUTE         1     1.295     R15C17D.F0 to     R10C18C.D0 lcd_show_char_inst/char_ram_inst/n11988
-CTOOFX_DEL  ---     0.661     R10C18C.D0 to   R10C18C.OFX0 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     0.000   R10C18C.OFX0 to    R10C18C.FXB lcd_show_char_inst/char_ram_inst/n11996
-FXTOOFX_DE  ---     0.223    R10C18C.FXB to   R10C18C.OFX1 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     1.410   R10C18C.OFX1 to     R16C18C.C0 lcd_show_char_inst/char_ram_inst/n11997
-CTOF_DEL    ---     0.452     R16C18C.C0 to     R16C18C.F0 lcd_show_char_inst/char_ram_inst/SLICE_724
-ROUTE         1     1.292     R16C18C.F0 to     R16C15D.D0 lcd_show_char_inst/rom_q_2
-CTOF_DEL    ---     0.452     R16C15D.D0 to     R16C15D.F0 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F0 to    R16C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
+REG_DEL     ---     0.409     R9C15A.CLK to      R9C15A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
+ROUTE       409     2.180      R9C15A.Q0 to     R13C23D.A1 lcd_show_char_inst/rom_addr_2
+CTOF_DEL    ---     0.452     R13C23D.A1 to     R13C23D.F1 lcd_show_char_inst/char_ram_inst/SLICE_489
+ROUTE        11     1.557     R13C23D.F1 to     R14C21C.A1 lcd_show_char_inst/n14004
+CTOF_DEL    ---     0.452     R14C21C.A1 to     R14C21C.F1 lcd_show_char_inst/char_ram_inst/SLICE_697
+ROUTE         4     1.682     R14C21C.F1 to     R14C25C.D1 lcd_show_char_inst/char_ram_inst/n428_adj_628
+CTOF_DEL    ---     0.452     R14C25C.D1 to     R14C25C.F1 lcd_show_char_inst/char_ram_inst/SLICE_599
+ROUTE         2     0.912     R14C25C.F1 to     R15C25D.B0 lcd_show_char_inst/char_ram_inst/n444_adj_706
+CTOOFX_DEL  ---     0.661     R15C25D.B0 to   R15C25D.OFX0 lcd_show_char_inst/char_ram_inst/i11477/SLICE_271
+ROUTE         1     0.839   R15C25D.OFX0 to     R14C23D.D0 lcd_show_char_inst/char_ram_inst/n12091
+CTOF_DEL    ---     0.452     R14C23D.D0 to     R14C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_747
+ROUTE         1     0.678     R14C23D.F0 to     R16C23D.C0 lcd_show_char_inst/char_ram_inst/n12105
+CTOOFX_DEL  ---     0.661     R16C23D.C0 to   R16C23D.OFX0 lcd_show_char_inst/char_ram_inst/i11502/SLICE_228
+ROUTE         1     0.000   R16C23D.OFX0 to    R16C23C.FXA lcd_show_char_inst/char_ram_inst/n12116
+FXTOOFX_DE  ---     0.223    R16C23C.FXA to   R16C23C.OFX1 lcd_show_char_inst/char_ram_inst/i11503/SLICE_214
+ROUTE         1     1.393   R16C23C.OFX1 to     R14C16C.D0 lcd_show_char_inst/char_ram_inst/n12118
+CTOF_DEL    ---     0.452     R14C16C.D0 to     R14C16C.F0 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.851     R14C16C.F0 to     R14C15D.A1 lcd_show_char_inst/rom_q_3
+CTOF_DEL    ---     0.452     R14C15D.A1 to     R14C15D.F1 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F1 to    R14C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
                   --------
-                   14.905   (32.8% logic, 67.2% route), 11 logic levels.
+                   14.758   (31.6% logic, 68.4% route), 10 logic levels.
 
  Clock Skew Details: 
 
       Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_84:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R14C14A.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to     R9C15A.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
       Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
 
-Passed: The following path meets requirements by 5.866ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i0  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/temp_i6  (to sys_clk_50MHz +)
-
-   Delay:              14.817ns  (26.9% logic, 73.1% route), 8 logic levels.
-
- Constraint Details:
-
-     14.817ns physical path delay lcd_show_char_inst/SLICE_22 to lcd_show_char_inst/SLICE_91 meets
-     20.833ns delay constraint less
-      0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.866ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_22 to lcd_show_char_inst/SLICE_91:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R12C15A.CLK to     R12C15A.Q1 lcd_show_char_inst/SLICE_22 (from sys_clk_50MHz)
-ROUTE       494     2.174     R12C15A.Q1 to     R17C23D.C0 lcd_show_char_inst/rom_addr_0
-CTOF_DEL    ---     0.452     R17C23D.C0 to     R17C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_468
-ROUTE        13     1.799     R17C23D.F0 to     R17C17D.C0 lcd_show_char_inst/n15116
-CTOF_DEL    ---     0.452     R17C17D.C0 to     R17C17D.F0 lcd_show_char_inst/SLICE_677
-ROUTE         1     1.834     R17C17D.F0 to     R17C23C.D0 lcd_show_char_inst/n12195
-CTOOFX_DEL  ---     0.661     R17C23C.D0 to   R17C23C.OFX0 lcd_show_char_inst/char_ram_inst/i11418/SLICE_297
-ROUTE         1     0.942   R17C23C.OFX0 to     R13C23B.D1 lcd_show_char_inst/char_ram_inst/n12032
-CTOF_DEL    ---     0.452     R13C23B.D1 to     R13C23B.F1 lcd_show_char_inst/char_ram_inst/SLICE_755
-ROUTE         1     2.318     R13C23B.F1 to     R17C18B.C0 lcd_show_char_inst/char_ram_inst/n12036
-CTOOFX_DEL  ---     0.661     R17C18B.C0 to   R17C18B.OFX0 lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_6_i3070/SLICE_230
-ROUTE         1     0.541   R17C18B.OFX0 to     R16C18C.D1 lcd_show_char_inst/char_ram_inst/n3070_adj_559
-CTOF_DEL    ---     0.452     R16C18C.D1 to     R16C18C.F1 lcd_show_char_inst/char_ram_inst/SLICE_724
-ROUTE         1     1.218     R16C18C.F1 to     R15C14D.D0 lcd_show_char_inst/rom_q_6
-CTOF_DEL    ---     0.452     R15C14D.D0 to     R15C14D.F0 lcd_show_char_inst/SLICE_91
-ROUTE         1     0.000     R15C14D.F0 to    R15C14D.DI0 lcd_show_char_inst/temp_7_N_345_6 (to sys_clk_50MHz)
-                  --------
-                   14.817   (26.9% logic, 73.1% route), 8 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_22:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R12C15A.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_91:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R15C14D.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 5.868ns
+Passed: The following path meets requirements by 6.012ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
    Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i0  (from sys_clk_50MHz +)
    Destination:    FF         Data in        lcd_show_char_inst/temp_i3  (to sys_clk_50MHz +)
 
-   Delay:              14.815ns  (29.9% logic, 70.1% route), 10 logic levels.
+   Delay:              14.671ns  (31.8% logic, 68.2% route), 10 logic levels.
 
  Constraint Details:
 
-     14.815ns physical path delay lcd_show_char_inst/SLICE_22 to lcd_show_char_inst/SLICE_89 meets
+     14.671ns physical path delay lcd_show_char_inst/SLICE_22 to lcd_show_char_inst/SLICE_89 meets
      20.833ns delay constraint less
       0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.868ns
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.012ns
 
  Physical Path Details:
 
       Data path lcd_show_char_inst/SLICE_22 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R12C15A.CLK to     R12C15A.Q1 lcd_show_char_inst/SLICE_22 (from sys_clk_50MHz)
-ROUTE       494     2.174     R12C15A.Q1 to     R17C23D.C0 lcd_show_char_inst/rom_addr_0
-CTOF_DEL    ---     0.452     R17C23D.C0 to     R17C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_468
-ROUTE        13     2.185     R17C23D.F0 to     R10C17C.D0 lcd_show_char_inst/n15116
-CTOF_DEL    ---     0.452     R10C17C.D0 to     R10C17C.F0 lcd_show_char_inst/char_ram_inst/SLICE_729
-ROUTE         1     1.857     R10C17C.F0 to     R13C26A.D1 lcd_show_char_inst/char_ram_inst/n1658
-CTOOFX_DEL  ---     0.661     R13C26A.D1 to   R13C26A.OFX0 lcd_show_char_inst/char_ram_inst/i11199/SLICE_226
-ROUTE         1     0.000   R13C26A.OFX0 to    R13C26A.FXB lcd_show_char_inst/char_ram_inst/n11813
-FXTOOFX_DE  ---     0.223    R13C26A.FXB to   R13C26A.OFX1 lcd_show_char_inst/char_ram_inst/i11199/SLICE_226
-ROUTE         1     0.954   R13C26A.OFX1 to     R13C23B.C0 lcd_show_char_inst/char_ram_inst/n11948
-CTOF_DEL    ---     0.452     R13C23B.C0 to     R13C23B.F0 lcd_show_char_inst/char_ram_inst/SLICE_755
-ROUTE         1     1.355     R13C23B.F0 to     R13C19C.B1 lcd_show_char_inst/char_ram_inst/n11958
-CTOOFX_DEL  ---     0.661     R13C19C.B1 to   R13C19C.OFX0 lcd_show_char_inst/char_ram_inst/i11351/SLICE_202
-ROUTE         1     0.000   R13C19C.OFX0 to    R13C19C.FXB lcd_show_char_inst/char_ram_inst/n11965
-FXTOOFX_DE  ---     0.223    R13C19C.FXB to   R13C19C.OFX1 lcd_show_char_inst/char_ram_inst/i11351/SLICE_202
-ROUTE         1     1.014   R13C19C.OFX1 to     R16C17B.D0 lcd_show_char_inst/char_ram_inst/n11966
-CTOF_DEL    ---     0.452     R16C17B.D0 to     R16C17B.F0 lcd_show_char_inst/char_ram_inst/SLICE_721
-ROUTE         1     0.839     R16C17B.F0 to     R16C15D.D1 lcd_show_char_inst/rom_q_3
-CTOF_DEL    ---     0.452     R16C15D.D1 to     R16C15D.F1 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F1 to    R16C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
+REG_DEL     ---     0.409     R8C16A.CLK to      R8C16A.Q1 lcd_show_char_inst/SLICE_22 (from sys_clk_50MHz)
+ROUTE       499     2.093      R8C16A.Q1 to     R13C23D.C1 lcd_show_char_inst/rom_addr_0
+CTOF_DEL    ---     0.452     R13C23D.C1 to     R13C23D.F1 lcd_show_char_inst/char_ram_inst/SLICE_489
+ROUTE        11     1.557     R13C23D.F1 to     R14C21C.A1 lcd_show_char_inst/n14004
+CTOF_DEL    ---     0.452     R14C21C.A1 to     R14C21C.F1 lcd_show_char_inst/char_ram_inst/SLICE_697
+ROUTE         4     1.682     R14C21C.F1 to     R14C25C.D1 lcd_show_char_inst/char_ram_inst/n428_adj_628
+CTOF_DEL    ---     0.452     R14C25C.D1 to     R14C25C.F1 lcd_show_char_inst/char_ram_inst/SLICE_599
+ROUTE         2     0.912     R14C25C.F1 to     R15C25D.B0 lcd_show_char_inst/char_ram_inst/n444_adj_706
+CTOOFX_DEL  ---     0.661     R15C25D.B0 to   R15C25D.OFX0 lcd_show_char_inst/char_ram_inst/i11477/SLICE_271
+ROUTE         1     0.839   R15C25D.OFX0 to     R14C23D.D0 lcd_show_char_inst/char_ram_inst/n12091
+CTOF_DEL    ---     0.452     R14C23D.D0 to     R14C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_747
+ROUTE         1     0.678     R14C23D.F0 to     R16C23D.C0 lcd_show_char_inst/char_ram_inst/n12105
+CTOOFX_DEL  ---     0.661     R16C23D.C0 to   R16C23D.OFX0 lcd_show_char_inst/char_ram_inst/i11502/SLICE_228
+ROUTE         1     0.000   R16C23D.OFX0 to    R16C23C.FXA lcd_show_char_inst/char_ram_inst/n12116
+FXTOOFX_DE  ---     0.223    R16C23C.FXA to   R16C23C.OFX1 lcd_show_char_inst/char_ram_inst/i11503/SLICE_214
+ROUTE         1     1.393   R16C23C.OFX1 to     R14C16C.D0 lcd_show_char_inst/char_ram_inst/n12118
+CTOF_DEL    ---     0.452     R14C16C.D0 to     R14C16C.F0 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.851     R14C16C.F0 to     R14C15D.A1 lcd_show_char_inst/rom_q_3
+CTOF_DEL    ---     0.452     R14C15D.A1 to     R14C15D.F1 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F1 to    R14C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
                   --------
-                   14.815   (29.9% logic, 70.1% route), 10 logic levels.
+                   14.671   (31.8% logic, 68.2% route), 10 logic levels.
 
  Clock Skew Details: 
 
       Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_22:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R12C15A.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to     R8C16A.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
       Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
 
-Passed: The following path meets requirements by 5.926ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i1  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/temp_i3  (to sys_clk_50MHz +)
-
-   Delay:              14.757ns  (31.6% logic, 68.4% route), 10 logic levels.
-
- Constraint Details:
-
-     14.757ns physical path delay lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89 meets
-     20.833ns delay constraint less
-      0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.926ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R12C14A.CLK to     R12C14A.Q0 lcd_show_char_inst/SLICE_26 (from sys_clk_50MHz)
-ROUTE       387     2.109     R12C14A.Q0 to     R18C20B.A0 lcd_show_char_inst/rom_addr_1
-CTOF_DEL    ---     0.452     R18C20B.A0 to     R18C20B.F0 lcd_show_char_inst/char_ram_inst/SLICE_464
-ROUTE        14     2.170     R18C20B.F0 to      R9C16C.D0 lcd_show_char_inst/n13911
-CTOF_DEL    ---     0.452      R9C16C.D0 to      R9C16C.F0 lcd_show_char_inst/char_ram_inst/SLICE_670
-ROUTE         1     0.269      R9C16C.F0 to      R9C16A.D1 lcd_show_char_inst/char_ram_inst/n220_adj_721
-CTOF_DEL    ---     0.452      R9C16A.D1 to      R9C16A.F1 lcd_show_char_inst/char_ram_inst/SLICE_552
-ROUTE         1     0.885      R9C16A.F1 to      R9C16D.B1 lcd_show_char_inst/char_ram_inst/n11755
-CTOOFX_DEL  ---     0.661      R9C16D.B1 to    R9C16D.OFX0 lcd_show_char_inst/char_ram_inst/i11323/SLICE_265
-ROUTE         1     1.283    R9C16D.OFX0 to      R9C20B.B0 lcd_show_char_inst/char_ram_inst/n11937
-CTOF_DEL    ---     0.452      R9C20B.B0 to      R9C20B.F0 lcd_show_char_inst/char_ram_inst/SLICE_748
-ROUTE         1     1.522      R9C20B.F0 to     R13C19D.C0 lcd_show_char_inst/char_ram_inst/n11952
-CTOOFX_DEL  ---     0.661     R13C19D.C0 to   R13C19D.OFX0 lcd_show_char_inst/char_ram_inst/i11350/SLICE_215
-ROUTE         1     0.000   R13C19D.OFX0 to    R13C19C.FXA lcd_show_char_inst/char_ram_inst/n11964
-FXTOOFX_DE  ---     0.223    R13C19C.FXA to   R13C19C.OFX1 lcd_show_char_inst/char_ram_inst/i11351/SLICE_202
-ROUTE         1     1.014   R13C19C.OFX1 to     R16C17B.D0 lcd_show_char_inst/char_ram_inst/n11966
-CTOF_DEL    ---     0.452     R16C17B.D0 to     R16C17B.F0 lcd_show_char_inst/char_ram_inst/SLICE_721
-ROUTE         1     0.839     R16C17B.F0 to     R16C15D.D1 lcd_show_char_inst/rom_q_3
-CTOF_DEL    ---     0.452     R16C15D.D1 to     R16C15D.F1 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F1 to    R16C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
-                  --------
-                   14.757   (31.6% logic, 68.4% route), 10 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_26:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R12C14A.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
-                  --------
-                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 5.933ns
+Passed: The following path meets requirements by 6.064ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
    Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i1  (from sys_clk_50MHz +)
    Destination:    FF         Data in        lcd_show_char_inst/temp_i2  (to sys_clk_50MHz +)
 
-   Delay:              14.750ns  (33.1% logic, 66.9% route), 11 logic levels.
+   Delay:              14.619ns  (31.9% logic, 68.1% route), 10 logic levels.
 
  Constraint Details:
 
-     14.750ns physical path delay lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89 meets
+     14.619ns physical path delay lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89 meets
      20.833ns delay constraint less
       0.000ns skew and
-      0.150ns DIN_SET requirement (totaling 20.683ns) by 5.933ns
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.064ns
 
  Physical Path Details:
 
       Data path lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.409    R12C14A.CLK to     R12C14A.Q0 lcd_show_char_inst/SLICE_26 (from sys_clk_50MHz)
-ROUTE       387     2.163     R12C14A.Q0 to     R13C27B.C0 lcd_show_char_inst/rom_addr_1
-CTOF_DEL    ---     0.452     R13C27B.C0 to     R13C27B.F0 lcd_show_char_inst/char_ram_inst/SLICE_456
-ROUTE        11     1.619     R13C27B.F0 to     R16C19C.C0 lcd_show_char_inst/n15111
-CTOF_DEL    ---     0.452     R16C19C.C0 to     R16C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         2     0.392     R16C19C.F0 to     R16C19C.C1 lcd_show_char_inst/char_ram_inst/n2573_adj_685
-CTOF_DEL    ---     0.452     R16C19C.C1 to     R16C19C.F1 lcd_show_char_inst/char_ram_inst/SLICE_480
-ROUTE         1     0.851     R16C19C.F1 to     R16C18B.A0 lcd_show_char_inst/char_ram_inst/n12902
-CTOOFX_DEL  ---     0.661     R16C18B.A0 to   R16C18B.OFX0 lcd_show_char_inst/char_ram_inst/SLICE_142
-ROUTE         1     0.000   R16C18B.OFX0 to    R16C18A.FXA lcd_show_char_inst/char_ram_inst/n12903
-FXTOOFX_DE  ---     0.223    R16C18A.FXA to   R16C18A.OFX1 lcd_show_char_inst/char_ram_inst/i12473/SLICE_407
-ROUTE         1     0.839   R16C18A.OFX1 to     R15C17D.D0 lcd_show_char_inst/char_ram_inst/n12904
-CTOF_DEL    ---     0.452     R15C17D.D0 to     R15C17D.F0 lcd_show_char_inst/char_ram_inst/SLICE_751
-ROUTE         1     1.295     R15C17D.F0 to     R10C18C.D0 lcd_show_char_inst/char_ram_inst/n11988
-CTOOFX_DEL  ---     0.661     R10C18C.D0 to   R10C18C.OFX0 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     0.000   R10C18C.OFX0 to    R10C18C.FXB lcd_show_char_inst/char_ram_inst/n11996
-FXTOOFX_DE  ---     0.223    R10C18C.FXB to   R10C18C.OFX1 lcd_show_char_inst/char_ram_inst/i11382/SLICE_204
-ROUTE         1     1.410   R10C18C.OFX1 to     R16C18C.C0 lcd_show_char_inst/char_ram_inst/n11997
-CTOF_DEL    ---     0.452     R16C18C.C0 to     R16C18C.F0 lcd_show_char_inst/char_ram_inst/SLICE_724
-ROUTE         1     1.292     R16C18C.F0 to     R16C15D.D0 lcd_show_char_inst/rom_q_2
-CTOF_DEL    ---     0.452     R16C15D.D0 to     R16C15D.F0 lcd_show_char_inst/SLICE_89
-ROUTE         1     0.000     R16C15D.F0 to    R16C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
+REG_DEL     ---     0.409     R8C15A.CLK to      R8C15A.Q0 lcd_show_char_inst/SLICE_26 (from sys_clk_50MHz)
+ROUTE       383     2.342      R8C15A.Q0 to     R20C24B.D1 lcd_show_char_inst/rom_addr_1
+CTOF_DEL    ---     0.452     R20C24B.D1 to     R20C24B.F1 lcd_show_char_inst/char_ram_inst/SLICE_562
+ROUTE        21     1.340     R20C24B.F1 to     R14C24C.D1 lcd_show_char_inst/char_ram_inst/n14134
+CTOF_DEL    ---     0.452     R14C24C.D1 to     R14C24C.F1 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         2     0.862     R14C24C.F1 to     R14C24C.A0 lcd_show_char_inst/n379
+CTOF_DEL    ---     0.452     R14C24C.A0 to     R14C24C.F0 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         1     1.180     R14C24C.F0 to     R13C25C.B1 lcd_show_char_inst/char_ram_inst/n12385
+CTOOFX_DEL  ---     0.661     R13C25C.B1 to   R13C25C.OFX0 lcd_show_char_inst/char_ram_inst/i12843/SLICE_337
+ROUTE         1     1.014   R13C25C.OFX0 to     R14C19C.D0 lcd_show_char_inst/char_ram_inst/n13363
+CTOF_DEL    ---     0.452     R14C19C.D0 to     R14C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_746
+ROUTE         1     1.393     R14C19C.F0 to     R16C23B.D1 lcd_show_char_inst/char_ram_inst/n12137
+CTOOFX_DEL  ---     0.661     R16C23B.D1 to   R16C23B.OFX0 lcd_show_char_inst/char_ram_inst/i11533/SLICE_229
+ROUTE         1     0.000   R16C23B.OFX0 to    R16C23A.FXA lcd_show_char_inst/char_ram_inst/n12147
+FXTOOFX_DE  ---     0.223    R16C23A.FXA to   R16C23A.OFX1 lcd_show_char_inst/char_ram_inst/i11534/SLICE_216
+ROUTE         1     1.281   R16C23A.OFX1 to     R14C16C.D1 lcd_show_char_inst/char_ram_inst/n12149
+CTOF_DEL    ---     0.452     R14C16C.D1 to     R14C16C.F1 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.541     R14C16C.F1 to     R14C15D.D0 lcd_show_char_inst/rom_q_2
+CTOF_DEL    ---     0.452     R14C15D.D0 to     R14C15D.F0 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F0 to    R14C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
                   --------
-                   14.750   (33.1% logic, 66.9% route), 11 logic levels.
+                   14.619   (31.9% logic, 68.1% route), 10 logic levels.
 
  Clock Skew Details: 
 
       Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_26:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R12C14A.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to     R8C15A.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
       Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     1.580     LPLL.CLKOP to    R16C15D.CLK sys_clk_50MHz
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
                   --------
                     1.580   (0.0% logic, 100.0% route), 0 logic levels.
 
-Report:   65.244MHz is the maximum frequency for this preference.
+
+Passed: The following path meets requirements by 6.121ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i0  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/temp_i2  (to sys_clk_50MHz +)
+
+   Delay:              14.562ns  (32.0% logic, 68.0% route), 10 logic levels.
+
+ Constraint Details:
+
+     14.562ns physical path delay lcd_show_char_inst/SLICE_22 to lcd_show_char_inst/SLICE_89 meets
+     20.833ns delay constraint less
+      0.000ns skew and
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.121ns
+
+ Physical Path Details:
+
+      Data path lcd_show_char_inst/SLICE_22 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R8C16A.CLK to      R8C16A.Q1 lcd_show_char_inst/SLICE_22 (from sys_clk_50MHz)
+ROUTE       499     1.955      R8C16A.Q1 to     R17C17B.B1 lcd_show_char_inst/rom_addr_0
+CTOF_DEL    ---     0.452     R17C17B.B1 to     R17C17B.F1 lcd_show_char_inst/char_ram_inst/SLICE_478
+ROUTE        15     1.670     R17C17B.F1 to     R14C24C.C1 lcd_show_char_inst/n14063
+CTOF_DEL    ---     0.452     R14C24C.C1 to     R14C24C.F1 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         2     0.862     R14C24C.F1 to     R14C24C.A0 lcd_show_char_inst/n379
+CTOF_DEL    ---     0.452     R14C24C.A0 to     R14C24C.F0 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         1     1.180     R14C24C.F0 to     R13C25C.B1 lcd_show_char_inst/char_ram_inst/n12385
+CTOOFX_DEL  ---     0.661     R13C25C.B1 to   R13C25C.OFX0 lcd_show_char_inst/char_ram_inst/i12843/SLICE_337
+ROUTE         1     1.014   R13C25C.OFX0 to     R14C19C.D0 lcd_show_char_inst/char_ram_inst/n13363
+CTOF_DEL    ---     0.452     R14C19C.D0 to     R14C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_746
+ROUTE         1     1.393     R14C19C.F0 to     R16C23B.D1 lcd_show_char_inst/char_ram_inst/n12137
+CTOOFX_DEL  ---     0.661     R16C23B.D1 to   R16C23B.OFX0 lcd_show_char_inst/char_ram_inst/i11533/SLICE_229
+ROUTE         1     0.000   R16C23B.OFX0 to    R16C23A.FXA lcd_show_char_inst/char_ram_inst/n12147
+FXTOOFX_DE  ---     0.223    R16C23A.FXA to   R16C23A.OFX1 lcd_show_char_inst/char_ram_inst/i11534/SLICE_216
+ROUTE         1     1.281   R16C23A.OFX1 to     R14C16C.D1 lcd_show_char_inst/char_ram_inst/n12149
+CTOF_DEL    ---     0.452     R14C16C.D1 to     R14C16C.F1 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.541     R14C16C.F1 to     R14C15D.D0 lcd_show_char_inst/rom_q_2
+CTOF_DEL    ---     0.452     R14C15D.D0 to     R14C15D.F0 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F0 to    R14C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
+                  --------
+                   14.562   (32.0% logic, 68.0% route), 10 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_22:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to     R8C16A.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 6.155ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i2  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/temp_i2  (to sys_clk_50MHz +)
+
+   Delay:              14.528ns  (32.1% logic, 67.9% route), 10 logic levels.
+
+ Constraint Details:
+
+     14.528ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
+     20.833ns delay constraint less
+      0.000ns skew and
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.155ns
+
+ Physical Path Details:
+
+      Data path lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R9C15A.CLK to      R9C15A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
+ROUTE       409     1.921      R9C15A.Q0 to     R17C17B.D1 lcd_show_char_inst/rom_addr_2
+CTOF_DEL    ---     0.452     R17C17B.D1 to     R17C17B.F1 lcd_show_char_inst/char_ram_inst/SLICE_478
+ROUTE        15     1.670     R17C17B.F1 to     R14C24C.C1 lcd_show_char_inst/n14063
+CTOF_DEL    ---     0.452     R14C24C.C1 to     R14C24C.F1 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         2     0.862     R14C24C.F1 to     R14C24C.A0 lcd_show_char_inst/n379
+CTOF_DEL    ---     0.452     R14C24C.A0 to     R14C24C.F0 lcd_show_char_inst/char_ram_inst/SLICE_452
+ROUTE         1     1.180     R14C24C.F0 to     R13C25C.B1 lcd_show_char_inst/char_ram_inst/n12385
+CTOOFX_DEL  ---     0.661     R13C25C.B1 to   R13C25C.OFX0 lcd_show_char_inst/char_ram_inst/i12843/SLICE_337
+ROUTE         1     1.014   R13C25C.OFX0 to     R14C19C.D0 lcd_show_char_inst/char_ram_inst/n13363
+CTOF_DEL    ---     0.452     R14C19C.D0 to     R14C19C.F0 lcd_show_char_inst/char_ram_inst/SLICE_746
+ROUTE         1     1.393     R14C19C.F0 to     R16C23B.D1 lcd_show_char_inst/char_ram_inst/n12137
+CTOOFX_DEL  ---     0.661     R16C23B.D1 to   R16C23B.OFX0 lcd_show_char_inst/char_ram_inst/i11533/SLICE_229
+ROUTE         1     0.000   R16C23B.OFX0 to    R16C23A.FXA lcd_show_char_inst/char_ram_inst/n12147
+FXTOOFX_DE  ---     0.223    R16C23A.FXA to   R16C23A.OFX1 lcd_show_char_inst/char_ram_inst/i11534/SLICE_216
+ROUTE         1     1.281   R16C23A.OFX1 to     R14C16C.D1 lcd_show_char_inst/char_ram_inst/n12149
+CTOF_DEL    ---     0.452     R14C16C.D1 to     R14C16C.F1 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.541     R14C16C.F1 to     R14C15D.D0 lcd_show_char_inst/rom_q_2
+CTOF_DEL    ---     0.452     R14C15D.D0 to     R14C15D.F0 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F0 to    R14C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
+                  --------
+                   14.528   (32.1% logic, 67.9% route), 10 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to     R9C15A.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 6.159ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i2  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/temp_i2  (to sys_clk_50MHz +)
+
+   Delay:              14.524ns  (32.1% logic, 67.9% route), 10 logic levels.
+
+ Constraint Details:
+
+     14.524ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
+     20.833ns delay constraint less
+      0.000ns skew and
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.159ns
+
+ Physical Path Details:
+
+      Data path lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R9C15A.CLK to      R9C15A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
+ROUTE       409     2.180      R9C15A.Q0 to     R13C23D.A1 lcd_show_char_inst/rom_addr_2
+CTOF_DEL    ---     0.452     R13C23D.A1 to     R13C23D.F1 lcd_show_char_inst/char_ram_inst/SLICE_489
+ROUTE        11     1.557     R13C23D.F1 to     R14C21C.A1 lcd_show_char_inst/n14004
+CTOF_DEL    ---     0.452     R14C21C.A1 to     R14C21C.F1 lcd_show_char_inst/char_ram_inst/SLICE_697
+ROUTE         4     1.682     R14C21C.F1 to     R14C25C.D1 lcd_show_char_inst/char_ram_inst/n428_adj_628
+CTOF_DEL    ---     0.452     R14C25C.D1 to     R14C25C.F1 lcd_show_char_inst/char_ram_inst/SLICE_599
+ROUTE         2     0.392     R14C25C.F1 to     R14C25C.C0 lcd_show_char_inst/char_ram_inst/n444_adj_706
+CTOF_DEL    ---     0.452     R14C25C.C0 to     R14C25C.F0 lcd_show_char_inst/char_ram_inst/SLICE_599
+ROUTE         1     0.904     R14C25C.F0 to     R12C25D.B1 lcd_show_char_inst/char_ram_inst/n445_adj_707
+CTOOFX_DEL  ---     0.661     R12C25D.B1 to   R12C25D.OFX0 lcd_show_char_inst/char_ram_inst/i11522/SLICE_259
+ROUTE         1     1.321   R12C25D.OFX0 to     R16C23B.D0 lcd_show_char_inst/char_ram_inst/n12136
+CTOOFX_DEL  ---     0.661     R16C23B.D0 to   R16C23B.OFX0 lcd_show_char_inst/char_ram_inst/i11533/SLICE_229
+ROUTE         1     0.000   R16C23B.OFX0 to    R16C23A.FXA lcd_show_char_inst/char_ram_inst/n12147
+FXTOOFX_DE  ---     0.223    R16C23A.FXA to   R16C23A.OFX1 lcd_show_char_inst/char_ram_inst/i11534/SLICE_216
+ROUTE         1     1.281   R16C23A.OFX1 to     R14C16C.D1 lcd_show_char_inst/char_ram_inst/n12149
+CTOF_DEL    ---     0.452     R14C16C.D1 to     R14C16C.F1 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.541     R14C16C.F1 to     R14C15D.D0 lcd_show_char_inst/rom_q_2
+CTOF_DEL    ---     0.452     R14C15D.D0 to     R14C15D.F0 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F0 to    R14C15D.DI0 lcd_show_char_inst/temp_7_N_345_2 (to sys_clk_50MHz)
+                  --------
+                   14.524   (32.1% logic, 67.9% route), 10 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to     R9C15A.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 6.179ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i1  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/temp_i3  (to sys_clk_50MHz +)
+
+   Delay:              14.504ns  (32.2% logic, 67.8% route), 10 logic levels.
+
+ Constraint Details:
+
+     14.504ns physical path delay lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89 meets
+     20.833ns delay constraint less
+      0.000ns skew and
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.179ns
+
+ Physical Path Details:
+
+      Data path lcd_show_char_inst/SLICE_26 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R8C15A.CLK to      R8C15A.Q0 lcd_show_char_inst/SLICE_26 (from sys_clk_50MHz)
+ROUTE       383     1.926      R8C15A.Q0 to     R13C23D.D1 lcd_show_char_inst/rom_addr_1
+CTOF_DEL    ---     0.452     R13C23D.D1 to     R13C23D.F1 lcd_show_char_inst/char_ram_inst/SLICE_489
+ROUTE        11     1.557     R13C23D.F1 to     R14C21C.A1 lcd_show_char_inst/n14004
+CTOF_DEL    ---     0.452     R14C21C.A1 to     R14C21C.F1 lcd_show_char_inst/char_ram_inst/SLICE_697
+ROUTE         4     1.682     R14C21C.F1 to     R14C25C.D1 lcd_show_char_inst/char_ram_inst/n428_adj_628
+CTOF_DEL    ---     0.452     R14C25C.D1 to     R14C25C.F1 lcd_show_char_inst/char_ram_inst/SLICE_599
+ROUTE         2     0.912     R14C25C.F1 to     R15C25D.B0 lcd_show_char_inst/char_ram_inst/n444_adj_706
+CTOOFX_DEL  ---     0.661     R15C25D.B0 to   R15C25D.OFX0 lcd_show_char_inst/char_ram_inst/i11477/SLICE_271
+ROUTE         1     0.839   R15C25D.OFX0 to     R14C23D.D0 lcd_show_char_inst/char_ram_inst/n12091
+CTOF_DEL    ---     0.452     R14C23D.D0 to     R14C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_747
+ROUTE         1     0.678     R14C23D.F0 to     R16C23D.C0 lcd_show_char_inst/char_ram_inst/n12105
+CTOOFX_DEL  ---     0.661     R16C23D.C0 to   R16C23D.OFX0 lcd_show_char_inst/char_ram_inst/i11502/SLICE_228
+ROUTE         1     0.000   R16C23D.OFX0 to    R16C23C.FXA lcd_show_char_inst/char_ram_inst/n12116
+FXTOOFX_DE  ---     0.223    R16C23C.FXA to   R16C23C.OFX1 lcd_show_char_inst/char_ram_inst/i11503/SLICE_214
+ROUTE         1     1.393   R16C23C.OFX1 to     R14C16C.D0 lcd_show_char_inst/char_ram_inst/n12118
+CTOF_DEL    ---     0.452     R14C16C.D0 to     R14C16C.F0 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.851     R14C16C.F0 to     R14C15D.A1 lcd_show_char_inst/rom_q_3
+CTOF_DEL    ---     0.452     R14C15D.A1 to     R14C15D.F1 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F1 to    R14C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
+                  --------
+                   14.504   (32.2% logic, 67.8% route), 10 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_26:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to     R8C15A.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 6.186ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i2  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/temp_i1  (to sys_clk_50MHz +)
+
+   Delay:              14.497ns  (30.5% logic, 69.5% route), 9 logic levels.
+
+ Constraint Details:
+
+     14.497ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_88 meets
+     20.833ns delay constraint less
+      0.000ns skew and
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.186ns
+
+ Physical Path Details:
+
+      Data path lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_88:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R9C15A.CLK to      R9C15A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
+ROUTE       409     2.596      R9C15A.Q0 to     R20C24A.C1 lcd_show_char_inst/rom_addr_2
+CTOF_DEL    ---     0.452     R20C24A.C1 to     R20C24A.F1 lcd_show_char_inst/char_ram_inst/SLICE_447
+ROUTE        14     1.811     R20C24A.F1 to     R19C14B.D1 lcd_show_char_inst/n14035
+CTOF_DEL    ---     0.452     R19C14B.D1 to     R19C14B.F1 lcd_show_char_inst/char_ram_inst/SLICE_473
+ROUTE         1     0.854     R19C14B.F1 to     R19C14B.A0 lcd_show_char_inst/char_ram_inst/n1308
+CTOF_DEL    ---     0.452     R19C14B.A0 to     R19C14B.F0 lcd_show_char_inst/char_ram_inst/SLICE_473
+ROUTE         1     0.942     R19C14B.F0 to     R17C13A.D0 lcd_show_char_inst/char_ram_inst/n1309_adj_623
+CTOOFX_DEL  ---     0.661     R17C13A.D0 to   R17C13A.OFX0 lcd_show_char_inst/char_ram_inst/i11756/SLICE_308
+ROUTE         1     1.737   R17C13A.OFX0 to      R9C18B.D1 lcd_show_char_inst/char_ram_inst/n12370
+CTOOFX_DEL  ---     0.661      R9C18B.D1 to    R9C18B.OFX0 lcd_show_char_inst/char_ram_inst/i11546/SLICE_230
+ROUTE         1     0.000    R9C18B.OFX0 to     R9C18A.FXA lcd_show_char_inst/char_ram_inst/n12160
+FXTOOFX_DE  ---     0.223     R9C18A.FXA to    R9C18A.OFX1 lcd_show_char_inst/char_ram_inst/i11547/SLICE_244
+ROUTE         1     1.295    R9C18A.OFX1 to     R15C15C.D0 lcd_show_char_inst/char_ram_inst/n12163
+CTOOFX_DEL  ---     0.661     R15C15C.D0 to   R15C15C.OFX0 lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_1_i4095/SLICE_207
+ROUTE         1     0.839   R15C15C.OFX0 to     R14C14D.D1 lcd_show_char_inst/rom_q_1
+CTOF_DEL    ---     0.452     R14C14D.D1 to     R14C14D.F1 lcd_show_char_inst/SLICE_88
+ROUTE         1     0.000     R14C14D.F1 to    R14C14D.DI1 lcd_show_char_inst/temp_7_N_345_1 (to sys_clk_50MHz)
+                  --------
+                   14.497   (30.5% logic, 69.5% route), 9 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to     R9C15A.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_88:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to    R14C14D.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 6.208ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_show_char_inst/rom_addr_i0_i2  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/temp_i3  (to sys_clk_50MHz +)
+
+   Delay:              14.475ns  (32.2% logic, 67.8% route), 10 logic levels.
+
+ Constraint Details:
+
+     14.475ns physical path delay lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89 meets
+     20.833ns delay constraint less
+      0.000ns skew and
+      0.150ns DIN_SET requirement (totaling 20.683ns) by 6.208ns
+
+ Physical Path Details:
+
+      Data path lcd_show_char_inst/SLICE_84 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R9C15A.CLK to      R9C15A.Q0 lcd_show_char_inst/SLICE_84 (from sys_clk_50MHz)
+ROUTE       409     1.896      R9C15A.Q0 to     R19C15D.A1 lcd_show_char_inst/rom_addr_2
+CTOF_DEL    ---     0.452     R19C15D.A1 to     R19C15D.F1 lcd_show_char_inst/SLICE_539
+ROUTE        13     2.161     R19C15D.F1 to     R14C21C.D0 lcd_show_char_inst/n14107
+CTOF_DEL    ---     0.452     R14C21C.D0 to     R14C21C.F0 lcd_show_char_inst/char_ram_inst/SLICE_697
+ROUTE         5     1.079     R14C21C.F0 to     R14C25C.C1 lcd_show_char_inst/char_ram_inst/n684
+CTOF_DEL    ---     0.452     R14C25C.C1 to     R14C25C.F1 lcd_show_char_inst/char_ram_inst/SLICE_599
+ROUTE         2     0.912     R14C25C.F1 to     R15C25D.B0 lcd_show_char_inst/char_ram_inst/n444_adj_706
+CTOOFX_DEL  ---     0.661     R15C25D.B0 to   R15C25D.OFX0 lcd_show_char_inst/char_ram_inst/i11477/SLICE_271
+ROUTE         1     0.839   R15C25D.OFX0 to     R14C23D.D0 lcd_show_char_inst/char_ram_inst/n12091
+CTOF_DEL    ---     0.452     R14C23D.D0 to     R14C23D.F0 lcd_show_char_inst/char_ram_inst/SLICE_747
+ROUTE         1     0.678     R14C23D.F0 to     R16C23D.C0 lcd_show_char_inst/char_ram_inst/n12105
+CTOOFX_DEL  ---     0.661     R16C23D.C0 to   R16C23D.OFX0 lcd_show_char_inst/char_ram_inst/i11502/SLICE_228
+ROUTE         1     0.000   R16C23D.OFX0 to    R16C23C.FXA lcd_show_char_inst/char_ram_inst/n12116
+FXTOOFX_DE  ---     0.223    R16C23C.FXA to   R16C23C.OFX1 lcd_show_char_inst/char_ram_inst/i11503/SLICE_214
+ROUTE         1     1.393   R16C23C.OFX1 to     R14C16C.D0 lcd_show_char_inst/char_ram_inst/n12118
+CTOF_DEL    ---     0.452     R14C16C.D0 to     R14C16C.F0 lcd_show_char_inst/char_ram_inst/SLICE_730
+ROUTE         1     0.851     R14C16C.F0 to     R14C15D.A1 lcd_show_char_inst/rom_q_3
+CTOF_DEL    ---     0.452     R14C15D.A1 to     R14C15D.F1 lcd_show_char_inst/SLICE_89
+ROUTE         1     0.000     R14C15D.F1 to    R14C15D.DI1 lcd_show_char_inst/temp_7_N_345_3 (to sys_clk_50MHz)
+                  --------
+                   14.475   (32.2% logic, 67.8% route), 10 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to     R9C15A.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_89:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     1.580     LPLL.CLKOP to    R14C15D.CLK sys_clk_50MHz
+                  --------
+                    1.580   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report:   66.565MHz is the maximum frequency for this preference.
 
 
 ================================================================================
@@ -664,7 +664,7 @@ Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
 FREQUENCY NET "sys_clk_50MHz" 48.000000 |             |             |
-MHz ;                                   |   48.000 MHz|   65.244 MHz|  11  
+MHz ;                                   |   48.000 MHz|   66.565 MHz|  10  
                                         |             |             |
 FREQUENCY NET "sys_clk_c" 12.000000 MHz |             |             |
 ;                                       |            -|            -|   0  
@@ -683,7 +683,7 @@ Found 2 clocks:
 Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 1
    No transfer within this clock domain is found
 
-Clock Domain: sys_clk_50MHz   Source: pll_u1/PLLInst_0.CLKOP   Loads: 134
+Clock Domain: sys_clk_50MHz   Source: pll_u1/PLLInst_0.CLKOP   Loads: 130
    Covered under: FREQUENCY NET "sys_clk_50MHz" 48.000000 MHz ;
 
 
@@ -693,11 +693,11 @@ Timing summary (Setup):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 7480 paths, 2 nets, and 6140 connections (99.89% coverage)
+Constraints cover 7360 paths, 2 nets, and 6066 connections (99.88% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2
-Thu Jan 16 22:01:12 2025
+Thu Jan 16 22:07:22 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -730,41 +730,41 @@ Passed: The following path meets requirements by 0.304ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              lcd_write_inst/cnt1_FSM_i12  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_write_inst/cnt1_FSM_i13  (to sys_clk_50MHz +)
+   Source:         FF         Q              lcd_write_inst/cnt1_FSM_i14  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_write_inst/cnt1_FSM_i15  (to sys_clk_50MHz +)
 
    Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
 
  Constraint Details:
 
-      0.285ns physical path delay SLICE_497 to SLICE_497 meets
+      0.285ns physical path delay SLICE_502 to SLICE_502 meets
      -0.019ns M_HLD and
       0.000ns delay constraint less
       0.000ns skew requirement (totaling -0.019ns) by 0.304ns
 
  Physical Path Details:
 
-      Data path SLICE_497 to SLICE_497:
+      Data path SLICE_502 to SLICE_502:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R18C11A.CLK to     R18C11A.Q0 SLICE_497 (from sys_clk_50MHz)
-ROUTE         1     0.152     R18C11A.Q0 to     R18C11A.M1 lcd_write_inst/n124 (to sys_clk_50MHz)
+REG_DEL     ---     0.133     R14C8D.CLK to      R14C8D.Q0 SLICE_502 (from sys_clk_50MHz)
+ROUTE         1     0.152      R14C8D.Q0 to      R14C8D.M1 lcd_write_inst/n122 (to sys_clk_50MHz)
                   --------
                     0.285   (46.7% logic, 53.3% route), 1 logic levels.
 
  Clock Skew Details: 
 
-      Source Clock Path pll_u1/PLLInst_0 to SLICE_497:
+      Source Clock Path pll_u1/PLLInst_0 to SLICE_502:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C11A.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R14C8D.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
-      Destination Clock Path pll_u1/PLLInst_0 to SLICE_497:
+      Destination Clock Path pll_u1/PLLInst_0 to SLICE_502:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C11A.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R14C8D.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
@@ -780,34 +780,34 @@ Passed: The following path meets requirements by 0.304ns
 
  Constraint Details:
 
-      0.285ns physical path delay lcd_write_inst/SLICE_493 to lcd_write_inst/SLICE_493 meets
+      0.285ns physical path delay SLICE_504 to SLICE_504 meets
      -0.019ns M_HLD and
       0.000ns delay constraint less
       0.000ns skew requirement (totaling -0.019ns) by 0.304ns
 
  Physical Path Details:
 
-      Data path lcd_write_inst/SLICE_493 to lcd_write_inst/SLICE_493:
+      Data path SLICE_504 to SLICE_504:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R18C10A.CLK to     R18C10A.Q0 lcd_write_inst/SLICE_493 (from sys_clk_50MHz)
-ROUTE         1     0.152     R18C10A.Q0 to     R18C10A.M1 lcd_write_inst/n134 (to sys_clk_50MHz)
+REG_DEL     ---     0.133     R13C8A.CLK to      R13C8A.Q0 SLICE_504 (from sys_clk_50MHz)
+ROUTE         1     0.152      R13C8A.Q0 to      R13C8A.M1 lcd_write_inst/n134 (to sys_clk_50MHz)
                   --------
                     0.285   (46.7% logic, 53.3% route), 1 logic levels.
 
  Clock Skew Details: 
 
-      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_493:
+      Source Clock Path pll_u1/PLLInst_0 to SLICE_504:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C10A.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R13C8A.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_493:
+      Destination Clock Path pll_u1/PLLInst_0 to SLICE_504:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C10A.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R13C8A.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
@@ -823,34 +823,77 @@ Passed: The following path meets requirements by 0.304ns
 
  Constraint Details:
 
-      0.285ns physical path delay lcd_write_inst/SLICE_767 to lcd_write_inst/SLICE_767 meets
+      0.285ns physical path delay lcd_write_inst/SLICE_499 to lcd_write_inst/SLICE_499 meets
      -0.019ns M_HLD and
       0.000ns delay constraint less
       0.000ns skew requirement (totaling -0.019ns) by 0.304ns
 
  Physical Path Details:
 
-      Data path lcd_write_inst/SLICE_767 to lcd_write_inst/SLICE_767:
+      Data path lcd_write_inst/SLICE_499 to lcd_write_inst/SLICE_499:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R18C10B.CLK to     R18C10B.Q0 lcd_write_inst/SLICE_767 (from sys_clk_50MHz)
-ROUTE         1     0.152     R18C10B.Q0 to     R18C10B.M1 lcd_write_inst/n132 (to sys_clk_50MHz)
+REG_DEL     ---     0.133     R13C9B.CLK to      R13C9B.Q0 lcd_write_inst/SLICE_499 (from sys_clk_50MHz)
+ROUTE         1     0.152      R13C9B.Q0 to      R13C9B.M1 lcd_write_inst/n132 (to sys_clk_50MHz)
                   --------
                     0.285   (46.7% logic, 53.3% route), 1 logic levels.
 
  Clock Skew Details: 
 
-      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_767:
+      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_499:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C10B.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R13C9B.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_767:
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_499:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C10B.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R13C9B.CLK sys_clk_50MHz
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_write_inst/cnt1_FSM_i12  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_write_inst/cnt1_FSM_i13  (to sys_clk_50MHz +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay lcd_write_inst/SLICE_505 to lcd_write_inst/SLICE_505 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path lcd_write_inst/SLICE_505 to lcd_write_inst/SLICE_505:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R15C9B.CLK to      R15C9B.Q0 lcd_write_inst/SLICE_505 (from sys_clk_50MHz)
+ROUTE         1     0.152      R15C9B.Q0 to      R15C9B.M1 lcd_write_inst/n124 (to sys_clk_50MHz)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_505:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     0.668     LPLL.CLKOP to     R15C9B.CLK sys_clk_50MHz
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_505:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     0.668     LPLL.CLKOP to     R15C9B.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
@@ -866,77 +909,34 @@ Passed: The following path meets requirements by 0.304ns
 
  Constraint Details:
 
-      0.285ns physical path delay lcd_write_inst/SLICE_707 to lcd_write_inst/SLICE_707 meets
+      0.285ns physical path delay lcd_write_inst/SLICE_712 to lcd_write_inst/SLICE_712 meets
      -0.019ns M_HLD and
       0.000ns delay constraint less
       0.000ns skew requirement (totaling -0.019ns) by 0.304ns
 
  Physical Path Details:
 
-      Data path lcd_write_inst/SLICE_707 to lcd_write_inst/SLICE_707:
+      Data path lcd_write_inst/SLICE_712 to lcd_write_inst/SLICE_712:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R19C11A.CLK to     R19C11A.Q0 lcd_write_inst/SLICE_707 (from sys_clk_50MHz)
-ROUTE         1     0.152     R19C11A.Q0 to     R19C11A.M1 lcd_write_inst/n128 (to sys_clk_50MHz)
+REG_DEL     ---     0.133     R14C8C.CLK to      R14C8C.Q0 lcd_write_inst/SLICE_712 (from sys_clk_50MHz)
+ROUTE         1     0.152      R14C8C.Q0 to      R14C8C.M1 lcd_write_inst/n128 (to sys_clk_50MHz)
                   --------
                     0.285   (46.7% logic, 53.3% route), 1 logic levels.
 
  Clock Skew Details: 
 
-      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_707:
+      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_712:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R19C11A.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R14C8C.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_707:
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_712:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R19C11A.CLK sys_clk_50MHz
-                  --------
-                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 0.304ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/cnt_set_windows_FSM_i0_i0  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/cnt_set_windows_FSM_i0_i1  (to sys_clk_50MHz +)
-
-   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
-
- Constraint Details:
-
-      0.285ns physical path delay lcd_show_char_inst/SLICE_611 to lcd_show_char_inst/SLICE_611 meets
-     -0.019ns M_HLD and
-      0.000ns delay constraint less
-      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_611 to lcd_show_char_inst/SLICE_611:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R15C15D.CLK to     R15C15D.Q0 lcd_show_char_inst/SLICE_611 (from sys_clk_50MHz)
-ROUTE         1     0.152     R15C15D.Q0 to     R15C15D.M1 lcd_show_char_inst/n445 (to sys_clk_50MHz)
-                  --------
-                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_611:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15D.CLK sys_clk_50MHz
-                  --------
-                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_611:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15D.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R14C8C.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
@@ -952,34 +952,120 @@ Passed: The following path meets requirements by 0.304ns
 
  Constraint Details:
 
-      0.285ns physical path delay lcd_write_inst/SLICE_742 to lcd_write_inst/SLICE_742 meets
+      0.285ns physical path delay lcd_write_inst/SLICE_738 to lcd_write_inst/SLICE_738 meets
      -0.019ns M_HLD and
       0.000ns delay constraint less
       0.000ns skew requirement (totaling -0.019ns) by 0.304ns
 
  Physical Path Details:
 
-      Data path lcd_write_inst/SLICE_742 to lcd_write_inst/SLICE_742:
+      Data path lcd_write_inst/SLICE_738 to lcd_write_inst/SLICE_738:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R18C10D.CLK to     R18C10D.Q0 lcd_write_inst/SLICE_742 (from sys_clk_50MHz)
-ROUTE         1     0.152     R18C10D.Q0 to     R18C10D.M1 lcd_write_inst/n130 (to sys_clk_50MHz)
+REG_DEL     ---     0.133     R14C9A.CLK to      R14C9A.Q0 lcd_write_inst/SLICE_738 (from sys_clk_50MHz)
+ROUTE         1     0.152      R14C9A.Q0 to      R14C9A.M1 lcd_write_inst/n130 (to sys_clk_50MHz)
                   --------
                     0.285   (46.7% logic, 53.3% route), 1 logic levels.
 
  Clock Skew Details: 
 
-      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_742:
+      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_738:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C10D.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R14C9A.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_742:
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_738:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R18C10D.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to     R14C9A.CLK sys_clk_50MHz
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_write_inst/cnt1_FSM_i10  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_write_inst/cnt1_FSM_i11  (to sys_clk_50MHz +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay lcd_write_inst/SLICE_500 to lcd_write_inst/SLICE_500 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path lcd_write_inst/SLICE_500 to lcd_write_inst/SLICE_500:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R14C9C.CLK to      R14C9C.Q0 lcd_write_inst/SLICE_500 (from sys_clk_50MHz)
+ROUTE         1     0.152      R14C9C.Q0 to      R14C9C.M1 lcd_write_inst/n126 (to sys_clk_50MHz)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_500:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     0.668     LPLL.CLKOP to     R14C9C.CLK sys_clk_50MHz
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_write_inst/SLICE_500:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     0.668     LPLL.CLKOP to     R14C9C.CLK sys_clk_50MHz
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lcd_show_char_inst/cnt_set_windows_FSM_i0_i0  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/cnt_set_windows_FSM_i0_i1  (to sys_clk_50MHz +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay lcd_show_char_inst/SLICE_615 to lcd_show_char_inst/SLICE_615 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path lcd_show_char_inst/SLICE_615 to lcd_show_char_inst/SLICE_615:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R15C12B.CLK to     R15C12B.Q0 lcd_show_char_inst/SLICE_615 (from sys_clk_50MHz)
+ROUTE         1     0.152     R15C12B.Q0 to     R15C12B.M1 lcd_show_char_inst/n395 (to sys_clk_50MHz)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_615:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     0.668     LPLL.CLKOP to    R15C12B.CLK sys_clk_50MHz
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_615:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       130     0.668     LPLL.CLKOP to    R15C12B.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
@@ -988,41 +1074,41 @@ Passed: The following path meets requirements by 0.306ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              lcd_write_inst/state_FSM_i0  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_write_inst/wr_done_101  (to sys_clk_50MHz +)
+   Source:         FF         Q              lcd_write_inst/wr_done_101  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/the1_wr_done_177  (to sys_clk_50MHz +)
 
    Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
 
  Constraint Details:
 
-      0.287ns physical path delay SLICE_763 to SLICE_135 meets
+      0.287ns physical path delay SLICE_132 to SLICE_132 meets
      -0.019ns M_HLD and
       0.000ns delay constraint less
       0.000ns skew requirement (totaling -0.019ns) by 0.306ns
 
  Physical Path Details:
 
-      Data path SLICE_763 to SLICE_135:
+      Data path SLICE_132 to SLICE_132:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R13C12B.CLK to     R13C12B.Q0 SLICE_763 (from sys_clk_50MHz)
-ROUTE         3     0.154     R13C12B.Q0 to     R13C12A.M0 lcd_write_inst/state_3 (to sys_clk_50MHz)
+REG_DEL     ---     0.133    R13C12C.CLK to     R13C12C.Q0 SLICE_132 (from sys_clk_50MHz)
+ROUTE         6     0.154     R13C12C.Q0 to     R13C12C.M1 wr_done (to sys_clk_50MHz)
                   --------
                     0.287   (46.3% logic, 53.7% route), 1 logic levels.
 
  Clock Skew Details: 
 
-      Source Clock Path pll_u1/PLLInst_0 to SLICE_763:
+      Source Clock Path pll_u1/PLLInst_0 to SLICE_132:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R13C12B.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to    R13C12C.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
-      Destination Clock Path pll_u1/PLLInst_0 to SLICE_135:
+      Destination Clock Path pll_u1/PLLInst_0 to SLICE_132:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R13C12A.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to    R13C12C.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
@@ -1031,127 +1117,41 @@ Passed: The following path meets requirements by 0.306ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              lcd_show_char_inst/cnt_set_windows_FSM_i0_i12  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/cnt_set_windows_FSM_i0_i13  (to sys_clk_50MHz +)
+   Source:         FF         Q              lcd_show_char_inst/cnt_set_windows_FSM_i0_i1  (from sys_clk_50MHz +)
+   Destination:    FF         Data in        lcd_show_char_inst/cnt_set_windows_FSM_i0_i2  (to sys_clk_50MHz +)
 
    Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
 
  Constraint Details:
 
-      0.287ns physical path delay lcd_show_char_inst/SLICE_518 to lcd_show_char_inst/SLICE_518 meets
+      0.287ns physical path delay lcd_show_char_inst/SLICE_615 to lcd_show_char_inst/SLICE_524 meets
      -0.019ns M_HLD and
       0.000ns delay constraint less
       0.000ns skew requirement (totaling -0.019ns) by 0.306ns
 
  Physical Path Details:
 
-      Data path lcd_show_char_inst/SLICE_518 to lcd_show_char_inst/SLICE_518:
+      Data path lcd_show_char_inst/SLICE_615 to lcd_show_char_inst/SLICE_524:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R15C15C.CLK to     R15C15C.Q0 lcd_show_char_inst/SLICE_518 (from sys_clk_50MHz)
-ROUTE         2     0.154     R15C15C.Q0 to     R15C15C.M1 lcd_show_char_inst/n433 (to sys_clk_50MHz)
+REG_DEL     ---     0.133    R15C12B.CLK to     R15C12B.Q1 lcd_show_char_inst/SLICE_615 (from sys_clk_50MHz)
+ROUTE         2     0.154     R15C12B.Q1 to     R15C12C.M0 lcd_show_char_inst/n394 (to sys_clk_50MHz)
                   --------
                     0.287   (46.3% logic, 53.7% route), 1 logic levels.
 
  Clock Skew Details: 
 
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_518:
+      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_615:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15C.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to    R15C12B.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_518:
+      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_524:
 
    Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15C.CLK sys_clk_50MHz
-                  --------
-                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 0.306ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/cnt_set_windows_FSM_i0_i15  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/cnt_set_windows_FSM_i0_i0  (to sys_clk_50MHz +)
-
-   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
-
- Constraint Details:
-
-      0.287ns physical path delay lcd_show_char_inst/SLICE_439 to lcd_show_char_inst/SLICE_611 meets
-     -0.019ns M_HLD and
-      0.000ns delay constraint less
-      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_439 to lcd_show_char_inst/SLICE_611:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R15C15B.CLK to     R15C15B.Q1 lcd_show_char_inst/SLICE_439 (from sys_clk_50MHz)
-ROUTE         2     0.154     R15C15B.Q1 to     R15C15D.M0 lcd_show_char_inst/n430 (to sys_clk_50MHz)
-                  --------
-                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_439:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15B.CLK sys_clk_50MHz
-                  --------
-                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_611:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15D.CLK sys_clk_50MHz
-                  --------
-                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
-
-
-Passed: The following path meets requirements by 0.306ns
-
- Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
-
-   Source:         FF         Q              lcd_show_char_inst/cnt_set_windows_FSM_i0_i14  (from sys_clk_50MHz +)
-   Destination:    FF         Data in        lcd_show_char_inst/cnt_set_windows_FSM_i0_i15  (to sys_clk_50MHz +)
-
-   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
-
- Constraint Details:
-
-      0.287ns physical path delay lcd_show_char_inst/SLICE_439 to lcd_show_char_inst/SLICE_439 meets
-     -0.019ns M_HLD and
-      0.000ns delay constraint less
-      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
-
- Physical Path Details:
-
-      Data path lcd_show_char_inst/SLICE_439 to lcd_show_char_inst/SLICE_439:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.133    R15C15B.CLK to     R15C15B.Q0 lcd_show_char_inst/SLICE_439 (from sys_clk_50MHz)
-ROUTE         2     0.154     R15C15B.Q0 to     R15C15B.M1 lcd_show_char_inst/n431 (to sys_clk_50MHz)
-                  --------
-                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
-
- Clock Skew Details: 
-
-      Source Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_439:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15B.CLK sys_clk_50MHz
-                  --------
-                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
-
-      Destination Clock Path pll_u1/PLLInst_0 to lcd_show_char_inst/SLICE_439:
-
-   Name    Fanout   Delay (ns)          Site               Resource
-ROUTE       134     0.668     LPLL.CLKOP to    R15C15B.CLK sys_clk_50MHz
+ROUTE       130     0.668     LPLL.CLKOP to    R15C12C.CLK sys_clk_50MHz
                   --------
                     0.668   (0.0% logic, 100.0% route), 0 logic levels.
 
@@ -1187,7 +1187,7 @@ Found 2 clocks:
 Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 1
    No transfer within this clock domain is found
 
-Clock Domain: sys_clk_50MHz   Source: pll_u1/PLLInst_0.CLKOP   Loads: 134
+Clock Domain: sys_clk_50MHz   Source: pll_u1/PLLInst_0.CLKOP   Loads: 130
    Covered under: FREQUENCY NET "sys_clk_50MHz" 48.000000 MHz ;
 
 
@@ -1197,7 +1197,7 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 7480 paths, 2 nets, and 6140 connections (99.89% coverage)
+Constraints cover 7360 paths, 2 nets, and 6066 connections (99.88% coverage)
 
 
 

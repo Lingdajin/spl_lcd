@@ -1,8 +1,8 @@
 <top name = "spi_lcd"  library = "work"  arch = ""  entry = "Verilog">
 
 <clocks>
-    <clockitem name = "sys_clk_50MHz"  type = "net" />
     <clockitem name = "sys_clk"  type = "port" />
+    <clockitem name = "sys_clk_50MHz"  type = "net" />
 </clocks>
 
 <!--
@@ -35,7 +35,7 @@
     </pins>
 
     <!--
-        Instances in netlist: 339
+        Instances in netlist: 352
     -->
 
     <instance  name = "pll_u1/PLLInst_0"  library = "work"  arch = ""  type = "comb">
@@ -12878,7 +12878,7 @@
         </nets>
     </instance>
 
-    <instance  name = "show_string_number_ctrl_inst/cnt1_1__I_0_46"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "show_string_number_ctrl_inst/cnt1_1__I_0_85"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d1[1]"  direction = "in"  />
         <pitem  name = "d1[0]"  direction = "in"  />
@@ -12899,7 +12899,7 @@
         </nets>
     </instance>
 
-    <instance  name = "show_string_number_ctrl_inst/show_char_flag_40"  library = "work"  arch = ""  type = "reg">
+    <instance  name = "show_string_number_ctrl_inst/show_char_flag_79"  library = "work"  arch = ""  type = "reg">
         <pins>
         <pitem  name = "s"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -13105,11 +13105,11 @@
         <pitem  name = "b[7]"  direction = "in"  />
         <pitem  name = "b[6]"  direction = "in"  />
         <pitem  name = "b[5]"  direction = "in"  />
-        <pitem  name = "b[3]"  direction = "in"  />
-        <pitem  name = "b[2]"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
         <pitem  name = "b[1]"  direction = "in"  />
         <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
         <pitem  name = "a[4]"  direction = "in"  />
         <pitem  name = "a[3]"  direction = "in"  />
         <pitem  name = "a[2]"  direction = "in"  />
@@ -13220,7 +13220,7 @@
         </nets>
     </instance>
 
-    <instance  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__I_0_45"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__I_0_84"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d1[4]"  direction = "in"  />
         <pitem  name = "d1[3]"  direction = "in"  />
@@ -13310,138 +13310,376 @@
         </nets>
     </instance>
 
-    <instance  name = "show_string_number_ctrl_inst/mux_25"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "show_string_number_ctrl_inst/equal_25"  library = "work"  arch = ""  type = "comb">
         <pins>
-        <pitem  name = "data[223]"  direction = "in"  />
-        <pitem  name = "data[222]"  direction = "in"  />
-        <pitem  name = "data[221]"  direction = "in"  />
-        <pitem  name = "data[220]"  direction = "in"  />
-        <pitem  name = "data[219]"  direction = "in"  />
-        <pitem  name = "data[218]"  direction = "in"  />
-        <pitem  name = "data[217]"  direction = "in"  />
-        <pitem  name = "data[216]"  direction = "in"  />
-        <pitem  name = "data[215]"  direction = "in"  />
-        <pitem  name = "data[214]"  direction = "in"  />
-        <pitem  name = "data[213]"  direction = "in"  />
-        <pitem  name = "data[212]"  direction = "in"  />
-        <pitem  name = "data[211]"  direction = "in"  />
-        <pitem  name = "data[210]"  direction = "in"  />
-        <pitem  name = "data[209]"  direction = "in"  />
-        <pitem  name = "data[208]"  direction = "in"  />
-        <pitem  name = "data[207]"  direction = "in"  />
-        <pitem  name = "data[206]"  direction = "in"  />
-        <pitem  name = "data[205]"  direction = "in"  />
-        <pitem  name = "data[204]"  direction = "in"  />
-        <pitem  name = "data[203]"  direction = "in"  />
-        <pitem  name = "data[202]"  direction = "in"  />
-        <pitem  name = "data[201]"  direction = "in"  />
-        <pitem  name = "data[200]"  direction = "in"  />
-        <pitem  name = "data[199]"  direction = "in"  />
-        <pitem  name = "data[198]"  direction = "in"  />
-        <pitem  name = "data[197]"  direction = "in"  />
-        <pitem  name = "data[196]"  direction = "in"  />
-        <pitem  name = "data[195]"  direction = "in"  />
-        <pitem  name = "data[194]"  direction = "in"  />
-        <pitem  name = "data[193]"  direction = "in"  />
-        <pitem  name = "data[192]"  direction = "in"  />
-        <pitem  name = "data[191]"  direction = "in"  />
-        <pitem  name = "data[190]"  direction = "in"  />
-        <pitem  name = "data[189]"  direction = "in"  />
-        <pitem  name = "data[188]"  direction = "in"  />
-        <pitem  name = "data[187]"  direction = "in"  />
-        <pitem  name = "data[186]"  direction = "in"  />
-        <pitem  name = "data[185]"  direction = "in"  />
-        <pitem  name = "data[184]"  direction = "in"  />
-        <pitem  name = "data[183]"  direction = "in"  />
-        <pitem  name = "data[182]"  direction = "in"  />
-        <pitem  name = "data[181]"  direction = "in"  />
-        <pitem  name = "data[180]"  direction = "in"  />
-        <pitem  name = "data[179]"  direction = "in"  />
-        <pitem  name = "data[178]"  direction = "in"  />
-        <pitem  name = "data[177]"  direction = "in"  />
-        <pitem  name = "data[176]"  direction = "in"  />
-        <pitem  name = "data[175]"  direction = "in"  />
-        <pitem  name = "data[174]"  direction = "in"  />
-        <pitem  name = "data[173]"  direction = "in"  />
-        <pitem  name = "data[172]"  direction = "in"  />
-        <pitem  name = "data[171]"  direction = "in"  />
-        <pitem  name = "data[170]"  direction = "in"  />
-        <pitem  name = "data[169]"  direction = "in"  />
-        <pitem  name = "data[168]"  direction = "in"  />
-        <pitem  name = "data[167]"  direction = "in"  />
-        <pitem  name = "data[166]"  direction = "in"  />
-        <pitem  name = "data[165]"  direction = "in"  />
-        <pitem  name = "data[164]"  direction = "in"  />
-        <pitem  name = "data[163]"  direction = "in"  />
-        <pitem  name = "data[162]"  direction = "in"  />
-        <pitem  name = "data[161]"  direction = "in"  />
-        <pitem  name = "data[160]"  direction = "in"  />
-        <pitem  name = "data[159]"  direction = "in"  />
-        <pitem  name = "data[158]"  direction = "in"  />
-        <pitem  name = "data[157]"  direction = "in"  />
-        <pitem  name = "data[156]"  direction = "in"  />
-        <pitem  name = "data[155]"  direction = "in"  />
-        <pitem  name = "data[154]"  direction = "in"  />
-        <pitem  name = "data[153]"  direction = "in"  />
-        <pitem  name = "data[152]"  direction = "in"  />
-        <pitem  name = "data[151]"  direction = "in"  />
-        <pitem  name = "data[150]"  direction = "in"  />
-        <pitem  name = "data[149]"  direction = "in"  />
-        <pitem  name = "data[148]"  direction = "in"  />
-        <pitem  name = "data[147]"  direction = "in"  />
-        <pitem  name = "data[146]"  direction = "in"  />
-        <pitem  name = "data[145]"  direction = "in"  />
-        <pitem  name = "data[144]"  direction = "in"  />
-        <pitem  name = "data[143]"  direction = "in"  />
-        <pitem  name = "data[142]"  direction = "in"  />
-        <pitem  name = "data[141]"  direction = "in"  />
-        <pitem  name = "data[140]"  direction = "in"  />
-        <pitem  name = "data[139]"  direction = "in"  />
-        <pitem  name = "data[138]"  direction = "in"  />
-        <pitem  name = "data[137]"  direction = "in"  />
-        <pitem  name = "data[136]"  direction = "in"  />
-        <pitem  name = "data[135]"  direction = "in"  />
-        <pitem  name = "data[134]"  direction = "in"  />
-        <pitem  name = "data[133]"  direction = "in"  />
-        <pitem  name = "data[132]"  direction = "in"  />
-        <pitem  name = "data[131]"  direction = "in"  />
-        <pitem  name = "data[128]"  direction = "in"  />
-        <pitem  name = "data[126]"  direction = "in"  />
-        <pitem  name = "data[124]"  direction = "in"  />
-        <pitem  name = "data[123]"  direction = "in"  />
-        <pitem  name = "data[122]"  direction = "in"  />
-        <pitem  name = "data[121]"  direction = "in"  />
-        <pitem  name = "data[120]"  direction = "in"  />
-        <pitem  name = "data[117]"  direction = "in"  />
-        <pitem  name = "data[115]"  direction = "in"  />
-        <pitem  name = "data[113]"  direction = "in"  />
-        <pitem  name = "data[112]"  direction = "in"  />
-        <pitem  name = "data[110]"  direction = "in"  />
-        <pitem  name = "data[109]"  direction = "in"  />
-        <pitem  name = "data[108]"  direction = "in"  />
-        <pitem  name = "data[107]"  direction = "in"  />
-        <pitem  name = "data[106]"  direction = "in"  />
-        <pitem  name = "data[103]"  direction = "in"  />
-        <pitem  name = "data[102]"  direction = "in"  />
-        <pitem  name = "data[101]"  direction = "in"  />
-        <pitem  name = "data[99]"  direction = "in"  />
-        <pitem  name = "data[98]"  direction = "in"  />
-        <pitem  name = "data[96]"  direction = "in"  />
-        <pitem  name = "data[94]"  direction = "in"  />
-        <pitem  name = "data[93]"  direction = "in"  />
-        <pitem  name = "data[89]"  direction = "in"  />
-        <pitem  name = "data[87]"  direction = "in"  />
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n54"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_26"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n55"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_27"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n56"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_28"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n57"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_29"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n58"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_30"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n59"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_31"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n60"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_32"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n61"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_33"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n62"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_34"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n63"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_35"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n64"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/equal_36"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n65"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/reduce_nor_37"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "a[11]"  direction = "in"  />
+        <pitem  name = "a[10]"  direction = "in"  />
+        <pitem  name = "a[9]"  direction = "in"  />
+        <pitem  name = "a[8]"  direction = "in"  />
+        <pitem  name = "a[7]"  direction = "in"  />
+        <pitem  name = "a[6]"  direction = "in"  />
+        <pitem  name = "a[5]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "show_string_number_ctrl_inst/n54"  />
+        <nitem  name = "show_string_number_ctrl_inst/n55"  />
+        <nitem  name = "show_string_number_ctrl_inst/n56"  />
+        <nitem  name = "show_string_number_ctrl_inst/n57"  />
+        <nitem  name = "show_string_number_ctrl_inst/n58"  />
+        <nitem  name = "show_string_number_ctrl_inst/n59"  />
+        <nitem  name = "show_string_number_ctrl_inst/n60"  />
+        <nitem  name = "show_string_number_ctrl_inst/n61"  />
+        <nitem  name = "show_string_number_ctrl_inst/n62"  />
+        <nitem  name = "show_string_number_ctrl_inst/n63"  />
+        <nitem  name = "show_string_number_ctrl_inst/n64"  />
+        <nitem  name = "show_string_number_ctrl_inst/n65"  />
+        <nitem  name = "show_string_number_ctrl_inst/n66"  />
+        </nets>
+    </instance>
+
+    <instance  name = "show_string_number_ctrl_inst/select_38"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "data[90]"  direction = "in"  />
+        <pitem  name = "data[88]"  direction = "in"  />
         <pitem  name = "data[86]"  direction = "in"  />
+        <pitem  name = "data[85]"  direction = "in"  />
         <pitem  name = "data[84]"  direction = "in"  />
-        <pitem  name = "data[83]"  direction = "in"  />
         <pitem  name = "data[82]"  direction = "in"  />
         <pitem  name = "data[81]"  direction = "in"  />
         <pitem  name = "data[80]"  direction = "in"  />
-        <pitem  name = "data[79]"  direction = "in"  />
         <pitem  name = "data[78]"  direction = "in"  />
         <pitem  name = "data[75]"  direction = "in"  />
         <pitem  name = "data[74]"  direction = "in"  />
-        <pitem  name = "data[73]"  direction = "in"  />
         <pitem  name = "data[71]"  direction = "in"  />
         <pitem  name = "data[70]"  direction = "in"  />
         <pitem  name = "data[68]"  direction = "in"  />
@@ -13449,93 +13687,87 @@
         <pitem  name = "data[64]"  direction = "in"  />
         <pitem  name = "data[63]"  direction = "in"  />
         <pitem  name = "data[61]"  direction = "in"  />
-        <pitem  name = "data[59]"  direction = "in"  />
-        <pitem  name = "data[58]"  direction = "in"  />
-        <pitem  name = "data[56]"  direction = "in"  />
+        <pitem  name = "data[60]"  direction = "in"  />
+        <pitem  name = "data[55]"  direction = "in"  />
         <pitem  name = "data[54]"  direction = "in"  />
         <pitem  name = "data[53]"  direction = "in"  />
+        <pitem  name = "data[52]"  direction = "in"  />
+        <pitem  name = "data[51]"  direction = "in"  />
+        <pitem  name = "data[50]"  direction = "in"  />
+        <pitem  name = "data[49]"  direction = "in"  />
         <pitem  name = "data[48]"  direction = "in"  />
         <pitem  name = "data[45]"  direction = "in"  />
-        <pitem  name = "data[41]"  direction = "in"  />
         <pitem  name = "data[40]"  direction = "in"  />
         <pitem  name = "data[39]"  direction = "in"  />
-        <pitem  name = "data[38]"  direction = "in"  />
-        <pitem  name = "data[37]"  direction = "in"  />
-        <pitem  name = "data[36]"  direction = "in"  />
-        <pitem  name = "data[35]"  direction = "in"  />
         <pitem  name = "data[33]"  direction = "in"  />
-        <pitem  name = "data[32]"  direction = "in"  />
+        <pitem  name = "data[31]"  direction = "in"  />
+        <pitem  name = "data[30]"  direction = "in"  />
+        <pitem  name = "data[28]"  direction = "in"  />
         <pitem  name = "data[26]"  direction = "in"  />
         <pitem  name = "data[25]"  direction = "in"  />
         <pitem  name = "data[22]"  direction = "in"  />
         <pitem  name = "data[21]"  direction = "in"  />
         <pitem  name = "data[19]"  direction = "in"  />
         <pitem  name = "data[18]"  direction = "in"  />
+        <pitem  name = "data[17]"  direction = "in"  />
         <pitem  name = "data[15]"  direction = "in"  />
         <pitem  name = "data[14]"  direction = "in"  />
+        <pitem  name = "data[13]"  direction = "in"  />
         <pitem  name = "data[12]"  direction = "in"  />
         <pitem  name = "data[11]"  direction = "in"  />
         <pitem  name = "data[10]"  direction = "in"  />
+        <pitem  name = "data[9]"  direction = "in"  />
         <pitem  name = "data[8]"  direction = "in"  />
         <pitem  name = "data[6]"  direction = "in"  />
+        <pitem  name = "data[5]"  direction = "in"  />
         <pitem  name = "data[4]"  direction = "in"  />
+        <pitem  name = "data[3]"  direction = "in"  />
         <pitem  name = "data[2]"  direction = "in"  />
         <pitem  name = "data[1]"  direction = "in"  />
         <pitem  name = "data[0]"  direction = "in"  />
-        <pitem  name = "data[130]"  direction = "in"  />
-        <pitem  name = "data[129]"  direction = "in"  />
-        <pitem  name = "data[127]"  direction = "in"  />
-        <pitem  name = "data[125]"  direction = "in"  />
-        <pitem  name = "data[119]"  direction = "in"  />
-        <pitem  name = "data[118]"  direction = "in"  />
-        <pitem  name = "data[116]"  direction = "in"  />
-        <pitem  name = "data[114]"  direction = "in"  />
-        <pitem  name = "data[111]"  direction = "in"  />
-        <pitem  name = "data[105]"  direction = "in"  />
-        <pitem  name = "data[104]"  direction = "in"  />
-        <pitem  name = "data[100]"  direction = "in"  />
-        <pitem  name = "data[97]"  direction = "in"  />
-        <pitem  name = "data[95]"  direction = "in"  />
-        <pitem  name = "data[92]"  direction = "in"  />
-        <pitem  name = "data[91]"  direction = "in"  />
-        <pitem  name = "data[90]"  direction = "in"  />
-        <pitem  name = "data[88]"  direction = "in"  />
-        <pitem  name = "data[85]"  direction = "in"  />
+        <pitem  name = "data[89]"  direction = "in"  />
+        <pitem  name = "data[87]"  direction = "in"  />
+        <pitem  name = "data[83]"  direction = "in"  />
+        <pitem  name = "data[79]"  direction = "in"  />
         <pitem  name = "data[77]"  direction = "in"  />
         <pitem  name = "data[76]"  direction = "in"  />
+        <pitem  name = "data[73]"  direction = "in"  />
         <pitem  name = "data[72]"  direction = "in"  />
         <pitem  name = "data[69]"  direction = "in"  />
         <pitem  name = "data[66]"  direction = "in"  />
         <pitem  name = "data[65]"  direction = "in"  />
         <pitem  name = "data[62]"  direction = "in"  />
-        <pitem  name = "data[60]"  direction = "in"  />
+        <pitem  name = "data[59]"  direction = "in"  />
+        <pitem  name = "data[58]"  direction = "in"  />
         <pitem  name = "data[57]"  direction = "in"  />
-        <pitem  name = "data[55]"  direction = "in"  />
-        <pitem  name = "data[52]"  direction = "in"  />
-        <pitem  name = "data[51]"  direction = "in"  />
-        <pitem  name = "data[50]"  direction = "in"  />
-        <pitem  name = "data[49]"  direction = "in"  />
+        <pitem  name = "data[56]"  direction = "in"  />
         <pitem  name = "data[47]"  direction = "in"  />
         <pitem  name = "data[46]"  direction = "in"  />
         <pitem  name = "data[44]"  direction = "in"  />
         <pitem  name = "data[43]"  direction = "in"  />
         <pitem  name = "data[42]"  direction = "in"  />
+        <pitem  name = "data[41]"  direction = "in"  />
+        <pitem  name = "data[38]"  direction = "in"  />
+        <pitem  name = "data[37]"  direction = "in"  />
+        <pitem  name = "data[36]"  direction = "in"  />
+        <pitem  name = "data[35]"  direction = "in"  />
         <pitem  name = "data[34]"  direction = "in"  />
-        <pitem  name = "data[31]"  direction = "in"  />
-        <pitem  name = "data[30]"  direction = "in"  />
+        <pitem  name = "data[32]"  direction = "in"  />
         <pitem  name = "data[29]"  direction = "in"  />
-        <pitem  name = "data[28]"  direction = "in"  />
         <pitem  name = "data[27]"  direction = "in"  />
         <pitem  name = "data[24]"  direction = "in"  />
         <pitem  name = "data[23]"  direction = "in"  />
         <pitem  name = "data[20]"  direction = "in"  />
-        <pitem  name = "data[17]"  direction = "in"  />
         <pitem  name = "data[16]"  direction = "in"  />
-        <pitem  name = "data[13]"  direction = "in"  />
-        <pitem  name = "data[9]"  direction = "in"  />
         <pitem  name = "data[7]"  direction = "in"  />
-        <pitem  name = "data[5]"  direction = "in"  />
-        <pitem  name = "data[3]"  direction = "in"  />
+        <pitem  name = "sel[12]"  direction = "in"  />
+        <pitem  name = "sel[11]"  direction = "in"  />
+        <pitem  name = "sel[10]"  direction = "in"  />
+        <pitem  name = "sel[9]"  direction = "in"  />
+        <pitem  name = "sel[8]"  direction = "in"  />
+        <pitem  name = "sel[7]"  direction = "in"  />
+        <pitem  name = "sel[6]"  direction = "in"  />
+        <pitem  name = "sel[5]"  direction = "in"  />
         <pitem  name = "sel[4]"  direction = "in"  />
         <pitem  name = "sel[3]"  direction = "in"  />
         <pitem  name = "sel[2]"  direction = "in"  />
@@ -13553,11 +13785,19 @@
         <nets>
         <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n54"  />
+        <nitem  name = "show_string_number_ctrl_inst/n55"  />
+        <nitem  name = "show_string_number_ctrl_inst/n56"  />
+        <nitem  name = "show_string_number_ctrl_inst/n57"  />
+        <nitem  name = "show_string_number_ctrl_inst/n58"  />
+        <nitem  name = "show_string_number_ctrl_inst/n59"  />
+        <nitem  name = "show_string_number_ctrl_inst/n60"  />
+        <nitem  name = "show_string_number_ctrl_inst/n61"  />
+        <nitem  name = "show_string_number_ctrl_inst/n62"  />
+        <nitem  name = "show_string_number_ctrl_inst/n63"  />
+        <nitem  name = "show_string_number_ctrl_inst/n64"  />
+        <nitem  name = "show_string_number_ctrl_inst/n65"  />
+        <nitem  name = "show_string_number_ctrl_inst/n66"  />
         <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_515[6]"  />
         <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_515[5]"  />
         <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_515[4]"  />
@@ -13686,296 +13926,133 @@
         </nets>
     </instance>
 
-    <instance  name = "show_string_number_ctrl_inst/mux_30"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "show_string_number_ctrl_inst/select_56"  library = "work"  arch = ""  type = "comb">
         <pins>
-        <pitem  name = "data[287]"  direction = "in"  />
-        <pitem  name = "data[286]"  direction = "in"  />
-        <pitem  name = "data[285]"  direction = "in"  />
-        <pitem  name = "data[284]"  direction = "in"  />
-        <pitem  name = "data[283]"  direction = "in"  />
-        <pitem  name = "data[282]"  direction = "in"  />
-        <pitem  name = "data[281]"  direction = "in"  />
-        <pitem  name = "data[280]"  direction = "in"  />
-        <pitem  name = "data[279]"  direction = "in"  />
-        <pitem  name = "data[278]"  direction = "in"  />
-        <pitem  name = "data[277]"  direction = "in"  />
-        <pitem  name = "data[276]"  direction = "in"  />
-        <pitem  name = "data[275]"  direction = "in"  />
-        <pitem  name = "data[274]"  direction = "in"  />
-        <pitem  name = "data[273]"  direction = "in"  />
-        <pitem  name = "data[272]"  direction = "in"  />
-        <pitem  name = "data[271]"  direction = "in"  />
-        <pitem  name = "data[270]"  direction = "in"  />
-        <pitem  name = "data[269]"  direction = "in"  />
-        <pitem  name = "data[268]"  direction = "in"  />
-        <pitem  name = "data[267]"  direction = "in"  />
-        <pitem  name = "data[266]"  direction = "in"  />
-        <pitem  name = "data[265]"  direction = "in"  />
-        <pitem  name = "data[264]"  direction = "in"  />
-        <pitem  name = "data[263]"  direction = "in"  />
-        <pitem  name = "data[262]"  direction = "in"  />
-        <pitem  name = "data[261]"  direction = "in"  />
-        <pitem  name = "data[260]"  direction = "in"  />
-        <pitem  name = "data[259]"  direction = "in"  />
-        <pitem  name = "data[258]"  direction = "in"  />
-        <pitem  name = "data[257]"  direction = "in"  />
-        <pitem  name = "data[256]"  direction = "in"  />
-        <pitem  name = "data[255]"  direction = "in"  />
-        <pitem  name = "data[254]"  direction = "in"  />
-        <pitem  name = "data[253]"  direction = "in"  />
-        <pitem  name = "data[252]"  direction = "in"  />
-        <pitem  name = "data[251]"  direction = "in"  />
-        <pitem  name = "data[250]"  direction = "in"  />
-        <pitem  name = "data[249]"  direction = "in"  />
-        <pitem  name = "data[248]"  direction = "in"  />
-        <pitem  name = "data[247]"  direction = "in"  />
-        <pitem  name = "data[246]"  direction = "in"  />
-        <pitem  name = "data[245]"  direction = "in"  />
-        <pitem  name = "data[244]"  direction = "in"  />
-        <pitem  name = "data[243]"  direction = "in"  />
-        <pitem  name = "data[242]"  direction = "in"  />
-        <pitem  name = "data[241]"  direction = "in"  />
-        <pitem  name = "data[240]"  direction = "in"  />
-        <pitem  name = "data[239]"  direction = "in"  />
-        <pitem  name = "data[238]"  direction = "in"  />
-        <pitem  name = "data[237]"  direction = "in"  />
-        <pitem  name = "data[236]"  direction = "in"  />
-        <pitem  name = "data[235]"  direction = "in"  />
-        <pitem  name = "data[234]"  direction = "in"  />
-        <pitem  name = "data[233]"  direction = "in"  />
-        <pitem  name = "data[232]"  direction = "in"  />
-        <pitem  name = "data[231]"  direction = "in"  />
-        <pitem  name = "data[230]"  direction = "in"  />
-        <pitem  name = "data[229]"  direction = "in"  />
-        <pitem  name = "data[228]"  direction = "in"  />
-        <pitem  name = "data[227]"  direction = "in"  />
-        <pitem  name = "data[226]"  direction = "in"  />
-        <pitem  name = "data[225]"  direction = "in"  />
-        <pitem  name = "data[224]"  direction = "in"  />
-        <pitem  name = "data[223]"  direction = "in"  />
-        <pitem  name = "data[222]"  direction = "in"  />
-        <pitem  name = "data[221]"  direction = "in"  />
-        <pitem  name = "data[220]"  direction = "in"  />
-        <pitem  name = "data[219]"  direction = "in"  />
-        <pitem  name = "data[218]"  direction = "in"  />
-        <pitem  name = "data[217]"  direction = "in"  />
-        <pitem  name = "data[216]"  direction = "in"  />
-        <pitem  name = "data[215]"  direction = "in"  />
-        <pitem  name = "data[214]"  direction = "in"  />
-        <pitem  name = "data[213]"  direction = "in"  />
-        <pitem  name = "data[212]"  direction = "in"  />
-        <pitem  name = "data[211]"  direction = "in"  />
-        <pitem  name = "data[210]"  direction = "in"  />
-        <pitem  name = "data[209]"  direction = "in"  />
-        <pitem  name = "data[208]"  direction = "in"  />
-        <pitem  name = "data[207]"  direction = "in"  />
-        <pitem  name = "data[206]"  direction = "in"  />
-        <pitem  name = "data[205]"  direction = "in"  />
-        <pitem  name = "data[204]"  direction = "in"  />
-        <pitem  name = "data[203]"  direction = "in"  />
-        <pitem  name = "data[202]"  direction = "in"  />
-        <pitem  name = "data[201]"  direction = "in"  />
-        <pitem  name = "data[200]"  direction = "in"  />
-        <pitem  name = "data[199]"  direction = "in"  />
-        <pitem  name = "data[198]"  direction = "in"  />
-        <pitem  name = "data[197]"  direction = "in"  />
-        <pitem  name = "data[196]"  direction = "in"  />
-        <pitem  name = "data[195]"  direction = "in"  />
-        <pitem  name = "data[194]"  direction = "in"  />
-        <pitem  name = "data[193]"  direction = "in"  />
-        <pitem  name = "data[192]"  direction = "in"  />
-        <pitem  name = "data[191]"  direction = "in"  />
-        <pitem  name = "data[190]"  direction = "in"  />
-        <pitem  name = "data[189]"  direction = "in"  />
-        <pitem  name = "data[188]"  direction = "in"  />
-        <pitem  name = "data[187]"  direction = "in"  />
-        <pitem  name = "data[186]"  direction = "in"  />
-        <pitem  name = "data[185]"  direction = "in"  />
-        <pitem  name = "data[184]"  direction = "in"  />
-        <pitem  name = "data[183]"  direction = "in"  />
-        <pitem  name = "data[182]"  direction = "in"  />
-        <pitem  name = "data[181]"  direction = "in"  />
-        <pitem  name = "data[180]"  direction = "in"  />
-        <pitem  name = "data[179]"  direction = "in"  />
-        <pitem  name = "data[178]"  direction = "in"  />
-        <pitem  name = "data[177]"  direction = "in"  />
-        <pitem  name = "data[176]"  direction = "in"  />
-        <pitem  name = "data[175]"  direction = "in"  />
-        <pitem  name = "data[174]"  direction = "in"  />
-        <pitem  name = "data[173]"  direction = "in"  />
-        <pitem  name = "data[172]"  direction = "in"  />
-        <pitem  name = "data[171]"  direction = "in"  />
-        <pitem  name = "data[170]"  direction = "in"  />
-        <pitem  name = "data[169]"  direction = "in"  />
-        <pitem  name = "data[167]"  direction = "in"  />
-        <pitem  name = "data[166]"  direction = "in"  />
-        <pitem  name = "data[165]"  direction = "in"  />
-        <pitem  name = "data[164]"  direction = "in"  />
-        <pitem  name = "data[163]"  direction = "in"  />
-        <pitem  name = "data[162]"  direction = "in"  />
-        <pitem  name = "data[161]"  direction = "in"  />
-        <pitem  name = "data[160]"  direction = "in"  />
-        <pitem  name = "data[159]"  direction = "in"  />
-        <pitem  name = "data[155]"  direction = "in"  />
-        <pitem  name = "data[154]"  direction = "in"  />
-        <pitem  name = "data[153]"  direction = "in"  />
-        <pitem  name = "data[152]"  direction = "in"  />
-        <pitem  name = "data[151]"  direction = "in"  />
-        <pitem  name = "data[150]"  direction = "in"  />
-        <pitem  name = "data[147]"  direction = "in"  />
-        <pitem  name = "data[146]"  direction = "in"  />
-        <pitem  name = "data[145]"  direction = "in"  />
-        <pitem  name = "data[144]"  direction = "in"  />
-        <pitem  name = "data[143]"  direction = "in"  />
-        <pitem  name = "data[142]"  direction = "in"  />
-        <pitem  name = "data[141]"  direction = "in"  />
-        <pitem  name = "data[139]"  direction = "in"  />
-        <pitem  name = "data[137]"  direction = "in"  />
-        <pitem  name = "data[136]"  direction = "in"  />
-        <pitem  name = "data[135]"  direction = "in"  />
-        <pitem  name = "data[134]"  direction = "in"  />
-        <pitem  name = "data[133]"  direction = "in"  />
-        <pitem  name = "data[132]"  direction = "in"  />
-        <pitem  name = "data[130]"  direction = "in"  />
-        <pitem  name = "data[129]"  direction = "in"  />
-        <pitem  name = "data[128]"  direction = "in"  />
-        <pitem  name = "data[127]"  direction = "in"  />
-        <pitem  name = "data[126]"  direction = "in"  />
-        <pitem  name = "data[125]"  direction = "in"  />
-        <pitem  name = "data[124]"  direction = "in"  />
-        <pitem  name = "data[123]"  direction = "in"  />
-        <pitem  name = "data[122]"  direction = "in"  />
-        <pitem  name = "data[120]"  direction = "in"  />
-        <pitem  name = "data[119]"  direction = "in"  />
-        <pitem  name = "data[118]"  direction = "in"  />
-        <pitem  name = "data[117]"  direction = "in"  />
         <pitem  name = "data[116]"  direction = "in"  />
-        <pitem  name = "data[115]"  direction = "in"  />
         <pitem  name = "data[114]"  direction = "in"  />
         <pitem  name = "data[113]"  direction = "in"  />
         <pitem  name = "data[112]"  direction = "in"  />
+        <pitem  name = "data[111]"  direction = "in"  />
         <pitem  name = "data[110]"  direction = "in"  />
         <pitem  name = "data[109]"  direction = "in"  />
         <pitem  name = "data[108]"  direction = "in"  />
         <pitem  name = "data[107]"  direction = "in"  />
         <pitem  name = "data[105]"  direction = "in"  />
+        <pitem  name = "data[104]"  direction = "in"  />
         <pitem  name = "data[103]"  direction = "in"  />
-        <pitem  name = "data[102]"  direction = "in"  />
         <pitem  name = "data[101]"  direction = "in"  />
         <pitem  name = "data[100]"  direction = "in"  />
         <pitem  name = "data[99]"  direction = "in"  />
         <pitem  name = "data[98]"  direction = "in"  />
         <pitem  name = "data[96]"  direction = "in"  />
         <pitem  name = "data[95]"  direction = "in"  />
+        <pitem  name = "data[93]"  direction = "in"  />
         <pitem  name = "data[92]"  direction = "in"  />
         <pitem  name = "data[91]"  direction = "in"  />
         <pitem  name = "data[90]"  direction = "in"  />
         <pitem  name = "data[89]"  direction = "in"  />
         <pitem  name = "data[87]"  direction = "in"  />
         <pitem  name = "data[86]"  direction = "in"  />
-        <pitem  name = "data[84]"  direction = "in"  />
         <pitem  name = "data[83]"  direction = "in"  />
         <pitem  name = "data[82]"  direction = "in"  />
         <pitem  name = "data[81]"  direction = "in"  />
         <pitem  name = "data[80]"  direction = "in"  />
         <pitem  name = "data[78]"  direction = "in"  />
-        <pitem  name = "data[77]"  direction = "in"  />
         <pitem  name = "data[76]"  direction = "in"  />
+        <pitem  name = "data[75]"  direction = "in"  />
         <pitem  name = "data[74]"  direction = "in"  />
         <pitem  name = "data[73]"  direction = "in"  />
         <pitem  name = "data[72]"  direction = "in"  />
         <pitem  name = "data[71]"  direction = "in"  />
         <pitem  name = "data[69]"  direction = "in"  />
-        <pitem  name = "data[68]"  direction = "in"  />
         <pitem  name = "data[67]"  direction = "in"  />
-        <pitem  name = "data[66]"  direction = "in"  />
         <pitem  name = "data[65]"  direction = "in"  />
         <pitem  name = "data[64]"  direction = "in"  />
         <pitem  name = "data[63]"  direction = "in"  />
         <pitem  name = "data[62]"  direction = "in"  />
-        <pitem  name = "data[61]"  direction = "in"  />
+        <pitem  name = "data[60]"  direction = "in"  />
+        <pitem  name = "data[57]"  direction = "in"  />
         <pitem  name = "data[56]"  direction = "in"  />
         <pitem  name = "data[55]"  direction = "in"  />
         <pitem  name = "data[54]"  direction = "in"  />
         <pitem  name = "data[53]"  direction = "in"  />
-        <pitem  name = "data[52]"  direction = "in"  />
-        <pitem  name = "data[48]"  direction = "in"  />
+        <pitem  name = "data[51]"  direction = "in"  />
         <pitem  name = "data[47]"  direction = "in"  />
         <pitem  name = "data[46]"  direction = "in"  />
         <pitem  name = "data[45]"  direction = "in"  />
         <pitem  name = "data[44]"  direction = "in"  />
-        <pitem  name = "data[43]"  direction = "in"  />
+        <pitem  name = "data[41]"  direction = "in"  />
         <pitem  name = "data[40]"  direction = "in"  />
+        <pitem  name = "data[39]"  direction = "in"  />
         <pitem  name = "data[38]"  direction = "in"  />
         <pitem  name = "data[37]"  direction = "in"  />
         <pitem  name = "data[36]"  direction = "in"  />
         <pitem  name = "data[35]"  direction = "in"  />
-        <pitem  name = "data[34]"  direction = "in"  />
+        <pitem  name = "data[32]"  direction = "in"  />
         <pitem  name = "data[31]"  direction = "in"  />
-        <pitem  name = "data[30]"  direction = "in"  />
         <pitem  name = "data[29]"  direction = "in"  />
         <pitem  name = "data[28]"  direction = "in"  />
         <pitem  name = "data[27]"  direction = "in"  />
         <pitem  name = "data[26]"  direction = "in"  />
-        <pitem  name = "data[25]"  direction = "in"  />
         <pitem  name = "data[23]"  direction = "in"  />
+        <pitem  name = "data[21]"  direction = "in"  />
         <pitem  name = "data[20]"  direction = "in"  />
         <pitem  name = "data[19]"  direction = "in"  />
         <pitem  name = "data[18]"  direction = "in"  />
         <pitem  name = "data[17]"  direction = "in"  />
-        <pitem  name = "data[16]"  direction = "in"  />
         <pitem  name = "data[14]"  direction = "in"  />
-        <pitem  name = "data[12]"  direction = "in"  />
         <pitem  name = "data[11]"  direction = "in"  />
         <pitem  name = "data[10]"  direction = "in"  />
         <pitem  name = "data[9]"  direction = "in"  />
         <pitem  name = "data[8]"  direction = "in"  />
         <pitem  name = "data[7]"  direction = "in"  />
+        <pitem  name = "data[6]"  direction = "in"  />
         <pitem  name = "data[5]"  direction = "in"  />
         <pitem  name = "data[4]"  direction = "in"  />
+        <pitem  name = "data[3]"  direction = "in"  />
         <pitem  name = "data[2]"  direction = "in"  />
         <pitem  name = "data[1]"  direction = "in"  />
         <pitem  name = "data[0]"  direction = "in"  />
-        <pitem  name = "data[168]"  direction = "in"  />
-        <pitem  name = "data[158]"  direction = "in"  />
-        <pitem  name = "data[157]"  direction = "in"  />
-        <pitem  name = "data[156]"  direction = "in"  />
-        <pitem  name = "data[149]"  direction = "in"  />
-        <pitem  name = "data[148]"  direction = "in"  />
-        <pitem  name = "data[140]"  direction = "in"  />
-        <pitem  name = "data[138]"  direction = "in"  />
-        <pitem  name = "data[131]"  direction = "in"  />
-        <pitem  name = "data[121]"  direction = "in"  />
-        <pitem  name = "data[111]"  direction = "in"  />
+        <pitem  name = "data[115]"  direction = "in"  />
         <pitem  name = "data[106]"  direction = "in"  />
-        <pitem  name = "data[104]"  direction = "in"  />
+        <pitem  name = "data[102]"  direction = "in"  />
         <pitem  name = "data[97]"  direction = "in"  />
         <pitem  name = "data[94]"  direction = "in"  />
-        <pitem  name = "data[93]"  direction = "in"  />
         <pitem  name = "data[88]"  direction = "in"  />
         <pitem  name = "data[85]"  direction = "in"  />
+        <pitem  name = "data[84]"  direction = "in"  />
         <pitem  name = "data[79]"  direction = "in"  />
-        <pitem  name = "data[75]"  direction = "in"  />
+        <pitem  name = "data[77]"  direction = "in"  />
         <pitem  name = "data[70]"  direction = "in"  />
-        <pitem  name = "data[60]"  direction = "in"  />
+        <pitem  name = "data[68]"  direction = "in"  />
+        <pitem  name = "data[66]"  direction = "in"  />
+        <pitem  name = "data[61]"  direction = "in"  />
         <pitem  name = "data[59]"  direction = "in"  />
         <pitem  name = "data[58]"  direction = "in"  />
-        <pitem  name = "data[57]"  direction = "in"  />
-        <pitem  name = "data[51]"  direction = "in"  />
+        <pitem  name = "data[52]"  direction = "in"  />
         <pitem  name = "data[50]"  direction = "in"  />
         <pitem  name = "data[49]"  direction = "in"  />
+        <pitem  name = "data[48]"  direction = "in"  />
+        <pitem  name = "data[43]"  direction = "in"  />
         <pitem  name = "data[42]"  direction = "in"  />
-        <pitem  name = "data[41]"  direction = "in"  />
-        <pitem  name = "data[39]"  direction = "in"  />
+        <pitem  name = "data[34]"  direction = "in"  />
         <pitem  name = "data[33]"  direction = "in"  />
-        <pitem  name = "data[32]"  direction = "in"  />
+        <pitem  name = "data[30]"  direction = "in"  />
+        <pitem  name = "data[25]"  direction = "in"  />
         <pitem  name = "data[24]"  direction = "in"  />
         <pitem  name = "data[22]"  direction = "in"  />
-        <pitem  name = "data[21]"  direction = "in"  />
+        <pitem  name = "data[16]"  direction = "in"  />
         <pitem  name = "data[15]"  direction = "in"  />
         <pitem  name = "data[13]"  direction = "in"  />
-        <pitem  name = "data[6]"  direction = "in"  />
-        <pitem  name = "data[3]"  direction = "in"  />
+        <pitem  name = "data[12]"  direction = "in"  />
+        <pitem  name = "sel[12]"  direction = "in"  />
+        <pitem  name = "sel[11]"  direction = "in"  />
+        <pitem  name = "sel[10]"  direction = "in"  />
+        <pitem  name = "sel[9]"  direction = "in"  />
+        <pitem  name = "sel[8]"  direction = "in"  />
+        <pitem  name = "sel[7]"  direction = "in"  />
+        <pitem  name = "sel[6]"  direction = "in"  />
+        <pitem  name = "sel[5]"  direction = "in"  />
         <pitem  name = "sel[4]"  direction = "in"  />
         <pitem  name = "sel[3]"  direction = "in"  />
         <pitem  name = "sel[2]"  direction = "in"  />
@@ -13995,11 +14072,19 @@
         <nets>
         <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n54"  />
+        <nitem  name = "show_string_number_ctrl_inst/n55"  />
+        <nitem  name = "show_string_number_ctrl_inst/n56"  />
+        <nitem  name = "show_string_number_ctrl_inst/n57"  />
+        <nitem  name = "show_string_number_ctrl_inst/n58"  />
+        <nitem  name = "show_string_number_ctrl_inst/n59"  />
+        <nitem  name = "show_string_number_ctrl_inst/n60"  />
+        <nitem  name = "show_string_number_ctrl_inst/n61"  />
+        <nitem  name = "show_string_number_ctrl_inst/n62"  />
+        <nitem  name = "show_string_number_ctrl_inst/n63"  />
+        <nitem  name = "show_string_number_ctrl_inst/n64"  />
+        <nitem  name = "show_string_number_ctrl_inst/n65"  />
+        <nitem  name = "show_string_number_ctrl_inst/n66"  />
         <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_522[8]"  />
         <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_522[7]"  />
         <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_522[6]"  />
@@ -14134,170 +14219,12 @@
         </nets>
     </instance>
 
-    <instance  name = "show_string_number_ctrl_inst/mux_35"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "show_string_number_ctrl_inst/select_74"  library = "work"  arch = ""  type = "comb">
         <pins>
-        <pitem  name = "data[287]"  direction = "in"  />
-        <pitem  name = "data[286]"  direction = "in"  />
-        <pitem  name = "data[285]"  direction = "in"  />
-        <pitem  name = "data[284]"  direction = "in"  />
-        <pitem  name = "data[283]"  direction = "in"  />
-        <pitem  name = "data[282]"  direction = "in"  />
-        <pitem  name = "data[281]"  direction = "in"  />
-        <pitem  name = "data[280]"  direction = "in"  />
-        <pitem  name = "data[279]"  direction = "in"  />
-        <pitem  name = "data[278]"  direction = "in"  />
-        <pitem  name = "data[277]"  direction = "in"  />
-        <pitem  name = "data[276]"  direction = "in"  />
-        <pitem  name = "data[275]"  direction = "in"  />
-        <pitem  name = "data[274]"  direction = "in"  />
-        <pitem  name = "data[273]"  direction = "in"  />
-        <pitem  name = "data[272]"  direction = "in"  />
-        <pitem  name = "data[271]"  direction = "in"  />
-        <pitem  name = "data[270]"  direction = "in"  />
-        <pitem  name = "data[269]"  direction = "in"  />
-        <pitem  name = "data[268]"  direction = "in"  />
-        <pitem  name = "data[267]"  direction = "in"  />
-        <pitem  name = "data[266]"  direction = "in"  />
-        <pitem  name = "data[265]"  direction = "in"  />
-        <pitem  name = "data[264]"  direction = "in"  />
-        <pitem  name = "data[263]"  direction = "in"  />
-        <pitem  name = "data[262]"  direction = "in"  />
-        <pitem  name = "data[261]"  direction = "in"  />
-        <pitem  name = "data[260]"  direction = "in"  />
-        <pitem  name = "data[259]"  direction = "in"  />
-        <pitem  name = "data[258]"  direction = "in"  />
-        <pitem  name = "data[257]"  direction = "in"  />
-        <pitem  name = "data[256]"  direction = "in"  />
-        <pitem  name = "data[255]"  direction = "in"  />
-        <pitem  name = "data[254]"  direction = "in"  />
-        <pitem  name = "data[253]"  direction = "in"  />
-        <pitem  name = "data[252]"  direction = "in"  />
-        <pitem  name = "data[251]"  direction = "in"  />
-        <pitem  name = "data[250]"  direction = "in"  />
-        <pitem  name = "data[249]"  direction = "in"  />
-        <pitem  name = "data[248]"  direction = "in"  />
-        <pitem  name = "data[247]"  direction = "in"  />
-        <pitem  name = "data[246]"  direction = "in"  />
-        <pitem  name = "data[245]"  direction = "in"  />
-        <pitem  name = "data[244]"  direction = "in"  />
-        <pitem  name = "data[243]"  direction = "in"  />
-        <pitem  name = "data[242]"  direction = "in"  />
-        <pitem  name = "data[241]"  direction = "in"  />
-        <pitem  name = "data[240]"  direction = "in"  />
-        <pitem  name = "data[239]"  direction = "in"  />
-        <pitem  name = "data[238]"  direction = "in"  />
-        <pitem  name = "data[237]"  direction = "in"  />
-        <pitem  name = "data[236]"  direction = "in"  />
-        <pitem  name = "data[235]"  direction = "in"  />
-        <pitem  name = "data[234]"  direction = "in"  />
-        <pitem  name = "data[233]"  direction = "in"  />
-        <pitem  name = "data[232]"  direction = "in"  />
-        <pitem  name = "data[231]"  direction = "in"  />
-        <pitem  name = "data[230]"  direction = "in"  />
-        <pitem  name = "data[229]"  direction = "in"  />
-        <pitem  name = "data[228]"  direction = "in"  />
-        <pitem  name = "data[227]"  direction = "in"  />
-        <pitem  name = "data[226]"  direction = "in"  />
-        <pitem  name = "data[225]"  direction = "in"  />
-        <pitem  name = "data[224]"  direction = "in"  />
-        <pitem  name = "data[223]"  direction = "in"  />
-        <pitem  name = "data[222]"  direction = "in"  />
-        <pitem  name = "data[221]"  direction = "in"  />
-        <pitem  name = "data[220]"  direction = "in"  />
-        <pitem  name = "data[219]"  direction = "in"  />
-        <pitem  name = "data[218]"  direction = "in"  />
-        <pitem  name = "data[217]"  direction = "in"  />
-        <pitem  name = "data[216]"  direction = "in"  />
-        <pitem  name = "data[215]"  direction = "in"  />
-        <pitem  name = "data[214]"  direction = "in"  />
-        <pitem  name = "data[213]"  direction = "in"  />
-        <pitem  name = "data[212]"  direction = "in"  />
-        <pitem  name = "data[211]"  direction = "in"  />
-        <pitem  name = "data[210]"  direction = "in"  />
-        <pitem  name = "data[209]"  direction = "in"  />
-        <pitem  name = "data[208]"  direction = "in"  />
-        <pitem  name = "data[207]"  direction = "in"  />
-        <pitem  name = "data[206]"  direction = "in"  />
-        <pitem  name = "data[205]"  direction = "in"  />
-        <pitem  name = "data[204]"  direction = "in"  />
-        <pitem  name = "data[203]"  direction = "in"  />
-        <pitem  name = "data[202]"  direction = "in"  />
-        <pitem  name = "data[201]"  direction = "in"  />
-        <pitem  name = "data[200]"  direction = "in"  />
-        <pitem  name = "data[199]"  direction = "in"  />
-        <pitem  name = "data[198]"  direction = "in"  />
-        <pitem  name = "data[197]"  direction = "in"  />
-        <pitem  name = "data[196]"  direction = "in"  />
-        <pitem  name = "data[195]"  direction = "in"  />
-        <pitem  name = "data[194]"  direction = "in"  />
-        <pitem  name = "data[193]"  direction = "in"  />
-        <pitem  name = "data[192]"  direction = "in"  />
-        <pitem  name = "data[191]"  direction = "in"  />
-        <pitem  name = "data[190]"  direction = "in"  />
-        <pitem  name = "data[189]"  direction = "in"  />
-        <pitem  name = "data[188]"  direction = "in"  />
-        <pitem  name = "data[187]"  direction = "in"  />
-        <pitem  name = "data[186]"  direction = "in"  />
-        <pitem  name = "data[185]"  direction = "in"  />
-        <pitem  name = "data[184]"  direction = "in"  />
-        <pitem  name = "data[183]"  direction = "in"  />
-        <pitem  name = "data[182]"  direction = "in"  />
-        <pitem  name = "data[181]"  direction = "in"  />
-        <pitem  name = "data[180]"  direction = "in"  />
-        <pitem  name = "data[179]"  direction = "in"  />
-        <pitem  name = "data[178]"  direction = "in"  />
-        <pitem  name = "data[177]"  direction = "in"  />
-        <pitem  name = "data[176]"  direction = "in"  />
-        <pitem  name = "data[175]"  direction = "in"  />
-        <pitem  name = "data[174]"  direction = "in"  />
-        <pitem  name = "data[173]"  direction = "in"  />
-        <pitem  name = "data[172]"  direction = "in"  />
-        <pitem  name = "data[171]"  direction = "in"  />
-        <pitem  name = "data[170]"  direction = "in"  />
-        <pitem  name = "data[169]"  direction = "in"  />
-        <pitem  name = "data[168]"  direction = "in"  />
-        <pitem  name = "data[165]"  direction = "in"  />
-        <pitem  name = "data[164]"  direction = "in"  />
-        <pitem  name = "data[163]"  direction = "in"  />
-        <pitem  name = "data[162]"  direction = "in"  />
-        <pitem  name = "data[161]"  direction = "in"  />
-        <pitem  name = "data[160]"  direction = "in"  />
-        <pitem  name = "data[159]"  direction = "in"  />
-        <pitem  name = "data[156]"  direction = "in"  />
-        <pitem  name = "data[155]"  direction = "in"  />
-        <pitem  name = "data[154]"  direction = "in"  />
-        <pitem  name = "data[153]"  direction = "in"  />
-        <pitem  name = "data[152]"  direction = "in"  />
-        <pitem  name = "data[151]"  direction = "in"  />
-        <pitem  name = "data[150]"  direction = "in"  />
-        <pitem  name = "data[147]"  direction = "in"  />
-        <pitem  name = "data[146]"  direction = "in"  />
-        <pitem  name = "data[145]"  direction = "in"  />
-        <pitem  name = "data[144]"  direction = "in"  />
-        <pitem  name = "data[143]"  direction = "in"  />
-        <pitem  name = "data[142]"  direction = "in"  />
-        <pitem  name = "data[141]"  direction = "in"  />
-        <pitem  name = "data[138]"  direction = "in"  />
-        <pitem  name = "data[137]"  direction = "in"  />
-        <pitem  name = "data[136]"  direction = "in"  />
-        <pitem  name = "data[135]"  direction = "in"  />
-        <pitem  name = "data[134]"  direction = "in"  />
-        <pitem  name = "data[133]"  direction = "in"  />
-        <pitem  name = "data[132]"  direction = "in"  />
-        <pitem  name = "data[129]"  direction = "in"  />
-        <pitem  name = "data[128]"  direction = "in"  />
-        <pitem  name = "data[127]"  direction = "in"  />
-        <pitem  name = "data[126]"  direction = "in"  />
-        <pitem  name = "data[125]"  direction = "in"  />
-        <pitem  name = "data[124]"  direction = "in"  />
-        <pitem  name = "data[123]"  direction = "in"  />
-        <pitem  name = "data[120]"  direction = "in"  />
-        <pitem  name = "data[119]"  direction = "in"  />
-        <pitem  name = "data[118]"  direction = "in"  />
-        <pitem  name = "data[117]"  direction = "in"  />
         <pitem  name = "data[116]"  direction = "in"  />
         <pitem  name = "data[115]"  direction = "in"  />
         <pitem  name = "data[114]"  direction = "in"  />
+        <pitem  name = "data[113]"  direction = "in"  />
         <pitem  name = "data[111]"  direction = "in"  />
         <pitem  name = "data[110]"  direction = "in"  />
         <pitem  name = "data[109]"  direction = "in"  />
@@ -14394,23 +14321,11 @@
         <pitem  name = "data[7]"  direction = "in"  />
         <pitem  name = "data[6]"  direction = "in"  />
         <pitem  name = "data[5]"  direction = "in"  />
+        <pitem  name = "data[4]"  direction = "in"  />
         <pitem  name = "data[3]"  direction = "in"  />
         <pitem  name = "data[2]"  direction = "in"  />
         <pitem  name = "data[1]"  direction = "in"  />
         <pitem  name = "data[0]"  direction = "in"  />
-        <pitem  name = "data[167]"  direction = "in"  />
-        <pitem  name = "data[166]"  direction = "in"  />
-        <pitem  name = "data[158]"  direction = "in"  />
-        <pitem  name = "data[157]"  direction = "in"  />
-        <pitem  name = "data[149]"  direction = "in"  />
-        <pitem  name = "data[148]"  direction = "in"  />
-        <pitem  name = "data[140]"  direction = "in"  />
-        <pitem  name = "data[139]"  direction = "in"  />
-        <pitem  name = "data[131]"  direction = "in"  />
-        <pitem  name = "data[130]"  direction = "in"  />
-        <pitem  name = "data[122]"  direction = "in"  />
-        <pitem  name = "data[121]"  direction = "in"  />
-        <pitem  name = "data[113]"  direction = "in"  />
         <pitem  name = "data[112]"  direction = "in"  />
         <pitem  name = "data[103]"  direction = "in"  />
         <pitem  name = "data[94]"  direction = "in"  />
@@ -14423,7 +14338,14 @@
         <pitem  name = "data[31]"  direction = "in"  />
         <pitem  name = "data[22]"  direction = "in"  />
         <pitem  name = "data[13]"  direction = "in"  />
-        <pitem  name = "data[4]"  direction = "in"  />
+        <pitem  name = "sel[12]"  direction = "in"  />
+        <pitem  name = "sel[11]"  direction = "in"  />
+        <pitem  name = "sel[10]"  direction = "in"  />
+        <pitem  name = "sel[9]"  direction = "in"  />
+        <pitem  name = "sel[8]"  direction = "in"  />
+        <pitem  name = "sel[7]"  direction = "in"  />
+        <pitem  name = "sel[6]"  direction = "in"  />
+        <pitem  name = "sel[5]"  direction = "in"  />
         <pitem  name = "sel[4]"  direction = "in"  />
         <pitem  name = "sel[3]"  direction = "in"  />
         <pitem  name = "sel[2]"  direction = "in"  />
@@ -14443,11 +14365,19 @@
         <nets>
         <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/n54"  />
+        <nitem  name = "show_string_number_ctrl_inst/n55"  />
+        <nitem  name = "show_string_number_ctrl_inst/n56"  />
+        <nitem  name = "show_string_number_ctrl_inst/n57"  />
+        <nitem  name = "show_string_number_ctrl_inst/n58"  />
+        <nitem  name = "show_string_number_ctrl_inst/n59"  />
+        <nitem  name = "show_string_number_ctrl_inst/n60"  />
+        <nitem  name = "show_string_number_ctrl_inst/n61"  />
+        <nitem  name = "show_string_number_ctrl_inst/n62"  />
+        <nitem  name = "show_string_number_ctrl_inst/n63"  />
+        <nitem  name = "show_string_number_ctrl_inst/n64"  />
+        <nitem  name = "show_string_number_ctrl_inst/n65"  />
+        <nitem  name = "show_string_number_ctrl_inst/n66"  />
         <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_531[8]"  />
         <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_531[7]"  />
         <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_531[6]"  />
@@ -47410,7 +47340,7 @@
         <reg  name = "lcd_show_char_inst/cnt_wr_color_data"  />
         <reg  name = "lcd_show_char_inst/data"  />
         <reg  name = "lcd_show_char_inst/state"  />
-        <reg  name = "show_string_number_ctrl_inst/show_char_flag_40"  />
+        <reg  name = "show_string_number_ctrl_inst/show_char_flag_79"  />
         <reg  name = "show_string_number_ctrl_inst/cnt_ascii_num"  />
         <reg  name = "show_string_number_ctrl_inst/ascii_num"  />
         <reg  name = "show_string_number_ctrl_inst/start_x"  />

@@ -14,7 +14,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Jan 16 22:00:53 2025
+Thu Jan 16 22:07:01 2025
 
 
 Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml 
@@ -311,6 +311,7 @@ original encoding -> new encoding (one-hot encoding)
 WARNING - synthesis: Bit 8 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
 WARNING - synthesis: Bit 7 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
 WARNING - synthesis: Bit 6 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
+WARNING - synthesis: Bit 5 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
 WARNING - synthesis: Bit 3 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
 WARNING - synthesis: Bit 2 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
 WARNING - synthesis: Bit 1 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
@@ -319,7 +320,7 @@ WARNING - synthesis: Bit 8 of Register \show_string_number_ctrl_inst/start_x_ is
 WARNING - synthesis: Bit 2 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
 WARNING - synthesis: Bit 1 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
 WARNING - synthesis: Bit 0 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
-WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103): Register \show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21 is stuck at Zero. VDB-5013
+WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103): Register \show_string_number_ctrl_inst/cnt_ascii_num_FSM_i15 is stuck at Zero. VDB-5013
 GSR instance connected to net sys_rst_n_c.
 Applying 200.000000 MHz constraint to all clocks
 
@@ -333,23 +334,23 @@ All blocks are expanded and NGD expansion is successful.
 Writing NGD file spi_lcd_impl1.ngd.
 
 ################### Begin Area Report (spi_lcd)######################
-Number of register bits => 214 of 4635 (4 % )
+Number of register bits => 206 of 4635 (4 % )
 CCU2D => 27
 EHXPLLJ => 1
 FD1P3AX => 53
 FD1P3AY => 1
-FD1P3IX => 74
+FD1P3IX => 67
 FD1P3JX => 1
 FD1S3AX => 33
 FD1S3AY => 1
-FD1S3IX => 48
+FD1S3IX => 47
 FD1S3JX => 3
 GSR => 1
 IB => 2
 L6MUX21 => 94
-LUT4 => 1370
+LUT4 => 1359
 OB => 6
-PFUMX => 298
+PFUMX => 296
 ROM128X1A => 4
 ################### End Area Report ##################
 
@@ -360,33 +361,33 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 2
-  Net : pll_u1/sys_clk_50MHz, loads : 215
+  Net : pll_u1/sys_clk_50MHz, loads : 207
   Net : sys_clk_c, loads : 1
 Clock Enable Nets
 Number of Clock Enables: 18
 Top 10 highest fanout Clock Enables:
-  Net : show_string_number_ctrl_inst/sys_clk_50MHz_enable_105, loads : 19
   Net : lcd_show_char_inst/cnt_set_windows_3__N_384, loads : 16
-  Net : lcd_write_inst/sys_clk_50MHz_enable_86, loads : 15
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_68, loads : 12
+  Net : lcd_write_inst/sys_clk_50MHz_enable_84, loads : 15
+  Net : show_string_number_ctrl_inst/sys_clk_50MHz_enable_96, loads : 12
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_98, loads : 12
   Net : lcd_show_char_inst/sys_clk_50MHz_enable_69, loads : 9
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_71, loads : 8
-  Net : lcd_init_inst/sys_clk_50MHz_enable_50, loads : 6
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_43, loads : 5
-  Net : sys_clk_50MHz_enable_52, loads : 1
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_43, loads : 8
+  Net : lcd_init_inst/sys_clk_50MHz_enable_32, loads : 6
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_22, loads : 5
+  Net : sys_clk_50MHz_enable_54, loads : 1
   Net : sys_clk_50MHz_enable_56, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : lcd_show_char_inst/rom_addr_3, loads : 509
-  Net : lcd_show_char_inst/rom_addr_0, loads : 494
-  Net : lcd_show_char_inst/rom_addr_4, loads : 443
-  Net : lcd_show_char_inst/rom_addr_2, loads : 410
-  Net : lcd_show_char_inst/rom_addr_1, loads : 386
-  Net : lcd_show_char_inst/rom_addr_5, loads : 281
-  Net : lcd_show_char_inst/rom_addr_6, loads : 150
-  Net : lcd_show_char_inst/rom_addr_7, loads : 81
-  Net : lcd_show_char_inst/rom_addr_8, loads : 41
-  Net : lcd_show_char_inst/char_ram_inst/n13870, loads : 30
+  Net : lcd_show_char_inst/rom_addr_3, loads : 514
+  Net : lcd_show_char_inst/rom_addr_0, loads : 499
+  Net : lcd_show_char_inst/rom_addr_4, loads : 453
+  Net : lcd_show_char_inst/rom_addr_2, loads : 408
+  Net : lcd_show_char_inst/rom_addr_1, loads : 382
+  Net : lcd_show_char_inst/rom_addr_5, loads : 277
+  Net : lcd_show_char_inst/rom_addr_6, loads : 154
+  Net : lcd_show_char_inst/rom_addr_7, loads : 80
+  Net : lcd_show_char_inst/rom_addr_8, loads : 40
+  Net : lcd_init_inst/cnt_s2_num_0, loads : 28
 ################### End Clock Report ##################
 
 <A name="lse_trs"></A><B><U><big>Timing Report Summary</big></U></B>
@@ -396,7 +397,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.438 MHz|    12 *
+clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.162 MHz|    12 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -404,10 +405,10 @@ clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.438 MHz|    12 *
 1 constraints not met.
 
 
-Peak Memory Usage: 167.996  MB
+Peak Memory Usage: 166.156  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 3.906  secs
+Elapsed CPU time for LSE flow : 4.141  secs
 --------------------------------------------------------------
 
 

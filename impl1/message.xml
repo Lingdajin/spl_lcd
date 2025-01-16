@@ -252,6 +252,12 @@
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
+            <Dynamic>5</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
             <Dynamic>3</Dynamic>
             <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
         </Message>
@@ -301,7 +307,7 @@
             <ID>35935013</ID>
             <Severity>Warning</Severity>
             <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103): </Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i15</Dynamic>
             <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v</Navigation>
             <Navigation>103</Navigation>
         </Message>

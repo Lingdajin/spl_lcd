@@ -70,7 +70,7 @@ reg     [1:0]   cnt1;
 reg     [4:0]   cnt_ascii_num;
 
 //显示总字符数量
-parameter   CHAR_NUM    =   19;
+parameter   CHAR_NUM    =   12;
 
 //******************************* Main Code **************************//
 //en_size为1时调用字体大小为16x8，为0时调用字体大小为12x6；
@@ -122,13 +122,13 @@ always@(posedge sys_clk or negedge sys_rst_n)
             10: ascii_num <= 'd68;
             11: ascii_num <= 'd1;
 
-            12: ascii_num <= 'd82;
-            13: ascii_num <= 'd83;
-            14: ascii_num <= 'd68;
-            15: ascii_num <= 'd65;
-            16: ascii_num <= 'd84;
-            17: ascii_num <= 'd65;
-            18: ascii_num <= 'd26;
+            // 12: ascii_num <= 'd82;
+            // 13: ascii_num <= 'd83;
+            // 14: ascii_num <= 'd68;
+            // 15: ascii_num <= 'd65;
+            // 16: ascii_num <= 'd84;
+            // 17: ascii_num <= 'd65;
+            // 18: ascii_num <= 'd26;
             default: ascii_num <= 'd0;
         endcase
 
@@ -197,26 +197,26 @@ always@(posedge sys_clk or negedge sys_rst_n)
         start_x <= 'd0;
     else if(init_done)
         case(cnt_ascii_num)
-            0 : start_x <= 'd72 ;
-            1 : start_x <= 'd80 ;
-            2 : start_x <= 'd88 ;
-            3 : start_x <= 'd96 ;
-            4 : start_x <= 'd104;
-            5 : start_x <= 'd112;
-            6 : start_x <= 'd120;
-            7 : start_x <= 'd128;
-            8 : start_x <= 'd136;
-            9 : start_x <= 'd144;
-            10: start_x <= 'd152;
-            11: start_x <= 'd160;
+            0 : start_x <= 'd128;
+            1 : start_x <= 'd136;
+            2 : start_x <= 'd144;
+            3 : start_x <= 'd152;
+            4 : start_x <= 'd160;
+            5 : start_x <= 'd168;
+            6 : start_x <= 'd176;
+            7 : start_x <= 'd184;
+            8 : start_x <= 'd192;
+            9 : start_x <= 'd200;
+            10: start_x <= 'd208;
+            11: start_x <= 'd216;
 
-            12: start_x <= 'd8 ;
-            13: start_x <= 'd16;
-            14: start_x <= 'd32;
-            15: start_x <= 'd40;
-            16: start_x <= 'd48;
-            17: start_x <= 'd56;
-            18: start_x <= 'd64;
+            // 12: start_x <= 'd8 ;
+            // 13: start_x <= 'd16;
+            // 14: start_x <= 'd32;
+            // 15: start_x <= 'd40;
+            // 16: start_x <= 'd48;
+            // 17: start_x <= 'd56;
+            // 18: start_x <= 'd64;
             default: start_x <= 'd0;
         endcase
     else
@@ -240,13 +240,13 @@ always@(posedge sys_clk or negedge sys_rst_n)
             10: start_y <= 'd16;
             11: start_y <= 'd16;
 
-            12: start_y <= 'd48;
-            13: start_y <= 'd48;
-            14: start_y <= 'd48;
-            15: start_y <= 'd48;
-            16: start_y <= 'd48;
-            17: start_y <= 'd48;
-            18: start_y <= 'd48;
+            // 12: start_y <= 'd48;
+            // 13: start_y <= 'd48;
+            // 14: start_y <= 'd48;
+            // 15: start_y <= 'd48;
+            // 16: start_y <= 'd48;
+            // 17: start_y <= 'd48;
+            // 18: start_y <= 'd48;
             default: start_y <= 'd0;
         endcase
     else
