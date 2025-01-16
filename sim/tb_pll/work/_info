@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2023.3 2023.07, Jul 18 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_pll
+vpll
+2D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
+!s110 1736955928
+!i10b 1
+!s100 gh7jY]fCnb1W6jRnTFVHd1
+IfVDeJEY1zoGBNnEZ:BhL40
+R0
+w1704445345
+8D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
+FD:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
+!i122 0
+L0 8 86
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 OT;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1736955928.000000
+!s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v|
+!s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v|
+!s101 -O0
+!i113 1
+Z3 o-work work -O0
+!s92 +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll -work work -O0
+Z4 tCvgOpt 0
+vtb
+2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
+!s110 1736955929
+!i10b 1
+!s100 D3d]zghS]P0EbJBOaU92`2
+I^GV1gD8=T`CPbL1]k]`V32
+R0
+w1736955729
+8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
+FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
+!i122 1
+L0 3 22
+R1
+R2
+r1
+!s85 0
+31
+!s108 1736955929.000000
+!s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v|
+!s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v|
+!s101 -O0
+!i113 1
+R3
+!s92 +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source -work work -O0
+R4

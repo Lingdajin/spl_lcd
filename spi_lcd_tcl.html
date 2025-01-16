@@ -1,0 +1,163 @@
+<HTML>
+<HEAD><TITLE>Lattice TCL Log</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="pn250115235658"></A><B><U><big>pn250115235658</big></U></B>
+#Start recording tcl command: 1/15/2025 17:46:00
+#Project Location: D:/CodeField/Verilog/Diamond_design/spi_lcd; Project name: spi_lcd
+prj_project new -name "spi_lcd" -impl "impl1" -dev LCMXO2-4000HC-4MG132C -synthesis "lse"
+prj_project save
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom_8x4096.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run PAR -impl impl1 -task PARTrace
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_strgy set_value -strategy Strategy1 lse_resolved_mixed_drivers=True
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run PAR -impl impl1 -task PARTrace
+prj_run PAR -impl impl1 -task PARTrace
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run PAR -impl impl1 -task PARTrace
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run PAR -impl impl1 -task PARTrace
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+source "D:/CodeField/Verilog/Diamond_design/spi_lcd/hdle_generate_tbdeclaration.tcl"
+prj_run Synthesis -impl impl1
+prj_run Map -impl impl1
+prj_run PAR -impl impl1
+prj_run Export -impl impl1
+prj_dev set -part LCMXO2-4000HC-5MG132C
+prj_run Synthesis -impl impl1
+prj_run Map -impl impl1
+prj_run PAR -impl impl1
+prj_run Export -impl impl1
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom_8x4096.v"
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.ipx"
+prj_run Synthesis -impl impl1
+prj_run Map -impl impl1
+prj_run PAR -impl impl1
+prj_run Export -impl impl1
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.ipx"
+prj_run Synthesis -impl impl1
+prj_run PAR -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1 -forceAll
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.ipx"
+prj_run Synthesis -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.ipx"
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/tb_rom.spf"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/tb_rom.spf"
+prj_strgy set_value -strategy Strategy1 lse_resolved_mixed_drivers=False
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_pll/tb_pll.spf"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_pll/tb_pll.spf"
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+#Stop recording: 1/15/2025 23:56:58
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

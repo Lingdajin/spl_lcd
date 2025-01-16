@@ -1,0 +1,15 @@
+<BaliSimProject version="1.3" path="sim" stage="0" language="-1" name="tb_rom" simType="ModelSim">
+    <Source worklib="work" path="source/show_string_number_ctrl.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
+    <Source worklib="work" path="rom/rom_8x4096.v" type="VERILOG" langstandard="" include="none"/>
+    <Source worklib="work" path="source/lcd_show_char.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
+    <Source worklib="work" path="source/lcd_init.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
+    <Source worklib="work" path="source/control.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
+    <Source worklib="work" path="source/lcd_write.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
+    <Source worklib="work" path="pll/pll.v" type="VERILOG" langstandard="" include="none"/>
+    <Source worklib="work" path="source/spi_lcd.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
+    <Source worklib="work" path="rom/tb_rom_8x4096_tmpl.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
+    <SimLib value="pmi_work ovi_machxo2"/>
+    <GlbInc value=""/>
+    <Macro value=""/>
+    <TopModule instance="" language="VERILOG" name="tb"/>
+</BaliSimProject>

@@ -26,7 +26,7 @@
 
 
 -use_io_insertion 1
--resolve_mixed_drivers  1
+-resolve_mixed_drivers 0
 -use_io_reg auto
 
 
@@ -40,6 +40,8 @@
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v"
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+"D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+"D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v"
 -top spi_lcd
 
 

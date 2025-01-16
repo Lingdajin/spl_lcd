@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DiamondModule name="rom_8x4096" module="ROM" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2025 01 15 21:31:37.515" version="5.4" type="Module" synthesis="lse" source_format="Verilog">
+<DiamondModule name="rom_8x4096" module="ROM" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2025 01 15 21:43:46.178" version="5.4" type="Module" synthesis="lse" source_format="Verilog">
   <Package>
-		<File name="" type="" modified="2025 01 15 21:31:37.515"/>
+		<File name="" type="" modified="2025 01 15 21:43:46.178"/>
 		<File name="d:/codefield/verilog/diamond_design/spi_lcd/source/rom_8x4096.mem" type="mem" modified="2025 01 15 19:28:04.269"/>
-		<File name="rom_8x4096.lpc" type="lpc" modified="2025 01 15 21:31:34.953"/>
-		<File name="rom_8x4096.v" type="top_level_verilog" modified="2025 01 15 21:31:35.029"/>
-		<File name="rom_8x4096_tmpl.v" type="template_verilog" modified="2025 01 15 21:31:35.029"/>
-		<File name="tb_rom_8x4096_tmpl.v" type="testbench_verilog" modified="2025 01 15 21:31:35.036"/>
+		<File name="rom_8x4096.lpc" type="lpc" modified="2025 01 15 21:43:43.591"/>
+		<File name="rom_8x4096.v" type="top_level_verilog" modified="2025 01 15 21:43:43.670"/>
+		<File name="rom_8x4096_tmpl.v" type="template_verilog" modified="2025 01 15 21:43:43.670"/>
+		<File name="tb_rom_8x4096_tmpl.v" type="testbench_verilog" modified="2025 01 15 21:43:43.672"/>
   </Package>
 </DiamondModule>

@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Jan 15 21:40:00 2025
+Wed Jan 15 23:54:46 2025
 
 
 Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui 
@@ -43,7 +43,7 @@ BRAM utilization = 100.000000 %
 DSP usage = true
 DSP utilization = 100.000000 %
 fsm_encoding_style = auto
-resolve_mixed_drivers = 1
+resolve_mixed_drivers = 0
 fix_gated_clocks = 1
 
 Mux style = Auto
@@ -73,6 +73,8 @@ Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_sho
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
 NGD file = spi_lcd_impl1.ngd
 -sdc option: SDC file input not used.
 -lpf option: Output file option is ON.
@@ -93,6 +95,8 @@ Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_sh
 Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v. VERI-1482
 Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/pll/pll.v. VERI-1482
 Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/rom/rom_8x4096.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/tb_pll.v. VERI-1482
 Analyzing Verilog file D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
 Top module name (Verilog): spi_lcd
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(18): compiling module spi_lcd. VERI-1018
@@ -102,14 +106,8 @@ INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(11): compiling module lcd_write. VERI-1018
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(11): compiling module control. VERI-1018
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(17): compiling module lcd_init. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(11): compiling module lcd_show_char. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/rom/rom_8x4096.v(8): compiling module rom_8x4096. VERI-1018
-INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1291): compiling module DP8KC_renamed_due_excessive_length_1. VERI-1018
-INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1291): compiling module DP8KC_renamed_due_excessive_length_2. VERI-1018
-INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1291): compiling module DP8KC_renamed_due_excessive_length_3. VERI-1018
-INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1120): compiling module VHI. VERI-1018
-INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1291): compiling module DP8KC_renamed_due_excessive_length_4. VERI-1018
-INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(38): compiling module show_string_number_ctrl. VERI-1018
+WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(47): net show_char_data[8] does not have a driver. VDB-1002
+WARNING - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(48): net en_write_show_char does not have a driver. VDB-1002
 Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00a/data/xo2alib.ngl'...
 Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
 Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
@@ -117,109 +115,19 @@ Loading NGL library 'D:/Program/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5gli
 Loading device for application map from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
 Package Status:                     Final          Version 1.44.
 Top-level module name = spi_lcd.
+WARNING - synthesis: I/O Port debug_led2 's net has no driver and is unused.
+######## Missing driver on net debug_led2. Patching with GND.
+######## Missing driver on net show_char_data[8]. Patching with GND.
+######## Missing driver on net show_char_data[7]. Patching with GND.
+######## Missing driver on net show_char_data[6]. Patching with GND.
+######## Missing driver on net show_char_data[5]. Patching with GND.
+######## Missing driver on net show_char_data[4]. Patching with GND.
+######## Missing driver on net show_char_data[3]. Patching with GND.
+######## Missing driver on net show_char_data[2]. Patching with GND.
+######## Missing driver on net show_char_data[1]. Patching with GND.
+######## Missing driver on net show_char_data[0]. Patching with GND.
+######## Missing driver on net en_write_show_char. Patching with GND.
 INFO - synthesis: Extracted state machine for register '\lcd_write_inst/cnt1' with one-hot encoding
-original encoding -> new encoding (one-hot encoding)
-
- 0000 -> 0000000000000001
-
- 0001 -> 0000000000000010
-
- 0010 -> 0000000000000100
-
- 0011 -> 0000000000001000
-
- 0100 -> 0000000000010000
-
- 0101 -> 0000000000100000
-
- 0110 -> 0000000001000000
-
- 0111 -> 0000000010000000
-
- 1000 -> 0000000100000000
-
- 1001 -> 0000001000000000
-
- 1010 -> 0000010000000000
-
- 1011 -> 0000100000000000
-
- 1100 -> 0001000000000000
-
- 1101 -> 0010000000000000
-
- 1110 -> 0100000000000000
-
- 1111 -> 1000000000000000
-
-INFO - synthesis: Extracted state machine for register '\show_string_number_ctrl_inst/cnt_ascii_num' with one-hot encoding
-original encoding -> new encoding (one-hot encoding)
-
- 00000 -> 00000000000000000000000000000001
-
- 00001 -> 00000000000000000000000000000010
-
- 00010 -> 00000000000000000000000000000100
-
- 00011 -> 00000000000000000000000000001000
-
- 00100 -> 00000000000000000000000000010000
-
- 00101 -> 00000000000000000000000000100000
-
- 00110 -> 00000000000000000000000001000000
-
- 00111 -> 00000000000000000000000010000000
-
- 01000 -> 00000000000000000000000100000000
-
- 01001 -> 00000000000000000000001000000000
-
- 01010 -> 00000000000000000000010000000000
-
- 01011 -> 00000000000000000000100000000000
-
- 01100 -> 00000000000000000001000000000000
-
- 01101 -> 00000000000000000010000000000000
-
- 01110 -> 00000000000000000100000000000000
-
- 01111 -> 00000000000000001000000000000000
-
- 10000 -> 00000000000000010000000000000000
-
- 10001 -> 00000000000000100000000000000000
-
- 10010 -> 00000000000001000000000000000000
-
- 10011 -> 00000000000010000000000000000000
-
- 10100 -> 00000000000100000000000000000000
-
- 10101 -> 00000000001000000000000000000000
-
- 10110 -> 00000000010000000000000000000000
-
- 10111 -> 00000000100000000000000000000000
-
- 11000 -> 00000001000000000000000000000000
-
- 11001 -> 00000010000000000000000000000000
-
- 11010 -> 00000100000000000000000000000000
-
- 11011 -> 00001000000000000000000000000000
-
- 11100 -> 00010000000000000000000000000000
-
- 11101 -> 00100000000000000000000000000000
-
- 11110 -> 01000000000000000000000000000000
-
- 11111 -> 10000000000000000000000000000000
-
-INFO - synthesis: Extracted state machine for register '\lcd_show_char_inst/cnt_set_windows' with one-hot encoding
 original encoding -> new encoding (one-hot encoding)
 
  0000 -> 0000000000000001
@@ -280,32 +188,9 @@ original encoding -> new encoding (one-hot encoding)
 
  100000 -> 100000
 
-INFO - synthesis: Extracted state machine for register '\lcd_show_char_inst/state' with one-hot encoding
-original encoding -> new encoding (one-hot encoding)
-
- 0001 -> 0001
-
- 0010 -> 0010
-
- 0100 -> 0100
-
- 1000 -> 1000
 
 
 
-
-WARNING - synthesis: Bit 8 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 7 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 6 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 3 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 2 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 1 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 0 of Register \show_string_number_ctrl_inst/start_y is stuck at Zero
-WARNING - synthesis: Bit 5 of Register \show_string_number_ctrl_inst/ascii_num is stuck at Zero
-WARNING - synthesis: Bit 8 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
-WARNING - synthesis: Bit 2 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
-WARNING - synthesis: Bit 1 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
-WARNING - synthesis: Bit 0 of Register \show_string_number_ctrl_inst/start_x_ is stuck at Zero
 GSR instance connected to net sys_rst_n_c.
 Applying 200.000000 MHz constraint to all clocks
 
@@ -319,24 +204,22 @@ All blocks are expanded and NGD expansion is successful.
 Writing NGD file spi_lcd_impl1.ngd.
 
 ################### Begin Area Report (spi_lcd)######################
-Number of register bits => 225 of 4635 (4 % )
-CCU2D => 27
-DP8KC => 4
+Number of register bits => 111 of 4635 (2 % )
+CCU2D => 22
 EHXPLLJ => 1
-FD1P3AX => 82
-FD1P3AY => 2
-FD1P3IX => 55
+FD1P3AX => 3
+FD1P3IX => 42
 FD1P3JX => 1
-FD1S3AX => 33
+FD1S3AX => 19
 FD1S3AY => 1
-FD1S3IX => 49
-FD1S3JX => 2
+FD1S3IX => 44
+FD1S3JX => 1
 GSR => 1
 IB => 2
-L6MUX21 => 2
-LUT4 => 319
-OB => 6
-PFUMX => 19
+L6MUX21 => 4
+LUT4 => 166
+OB => 8
+PFUMX => 17
 ROM128X1A => 4
 ################### End Area Report ##################
 
@@ -347,33 +230,31 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 2
-  Net : pll_u1/sys_clk_50MHz, loads : 230
+  Net : pll_u1/sys_clk_50MHz, loads : 112
   Net : sys_clk_c, loads : 1
 Clock Enable Nets
-Number of Clock Enables: 18
-Top 10 highest fanout Clock Enables:
-  Net : show_string_number_ctrl_inst/cnt_ascii_num_4__N_514, loads : 32
-  Net : lcd_show_char_inst/cnt_set_windows_3__N_384, loads : 16
-  Net : lcd_write_inst/sys_clk_50MHz_enable_84, loads : 15
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_69, loads : 12
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_85, loads : 8
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_15, loads : 8
-  Net : lcd_init_inst/sys_clk_50MHz_enable_52, loads : 6
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_46, loads : 5
-  Net : sys_clk_50MHz_enable_56, loads : 1
-  Net : sys_clk_50MHz_enable_58, loads : 1
+Number of Clock Enables: 8
+Top 8 highest fanout Clock Enables:
+  Net : lcd_write_inst/sys_clk_50MHz_enable_19, loads : 15
+  Net : lcd_init_inst/sys_clk_50MHz_enable_25, loads : 6
+  Net : sys_clk_50MHz_enable_45, loads : 1
+  Net : lcd_init_inst/sys_clk_50MHz_enable_3, loads : 1
+  Net : lcd_write_inst/sys_clk_50MHz_enable_2, loads : 1
+  Net : lcd_init_inst/lcd_rst_high_flag, loads : 1
+  Net : sys_clk_50MHz_enable_42, loads : 1
+  Net : lcd_write_inst/sys_clk_50MHz_enable_14, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : show_string_number_ctrl_inst/cnt_ascii_num_4__N_514, loads : 32
-  Net : lcd_init_inst/cnt_s2_num_0, loads : 27
-  Net : lcd_init_inst/cnt_s2_num_3, loads : 25
-  Net : lcd_init_inst/cnt_s2_num_2, loads : 25
-  Net : lcd_init_inst/cnt_s2_num_1, loads : 24
+  Net : lcd_init_inst/cnt_s2_num_0, loads : 29
+  Net : lcd_init_inst/cnt_s2_num_2, loads : 27
+  Net : lcd_init_inst/cnt_s2_num_1, loads : 26
+  Net : lcd_init_inst/cnt_s2_num_3, loads : 24
   Net : lcd_write_inst/state_1, loads : 23
   Net : lcd_init_inst/cnt_150ms_22__N_221, loads : 23
-  Net : lcd_init_inst/state_5, loads : 20
-  Net : sys_clk_50MHz_enable_35, loads : 19
   Net : lcd_init_inst/cnt_s2_num_4, loads : 18
+  Net : sys_clk_50MHz_enable_42, loads : 18
+  Net : lcd_init_inst/n406, loads : 18
+  Net : lcd_init_inst/cnt_s4_num_1, loads : 17
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -383,7 +264,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   94.670 MHz|     9 *
+clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   85.514 MHz|     8 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -391,8 +272,8 @@ clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   94.670 MHz|     9 *
 1 constraints not met.
 
 
-Peak Memory Usage: 71.160  MB
+Peak Memory Usage: 65.336  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 0.906  secs
+Elapsed CPU time for LSE flow : 0.641  secs
 --------------------------------------------------------------

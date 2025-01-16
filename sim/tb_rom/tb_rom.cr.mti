@@ -1,0 +1,64 @@
+D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/show_string_number_ctrl.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/show_string_number_ctrl.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module show_string_number_ctrl
+
+Top level modules:
+	show_string_number_ctrl
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/rom_8x4096.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/rom_8x4096.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module rom_8x4096
+
+Top level modules:
+	rom_8x4096
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/lcd_show_char.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/lcd_show_char.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module lcd_show_char
+
+Top level modules:
+	lcd_show_char
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/pll.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/pll.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module pll
+
+Top level modules:
+	pll
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/control.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/control.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module control
+
+Top level modules:
+	control
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/lcd_write.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/lcd_write.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module lcd_write
+
+Top level modules:
+	lcd_write
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/tb_rom_8x4096_tmpl.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/tb_rom_8x4096_tmpl.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module tb
+
+Top level modules:
+	tb
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/lcd_init.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/lcd_init.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module lcd_init
+
+Top level modules:
+	lcd_init
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/spi_lcd.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/spi_lcd.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module spi_lcd
+
+Top level modules:
+	spi_lcd
+
+} {} {}}

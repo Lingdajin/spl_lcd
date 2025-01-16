@@ -1,0 +1,2 @@
+spi_lcd,/,D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v
+tb,/,D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v

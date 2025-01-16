@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Jan 15 21:40:08 2025
+Wed Jan 15 23:54:53 2025
 
 
 Command: bitgen -g RamCfg:Reset -path D:/CodeField/Verilog/Diamond_design/spi_lcd -w -jedec -gui spi_lcd_impl1.ncd spi_lcd_impl1.prf 
@@ -21,7 +21,6 @@ Package Status:                     Final          Version 1.44.
 Performance Hardware Data Status:   Final          Version 34.4.
 
 Running DRC.
-INFO: Design contains EBR with ASYNC Reset Mode that has a limitation: The use of the EBR block asynchronous reset requires that certain timing be met between the clock and the reset within the memory block. See the device specific data sheet for additional details.
 DRC detected 0 errors and 0 warnings.
 Reading Preference File from spi_lcd_impl1.prf.
 INFO -  SW_XO3D_SECURITY_ENCRYPTION *NOT* controlled by xo2c00.acd ###
@@ -87,9 +86,9 @@ Initialized UFM Pages:                     0 Page.
 =========
 Padding summary
 =========
-Padded 637952 bits for this design
+Padded 691328 bits for this design
 
 
 Total CPU Time: 1 secs 
 Total REAL Time: 2 secs 
-Peak Memory Usage: 274 MB
+Peak Memory Usage: 273 MB

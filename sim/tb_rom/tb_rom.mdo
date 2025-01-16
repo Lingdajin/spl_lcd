@@ -1,0 +1,31 @@
+if {![file exists "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/tb_rom.mpf"]} { 
+	project new "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom" tb_rom
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+} else {
+	project open "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_rom/tb_rom"
+	project compileoutofdate
+}
+vsim -L work -L pmi_work -L ovi_machxo2  tb
+view wave
+add wave /*
+run 1000ns

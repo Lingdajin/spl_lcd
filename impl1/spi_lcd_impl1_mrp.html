@@ -22,24 +22,24 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCSBGA132
 Target Performance:   5
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.13.0.56.2
-Mapped on:  01/15/25  21:40:01
+Mapped on:  01/15/25  23:54:47
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:    225 out of  4635 (5%)
-      PFU registers:          225 out of  4320 (5%)
+   Number of registers:    111 out of  4635 (2%)
+      PFU registers:          111 out of  4320 (3%)
       PIO registers:            0 out of   315 (0%)
-   Number of SLICEs:       201 out of  2160 (9%)
-      SLICEs as Logic/ROM:    201 out of  2160 (9%)
+   Number of SLICEs:       120 out of  2160 (6%)
+      SLICEs as Logic/ROM:    120 out of  2160 (6%)
       SLICEs as RAM:            0 out of  1620 (0%)
-      SLICEs as Carry:         27 out of  2160 (1%)
-   Number of LUT4s:        387 out of  4320 (9%)
-      Number used as logic LUTs:        333
+      SLICEs as Carry:         22 out of  2160 (1%)
+   Number of LUT4s:        230 out of  4320 (5%)
+      Number used as logic LUTs:        186
       Number used as distributed RAM:     0
-      Number used as ripple logic:       54
+      Number used as ripple logic:       44
       Number used as shift registers:     0
-   Number of PIO sites used: 8 + 4(JTAG) out of 105 (11%)
-   Number of block RAMs:  4 out of 10 (40%)
+   Number of PIO sites used: 10 + 4(JTAG) out of 105 (13%)
+   Number of block RAMs:  0 out of 10 (0%)
    Number of GSRs:        1 out of 1 (100%)
    EFB used :        No
    JTAG used :       No
@@ -64,66 +64,44 @@ Mapped on:  01/15/25  21:40:01
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  2
-     Net sys_clk_50MHz: 145 loads, 145 rising, 0 falling (Driver:
-     pll_u1/PLLInst_0 )
+     Net sys_clk_50MHz: 69 loads, 69 rising, 0 falling (Driver: pll_u1/PLLInst_0
+     )
      Net sys_clk_c: 1 loads, 1 rising, 0 falling (Driver: PIO sys_clk )
 
-   Number of Clock Enables:  18
-     Net lcd_write_inst/sys_clk_50MHz_enable_17: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_7: 2 loads, 2 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_16: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_84: 8 loads, 8 LSLICEs
-     Net state_5: 4 loads, 4 LSLICEs
-     Net show_string_number_ctrl_inst/cnt_ascii_num_4__N_514: 17 loads, 17
-     LSLICEs
-     Net sys_clk_50MHz_enable_18: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_56: 3 loads, 3 LSLICEs
-     Net sys_clk_50MHz_enable_58: 2 loads, 2 LSLICEs
-     Net sys_clk_50MHz_enable_35: 10 loads, 10 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_69: 6 loads, 6 LSLICEs
-     Net lcd_show_char_inst/cnt_set_windows_3__N_384: 8 loads, 8 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_85: 5 loads, 5 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_15: 5 loads, 5 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_46: 3 loads, 3 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_8: 1 loads, 1 LSLICEs
+   Number of Clock Enables:  8
+     Net lcd_write_inst/sys_clk_50MHz_enable_2: 1 loads, 1 LSLICEs
+     Net sys_clk_50MHz_enable_45: 2 loads, 2 LSLICEs
+     Net lcd_write_inst/sys_clk_50MHz_enable_19: 8 loads, 8 LSLICEs
+     Net lcd_write_inst/sys_clk_50MHz_enable_14: 1 loads, 1 LSLICEs
+     Net sys_clk_50MHz_enable_42: 10 loads, 10 LSLICEs
+     Net lcd_init_inst/sys_clk_50MHz_enable_3: 1 loads, 1 LSLICEs
      Net lcd_init_inst/lcd_rst_high_flag: 1 loads, 1 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_52: 3 loads, 3 LSLICEs
-   Number of LSRs:  21
+     Net lcd_init_inst/sys_clk_50MHz_enable_25: 3 loads, 3 LSLICEs
+   Number of LSRs:  12
      Net lcd_write_inst/state_3: 1 loads, 1 LSLICEs
-     Net wr_done: 2 loads, 2 LSLICEs
+     Net n3041: 3 loads, 3 LSLICEs
+     Net lcd_write_inst/n954: 3 loads, 3 LSLICEs
+     Net lcd_write_inst/state_0: 1 loads, 1 LSLICEs
      Net lcd_write_inst/state_1: 9 loads, 9 LSLICEs
      Net lcd_write_inst/mosi_N_65: 1 loads, 1 LSLICEs
      Net state_2: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/state_0: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/n5140: 3 loads, 3 LSLICEs
-     Net lcd_write_inst/n2466: 3 loads, 3 LSLICEs
-     Net state_5: 4 loads, 4 LSLICEs
-     Net state_3_N_368_1: 2 loads, 2 LSLICEs
-     Net state_3: 1 loads, 1 LSLICEs
-     Net length_num_flag: 3 loads, 3 LSLICEs
-     Net state_2_adj_549: 1 loads, 1 LSLICEs
      Net state_4: 10 loads, 10 LSLICEs
-     Net lcd_show_char_inst/state_3_N_376_3: 4 loads, 4 LSLICEs
-     Net lcd_show_char_inst/state1_finish_flag_N_460: 1 loads, 1 LSLICEs
-     Net lcd_show_char_inst/cnt_wr_color_data_5__N_439: 4 loads, 4 LSLICEs
-     Net lcd_show_char_inst/n2465: 1 loads, 1 LSLICEs
+     Net debug_led1_c_5: 6 loads, 6 LSLICEs
+     Net lcd_init_inst/state_2: 4 loads, 4 LSLICEs
      Net lcd_init_inst/state_0: 1 loads, 1 LSLICEs
      Net lcd_init_inst/cnt_150ms_22__N_221: 12 loads, 12 LSLICEs
-     Net lcd_init_inst/state_2: 4 loads, 4 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net cnt_s2_num_2: 38 loads
-     Net cnt_s2_num_3: 38 loads
-     Net cnt_s2_num_1: 37 loads
-     Net cnt_s2_num_0: 28 loads
-     Net cnt_s2_num_5: 24 loads
+     Net cnt_s2_num_2: 40 loads
+     Net cnt_s2_num_1: 39 loads
+     Net cnt_s2_num_3: 37 loads
+     Net cnt_s2_num_0: 30 loads
+     Net cnt_s2_num_5: 25 loads
      Net cnt_s2_num_4: 23 loads
      Net state_4: 22 loads
-     Net state_5: 21 loads
      Net lcd_init_inst/state_2: 18 loads
+     Net lcd_init_inst/cnt_s4_num_1: 17 loads
      Net lcd_init_inst/cnt_s4_num_2: 17 loads
-
-
 
 
 
@@ -149,15 +127,20 @@ Mapped on:  01/15/25  21:40:01
 +---------------------+-----------+-----------+------------+
 | lcd_dc              | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| lcd_rst             | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
+
 | lcd_sclk            | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| lcd_rst             | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | lcd_mosi            | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | lcd_cs              | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | lcd_led             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| debug_led1          | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| debug_led2          | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | sys_clk             | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -168,86 +151,28 @@ Mapped on:  01/15/25  21:40:01
 
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
-Signal lcd_init_inst/n5175 was merged into signal lcd_init_inst/state_2
-Signal lcd_init_inst/n1394 was merged into signal state_4
-Signal n2459 was merged into signal state_5
-Signal lcd_init_inst/n2462 was merged into signal lcd_init_inst/state_0
-Signal lcd_show_char_inst/n2461 was merged into signal state_2_adj_549
-Signal lcd_show_char_inst/n2458 was merged into signal
-     lcd_show_char_inst/state1_finish_flag_N_460
+Signal lcd_init_inst/n956 was merged into signal lcd_init_inst/state_0
+Signal lcd_init_inst/n3050 was merged into signal lcd_init_inst/state_2
+Signal lcd_init_inst/n406 was merged into signal state_4
 Signal lcd_write_inst/n1 was merged into signal lcd_write_inst/mosi_N_65
-Signal n1392 was merged into signal wr_done
-Signal GND_net undriven or does not drive anything - clipped.
-Signal lcd_show_char_inst/rom_8x4096_inst/VCC_net undriven or does not drive
-     anything - clipped.
-Signal lcd_init_inst/cnt_150ms_680_add_4_1/S0 undriven or does not drive
-     anything - clipped.
-Signal lcd_init_inst/cnt_150ms_680_add_4_1/CI undriven or does not drive
-     anything - clipped.
-Signal lcd_init_inst/add_153_1/S0 undriven or does not drive anything - clipped.
-     
-Signal lcd_init_inst/add_153_1/CI undriven or does not drive anything - clipped.
-
-     
-Signal lcd_init_inst/cnt_150ms_680_add_4_23/CO undriven or does not drive
-     anything - clipped.
 Signal lcd_init_inst/add_153_19/S1 undriven or does not drive anything -
      clipped.
 Signal lcd_init_inst/add_153_19/CO undriven or does not drive anything -
      clipped.
-Signal lcd_show_char_inst/add_671_cout/S1 undriven or does not drive anything -
-     clipped.
-Signal lcd_show_char_inst/add_671_cout/CO undriven or does not drive anything -
-     clipped.
-Signal lcd_show_char_inst/add_671_1/S0 undriven or does not drive anything -
-     clipped.
-Signal lcd_show_char_inst/add_671_1/CI undriven or does not drive anything -
-     clipped.
-Block lcd_init_inst/i707_1_lut_rep_78 was optimized away.
-Block lcd_init_inst/i710_1_lut was optimized away.
-Block lcd_init_inst/i1670_1_lut was optimized away.
-Block lcd_init_inst/i1673_1_lut was optimized away.
-Block lcd_show_char_inst/i1672_1_lut was optimized away.
-Block lcd_show_char_inst/i1669_1_lut was optimized away.
+Signal lcd_init_inst/cnt_150ms_253_add_4_1/S0 undriven or does not drive
+     anything - clipped.
+Signal lcd_init_inst/cnt_150ms_253_add_4_1/CI undriven or does not drive
+     anything - clipped.
+Signal lcd_init_inst/add_153_1/S0 undriven or does not drive anything - clipped.
+     
+Signal lcd_init_inst/add_153_1/CI undriven or does not drive anything - clipped.
+     
+Signal lcd_init_inst/cnt_150ms_253_add_4_23/CO undriven or does not drive
+     anything - clipped.
+Block lcd_init_inst/i823_1_lut was optimized away.
+Block lcd_init_inst/i277_1_lut_rep_42 was optimized away.
+Block lcd_init_inst/i280_1_lut was optimized away.
 Block lcd_write_inst/i1_1_lut was optimized away.
-Block lcd_write_inst/i730_1_lut was optimized away.
-Block i1 was optimized away.
-Block lcd_show_char_inst/rom_8x4096_inst/i1 was optimized away.
-
-
-
-<A name="mrp_mem"></A><B><U><big>Memory Usage</big></U></B>
-
-    
-         
-    INFO: Design contains EBR with GSR enabled. The GSR is only applicable for
-         output registers except FIFO. 
-    /lcd_show_char_inst/rom_8x4096_inst:
-    EBRs: 4
-    RAM SLICEs: 0
-    Logic SLICEs: 0
-    PFU Registers: 0
-    -Contains EBR rom_8x4096_0_3_0:  TYPE= DP8KC,  Width_A= 2,  Depth_A= 4096,
-         REGMODE_A= OUTREG,  REGMODE_B= NOREG,  RESETMODE= SYNC,
-         ASYNC_RESET_RELEASE= SYNC,  WRITEMODE_A= NORMAL,  WRITEMODE_B= NORMAL,
-         GSR= ENABLED,  MEM_INIT_FILE= rom_8x4096.mem,  MEM_LPC_FILE=
-         rom_8x4096.lpc
-    -Contains EBR rom_8x4096_0_1_2:  TYPE= DP8KC,  Width_A= 2,  Depth_A= 4096,
-         REGMODE_A= OUTREG,  REGMODE_B= NOREG,  RESETMODE= SYNC,
-         ASYNC_RESET_RELEASE= SYNC,  WRITEMODE_A= NORMAL,  WRITEMODE_B= NORMAL,
-         GSR= ENABLED,  MEM_INIT_FILE= rom_8x4096.mem,  MEM_LPC_FILE=
-         rom_8x4096.lpc
-    -Contains EBR rom_8x4096_0_0_3:  TYPE= DP8KC,  Width_A= 2,  Depth_A= 4096,
-         REGMODE_A= OUTREG,  REGMODE_B= NOREG,  RESETMODE= SYNC,
-         ASYNC_RESET_RELEASE= SYNC,  WRITEMODE_A= NORMAL,  WRITEMODE_B= NORMAL,
-         GSR= ENABLED,  MEM_INIT_FILE= rom_8x4096.mem,  MEM_LPC_FILE=
-         rom_8x4096.lpc
-    -Contains EBR rom_8x4096_0_2_1:  TYPE= DP8KC,  Width_A= 2,  Depth_A= 4096,
-         REGMODE_A= OUTREG,  REGMODE_B= NOREG,  RESETMODE= SYNC,
-         ASYNC_RESET_RELEASE= SYNC,  WRITEMODE_A= NORMAL,  WRITEMODE_B= NORMAL,
-
-         GSR= ENABLED,  MEM_INIT_FILE= rom_8x4096.mem,  MEM_LPC_FILE=
-         rom_8x4096.lpc
 
      
 
@@ -262,6 +187,7 @@ PLL 1:                                     Pin/Node Value
   Input Clock:                             PIN      sys_clk_c
   Output Clock(P):                         NODE     sys_clk_50MHz
   Output Clock(S):                                  NONE
+
   Output Clock(S2):                                 NONE
   Output Clock(S3):                                 NONE
   Feedback Signal:                         NODE     sys_clk_50MHz
@@ -304,7 +230,6 @@ PLL 1:                                     Pin/Node Value
   Output Clock(S3) Frequency (MHz):                 NA
   CLKOP Post Divider A Input:                       DIVA
   CLKOS Post Divider B Input:                       DIVB
-
   CLKOS2 Post Divider C Input:                      DIVC
   CLKOS3 Post Divider D Input:                      DIVD
   Pre Divider A Input:                              VCO_PHASE
@@ -319,6 +244,7 @@ PLL 1:                                     Pin/Node Value
   CLKI Divider:                                     1
   CLKFB Divider:                                    4
   CLKOP Divider:                                    11
+
   CLKOS Divider:                                    1
   CLKOS2 Divider:                                   1
   CLKOS3 Divider:                                   1
@@ -337,14 +263,6 @@ PLL 1:                                     Pin/Node Value
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 ---------------
 
-Instance Name: lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_3_0
-         Type: DP8KC
-Instance Name: lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_1_2
-         Type: DP8KC
-Instance Name: lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_0_3
-         Type: DP8KC
-Instance Name: lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_2_1
-         Type: DP8KC
 Instance Name: pll_u1/PLLInst_0
          Type: EHXPLLJ
 
@@ -365,7 +283,6 @@ GSR Component:
         
 
      Components with synchronous local reset also reset by asynchronous GSR
-
 ----------------------------------------------------------------------
 
      These components have the GSR property set to ENABLED and the local reset
@@ -374,72 +291,49 @@ GSR Component:
      component.
 
      Type and number of components of the type: 
-   Register = 107 
-   DP8KC = 4
+   Register = 88 
 
      Type and instance name of component: 
+   Register : lcd_write_inst/cnt_sclk__i0
+   Register : lcd_write_inst/cnt_delay_251__i4
+   Register : lcd_write_inst/cnt_delay_251__i3
+   Register : lcd_write_inst/cnt_delay_251__i2
+   Register : lcd_write_inst/cnt_delay_251__i1
+   Register : lcd_write_inst/state2_finish_flag_98
+   Register : lcd_write_inst/cnt1_FSM_i15
+   Register : lcd_write_inst/cnt1_FSM_i14
+   Register : lcd_write_inst/cnt1_FSM_i13
+   Register : lcd_write_inst/cnt1_FSM_i12
+   Register : lcd_write_inst/cnt1_FSM_i11
+
+   Register : lcd_write_inst/cnt1_FSM_i10
+   Register : lcd_write_inst/cnt1_FSM_i9
+   Register : lcd_write_inst/cnt1_FSM_i8
+   Register : lcd_write_inst/cnt1_FSM_i7
+   Register : lcd_write_inst/cnt1_FSM_i6
+   Register : lcd_write_inst/cnt1_FSM_i0
+   Register : lcd_write_inst/cnt1_FSM_i5
+   Register : lcd_write_inst/cnt1_FSM_i4
+   Register : lcd_write_inst/cnt1_FSM_i3
+   Register : lcd_write_inst/cnt1_FSM_i2
+   Register : lcd_write_inst/sclk_99
+   Register : lcd_write_inst/cnt1_FSM_i1
+   Register : lcd_write_inst/cnt_delay_251__i0
+   Register : lcd_write_inst/state_FSM_i0
    Register : lcd_write_inst/cnt_sclk__i3
    Register : lcd_write_inst/cnt_sclk__i2
    Register : lcd_write_inst/cnt_sclk__i1
-   Register : lcd_write_inst/cnt_sclk__i0
-   Register : lcd_write_inst/cnt1_FSM_i0
-   Register : lcd_write_inst/state2_finish_flag_98
-   Register : lcd_write_inst/sclk_99
    Register : lcd_write_inst/state_FSM_i3
-   Register : lcd_write_inst/cnt1_FSM_i1
-   Register : lcd_write_inst/cnt1_FSM_i2
-   Register : lcd_write_inst/cnt1_FSM_i3
-   Register : lcd_write_inst/cnt1_FSM_i4
-   Register : lcd_write_inst/cnt1_FSM_i5
-   Register : lcd_write_inst/cnt1_FSM_i6
-   Register : lcd_write_inst/cnt1_FSM_i7
-   Register : lcd_write_inst/cnt1_FSM_i8
-   Register : lcd_write_inst/cnt1_FSM_i9
-   Register : lcd_write_inst/cnt1_FSM_i10
-   Register : lcd_write_inst/cnt1_FSM_i11
-   Register : lcd_write_inst/cnt1_FSM_i12
-   Register : lcd_write_inst/cnt1_FSM_i13
-   Register : lcd_write_inst/cnt1_FSM_i14
-   Register : lcd_write_inst/cnt1_FSM_i15
-   Register : lcd_write_inst/cnt_delay_678__i0
-   Register : lcd_write_inst/cnt_delay_678__i1
-   Register : lcd_write_inst/cnt_delay_678__i2
-   Register : lcd_write_inst/cnt_delay_678__i3
-   Register : lcd_write_inst/cnt_delay_678__i4
-   Register : lcd_write_inst/state_FSM_i0
-   Register : show_string_number_ctrl_inst/cnt1__i0
-   Register : show_string_number_ctrl_inst/start_x__i1
-   Register : show_string_number_ctrl_inst/start_y__i1
-   Register : show_string_number_ctrl_inst/start_x__i5
-   Register : show_string_number_ctrl_inst/start_x__i4
-   Register : show_string_number_ctrl_inst/start_x__i3
-   Register : show_string_number_ctrl_inst/start_x__i2
-   Register : show_string_number_ctrl_inst/cnt1__i1
-   Register : show_string_number_ctrl_inst/start_y__i2
-   Register : lcd_show_char_inst/cnt_rom_prepare__i0
-   Register : lcd_show_char_inst/cnt_length_num__i0
-   Register : lcd_show_char_inst/cnt_wr_color_data__i0
-   Register : lcd_show_char_inst/state_FSM_i0
-   Register : lcd_show_char_inst/cnt_wr_color_data__i5
-   Register : lcd_show_char_inst/cnt_wr_color_data__i4
-
-   Register : lcd_show_char_inst/cnt_wr_color_data__i3
-   Register : lcd_show_char_inst/cnt_wr_color_data__i2
-   Register : lcd_show_char_inst/cnt_wr_color_data__i1
-   Register : lcd_show_char_inst/cnt_length_num__i4
-   Register : lcd_show_char_inst/cnt_length_num__i3
-   Register : lcd_show_char_inst/cnt_length_num__i2
-   Register : lcd_show_char_inst/cnt_length_num__i1
-   Register : lcd_show_char_inst/cnt_rom_prepare__i2
-   Register : lcd_show_char_inst/cnt_rom_prepare__i1
-   Register : lcd_show_char_inst/state_FSM_i3
-   Register : lcd_show_char_inst/temp_i7
-   Register : lcd_show_char_inst/state1_finish_flag_179
-   Register : lcd_init_inst/cnt_s2_num__i0
    Register : lcd_init_inst/cnt_s4_num__i0
-   Register : lcd_init_inst/cnt_150ms_680__i0
-   Register : lcd_init_inst/cnt_s4_num_done_177
+   Register : lcd_init_inst/cnt_s2_num__i0
+   Register : lcd_init_inst/cnt_150ms_253__i0
+   Register : lcd_init_inst/cnt_s2_num__i6
    Register : lcd_init_inst/lcd_rst_high_flag_171
+   Register : lcd_init_inst/cnt_s2_num__i5
+   Register : lcd_init_inst/cnt_s2_num__i4
+   Register : lcd_init_inst/cnt_s2_num__i3
+   Register : lcd_init_inst/cnt_s2_num__i2
+   Register : lcd_init_inst/cnt_s2_num__i1
    Register : lcd_init_inst/cnt_s4_num__i17
    Register : lcd_init_inst/cnt_s4_num__i16
    Register : lcd_init_inst/cnt_s4_num__i15
@@ -453,60 +347,43 @@ GSR Component:
    Register : lcd_init_inst/cnt_s4_num__i7
    Register : lcd_init_inst/cnt_s4_num__i6
    Register : lcd_init_inst/cnt_s4_num__i5
-   Register : lcd_init_inst/cnt_s2_num_done_174
    Register : lcd_init_inst/cnt_s4_num__i4
    Register : lcd_init_inst/cnt_s4_num__i3
    Register : lcd_init_inst/cnt_s4_num__i2
    Register : lcd_init_inst/cnt_s4_num__i1
-   Register : lcd_init_inst/cnt_s2_num__i6
-   Register : lcd_init_inst/cnt_s2_num__i5
-   Register : lcd_init_inst/cnt_s2_num__i4
-   Register : lcd_init_inst/cnt_s2_num__i3
-   Register : lcd_init_inst/cnt_s2_num__i2
-   Register : lcd_init_inst/cnt_s2_num__i1
-   Register : lcd_init_inst/cnt_150ms_680__i1
-   Register : lcd_init_inst/cnt_150ms_680__i2
-   Register : lcd_init_inst/cnt_150ms_680__i3
-   Register : lcd_init_inst/cnt_150ms_680__i4
-   Register : lcd_init_inst/cnt_150ms_680__i5
-   Register : lcd_init_inst/cnt_150ms_680__i6
-   Register : lcd_init_inst/cnt_150ms_680__i7
-   Register : lcd_init_inst/cnt_150ms_680__i8
-   Register : lcd_init_inst/cnt_150ms_680__i9
-   Register : lcd_init_inst/cnt_150ms_680__i10
-   Register : lcd_init_inst/cnt_150ms_680__i11
-   Register : lcd_init_inst/cnt_150ms_680__i12
-   Register : lcd_init_inst/cnt_150ms_680__i13
-   Register : lcd_init_inst/cnt_150ms_680__i14
-   Register : lcd_init_inst/cnt_150ms_680__i15
+   Register : lcd_init_inst/cnt_150ms_253__i22
+   Register : lcd_init_inst/cnt_150ms_253__i21
+   Register : lcd_init_inst/cnt_150ms_253__i20
+   Register : lcd_init_inst/cnt_150ms_253__i19
+   Register : lcd_init_inst/cnt_150ms_253__i18
+   Register : lcd_init_inst/cnt_150ms_253__i17
+   Register : lcd_init_inst/cnt_150ms_253__i16
+   Register : lcd_init_inst/cnt_150ms_253__i15
+   Register : lcd_init_inst/cnt_150ms_253__i14
+   Register : lcd_init_inst/cnt_150ms_253__i13
+   Register : lcd_init_inst/cnt_150ms_253__i12
 
-   Register : lcd_init_inst/cnt_150ms_680__i16
-   Register : lcd_init_inst/cnt_150ms_680__i17
-   Register : lcd_init_inst/cnt_150ms_680__i18
-   Register : lcd_init_inst/cnt_150ms_680__i19
-   Register : lcd_init_inst/cnt_150ms_680__i20
-   Register : lcd_init_inst/cnt_150ms_680__i21
-   Register : lcd_init_inst/cnt_150ms_680__i22
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_3_0
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_1_2
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_0_3
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_2_1
-
-     EBR components with enabled GSR
--------------------------------
-
-     These EBR components have the GSR property set to ENABLED. The components
-     will respond to the asynchronous reset signal 'sys_rst_n_c' via the GSR
-     component.
-
-     Type and number of components of the type: 
-   DP8KC = 4
-
-     Type and instance name of component: 
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_3_0
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_1_2
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_0_3
-   DP8KC : lcd_show_char_inst/rom_8x4096_inst/rom_8x4096_0_2_1
+   Register : lcd_init_inst/cnt_150ms_253__i11
+   Register : lcd_init_inst/cnt_150ms_253__i10
+   Register : lcd_init_inst/cnt_150ms_253__i9
+   Register : lcd_init_inst/cnt_150ms_253__i8
+   Register : lcd_init_inst/cnt_150ms_253__i7
+   Register : lcd_init_inst/cnt_150ms_253__i6
+   Register : lcd_init_inst/cnt_150ms_253__i5
+   Register : lcd_init_inst/cnt_150ms_253__i4
+   Register : lcd_init_inst/cnt_150ms_253__i3
+   Register : lcd_init_inst/cnt_150ms_253__i2
+   Register : lcd_init_inst/cnt_150ms_253__i1
+   Register : control_inst/data__i8
+   Register : control_inst/data__i7
+   Register : control_inst/data__i6
+   Register : control_inst/data__i5
+   Register : control_inst/data__i4
+   Register : control_inst/data__i3
+   Register : control_inst/data__i2
+   Register : control_inst/data__i1
+   Register : control_inst/en_write_19
+   Register : control_inst/data__i0
 
 
 
@@ -515,8 +392,14 @@ GSR Component:
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 53 MB
+   Peak Memory Usage: 51 MB
         
+
+
+
+
+
+
 
 
 

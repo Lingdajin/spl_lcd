@@ -1,8 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BaliProject version="3.2" title="spi_lcd" device="LCMXO2-4000HC-4MG132C" default_implementation="impl1">
+<BaliProject version="3.2" title="spi_lcd" device="LCMXO2-4000HC-5MG132C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
-        <Options/>
+        <Options def_top="tb_pll" top="spi_lcd"/>
+        <Source name="source/spi_lcd.v" type="Verilog" type_short="Verilog">
+            <Options top_module="spi_lcd"/>
+        </Source>
+        <Source name="source/control.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/lcd_write.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/lcd_init.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/lcd_show_char.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/show_string_number_ctrl.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="pll/pll.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="rom/rom_8x4096.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="rom/tb_rom_8x4096_tmpl.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/tb_pll.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="sim/tb_pll/tb_pll.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="sim/tb_rom/tb_rom.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
         <Source name="spi_lcd.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
         </Source>

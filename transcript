@@ -1,0 +1,48 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do {D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_pll/tb_pll.mdo}
+# Loading project tb_pll
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 23:45:28 on Jan 15,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v 
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# End time: 23:45:28 on Jan 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 23:45:29 on Jan 15,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 23:45:29 on Jan 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -L work -L pmi_work -L ovi_machxo2 tb 
+# Start time: 23:45:29 on Jan 15,2025
+# //  ModelSim - Lattice FPGA Edition 2023.3 Jul 18 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim - Lattice FPGA Edition and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.tb
+# Loading work.pll
+# Loading ovi_machxo2.VLO
+# Loading ovi_machxo2.EHXPLLJ
+# WARNING: No extended dataflow license exists
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v(22)
+#    Time: 1 us  Iteration: 0  Instance: /tb
+# Break in Module tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v line 22
+# End time: 23:47:09 on Jan 15,2025, Elapsed time: 0:01:40
+# Errors: 0, Warnings: 5

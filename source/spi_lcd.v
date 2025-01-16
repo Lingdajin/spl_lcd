@@ -25,7 +25,9 @@ module  spi_lcd
     output          lcd_sclk      ,
     output          lcd_mosi      ,
     output          lcd_cs        ,
-    output          lcd_led
+    output          lcd_led       ,
+    output          debug_led1    ,
+    output          debug_led2    
 );
 wire            sys_clk_50MHz;
 wire    [8:0]   data;   
@@ -46,7 +48,11 @@ wire    [8:0]   show_char_data     ;
 wire            en_write_show_char ;
 wire            show_char_done     ;  
 
-assign  lcd_led = 1'b1;  
+
+assign  lcd_led = 1'b1;
+
+assign debug_led1 = init_done;
+assign debug_led2 = show_char_done;
 
 pll pll_u1
 (
@@ -94,34 +100,34 @@ lcd_init  lcd_init_inst
     .init_done    (init_done    )
 );
 
-lcd_show_char  lcd_show_char_inst
-(
-    .sys_clk             (sys_clk_50MHz     ),
-    .sys_rst_n           (sys_rst_n         ),
-    .wr_done             (wr_done           ),
-    .en_size             (en_size           ),
-    .show_char_flag      (show_char_flag    ),   //显示字符标志信号
-    .ascii_num           (ascii_num         ),   //需要显示字符的ascii码
-    .start_x             (start_x           ),   //起点的x坐标    
-    .start_y             (start_y           ),   //起点的y坐标    
+// lcd_show_char  lcd_show_char_inst
+// (
+//     .sys_clk             (sys_clk     ),
+//     .sys_rst_n           (sys_rst_n         ),
+//     .wr_done             (wr_done           ),
+//     .en_size             (en_size           ),
+//     .show_char_flag      (show_char_flag    ),   //显示字符标志信号
+//     .ascii_num           (ascii_num         ),   //需要显示字符的ascii码
+//     .start_x             (start_x           ),   //起点的x坐标    
+//     .start_y             (start_y           ),   //起点的y坐标    
 
-    .show_char_data      (show_char_data    ),   //传输的命令或者数据
-    .en_write_show_char  (en_write_show_char),   //使能写spi信号
-    .show_char_done      (show_char_done    )    //显示字符完成标志信号
-);
+//     .show_char_data      (show_char_data    ),   //传输的命令或者数据
+//     .en_write_show_char  (en_write_show_char),   //使能写spi信号
+//     .show_char_done      (show_char_done    )    //显示字符完成标志信号
+// );
 
-show_string_number_ctrl  show_string_number_ctrl_inst
-(
-    .sys_clk             (sys_clk_50MHz ),
-    .sys_rst_n           (sys_rst_n     ),
-    .init_done           (init_done     ),
-    .show_char_done      (show_char_done),
+// show_string_number_ctrl  show_string_number_ctrl_inst
+// (
+//     .sys_clk             (sys_clk ),
+//     .sys_rst_n           (sys_rst_n     ),
+//     .init_done           (init_done     ),
+//     .show_char_done      (show_char_done),
  
-    .en_size             (en_size       ), 
-    .show_char_flag      (show_char_flag),
-    .ascii_num           (ascii_num     ),
-    .start_x             (start_x       ),
-    .start_y             (start_y       )
-);
+//     .en_size             (en_size       ), 
+//     .show_char_flag      (show_char_flag),
+//     .ascii_num           (ascii_num     ),
+//     .start_x             (start_x       ),
+//     .start_y             (start_y       )
+// );
 
 endmodule
