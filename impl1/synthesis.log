@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Jan 16 22:07:01 2025
+Thu Jan 16 22:16:04 2025
 
 
 Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml 
@@ -325,12 +325,12 @@ All blocks are expanded and NGD expansion is successful.
 Writing NGD file spi_lcd_impl1.ngd.
 
 ################### Begin Area Report (spi_lcd)######################
-Number of register bits => 206 of 4635 (4 % )
+Number of register bits => 207 of 4635 (4 % )
 CCU2D => 27
 EHXPLLJ => 1
-FD1P3AX => 53
+FD1P3AX => 52
 FD1P3AY => 1
-FD1P3IX => 67
+FD1P3IX => 69
 FD1P3JX => 1
 FD1S3AX => 33
 FD1S3AY => 1
@@ -338,10 +338,10 @@ FD1S3IX => 47
 FD1S3JX => 3
 GSR => 1
 IB => 2
-L6MUX21 => 94
-LUT4 => 1359
+L6MUX21 => 93
+LUT4 => 1344
 OB => 6
-PFUMX => 296
+PFUMX => 298
 ROM128X1A => 4
 ################### End Area Report ##################
 
@@ -352,33 +352,33 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 2
-  Net : pll_u1/sys_clk_50MHz, loads : 207
+  Net : pll_u1/sys_clk_50MHz, loads : 208
   Net : sys_clk_c, loads : 1
 Clock Enable Nets
 Number of Clock Enables: 18
 Top 10 highest fanout Clock Enables:
   Net : lcd_show_char_inst/cnt_set_windows_3__N_384, loads : 16
-  Net : lcd_write_inst/sys_clk_50MHz_enable_84, loads : 15
-  Net : show_string_number_ctrl_inst/sys_clk_50MHz_enable_96, loads : 12
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_98, loads : 12
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_69, loads : 9
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_43, loads : 8
-  Net : lcd_init_inst/sys_clk_50MHz_enable_32, loads : 6
-  Net : lcd_show_char_inst/sys_clk_50MHz_enable_22, loads : 5
-  Net : sys_clk_50MHz_enable_54, loads : 1
-  Net : sys_clk_50MHz_enable_56, loads : 1
+  Net : lcd_write_inst/sys_clk_50MHz_enable_99, loads : 15
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_79, loads : 13
+  Net : show_string_number_ctrl_inst/sys_clk_50MHz_enable_23, loads : 12
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_81, loads : 9
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_78, loads : 8
+  Net : lcd_init_inst/sys_clk_50MHz_enable_76, loads : 6
+  Net : lcd_show_char_inst/sys_clk_50MHz_enable_62, loads : 5
+  Net : sys_clk_50MHz_enable_58, loads : 1
+  Net : lcd_write_inst/sys_clk_50MHz_enable_82, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : lcd_show_char_inst/rom_addr_3, loads : 514
-  Net : lcd_show_char_inst/rom_addr_0, loads : 499
-  Net : lcd_show_char_inst/rom_addr_4, loads : 453
+  Net : lcd_show_char_inst/rom_addr_3, loads : 511
+  Net : lcd_show_char_inst/rom_addr_0, loads : 505
+  Net : lcd_show_char_inst/rom_addr_4, loads : 461
   Net : lcd_show_char_inst/rom_addr_2, loads : 408
-  Net : lcd_show_char_inst/rom_addr_1, loads : 382
-  Net : lcd_show_char_inst/rom_addr_5, loads : 277
-  Net : lcd_show_char_inst/rom_addr_6, loads : 154
-  Net : lcd_show_char_inst/rom_addr_7, loads : 80
+  Net : lcd_show_char_inst/rom_addr_1, loads : 305
+  Net : lcd_show_char_inst/rom_addr_5, loads : 284
+  Net : lcd_show_char_inst/rom_addr_6, loads : 151
+  Net : lcd_show_char_inst/rom_addr_7, loads : 79
+  Net : lcd_show_char_inst/n15568, loads : 78
   Net : lcd_show_char_inst/rom_addr_8, loads : 40
-  Net : lcd_init_inst/cnt_s2_num_0, loads : 28
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -388,7 +388,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.162 MHz|    12 *
+clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   68.913 MHz|    12 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -396,8 +396,8 @@ clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   78.162 MHz|    12 *
 1 constraints not met.
 
 
-Peak Memory Usage: 166.156  MB
+Peak Memory Usage: 166.555  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 4.141  secs
+Elapsed CPU time for LSE flow : 4.078  secs
 --------------------------------------------------------------

@@ -1,30 +1,30 @@
 [ START MERGED ]
 lcd_write_inst/n1 lcd_write_inst/mosi_N_65
-n1381 wr_done
-lcd_init_inst/n1383 state_4
-lcd_init_inst/n14071 state_2_adj_780
-lcd_init_inst/n6829 lcd_init_inst/state_0
-n1246 state_5
-lcd_show_char_inst/n14108 lcd_show_char_inst/rom_addr_5
-lcd_show_char_inst/n6827 state_2_adj_781
+n1338 wr_done
+lcd_init_inst/n14259 lcd_init_inst/state_2
+lcd_init_inst/n14214 state_4
+lcd_init_inst/n6878 lcd_init_inst/state_0
+n1213 state_5
+lcd_show_char_inst/n6875 state_2_adj_790
+lcd_show_char_inst/n14237 lcd_show_char_inst/rom_addr_5
 [ END MERGED ]
 [ START CLIPPED ]
 GND_net
-lcd_show_char_inst/add_625_1/S0
-lcd_show_char_inst/add_625_1/CI
-lcd_show_char_inst/add_625_cout/S1
-lcd_show_char_inst/add_625_cout/CO
-lcd_init_inst/add_153_1/S0
-lcd_init_inst/add_153_1/CI
-lcd_init_inst/cnt_150ms_636_add_4_23/CO
+lcd_show_char_inst/add_590_1/S0
+lcd_show_char_inst/add_590_1/CI
+lcd_show_char_inst/add_590_cout/S1
+lcd_show_char_inst/add_590_cout/CO
 lcd_init_inst/add_153_19/S1
 lcd_init_inst/add_153_19/CO
-lcd_init_inst/cnt_150ms_636_add_4_1/S0
-lcd_init_inst/cnt_150ms_636_add_4_1/CI
+lcd_init_inst/cnt_150ms_608_add_4_1/S0
+lcd_init_inst/cnt_150ms_608_add_4_1/CI
+lcd_init_inst/cnt_150ms_608_add_4_23/CO
+lcd_init_inst/add_153_1/S0
+lcd_init_inst/add_153_1/CI
 [ END CLIPPED ]
 [ START DESIGN PREFS ]
 SCHEMATIC START ;
-# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Thu Jan 16 22:07:09 2025
+# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Thu Jan 16 22:16:11 2025
 
 SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=DISABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE BACKGROUND_RECONFIG=OFF INBUF=ON ;
 LOCATE COMP "lcd_dc" SITE "P8" ;

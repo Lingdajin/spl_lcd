@@ -243,10 +243,10 @@ always@(posedge sys_clk_50MHz or negedge sys_rst_n)
             default : 
                 //当cnt_s4_num大于14且为偶数时，传输颜色数据的高8位
                 if(cnt_s4_num >= 'd14 && cnt_s4_num[0] == 0)
-                    init_data <= {1'b1,WHITE[15:8]};
+                    init_data <= {1'b1,BLACK[15:8]};
                 //当cnt_s4_num大于14且为奇数时，传输颜色数据的低8位
                 else if(cnt_s4_num >= 'd14 && cnt_s4_num[0] == 1)
-                    init_data <= {1'b1,WHITE[7:0]};
+                    init_data <= {1'b1,BLACK[7:0]};
                 else
                     init_data <= DATA_IDLE;
         endcase
