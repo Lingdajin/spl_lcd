@@ -123,7 +123,7 @@ lcd_init  lcd_init_inst
 
 lcd_show_char  lcd_show_char_inst
 (
-    .sys_clk             (sys_clk     ),
+    .sys_clk             (sys_clk_50MHz     ),
     .sys_rst_n           (sys_rst_n         ),
     .wr_done             (wr_done           ),
     .en_size             (en_size           ),
@@ -139,7 +139,7 @@ lcd_show_char  lcd_show_char_inst
 
 show_string_number_ctrl  show_string_number_ctrl_inst
 (
-    .sys_clk             (sys_clk ),
+    .sys_clk             (sys_clk_50MHz ),
     .sys_rst_n           (sys_rst_n     ),
     .init_done           (init_done     ),
     .show_char_done      (show_char_done),

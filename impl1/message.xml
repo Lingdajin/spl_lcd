@@ -225,7 +225,7 @@
             <ID>35935013</ID>
             <Severity>Warning</Severity>
             <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(84): </Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i20</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21</Dynamic>
             <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v</Navigation>
             <Navigation>84</Navigation>
         </Message>
@@ -235,15 +235,6 @@
         </Message>
     </Task>
     <Task name="PAR">
-        <Message>
-            <ID>61061008</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>sys_clk_c</Dynamic>
-            <Dynamic>Primary</Dynamic>
-            <Dynamic>sys_clk</Dynamic>
-            <Dynamic>C1</Dynamic>
-            <Dynamic>Primary</Dynamic>
-        </Message>
         <Message>
             <ID>66011008</ID>
             <Severity>Warning</Severity>

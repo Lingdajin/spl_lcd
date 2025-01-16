@@ -47,7 +47,7 @@
     </pins>
 
     <!--
-        Instances in netlist: 349
+        Instances in netlist: 348
     -->
 
     <instance  name = "segment_led_inst/seg_data_3__I_0"  library = "work"  arch = ""  type = "comb">
@@ -8837,7 +8837,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/start_x_8__I_0_189"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/start_x_8__I_0_188"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[8]"  direction = "in"  />
@@ -8870,7 +8870,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "start_x[8]"  />
         <nitem  name = "start_x[7]"  />
@@ -8926,7 +8926,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "start_x[8]"  />
         <nitem  name = "start_x[7]"  />
@@ -9013,7 +9013,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/start_y_8__I_0_190"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/start_y_8__I_0_189"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[8]"  direction = "in"  />
@@ -9046,7 +9046,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "start_y[8]"  />
         <nitem  name = "start_y[7]"  />
@@ -9102,7 +9102,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "start_y[8]"  />
         <nitem  name = "start_y[7]"  />
@@ -9207,7 +9207,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "show_char_flag"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_379[3]"  />
@@ -9235,7 +9235,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/state1_finish_flag"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_383[3]"  />
@@ -9263,7 +9263,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/state2_finish_flag"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_387[3]"  />
@@ -9273,7 +9273,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/state_3__I_0_192"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/state_3__I_0_191"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "b[3]"  direction = "in"  />
         <pitem  name = "b[2]"  direction = "in"  />
@@ -9287,7 +9287,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/state[3]"  />
         <nitem  name = "lcd_show_char_inst/state[2]"  />
@@ -9315,7 +9315,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/state_3__I_0_191"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/state_3__I_0_190"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "data[7]"  direction = "in"  />
         <pitem  name = "data[6]"  direction = "in"  />
@@ -9349,7 +9349,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "debug_led2"  />
         <nitem  name = "lcd_show_char_inst/state[3]"  />
@@ -9379,7 +9379,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/the1_wr_done_179"  library = "work"  arch = ""  type = "reg">
+    <instance  name = "lcd_show_char_inst/the1_wr_done_178"  library = "work"  arch = ""  type = "reg">
         <pins>
         <pitem  name = "s"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -9389,8 +9389,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "wr_done"  />
         <nitem  name = "lcd_show_char_inst/the1_wr_done"  />
         <nitem  name = "lcd_show_char_inst/sys_rst_n_N_296"  />
@@ -9419,8 +9419,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[1]"  />
@@ -9433,7 +9433,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i28"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/state_3__N_376_I_0_196"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "o"  direction = "out"  />
@@ -9442,7 +9442,7 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/the1_wr_done"  />
-        <nitem  name = "lcd_show_char_inst/n104"  />
+        <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_395"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_376"  />
         </nets>
     </instance>
@@ -9465,46 +9465,12 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[0]"  />
-        <nitem  name = "lcd_show_char_inst/n107"  />
-        <nitem  name = "lcd_show_char_inst/n108"  />
-        <nitem  name = "lcd_show_char_inst/n109"  />
-        <nitem  name = "lcd_show_char_inst/n110"  />
-        </nets>
-    </instance>
-
-    <instance  name = "lcd_show_char_inst/mux_29"  library = "work"  arch = ""  type = "comb">
-        <pins>
-        <pitem  name = "d0[3]"  direction = "in"  />
-        <pitem  name = "d0[2]"  direction = "in"  />
-        <pitem  name = "d0[1]"  direction = "in"  />
-        <pitem  name = "d0[0]"  direction = "in"  />
-        <pitem  name = "cond"  direction = "in"  />
-        <pitem  name = "d1[3]"  direction = "in"  />
-        <pitem  name = "d1[2]"  direction = "in"  />
-        <pitem  name = "d1[1]"  direction = "in"  />
-        <pitem  name = "d1[0]"  direction = "in"  />
-        <pitem  name = "o[3]"  direction = "out"  />
-        <pitem  name = "o[2]"  direction = "out"  />
-        <pitem  name = "o[1]"  direction = "out"  />
-        <pitem  name = "o[0]"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "lcd_show_char_inst/cnt_set_windows[3]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_set_windows[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_set_windows[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_set_windows[0]"  />
-        <nitem  name = "lcd_show_char_inst/n104"  />
-        <nitem  name = "lcd_show_char_inst/n107"  />
-        <nitem  name = "lcd_show_char_inst/n108"  />
-        <nitem  name = "lcd_show_char_inst/n109"  />
-        <nitem  name = "lcd_show_char_inst/n110"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_391[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_391[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_391[1]"  />
@@ -9514,15 +9480,15 @@
 
     <instance  name = "lcd_show_char_inst/cnt_set_windows_3__I_0_199"  library = "work"  arch = ""  type = "comb">
         <pins>
-        <pitem  name = "d1[3]"  direction = "in"  />
-        <pitem  name = "d1[2]"  direction = "in"  />
-        <pitem  name = "d1[1]"  direction = "in"  />
-        <pitem  name = "d1[0]"  direction = "in"  />
-        <pitem  name = "cond"  direction = "in"  />
         <pitem  name = "d0[3]"  direction = "in"  />
         <pitem  name = "d0[2]"  direction = "in"  />
         <pitem  name = "d0[1]"  direction = "in"  />
         <pitem  name = "d0[0]"  direction = "in"  />
+        <pitem  name = "cond"  direction = "in"  />
+        <pitem  name = "d1[3]"  direction = "in"  />
+        <pitem  name = "d1[2]"  direction = "in"  />
+        <pitem  name = "d1[1]"  direction = "in"  />
+        <pitem  name = "d1[0]"  direction = "in"  />
         <pitem  name = "o[3]"  direction = "out"  />
         <pitem  name = "o[2]"  direction = "out"  />
         <pitem  name = "o[1]"  direction = "out"  />
@@ -9530,8 +9496,11 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "lcd_show_char_inst/state1_finish_flag"  />
+        <nitem  name = "lcd_show_char_inst/cnt_set_windows[3]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_set_windows[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_set_windows[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_set_windows[0]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_395"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_391[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_391[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows_3__N_391[1]"  />
@@ -9543,7 +9512,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/state1_finish_flag_181"  library = "work"  arch = ""  type = "reg">
+    <instance  name = "lcd_show_char_inst/state1_finish_flag_180"  library = "work"  arch = ""  type = "reg">
         <pins>
         <pitem  name = "s"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -9553,10 +9522,10 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/state1_finish_flag"  />
-        <nitem  name = "lcd_show_char_inst/state1_finish_flag_N_469"  />
+        <nitem  name = "lcd_show_char_inst/state1_finish_flag_N_470"  />
         <nitem  name = "lcd_show_char_inst/sys_rst_n_N_296"  />
         </nets>
     </instance>
@@ -9631,13 +9600,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[0]"  />
-        <nitem  name = "lcd_show_char_inst/state1_finish_flag_N_470"  />
+        <nitem  name = "lcd_show_char_inst/state1_finish_flag_N_471"  />
         </nets>
     </instance>
 
@@ -9650,8 +9619,8 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/the1_wr_done"  />
+        <nitem  name = "lcd_show_char_inst/state1_finish_flag_N_471"  />
         <nitem  name = "lcd_show_char_inst/state1_finish_flag_N_470"  />
-        <nitem  name = "lcd_show_char_inst/state1_finish_flag_N_469"  />
         </nets>
     </instance>
 
@@ -9673,8 +9642,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[0]"  />
@@ -9685,7 +9654,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/LessThan_40"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/LessThan_39"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[1]"  direction = "in"  />
@@ -9698,16 +9667,16 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[0]"  />
-        <nitem  name = "lcd_show_char_inst/n134"  />
+        <nitem  name = "lcd_show_char_inst/n129"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i42"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i41"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "o"  direction = "out"  />
@@ -9715,13 +9684,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n134"  />
-        <nitem  name = "lcd_show_char_inst/n135"  />
+        <nitem  name = "lcd_show_char_inst/n129"  />
+        <nitem  name = "lcd_show_char_inst/n130"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_377"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/add_42"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/add_41"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[2]"  direction = "in"  />
@@ -9736,18 +9705,18 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[0]"  />
-        <nitem  name = "lcd_show_char_inst/n138"  />
-        <nitem  name = "lcd_show_char_inst/n139"  />
-        <nitem  name = "lcd_show_char_inst/n140"  />
+        <nitem  name = "lcd_show_char_inst/n133"  />
+        <nitem  name = "lcd_show_char_inst/n134"  />
+        <nitem  name = "lcd_show_char_inst/n135"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_43"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_42"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d0[2]"  direction = "in"  />
         <pitem  name = "d0[1]"  direction = "in"  />
@@ -9765,17 +9734,17 @@
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[0]"  />
+        <nitem  name = "lcd_show_char_inst/n130"  />
+        <nitem  name = "lcd_show_char_inst/n133"  />
+        <nitem  name = "lcd_show_char_inst/n134"  />
         <nitem  name = "lcd_show_char_inst/n135"  />
-        <nitem  name = "lcd_show_char_inst/n138"  />
-        <nitem  name = "lcd_show_char_inst/n139"  />
-        <nitem  name = "lcd_show_char_inst/n140"  />
-        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_395[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_395[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_395[0]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_396[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_396[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_396[0]"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/cnt_rom_prepare_2__I_0_194"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/cnt_rom_prepare_2__I_0_193"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d1[2]"  direction = "in"  />
         <pitem  name = "d1[1]"  direction = "in"  />
@@ -9790,11 +9759,11 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/length_num_flag"  />
-        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_395[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_395[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_395[0]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_396[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_396[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_396[0]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_341[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_341[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare_2__N_341[0]"  />
@@ -9855,8 +9824,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/rom_addr[11]"  />
         <nitem  name = "lcd_show_char_inst/rom_addr[10]"  />
         <nitem  name = "lcd_show_char_inst/rom_addr[9]"  />
@@ -9893,7 +9862,7 @@
 
         <nets>
         <nitem  name = "en_size"  />
-        <nitem  name = "lcd_show_char_inst/en_size_N_424"  />
+        <nitem  name = "lcd_show_char_inst/en_size_N_425"  />
         </nets>
     </instance>
 
@@ -9905,13 +9874,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/en_size_N_424"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_422"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_425"  />
+        <nitem  name = "lcd_show_char_inst/en_size_N_425"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_423"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_426"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mult_51"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mult_50"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "b[1]"  direction = "in"  />
         <pitem  name = "b[0]"  direction = "in"  />
@@ -9938,7 +9907,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "ascii_num[6]"  />
         <nitem  name = "ascii_num[5]"  />
@@ -9947,21 +9916,21 @@
         <nitem  name = "ascii_num[2]"  />
         <nitem  name = "ascii_num[1]"  />
         <nitem  name = "ascii_num[0]"  />
+        <nitem  name = "lcd_show_char_inst/n154"  />
+        <nitem  name = "lcd_show_char_inst/n155"  />
+        <nitem  name = "lcd_show_char_inst/n156"  />
+        <nitem  name = "lcd_show_char_inst/n157"  />
+        <nitem  name = "lcd_show_char_inst/n158"  />
         <nitem  name = "lcd_show_char_inst/n159"  />
         <nitem  name = "lcd_show_char_inst/n160"  />
         <nitem  name = "lcd_show_char_inst/n161"  />
         <nitem  name = "lcd_show_char_inst/n162"  />
         <nitem  name = "lcd_show_char_inst/n163"  />
         <nitem  name = "lcd_show_char_inst/n164"  />
-        <nitem  name = "lcd_show_char_inst/n165"  />
-        <nitem  name = "lcd_show_char_inst/n166"  />
-        <nitem  name = "lcd_show_char_inst/n167"  />
-        <nitem  name = "lcd_show_char_inst/n168"  />
-        <nitem  name = "lcd_show_char_inst/n169"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/add_52"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/add_51"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "a[11]"  direction = "in"  />
@@ -10003,39 +9972,39 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
+        <nitem  name = "lcd_show_char_inst/n154"  />
+        <nitem  name = "lcd_show_char_inst/n155"  />
+        <nitem  name = "lcd_show_char_inst/n156"  />
+        <nitem  name = "lcd_show_char_inst/n157"  />
+        <nitem  name = "lcd_show_char_inst/n158"  />
         <nitem  name = "lcd_show_char_inst/n159"  />
         <nitem  name = "lcd_show_char_inst/n160"  />
         <nitem  name = "lcd_show_char_inst/n161"  />
         <nitem  name = "lcd_show_char_inst/n162"  />
         <nitem  name = "lcd_show_char_inst/n163"  />
         <nitem  name = "lcd_show_char_inst/n164"  />
-        <nitem  name = "lcd_show_char_inst/n165"  />
-        <nitem  name = "lcd_show_char_inst/n166"  />
-        <nitem  name = "lcd_show_char_inst/n167"  />
-        <nitem  name = "lcd_show_char_inst/n168"  />
-        <nitem  name = "lcd_show_char_inst/n169"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[11]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[10]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[9]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[8]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[7]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[6]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[5]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[4]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[3]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[2]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[1]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[0]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[11]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[10]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[9]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[8]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[7]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[6]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[5]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[4]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[3]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[2]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[1]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[0]"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/cnt_rom_prepare_2__I_0_195"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/cnt_rom_prepare_2__I_0_194"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a[31]"  direction = "in"  />
         <pitem  name = "a[30]"  direction = "in"  />
@@ -10105,16 +10074,16 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[0]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_425"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_426"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i55"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i54"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a0"  direction = "in"  />
         <pitem  name = "a1"  direction = "in"  />
@@ -10123,12 +10092,12 @@
 
         <nets>
         <nitem  name = "en_size"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_425"  />
-        <nitem  name = "lcd_show_char_inst/n185"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_426"  />
+        <nitem  name = "lcd_show_char_inst/n180"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/add_55"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/add_54"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "a[11]"  direction = "in"  />
@@ -10170,7 +10139,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "ascii_num[6]"  />
         <nitem  name = "ascii_num[5]"  />
@@ -10179,6 +10148,11 @@
         <nitem  name = "ascii_num[2]"  />
         <nitem  name = "ascii_num[1]"  />
         <nitem  name = "ascii_num[0]"  />
+        <nitem  name = "lcd_show_char_inst/n183"  />
+        <nitem  name = "lcd_show_char_inst/n184"  />
+        <nitem  name = "lcd_show_char_inst/n185"  />
+        <nitem  name = "lcd_show_char_inst/n186"  />
+        <nitem  name = "lcd_show_char_inst/n187"  />
         <nitem  name = "lcd_show_char_inst/n188"  />
         <nitem  name = "lcd_show_char_inst/n189"  />
         <nitem  name = "lcd_show_char_inst/n190"  />
@@ -10186,15 +10160,10 @@
         <nitem  name = "lcd_show_char_inst/n192"  />
         <nitem  name = "lcd_show_char_inst/n193"  />
         <nitem  name = "lcd_show_char_inst/n194"  />
-        <nitem  name = "lcd_show_char_inst/n195"  />
-        <nitem  name = "lcd_show_char_inst/n196"  />
-        <nitem  name = "lcd_show_char_inst/n197"  />
-        <nitem  name = "lcd_show_char_inst/n198"  />
-        <nitem  name = "lcd_show_char_inst/n199"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/add_56"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/add_55"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[11]"  direction = "in"  />
@@ -10236,12 +10205,17 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
+        <nitem  name = "lcd_show_char_inst/n183"  />
+        <nitem  name = "lcd_show_char_inst/n184"  />
+        <nitem  name = "lcd_show_char_inst/n185"  />
+        <nitem  name = "lcd_show_char_inst/n186"  />
+        <nitem  name = "lcd_show_char_inst/n187"  />
         <nitem  name = "lcd_show_char_inst/n188"  />
         <nitem  name = "lcd_show_char_inst/n189"  />
         <nitem  name = "lcd_show_char_inst/n190"  />
@@ -10249,11 +10223,11 @@
         <nitem  name = "lcd_show_char_inst/n192"  />
         <nitem  name = "lcd_show_char_inst/n193"  />
         <nitem  name = "lcd_show_char_inst/n194"  />
-        <nitem  name = "lcd_show_char_inst/n195"  />
-        <nitem  name = "lcd_show_char_inst/n196"  />
         <nitem  name = "lcd_show_char_inst/n197"  />
         <nitem  name = "lcd_show_char_inst/n198"  />
         <nitem  name = "lcd_show_char_inst/n199"  />
+        <nitem  name = "lcd_show_char_inst/n200"  />
+        <nitem  name = "lcd_show_char_inst/n201"  />
         <nitem  name = "lcd_show_char_inst/n202"  />
         <nitem  name = "lcd_show_char_inst/n203"  />
         <nitem  name = "lcd_show_char_inst/n204"  />
@@ -10261,15 +10235,10 @@
         <nitem  name = "lcd_show_char_inst/n206"  />
         <nitem  name = "lcd_show_char_inst/n207"  />
         <nitem  name = "lcd_show_char_inst/n208"  />
-        <nitem  name = "lcd_show_char_inst/n209"  />
-        <nitem  name = "lcd_show_char_inst/n210"  />
-        <nitem  name = "lcd_show_char_inst/n211"  />
-        <nitem  name = "lcd_show_char_inst/n212"  />
-        <nitem  name = "lcd_show_char_inst/n213"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_57"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_56"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d0[11]"  direction = "in"  />
         <pitem  name = "d0[10]"  direction = "in"  />
@@ -10323,7 +10292,12 @@
         <nitem  name = "lcd_show_char_inst/rom_addr[2]"  />
         <nitem  name = "lcd_show_char_inst/rom_addr[1]"  />
         <nitem  name = "lcd_show_char_inst/rom_addr[0]"  />
-        <nitem  name = "lcd_show_char_inst/n185"  />
+        <nitem  name = "lcd_show_char_inst/n180"  />
+        <nitem  name = "lcd_show_char_inst/n197"  />
+        <nitem  name = "lcd_show_char_inst/n198"  />
+        <nitem  name = "lcd_show_char_inst/n199"  />
+        <nitem  name = "lcd_show_char_inst/n200"  />
+        <nitem  name = "lcd_show_char_inst/n201"  />
         <nitem  name = "lcd_show_char_inst/n202"  />
         <nitem  name = "lcd_show_char_inst/n203"  />
         <nitem  name = "lcd_show_char_inst/n204"  />
@@ -10331,23 +10305,18 @@
         <nitem  name = "lcd_show_char_inst/n206"  />
         <nitem  name = "lcd_show_char_inst/n207"  />
         <nitem  name = "lcd_show_char_inst/n208"  />
-        <nitem  name = "lcd_show_char_inst/n209"  />
-        <nitem  name = "lcd_show_char_inst/n210"  />
-        <nitem  name = "lcd_show_char_inst/n211"  />
-        <nitem  name = "lcd_show_char_inst/n212"  />
-        <nitem  name = "lcd_show_char_inst/n213"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[11]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[10]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[9]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[8]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[7]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[6]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[5]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[4]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[3]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[2]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[1]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[0]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[11]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[10]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[9]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[8]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[7]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[6]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[5]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[4]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[3]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[2]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[1]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[0]"  />
         </nets>
     </instance>
 
@@ -10393,31 +10362,31 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_422"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[11]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[10]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[9]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[8]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[7]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[6]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[5]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[4]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[3]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[2]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[1]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_410[0]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[11]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[10]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[9]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[8]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[7]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[6]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[5]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[4]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[3]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[2]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[1]"  />
-        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_398[0]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_423"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[11]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[10]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[9]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[8]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[7]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[6]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[5]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[4]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[3]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[2]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[1]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_411[0]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[11]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[10]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[9]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[8]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[7]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[6]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[5]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[4]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[3]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[2]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[1]"  />
+        <nitem  name = "lcd_show_char_inst/rom_addr_11__N_399[0]"  />
         <nitem  name = "lcd_show_char_inst/rom_addr_11__N_344[11]"  />
         <nitem  name = "lcd_show_char_inst/rom_addr_11__N_344[10]"  />
         <nitem  name = "lcd_show_char_inst/rom_addr_11__N_344[9]"  />
@@ -10471,8 +10440,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/temp[7]"  />
         <nitem  name = "lcd_show_char_inst/temp[6]"  />
         <nitem  name = "lcd_show_char_inst/temp[5]"  />
@@ -10563,16 +10532,16 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[0]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_434"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_435"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/en_size_N_424_I_0"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/en_size_N_425_I_0"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a0"  direction = "in"  />
         <pitem  name = "o"  direction = "out"  />
@@ -10580,13 +10549,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/en_size_N_424"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_478"  />
+        <nitem  name = "lcd_show_char_inst/en_size_N_425"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_479"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_377"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i67"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i66"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "a0"  direction = "in"  />
@@ -10595,12 +10564,12 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/the1_wr_done"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_478"  />
-        <nitem  name = "lcd_show_char_inst/n259"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_479"  />
+        <nitem  name = "lcd_show_char_inst/n254"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/reduce_nor_72"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/reduce_nor_71"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "o"  direction = "out"  />
         <pitem  name = "a[4]"  direction = "in"  />
@@ -10611,16 +10580,16 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n265"  />
-        <nitem  name = "lcd_show_char_inst/n278"  />
-        <nitem  name = "lcd_show_char_inst/n279"  />
-        <nitem  name = "lcd_show_char_inst/n280"  />
-        <nitem  name = "lcd_show_char_inst/n281"  />
-        <nitem  name = "lcd_show_char_inst/n282"  />
+        <nitem  name = "lcd_show_char_inst/n260"  />
+        <nitem  name = "lcd_show_char_inst/n273"  />
+        <nitem  name = "lcd_show_char_inst/n274"  />
+        <nitem  name = "lcd_show_char_inst/n275"  />
+        <nitem  name = "lcd_show_char_inst/n276"  />
+        <nitem  name = "lcd_show_char_inst/n277"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/select_73"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/select_72"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "data[47]"  direction = "in"  />
         <pitem  name = "data[39]"  direction = "in"  />
@@ -10687,7 +10656,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/temp[7]"  />
         <nitem  name = "lcd_show_char_inst/temp[6]"  />
         <nitem  name = "lcd_show_char_inst/temp[5]"  />
@@ -10696,20 +10665,20 @@
         <nitem  name = "lcd_show_char_inst/temp[2]"  />
         <nitem  name = "lcd_show_char_inst/temp[1]"  />
         <nitem  name = "lcd_show_char_inst/temp[0]"  />
+        <nitem  name = "lcd_show_char_inst/n260"  />
+        <nitem  name = "lcd_show_char_inst/n262"  />
+        <nitem  name = "lcd_show_char_inst/n263"  />
+        <nitem  name = "lcd_show_char_inst/n264"  />
         <nitem  name = "lcd_show_char_inst/n265"  />
+        <nitem  name = "lcd_show_char_inst/n266"  />
         <nitem  name = "lcd_show_char_inst/n267"  />
         <nitem  name = "lcd_show_char_inst/n268"  />
         <nitem  name = "lcd_show_char_inst/n269"  />
-        <nitem  name = "lcd_show_char_inst/n270"  />
-        <nitem  name = "lcd_show_char_inst/n271"  />
-        <nitem  name = "lcd_show_char_inst/n272"  />
         <nitem  name = "lcd_show_char_inst/n273"  />
         <nitem  name = "lcd_show_char_inst/n274"  />
-        <nitem  name = "lcd_show_char_inst/n278"  />
-        <nitem  name = "lcd_show_char_inst/n279"  />
-        <nitem  name = "lcd_show_char_inst/n280"  />
-        <nitem  name = "lcd_show_char_inst/n281"  />
-        <nitem  name = "lcd_show_char_inst/n282"  />
+        <nitem  name = "lcd_show_char_inst/n275"  />
+        <nitem  name = "lcd_show_char_inst/n276"  />
+        <nitem  name = "lcd_show_char_inst/n277"  />
         </nets>
     </instance>
 
@@ -10722,12 +10691,12 @@
 
         <nets>
         <nitem  name = "en_size"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_474"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_475"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_377"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i77"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i76"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "a0"  direction = "in"  />
@@ -10736,8 +10705,38 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/the1_wr_done"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_474"  />
-        <nitem  name = "lcd_show_char_inst/n277"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_475"  />
+        <nitem  name = "lcd_show_char_inst/n272"  />
+        </nets>
+    </instance>
+
+    <instance  name = "lcd_show_char_inst/equal_76"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "b[5]"  direction = "in"  />
+        <pitem  name = "b[4]"  direction = "in"  />
+        <pitem  name = "b[3]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
+        <pitem  name = "a[5]"  direction = "in"  />
+        <pitem  name = "a[4]"  direction = "in"  />
+        <pitem  name = "a[3]"  direction = "in"  />
+        <pitem  name = "a[2]"  direction = "in"  />
+        <pitem  name = "a[1]"  direction = "in"  />
+        <pitem  name = "a[0]"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "lcd_show_char_inst/pwr"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[3]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
+        <nitem  name = "lcd_show_char_inst/n273"  />
         </nets>
     </instance>
 
@@ -10759,7 +10758,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -10767,7 +10766,7 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n278"  />
+        <nitem  name = "lcd_show_char_inst/n274"  />
         </nets>
     </instance>
 
@@ -10776,8 +10775,8 @@
         <pitem  name = "b[5]"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
         <pitem  name = "b[3]"  direction = "in"  />
-        <pitem  name = "b[2]"  direction = "in"  />
         <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[2]"  direction = "in"  />
         <pitem  name = "b[0]"  direction = "in"  />
         <pitem  name = "a[5]"  direction = "in"  />
         <pitem  name = "a[4]"  direction = "in"  />
@@ -10789,7 +10788,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -10797,7 +10796,7 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n279"  />
+        <nitem  name = "lcd_show_char_inst/n275"  />
         </nets>
     </instance>
 
@@ -10806,8 +10805,8 @@
         <pitem  name = "b[5]"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
         <pitem  name = "b[3]"  direction = "in"  />
-        <pitem  name = "b[1]"  direction = "in"  />
         <pitem  name = "b[2]"  direction = "in"  />
+        <pitem  name = "b[1]"  direction = "in"  />
         <pitem  name = "b[0]"  direction = "in"  />
         <pitem  name = "a[5]"  direction = "in"  />
         <pitem  name = "a[4]"  direction = "in"  />
@@ -10819,7 +10818,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -10827,7 +10826,7 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n280"  />
+        <nitem  name = "lcd_show_char_inst/n276"  />
         </nets>
     </instance>
 
@@ -10835,36 +10834,6 @@
         <pins>
         <pitem  name = "b[5]"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
-        <pitem  name = "b[3]"  direction = "in"  />
-        <pitem  name = "b[2]"  direction = "in"  />
-        <pitem  name = "b[1]"  direction = "in"  />
-        <pitem  name = "b[0]"  direction = "in"  />
-        <pitem  name = "a[5]"  direction = "in"  />
-        <pitem  name = "a[4]"  direction = "in"  />
-        <pitem  name = "a[3]"  direction = "in"  />
-        <pitem  name = "a[2]"  direction = "in"  />
-        <pitem  name = "a[1]"  direction = "in"  />
-        <pitem  name = "a[0]"  direction = "in"  />
-        <pitem  name = "o"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "lcd_show_char_inst/pwr"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[3]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n281"  />
-        </nets>
-    </instance>
-
-    <instance  name = "lcd_show_char_inst/equal_81"  library = "work"  arch = ""  type = "comb">
-        <pins>
-        <pitem  name = "b[5]"  direction = "in"  />
-        <pitem  name = "b[4]"  direction = "in"  />
         <pitem  name = "b[2]"  direction = "in"  />
         <pitem  name = "b[1]"  direction = "in"  />
         <pitem  name = "b[3]"  direction = "in"  />
@@ -10879,7 +10848,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -10887,7 +10856,7 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n282"  />
+        <nitem  name = "lcd_show_char_inst/n277"  />
         </nets>
     </instance>
 
@@ -10909,7 +10878,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -10917,11 +10886,11 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_479"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_480"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/equal_83"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/equal_82"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "b[5]"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
@@ -10939,7 +10908,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -10947,11 +10916,11 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n284"  />
+        <nitem  name = "lcd_show_char_inst/n279"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/reduce_nor_84"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/reduce_nor_83"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a[6]"  direction = "in"  />
         <pitem  name = "a[5]"  direction = "in"  />
@@ -10964,18 +10933,18 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n278"  />
+        <nitem  name = "lcd_show_char_inst/n273"  />
+        <nitem  name = "lcd_show_char_inst/n274"  />
+        <nitem  name = "lcd_show_char_inst/n275"  />
+        <nitem  name = "lcd_show_char_inst/n276"  />
+        <nitem  name = "lcd_show_char_inst/n277"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_480"  />
         <nitem  name = "lcd_show_char_inst/n279"  />
         <nitem  name = "lcd_show_char_inst/n280"  />
-        <nitem  name = "lcd_show_char_inst/n281"  />
-        <nitem  name = "lcd_show_char_inst/n282"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_479"  />
-        <nitem  name = "lcd_show_char_inst/n284"  />
-        <nitem  name = "lcd_show_char_inst/n285"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/select_85"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/select_84"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "data[63]"  direction = "in"  />
         <pitem  name = "data[55]"  direction = "in"  />
@@ -11060,7 +11029,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/temp[7]"  />
         <nitem  name = "lcd_show_char_inst/temp[6]"  />
         <nitem  name = "lcd_show_char_inst/temp[5]"  />
@@ -11069,35 +11038,85 @@
         <nitem  name = "lcd_show_char_inst/temp[2]"  />
         <nitem  name = "lcd_show_char_inst/temp[1]"  />
         <nitem  name = "lcd_show_char_inst/temp[0]"  />
-        <nitem  name = "lcd_show_char_inst/n278"  />
+        <nitem  name = "lcd_show_char_inst/n273"  />
+        <nitem  name = "lcd_show_char_inst/n274"  />
+        <nitem  name = "lcd_show_char_inst/n275"  />
+        <nitem  name = "lcd_show_char_inst/n276"  />
+        <nitem  name = "lcd_show_char_inst/n277"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_480"  />
         <nitem  name = "lcd_show_char_inst/n279"  />
         <nitem  name = "lcd_show_char_inst/n280"  />
-        <nitem  name = "lcd_show_char_inst/n281"  />
         <nitem  name = "lcd_show_char_inst/n282"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_479"  />
+        <nitem  name = "lcd_show_char_inst/n283"  />
         <nitem  name = "lcd_show_char_inst/n284"  />
         <nitem  name = "lcd_show_char_inst/n285"  />
+        <nitem  name = "lcd_show_char_inst/n286"  />
         <nitem  name = "lcd_show_char_inst/n287"  />
         <nitem  name = "lcd_show_char_inst/n288"  />
         <nitem  name = "lcd_show_char_inst/n289"  />
-        <nitem  name = "lcd_show_char_inst/n290"  />
+        </nets>
+    </instance>
+
+    <instance  name = "lcd_show_char_inst/mux_85"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "d0[7]"  direction = "in"  />
+        <pitem  name = "d0[6]"  direction = "in"  />
+        <pitem  name = "d0[5]"  direction = "in"  />
+        <pitem  name = "d0[4]"  direction = "in"  />
+        <pitem  name = "d0[3]"  direction = "in"  />
+        <pitem  name = "d0[2]"  direction = "in"  />
+        <pitem  name = "d0[1]"  direction = "in"  />
+        <pitem  name = "d0[0]"  direction = "in"  />
+        <pitem  name = "cond"  direction = "in"  />
+        <pitem  name = "d1[7]"  direction = "in"  />
+        <pitem  name = "d1[6]"  direction = "in"  />
+        <pitem  name = "d1[5]"  direction = "in"  />
+        <pitem  name = "d1[4]"  direction = "in"  />
+        <pitem  name = "d1[3]"  direction = "in"  />
+        <pitem  name = "d1[2]"  direction = "in"  />
+        <pitem  name = "d1[1]"  direction = "in"  />
+        <pitem  name = "d1[0]"  direction = "in"  />
+        <pitem  name = "o[7]"  direction = "out"  />
+        <pitem  name = "o[6]"  direction = "out"  />
+        <pitem  name = "o[5]"  direction = "out"  />
+        <pitem  name = "o[4]"  direction = "out"  />
+        <pitem  name = "o[3]"  direction = "out"  />
+        <pitem  name = "o[2]"  direction = "out"  />
+        <pitem  name = "o[1]"  direction = "out"  />
+        <pitem  name = "o[0]"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "lcd_show_char_inst/temp[7]"  />
+        <nitem  name = "lcd_show_char_inst/temp[6]"  />
+        <nitem  name = "lcd_show_char_inst/temp[5]"  />
+        <nitem  name = "lcd_show_char_inst/temp[4]"  />
+        <nitem  name = "lcd_show_char_inst/temp[3]"  />
+        <nitem  name = "lcd_show_char_inst/temp[2]"  />
+        <nitem  name = "lcd_show_char_inst/temp[1]"  />
+        <nitem  name = "lcd_show_char_inst/temp[0]"  />
+        <nitem  name = "lcd_show_char_inst/n272"  />
+        <nitem  name = "lcd_show_char_inst/n282"  />
+        <nitem  name = "lcd_show_char_inst/n283"  />
+        <nitem  name = "lcd_show_char_inst/n284"  />
+        <nitem  name = "lcd_show_char_inst/n285"  />
+        <nitem  name = "lcd_show_char_inst/n286"  />
+        <nitem  name = "lcd_show_char_inst/n287"  />
+        <nitem  name = "lcd_show_char_inst/n288"  />
+        <nitem  name = "lcd_show_char_inst/n289"  />
         <nitem  name = "lcd_show_char_inst/n291"  />
         <nitem  name = "lcd_show_char_inst/n292"  />
         <nitem  name = "lcd_show_char_inst/n293"  />
         <nitem  name = "lcd_show_char_inst/n294"  />
+        <nitem  name = "lcd_show_char_inst/n295"  />
+        <nitem  name = "lcd_show_char_inst/n296"  />
+        <nitem  name = "lcd_show_char_inst/n297"  />
+        <nitem  name = "lcd_show_char_inst/n298"  />
         </nets>
     </instance>
 
     <instance  name = "lcd_show_char_inst/mux_86"  library = "work"  arch = ""  type = "comb">
         <pins>
-        <pitem  name = "d0[7]"  direction = "in"  />
-        <pitem  name = "d0[6]"  direction = "in"  />
-        <pitem  name = "d0[5]"  direction = "in"  />
-        <pitem  name = "d0[4]"  direction = "in"  />
-        <pitem  name = "d0[3]"  direction = "in"  />
-        <pitem  name = "d0[2]"  direction = "in"  />
-        <pitem  name = "d0[1]"  direction = "in"  />
-        <pitem  name = "d0[0]"  direction = "in"  />
         <pitem  name = "cond"  direction = "in"  />
         <pitem  name = "d1[7]"  direction = "in"  />
         <pitem  name = "d1[6]"  direction = "in"  />
@@ -11107,6 +11126,14 @@
         <pitem  name = "d1[2]"  direction = "in"  />
         <pitem  name = "d1[1]"  direction = "in"  />
         <pitem  name = "d1[0]"  direction = "in"  />
+        <pitem  name = "d0[7]"  direction = "in"  />
+        <pitem  name = "d0[6]"  direction = "in"  />
+        <pitem  name = "d0[5]"  direction = "in"  />
+        <pitem  name = "d0[4]"  direction = "in"  />
+        <pitem  name = "d0[3]"  direction = "in"  />
+        <pitem  name = "d0[2]"  direction = "in"  />
+        <pitem  name = "d0[1]"  direction = "in"  />
+        <pitem  name = "d0[0]"  direction = "in"  />
         <pitem  name = "o[7]"  direction = "out"  />
         <pitem  name = "o[6]"  direction = "out"  />
         <pitem  name = "o[5]"  direction = "out"  />
@@ -11118,89 +11145,31 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/temp[7]"  />
-        <nitem  name = "lcd_show_char_inst/temp[6]"  />
-        <nitem  name = "lcd_show_char_inst/temp[5]"  />
-        <nitem  name = "lcd_show_char_inst/temp[4]"  />
-        <nitem  name = "lcd_show_char_inst/temp[3]"  />
-        <nitem  name = "lcd_show_char_inst/temp[2]"  />
-        <nitem  name = "lcd_show_char_inst/temp[1]"  />
-        <nitem  name = "lcd_show_char_inst/temp[0]"  />
-        <nitem  name = "lcd_show_char_inst/n277"  />
-        <nitem  name = "lcd_show_char_inst/n287"  />
-        <nitem  name = "lcd_show_char_inst/n288"  />
-        <nitem  name = "lcd_show_char_inst/n289"  />
-        <nitem  name = "lcd_show_char_inst/n290"  />
+        <nitem  name = "lcd_show_char_inst/n254"  />
+        <nitem  name = "lcd_show_char_inst/n262"  />
+        <nitem  name = "lcd_show_char_inst/n263"  />
+        <nitem  name = "lcd_show_char_inst/n264"  />
+        <nitem  name = "lcd_show_char_inst/n265"  />
+        <nitem  name = "lcd_show_char_inst/n266"  />
+        <nitem  name = "lcd_show_char_inst/n267"  />
+        <nitem  name = "lcd_show_char_inst/n268"  />
+        <nitem  name = "lcd_show_char_inst/n269"  />
         <nitem  name = "lcd_show_char_inst/n291"  />
         <nitem  name = "lcd_show_char_inst/n292"  />
         <nitem  name = "lcd_show_char_inst/n293"  />
         <nitem  name = "lcd_show_char_inst/n294"  />
+        <nitem  name = "lcd_show_char_inst/n295"  />
         <nitem  name = "lcd_show_char_inst/n296"  />
         <nitem  name = "lcd_show_char_inst/n297"  />
         <nitem  name = "lcd_show_char_inst/n298"  />
-        <nitem  name = "lcd_show_char_inst/n299"  />
-        <nitem  name = "lcd_show_char_inst/n300"  />
-        <nitem  name = "lcd_show_char_inst/n301"  />
-        <nitem  name = "lcd_show_char_inst/n302"  />
-        <nitem  name = "lcd_show_char_inst/n303"  />
-        </nets>
-    </instance>
-
-    <instance  name = "lcd_show_char_inst/mux_87"  library = "work"  arch = ""  type = "comb">
-        <pins>
-        <pitem  name = "cond"  direction = "in"  />
-        <pitem  name = "d1[7]"  direction = "in"  />
-        <pitem  name = "d1[6]"  direction = "in"  />
-        <pitem  name = "d1[5]"  direction = "in"  />
-        <pitem  name = "d1[4]"  direction = "in"  />
-        <pitem  name = "d1[3]"  direction = "in"  />
-        <pitem  name = "d1[2]"  direction = "in"  />
-        <pitem  name = "d1[1]"  direction = "in"  />
-        <pitem  name = "d1[0]"  direction = "in"  />
-        <pitem  name = "d0[7]"  direction = "in"  />
-        <pitem  name = "d0[6]"  direction = "in"  />
-        <pitem  name = "d0[5]"  direction = "in"  />
-        <pitem  name = "d0[4]"  direction = "in"  />
-        <pitem  name = "d0[3]"  direction = "in"  />
-        <pitem  name = "d0[2]"  direction = "in"  />
-        <pitem  name = "d0[1]"  direction = "in"  />
-        <pitem  name = "d0[0]"  direction = "in"  />
-        <pitem  name = "o[7]"  direction = "out"  />
-        <pitem  name = "o[6]"  direction = "out"  />
-        <pitem  name = "o[5]"  direction = "out"  />
-        <pitem  name = "o[4]"  direction = "out"  />
-        <pitem  name = "o[3]"  direction = "out"  />
-        <pitem  name = "o[2]"  direction = "out"  />
-        <pitem  name = "o[1]"  direction = "out"  />
-        <pitem  name = "o[0]"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "lcd_show_char_inst/n259"  />
-        <nitem  name = "lcd_show_char_inst/n267"  />
-        <nitem  name = "lcd_show_char_inst/n268"  />
-        <nitem  name = "lcd_show_char_inst/n269"  />
-        <nitem  name = "lcd_show_char_inst/n270"  />
-        <nitem  name = "lcd_show_char_inst/n271"  />
-        <nitem  name = "lcd_show_char_inst/n272"  />
-        <nitem  name = "lcd_show_char_inst/n273"  />
-        <nitem  name = "lcd_show_char_inst/n274"  />
-        <nitem  name = "lcd_show_char_inst/n296"  />
-        <nitem  name = "lcd_show_char_inst/n297"  />
-        <nitem  name = "lcd_show_char_inst/n298"  />
-        <nitem  name = "lcd_show_char_inst/n299"  />
-        <nitem  name = "lcd_show_char_inst/n300"  />
-        <nitem  name = "lcd_show_char_inst/n301"  />
-        <nitem  name = "lcd_show_char_inst/n302"  />
-        <nitem  name = "lcd_show_char_inst/n303"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[7]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[6]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[5]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[4]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[3]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[2]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[1]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[0]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[7]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[6]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[5]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[4]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[3]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[2]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[1]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[0]"  />
         </nets>
     </instance>
 
@@ -11242,15 +11211,15 @@
         <nitem  name = "lcd_show_char_inst/rom_q[2]"  />
         <nitem  name = "lcd_show_char_inst/rom_q[1]"  />
         <nitem  name = "lcd_show_char_inst/rom_q[0]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_434"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[7]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[6]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[5]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[4]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[3]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[2]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[1]"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_426[0]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_435"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[7]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[6]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[5]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[4]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[3]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[2]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[1]"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_427[0]"  />
         <nitem  name = "lcd_show_char_inst/temp_7__N_356[7]"  />
         <nitem  name = "lcd_show_char_inst/temp_7__N_356[6]"  />
         <nitem  name = "lcd_show_char_inst/temp_7__N_356[5]"  />
@@ -11262,7 +11231,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/length_num_flag_185"  library = "work"  arch = ""  type = "reg">
+    <instance  name = "lcd_show_char_inst/length_num_flag_184"  library = "work"  arch = ""  type = "reg">
         <pins>
         <pitem  name = "s"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -11272,10 +11241,10 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/length_num_flag"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_471"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_472"  />
         <nitem  name = "lcd_show_char_inst/sys_rst_n_N_296"  />
         </nets>
     </instance>
@@ -11288,9 +11257,9 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_478"  />
         <nitem  name = "lcd_show_char_inst/length_num_flag_N_479"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_477"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_480"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_478"  />
         </nets>
     </instance>
 
@@ -11303,8 +11272,8 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/the1_wr_done"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_478"  />
         <nitem  name = "lcd_show_char_inst/length_num_flag_N_477"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_476"  />
         </nets>
     </instance>
 
@@ -11326,7 +11295,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -11334,7 +11303,7 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_475"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_476"  />
         </nets>
     </instance>
 
@@ -11346,9 +11315,9 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_474"  />
         <nitem  name = "lcd_show_char_inst/length_num_flag_N_475"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_473"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_476"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_474"  />
         </nets>
     </instance>
 
@@ -11361,8 +11330,8 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/the1_wr_done"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_474"  />
         <nitem  name = "lcd_show_char_inst/length_num_flag_N_473"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_472"  />
         </nets>
     </instance>
 
@@ -11376,9 +11345,9 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/pwr"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_476"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_477"  />
+        <nitem  name = "lcd_show_char_inst/length_num_flag_N_473"  />
         <nitem  name = "lcd_show_char_inst/length_num_flag_N_472"  />
-        <nitem  name = "lcd_show_char_inst/length_num_flag_N_471"  />
         </nets>
     </instance>
 
@@ -11408,8 +11377,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
@@ -11440,18 +11409,18 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_442"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_443"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/en_size_N_424_I_0_202"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/en_size_N_425_I_0_202"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a0"  direction = "in"  />
         <pitem  name = "a1"  direction = "in"  />
@@ -11459,9 +11428,9 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/en_size_N_424"  />
+        <nitem  name = "lcd_show_char_inst/en_size_N_425"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_443"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_442"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_441"  />
         </nets>
     </instance>
 
@@ -11474,12 +11443,12 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/length_num_flag"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_442"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_441"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_440"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/LessThan_112"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/LessThan_111"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
@@ -11496,18 +11465,18 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
-        <nitem  name = "lcd_show_char_inst/n353"  />
+        <nitem  name = "lcd_show_char_inst/n348"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i114"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i113"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a0"  direction = "in"  />
         <pitem  name = "a1"  direction = "in"  />
@@ -11515,13 +11484,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/en_size_N_424"  />
-        <nitem  name = "lcd_show_char_inst/n353"  />
-        <nitem  name = "lcd_show_char_inst/n354"  />
+        <nitem  name = "lcd_show_char_inst/en_size_N_425"  />
+        <nitem  name = "lcd_show_char_inst/n348"  />
+        <nitem  name = "lcd_show_char_inst/n349"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i115"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i114"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "a0"  direction = "in"  />
@@ -11530,8 +11499,8 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/length_num_flag"  />
-        <nitem  name = "lcd_show_char_inst/n354"  />
-        <nitem  name = "lcd_show_char_inst/n355"  />
+        <nitem  name = "lcd_show_char_inst/n349"  />
+        <nitem  name = "lcd_show_char_inst/n350"  />
         </nets>
     </instance>
 
@@ -11551,14 +11520,14 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
-        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_482"  />
+        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_483"  />
         </nets>
     </instance>
 
@@ -11571,12 +11540,12 @@
 
         <nets>
         <nitem  name = "en_size"  />
+        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_483"  />
         <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_482"  />
-        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_481"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i119"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i118"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "a0"  direction = "in"  />
@@ -11585,12 +11554,12 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/length_num_flag"  />
-        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_481"  />
-        <nitem  name = "lcd_show_char_inst/n365"  />
+        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_482"  />
+        <nitem  name = "lcd_show_char_inst/n360"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/LessThan_119"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/LessThan_118"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
@@ -11607,18 +11576,18 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
-        <nitem  name = "lcd_show_char_inst/n366"  />
+        <nitem  name = "lcd_show_char_inst/n361"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i121"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i120"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a0"  direction = "in"  />
         <pitem  name = "a1"  direction = "in"  />
@@ -11627,12 +11596,12 @@
 
         <nets>
         <nitem  name = "en_size"  />
-        <nitem  name = "lcd_show_char_inst/n366"  />
-        <nitem  name = "lcd_show_char_inst/n367"  />
+        <nitem  name = "lcd_show_char_inst/n361"  />
+        <nitem  name = "lcd_show_char_inst/n362"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i122"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i121"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "a0"  direction = "in"  />
@@ -11641,12 +11610,12 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/length_num_flag"  />
-        <nitem  name = "lcd_show_char_inst/n367"  />
-        <nitem  name = "lcd_show_char_inst/n368"  />
+        <nitem  name = "lcd_show_char_inst/n362"  />
+        <nitem  name = "lcd_show_char_inst/n363"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/add_122"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/add_121"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
@@ -11667,22 +11636,22 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
-        <nitem  name = "lcd_show_char_inst/n371"  />
-        <nitem  name = "lcd_show_char_inst/n372"  />
-        <nitem  name = "lcd_show_char_inst/n373"  />
-        <nitem  name = "lcd_show_char_inst/n374"  />
-        <nitem  name = "lcd_show_char_inst/n375"  />
+        <nitem  name = "lcd_show_char_inst/n366"  />
+        <nitem  name = "lcd_show_char_inst/n367"  />
+        <nitem  name = "lcd_show_char_inst/n368"  />
+        <nitem  name = "lcd_show_char_inst/n369"  />
+        <nitem  name = "lcd_show_char_inst/n370"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_123"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_122"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d0[4]"  direction = "in"  />
         <pitem  name = "d0[3]"  direction = "in"  />
@@ -11708,28 +11677,64 @@
         <nitem  name = "lcd_show_char_inst/cnt_length_num[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num[0]"  />
+        <nitem  name = "lcd_show_char_inst/n363"  />
+        <nitem  name = "lcd_show_char_inst/n366"  />
+        <nitem  name = "lcd_show_char_inst/n367"  />
         <nitem  name = "lcd_show_char_inst/n368"  />
-        <nitem  name = "lcd_show_char_inst/n371"  />
+        <nitem  name = "lcd_show_char_inst/n369"  />
+        <nitem  name = "lcd_show_char_inst/n370"  />
         <nitem  name = "lcd_show_char_inst/n372"  />
         <nitem  name = "lcd_show_char_inst/n373"  />
         <nitem  name = "lcd_show_char_inst/n374"  />
         <nitem  name = "lcd_show_char_inst/n375"  />
-        <nitem  name = "lcd_show_char_inst/n377"  />
+        <nitem  name = "lcd_show_char_inst/n376"  />
+        </nets>
+    </instance>
+
+    <instance  name = "lcd_show_char_inst/mux_123"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "d1[4]"  direction = "in"  />
+        <pitem  name = "d1[3]"  direction = "in"  />
+        <pitem  name = "d1[2]"  direction = "in"  />
+        <pitem  name = "d1[1]"  direction = "in"  />
+        <pitem  name = "d1[0]"  direction = "in"  />
+        <pitem  name = "cond"  direction = "in"  />
+        <pitem  name = "d0[4]"  direction = "in"  />
+        <pitem  name = "d0[3]"  direction = "in"  />
+        <pitem  name = "d0[2]"  direction = "in"  />
+        <pitem  name = "d0[1]"  direction = "in"  />
+        <pitem  name = "d0[0]"  direction = "in"  />
+        <pitem  name = "o[4]"  direction = "out"  />
+        <pitem  name = "o[3]"  direction = "out"  />
+        <pitem  name = "o[2]"  direction = "out"  />
+        <pitem  name = "o[1]"  direction = "out"  />
+        <pitem  name = "o[0]"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "lcd_show_char_inst/n360"  />
+        <nitem  name = "lcd_show_char_inst/n372"  />
+        <nitem  name = "lcd_show_char_inst/n373"  />
+        <nitem  name = "lcd_show_char_inst/n374"  />
+        <nitem  name = "lcd_show_char_inst/n375"  />
+        <nitem  name = "lcd_show_char_inst/n376"  />
         <nitem  name = "lcd_show_char_inst/n378"  />
         <nitem  name = "lcd_show_char_inst/n379"  />
         <nitem  name = "lcd_show_char_inst/n380"  />
         <nitem  name = "lcd_show_char_inst/n381"  />
+        <nitem  name = "lcd_show_char_inst/n382"  />
         </nets>
     </instance>
 
     <instance  name = "lcd_show_char_inst/mux_124"  library = "work"  arch = ""  type = "comb">
         <pins>
+        <pitem  name = "cond"  direction = "in"  />
         <pitem  name = "d1[4]"  direction = "in"  />
         <pitem  name = "d1[3]"  direction = "in"  />
         <pitem  name = "d1[2]"  direction = "in"  />
         <pitem  name = "d1[1]"  direction = "in"  />
         <pitem  name = "d1[0]"  direction = "in"  />
-        <pitem  name = "cond"  direction = "in"  />
         <pitem  name = "d0[4]"  direction = "in"  />
         <pitem  name = "d0[3]"  direction = "in"  />
         <pitem  name = "d0[2]"  direction = "in"  />
@@ -11743,62 +11748,26 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "lcd_show_char_inst/n365"  />
-        <nitem  name = "lcd_show_char_inst/n377"  />
+        <nitem  name = "lcd_show_char_inst/n350"  />
+        <nitem  name = "lcd_show_char_inst/n366"  />
+        <nitem  name = "lcd_show_char_inst/n367"  />
+        <nitem  name = "lcd_show_char_inst/n368"  />
+        <nitem  name = "lcd_show_char_inst/n369"  />
+        <nitem  name = "lcd_show_char_inst/n370"  />
         <nitem  name = "lcd_show_char_inst/n378"  />
         <nitem  name = "lcd_show_char_inst/n379"  />
         <nitem  name = "lcd_show_char_inst/n380"  />
         <nitem  name = "lcd_show_char_inst/n381"  />
-        <nitem  name = "lcd_show_char_inst/n383"  />
-        <nitem  name = "lcd_show_char_inst/n384"  />
-        <nitem  name = "lcd_show_char_inst/n385"  />
-        <nitem  name = "lcd_show_char_inst/n386"  />
-        <nitem  name = "lcd_show_char_inst/n387"  />
+        <nitem  name = "lcd_show_char_inst/n382"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[4]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[3]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[0]"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_125"  library = "work"  arch = ""  type = "comb">
-        <pins>
-        <pitem  name = "cond"  direction = "in"  />
-        <pitem  name = "d1[4]"  direction = "in"  />
-        <pitem  name = "d1[3]"  direction = "in"  />
-        <pitem  name = "d1[2]"  direction = "in"  />
-        <pitem  name = "d1[1]"  direction = "in"  />
-        <pitem  name = "d1[0]"  direction = "in"  />
-        <pitem  name = "d0[4]"  direction = "in"  />
-        <pitem  name = "d0[3]"  direction = "in"  />
-        <pitem  name = "d0[2]"  direction = "in"  />
-        <pitem  name = "d0[1]"  direction = "in"  />
-        <pitem  name = "d0[0]"  direction = "in"  />
-        <pitem  name = "o[4]"  direction = "out"  />
-        <pitem  name = "o[3]"  direction = "out"  />
-        <pitem  name = "o[2]"  direction = "out"  />
-        <pitem  name = "o[1]"  direction = "out"  />
-        <pitem  name = "o[0]"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "lcd_show_char_inst/n355"  />
-        <nitem  name = "lcd_show_char_inst/n371"  />
-        <nitem  name = "lcd_show_char_inst/n372"  />
-        <nitem  name = "lcd_show_char_inst/n373"  />
-        <nitem  name = "lcd_show_char_inst/n374"  />
-        <nitem  name = "lcd_show_char_inst/n375"  />
-        <nitem  name = "lcd_show_char_inst/n383"  />
-        <nitem  name = "lcd_show_char_inst/n384"  />
-        <nitem  name = "lcd_show_char_inst/n385"  />
-        <nitem  name = "lcd_show_char_inst/n386"  />
-        <nitem  name = "lcd_show_char_inst/n387"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[4]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[3]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[0]"  />
-        </nets>
-    </instance>
-
-    <instance  name = "lcd_show_char_inst/cnt_length_num_4__I_0_196"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/cnt_length_num_4__I_0_195"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d1[4]"  direction = "in"  />
         <pitem  name = "d1[3]"  direction = "in"  />
@@ -11819,13 +11788,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_440"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[4]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[3]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_435[0]"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_441"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[4]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[3]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_436[0]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_364[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_364[3]"  />
         <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_364[2]"  />
@@ -11864,8 +11833,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[3]"  />
@@ -11882,7 +11851,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/temp_7__N_434_I_0"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/temp_7__N_435_I_0"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "a0"  direction = "in"  />
@@ -11891,12 +11860,12 @@
 
         <nets>
         <nitem  name = "debug_led2"  />
-        <nitem  name = "lcd_show_char_inst/temp_7__N_434"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_449"  />
+        <nitem  name = "lcd_show_char_inst/temp_7__N_435"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_450"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/add_141"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/add_140"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cin"  direction = "in"  />
         <pitem  name = "b[5]"  direction = "in"  />
@@ -11920,7 +11889,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[4]"  />
@@ -11928,16 +11897,16 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
+        <nitem  name = "lcd_show_char_inst/n423"  />
+        <nitem  name = "lcd_show_char_inst/n424"  />
+        <nitem  name = "lcd_show_char_inst/n425"  />
+        <nitem  name = "lcd_show_char_inst/n426"  />
+        <nitem  name = "lcd_show_char_inst/n427"  />
         <nitem  name = "lcd_show_char_inst/n428"  />
-        <nitem  name = "lcd_show_char_inst/n429"  />
-        <nitem  name = "lcd_show_char_inst/n430"  />
-        <nitem  name = "lcd_show_char_inst/n431"  />
-        <nitem  name = "lcd_show_char_inst/n432"  />
-        <nitem  name = "lcd_show_char_inst/n433"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_142"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_141"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d0[5]"  direction = "in"  />
         <pitem  name = "d0[4]"  direction = "in"  />
@@ -11967,23 +11936,23 @@
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n277"  />
+        <nitem  name = "lcd_show_char_inst/n272"  />
+        <nitem  name = "lcd_show_char_inst/n423"  />
+        <nitem  name = "lcd_show_char_inst/n424"  />
+        <nitem  name = "lcd_show_char_inst/n425"  />
+        <nitem  name = "lcd_show_char_inst/n426"  />
+        <nitem  name = "lcd_show_char_inst/n427"  />
         <nitem  name = "lcd_show_char_inst/n428"  />
-        <nitem  name = "lcd_show_char_inst/n429"  />
         <nitem  name = "lcd_show_char_inst/n430"  />
         <nitem  name = "lcd_show_char_inst/n431"  />
         <nitem  name = "lcd_show_char_inst/n432"  />
         <nitem  name = "lcd_show_char_inst/n433"  />
+        <nitem  name = "lcd_show_char_inst/n434"  />
         <nitem  name = "lcd_show_char_inst/n435"  />
-        <nitem  name = "lcd_show_char_inst/n436"  />
-        <nitem  name = "lcd_show_char_inst/n437"  />
-        <nitem  name = "lcd_show_char_inst/n438"  />
-        <nitem  name = "lcd_show_char_inst/n439"  />
-        <nitem  name = "lcd_show_char_inst/n440"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_143"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_142"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "cond"  direction = "in"  />
         <pitem  name = "d1[5]"  direction = "in"  />
@@ -12007,25 +11976,25 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n259"  />
+        <nitem  name = "lcd_show_char_inst/n254"  />
+        <nitem  name = "lcd_show_char_inst/n423"  />
+        <nitem  name = "lcd_show_char_inst/n424"  />
+        <nitem  name = "lcd_show_char_inst/n425"  />
+        <nitem  name = "lcd_show_char_inst/n426"  />
+        <nitem  name = "lcd_show_char_inst/n427"  />
         <nitem  name = "lcd_show_char_inst/n428"  />
-        <nitem  name = "lcd_show_char_inst/n429"  />
         <nitem  name = "lcd_show_char_inst/n430"  />
         <nitem  name = "lcd_show_char_inst/n431"  />
         <nitem  name = "lcd_show_char_inst/n432"  />
         <nitem  name = "lcd_show_char_inst/n433"  />
+        <nitem  name = "lcd_show_char_inst/n434"  />
         <nitem  name = "lcd_show_char_inst/n435"  />
-        <nitem  name = "lcd_show_char_inst/n436"  />
-        <nitem  name = "lcd_show_char_inst/n437"  />
-        <nitem  name = "lcd_show_char_inst/n438"  />
-        <nitem  name = "lcd_show_char_inst/n439"  />
-        <nitem  name = "lcd_show_char_inst/n440"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[5]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[4]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[3]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[0]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[5]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[4]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[3]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[0]"  />
         </nets>
     </instance>
 
@@ -12053,14 +12022,14 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_449"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[5]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[4]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[3]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[2]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[1]"  />
-        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_443[0]"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_450"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[5]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[4]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[3]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[2]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[1]"  />
+        <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_444[0]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_369[5]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_369[4]"  />
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data_5__N_369[3]"  />
@@ -12112,8 +12081,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "show_char_data[8]"  />
         <nitem  name = "show_char_data[7]"  />
         <nitem  name = "show_char_data[6]"  />
@@ -12148,7 +12117,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/state_3__I_0_193"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/state_3__I_0_192"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "b[3]"  direction = "in"  />
         <pitem  name = "b[2]"  direction = "in"  />
@@ -12162,7 +12131,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/state[3]"  />
         <nitem  name = "lcd_show_char_inst/state[2]"  />
@@ -12172,7 +12141,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_149"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_148"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "data[143]"  direction = "in"  />
         <pitem  name = "data[142]"  direction = "in"  />
@@ -12334,7 +12303,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "start_x[8]"  />
         <nitem  name = "start_x[7]"  />
@@ -12376,19 +12345,19 @@
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_set_windows[0]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[8]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[7]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[6]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[5]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[4]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[3]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[2]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[1]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[0]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[8]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[7]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[6]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[5]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[4]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[3]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[2]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[1]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[0]"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/equal_152"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/equal_151"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "b[31]"  direction = "in"  />
         <pitem  name = "b[30]"  direction = "in"  />
@@ -12458,8 +12427,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "lcd_show_char_inst/n504"  />
         <nitem  name = "lcd_show_char_inst/n509"  />
+        <nitem  name = "lcd_show_char_inst/n510"  />
+        <nitem  name = "lcd_show_char_inst/n511"  />
+        <nitem  name = "lcd_show_char_inst/n512"  />
+        <nitem  name = "lcd_show_char_inst/n513"  />
         <nitem  name = "lcd_show_char_inst/n514"  />
         <nitem  name = "lcd_show_char_inst/n515"  />
         <nitem  name = "lcd_show_char_inst/n516"  />
@@ -12487,15 +12461,10 @@
         <nitem  name = "lcd_show_char_inst/n538"  />
         <nitem  name = "lcd_show_char_inst/n539"  />
         <nitem  name = "lcd_show_char_inst/n540"  />
-        <nitem  name = "lcd_show_char_inst/n541"  />
-        <nitem  name = "lcd_show_char_inst/n542"  />
-        <nitem  name = "lcd_show_char_inst/n543"  />
-        <nitem  name = "lcd_show_char_inst/n544"  />
-        <nitem  name = "lcd_show_char_inst/n545"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i154"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i153"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a1"  direction = "in"  />
         <pitem  name = "o"  direction = "out"  />
@@ -12503,8 +12472,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n509"  />
-        <nitem  name = "lcd_show_char_inst/n510"  />
+        <nitem  name = "lcd_show_char_inst/n504"  />
+        <nitem  name = "lcd_show_char_inst/n505"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_377"  />
         </nets>
     </instance>
@@ -12523,7 +12492,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/state[3]"  />
         <nitem  name = "lcd_show_char_inst/state[2]"  />
@@ -12533,7 +12502,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/and_156"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/and_155"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a[31]"  direction = "in"  />
         <pitem  name = "a[30]"  direction = "in"  />
@@ -12634,7 +12603,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/temp[7]"  />
         <nitem  name = "lcd_show_char_inst/temp[6]"  />
@@ -12644,6 +12613,11 @@
         <nitem  name = "lcd_show_char_inst/temp[2]"  />
         <nitem  name = "lcd_show_char_inst/temp[1]"  />
         <nitem  name = "lcd_show_char_inst/temp[0]"  />
+        <nitem  name = "lcd_show_char_inst/n509"  />
+        <nitem  name = "lcd_show_char_inst/n510"  />
+        <nitem  name = "lcd_show_char_inst/n511"  />
+        <nitem  name = "lcd_show_char_inst/n512"  />
+        <nitem  name = "lcd_show_char_inst/n513"  />
         <nitem  name = "lcd_show_char_inst/n514"  />
         <nitem  name = "lcd_show_char_inst/n515"  />
         <nitem  name = "lcd_show_char_inst/n516"  />
@@ -12671,15 +12645,10 @@
         <nitem  name = "lcd_show_char_inst/n538"  />
         <nitem  name = "lcd_show_char_inst/n539"  />
         <nitem  name = "lcd_show_char_inst/n540"  />
-        <nitem  name = "lcd_show_char_inst/n541"  />
-        <nitem  name = "lcd_show_char_inst/n542"  />
-        <nitem  name = "lcd_show_char_inst/n543"  />
-        <nitem  name = "lcd_show_char_inst/n544"  />
-        <nitem  name = "lcd_show_char_inst/n545"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/equal_157"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/equal_156"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "b[31]"  direction = "in"  />
         <pitem  name = "b[30]"  direction = "in"  />
@@ -12749,8 +12718,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
+        <nitem  name = "lcd_show_char_inst/n509"  />
+        <nitem  name = "lcd_show_char_inst/n510"  />
+        <nitem  name = "lcd_show_char_inst/n511"  />
+        <nitem  name = "lcd_show_char_inst/n512"  />
+        <nitem  name = "lcd_show_char_inst/n513"  />
         <nitem  name = "lcd_show_char_inst/n514"  />
         <nitem  name = "lcd_show_char_inst/n515"  />
         <nitem  name = "lcd_show_char_inst/n516"  />
@@ -12779,15 +12753,10 @@
         <nitem  name = "lcd_show_char_inst/n539"  />
         <nitem  name = "lcd_show_char_inst/n540"  />
         <nitem  name = "lcd_show_char_inst/n541"  />
-        <nitem  name = "lcd_show_char_inst/n542"  />
-        <nitem  name = "lcd_show_char_inst/n543"  />
-        <nitem  name = "lcd_show_char_inst/n544"  />
-        <nitem  name = "lcd_show_char_inst/n545"  />
-        <nitem  name = "lcd_show_char_inst/n546"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i159"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i158"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a0"  direction = "in"  />
         <pitem  name = "a1"  direction = "in"  />
@@ -12796,12 +12765,12 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/state_3__N_377"  />
-        <nitem  name = "lcd_show_char_inst/n546"  />
-        <nitem  name = "lcd_show_char_inst/n547"  />
+        <nitem  name = "lcd_show_char_inst/n541"  />
+        <nitem  name = "lcd_show_char_inst/n542"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/i160"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/i159"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "i"  direction = "in"  />
         <pitem  name = "o"  direction = "out"  />
@@ -12809,11 +12778,11 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/cnt_wr_color_data[0]"  />
-        <nitem  name = "lcd_show_char_inst/n548"  />
+        <nitem  name = "lcd_show_char_inst/n543"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_160"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_159"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d0[7]"  direction = "in"  />
         <pitem  name = "d0[6]"  direction = "in"  />
@@ -12846,22 +12815,22 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
+        <nitem  name = "lcd_show_char_inst/n543"  />
+        <nitem  name = "lcd_show_char_inst/n545"  />
+        <nitem  name = "lcd_show_char_inst/n546"  />
+        <nitem  name = "lcd_show_char_inst/n547"  />
         <nitem  name = "lcd_show_char_inst/n548"  />
+        <nitem  name = "lcd_show_char_inst/n549"  />
         <nitem  name = "lcd_show_char_inst/n550"  />
         <nitem  name = "lcd_show_char_inst/n551"  />
         <nitem  name = "lcd_show_char_inst/n552"  />
         <nitem  name = "lcd_show_char_inst/n553"  />
-        <nitem  name = "lcd_show_char_inst/n554"  />
-        <nitem  name = "lcd_show_char_inst/n555"  />
-        <nitem  name = "lcd_show_char_inst/n556"  />
-        <nitem  name = "lcd_show_char_inst/n557"  />
-        <nitem  name = "lcd_show_char_inst/n558"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_161"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_160"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d0[8]"  direction = "in"  />
         <pitem  name = "d0[7]"  direction = "in"  />
@@ -12903,29 +12872,29 @@
         <nitem  name = "show_char_data[2]"  />
         <nitem  name = "show_char_data[1]"  />
         <nitem  name = "show_char_data[0]"  />
+        <nitem  name = "lcd_show_char_inst/n542"  />
+        <nitem  name = "lcd_show_char_inst/n545"  />
+        <nitem  name = "lcd_show_char_inst/n546"  />
         <nitem  name = "lcd_show_char_inst/n547"  />
+        <nitem  name = "lcd_show_char_inst/n548"  />
+        <nitem  name = "lcd_show_char_inst/n549"  />
         <nitem  name = "lcd_show_char_inst/n550"  />
         <nitem  name = "lcd_show_char_inst/n551"  />
         <nitem  name = "lcd_show_char_inst/n552"  />
         <nitem  name = "lcd_show_char_inst/n553"  />
-        <nitem  name = "lcd_show_char_inst/n554"  />
         <nitem  name = "lcd_show_char_inst/n555"  />
         <nitem  name = "lcd_show_char_inst/n556"  />
         <nitem  name = "lcd_show_char_inst/n557"  />
         <nitem  name = "lcd_show_char_inst/n558"  />
+        <nitem  name = "lcd_show_char_inst/n559"  />
         <nitem  name = "lcd_show_char_inst/n560"  />
         <nitem  name = "lcd_show_char_inst/n561"  />
         <nitem  name = "lcd_show_char_inst/n562"  />
         <nitem  name = "lcd_show_char_inst/n563"  />
-        <nitem  name = "lcd_show_char_inst/n564"  />
-        <nitem  name = "lcd_show_char_inst/n565"  />
-        <nitem  name = "lcd_show_char_inst/n566"  />
-        <nitem  name = "lcd_show_char_inst/n567"  />
-        <nitem  name = "lcd_show_char_inst/n568"  />
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/mux_162"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/mux_161"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "d1[8]"  direction = "in"  />
         <pitem  name = "d1[7]"  direction = "in"  />
@@ -12959,25 +12928,25 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/pwr"  />
-        <nitem  name = "lcd_show_char_inst/n510"  />
+        <nitem  name = "lcd_show_char_inst/n505"  />
+        <nitem  name = "lcd_show_char_inst/n555"  />
+        <nitem  name = "lcd_show_char_inst/n556"  />
+        <nitem  name = "lcd_show_char_inst/n557"  />
+        <nitem  name = "lcd_show_char_inst/n558"  />
+        <nitem  name = "lcd_show_char_inst/n559"  />
         <nitem  name = "lcd_show_char_inst/n560"  />
         <nitem  name = "lcd_show_char_inst/n561"  />
         <nitem  name = "lcd_show_char_inst/n562"  />
         <nitem  name = "lcd_show_char_inst/n563"  />
-        <nitem  name = "lcd_show_char_inst/n564"  />
-        <nitem  name = "lcd_show_char_inst/n565"  />
-        <nitem  name = "lcd_show_char_inst/n566"  />
-        <nitem  name = "lcd_show_char_inst/n567"  />
-        <nitem  name = "lcd_show_char_inst/n568"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[8]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[7]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[6]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[5]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[4]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[3]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[2]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[1]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[0]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[8]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[7]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[6]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[5]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[4]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[3]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[2]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[1]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[0]"  />
         </nets>
     </instance>
 
@@ -13015,24 +12984,24 @@
 
         <nets>
         <nitem  name = "lcd_show_char_inst/state_3__N_376"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[8]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[7]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[6]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[5]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[4]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[3]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[2]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[1]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_459[0]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[8]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[7]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[6]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[5]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[4]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[3]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[2]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[1]"  />
-        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_450[0]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[8]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[7]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[6]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[5]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[4]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[3]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[2]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[1]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_460[0]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[8]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[7]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[6]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[5]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[4]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[3]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[2]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[1]"  />
+        <nitem  name = "lcd_show_char_inst/show_char_data_8__N_451[0]"  />
         <nitem  name = "lcd_show_char_inst/show_char_data_8__N_286[8]"  />
         <nitem  name = "lcd_show_char_inst/show_char_data_8__N_286[7]"  />
         <nitem  name = "lcd_show_char_inst/show_char_data_8__N_286[6]"  />
@@ -13045,7 +13014,7 @@
         </nets>
     </instance>
 
-    <instance  name = "lcd_show_char_inst/cnt_length_num_4__N_441_I_0"  library = "work"  arch = ""  type = "comb">
+    <instance  name = "lcd_show_char_inst/cnt_length_num_4__N_442_I_0"  library = "work"  arch = ""  type = "comb">
         <pins>
         <pitem  name = "a0"  direction = "in"  />
         <pitem  name = "a1"  direction = "in"  />
@@ -13053,9 +13022,9 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_441"  />
+        <nitem  name = "lcd_show_char_inst/cnt_length_num_4__N_442"  />
+        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_482"  />
         <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_481"  />
-        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_480"  />
         </nets>
     </instance>
 
@@ -13069,7 +13038,7 @@
         <nets>
         <nitem  name = "lcd_show_char_inst/length_num_flag"  />
         <nitem  name = "lcd_show_char_inst/state2_finish_flag"  />
-        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_480"  />
+        <nitem  name = "lcd_show_char_inst/state2_finish_flag_N_481"  />
         </nets>
     </instance>
 
@@ -13143,12 +13112,12 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[2]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[1]"  />
         <nitem  name = "lcd_show_char_inst/cnt_rom_prepare[0]"  />
-        <nitem  name = "lcd_show_char_inst/en_write_show_char_N_468"  />
+        <nitem  name = "lcd_show_char_inst/en_write_show_char_N_469"  />
         </nets>
     </instance>
 
@@ -13162,7 +13131,7 @@
         <nets>
         <nitem  name = "en_write_show_char"  />
         <nitem  name = "lcd_show_char_inst/state_3__N_376"  />
-        <nitem  name = "lcd_show_char_inst/en_write_show_char_N_468"  />
+        <nitem  name = "lcd_show_char_inst/en_write_show_char_N_469"  />
         </nets>
     </instance>
 
@@ -13180,7 +13149,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
         <nitem  name = "lcd_show_char_inst/pwr"  />
         <nitem  name = "debug_led2"  />
         <nitem  name = "lcd_show_char_inst/state[3]"  />
@@ -13212,8 +13181,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "lcd_show_char_inst/n618"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "lcd_show_char_inst/n613"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "lcd_show_char_inst/state[3]"  />
         <nitem  name = "lcd_show_char_inst/state[2]"  />
         <nitem  name = "lcd_show_char_inst/state[1]"  />
@@ -13237,8 +13206,8 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[0]"  />
         <nitem  name = "show_string_number_ctrl_inst/n4"  />
@@ -13271,8 +13240,8 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[0]"  />
         <nitem  name = "show_string_number_ctrl_inst/n8"  />
@@ -13297,8 +13266,8 @@
         <nitem  name = "show_string_number_ctrl_inst/n5"  />
         <nitem  name = "show_string_number_ctrl_inst/n8"  />
         <nitem  name = "show_string_number_ctrl_inst/n9"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_517[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_517[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_518[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_518[0]"  />
         </nets>
     </instance>
 
@@ -13314,12 +13283,12 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "show_char_flag"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_517[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_517[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_510[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_510[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_518[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_518[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_511[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_511[0]"  />
         </nets>
     </instance>
 
@@ -13333,11 +13302,11 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "show_char_flag"  />
-        <nitem  name = "show_string_number_ctrl_inst/show_char_flag_N_550"  />
-        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_491"  />
+        <nitem  name = "show_string_number_ctrl_inst/show_char_flag_N_551"  />
+        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_492"  />
         </nets>
     </instance>
 
@@ -13349,7 +13318,7 @@
 
         <nets>
         <nitem  name = "sys_rst_n"  />
-        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_491"  />
+        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_492"  />
         </nets>
     </instance>
 
@@ -13423,11 +13392,11 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/show_char_flag_N_550"  />
+        <nitem  name = "show_string_number_ctrl_inst/show_char_flag_N_551"  />
         </nets>
     </instance>
 
@@ -13457,19 +13426,19 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_491"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_492"  />
         </nets>
     </instance>
 
@@ -13531,9 +13500,9 @@
         <pitem  name = "b[5]"  direction = "in"  />
         <pitem  name = "b[3]"  direction = "in"  />
         <pitem  name = "b[2]"  direction = "in"  />
-        <pitem  name = "b[0]"  direction = "in"  />
         <pitem  name = "b[4]"  direction = "in"  />
         <pitem  name = "b[1]"  direction = "in"  />
+        <pitem  name = "b[0]"  direction = "in"  />
         <pitem  name = "a[4]"  direction = "in"  />
         <pitem  name = "a[3]"  direction = "in"  />
         <pitem  name = "a[2]"  direction = "in"  />
@@ -13543,14 +13512,14 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_524"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_525"  />
         </nets>
     </instance>
 
@@ -13589,8 +13558,8 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
@@ -13636,11 +13605,11 @@
         <nitem  name = "show_string_number_ctrl_inst/n31"  />
         <nitem  name = "show_string_number_ctrl_inst/n32"  />
         <nitem  name = "show_string_number_ctrl_inst/n33"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[0]"  />
         </nets>
     </instance>
 
@@ -13665,18 +13634,18 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_524"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_519[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_512[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_525"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_520[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num_4__N_513[0]"  />
         </nets>
     </instance>
 
@@ -13714,8 +13683,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "ascii_num[6]"  />
         <nitem  name = "ascii_num[5]"  />
         <nitem  name = "ascii_num[4]"  />
@@ -13723,14 +13692,14 @@
         <nitem  name = "ascii_num[2]"  />
         <nitem  name = "ascii_num[1]"  />
         <nitem  name = "ascii_num[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_491"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_492"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[0]"  />
         </nets>
     </instance>
 
@@ -13975,20 +13944,20 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[0]"  />
         </nets>
     </instance>
 
@@ -14027,20 +13996,20 @@
         <nitem  name = "ascii_num[2]"  />
         <nitem  name = "ascii_num[1]"  />
         <nitem  name = "ascii_num[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_525[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_483[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_526[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/ascii_num_6__N_484[0]"  />
         </nets>
     </instance>
 
@@ -14086,8 +14055,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "start_x[8]"  />
         <nitem  name = "start_x[7]"  />
         <nitem  name = "start_x[6]"  />
@@ -14097,16 +14066,16 @@
         <nitem  name = "start_x[2]"  />
         <nitem  name = "start_x[1]"  />
         <nitem  name = "start_x[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_491"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_492"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[0]"  />
         </nets>
     </instance>
 
@@ -14417,22 +14386,22 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[0]"  />
         </nets>
     </instance>
 
@@ -14469,26 +14438,26 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "debug_led1"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_532[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_492[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_533[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_x_8__N_493[0]"  />
         </nets>
     </instance>
 
@@ -14534,8 +14503,8 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "start_y[8]"  />
         <nitem  name = "start_y[7]"  />
         <nitem  name = "start_y[6]"  />
@@ -14545,16 +14514,16 @@
         <nitem  name = "start_y[2]"  />
         <nitem  name = "start_y[1]"  />
         <nitem  name = "start_y[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_491"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_492"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[0]"  />
         </nets>
     </instance>
 
@@ -14865,22 +14834,22 @@
         </pins>
 
         <nets>
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "en_size"  />
-        <nitem  name = "show_string_number_ctrl_inst/pwr"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[4]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[3]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[2]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt_ascii_num[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[0]"  />
         </nets>
     </instance>
 
@@ -14917,26 +14886,26 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
         <nitem  name = "debug_led1"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_541[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[8]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[7]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[6]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[5]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[4]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[3]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[2]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_501[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_542[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[8]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[7]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[6]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[5]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[4]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[3]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[2]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/start_y_8__N_502[0]"  />
         </nets>
     </instance>
 
@@ -14954,13 +14923,13 @@
         </pins>
 
         <nets>
-        <nitem  name = "en_size"  />
-        <nitem  name = "sys_clk"  />
+        <nitem  name = "show_string_number_ctrl_inst/gnd"  />
+        <nitem  name = "sys_clk_50MHz"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[1]"  />
         <nitem  name = "show_string_number_ctrl_inst/cnt1[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_510[1]"  />
-        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_510[0]"  />
-        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_491"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_511[1]"  />
+        <nitem  name = "show_string_number_ctrl_inst/cnt1_1__N_511[0]"  />
+        <nitem  name = "show_string_number_ctrl_inst/sys_rst_n_N_492"  />
         </nets>
     </instance>
 
@@ -47796,7 +47765,7 @@
     -->
 
     <mults>
-        <mult  name = "lcd_show_char_inst/mult_51"  />
+        <mult  name = "lcd_show_char_inst/mult_50"  />
     </mults>
 
     <!--
@@ -47825,13 +47794,13 @@
         <reg  name = "lcd_init_inst/cnt_s4_num"  />
         <reg  name = "lcd_init_inst/cnt_s4_num_done_177"  />
         <reg  name = "lcd_init_inst/state"  />
-        <reg  name = "lcd_show_char_inst/the1_wr_done_179"  />
+        <reg  name = "lcd_show_char_inst/the1_wr_done_178"  />
         <reg  name = "lcd_show_char_inst/cnt_set_windows"  />
-        <reg  name = "lcd_show_char_inst/state1_finish_flag_181"  />
+        <reg  name = "lcd_show_char_inst/state1_finish_flag_180"  />
         <reg  name = "lcd_show_char_inst/cnt_rom_prepare"  />
         <reg  name = "lcd_show_char_inst/rom_addr"  />
         <reg  name = "lcd_show_char_inst/temp"  />
-        <reg  name = "lcd_show_char_inst/length_num_flag_185"  />
+        <reg  name = "lcd_show_char_inst/length_num_flag_184"  />
         <reg  name = "lcd_show_char_inst/cnt_length_num"  />
         <reg  name = "lcd_show_char_inst/cnt_wr_color_data"  />
         <reg  name = "lcd_show_char_inst/data"  />

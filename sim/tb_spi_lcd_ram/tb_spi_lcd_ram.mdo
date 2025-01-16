@@ -1,24 +1,30 @@
 if {![file exists "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/tb_spi_lcd_ram.mpf"]} { 
 	project new "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram" tb_spi_lcd_ram
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v"
-	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v"
 	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v"
 	vlib  work
 	vdel -lib work -all 
 	vlib work
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v"
-	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v"
 	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v"
 } else {

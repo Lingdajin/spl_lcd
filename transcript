@@ -1,25 +1,120 @@
 # Reading pref.tcl
-do {D:\CodeField\Verilog\Diamond_design\spi_lcd\sim\tb_spi_lcd_ram\tb_spi_lcd_ram.mdo}
+# ERROR: No extended dataflow license exists
+# do {D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/tb_spi_lcd_ram.mdo}
 # Loading project tb_spi_lcd_ram
+# Error 31: Unable to unlink file "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/work/_lib.qdb".
+# Error 31: Unable to unlink file "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/work/_lib1_2.qdb".
+# Error 31: Unable to unlink file "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/work/_lib1_2.qpg".
+# Error 31: Unable to unlink file "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/work/_lib1_2.qtl".
+# Error 133: Unable to remove directory "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/work".
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:57 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v 
+# -- Compiling module rom_8x4096
+# 
+# Top level modules:
+# 	rom_8x4096
+# End time: 20:10:57 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:57 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v 
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# End time: 20:10:57 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:57 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v 
+# -- Compiling module tb_pll
+# 
+# Top level modules:
+# 	tb_pll
+# End time: 20:10:57 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:57 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v 
+# -- Compiling module show_string_number_ctrl
+# 
+# Top level modules:
+# 	show_string_number_ctrl
+# End time: 20:10:57 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:57 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v 
+# -- Compiling module char_ram
+# 
+# Top level modules:
+# 	char_ram
+# End time: 20:10:57 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:58 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v 
+# -- Compiling module lcd_show_char
+# 
+# Top level modules:
+# 	lcd_show_char
+# End time: 20:10:58 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:58 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v 
+# -- Compiling module lcd_init
+# 
+# Top level modules:
+# 	lcd_init
+# End time: 20:10:58 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:58 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 20:10:58 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:58 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v 
+# -- Compiling module lcd_write
+# 
+# Top level modules:
+# 	lcd_write
+# End time: 20:10:58 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:58 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v 
+# -- Compiling module segment_led
+# 
+# Top level modules:
+# 	segment_led
+# End time: 20:10:58 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start time: 20:10:58 on Jan 16,2025
+# vlog -reportprogress 300 "+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source" -work work D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v 
+# -- Compiling module spi_lcd
+# 
+# Top level modules:
+# 	spi_lcd
+# End time: 20:10:59 on Jan 16,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+# Start timedo {D:\CodeField\Verilog\Diamond_design\spi_lcd\sim\tb_spi_lcd_ram\tb_spi_lcd_ram.mdo}
 # vsim -L work -L pmi_work -L ovi_machxo2 spi_lcd_tb 
-# Start time: 15:58:33 on Jan 16,2025
-# //  ModelSim - Lattice FPGA Edition 2023.3 Jul 18 2023
-# //
-# //  Copyright 1991-2023 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  ModelSim - Lattice FPGA Edition and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
+# Start time: 20:09:17 on Jan 16,2025
 # Loading work.spi_lcd_tb
 # Loading ovi_machxo2.GSR
 # Loading ovi_machxo2.PUR
 # Loading work.spi_lcd
+# Loading work.segment_led
 # Loading work.pll
 # Loading ovi_machxo2.VLO
 # Loading ovi_machxo2.EHXPLLJ
@@ -29,71 +124,90 @@ do {D:\CodeField\Verilog\Diamond_design\spi_lcd\sim\tb_spi_lcd_ram\tb_spi_lcd_ra
 # Loading work.lcd_show_char
 # Loading work.char_ram
 # Loading work.show_string_number_ctrl
-# WARNING: No extended dataflow license exists
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 11, found 10.
+#    Time: 0 fs  Iteration: 0  Instance: /spi_lcd_tb/uut File: D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v Line: 21
+# ** Warning: (vsim-3722) D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(21): [TFMPC] - Missing connection for port 'segment_led'.
 # .main_pane.wave.interior.cs.body.pw.wf
 add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/lcd_show_char_inst/start_x
-add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/lcd_show_char_inst/start_y
-add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/show_string_number_ctrl_inst/ascii_num
-add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/show_string_number_ctrl_inst/show_char_done
-run
-# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
-#    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
-# Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
-run -continue
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/ascii_num
 add wave -position insertpoint  \
 sim:/spi_lcd_tb/uut/lcd_show_char_inst/rom_addr
 add wave -position insertpoint  \
 sim:/spi_lcd_tb/uut/lcd_show_char_inst/rom_q
 add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/lcd_show_char_inst/show_char_data
-# Break key hit
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
-#    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
-# Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
-run -continue
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/start_x
 add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/lcd_write_inst/sys_clk_50MHz
-restart
-run -continue
-# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
-#    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
-# Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/start_y
 add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/lcd_show_char_inst/cnt_set_windows
-restart
-run
-# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
-#    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
-# Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
-run -continue
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/end_x
 add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/lcd_show_char_inst/cnt_length_num
-add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/lcd_show_char_inst/temp
-restart
-run
-# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
-#    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
-# Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
-run -continue
-run -continue
-run -continue
-run -continue
-run
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/end_y
 add wave -position insertpoint  \
 sim:/spi_lcd_tb/uut/show_string_number_ctrl_inst/cnt_ascii_num
-add wave -position insertpoint  \
-sim:/spi_lcd_tb/uut/show_string_number_ctrl_inst/ascii_num
 restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 11, found 10.
+#    Time: 0 fs  Iteration: 0  Instance: /spi_lcd_tb/uut File: D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v Line: 21
+# ** Warning: (vsim-3722) D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(21): [TFMPC] - Missing connection for port 'segment_led'.
 run
 # ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
 #    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
 # Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
 run -continue
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/cnt_set_windows
+run -continue
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/data
+run -continue
+# WARNING: No extended dataflow license exists
+run
+do {D:\CodeField\Verilog\Diamond_design\spi_lcd\sim\tb_spi_lcd_ram\tb_spi_lcd_ram.mdo}
+# Compile of show_string_number_ctrl.v was successful.
+# Compile of lcd_show_char.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 20:21:49 on Jan 16,2025, Elapsed time: 0:12:32
+# Errors: 0, Warnings: 4
+# vsim -L work -L pmi_work -L ovi_machxo2 spi_lcd_tb 
+# Start time: 20:21:49 on Jan 16,2025
+# Loading work.spi_lcd_tb
+# Loading ovi_machxo2.GSR
+# Loading ovi_machxo2.PUR
+# Loading work.spi_lcd
+# Loading work.segment_led
+# Loading work.pll
+# Loading ovi_machxo2.VLO
+# Loading ovi_machxo2.EHXPLLJ
+# Loading work.lcd_write
+# Loading work.control
+# Loading work.lcd_init
+# Loading work.lcd_show_char
+# Loading work.char_ram
+# Loading work.show_string_number_ctrl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 11, found 10.
+#    Time: 0 fs  Iteration: 0  Instance: /spi_lcd_tb/uut File: D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v Line: 21
+# ** Warning: (vsim-3722) D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(21): [TFMPC] - Missing connection for port 'segment_led'.
+# WARNING: No extended dataflow license exists
+# .main_pane.wave.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/ascii_num
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/cnt_set_windows
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/data
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/rom_addr
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/rom_q
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/start_x
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/lcd_show_char_inst/start_y
+add wave -position insertpoint  \
+sim:/spi_lcd_tb/uut/show_string_number_ctrl_inst/cnt_ascii_num
+run
+# ** Note: $stop    : D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v(53)
+#    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
+# Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
+run -continue
+run

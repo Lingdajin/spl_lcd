@@ -3,12 +3,12 @@ package require simulation_generation
 set ::bali::simulation::Para(DEVICEFAMILYNAME) {MachXO2}
 set ::bali::simulation::Para(PROJECT) {tb_spi_lcd_ram}
 set ::bali::simulation::Para(PROJECTPATH) {D:/CodeField/Verilog/Diamond_design/spi_lcd/sim}
-set ::bali::simulation::Para(FILELIST) {"D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v" }
+set ::bali::simulation::Para(FILELIST) {"D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v" "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v" }
 set ::bali::simulation::Para(GLBINCLIST) {}
-set ::bali::simulation::Para(INCLIST) {"none" "none" "none" "none" "none" "none" "none" "none" "none"}
-set ::bali::simulation::Para(WORKLIBLIST) {"work" "work" "work" "work" "work" "work" "work" "work" "work" }
-set ::bali::simulation::Para(COMPLIST) {"VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" }
-set ::bali::simulation::Para(LANGSTDLIST) {"Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "" "Verilog 2001" "Verilog 2001" }
+set ::bali::simulation::Para(INCLIST) {"none" "none" "none" "none" "none" "none" "none" "none" "none" "none" "none" "none"}
+set ::bali::simulation::Para(WORKLIBLIST) {"work" "work" "work" "work" "work" "work" "work" "work" "work" "work" "work" "work" }
+set ::bali::simulation::Para(COMPLIST) {"VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" }
+set ::bali::simulation::Para(LANGSTDLIST) {"" "" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" "Verilog 2001" }
 set ::bali::simulation::Para(SIMLIBLIST) {pmi_work ovi_machxo2}
 set ::bali::simulation::Para(MACROLIST) {}
 set ::bali::simulation::Para(SIMULATIONTOPMODULE) {spi_lcd_tb}

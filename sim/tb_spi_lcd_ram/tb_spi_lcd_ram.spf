@@ -1,11 +1,14 @@
 <BaliSimProject version="1.3" path="sim" stage="0" language="-1" name="tb_spi_lcd_ram" simType="ModelSim">
+    <Source worklib="work" path="rom/rom_8x4096.v" type="VERILOG" langstandard="" include="none"/>
+    <Source worklib="work" path="pll/pll.v" type="VERILOG" langstandard="" include="none"/>
+    <Source worklib="work" path="source/tb_pll.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/show_string_number_ctrl.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/char_ram.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/lcd_show_char.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/lcd_init.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/control.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/lcd_write.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
-    <Source worklib="work" path="pll/pll.v" type="VERILOG" langstandard="" include="none"/>
+    <Source worklib="work" path="source/segment_led.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/spi_lcd.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <Source worklib="work" path="source/spi_lcd_tb.v" type="VERILOG" langstandard="Verilog 2001" include="none"/>
     <SimLib value="pmi_work ovi_machxo2"/>
