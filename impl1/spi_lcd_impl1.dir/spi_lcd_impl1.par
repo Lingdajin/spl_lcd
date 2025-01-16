@@ -4,10 +4,11 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Jan 15 23:54:48 2025
+Thu Jan 16 18:07:05 2025
 
 D:/Program/Diamond/diamond/3.13/ispfpga\bin\nt64\par -f spi_lcd_impl1.p2t
-spi_lcd_impl1_map.ncd spi_lcd_impl1.dir spi_lcd_impl1.prf -gui
+spi_lcd_impl1_map.ncd spi_lcd_impl1.dir spi_lcd_impl1.prf -gui -msgset
+D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml
 
 
 Preference file: spi_lcd_impl1.prf.
@@ -15,11 +16,11 @@ Preference file: spi_lcd_impl1.prf.
 Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
 Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-5_1   *      0            10.808       0            0.304        0            05           Completed
+5_1   *      0            11.023       0            0.146        0            13           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 5 secs 
+Total (real) run time for 1-seed: 13 secs 
 
 par done!
 

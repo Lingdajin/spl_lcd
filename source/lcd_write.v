@@ -139,7 +139,7 @@ always@(posedge sys_clk_50MHz or negedge sys_rst_n)
         mosi <= 1'b0;
     else if(state == STATE0)
         mosi <= 1'b0;
-    else if(state == STATE1 && cnt_delay == CNT_SCLK_MAX)
+    else if(state == STATE1 && cnt_delay == DELAY_TIME)
         mosi <= data[7];
     else if(state == STATE2 && sclk_flag)
         case(cnt1)

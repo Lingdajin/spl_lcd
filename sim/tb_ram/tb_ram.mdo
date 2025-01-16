@@ -1,0 +1,17 @@
+if {![file exists "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_ram/tb_ram.mpf"]} { 
+	project new "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_ram" tb_ram
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+	project addfile "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+	vlog  +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom  -work work  "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+} else {
+	project open "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_ram/tb_ram"
+	project compileoutofdate
+}
+vsim -L work -L pmi_work -L ovi_machxo2  tb
+view wave
+add wave /*
+run 1000ns

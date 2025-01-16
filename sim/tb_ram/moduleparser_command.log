@@ -1,0 +1,1 @@
+D:/Program/Diamond/diamond/3.13/bin/nt64/moduleparser.exe -PROJ tb_ram -pf D:/Program/Diamond/diamond/3.13/cae_library/synthesis/vhdl/machxo2.vhd -lib machxo2 -pf D:/Program/Diamond/diamond/3.13/cae_library/synthesis/verilog/machxo2.v -pkg D:/Program/Diamond/diamond/3.13/cae_library/vhdl_packages/vdbs -lst D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_ram/source_files.lst

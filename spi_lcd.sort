@@ -3,6 +3,8 @@ D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v
 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v
 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v
 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v
-D:/CodeField/Verilog/Diamond_design/spi_lcd/rom_8x4096.v
-D:/CodeField/Verilog/Diamond_design/spi_lcd/pll.v
 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v
+D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
+D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v

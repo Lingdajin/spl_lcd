@@ -12,8 +12,8 @@ module tb;
     GSR GSR_INST (.GSR(1'b1));
     PUR PUR_INST (.PUR(1'b1));
 
-    rom_8x4096 u1 (.Address(Address), .OutClock(OutClock), .OutClockEn(OutClockEn), 
-        .Reset(Reset), .Q(Q)
+    char_ram u1 (.address(Address), 
+        .q(Q)
     );
 
     initial

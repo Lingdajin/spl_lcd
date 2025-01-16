@@ -82,30 +82,45 @@
             <Navigation>17</Navigation>
         </Message>
         <Message>
-            <ID>35931002</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(47): </Dynamic>
-            <Dynamic>show_char_data[8]</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v</Navigation>
-            <Navigation>47</Navigation>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(11): </Dynamic>
+            <Dynamic>lcd_show_char</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v</Navigation>
+            <Navigation>11</Navigation>
         </Message>
         <Message>
-            <ID>35931002</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(48): </Dynamic>
-            <Dynamic>en_write_show_char</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v</Navigation>
-            <Navigation>48</Navigation>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(2): </Dynamic>
+            <Dynamic>char_ram</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v</Navigation>
+            <Navigation>2</Navigation>
         </Message>
         <Message>
-            <ID>35002005</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>debug_led2</Dynamic>
+            <ID>35901018</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(38): </Dynamic>
+            <Dynamic>show_string_number_ctrl</Dynamic>
+            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v</Navigation>
+            <Navigation>38</Navigation>
         </Message>
         <Message>
             <ID>35001774</ID>
             <Severity>Info</Severity>
             <Dynamic>\lcd_write_inst/cnt1</Dynamic>
+            <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001774</ID>
+            <Severity>Info</Severity>
+            <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num</Dynamic>
+            <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001774</ID>
+            <Severity>Info</Severity>
+            <Dynamic>\lcd_show_char_inst/cnt_set_windows</Dynamic>
             <Dynamic>one-hot</Dynamic>
         </Message>
         <Message>
@@ -121,8 +136,97 @@
             <Dynamic>one-hot</Dynamic>
         </Message>
         <Message>
+            <ID>35001774</ID>
+            <Severity>Info</Severity>
+            <Dynamic>\lcd_show_char_inst/state</Dynamic>
+            <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>8</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>7</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>6</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>3</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>2</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>5</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/ascii_num</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>8</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>2</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
             <ID>35001611</ID>
             <Severity>Warning</Severity>
+        </Message>
+    </Task>
+    <Task name="PAR">
+        <Message>
+            <ID>61061008</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>sys_clk_c</Dynamic>
+            <Dynamic>Primary</Dynamic>
+            <Dynamic>sys_clk</Dynamic>
+            <Dynamic>C1</Dynamic>
+            <Dynamic>Primary</Dynamic>
         </Message>
     </Task>
     <Task name="Jedecgen">

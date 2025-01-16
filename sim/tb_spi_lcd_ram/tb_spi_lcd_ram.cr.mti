@@ -1,0 +1,36 @@
+D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module char_ram
+
+Top level modules:
+	char_ram
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module control
+
+Top level modules:
+	control
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module show_string_number_ctrl
+
+Top level modules:
+	show_string_number_ctrl
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module pll
+
+Top level modules:
+	pll
+
+} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+-- Compiling module spi_lcd_tb
+
+Top level modules:
+	spi_lcd_tb
+
+} {} {}}

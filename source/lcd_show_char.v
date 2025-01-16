@@ -251,9 +251,9 @@ always@(posedge sys_clk or negedge sys_rst_n)
             data <= {1'b1,WHITE[7:0]};
     else if(state == STATE2 && ((temp & 8'h01) == 'd1))
         if(cnt_wr_color_data[0] == 1'b0 )
-            data <= {1'b1,BLACK[15:8]};
+            data <= {1'b1,RED[15:8]};
         else
-            data <= {1'b1,BLACK[7:0]};
+            data <= {1'b1,RED[7:0]};
     else
         data <= data;   
 
@@ -272,7 +272,12 @@ assign en_write_show_char = (state == STATE1 || cnt_rom_prepare == 'd5) ? 1'b1 :
 assign show_char_done = (state == DONE) ? 1'b1 : 1'b0;
 
 
-rom_8x4096 rom_8x4096_inst (.Address( rom_addr ), .OutClock( sys_clk ), .OutClockEn( 1'b1 ), .Reset( 1'b0 ), 
-    .Q( rom_q ));
+// rom_8x4096 rom_8x4096_inst (.Address( rom_addr ), .OutClock( sys_clk ), .OutClockEn( 1'b1 ), .Reset( 1'b0 ), 
+//     .Q( rom_q ));
+char_ram char_ram_inst
+(
+	.address(rom_addr), 
+	.q(rom_q)
+);
 
 endmodule

@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2023.3 2023.07, Jul 18 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_ram
+vchar_ram
+2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
+!s110 1737011131
+!i10b 1
+!s100 B48TRU>5DXB3@KAhViO]f2
+Id9k_1KMK<flSz1B?=dEDC3
+R0
+w1737010781
+8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
+FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
+!i122 2
+L0 2 4111
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 OT;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1737011131.000000
+!s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v|
+!s101 -O0
+!i113 1
+Z3 o-work work -O0
+Z4 tCvgOpt 0
+vtb
+2D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v
+!s110 1737011215
+!i10b 1
+!s100 M@G>]5@1hGX35Og;K0kf>2
+IB`K>Z]f1^]`B=[dcYKP3:0
+R0
+w1737011199
+8D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v
+FD:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v
+!i122 4
+L0 3 43
+R1
+R2
+r1
+!s85 0
+31
+!s108 1737011215.000000
+!s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v|
+!s101 -O0
+!i113 1
+R3
+R4
