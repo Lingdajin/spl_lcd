@@ -7,7 +7,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Jan 16 18:48:04 2025
+Thu Jan 16 20:03:05 2025
 
 
 Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml 
@@ -316,6 +316,7 @@ original encoding -> new encoding (one-hot encoding)
     <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="\show_string_number_ctrl_inst/start_x_"  />
     <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="\show_string_number_ctrl_inst/start_x_"  />
     <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="\show_string_number_ctrl_inst/start_x_"  />
+    <postMsg mid="35935013" type="Warning" dynamic="2" navigation="2" arg0="d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(84): " arg1="\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i20" arg2="d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v" arg3="84"  />
 GSR instance connected to net sys_rst_n_c.
 Applying 200.000000 MHz constraint to all clocks
 
@@ -332,27 +333,26 @@ Running DRC...
 DRC complete with no errors or warnings
 
 Design Results:
-   2062 blocks expanded
+   2034 blocks expanded
 completed the first expansion
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file spi_lcd_impl1.ngd.
 
 ################### Begin Area Report (spi_lcd)######################
-Number of register bits => 230 of 4635 (4 % )
+Number of register bits => 217 of 4635 (4 % )
 CCU2D => 31
 EHXPLLJ => 1
-FD1P3AX => 69
-FD1P3AY => 1
-FD1P3IX => 66
+FD1P3AX => 38
+FD1P3IX => 84
 FD1P3JX => 2
 FD1S3AX => 33
 FD1S3AY => 1
 FD1S3IX => 56
-FD1S3JX => 2
+FD1S3JX => 3
 GSR => 1
 IB => 2
-L6MUX21 => 97
-LUT4 => 1376
+L6MUX21 => 98
+LUT4 => 1360
 OB => 17
 PFUMX => 300
 ROM128X1A => 4
@@ -365,33 +365,33 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 3
-  Net : sys_clk_c, loads : 116
   Net : pll_u1/sys_clk_50MHz, loads : 112
-  Net : lcd_show_char_inst/debug_led2_c_3, loads : 10
+  Net : sys_clk_c, loads : 103
+  Net : lcd_show_char_inst/debug_led2_c_3, loads : 11
 Clock Enable Nets
 Number of Clock Enables: 18
 Top 10 highest fanout Clock Enables:
-  Net : show_string_number_ctrl_inst/cnt_ascii_num_4__N_524, loads : 32
-  Net : lcd_write_inst/sys_clk_50MHz_enable_41, loads : 15
-  Net : lcd_show_char_inst/sys_clk_c_enable_25, loads : 15
-  Net : lcd_show_char_inst/sys_clk_c_enable_54, loads : 13
-  Net : lcd_show_char_inst/sys_clk_c_enable_52, loads : 9
-  Net : lcd_show_char_inst/sys_clk_c_enable_26, loads : 8
-  Net : lcd_init_inst/sys_clk_50MHz_enable_25, loads : 6
-  Net : lcd_show_char_inst/sys_clk_c_enable_41, loads : 5
-  Net : sys_clk_50MHz_enable_19, loads : 1
-  Net : sys_clk_c_enable_43, loads : 1
+  Net : show_string_number_ctrl_inst/sys_clk_c_enable_65, loads : 18
+  Net : lcd_show_char_inst/sys_clk_c_enable_33, loads : 15
+  Net : lcd_write_inst/sys_clk_50MHz_enable_28, loads : 15
+  Net : lcd_show_char_inst/sys_clk_c_enable_45, loads : 13
+  Net : lcd_show_char_inst/sys_clk_c_enable_46, loads : 9
+  Net : lcd_show_char_inst/sys_clk_c_enable_28, loads : 8
+  Net : lcd_init_inst/sys_clk_50MHz_enable_8, loads : 6
+  Net : lcd_show_char_inst/sys_clk_c_enable_72, loads : 5
+  Net : lcd_init_inst/debug_led1_c_5, loads : 1
+  Net : lcd_init_inst/lcd_rst_high_flag, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : lcd_show_char_inst/rom_addr_3, loads : 507
+  Net : lcd_show_char_inst/rom_addr_3, loads : 508
   Net : lcd_show_char_inst/rom_addr_0, loads : 497
-  Net : lcd_show_char_inst/rom_addr_4, loads : 455
-  Net : lcd_show_char_inst/rom_addr_2, loads : 398
-  Net : lcd_show_char_inst/rom_addr_1, loads : 305
-  Net : lcd_show_char_inst/rom_addr_5, loads : 287
-  Net : lcd_show_char_inst/rom_addr_6, loads : 150
-  Net : lcd_show_char_inst/rom_addr_7, loads : 80
-  Net : lcd_show_char_inst/n15878, loads : 77
+  Net : lcd_show_char_inst/rom_addr_4, loads : 448
+  Net : lcd_show_char_inst/rom_addr_2, loads : 412
+  Net : lcd_show_char_inst/rom_addr_1, loads : 303
+  Net : lcd_show_char_inst/rom_addr_5, loads : 282
+  Net : lcd_show_char_inst/rom_addr_6, loads : 151
+  Net : lcd_show_char_inst/n15518, loads : 83
+  Net : lcd_show_char_inst/rom_addr_7, loads : 79
   Net : lcd_show_char_inst/rom_addr_8, loads : 40
 ################### End Clock Report ##################
 
@@ -405,10 +405,10 @@ create_clock -period 5.000000 -name     |             |             |
 clk2 [get_nets debug_led2_c_3]          |  200.000 MHz|  281.770 MHz|     2  
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk1 [get_nets sys_clk_c]               |  200.000 MHz|   69.483 MHz|    12 *
+clk1 [get_nets sys_clk_50MHz]           |  200.000 MHz|   99.602 MHz|     7 *
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   86.972 MHz|     9 *
+clk0 [get_nets sys_clk_c]               |  200.000 MHz|   69.507 MHz|    12 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -416,605 +416,8 @@ clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   86.972 MHz|     9 *
 2 constraints not met.
 
 
-Peak Memory Usage: 168.328  MB
+Peak Memory Usage: 168.449  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 4.250  secs
+Elapsed CPU time for LSE flow : 4.172  secs
 --------------------------------------------------------------
-
-map -a "MachXO2" -p LCMXO2-4000HC -t CSBGA132 -s 5 -oc Commercial   "spi_lcd_impl1.ngd" -o "spi_lcd_impl1_map.ncd" -pr "spi_lcd_impl1.prf" -mp "spi_lcd_impl1.mrp" -lpf "D:/CodeField/Verilog/Diamond_design/spi_lcd/impl1/spi_lcd_impl1.lpf" -lpf "D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf"  -c 0           
-map:  version Diamond (64-bit) 3.13.0.56.2
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-   Process the file: spi_lcd_impl1.ngd
-   Picdevice="LCMXO2-4000HC"
-
-   Pictype="CSBGA132"
-
-   Picspeed=5
-
-   Remove unused logic
-
-   Do not produce over sized NCDs.
-
-Part used: LCMXO2-4000HCCSBGA132, Performance used: 5.
-
-Loading device for application map from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
-Package Status:                     Final          Version 1.44.
-
-Running general design DRC...
-
-Removing unused logic...
-
-Optimizing...
-
-
-
-
-Design Summary:
-   Number of registers:    230 out of  4635 (5%)
-      PFU registers:          230 out of  4320 (5%)
-      PIO registers:            0 out of   315 (0%)
-   Number of SLICEs:       744 out of  2160 (34%)
-      SLICEs as Logic/ROM:    744 out of  2160 (34%)
-      SLICEs as RAM:            0 out of  1620 (0%)
-      SLICEs as Carry:         31 out of  2160 (1%)
-   Number of LUT4s:        1475 out of  4320 (34%)
-      Number used as logic LUTs:        1413
-      Number used as distributed RAM:     0
-      Number used as ripple logic:       62
-      Number used as shift registers:     0
-   Number of PIO sites used: 19 + 4(JTAG) out of 105 (22%)
-   Number of block RAMs:  0 out of 10 (0%)
-   Number of GSRs:        1 out of 1 (100%)
-   EFB used :        No
-   JTAG used :       No
-   Readback used :   No
-   Oscillator used : No
-   Startup used :    No
-   POR :             On
-   Bandgap :         On
-   Number of Power Controller:  0 out of 1 (0%)
-   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
-   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
-   Number of DCCA:  0 out of 8 (0%)
-   Number of DCMA:  0 out of 2 (0%)
-   Number of PLLs:  1 out of 2 (50%)
-   Number of DQSDLLs:  0 out of 2 (0%)
-   Number of CLKDIVC:  0 out of 4 (0%)
-   Number of ECLKSYNCA:  0 out of 4 (0%)
-   Number of ECLKBRIDGECS:  0 out of 2 (0%)
-   Notes:-
-      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
-      2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
-   Number of clocks:  3
-     Net sys_clk_50MHz: 71 loads, 71 rising, 0 falling (Driver: pll_u1/PLLInst_0 )
-     Net sys_clk_c: 70 loads, 70 rising, 0 falling (Driver: PIO sys_clk )
-     Net debug_led2_c_3: 2 loads, 2 rising, 0 falling (Driver: lcd_show_char_inst/state_FSM_i1 )
-   Number of Clock Enables:  18
-     Net lcd_write_inst/sys_clk_50MHz_enable_26: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_41: 8 loads, 8 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_45: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_44: 2 loads, 2 LSLICEs
-     Net sys_clk_50MHz_enable_19: 10 loads, 10 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_2: 1 loads, 1 LSLICEs
-     Net debug_led1_c_5: 4 loads, 4 LSLICEs
-     Net lcd_init_inst/lcd_rst_high_flag: 1 loads, 1 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_25: 3 loads, 3 LSLICEs
-     Net sys_clk_c_enable_10: 1 loads, 1 LSLICEs
-     Net sys_clk_c_enable_43: 1 loads, 1 LSLICEs
-     Net lcd_show_char_inst/sys_clk_c_enable_26: 5 loads, 5 LSLICEs
-     Net lcd_show_char_inst/sys_clk_c_enable_52: 5 loads, 5 LSLICEs
-     Net lcd_show_char_inst/sys_clk_c_enable_54: 7 loads, 7 LSLICEs
-     Net lcd_show_char_inst/sys_clk_c_enable_25: 8 loads, 8 LSLICEs
-     Net lcd_show_char_inst/sys_clk_c_enable_44: 1 loads, 1 LSLICEs
-     Net lcd_show_char_inst/sys_clk_c_enable_41: 3 loads, 3 LSLICEs
-     Net show_string_number_ctrl_inst/cnt_ascii_num_4__N_524: 16 loads, 16 LSLICEs
-   Number of LSRs:  22
-     Net lcd_write_inst/state_3: 1 loads, 1 LSLICEs
-     Net wr_done: 2 loads, 2 LSLICEs
-     Net lcd_write_inst/state_0: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/n7003: 3 loads, 3 LSLICEs
-     Net lcd_write_inst/n14466: 3 loads, 3 LSLICEs
-     Net lcd_write_inst/state_1: 9 loads, 9 LSLICEs
-     Net state_2: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/mosi_N_76: 1 loads, 1 LSLICEs
-     Net lcd_init_inst/cnt_150ms_22__N_232: 12 loads, 12 LSLICEs
-     Net state_2_adj_818: 4 loads, 4 LSLICEs
-     Net debug_led1_c_5: 4 loads, 4 LSLICEs
-     Net state_4: 10 loads, 10 LSLICEs
-     Net lcd_init_inst/state_0: 1 loads, 1 LSLICEs
-     Net state_3_N_379_1: 2 loads, 2 LSLICEs
-     Net state_2_adj_819: 1 loads, 1 LSLICEs
-     Net length_num_flag: 2 loads, 2 LSLICEs
-     Net debug_led2_c_3: 1 loads, 1 LSLICEs
-     Net count_3__N_11: 2 loads, 2 LSLICEs
-     Net lcd_show_char_inst/state_3_N_383_2: 9 loads, 9 LSLICEs
-     Net lcd_show_char_inst/cnt_wr_color_data_5__N_449: 4 loads, 4 LSLICEs
-     Net lcd_show_char_inst/n7001: 1 loads, 1 LSLICEs
-     Net lcd_show_char_inst/cnt_length_num_4__N_440: 3 loads, 3 LSLICEs
-   Number of nets driven by tri-state buffers:  0
-   Top 10 highest fanout non-clock nets:
-     Net lcd_show_char_inst/rom_addr_3: 507 loads
-     Net lcd_show_char_inst/rom_addr_0: 497 loads
-     Net lcd_show_char_inst/rom_addr_4: 455 loads
-     Net lcd_show_char_inst/rom_addr_2: 398 loads
-     Net lcd_show_char_inst/rom_addr_1: 305 loads
-     Net lcd_show_char_inst/rom_addr_5: 288 loads
-     Net lcd_show_char_inst/rom_addr_6: 150 loads
-     Net lcd_show_char_inst/rom_addr_7: 80 loads
-     Net lcd_show_char_inst/n15878: 77 loads
-     Net lcd_show_char_inst/rom_addr_8: 40 loads
- 
-
-   Number of warnings:  0
-   Number of errors:    0
-
-
-
-Total CPU Time: 0 secs  
-Total REAL Time: 0 secs  
-Peak Memory Usage: 60 MB
-
-Dumping design to file spi_lcd_impl1_map.ncd.
-
-ncd2vdb "spi_lcd_impl1_map.ncd" ".vdbs/spi_lcd_impl1_map.vdb"
-
-Loading device for application ncd2vdb from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
-
-mpartrce -p "spi_lcd_impl1.p2t" -f "spi_lcd_impl1.p3t" -tf "spi_lcd_impl1.pt" "spi_lcd_impl1_map.ncd" "spi_lcd_impl1.ncd"
-
----- MParTrce Tool ----
-Removing old design directory at request of -rem command line option to this program.
-Running par. Please wait . . .
-
-Lattice Place and Route Report for Design "spi_lcd_impl1_map.ncd"
-Thu Jan 16 18:48:11 2025
-
-PAR: Place And Route Diamond (64-bit) 3.13.0.56.2.
-Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 spi_lcd_impl1_map.ncd spi_lcd_impl1.dir/5_1.ncd spi_lcd_impl1.prf
-Preference file: spi_lcd_impl1.prf.
-Placement level-cost: 5-1.
-Routing Iterations: 6
-
-Loading design for application par from file spi_lcd_impl1_map.ncd.
-Design name: spi_lcd
-NCD version: 3.3
-Vendor:      LATTICE
-Device:      LCMXO2-4000HC
-Package:     CSBGA132
-Performance: 5
-Loading device for application par from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
-Package Status:                     Final          Version 1.44.
-Performance Hardware Data Status:   Final          Version 34.4.
-License checked out.
-
-
-Ignore Preference Error(s):  True
-Device utilization summary:
-
-   PIO (prelim)   19+4(JTAG)/280     8% used
-                  19+4(JTAG)/105     22% bonded
-
-   SLICE            744/2160         34% used
-
-   GSR                1/1           100% used
-   PLL                1/2            50% used
-
-
-Number of Signals: 1553
-Number of Connections: 6220
-
-Pin Constraint Summary:
-   19 out of 19 pins locked (100% locked).
-
-The following 2 signals are selected to use the primary clock routing resources:
-    sys_clk_50MHz (driver: pll_u1/PLLInst_0, clk load #: 70)
-    sys_clk_c (driver: sys_clk, clk load #: 70)
-
-    <postMsg mid="61061008" type="Warning" dynamic="5" navigation="0" arg0="sys_clk_c" arg1="Primary" arg2="sys_clk" arg3="C1" arg4="Primary"  />
-
-The following 4 signals are selected to use the secondary clock routing resources:
-    show_string_number_ctrl_inst/cnt_ascii_num_4__N_524 (driver: SLICE_62, clk load #: 0, sr load #: 0, ce load #: 16)
-    lcd_init_inst/cnt_150ms_22__N_232 (driver: SLICE_442, clk load #: 0, sr load #: 12, ce load #: 0)
-    sys_clk_50MHz_enable_19 (driver: SLICE_757, clk load #: 0, sr load #: 0, ce load #: 10)
-    state_4 (driver: SLICE_140, clk load #: 0, sr load #: 10, ce load #: 0)
-
-Signal sys_rst_n_c is selected as Global Set/Reset.
-Starting Placer Phase 0.
-............
-Finished Placer Phase 0.  REAL time: 0 secs 
-
-Starting Placer Phase 1.
-......................
-Placer score = 305195.
-Finished Placer Phase 1.  REAL time: 5 secs 
-
-Starting Placer Phase 2.
-.
-Placer score =  302619
-Finished Placer Phase 2.  REAL time: 6 secs 
-
-
------------------- Clock Report ------------------
-
-Global Clock Resources:
-  CLK_PIN    : 0 out of 8 (0%)
-  General PIO: 1 out of 280 (0%)
-  PLL        : 1 out of 2 (50%)
-  DCM        : 0 out of 2 (0%)
-  DCC        : 0 out of 8 (0%)
-
-Global Clocks:
-  PRIMARY "sys_clk_50MHz" from CLKOP on comp "pll_u1/PLLInst_0" on PLL site "LPLL", clk load = 70
-  PRIMARY "sys_clk_c" from comp "sys_clk" on PIO site "C1 (PL4A)", clk load = 70
-  SECONDARY "show_string_number_ctrl_inst/cnt_ascii_num_4__N_524" from F1 on comp "SLICE_62" on site "R13C31A", clk load = 0, ce load = 16, sr load = 0
-  SECONDARY "lcd_init_inst/cnt_150ms_22__N_232" from F1 on comp "SLICE_442" on site "R9C31B", clk load = 0, ce load = 0, sr load = 12
-  SECONDARY "sys_clk_50MHz_enable_19" from F1 on comp "SLICE_757" on site "R12C17C", clk load = 0, ce load = 10, sr load = 0
-  SECONDARY "state_4" from Q1 on comp "SLICE_140" on site "R13C31D", clk load = 0, ce load = 0, sr load = 10
-
-  PRIMARY  : 2 out of 8 (25%)
-  SECONDARY: 4 out of 8 (50%)
-
-Edge Clocks:
-  No edge clock selected.
-
---------------- End of Clock Report ---------------
-
-
-I/O Usage Summary (final):
-   19 + 4(JTAG) out of 280 (8.2%) PIO sites used.
-   19 + 4(JTAG) out of 105 (21.9%) bonded PIO sites used.
-   Number of PIO comps: 19; differential: 0.
-   Number of Vref pins used: 0.
-
-I/O Bank Usage Summary:
-+----------+---------------+------------+-----------+
-| I/O Bank | Usage         | Bank Vccio | Bank Vref |
-+----------+---------------+------------+-----------+
-| 0        | 5 / 26 ( 19%) | 2.5V       | -         |
-| 1        | 4 / 26 ( 15%) | 2.5V       | -         |
-| 2        | 5 / 28 ( 17%) | 2.5V       | -         |
-| 3        | 0 / 7 (  0%)  | -          | -         |
-| 4        | 1 / 8 ( 12%)  | 2.5V       | -         |
-| 5        | 4 / 10 ( 40%) | 2.5V       | -         |
-+----------+---------------+------------+-----------+
-
-Total placer CPU time: 5 secs 
-
-Dumping design to file spi_lcd_impl1.dir/5_1.ncd.
-
-0 connections routed; 6220 unrouted.
-Starting router resource preassignment
-
-    <postMsg mid="66011008" type="Warning" dynamic="1" navigation="0" arg0="&#xA;   Signal=debug_led2_c_3 loads=8 clock_loads=2"  />
-
-Completed router resource preassignment. Real time: 7 secs 
-
-Start NBR router at 18:48:18 01/16/25
-
-*****************************************************************
-Info: NBR allows conflicts(one node used by more than one signal)
-      in the earlier iterations. In each iteration, it tries to  
-      solve the conflicts while keeping the critical connections 
-      routed as short as possible. The routing process is said to
-      be completed when no conflicts exist and all connections   
-      are routed.                                                
-Note: NBR uses a different method to calculate timing slacks. The
-      worst slack and total negative slack may not be the same as
-      that in TRCE report. You should always run TRCE to verify  
-      your design.                                               
-*****************************************************************
-
-Start NBR special constraint process at 18:48:18 01/16/25
-
-Start NBR section for initial routing at 18:48:18 01/16/25
-Level 4, iteration 1
-197(0.08%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 10.657ns/0.000ns; real time: 8 secs 
-
-Info: Initial congestion level at 75% usage is 0
-Info: Initial congestion area  at 75% usage is 0 (0.00%)
-
-Start NBR section for normal routing at 18:48:19 01/16/25
-Level 4, iteration 1
-67(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 8 secs 
-Level 4, iteration 2
-19(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 8 secs 
-Level 4, iteration 3
-4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 8 secs 
-Level 4, iteration 4
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 8 secs 
-Level 4, iteration 5
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 8 secs 
-Level 4, iteration 6
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 8 secs 
-Level 4, iteration 7
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 9 secs 
-Level 4, iteration 8
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 9 secs 
-
-Start NBR section for setup/hold timing optimization with effort level 3 at 18:48:20 01/16/25
-Level 4, iteration 0
-Level 4, iteration 1
-2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<hold >: 0.129ns/0.000ns; real time: 11 secs 
-Level 4, iteration 2
-0(0.00%) conflict; 2(0.03%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<hold >: 0.129ns/0.000ns; real time: 11 secs 
-Level 4, iteration 0
-0(0.00%) conflict; 2(0.03%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.946ns/0.000ns; real time: 12 secs 
-Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.946ns/0.000ns; real time: 12 secs 
-
-Start NBR section for re-routing at 18:48:23 01/16/25
-Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 9.966ns/0.000ns; real time: 12 secs 
-
-Start NBR section for post-routing at 18:48:23 01/16/25
-
-End NBR router with 0 unrouted connection
-
-NBR Summary
------------
-  Number of unrouted connections : 0 (0.00%)
-  Number of connections with timing violations : 0 (0.00%)
-  Estimated worst slack<setup> : 9.966ns
-  Timing score<setup> : 0
------------
-Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
-
-
-
-    <postMsg mid="66011008" type="Warning" dynamic="1" navigation="0" arg0="&#xA;   Signal=debug_led2_c_3 loads=8 clock_loads=2"  />
-
-Total CPU time 9 secs 
-Total REAL time: 13 secs 
-Completely routed.
-End of route.  6220 routed (100.00%); 0 unrouted.
-
-Hold time timing score: 0, hold timing errors: 0
-
-Timing score: 0 
-
-Dumping design to file spi_lcd_impl1.dir/5_1.ncd.
-
-
-PAR_SUMMARY::Run status = Completed
-PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = 9.966
-PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
-PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.134
-PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
-PAR_SUMMARY::Number of errors = 0
-
-Total CPU  time to completion: 9 secs 
-Total REAL time to completion: 14 secs 
-
-par done!
-
-Note: user must run 'Trace' for timing closure signoff.
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Exiting par with exit code 0
-Exiting mpartrce with exit code 0
-
-trce -f "spi_lcd_impl1.pt" -o "spi_lcd_impl1.twr" "spi_lcd_impl1.ncd" "spi_lcd_impl1.prf"
-trce:  version Diamond (64-bit) 3.13.0.56.2
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-
-Loading design for application trce from file spi_lcd_impl1.ncd.
-Design name: spi_lcd
-NCD version: 3.3
-Vendor:      LATTICE
-Device:      LCMXO2-4000HC
-Package:     CSBGA132
-Performance: 5
-Loading device for application trce from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
-Package Status:                     Final          Version 1.44.
-Performance Hardware Data Status:   Final          Version 34.4.
-Setup and Hold Report
-
---------------------------------------------------------------------------------
-Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2
-Thu Jan 16 18:48:25 2025
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-
-Report Information
-------------------
-Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o spi_lcd_impl1.twr -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml spi_lcd_impl1.ncd spi_lcd_impl1.prf 
-Design file:     spi_lcd_impl1.ncd
-Preference file: spi_lcd_impl1.prf
-Device,speed:    LCMXO2-4000HC,5
-Report level:    verbose report, limited to 10 items per preference
---------------------------------------------------------------------------------
-
-BLOCK ASYNCPATHS
-BLOCK RESETPATHS
---------------------------------------------------------------------------------
-
-
-
-Timing summary (Setup):
----------------
-
-Timing errors: 0  Score: 0
-Cumulative negative slack: 0
-
-Constraints cover 7729 paths, 2 nets, and 6157 connections (98.99% coverage)
-
---------------------------------------------------------------------------------
-Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2
-Thu Jan 16 18:48:25 2025
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-
-Report Information
-------------------
-Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o spi_lcd_impl1.twr -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml spi_lcd_impl1.ncd spi_lcd_impl1.prf 
-Design file:     spi_lcd_impl1.ncd
-Preference file: spi_lcd_impl1.prf
-Device,speed:    LCMXO2-4000HC,m
-Report level:    verbose report, limited to 10 items per preference
---------------------------------------------------------------------------------
-
-BLOCK ASYNCPATHS
-BLOCK RESETPATHS
---------------------------------------------------------------------------------
-
-
-
-Timing summary (Hold):
----------------
-
-Timing errors: 0  Score: 0
-Cumulative negative slack: 0
-
-Constraints cover 7729 paths, 2 nets, and 6157 connections (98.99% coverage)
-
-
-
-Timing summary (Setup and Hold):
----------------
-
-Timing errors: 0 (setup), 0 (hold)
-Score: 0 (setup), 0 (hold)
-Cumulative negative slack: 0 (0+0)
---------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------
-
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 67 MB
-
-
-tmcheck -par "spi_lcd_impl1.par" 
-
-bitgen -f "spi_lcd_impl1.t2b" -w "spi_lcd_impl1.ncd"  -jedec "spi_lcd_impl1.prf"
-
-
-BITGEN: Bitstream Generator Diamond (64-bit) 3.13.0.56.2
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-
-
-Loading design for application Bitgen from file spi_lcd_impl1.ncd.
-Design name: spi_lcd
-NCD version: 3.3
-Vendor:      LATTICE
-Device:      LCMXO2-4000HC
-Package:     CSBGA132
-Performance: 5
-Loading device for application Bitgen from file 'xo2c4000.nph' in environment: D:/Program/Diamond/diamond/3.13/ispfpga.
-Package Status:                     Final          Version 1.44.
-Performance Hardware Data Status:   Final          Version 34.4.
-
-Running DRC.
-DRC detected 0 errors and 0 warnings.
-Reading Preference File from spi_lcd_impl1.prf.
-    <postMsg mid="1009992" type="Info"    dynamic="1" navigation="0" arg0=" SW_XO3D_SECURITY_ENCRYPTION *NOT* controlled by xo2c00.acd ###"  />
-    <postMsg mid="1009992" type="Info"    dynamic="1" navigation="0" arg0=" SW_XO3D_SECURITY_ENCRYPTION license_securityIP OK"  />
-
-Preference Summary:
-+---------------------------------+---------------------------------+
-|  Preference                     |  Current Setting                |
-+---------------------------------+---------------------------------+
-|                         RamCfg  |                        Reset**  |
-+---------------------------------+---------------------------------+
-|                     MCCLK_FREQ  |                         2.08**  |
-+---------------------------------+---------------------------------+
-|                  CONFIG_SECURE  |                          OFF**  |
-+---------------------------------+---------------------------------+
-|                          INBUF  |                           ON**  |
-+---------------------------------+---------------------------------+
-|                      JTAG_PORT  |                       ENABLE**  |
-+---------------------------------+---------------------------------+
-|                       SDM_PORT  |                      DISABLE**  |
-+---------------------------------+---------------------------------+
-|                 SLAVE_SPI_PORT  |                      DISABLE**  |
-+---------------------------------+---------------------------------+
-|                MASTER_SPI_PORT  |                      DISABLE**  |
-+---------------------------------+---------------------------------+
-|                       I2C_PORT  |                      DISABLE**  |
-+---------------------------------+---------------------------------+
-|        MUX_CONFIGURATION_PORTS  |                      DISABLE**  |
-+---------------------------------+---------------------------------+
-|                  CONFIGURATION  |                          CFG**  |
-+---------------------------------+---------------------------------+
-|                COMPRESS_CONFIG  |                           ON**  |
-+---------------------------------+---------------------------------+
-|                        MY_ASSP  |                          OFF**  |
-+---------------------------------+---------------------------------+
-|               ONE_TIME_PROGRAM  |                          OFF**  |
-+---------------------------------+---------------------------------+
-|                 ENABLE_TRANSFR  |                      DISABLE**  |
-+---------------------------------+---------------------------------+
-|                  SHAREDEBRINIT  |                      DISABLE**  |
-+---------------------------------+---------------------------------+
-|            BACKGROUND_RECONFIG  |                          OFF**  |
-+---------------------------------+---------------------------------+
- *  Default setting.
- ** The specified setting matches the default setting.
-
-
-Creating bit map...
- 
-Bitstream Status: Final           Version 1.95.
- 
-Saving bit stream in "spi_lcd_impl1.jed".
- 
-===========
-UFM Summary.
-===========
-UFM Size:        767 Pages (128*767 Bits).
-UFM Utilization: General Purpose Flash Memory.
- 
-Available General Purpose Flash Memory:  767 Pages (Page 0 to Page 766).
-Initialized UFM Pages:                     0 Page.
- 
-=========
-Padding summary
-=========
-Padded 588672 bits for this design
-
-
-Total CPU Time: 2 secs 
-Total REAL Time: 2 secs 
-Peak Memory Usage: 278 MB

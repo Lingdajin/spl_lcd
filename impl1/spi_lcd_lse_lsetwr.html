@@ -9,7 +9,7 @@
 <PRE><A name="Map_Twr"></A><B><U><big>Lattice Synthesis Timing Report</big></U></B>
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Thu Jan 16 18:48:09 2025
+Thu Jan 16 20:03:11 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -36,21 +36,21 @@ Passed:  The following path meets requirements by 1.451ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3IX    CK             count_715__i0  (from debug_led2_c_3 +)
-   Destination:    FD1S3IX    CD             count_715__i0  (to debug_led2_c_3 +)
+   Source:         FD1S3IX    CK             count_720__i0  (from debug_led2_c_3 +)
+   Destination:    FD1S3IX    CD             count_720__i0  (to debug_led2_c_3 +)
 
    Delay:                   3.403ns  (25.0% logic, 75.0% route), 2 logic levels.
 
  Constraint Details:
 
-      3.403ns data_path count_715__i0 to count_715__i0 meets
+      3.403ns data_path count_720__i0 to count_720__i0 meets
       5.000ns delay constraint less
       0.146ns L_S requirement (totaling 4.854ns) by 1.451ns
 
- Path Details: count_715__i0 to count_715__i0
+ Path Details: count_720__i0 to count_720__i0
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              count_715__i0 (from debug_led2_c_3)
+L_CO        ---     0.403             CK to Q              count_720__i0 (from debug_led2_c_3)
 Route        12   e 1.432                                  count[0]
 LUT4        ---     0.448              C to Z              \segment_led_inst/i2_3_lut_4_lut
 Route         4   e 1.120                                  count_3__N_11
@@ -62,21 +62,21 @@ Passed:  The following path meets requirements by 1.451ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3IX    CK             count_715__i0  (from debug_led2_c_3 +)
-   Destination:    FD1S3IX    CD             count_715__i1  (to debug_led2_c_3 +)
+   Source:         FD1S3IX    CK             count_720__i0  (from debug_led2_c_3 +)
+   Destination:    FD1S3IX    CD             count_720__i1  (to debug_led2_c_3 +)
 
    Delay:                   3.403ns  (25.0% logic, 75.0% route), 2 logic levels.
 
  Constraint Details:
 
-      3.403ns data_path count_715__i0 to count_715__i1 meets
+      3.403ns data_path count_720__i0 to count_720__i1 meets
       5.000ns delay constraint less
       0.146ns L_S requirement (totaling 4.854ns) by 1.451ns
 
- Path Details: count_715__i0 to count_715__i1
+ Path Details: count_720__i0 to count_720__i1
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              count_715__i0 (from debug_led2_c_3)
+L_CO        ---     0.403             CK to Q              count_720__i0 (from debug_led2_c_3)
 Route        12   e 1.432                                  count[0]
 LUT4        ---     0.448              C to Z              \segment_led_inst/i2_3_lut_4_lut
 Route         4   e 1.120                                  count_3__N_11
@@ -88,21 +88,21 @@ Passed:  The following path meets requirements by 1.451ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3IX    CK             count_715__i0  (from debug_led2_c_3 +)
-   Destination:    FD1S3IX    CD             count_715__i2  (to debug_led2_c_3 +)
+   Source:         FD1S3IX    CK             count_720__i0  (from debug_led2_c_3 +)
+   Destination:    FD1S3IX    CD             count_720__i2  (to debug_led2_c_3 +)
 
    Delay:                   3.403ns  (25.0% logic, 75.0% route), 2 logic levels.
 
  Constraint Details:
 
-      3.403ns data_path count_715__i0 to count_715__i2 meets
+      3.403ns data_path count_720__i0 to count_720__i2 meets
       5.000ns delay constraint less
       0.146ns L_S requirement (totaling 4.854ns) by 1.451ns
 
- Path Details: count_715__i0 to count_715__i2
+ Path Details: count_720__i0 to count_720__i2
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              count_715__i0 (from debug_led2_c_3)
+L_CO        ---     0.403             CK to Q              count_720__i0 (from debug_led2_c_3)
 Route        12   e 1.432                                  count[0]
 LUT4        ---     0.448              C to Z              \segment_led_inst/i2_3_lut_4_lut
 Route         4   e 1.120                                  count_3__N_11
@@ -114,278 +114,266 @@ Report: 3.549 ns is the maximum delay for this constraint.
 
 
 ================================================================================
-Constraint: create_clock -period 5.000000 -name clk1 [get_nets sys_clk_c]
+Constraint: create_clock -period 5.000000 -name clk1 [get_nets sys_clk_50MHz]
+            313 items scored, 313 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 5.040ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \lcd_init_inst/cnt_s4_num__i15  (from sys_clk_50MHz +)
+   Destination:    FD1S3AX    D              \lcd_init_inst/init_data_i6  (to sys_clk_50MHz +)
+
+   Delay:                   9.894ns  (31.2% logic, 68.8% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.894ns data_path \lcd_init_inst/cnt_s4_num__i15 to \lcd_init_inst/init_data_i6 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 5.040ns
+
+ Path Details: \lcd_init_inst/cnt_s4_num__i15 to \lcd_init_inst/init_data_i6
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \lcd_init_inst/cnt_s4_num__i15 (from sys_clk_50MHz)
+Route         2   e 1.002                                  \lcd_init_inst/cnt_s4_num[15]
+LUT4        ---     0.448              D to Z              \lcd_init_inst/i11165_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/n11895
+LUT4        ---     0.448              C to Z              \lcd_init_inst/i9_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/n11654
+LUT4        ---     0.448              B to Z              \lcd_init_inst/i4_4_lut_adj_52
+Route        11   e 1.363                                  \lcd_init_inst/n6538
+LUT4        ---     0.448              A to Z              \lcd_init_inst/i49_4_lut_4_lut
+Route         1   e 0.788                                  \lcd_init_inst/n33
+LUT4        ---     0.448              A to Z              \lcd_init_inst/i7263_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/init_data_8__N_242[7]
+LUT4        ---     0.448              A to Z              \lcd_init_inst/init_data_8__I_0_i7_4_lut
+Route         1   e 0.788                                  \lcd_init_inst/init_data_8__N_108[6]
+                  --------
+                    9.894  (31.2% logic, 68.8% route), 7 logic levels.
+
+
+Error:  The following path violates requirements by 5.040ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \lcd_init_inst/cnt_s4_num__i15  (from sys_clk_50MHz +)
+   Destination:    FD1S3AX    D              \lcd_init_inst/init_data_i7  (to sys_clk_50MHz +)
+
+   Delay:                   9.894ns  (31.2% logic, 68.8% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.894ns data_path \lcd_init_inst/cnt_s4_num__i15 to \lcd_init_inst/init_data_i7 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 5.040ns
+
+ Path Details: \lcd_init_inst/cnt_s4_num__i15 to \lcd_init_inst/init_data_i7
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \lcd_init_inst/cnt_s4_num__i15 (from sys_clk_50MHz)
+Route         2   e 1.002                                  \lcd_init_inst/cnt_s4_num[15]
+LUT4        ---     0.448              D to Z              \lcd_init_inst/i11165_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/n11895
+LUT4        ---     0.448              C to Z              \lcd_init_inst/i9_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/n11654
+LUT4        ---     0.448              B to Z              \lcd_init_inst/i4_4_lut_adj_52
+Route        11   e 1.363                                  \lcd_init_inst/n6538
+LUT4        ---     0.448              A to Z              \lcd_init_inst/i49_4_lut_4_lut
+Route         1   e 0.788                                  \lcd_init_inst/n33
+LUT4        ---     0.448              A to Z              \lcd_init_inst/i7263_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/init_data_8__N_242[7]
+LUT4        ---     0.448              A to Z              \lcd_init_inst/init_data_8__I_0_i8_4_lut
+Route         1   e 0.788                                  \lcd_init_inst/init_data_8__N_108[7]
+                  --------
+                    9.894  (31.2% logic, 68.8% route), 7 logic levels.
+
+
+Error:  The following path violates requirements by 5.040ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \lcd_init_inst/cnt_s4_num__i13  (from sys_clk_50MHz +)
+   Destination:    FD1S3AX    D              \lcd_init_inst/init_data_i6  (to sys_clk_50MHz +)
+
+   Delay:                   9.894ns  (31.2% logic, 68.8% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.894ns data_path \lcd_init_inst/cnt_s4_num__i13 to \lcd_init_inst/init_data_i6 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 5.040ns
+
+ Path Details: \lcd_init_inst/cnt_s4_num__i13 to \lcd_init_inst/init_data_i6
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \lcd_init_inst/cnt_s4_num__i13 (from sys_clk_50MHz)
+Route         2   e 1.002                                  \lcd_init_inst/cnt_s4_num[13]
+LUT4        ---     0.448              C to Z              \lcd_init_inst/i11165_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/n11895
+LUT4        ---     0.448              C to Z              \lcd_init_inst/i9_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/n11654
+LUT4        ---     0.448              B to Z              \lcd_init_inst/i4_4_lut_adj_52
+Route        11   e 1.363                                  \lcd_init_inst/n6538
+LUT4        ---     0.448              A to Z              \lcd_init_inst/i49_4_lut_4_lut
+Route         1   e 0.788                                  \lcd_init_inst/n33
+LUT4        ---     0.448              A to Z              \lcd_init_inst/i7263_4_lut
+Route         2   e 0.954                                  \lcd_init_inst/init_data_8__N_242[7]
+LUT4        ---     0.448              A to Z              \lcd_init_inst/init_data_8__I_0_i7_4_lut
+Route         1   e 0.788                                  \lcd_init_inst/init_data_8__N_108[6]
+                  --------
+                    9.894  (31.2% logic, 68.8% route), 7 logic levels.
+
+Warning: 10.040 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets sys_clk_c]
             4096 items scored, 4096 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Error:  The following path violates requirements by 9.392ns
+Error:  The following path violates requirements by 9.387ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1P3AX    CK             \lcd_show_char_inst/rom_addr_i0_i1_rep_360  (from sys_clk_c +)
-   Destination:    FD1P3AX    D              \lcd_show_char_inst/temp_i0  (to sys_clk_c +)
-
-   Delay:                  14.246ns  (32.5% logic, 67.5% route), 12 logic levels.
-
- Constraint Details:
-
-     14.246ns data_path \lcd_show_char_inst/rom_addr_i0_i1_rep_360 to \lcd_show_char_inst/temp_i0 violates
-      5.000ns delay constraint less
-      0.146ns L_S requirement (totaling 4.854ns) by 9.392ns
-
- Path Details: \lcd_show_char_inst/rom_addr_i0_i1_rep_360 to \lcd_show_char_inst/temp_i0
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              \lcd_show_char_inst/rom_addr_i0_i1_rep_360 (from sys_clk_c)
-Route        77   e 2.101                                  \lcd_show_char_inst/n15878
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i7568_2_lut_rep_263_2_lut
-Route        16   e 1.516                                  \lcd_show_char_inst/n14540
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i236_3_lut_4_lut
-Route         6   e 1.218                                  \lcd_show_char_inst/n1483
-LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i252_4_lut
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n252
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i253_3_lut
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n253_adj_733
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i12652_3_lut
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12723
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i12673_3_lut
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12724
-MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i12038
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12737
-MUXL5       ---     0.212             D0 to Z              \lcd_show_char_inst/char_ram_inst/i12042
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12741
-LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/i12044_3_lut
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12743
-MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i4095
-Route         1   e 0.788                                  \lcd_show_char_inst/rom_q[0]
-LUT4        ---     0.448              D to Z              \lcd_show_char_inst/temp_7__I_0_i1_3_lut_4_lut
-Route         1   e 0.788                                  \lcd_show_char_inst/temp_7__N_356[0]
-                  --------
-                   14.246  (32.5% logic, 67.5% route), 12 logic levels.
-
-
-Error:  The following path violates requirements by 9.392ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1P3AX    CK             \lcd_show_char_inst/rom_addr_i0_i1_rep_360  (from sys_clk_c +)
+   Source:         FD1P3AX    CK             \lcd_show_char_inst/rom_addr_i0_i1_rep_379  (from sys_clk_c +)
    Destination:    FD1P3AX    D              \lcd_show_char_inst/temp_i1  (to sys_clk_c +)
 
-   Delay:                  14.246ns  (32.5% logic, 67.5% route), 12 logic levels.
+   Delay:                  14.241ns  (32.5% logic, 67.5% route), 12 logic levels.
 
  Constraint Details:
 
-     14.246ns data_path \lcd_show_char_inst/rom_addr_i0_i1_rep_360 to \lcd_show_char_inst/temp_i1 violates
+     14.241ns data_path \lcd_show_char_inst/rom_addr_i0_i1_rep_379 to \lcd_show_char_inst/temp_i1 violates
       5.000ns delay constraint less
-      0.146ns L_S requirement (totaling 4.854ns) by 9.392ns
+      0.146ns L_S requirement (totaling 4.854ns) by 9.387ns
 
- Path Details: \lcd_show_char_inst/rom_addr_i0_i1_rep_360 to \lcd_show_char_inst/temp_i1
+ Path Details: \lcd_show_char_inst/rom_addr_i0_i1_rep_379 to \lcd_show_char_inst/temp_i1
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              \lcd_show_char_inst/rom_addr_i0_i1_rep_360 (from sys_clk_c)
-Route        77   e 2.101                                  \lcd_show_char_inst/n15878
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i7568_2_lut_rep_263_2_lut
-Route        16   e 1.516                                  \lcd_show_char_inst/n14540
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i236_3_lut_4_lut
+L_CO        ---     0.403             CK to Q              \lcd_show_char_inst/rom_addr_i0_i1_rep_379 (from sys_clk_c)
+Route        83   e 2.103                                  \lcd_show_char_inst/n15518
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i228_3_lut_rep_377
+Route        14   e 1.509                                  \lcd_show_char_inst/n15502
+LUT4        ---     0.448              D to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i236_3_lut_4_lut
 Route         6   e 1.218                                  \lcd_show_char_inst/n1483
 LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_1_i476_3_lut
 Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n476
-LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/i11939_3_lut
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12638
-MUXL5       ---     0.212           ALUT to Z              \lcd_show_char_inst/char_ram_inst/i11940
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12639
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i11918_3_lut
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12617
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i12709_3_lut
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12624
-MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i11929
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12628
-LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/i11931_3_lut
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12630
+LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/i11801_3_lut
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12532
+MUXL5       ---     0.212           ALUT to Z              \lcd_show_char_inst/char_ram_inst/i11802
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12533
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i11519_3_lut
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12250
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i12351_3_lut
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12257
+MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i11530
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12261
+LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/i11532_3_lut
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12263
 MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_1_i4095
 Route         1   e 0.788                                  \lcd_show_char_inst/rom_q[1]
 LUT4        ---     0.448              D to Z              \lcd_show_char_inst/temp_7__I_0_i2_3_lut_4_lut
 Route         1   e 0.788                                  \lcd_show_char_inst/temp_7__N_356[1]
                   --------
-                   14.246  (32.5% logic, 67.5% route), 12 logic levels.
+                   14.241  (32.5% logic, 67.5% route), 12 logic levels.
 
 
-Error:  The following path violates requirements by 9.391ns
+Error:  The following path violates requirements by 9.384ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1P3AX    CK             \lcd_show_char_inst/rom_addr_i0_i1_rep_360  (from sys_clk_c +)
+   Source:         FD1P3AX    CK             \lcd_show_char_inst/rom_addr_i0_i1_rep_379  (from sys_clk_c +)
    Destination:    FD1P3AX    D              \lcd_show_char_inst/temp_i3  (to sys_clk_c +)
 
-   Delay:                  14.245ns  (32.5% logic, 67.5% route), 12 logic levels.
+   Delay:                  14.238ns  (32.5% logic, 67.5% route), 12 logic levels.
 
  Constraint Details:
 
-     14.245ns data_path \lcd_show_char_inst/rom_addr_i0_i1_rep_360 to \lcd_show_char_inst/temp_i3 violates
+     14.238ns data_path \lcd_show_char_inst/rom_addr_i0_i1_rep_379 to \lcd_show_char_inst/temp_i3 violates
       5.000ns delay constraint less
-      0.146ns L_S requirement (totaling 4.854ns) by 9.391ns
+      0.146ns L_S requirement (totaling 4.854ns) by 9.384ns
 
- Path Details: \lcd_show_char_inst/rom_addr_i0_i1_rep_360 to \lcd_show_char_inst/temp_i3
+ Path Details: \lcd_show_char_inst/rom_addr_i0_i1_rep_379 to \lcd_show_char_inst/temp_i3
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              \lcd_show_char_inst/rom_addr_i0_i1_rep_360 (from sys_clk_c)
-Route        77   e 2.101                                  \lcd_show_char_inst/n15878
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i7568_2_lut_rep_263_2_lut
-Route        16   e 1.516                                  \lcd_show_char_inst/n14540
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_2_i428_3_lut_4_lut
-Route         3   e 1.051                                  \lcd_show_char_inst/char_ram_inst/n428_adj_601
-LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_3_i444_3_lut
-Route         2   e 0.954                                  \lcd_show_char_inst/char_ram_inst/n444_adj_706
+L_CO        ---     0.403             CK to Q              \lcd_show_char_inst/rom_addr_i0_i1_rep_379 (from sys_clk_c)
+Route        83   e 2.103                                  \lcd_show_char_inst/n15518
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i442_3_lut_rep_286_4_lut_3_lut
+Route        12   e 1.384                                  \lcd_show_char_inst/n14244
+LUT4        ---     0.448              D to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i443_3_lut_4_lut
+Route         5   e 1.174                                  \lcd_show_char_inst/char_ram_inst/n443
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_3_i444_3_lut
+Route         2   e 0.954                                  \lcd_show_char_inst/char_ram_inst/n444
 LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_3_i445_3_lut
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n445
-MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i11800
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12499
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i11814_3_lut
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12513
-LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i12717_3_lut
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12520
-MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i11825
-Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12524
-MUXL5       ---     0.212             D0 to Z              \lcd_show_char_inst/char_ram_inst/i11827
-Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12526
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n445_adj_718
+MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i11441
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12172
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i11455_3_lut
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12186
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i12330_3_lut
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12193
+MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i11466
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12197
+MUXL5       ---     0.212             D0 to Z              \lcd_show_char_inst/char_ram_inst/i11468
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12199
 LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_3_i4095_4_lut
 Route         1   e 0.788                                  \lcd_show_char_inst/rom_q[3]
 LUT4        ---     0.448              D to Z              \lcd_show_char_inst/temp_7__I_0_i4_3_lut_4_lut
 Route         1   e 0.788                                  \lcd_show_char_inst/temp_7__N_356[3]
                   --------
-                   14.245  (32.5% logic, 67.5% route), 12 logic levels.
-
-Warning: 14.392 ns is the maximum delay for this constraint.
+                   14.238  (32.5% logic, 67.5% route), 12 logic levels.
 
 
-
-================================================================================
-Constraint: create_clock -period 5.000000 -name clk0 [get_nets sys_clk_50MHz]
-            339 items scored, 339 timing errors detected.
---------------------------------------------------------------------------------
-
-
-Error:  The following path violates requirements by 6.498ns
+Error:  The following path violates requirements by 9.384ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1P3IX    CK             \lcd_init_inst/cnt_s4_num__i7  (from sys_clk_50MHz +)
-   Destination:    FD1S3AX    D              \lcd_init_inst/init_data_i2  (to sys_clk_50MHz +)
+   Source:         FD1P3AX    CK             \lcd_show_char_inst/rom_addr_i0_i1_rep_379  (from sys_clk_c +)
+   Destination:    FD1P3AX    D              \lcd_show_char_inst/temp_i2  (to sys_clk_c +)
 
-   Delay:                  11.352ns  (33.0% logic, 67.0% route), 9 logic levels.
-
- Constraint Details:
-
-     11.352ns data_path \lcd_init_inst/cnt_s4_num__i7 to \lcd_init_inst/init_data_i2 violates
-      5.000ns delay constraint less
-      0.146ns L_S requirement (totaling 4.854ns) by 6.498ns
-
- Path Details: \lcd_init_inst/cnt_s4_num__i7 to \lcd_init_inst/init_data_i2
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              \lcd_init_inst/cnt_s4_num__i7 (from sys_clk_50MHz)
-Route         2   e 1.002                                  \lcd_init_inst/cnt_s4_num[7]
-LUT4        ---     0.448              D to Z              \lcd_init_inst/i4_4_lut_adj_43
-Route         1   e 0.788                                  \lcd_init_inst/n10_adj_814
-LUT4        ---     0.448              B to Z              \lcd_init_inst/i5_3_lut
-Route         2   e 0.954                                  \lcd_init_inst/n12126
-LUT4        ---     0.448              B to Z              \lcd_init_inst/i1_4_lut_adj_41
-Route         6   e 1.218                                  \lcd_init_inst/n12108
-LUT4        ---     0.448              C to Z              \lcd_init_inst/i2_2_lut_rep_354
-Route         7   e 1.255                                  \lcd_init_inst/n15852
-LUT4        ---     0.448              D to Z              \lcd_init_inst/i1_3_lut_4_lut_4_lut_4_lut
-Route         1   e 0.020                                  \lcd_init_inst/n5_adj_808
-MUXL5       ---     0.212           ALUT to Z              \lcd_init_inst/i18
-Route         1   e 0.788                                  \lcd_init_inst/n11
-LUT4        ---     0.448              C to Z              \lcd_init_inst/i1_2_lut_3_lut_4_lut_adj_53
-Route         1   e 0.788                                  \lcd_init_inst/n7
-LUT4        ---     0.448              D to Z              \lcd_init_inst/init_data_8__I_0_i3_4_lut
-Route         1   e 0.788                                  \lcd_init_inst/init_data_8__N_108[2]
-                  --------
-                   11.352  (33.0% logic, 67.0% route), 9 logic levels.
-
-
-Error:  The following path violates requirements by 6.498ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1P3IX    CK             \lcd_init_inst/cnt_s4_num__i6  (from sys_clk_50MHz +)
-   Destination:    FD1S3AX    D              \lcd_init_inst/init_data_i2  (to sys_clk_50MHz +)
-
-   Delay:                  11.352ns  (33.0% logic, 67.0% route), 9 logic levels.
+   Delay:                  14.238ns  (32.5% logic, 67.5% route), 12 logic levels.
 
  Constraint Details:
 
-     11.352ns data_path \lcd_init_inst/cnt_s4_num__i6 to \lcd_init_inst/init_data_i2 violates
+     14.238ns data_path \lcd_show_char_inst/rom_addr_i0_i1_rep_379 to \lcd_show_char_inst/temp_i2 violates
       5.000ns delay constraint less
-      0.146ns L_S requirement (totaling 4.854ns) by 6.498ns
+      0.146ns L_S requirement (totaling 4.854ns) by 9.384ns
 
- Path Details: \lcd_init_inst/cnt_s4_num__i6 to \lcd_init_inst/init_data_i2
+ Path Details: \lcd_show_char_inst/rom_addr_i0_i1_rep_379 to \lcd_show_char_inst/temp_i2
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              \lcd_init_inst/cnt_s4_num__i6 (from sys_clk_50MHz)
-Route         2   e 1.002                                  \lcd_init_inst/cnt_s4_num[6]
-LUT4        ---     0.448              C to Z              \lcd_init_inst/i4_4_lut_adj_43
-Route         1   e 0.788                                  \lcd_init_inst/n10_adj_814
-LUT4        ---     0.448              B to Z              \lcd_init_inst/i5_3_lut
-Route         2   e 0.954                                  \lcd_init_inst/n12126
-LUT4        ---     0.448              B to Z              \lcd_init_inst/i1_4_lut_adj_41
-Route         6   e 1.218                                  \lcd_init_inst/n12108
-LUT4        ---     0.448              C to Z              \lcd_init_inst/i2_2_lut_rep_354
-Route         7   e 1.255                                  \lcd_init_inst/n15852
-LUT4        ---     0.448              D to Z              \lcd_init_inst/i1_3_lut_4_lut_4_lut_4_lut
-Route         1   e 0.020                                  \lcd_init_inst/n5_adj_808
-MUXL5       ---     0.212           ALUT to Z              \lcd_init_inst/i18
-Route         1   e 0.788                                  \lcd_init_inst/n11
-LUT4        ---     0.448              C to Z              \lcd_init_inst/i1_2_lut_3_lut_4_lut_adj_53
-Route         1   e 0.788                                  \lcd_init_inst/n7
-LUT4        ---     0.448              D to Z              \lcd_init_inst/init_data_8__I_0_i3_4_lut
-Route         1   e 0.788                                  \lcd_init_inst/init_data_8__N_108[2]
+L_CO        ---     0.403             CK to Q              \lcd_show_char_inst/rom_addr_i0_i1_rep_379 (from sys_clk_c)
+Route        83   e 2.103                                  \lcd_show_char_inst/n15518
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i442_3_lut_rep_286_4_lut_3_lut
+Route        12   e 1.384                                  \lcd_show_char_inst/n14244
+LUT4        ---     0.448              D to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_0_i443_3_lut_4_lut
+Route         5   e 1.174                                  \lcd_show_char_inst/char_ram_inst/n443
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_3_i444_3_lut
+Route         2   e 0.954                                  \lcd_show_char_inst/char_ram_inst/n444
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_2_i445_3_lut
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n445
+LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/i12306_3_lut
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12203
+MUXL5       ---     0.212           ALUT to Z              \lcd_show_char_inst/char_ram_inst/i11486
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12217
+LUT4        ---     0.448              B to Z              \lcd_show_char_inst/char_ram_inst/i11493_3_lut
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12224
+MUXL5       ---     0.212           BLUT to Z              \lcd_show_char_inst/char_ram_inst/i11497
+Route         1   e 0.020                                  \lcd_show_char_inst/char_ram_inst/n12228
+MUXL5       ---     0.212             D0 to Z              \lcd_show_char_inst/char_ram_inst/i11499
+Route         1   e 0.788                                  \lcd_show_char_inst/char_ram_inst/n12230
+LUT4        ---     0.448              A to Z              \lcd_show_char_inst/char_ram_inst/address_11__I_0_Mux_2_i4095_4_lut
+Route         1   e 0.788                                  \lcd_show_char_inst/rom_q[2]
+LUT4        ---     0.448              D to Z              \lcd_show_char_inst/temp_7__I_0_i3_3_lut_4_lut
+Route         1   e 0.788                                  \lcd_show_char_inst/temp_7__N_356[2]
                   --------
-                   11.352  (33.0% logic, 67.0% route), 9 logic levels.
+                   14.238  (32.5% logic, 67.5% route), 12 logic levels.
 
-
-Error:  The following path violates requirements by 6.498ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1P3IX    CK             \lcd_init_inst/cnt_s4_num__i5  (from sys_clk_50MHz +)
-   Destination:    FD1S3AX    D              \lcd_init_inst/init_data_i2  (to sys_clk_50MHz +)
-
-   Delay:                  11.352ns  (33.0% logic, 67.0% route), 9 logic levels.
-
- Constraint Details:
-
-     11.352ns data_path \lcd_init_inst/cnt_s4_num__i5 to \lcd_init_inst/init_data_i2 violates
-      5.000ns delay constraint less
-      0.146ns L_S requirement (totaling 4.854ns) by 6.498ns
-
- Path Details: \lcd_init_inst/cnt_s4_num__i5 to \lcd_init_inst/init_data_i2
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.403             CK to Q              \lcd_init_inst/cnt_s4_num__i5 (from sys_clk_50MHz)
-Route         2   e 1.002                                  \lcd_init_inst/cnt_s4_num[5]
-LUT4        ---     0.448              A to Z              \lcd_init_inst/i4_4_lut_adj_43
-Route         1   e 0.788                                  \lcd_init_inst/n10_adj_814
-LUT4        ---     0.448              B to Z              \lcd_init_inst/i5_3_lut
-Route         2   e 0.954                                  \lcd_init_inst/n12126
-LUT4        ---     0.448              B to Z              \lcd_init_inst/i1_4_lut_adj_41
-Route         6   e 1.218                                  \lcd_init_inst/n12108
-LUT4        ---     0.448              C to Z              \lcd_init_inst/i2_2_lut_rep_354
-Route         7   e 1.255                                  \lcd_init_inst/n15852
-LUT4        ---     0.448              D to Z              \lcd_init_inst/i1_3_lut_4_lut_4_lut_4_lut
-Route         1   e 0.020                                  \lcd_init_inst/n5_adj_808
-MUXL5       ---     0.212           ALUT to Z              \lcd_init_inst/i18
-Route         1   e 0.788                                  \lcd_init_inst/n11
-LUT4        ---     0.448              C to Z              \lcd_init_inst/i1_2_lut_3_lut_4_lut_adj_53
-Route         1   e 0.788                                  \lcd_init_inst/n7
-LUT4        ---     0.448              D to Z              \lcd_init_inst/init_data_8__I_0_i3_4_lut
-Route         1   e 0.788                                  \lcd_init_inst/init_data_8__N_108[2]
-                  --------
-                   11.352  (33.0% logic, 67.0% route), 9 logic levels.
-
-Warning: 11.498 ns is the maximum delay for this constraint.
+Warning: 14.387 ns is the maximum delay for this constraint.
 
 
 <A name="mtw1_rs"></A><B><U><big>Timing Report Summary</big></U></B>
@@ -398,10 +386,10 @@ create_clock -period 5.000000 -name     |             |             |
 clk2 [get_nets debug_led2_c_3]          |     5.000 ns|     3.549 ns|     2  
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk1 [get_nets sys_clk_c]               |     5.000 ns|    14.392 ns|    12 *
+clk1 [get_nets sys_clk_50MHz]           |     5.000 ns|    10.040 ns|     7 *
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_50MHz]           |     5.000 ns|    11.498 ns|     9 *
+clk0 [get_nets sys_clk_c]               |     5.000 ns|    14.387 ns|    12 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -411,43 +399,45 @@ clk0 [get_nets sys_clk_50MHz]           |     5.000 ns|    11.498 ns|     9 *
 --------------------------------------------------------------------------------
 Critical Nets                           |   Loads|  Errors| % of total
 --------------------------------------------------------------------------------
-\lcd_show_char_inst/rom_addr[2]         |     398|     976|     22.01%
+\lcd_show_char_inst/rom_addr[2]         |     412|     922|     20.91%
                                         |        |        |
-\lcd_show_char_inst/rom_addr[0]         |     497|     827|     18.65%
+\lcd_show_char_inst/rom_addr[3]         |     508|     825|     18.71%
                                         |        |        |
-\lcd_show_char_inst/rom_addr[3]         |     507|     791|     17.84%
+\lcd_show_char_inst/rom_q[2]            |       1|     721|     16.35%
                                         |        |        |
-\lcd_show_char_inst/rom_q[2]            |       1|     742|     16.73%
+\lcd_show_char_inst/temp_7__N_356[2]    |       1|     721|     16.35%
                                         |        |        |
-\lcd_show_char_inst/temp_7__N_356[2]    |       1|     742|     16.73%
+\lcd_show_char_inst/rom_q[3]            |       1|     718|     16.28%
                                         |        |        |
-\lcd_show_char_inst/rom_q[3]            |       1|     720|     16.23%
+\lcd_show_char_inst/temp_7__N_356[3]    |       1|     718|     16.28%
                                         |        |        |
-\lcd_show_char_inst/temp_7__N_356[3]    |       1|     720|     16.23%
+\lcd_show_char_inst/rom_addr[0]         |     497|     689|     15.63%
                                         |        |        |
-\lcd_show_char_inst/rom_q[4]            |       1|     684|     15.42%
+\lcd_show_char_inst/rom_q[4]            |       1|     681|     15.45%
                                         |        |        |
-\lcd_show_char_inst/temp_7__N_356[4]    |       1|     684|     15.42%
+\lcd_show_char_inst/temp_7__N_356[4]    |       1|     681|     15.45%
                                         |        |        |
-\lcd_show_char_inst/rom_q[1]            |       1|     641|     14.45%
+\lcd_show_char_inst/rom_q[1]            |       1|     669|     15.17%
                                         |        |        |
-\lcd_show_char_inst/temp_7__N_356[1]    |       1|     641|     14.45%
+\lcd_show_char_inst/temp_7__N_356[1]    |       1|     669|     15.17%
                                         |        |        |
-\lcd_show_char_inst/char_ram_inst/n12575|       1|     590|     13.30%
+\lcd_show_char_inst/char_ram_inst/n12199|       1|     590|     13.38%
                                         |        |        |
-\lcd_show_char_inst/char_ram_inst/n12526|       1|     575|     12.97%
+\lcd_show_char_inst/char_ram_inst/n12230|       1|     582|     13.20%
                                         |        |        |
-\lcd_show_char_inst/char_ram_inst/n12781|       1|     544|     12.27%
+\lcd_show_char_inst/rom_addr[1]         |     303|     550|     12.47%
                                         |        |        |
-\lcd_show_char_inst/rom_addr[1]         |     305|     529|     11.93%
+\lcd_show_char_inst/char_ram_inst/n12530|       1|     543|     12.32%
                                         |        |        |
-\lcd_show_char_inst/rom_q[5]            |       1|     526|     11.86%
+\lcd_show_char_inst/rom_q[5]            |       1|     532|     12.07%
                                         |        |        |
-\lcd_show_char_inst/temp_7__N_356[5]    |       1|     526|     11.86%
+\lcd_show_char_inst/temp_7__N_356[5]    |       1|     532|     12.07%
                                         |        |        |
-\lcd_show_char_inst/char_ram_inst/n12630|       1|     503|     11.34%
+\lcd_show_char_inst/char_ram_inst/n12263|       1|     530|     12.02%
                                         |        |        |
-\lcd_show_char_inst/n15878              |      77|     468|     10.55%
+\lcd_show_char_inst/n15518              |      83|     443|     10.05%
+                                        |        |        |
+\lcd_show_char_inst/rom_addr[4]         |     448|     441|     10.00%
                                         |        |        |
 --------------------------------------------------------------------------------
 
@@ -455,12 +445,12 @@ Critical Nets                           |   Loads|  Errors| % of total
 <A name="mtw1_ts"></A><B><U><big>Timing summary:</big></U></B>
 ---------------
 
-Timing errors: 4435  Score: 20117087
+Timing errors: 4409  Score: 19146261
 
-Constraints cover  7991 paths, 2071 nets, and 6717 connections (97.2% coverage)
+Constraints cover  7813 paths, 2043 nets, and 6650 connections (97.2% coverage)
 
 
-Peak memory: 176504832 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
+Peak memory: 176631808 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
 CPU_TIME_REPORT: 0 secs 
 
 
