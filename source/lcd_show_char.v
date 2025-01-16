@@ -122,6 +122,8 @@ always@(posedge sys_clk or negedge sys_rst_n)
 always@(posedge sys_clk or negedge sys_rst_n)
     if(!sys_rst_n)  
         cnt_set_windows <= 'd0;
+    else if(state1_finish_flag)
+        cnt_set_windows <= 'd0;
     else if(state == STATE1 && the1_wr_done)
         cnt_set_windows <= cnt_set_windows + 1'b1;
 
