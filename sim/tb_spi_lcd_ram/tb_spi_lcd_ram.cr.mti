@@ -12,13 +12,6 @@ Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Ju
 Top level modules:
 	control
 
-} {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
-Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
--- Compiling module show_string_number_ctrl
-
-Top level modules:
-	show_string_number_ctrl
-
 } {} {}} D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v {1 {vlog -work work -stats=none D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
 Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
 -- Compiling module pll

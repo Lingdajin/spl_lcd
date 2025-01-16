@@ -78,6 +78,8 @@ always@(posedge sys_clk or negedge sys_rst_n)
 always@(posedge sys_clk or negedge sys_rst_n)
     if(!sys_rst_n)
         cnt_ascii_num <= 'd0;
+    else if(cnt_ascii_num == 18)
+        cnt_ascii_num <= 'd0;
     else if(init_done && show_char_done)
         cnt_ascii_num <= cnt_ascii_num + 1'b1;
     else
