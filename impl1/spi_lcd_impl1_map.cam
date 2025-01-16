@@ -1,48 +1,38 @@
 [ START MERGED ]
-lcd_write_inst/n1 lcd_write_inst/mosi_N_76
-n1482 wr_done
-lcd_init_inst/n1496 state_4
-lcd_init_inst/n14841 state_2_adj_805
-lcd_init_inst/n6963 lcd_init_inst/state_0
-n6965 debug_led1_c_5
-lcd_show_char_inst/n6967 state_2_adj_806
-lcd_show_char_inst/n14820 lcd_show_char_inst/rom_addr_5
+n1423 wr_done
+lcd_write_inst/n1 lcd_write_inst/mosi_N_65
+lcd_init_inst/n1427 state_4
+lcd_init_inst/n14076 state_2_adj_790
+lcd_init_inst/n6887 lcd_init_inst/state_0
+n6883 state_5
+lcd_show_char_inst/n6886 state_2_adj_791
+lcd_show_char_inst/n14099 lcd_show_char_inst/rom_addr_5
 [ END MERGED ]
 [ START CLIPPED ]
-lcd_show_char_inst/add_705_1/S0
-lcd_show_char_inst/add_705_1/CI
-lcd_show_char_inst/add_705_cout/S1
-lcd_show_char_inst/add_705_cout/CO
+GND_net
+lcd_show_char_inst/add_672_1/S0
+lcd_show_char_inst/add_672_1/CI
+lcd_show_char_inst/add_672_cout/S1
+lcd_show_char_inst/add_672_cout/CO
+lcd_init_inst/cnt_150ms_681_add_4_23/CO
 lcd_init_inst/add_153_1/S0
 lcd_init_inst/add_153_1/CI
-lcd_init_inst/cnt_150ms_715_add_4_23/CO
 lcd_init_inst/add_153_19/S1
 lcd_init_inst/add_153_19/CO
-lcd_init_inst/cnt_150ms_715_add_4_1/S0
-lcd_init_inst/cnt_150ms_715_add_4_1/CI
+lcd_init_inst/cnt_150ms_681_add_4_1/S0
+lcd_init_inst/cnt_150ms_681_add_4_1/CI
 [ END CLIPPED ]
 [ START DESIGN PREFS ]
 SCHEMATIC START ;
-# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Thu Jan 16 20:49:52 2025
+# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Thu Jan 16 21:04:10 2025
 
 SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=DISABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE BACKGROUND_RECONFIG=OFF INBUF=ON ;
-LOCATE COMP "lcd_sclk" SITE "P7" ;
 LOCATE COMP "lcd_dc" SITE "P8" ;
 LOCATE COMP "lcd_rst" SITE "N8" ;
+LOCATE COMP "lcd_sclk" SITE "P7" ;
 LOCATE COMP "lcd_mosi" SITE "N7" ;
 LOCATE COMP "lcd_cs" SITE "N6" ;
 LOCATE COMP "lcd_led" SITE "G13" ;
-LOCATE COMP "debug_led1" SITE "N13" ;
-LOCATE COMP "debug_led2" SITE "M12" ;
-LOCATE COMP "segment_led[8]" SITE "C9" ;
-LOCATE COMP "segment_led[7]" SITE "F1" ;
-LOCATE COMP "segment_led[6]" SITE "B9" ;
-LOCATE COMP "segment_led[5]" SITE "A9" ;
-LOCATE COMP "segment_led[4]" SITE "E2" ;
-LOCATE COMP "segment_led[3]" SITE "E1" ;
-LOCATE COMP "segment_led[2]" SITE "F2" ;
-LOCATE COMP "segment_led[1]" SITE "C11" ;
-LOCATE COMP "segment_led[0]" SITE "A10" ;
 LOCATE COMP "sys_clk" SITE "C1" ;
 LOCATE COMP "sys_rst_n" SITE "N14" ;
 FREQUENCY NET "sys_clk_50MHz" 48.000000 MHz ;

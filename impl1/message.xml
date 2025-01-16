@@ -1,5 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Map">
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(12): Semantic error in &quot;LOCATE COMP &quot;debug_led1&quot; SITE &quot;N13&quot; ;&quot;: </Dynamic>
+            <Dynamic>debug_led1</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(13): Semantic error in &quot;LOCATE COMP &quot;debug_led2&quot; SITE &quot;M12&quot; ;&quot;: </Dynamic>
+            <Dynamic>debug_led2</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>13</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(14): Semantic error in &quot;LOCATE COMP &quot;segment_led[0]&quot; SITE &quot;A10&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[0]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>14</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(15): Semantic error in &quot;LOCATE COMP &quot;segment_led[1]&quot; SITE &quot;C11&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[1]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(16): Semantic error in &quot;LOCATE COMP &quot;segment_led[2]&quot; SITE &quot;F2&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[2]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>16</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(17): Semantic error in &quot;LOCATE COMP &quot;segment_led[3]&quot; SITE &quot;E1&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[3]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>17</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(18): Semantic error in &quot;LOCATE COMP &quot;segment_led[4]&quot; SITE &quot;E2&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[4]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>18</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(19): Semantic error in &quot;LOCATE COMP &quot;segment_led[5]&quot; SITE &quot;A9&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[5]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>19</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(20): Semantic error in &quot;LOCATE COMP &quot;segment_led[6]&quot; SITE &quot;B9&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[6]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>20</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(21): Semantic error in &quot;LOCATE COMP &quot;segment_led[7]&quot; SITE &quot;F1&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[7]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>21</Navigation>
+        </Message>
+        <Message>
+            <ID>1100679</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(22): Semantic error in &quot;LOCATE COMP &quot;segment_led[8]&quot; SITE &quot;C9&quot; ;&quot;: </Dynamic>
+            <Dynamic>segment_led[8]</Dynamic>
+            <Navigation>D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf</Navigation>
+            <Navigation>22</Navigation>
+        </Message>
+    </Task>
     <Task name="Lattice_Synthesis">
         <Message>
             <ID>35002000</ID>
@@ -32,14 +122,6 @@
             <Dynamic>spi_lcd</Dynamic>
             <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v</Navigation>
             <Navigation>18</Navigation>
-        </Message>
-        <Message>
-            <ID>35901018</ID>
-            <Severity>Info</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/segment_led.v(1): </Dynamic>
-            <Dynamic>segment_led</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/segment_led.v</Navigation>
-            <Navigation>1</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -224,28 +306,14 @@
         <Message>
             <ID>35935013</ID>
             <Severity>Warning</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(84): </Dynamic>
+            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(88): </Dynamic>
             <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i21</Dynamic>
             <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v</Navigation>
-            <Navigation>84</Navigation>
+            <Navigation>88</Navigation>
         </Message>
         <Message>
             <ID>35001611</ID>
             <Severity>Warning</Severity>
-        </Message>
-    </Task>
-    <Task name="PAR">
-        <Message>
-            <ID>66011008</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>
-   Signal=debug_led2_c_3 loads=9 clock_loads=2</Dynamic>
-        </Message>
-        <Message>
-            <ID>66011008</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>
-   Signal=debug_led2_c_3 loads=9 clock_loads=2</Dynamic>
         </Message>
     </Task>
     <Task name="Jedecgen">

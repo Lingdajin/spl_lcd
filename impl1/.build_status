@@ -6,38 +6,38 @@
             <Task name="TimingSimFileVlg" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVHD" build_result="0" update_result="3" update_time="0"/>
             <Task name="Bitgen" build_result="0" update_result="3" update_time="0"/>
-            <Task name="Jedecgen" build_result="2" update_result="0" update_time="1737031807"/>
+            <Task name="Jedecgen" build_result="2" update_result="0" update_time="1737032664"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1737031793">
-            <Task name="Map" build_result="2" update_result="0" update_time="1737031793"/>
+        <Milestone name="Map" build_result="2" build_time="1737032650">
+            <Task name="Map" build_result="2" update_result="0" update_time="1737032650"/>
             <Task name="MapTrace" build_result="0" update_result="3" update_time="0"/>
             <Task name="MapVerilogSimFile" build_result="0" update_result="3" update_time="0"/>
             <Task name="MapVHDLSimFile" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1737031804">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1737031804"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1737031804"/>
+        <Milestone name="PAR" build_result="2" build_time="1737032661">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1737032661"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1737032662"/>
             <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1737031789">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1737031789"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1737031789"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1737032616">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1737032616"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1737032616"/>
         </Milestone>
         <Milestone name="TOOL_Report" build_result="0" build_time="0">
-            <Task name="HDLE" build_result="0" update_result="2" update_time="1737031767"/>
-            <Task name="BKM" build_result="0" update_result="2" update_time="1737031767"/>
+            <Task name="HDLE" build_result="0" update_result="2" update_time="1737032606"/>
+            <Task name="BKM" build_result="0" update_result="2" update_time="1737032606"/>
             <Task name="SSO" build_result="0" update_result="3" update_time="0"/>
             <Task name="PIODRC" build_result="0" update_result="3" update_time="0"/>
             <Task name="DEC" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Report name=".vdbs/spi_lcd_impl1_map.vdb" last_build_time="1737031793" last_build_size="353435"/>
-        <Report name="spi_lcd_impl1.bgn" last_build_time="1737031807" last_build_size="4569"/>
-        <Report name="spi_lcd_impl1.jed" last_build_time="1737031807" last_build_size="849653"/>
-        <Report name="spi_lcd_impl1.lsedata" last_build_time="1737031785" last_build_size="2704609"/>
-        <Report name="spi_lcd_impl1.ncd" last_build_time="1737031804" last_build_size="1409446"/>
-        <Report name="spi_lcd_impl1.ngd" last_build_time="1737031789" last_build_size="1072410"/>
-        <Report name="spi_lcd_impl1.twr" last_build_time="1737031804" last_build_size="61081"/>
-        <Report name="spi_lcd_impl1_map.ncd" last_build_time="1737031792" last_build_size="957235"/>
+        <Report name=".vdbs/spi_lcd_impl1_map.vdb" last_build_time="1737032650" last_build_size="344793"/>
+        <Report name="spi_lcd_impl1.bgn" last_build_time="1737032664" last_build_size="4569"/>
+        <Report name="spi_lcd_impl1.jed" last_build_time="1737032664" last_build_size="849239"/>
+        <Report name="spi_lcd_impl1.lsedata" last_build_time="1737032612" last_build_size="2688472"/>
+        <Report name="spi_lcd_impl1.ncd" last_build_time="1737032661" last_build_size="1386632"/>
+        <Report name="spi_lcd_impl1.ngd" last_build_time="1737032616" last_build_size="1054269"/>
+        <Report name="spi_lcd_impl1.twr" last_build_time="1737032662" last_build_size="60651"/>
+        <Report name="spi_lcd_impl1_map.ncd" last_build_time="1737032650" last_build_size="938517"/>
     </Strategy>
 </BuildStatus>
-        
+                

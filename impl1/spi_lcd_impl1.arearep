@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------
 Report for cell spi_lcd.TECH
-Register bits:  217 of 4635 (4.682%)
-I/O cells:      19
+Register bits:  213 of 4635 (4.595%)
+I/O cells:      8
                                   Cell usage:
                                cell     count   Res Usage(%)
                               CCU2D        27          100.0
@@ -12,14 +12,14 @@ I/O cells:      19
                             FD1P3JX         1          100.0
                             FD1S3AX        33          100.0
                             FD1S3AY         1          100.0
-                            FD1S3IX        52          100.0
+                            FD1S3IX        48          100.0
                             FD1S3JX         3          100.0
                                 GSR         1          100.0
                                  IB         2          100.0
-                            L6MUX21        98          100.0
-                               LUT4      1386          100.0
-                                 OB        17          100.0
-                              PFUMX       301          100.0
+                            L6MUX21        95          100.0
+                               LUT4      1367          100.0
+                                 OB         6          100.0
+                              PFUMX       306          100.0
                           ROM128X1A         4          100.0
 SUB MODULES
                            char_ram         1
@@ -28,9 +28,8 @@ SUB MODULES
                       lcd_show_char         1
                           lcd_write         1
                                 pll         1
-                        segment_led         1
             show_string_number_ctrl         1
-                              TOTAL      2062
+                              TOTAL      2029
 ----------------------------------------------------------------------
 Report for cell lcd_write.v1
 Instance Path : lcd_write_inst
@@ -40,11 +39,11 @@ Instance Path : lcd_write_inst
                             FD1P3IX        18           24.3
                             FD1P3JX         1          100.0
                             FD1S3AX         4           12.1
-                            FD1S3IX         9           17.3
+                            FD1S3IX         9           18.8
                             FD1S3JX         1           33.3
-                               LUT4        41            3.0
+                               LUT4        39            2.9
                               PFUMX         1            0.3
-                              TOTAL        76
+                              TOTAL        74
 ----------------------------------------------------------------------
 Report for cell lcd_init.v1
 Instance Path : lcd_init_inst
@@ -55,25 +54,11 @@ Instance Path : lcd_init_inst
                             FD1P3IX        24           32.4
                             FD1S3AX        13           39.4
                             FD1S3AY         1          100.0
-                            FD1S3IX        27           51.9
-                            L6MUX21         3            3.1
-                               LUT4       126            9.1
-                              PFUMX        13            4.3
-                              TOTAL       231
-----------------------------------------------------------------------
-Report for cell pll.v1
-Instance Path : pll_u1
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            EHXPLLJ         1          100.0
-                              TOTAL         1
-----------------------------------------------------------------------
-Report for cell segment_led.v1
-Instance Path : segment_led_inst
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                               LUT4         8            0.6
-                              TOTAL         8
+                            FD1S3IX        27           56.3
+                            L6MUX21         3            3.2
+                               LUT4       126            9.2
+                              PFUMX        14            4.6
+                              TOTAL       232
 ----------------------------------------------------------------------
 Report for cell lcd_show_char.v1
 Instance Path : lcd_show_char_inst
@@ -84,36 +69,30 @@ Instance Path : lcd_show_char_inst
                             FD1P3AY         1          100.0
                             FD1P3IX        12           16.2
                             FD1S3AX         5           15.2
-                            FD1S3IX         4            7.7
+                            FD1S3IX         4            8.3
                             FD1S3JX         1           33.3
-                            L6MUX21        95           96.9
-                               LUT4      1138           82.1
-                              PFUMX       282           93.7
+                            L6MUX21        92           96.8
+                               LUT4      1132           82.8
+                              PFUMX       287           93.8
 SUB MODULES
                            char_ram         1
-                              TOTAL      1587
+                              TOTAL      1583
 ----------------------------------------------------------------------
 Report for cell char_ram.v1
 Instance Path : lcd_show_char_inst.char_ram_inst
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            L6MUX21        95           96.9
-                               LUT4       969           69.9
-                              PFUMX       279           92.7
-                              TOTAL      1343
+                            L6MUX21        92           96.8
+                               LUT4       952           69.6
+                              PFUMX       283           92.5
+                              TOTAL      1327
 ----------------------------------------------------------------------
-Report for cell show_string_number_ctrl.v1
-Instance Path : show_string_number_ctrl_inst
+Report for cell pll.v1
+Instance Path : pll_u1
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3AX         6           11.5
-                            FD1P3IX        20           27.0
-                            FD1S3AX         1            3.0
-                            FD1S3IX         8           15.4
-                            FD1S3JX         1           33.3
-                               LUT4        50            3.6
-                              PFUMX         4            1.3
-                              TOTAL        90
+                            EHXPLLJ         1          100.0
+                              TOTAL         1
 ----------------------------------------------------------------------
 Report for cell control.v1
 Instance Path : control_inst
@@ -123,3 +102,16 @@ Instance Path : control_inst
                                LUT4        11            0.8
                               PFUMX         1            0.3
                               TOTAL        22
+----------------------------------------------------------------------
+Report for cell show_string_number_ctrl.v1
+Instance Path : show_string_number_ctrl_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         6           11.5
+                            FD1P3IX        20           27.0
+                            FD1S3AX         1            3.0
+                            FD1S3IX         8           16.7
+                            FD1S3JX         1           33.3
+                               LUT4        49            3.6
+                              PFUMX         3            1.0
+                              TOTAL        88

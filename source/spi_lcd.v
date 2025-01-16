@@ -25,10 +25,10 @@ module  spi_lcd
     output          lcd_sclk      ,
     output          lcd_mosi      ,
     output          lcd_cs        ,
-    output          lcd_led       ,
-    output          debug_led1    ,
-    output          debug_led2    ,
-    output 	  [8:0] segment_led
+    output          lcd_led       
+    // output          debug_led1    ,
+    // output          debug_led2    ,
+    // output 	  [8:0] segment_led
 );
 wire            sys_clk_50MHz;
 wire    [8:0]   data;   
@@ -52,29 +52,30 @@ wire            show_char_done     ;
 
 assign  lcd_led = 1'b1;
 
-assign debug_led1 = init_done;
-assign debug_led2 = show_char_done;
+//=================≤‚ ‘”√================================
+// assign debug_led1 = init_done;
+// assign debug_led2 = show_char_done;
 
-reg [3:0] count;
-wire [3:0] seg_data;
+// reg [3:0] count;
+// wire [3:0] seg_data;
 
-assign seg_data = count;
+// assign seg_data = count;
 
-always@(posedge show_char_done or negedge sys_rst_n)
-    if(!sys_rst_n)
-        count <= 'd0;
-    else if(count > 'd0)
-        count <= 'd0;
-    else
-        count <= count + 1'b1;
+// always@(posedge show_char_done or negedge sys_rst_n)
+//     if(!sys_rst_n)
+//         count <= 'd0;
+//     else if(count > 'd0)
+//         count <= 'd0;
+//     else
+//         count <= count + 1'b1;
         
 
-segment_led segment_led_inst
-(
-    .seg_data(seg_data),		//seg_data input
-    .segment_led(segment_led)	
-);
-
+// segment_led segment_led_inst
+// (
+//     .seg_data(seg_data),		//seg_data input
+//     .segment_led(segment_led)	
+// );
+//========================================================
 pll pll_u1
 (
     .CLKI( sys_clk ), 

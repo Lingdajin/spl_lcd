@@ -1,26 +1,15 @@
 NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
 NOTE All Rights Reserved *
-NOTE DATE CREATED: Thu Jan 16 20:50:07 2025 *
+NOTE DATE CREATED: Thu Jan 16 21:04:24 2025 *
 NOTE DESIGN NAME: spi_lcd *
 NOTE DEVICE NAME: LCMXO2-4000HC-5CSBGA132 *
 NOTE PIN ASSIGNMENTS *
-NOTE PINS lcd_sclk : P7 : out *
 NOTE PINS lcd_dc : P8 : out *
 NOTE PINS lcd_rst : N8 : out *
+NOTE PINS lcd_sclk : P7 : out *
 NOTE PINS lcd_mosi : N7 : out *
 NOTE PINS lcd_cs : N6 : out *
 NOTE PINS lcd_led : G13 : out *
-NOTE PINS debug_led1 : N13 : out *
-NOTE PINS debug_led2 : M12 : out *
-NOTE PINS segment_led[8] : C9 : out *
-NOTE PINS segment_led[7] : F1 : out *
-NOTE PINS segment_led[6] : B9 : out *
-NOTE PINS segment_led[5] : A9 : out *
-NOTE PINS segment_led[4] : E2 : out *
-NOTE PINS segment_led[3] : E1 : out *
-NOTE PINS segment_led[2] : F2 : out *
-NOTE PINS segment_led[1] : C11 : out *
-NOTE PINS segment_led[0] : A10 : out *
 NOTE PINS sys_clk : C1 : in *
 NOTE PINS sys_rst_n : N14 : in *
 NOTE CONFIGURATION MODE: NONE *

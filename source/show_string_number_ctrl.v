@@ -51,7 +51,11 @@ module show_string_number_ctrl
 //****************** Parameter and Internal Signal *******************//        
 reg     [1:0]   cnt1;    
 
+//最多显示2^5=32个字符
 reg     [4:0]   cnt_ascii_num;
+
+//显示总字符数量
+parameter   CHAR_NUM    =   19;
 
 //******************************* Main Code **************************//
 //en_size为1时调用字体大小为16x8，为0时调用字体大小为12x6；
@@ -78,7 +82,7 @@ always@(posedge sys_clk or negedge sys_rst_n)
 always@(posedge sys_clk or negedge sys_rst_n)
     if(!sys_rst_n)
         cnt_ascii_num <= 'd0;
-    else if(cnt_ascii_num == 'd19)
+    else if(cnt_ascii_num == CHAR_NUM)
         cnt_ascii_num <= 'd0;
     else if(init_done && show_char_done)
         cnt_ascii_num <= cnt_ascii_num + 1'b1;
