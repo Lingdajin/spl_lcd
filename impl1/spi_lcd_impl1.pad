@@ -6,30 +6,41 @@ Performance Grade:      5
 PACKAGE:          CSBGA132
 Package Status:                     Final          Version 1.44
 
-Thu Jan 16 18:07:11 2025
+Thu Jan 16 18:48:17 2025
 
 Pinout by Port Name:
-+------------+----------+--------------+-------+-----------+-----------+--------------------------------------+
-| Port Name  | Pin/Bank | Buffer Type  | Site  | PG Enable | BC Enable | Properties                           |
-+------------+----------+--------------+-------+-----------+-----------+--------------------------------------+
-| debug_led1 | N13/1    | LVCMOS25_OUT | PR19A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| debug_led2 | M12/1    | LVCMOS25_OUT | PR18A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| lcd_cs     | N6/2     | LVCMOS25_OUT | PB13A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| lcd_dc     | P8/2     | LVCMOS25_OUT | PB21A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| lcd_led    | G13/1    | LVCMOS25_OUT | PR10A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| lcd_mosi   | N7/2     | LVCMOS25_OUT | PB15B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| lcd_rst    | N8/2     | LVCMOS25_OUT | PB20B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| lcd_sclk   | P7/2     | LVCMOS25_OUT | PB15A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
-| sys_clk    | C1/5     | LVCMOS25_IN  | PL4A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL  |
-| sys_rst_n  | N14/1    | LVCMOS25_IN  | PR19B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL  |
-+------------+----------+--------------+-------+-----------+-----------+--------------------------------------+
++----------------+----------+--------------+-------+-----------+-----------+--------------------------------------+
+| Port Name      | Pin/Bank | Buffer Type  | Site  | PG Enable | BC Enable | Properties                           |
++----------------+----------+--------------+-------+-----------+-----------+--------------------------------------+
+| debug_led1     | N13/1    | LVCMOS25_OUT | PR19A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| debug_led2     | M12/1    | LVCMOS25_OUT | PR18A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| lcd_cs         | N6/2     | LVCMOS25_OUT | PB13A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| lcd_dc         | P8/2     | LVCMOS25_OUT | PB21A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| lcd_led        | G13/1    | LVCMOS25_OUT | PR10A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| lcd_mosi       | N7/2     | LVCMOS25_OUT | PB15B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| lcd_rst        | N8/2     | LVCMOS25_OUT | PB20B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| lcd_sclk       | P7/2     | LVCMOS25_OUT | PB15A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[0] | A10/0    | LVCMOS25_OUT | PT24A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[1] | C11/0    | LVCMOS25_OUT | PT24B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[2] | F2/5     | LVCMOS25_OUT | PL8B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[3] | E1/5     | LVCMOS25_OUT | PL7A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[4] | E2/5     | LVCMOS25_OUT | PL7B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[5] | A9/0     | LVCMOS25_OUT | PT21B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[6] | B9/0     | LVCMOS25_OUT | PT23C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[7] | F1/4     | LVCMOS25_OUT | PL9A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| segment_led[8] | C9/0     | LVCMOS25_OUT | PT21A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW        |
+| sys_clk        | C1/5     | LVCMOS25_IN  | PL4A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL  |
+| sys_rst_n      | N14/1    | LVCMOS25_IN  | PR19B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL  |
++----------------+----------+--------------+-------+-----------+-----------+--------------------------------------+
 
 Vccio by Bank:
 +------+-------+
 | Bank | Vccio |
 +------+-------+
+| 0    | 2.5V  |
 | 1    | 2.5V  |
 | 2    | 2.5V  |
+| 4    | 2.5V  |
 | 5    | 2.5V  |
 +------+-------+
 
@@ -48,8 +59,8 @@ Pinout by Pin Number:
 | A4/0     | Reserved: sysCONFIG   |            |              | PT13C | TDO            |           |           |
 | A6/0     | Reserved: sysCONFIG   |            |              | PT15D | TMS            |           |           |
 | A7/0     |     unused, PULL:DOWN |            |              | PT18A | PCLKT0_1       |           |           |
-| A9/0     |     unused, PULL:DOWN |            |              | PT21B |                |           |           |
-| A10/0    |     unused, PULL:DOWN |            |              | PT24A |                |           |           |
+| A9/0     | segment_led[5]        | LOCATED    | LVCMOS25_OUT | PT21B |                |           |           |
+| A10/0    | segment_led[0]        | LOCATED    | LVCMOS25_OUT | PT24A |                |           |           |
 | A11/0    |     unused, PULL:DOWN |            |              | PT25A |                |           |           |
 | A12/0    |     unused, PULL:DOWN |            |              | PT27B |                |           |           |
 | A13/0    |     unused, PULL:DOWN |            |              | PT28D | DONE           |           |           |
@@ -61,7 +72,7 @@ Pinout by Pin Number:
 | B6/0     | Reserved: sysCONFIG   |            |              | PT15C | TCK            |           |           |
 | B7/0     |     unused, PULL:DOWN |            |              | PT18B | PCLKC0_1       |           |           |
 | B8/0     |     unused, PULL:DOWN |            |              | PT20D | SDA/PCLKC0_0   |           |           |
-| B9/0     |     unused, PULL:DOWN |            |              | PT23C | JTAGENB        |           |           |
+| B9/0     | segment_led[6]        | LOCATED    | LVCMOS25_OUT | PT23C | JTAGENB        |           |           |
 | B12/0    |     unused, PULL:DOWN |            |              | PT25B |                |           |           |
 | B13/0    |     unused, PULL:DOWN |            |              | PT28C | INITN          |           |           |
 | B14/1    |     unused, PULL:DOWN |            |              | PR2A  | R_GPLLT_FB/DQ0 |           |           |
@@ -71,22 +82,22 @@ Pinout by Pin Number:
 | C4/0     |     unused, PULL:DOWN |            |              | PT11B |                |           |           |
 | C6/0     |     unused, PULL:DOWN |            |              | PT14B |                |           |           |
 | C8/0     |     unused, PULL:DOWN |            |              | PT20C | SCL/PCLKT0_0   |           |           |
-| C9/0     |     unused, PULL:DOWN |            |              | PT21A |                |           |           |
+| C9/0     | segment_led[8]        | LOCATED    | LVCMOS25_OUT | PT21A |                |           |           |
 | C10/0    |     unused, PULL:DOWN |            |              | PT23D | PROGRAMN       |           |           |
-| C11/0    |     unused, PULL:DOWN |            |              | PT24B |                |           |           |
+| C11/0    | segment_led[1]        | LOCATED    | LVCMOS25_OUT | PT24B |                |           |           |
 | C12/0    |     unused, PULL:DOWN |            |              | PT27A |                |           |           |
 | C13/1    |     unused, PULL:DOWN |            |              | PR2B  | R_GPLLC_FB/DQ0 |           |           |
 | C14/1    |     unused, PULL:DOWN |            |              | PR3A  | R_GPLLT_IN/DQ0 |           |           |
 | D1/5     |     unused, PULL:DOWN |            |              | PL6B  | PCLKC5_0       |           |           |
 | D12/1    |     unused, PULL:DOWN |            |              | PR3B  | R_GPLLC_IN/DQ0 |           |           |
-| E1/5     |     unused, PULL:DOWN |            |              | PL7A  |                |           |           |
-| E2/5     |     unused, PULL:DOWN |            |              | PL7B  |                |           |           |
+| E1/5     | segment_led[3]        | LOCATED    | LVCMOS25_OUT | PL7A  |                |           |           |
+| E2/5     | segment_led[4]        | LOCATED    | LVCMOS25_OUT | PL7B  |                |           |           |
 | E3/5     |     unused, PULL:DOWN |            |              | PL8A  |                |           |           |
 | E12/1    |     unused, PULL:DOWN |            |              | PR5A  | DQ0            |           |           |
 | E13/1    |     unused, PULL:DOWN |            |              | PR6A  | DQ0            |           |           |
 | E14/1    |     unused, PULL:DOWN |            |              | PR5B  | DQ0            |           |           |
-| F1/4     |     unused, PULL:DOWN |            |              | PL9A  |                |           |           |
-| F2/5     |     unused, PULL:DOWN |            |              | PL8B  |                |           |           |
+| F1/4     | segment_led[7]        | LOCATED    | LVCMOS25_OUT | PL9A  |                |           |           |
+| F2/5     | segment_led[2]        | LOCATED    | LVCMOS25_OUT | PL8B  |                |           |           |
 | F3/4     |     unused, PULL:DOWN |            |              | PL9B  |                |           |           |
 | F12/1    |     unused, PULL:DOWN |            |              | PR6B  | DQ0            |           |           |
 | F13/1    |     unused, PULL:DOWN |            |              | PR8A  | DQ0            |           |           |
@@ -349,6 +360,15 @@ LOCATE  COMP  "lcd_led"  SITE  "G13";
 LOCATE  COMP  "lcd_mosi"  SITE  "N7";
 LOCATE  COMP  "lcd_rst"  SITE  "N8";
 LOCATE  COMP  "lcd_sclk"  SITE  "P7";
+LOCATE  COMP  "segment_led[0]"  SITE  "A10";
+LOCATE  COMP  "segment_led[1]"  SITE  "C11";
+LOCATE  COMP  "segment_led[2]"  SITE  "F2";
+LOCATE  COMP  "segment_led[3]"  SITE  "E1";
+LOCATE  COMP  "segment_led[4]"  SITE  "E2";
+LOCATE  COMP  "segment_led[5]"  SITE  "A9";
+LOCATE  COMP  "segment_led[6]"  SITE  "B9";
+LOCATE  COMP  "segment_led[7]"  SITE  "F1";
+LOCATE  COMP  "segment_led[8]"  SITE  "C9";
 LOCATE  COMP  "sys_clk"  SITE  "C1";
 LOCATE  COMP  "sys_rst_n"  SITE  "N14";
 
@@ -364,5 +384,5 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Jan 16 18:07:11 2025
+Thu Jan 16 18:48:17 2025
 

@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Jan 16 18:06:55 2025
+Thu Jan 16 18:48:04 2025
 
 
 Command Line:  synthesis -f spi_lcd_impl1_lattice.synproj -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml 
@@ -77,6 +77,7 @@ Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v
 Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v
+Verilog design file = D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v
 NGD file = spi_lcd_impl1.ngd
 -sdc option: SDC file input not used.
 -lpf option: Output file option is ON.
@@ -101,9 +102,11 @@ Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/rom/rom_8x409
 Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/tb_pll.v. VERI-1482
 Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd_tb.v. VERI-1482
 Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v. VERI-1482
+Analyzing Verilog file d:/codefield/verilog/diamond_design/spi_lcd/source/segment_led.v. VERI-1482
 Analyzing Verilog file D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
 Top module name (Verilog): spi_lcd
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(18): compiling module spi_lcd. VERI-1018
+INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/source/segment_led.v(1): compiling module segment_led. VERI-1018
 INFO - synthesis: d:/codefield/verilog/diamond_design/spi_lcd/pll/pll.v(8): compiling module pll. VERI-1018
 INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1124): compiling module VLO. VERI-1018
 INFO - synthesis: D:/Program/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v(1730): compiling module EHXPLLJ(CLKFB_DIV=4,CLKOP_DIV=11,CLKOS_DIV=1,CLKOS2_DIV=1,CLKOS3_DIV=1,CLKOS_ENABLE="DISABLED",CLKOS2_ENABLE="DISABLED",CLKOS3_ENABLE="DISABLED",CLKOP_CPHASE=10,CLKOS_TRIM_POL="FALLING"). VERI-1018
@@ -322,23 +325,23 @@ All blocks are expanded and NGD expansion is successful.
 Writing NGD file spi_lcd_impl1.ngd.
 
 ################### Begin Area Report (spi_lcd)######################
-Number of register bits => 225 of 4635 (4 % )
+Number of register bits => 230 of 4635 (4 % )
 CCU2D => 31
 EHXPLLJ => 1
-FD1P3AX => 68
+FD1P3AX => 69
 FD1P3AY => 1
 FD1P3IX => 66
 FD1P3JX => 2
 FD1S3AX => 33
 FD1S3AY => 1
-FD1S3IX => 52
+FD1S3IX => 56
 FD1S3JX => 2
 GSR => 1
 IB => 2
-L6MUX21 => 94
-LUT4 => 1371
-OB => 8
-PFUMX => 311
+L6MUX21 => 97
+LUT4 => 1376
+OB => 17
+PFUMX => 300
 ROM128X1A => 4
 ################### End Area Report ##################
 
@@ -348,34 +351,35 @@ TSALL => 1
 
 ################### Begin Clock Report ######################
 Clock Nets
-Number of Clocks: 2
-  Net : sys_clk_c, loads : 115
+Number of Clocks: 3
+  Net : sys_clk_c, loads : 116
   Net : pll_u1/sys_clk_50MHz, loads : 112
+  Net : lcd_show_char_inst/debug_led2_c_3, loads : 10
 Clock Enable Nets
 Number of Clock Enables: 18
 Top 10 highest fanout Clock Enables:
-  Net : show_string_number_ctrl_inst/cnt_ascii_num_4__N_513, loads : 32
-  Net : lcd_write_inst/sys_clk_50MHz_enable_25, loads : 15
-  Net : lcd_show_char_inst/sys_clk_c_enable_19, loads : 15
-  Net : lcd_show_char_inst/sys_clk_c_enable_30, loads : 12
-  Net : lcd_show_char_inst/sys_clk_c_enable_40, loads : 9
-  Net : lcd_show_char_inst/sys_clk_c_enable_53, loads : 8
-  Net : lcd_show_char_inst/sys_clk_c_enable_45, loads : 5
-  Net : lcd_write_inst/sys_clk_50MHz_enable_10, loads : 1
-  Net : lcd_show_char_inst/sys_clk_c_enable_32, loads : 1
-  Net : lcd_init_inst/lcd_rst_high_flag, loads : 1
+  Net : show_string_number_ctrl_inst/cnt_ascii_num_4__N_524, loads : 32
+  Net : lcd_write_inst/sys_clk_50MHz_enable_41, loads : 15
+  Net : lcd_show_char_inst/sys_clk_c_enable_25, loads : 15
+  Net : lcd_show_char_inst/sys_clk_c_enable_54, loads : 13
+  Net : lcd_show_char_inst/sys_clk_c_enable_52, loads : 9
+  Net : lcd_show_char_inst/sys_clk_c_enable_26, loads : 8
+  Net : lcd_init_inst/sys_clk_50MHz_enable_25, loads : 6
+  Net : lcd_show_char_inst/sys_clk_c_enable_41, loads : 5
+  Net : sys_clk_50MHz_enable_19, loads : 1
+  Net : sys_clk_c_enable_43, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : lcd_show_char_inst/rom_addr_3, loads : 518
-  Net : lcd_show_char_inst/rom_addr_0, loads : 512
-  Net : lcd_show_char_inst/rom_addr_4, loads : 459
-  Net : lcd_show_char_inst/rom_addr_2, loads : 408
-  Net : lcd_show_char_inst/rom_addr_1, loads : 387
-  Net : lcd_show_char_inst/rom_addr_5, loads : 290
-  Net : lcd_show_char_inst/rom_addr_6, loads : 151
+  Net : lcd_show_char_inst/rom_addr_3, loads : 507
+  Net : lcd_show_char_inst/rom_addr_0, loads : 497
+  Net : lcd_show_char_inst/rom_addr_4, loads : 455
+  Net : lcd_show_char_inst/rom_addr_2, loads : 398
+  Net : lcd_show_char_inst/rom_addr_1, loads : 305
+  Net : lcd_show_char_inst/rom_addr_5, loads : 287
+  Net : lcd_show_char_inst/rom_addr_6, loads : 150
   Net : lcd_show_char_inst/rom_addr_7, loads : 80
-  Net : lcd_show_char_inst/rom_addr_8, loads : 41
-  Net : lcd_show_char_inst/char_ram_inst/n14542, loads : 36
+  Net : lcd_show_char_inst/n15878, loads : 77
+  Net : lcd_show_char_inst/rom_addr_8, loads : 40
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -385,10 +389,13 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk1 [get_nets sys_clk_c]               |  200.000 MHz|   78.852 MHz|    12 *
+clk2 [get_nets debug_led2_c_3]          |  200.000 MHz|  281.770 MHz|     2  
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   98.873 MHz|     7 *
+clk1 [get_nets sys_clk_c]               |  200.000 MHz|   69.483 MHz|    12 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   86.972 MHz|     9 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -396,8 +403,8 @@ clk0 [get_nets sys_clk_50MHz]           |  200.000 MHz|   98.873 MHz|     7 *
 2 constraints not met.
 
 
-Peak Memory Usage: 168.848  MB
+Peak Memory Usage: 168.328  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 4.141  secs
+Elapsed CPU time for LSE flow : 4.250  secs
 --------------------------------------------------------------

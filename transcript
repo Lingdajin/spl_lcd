@@ -83,3 +83,7 @@ run
 #    Time: 100100 ns  Iteration: 0  Instance: /spi_lcd_tb
 # Break in Module spi_lcd_tb at D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v line 53
 run -continue
+run -continue
+run -continue
+run -continue
+run

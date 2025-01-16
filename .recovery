@@ -39,6 +39,9 @@
         <Source name="rom/tb_rom_8x4096_tmpl.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="source/segment_led.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
         <Source name="sim/tb_pll/tb_pll.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>

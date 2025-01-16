@@ -1,27 +1,26 @@
 ----------------------------------------------------------------------
 Report for cell spi_lcd.TECH
-Register bits:  225 of 4635 (4.854%)
-I/O cells:      10
+Register bits:  230 of 4635 (4.962%)
+I/O cells:      19
                                   Cell usage:
                                cell     count   Res Usage(%)
                               CCU2D        31          100.0
                             EHXPLLJ         1          100.0
-                            FD1P3AX        68          100.0
+                            FD1P3AX        69          100.0
                             FD1P3AY         1          100.0
                             FD1P3IX        66          100.0
                             FD1P3JX         2          100.0
                             FD1S3AX        33          100.0
                             FD1S3AY         1          100.0
-                            FD1S3IX        52          100.0
+                            FD1S3IX        56          100.0
                             FD1S3JX         2          100.0
                                 GSR         1          100.0
                                  IB         2          100.0
-                            L6MUX21        94          100.0
-                               LUT4      1371          100.0
-                                 OB         8          100.0
-                              PFUMX       311          100.0
+                            L6MUX21        97          100.0
+                               LUT4      1376          100.0
+                                 OB        17          100.0
+                              PFUMX       300          100.0
                           ROM128X1A         4          100.0
-                        VERIFIC_PWR         1          100.0
 SUB MODULES
                            char_ram         1
                             control         1
@@ -29,22 +28,23 @@ SUB MODULES
                       lcd_show_char         1
                           lcd_write         1
                                 pll         1
+                        segment_led         1
             show_string_number_ctrl         1
-                              TOTAL      2056
+                              TOTAL      2067
 ----------------------------------------------------------------------
 Report for cell lcd_write.v1
 Instance Path : lcd_write_inst
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3AX         1            1.5
+                            FD1P3AX         1            1.4
                             FD1P3IX        18           27.3
                             FD1P3JX         1           50.0
                             FD1S3AX         4           12.1
-                            FD1S3IX         9           17.3
+                            FD1S3IX         9           16.1
                             FD1S3JX         1           50.0
-                               LUT4        39            2.8
+                               LUT4        41            3.0
                               PFUMX         1            0.3
-                              TOTAL        74
+                              TOTAL        76
 ----------------------------------------------------------------------
 Report for cell lcd_init.v1
 Instance Path : lcd_init_inst
@@ -55,20 +55,11 @@ Instance Path : lcd_init_inst
                             FD1P3IX        24           36.4
                             FD1S3AX        13           39.4
                             FD1S3AY         1          100.0
-                            FD1S3IX        27           51.9
-                            L6MUX21         2            2.1
-                               LUT4       109            8.0
-                              PFUMX        16            5.1
-                              TOTAL       216
-----------------------------------------------------------------------
-Report for cell control.v1
-Instance Path : control_inst
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1S3AX        10           30.3
-                               LUT4        11            0.8
-                              PFUMX         1            0.3
-                              TOTAL        22
+                            FD1S3IX        27           48.2
+                            L6MUX21         3            3.1
+                               LUT4       112            8.1
+                              PFUMX        14            4.7
+                              TOTAL       218
 ----------------------------------------------------------------------
 Report for cell pll.v1
 Instance Path : pll_u1
@@ -82,37 +73,53 @@ Instance Path : lcd_show_char_inst
                                   Cell usage:
                                cell     count   Res Usage(%)
                               CCU2D         9           29.0
-                            FD1P3AX        28           41.2
+                            FD1P3AX        29           42.0
                             FD1P3IX        23           34.8
                             FD1P3JX         1           50.0
                             FD1S3AX         5           15.2
-                            FD1S3IX         8           15.4
+                            FD1S3IX         8           14.3
                             FD1S3JX         1           50.0
-                            L6MUX21        92           97.9
-                               LUT4      1150           83.9
-                              PFUMX       290           93.2
+                            L6MUX21        94           96.9
+                               LUT4      1142           83.0
+                              PFUMX       281           93.7
 SUB MODULES
                            char_ram         1
-                              TOTAL      1608
+                              TOTAL      1594
 ----------------------------------------------------------------------
 Report for cell char_ram.v1
 Instance Path : lcd_show_char_inst.char_ram_inst
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            L6MUX21        92           97.9
-                               LUT4       943           68.8
-                              PFUMX       283           91.0
-                              TOTAL      1318
+                            L6MUX21        94           96.9
+                               LUT4       959           69.7
+                              PFUMX       278           92.7
+                              TOTAL      1331
 ----------------------------------------------------------------------
 Report for cell show_string_number_ctrl.v1
 Instance Path : show_string_number_ctrl_inst
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3AX        37           54.4
+                            FD1P3AX        37           53.6
                             FD1P3AY         1          100.0
                             FD1P3IX         1            1.5
                             FD1S3AX         1            3.0
-                            FD1S3IX         8           15.4
+                            FD1S3IX         8           14.3
                                LUT4        52            3.8
                               PFUMX         3            1.0
                               TOTAL       103
+----------------------------------------------------------------------
+Report for cell segment_led.v1
+Instance Path : segment_led_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4        10            0.7
+                              TOTAL        10
+----------------------------------------------------------------------
+Report for cell control.v1
+Instance Path : control_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX        10           30.3
+                               LUT4        11            0.8
+                              PFUMX         1            0.3
+                              TOTAL        22
