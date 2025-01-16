@@ -1,0 +1,132 @@
+#Start recording tcl command: 1/16/2025 13:11:23
+#Project Location: D:/CodeField/Verilog/Diamond_design/spi_lcd; Project name: spi_lcd
+prj_project open "D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.ldf"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd/tb_spi_lcd.spf"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd/tb_spi_lcd.spf"
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+source "D:/CodeField/Verilog/Diamond_design/spi_lcd/hdle_generate_tbdeclaration.tcl"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd/tb_spi_lcd.spf"
+prj_run Synthesis -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd/tb_spi_lcd.spf"
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_strgy set_value -strategy Strategy1 lse_resolved_mixed_drivers=True
+prj_run Synthesis -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+prj_strgy set_value -strategy Strategy1 lse_resolved_mixed_drivers=False
+prj_run Synthesis -impl impl1
+prj_strgy set_value -strategy Strategy1 lse_resolved_mixed_drivers=True
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_src remove "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+prj_run Synthesis -impl impl1
+prj_src exclude "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+prj_src enable "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_ram/tb_ram.spf"
+prj_strgy set_value -strategy Strategy1 lse_resolved_mixed_drivers=False
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/tb_spi_lcd_ram.spf"
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Map -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram/tb_spi_lcd_ram.spf"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_src add "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram_16x32.v"
+#Stop recording: 1/17/2025 00:09:19
