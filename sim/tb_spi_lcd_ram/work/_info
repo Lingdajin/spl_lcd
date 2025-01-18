@@ -11,32 +11,31 @@ cModel Technology
 Z0 dD:/CodeField/Verilog/Diamond_design/spi_lcd/sim/tb_spi_lcd_ram
 vchar_ram
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
-Z1 !s110 1737029457
+Z1 !s110 1737180812
 !i10b 1
-!s100 B48TRU>5DXB3@KAhViO]f2
-I37TJi5:U^[1b:h5T`oYXZ1
+!s100 fa`lmS4=BJ=KV=Cb^MgeX2
+I7_<bcG2gWOolL17`T297X2
 R0
-w1737010781
+w1737035878
 8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
 FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v
-!i122 4
-L0 2 4111
+!i122 15
+L0 6 4111
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 OT;L;2023.3;77
 r1
 !s85 0
 31
-Z4 !s108 1737029457.000000
+Z4 !s108 1737180812.000000
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v|
-!s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram.v|
 !s101 -O0
 !i113 1
 Z5 o-work work -O0
-Z6 !s92 +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source -work work -O0
-Z7 tCvgOpt 0
+Z6 tCvgOpt 0
 vcontrol
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v
-Z8 !s110 1737029458
+Z7 !s110 1737029458
 !i10b 1
 !s100 9402a_XlgR0IHd@:`5cU:2
 I?JJCAGMo?8WiF`jnlBhJ61
@@ -51,66 +50,65 @@ R3
 r1
 !s85 0
 31
-Z9 !s108 1737029458.000000
+Z8 !s108 1737029458.000000
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v|
 !s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/control.v|
 !s101 -O0
 !i113 1
 R5
+Z9 !s92 +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source -work work -O0
 R6
-R7
 vlcd_init
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v
-R8
+Z10 !s110 1737180813
 !i10b 1
-!s100 59VVb>_zb:]JM_HcCJ2K50
-IZll7ZdMWWa4;Td8<OLZXA0
+!s100 k0>@79]`b=06z7PoDG>MI2
+I527f4C1bl]KE`he?m`FBz0
 R0
-w1737029298
+w1737180775
 8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v
 FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v
-!i122 6
-L0 17 263
+!i122 17
+L0 17 264
 R2
 R3
 r1
 !s85 0
 31
-R9
+R4
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v|
-!s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_init.v|
 !s101 -O0
 !i113 1
 R5
 R6
-R7
 vlcd_show_char
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v
-Z10 !s110 1737030106
+R1
 !i10b 1
-!s100 3:iaWa3czo_KoQQ_KYY:71
-IUA9PdEe86XX46ZmHi8jiH1
+!s100 Ehm_ePT_WgW?_i59UbL=?3
+I1Ll^7EWzk<<YonPcR<C^o0
 R0
-w1737029895
+w1737180712
 8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v
 FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v
-!i122 13
-L0 11 275
+!i122 16
+L0 11 306
 R2
 R3
 r1
 !s85 0
 31
-Z11 !s108 1737030106.000000
+R4
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_show_char.v|
 !s101 -O0
 !i113 1
 R5
-R7
+R6
 vlcd_write
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v
-R8
+R7
 !i10b 1
 !s100 9VRnVS]e@eQ=ha@kMe16P1
 IRVT[k@=kc_HGfnj8_cj@D0
@@ -125,17 +123,17 @@ R3
 r1
 !s85 0
 31
-R9
+R8
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v|
 !s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/lcd_write.v|
 !s101 -O0
 !i113 1
 R5
+R9
 R6
-R7
 vpll
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v
-R1
+Z11 !s110 1737029457
 !i10b 1
 !s100 gh7jY]fCnb1W6jRnTFVHd1
 IfVDeJEY1zoGBNnEZ:BhL40
@@ -150,18 +148,18 @@ R3
 r1
 !s85 0
 31
-R4
+Z12 !s108 1737029457.000000
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v|
 !s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/pll/pll.v|
 !s101 -O0
 !i113 1
 R5
 !s92 +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/pll -work work -O0
-R7
+R6
 vrom_8x4096
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v
 !s125 LATTICE_CONN
-R1
+R11
 !i10b 1
 !s100 ocPPF]MOHF_N2zVSdY5>P3
 I6Z`Nn1o;MGUgV^XXJbb562
@@ -176,17 +174,17 @@ R3
 r1
 !s85 0
 31
-R4
+R12
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v|
 !s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/rom_8x4096.v|
 !s101 -O0
 !i113 1
 R5
 !s92 +incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/rom -work work -O0
-R7
+R6
 vsegment_led
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v
-R8
+R7
 !i10b 1
 !s100 a[IJ_Z@Mm4Z8cVSI`==FZ0
 ImJGS=[E]eVI=5J6YMg=b22
@@ -201,91 +199,89 @@ R3
 r1
 !s85 0
 31
-R9
+R8
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v|
 !s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v|
 !s101 -O0
 !i113 1
 R5
+R9
 R6
-R7
 vshow_string_number_ctrl
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
-R10
+!s110 1737181896
 !i10b 1
-!s100 lH>cbLWX`FnlXW3lSUUB81
-I4@^8UPKJ5fGW<T;I<42eY1
+!s100 nRXWk?n_4kWIhKLRa2aNj1
+IN0N2XI?ABkLHXEWSggmjR3
 R0
-w1737030022
+w1737181881
 8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
 FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v
-!i122 12
-L0 38 199
+!i122 20
+L0 53 203
 R2
 R3
 r1
 !s85 0
 31
-R11
+!s108 1737181896.000000
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/show_string_number_ctrl.v|
 !s101 -O0
 !i113 1
 R5
-R7
+R6
 vspi_lcd
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v
-Z12 !s110 1737029459
+R10
 !i10b 1
-!s100 UFVmlN5?Tgnl;32JbWcac1
-IQhzUP;_5c4SPN=EFSEE8b1
+!s100 iWA0NiVQG_<JRBiE@2:RS2
+IFSjhPWGC<3ReNi:6dfd7Y3
 R0
-w1737024480
+w1737032604
 8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v
 FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v
-!i122 10
-L0 18 137
+!i122 18
+L0 18 138
 R2
 R3
 r1
 !s85 0
 31
-R9
+!s108 1737180813.000000
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v|
-!s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd.v|
 !s101 -O0
 !i113 1
 R5
 R6
-R7
 vspi_lcd_tb
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v
-R12
+!s110 1737180882
 !i10b 1
-!s100 cRaKNz2IAZVR7P;XCn[OB0
-I1X[RWGWh=mZE5NP;[DJa61
+!s100 XNiA4l<@Q5g25ancS[2]N2
+Ia_GAiXND`^X]7AZR`neQ22
 R0
-w1737007547
+w1737180878
 8D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v
 FD:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v
-!i122 11
+!i122 19
 L0 3 54
 R2
 R3
 r1
 !s85 0
 31
-!s108 1737029459.000000
+!s108 1737180882.000000
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v|
-!s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v|
 !s101 -O0
 !i113 1
 R5
 R6
-R7
 vtb_pll
 2D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v
-R1
+R11
 !i10b 1
 !s100 cQ5]2JKdb20]4l_MHLI4M2
 IFDNL`Z<8dI4d[366=GIFP1
@@ -300,11 +296,11 @@ R3
 r1
 !s85 0
 31
-R4
+R12
 !s107 D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v|
 !s90 -reportprogress|300|+incdir+D:/CodeField/Verilog/Diamond_design/spi_lcd/source|-work|work|D:/CodeField/Verilog/Diamond_design/spi_lcd/source/tb_pll.v|
 !s101 -O0
 !i113 1
 R5
+R9
 R6
-R7

@@ -45,6 +45,7 @@
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/spi_lcd_tb.v"
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/rom/tb_rom_8x4096_tmpl.v"
 "D:/CodeField/Verilog/Diamond_design/spi_lcd/source/segment_led.v"
+"D:/CodeField/Verilog/Diamond_design/spi_lcd/source/char_ram_16x32.v"
 -top spi_lcd
 
 

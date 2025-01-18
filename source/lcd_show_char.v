@@ -49,6 +49,10 @@ parameter   SIZE0_LENGTH_MAX = 4'd11;
 parameter   SIZE1_WIDTH_MAX = 3'd7;
 parameter   SIZE1_LENGTH_MAX = 4'd15;
 
+//选用字体大小为32x16
+parameter   SIZE2_WIDTH_MAX = 5'd31;
+parameter   SIZE2_LENGTH_MAX = 6'd63;
+
 parameter   STATE0 = 4'b0_001;     
 parameter   STATE1 = 4'b0_010;
 parameter   STATE2 = 4'b0_100;
@@ -82,7 +86,7 @@ reg     [7:0]   temp;
 reg             length_num_flag;
 
 //长度计数器
-reg     [4:0]   cnt_length_num;
+reg     [6:0]   cnt_length_num;
 
 //点的颜色计数器
 reg     [5:0]   cnt_wr_color_data;
@@ -97,6 +101,8 @@ wire    state2_finish_flag;
 //补齐方块结束坐标
 assign end_x = (en_size) ? start_x + SIZE1_WIDTH_MAX : start_x + SIZE0_WIDTH_MAX;
 assign end_y = (en_size) ? start_y + SIZE1_LENGTH_MAX : start_y + SIZE0_LENGTH_MAX;
+// assign end_x = start_x + 15;
+// assign end_y = start_y + 31;
 
 //状态转移
 always@(posedge sys_clk or negedge sys_rst_n)
@@ -153,6 +159,8 @@ always@(posedge sys_clk or negedge sys_rst_n)
         rom_addr <= ascii_num *(SIZE0_LENGTH_MAX + 1'b1) + cnt_length_num;
     else if(en_size && cnt_rom_prepare == 'd1)      //选用字体大小为16x8
         rom_addr <= 12'd1140 + ascii_num *(SIZE1_LENGTH_MAX + 1'b1) + cnt_length_num;
+    // else if(cnt_rom_prepare == 'd1)
+    //     rom_addr <= ascii_num *(SIZE2_LENGTH_MAX + 1'b1) + cnt_length_num;   //一个字符占用64字节
 
 //rom输出数据移位后得到的数据temp
 always@(posedge sys_clk or negedge sys_rst_n)
@@ -180,6 +188,15 @@ always@(posedge sys_clk or negedge sys_rst_n)
             13: temp <= temp >> 1;
             default : temp <= temp;
         endcase
+    // else if(state == STATE2 && the1_wr_done)
+    //     if(cnt_wr_color_data == 'd63)
+    //         temp <= temp;
+    //     else if(cnt_wr_color_data[0] == 1'b1)
+    //         temp <= temp >> 1;
+    //     else
+    //         temp <= temp;
+            
+
 
 
 //长度加1标志信号
@@ -200,6 +217,8 @@ always@(posedge sys_clk or negedge sys_rst_n)
             the1_wr_done
            )
        length_num_flag <= 1'b1;
+    // else if(state == STATE2 && cnt_wr_color_data == 63  && the1_wr_done)
+    //     length_num_flag <= 1'b1;
     else
        length_num_flag <= 1'b0;
         
@@ -215,6 +234,10 @@ always@(posedge sys_clk or negedge sys_rst_n)
         cnt_length_num <= 'd0;
     else if(en_size && cnt_length_num < SIZE1_LENGTH_MAX && length_num_flag)
         cnt_length_num <= cnt_length_num + 1'b1;
+    // else if(cnt_length_num == SIZE2_LENGTH_MAX && length_num_flag)
+    //     cnt_length_num <= 'd0;
+    // else if(cnt_length_num < SIZE2_LENGTH_MAX && length_num_flag)
+    //     cnt_length_num <= cnt_length_num + 1'b1;
 
 //点的颜色计数器
 always@(posedge sys_clk or negedge sys_rst_n)
@@ -226,6 +249,8 @@ always@(posedge sys_clk or negedge sys_rst_n)
         cnt_wr_color_data <= cnt_wr_color_data + 1'b1;
     else if(en_size && state == STATE2 && the1_wr_done)
         cnt_wr_color_data <= cnt_wr_color_data + 1'b1;
+    // else if(state == STATE2 && the1_wr_done)
+    //     cnt_wr_color_data <= cnt_wr_color_data + 1'b1;
         
 //要传输的命令或者数据
 always@(posedge sys_clk or negedge sys_rst_n)
@@ -264,6 +289,7 @@ assign state2_finish_flag = (
                              (
                                 (!en_size && cnt_length_num == SIZE0_LENGTH_MAX) ||     //选用字体大小为12x6
                                 (en_size && cnt_length_num == SIZE1_LENGTH_MAX)         //选用字体大小为16x8
+                                //cnt_length_num == SIZE2_LENGTH_MAX
                              ) &&
                              length_num_flag
                             ) ? 1'b1 : 1'b0;
@@ -281,5 +307,10 @@ char_ram char_ram_inst
 	.address(rom_addr), 
 	.q(rom_q)
 );
+// char_ram_16x32 char_ram_16x32_inst
+// (
+//     .address(rom_addr),
+//     .q(rom_q)
+// );
 
 endmodule

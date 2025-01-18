@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Jan 16 22:16:23 2025
+Sat Jan 18 14:12:22 2025
 
 
 Command: bitgen -g RamCfg:Reset -path D:/CodeField/Verilog/Diamond_design/spi_lcd -w -jedec -gui -msgset D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml spi_lcd_impl1.ncd spi_lcd_impl1.prf 
@@ -86,9 +86,9 @@ Initialized UFM Pages:                     0 Page.
 =========
 Padding summary
 =========
-Padded 591104 bits for this design
+Padded 617472 bits for this design
 
 
-Total CPU Time: 2 secs 
+Total CPU Time: 1 secs 
 Total REAL Time: 2 secs 
-Peak Memory Usage: 278 MB
+Peak Memory Usage: 277 MB

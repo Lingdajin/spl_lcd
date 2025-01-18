@@ -204,12 +204,6 @@
         <Message>
             <ID>35001774</ID>
             <Severity>Info</Severity>
-            <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num</Dynamic>
-            <Dynamic>one-hot</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001774</ID>
-            <Severity>Info</Severity>
             <Dynamic>\lcd_show_char_inst/cnt_set_windows</Dynamic>
             <Dynamic>one-hot</Dynamic>
         </Message>
@@ -234,50 +228,86 @@
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
+            <Dynamic>6</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/ascii_num</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>4</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/ascii_num</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>2</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/ascii_num</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/ascii_num</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/ascii_num</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>11</Dynamic>
+            <Dynamic>\lcd_show_char_inst/rom_addr</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
             <Dynamic>8</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
             <Dynamic>7</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
             <Dynamic>6</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
             <Dynamic>5</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
             <Dynamic>3</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
             <Dynamic>2</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
             <Dynamic>1</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
             <Dynamic>0</Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/start_y</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_y_</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
@@ -288,6 +318,30 @@
         <Message>
             <ID>35001747</ID>
             <Severity>Warning</Severity>
+            <Dynamic>6</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>5</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>4</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>3</Dynamic>
+            <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
             <Dynamic>2</Dynamic>
             <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
         </Message>
@@ -302,14 +356,6 @@
             <Severity>Warning</Severity>
             <Dynamic>0</Dynamic>
             <Dynamic>\show_string_number_ctrl_inst/start_x_</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935013</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103): </Dynamic>
-            <Dynamic>\show_string_number_ctrl_inst/cnt_ascii_num_FSM_i15</Dynamic>
-            <Navigation>d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v</Navigation>
-            <Navigation>103</Navigation>
         </Message>
         <Message>
             <ID>35001611</ID>

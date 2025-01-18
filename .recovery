@@ -2,7 +2,7 @@
 <BaliProject version="3.2" title="spi_lcd" device="LCMXO2-4000HC-5MG132C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="char_ram_16x32" top="spi_lcd"/>
+        <Options def_top="segment_led" top="spi_lcd"/>
         <Source name="source/spi_lcd.v" type="Verilog" type_short="Verilog">
             <Options top_module="spi_lcd"/>
         </Source>

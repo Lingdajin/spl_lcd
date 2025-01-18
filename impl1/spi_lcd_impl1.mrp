@@ -15,22 +15,22 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCSBGA132
 Target Performance:   5
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.13.0.56.2
-Mapped on:  01/16/25  22:16:10
+Mapped on:  01/18/25  14:12:11
 
 Design Summary
 --------------
 
-   Number of registers:    207 out of  4635 (4%)
-      PFU registers:          207 out of  4320 (5%)
+   Number of registers:    188 out of  4635 (4%)
+      PFU registers:          188 out of  4320 (4%)
       PIO registers:            0 out of   315 (0%)
-   Number of SLICEs:       725 out of  2160 (34%)
-      SLICEs as Logic/ROM:    725 out of  2160 (34%)
+   Number of SLICEs:       579 out of  2160 (27%)
+      SLICEs as Logic/ROM:    579 out of  2160 (27%)
       SLICEs as RAM:            0 out of  1620 (0%)
-      SLICEs as Carry:         27 out of  2160 (1%)
-   Number of LUT4s:        1435 out of  4320 (33%)
-      Number used as logic LUTs:        1381
+      SLICEs as Carry:         22 out of  2160 (1%)
+   Number of LUT4s:        1140 out of  4320 (26%)
+      Number used as logic LUTs:        1096
       Number used as distributed RAM:     0
-      Number used as ripple logic:       54
+      Number used as ripple logic:       44
       Number used as shift registers:     0
    Number of PIO sites used: 8 + 4(JTAG) out of 105 (11%)
    Number of block RAMs:  0 out of 10 (0%)
@@ -58,7 +58,7 @@ Design Summary
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  2
-     Net sys_clk_50MHz: 134 loads, 134 rising, 0 falling (Driver:
+     Net sys_clk_50MHz: 119 loads, 119 rising, 0 falling (Driver:
      pll_u1/PLLInst_0 )
 
                                     Page 1
@@ -66,80 +66,74 @@ Design Summary
 
 
 
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
+Design:  spi_lcd                                       Date:  01/18/25  14:12:11
 
 Design Summary (cont)
 ---------------------
      Net sys_clk_c: 1 loads, 1 rising, 0 falling (Driver: PIO sys_clk )
-   Number of Clock Enables:  18
-     Net sys_clk_50MHz_enable_50: 2 loads, 2 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_99: 8 loads, 8 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_80: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/sys_clk_50MHz_enable_82: 1 loads, 1 LSLICEs
-     Net state_5: 4 loads, 4 LSLICEs
-     Net sys_clk_50MHz_enable_42: 1 loads, 1 LSLICEs
-     Net sys_clk_50MHz_enable_84: 2 loads, 2 LSLICEs
-     Net sys_clk_50MHz_enable_58: 3 loads, 3 LSLICEs
-     Net sys_clk_50MHz_enable_45: 10 loads, 10 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_5: 1 loads, 1 LSLICEs
+   Number of Clock Enables:  19
+     Net lcd_write_inst/sys_clk_50MHz_enable_91: 1 loads, 1 LSLICEs
+     Net lcd_write_inst/sys_clk_50MHz_enable_8: 1 loads, 1 LSLICEs
+     Net lcd_write_inst/sys_clk_50MHz_enable_39: 8 loads, 8 LSLICEs
+     Net sys_clk_50MHz_enable_48: 2 loads, 2 LSLICEs
+     Net sys_clk_50MHz_enable_80: 10 loads, 10 LSLICEs
+     Net lcd_init_inst/sys_clk_50MHz_enable_4: 1 loads, 1 LSLICEs
+     Net state_5: 1 loads, 1 LSLICEs
      Net lcd_init_inst/lcd_rst_high_flag: 1 loads, 1 LSLICEs
-     Net lcd_init_inst/sys_clk_50MHz_enable_76: 3 loads, 3 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_79: 7 loads, 7 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_78: 5 loads, 5 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_81: 5 loads, 5 LSLICEs
-     Net lcd_show_char_inst/sys_clk_50MHz_enable_62: 3 loads, 3 LSLICEs
-     Net lcd_show_char_inst/cnt_set_windows_3__N_384: 8 loads, 8 LSLICEs
-     Net show_string_number_ctrl_inst/sys_clk_50MHz_enable_23: 7 loads, 7
+     Net lcd_init_inst/sys_clk_50MHz_enable_45: 3 loads, 3 LSLICEs
+     Net sys_clk_50MHz_enable_54: 4 loads, 4 LSLICEs
+     Net sys_clk_50MHz_enable_55: 1 loads, 1 LSLICEs
+     Net sys_clk_50MHz_enable_24: 1 loads, 1 LSLICEs
+     Net lcd_show_char_inst/cnt_set_windows_3__N_386: 9 loads, 9 LSLICEs
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_90: 4 loads, 4 LSLICEs
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_63: 4 loads, 4 LSLICEs
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_22: 6 loads, 6 LSLICEs
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_12: 3 loads, 3 LSLICEs
+     Net lcd_show_char_inst/sys_clk_50MHz_enable_58: 1 loads, 1 LSLICEs
+     Net show_string_number_ctrl_inst/sys_clk_50MHz_enable_84: 2 loads, 2
      LSLICEs
-   Number of LSRs:  25
+   Number of LSRs:  21
      Net lcd_write_inst/state_3: 1 loads, 1 LSLICEs
      Net wr_done: 2 loads, 2 LSLICEs
-     Net n14114: 3 loads, 3 LSLICEs
+     Net n11016: 3 loads, 3 LSLICEs
      Net lcd_write_inst/state_0: 1 loads, 1 LSLICEs
      Net lcd_write_inst/state_1: 9 loads, 9 LSLICEs
      Net state_2: 1 loads, 1 LSLICEs
-     Net lcd_write_inst/n6879: 3 loads, 3 LSLICEs
      Net lcd_write_inst/mosi_N_65: 1 loads, 1 LSLICEs
+     Net lcd_write_inst/n5367: 3 loads, 3 LSLICEs
      Net state_5: 1 loads, 1 LSLICEs
-     Net state_3_N_368_1: 2 loads, 2 LSLICEs
-     Net state_2_adj_790: 1 loads, 1 LSLICEs
-     Net length_num_flag: 3 loads, 3 LSLICEs
-     Net state_4: 10 loads, 10 LSLICEs
+     Net state_2_adj_725: 4 loads, 4 LSLICEs
      Net lcd_init_inst/cnt_150ms_22__N_221: 12 loads, 12 LSLICEs
-     Net lcd_init_inst/state_2: 4 loads, 4 LSLICEs
+     Net state_4: 10 loads, 10 LSLICEs
      Net lcd_init_inst/state_0: 1 loads, 1 LSLICEs
-     Net lcd_show_char_inst/cnt_wr_color_data_5__N_439: 4 loads, 4 LSLICEs
-     Net lcd_show_char_inst/state_3_N_376_3: 4 loads, 4 LSLICEs
-     Net lcd_show_char_inst/n6873: 1 loads, 1 LSLICEs
-     Net lcd_show_char_inst/n6876: 1 loads, 1 LSLICEs
+     Net length_num_flag: 2 loads, 2 LSLICEs
+     Net state_3_N_370_1: 2 loads, 2 LSLICEs
+     Net lcd_show_char_inst/cnt_wr_color_data_5__N_443: 4 loads, 4 LSLICEs
+     Net lcd_show_char_inst/n10943: 5 loads, 5 LSLICEs
      Net state_3: 1 loads, 1 LSLICEs
-     Net show_string_number_ctrl_inst/n5906: 1 loads, 1 LSLICEs
-     Net show_string_number_ctrl_inst/cnt_ascii_num_4__N_514: 8 loads, 8 LSLICEs
-     
-     Net show_string_number_ctrl_inst/n14063: 2 loads, 2 LSLICEs
-     Net show_string_number_ctrl_inst/n11746: 1 loads, 1 LSLICEs
+     Net lcd_show_char_inst/state_3_N_378_2: 1 loads, 1 LSLICEs
+     Net lcd_show_char_inst/n4183: 1 loads, 1 LSLICEs
+     Net show_string_number_ctrl_inst/n10975: 3 loads, 3 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net lcd_show_char_inst/rom_addr_3: 512 loads
-     Net lcd_show_char_inst/rom_addr_0: 505 loads
-     Net lcd_show_char_inst/rom_addr_4: 462 loads
-     Net lcd_show_char_inst/rom_addr_2: 409 loads
-     Net lcd_show_char_inst/rom_addr_1: 305 loads
-     Net lcd_show_char_inst/rom_addr_5: 284 loads
+     Net lcd_show_char_inst/rom_addr_3: 398 loads
+     Net lcd_show_char_inst/rom_addr_0: 386 loads
+     Net lcd_show_char_inst/rom_addr_4: 343 loads
+     Net lcd_show_char_inst/rom_addr_2: 322 loads
+     Net lcd_show_char_inst/rom_addr_1: 302 loads
+     Net lcd_show_char_inst/rom_addr_5: 212 loads
+     Net lcd_show_char_inst/rom_addr_6: 107 loads
+     Net lcd_show_char_inst/rom_addr_7: 59 loads
+     Net cnt_s2_num_2: 40 loads
+     Net cnt_s2_num_1: 39 loads
 
                                     Page 2
 
 
 
 
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
+Design:  spi_lcd                                       Date:  01/18/25  14:12:11
 
-Design Summary (cont)
----------------------
-     Net lcd_show_char_inst/rom_addr_6: 151 loads
-     Net lcd_show_char_inst/n15568: 79 loads
-     Net lcd_show_char_inst/rom_addr_7: 79 loads
-     Net lcd_show_char_inst/rom_addr_8: 40 loads
 
 
 
@@ -192,22 +186,22 @@ WARNING - map: D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(21):
 WARNING - map: D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.lpf(22):
      Semantic error in "LOCATE COMP "segment_led[8]" SITE "C9" ;": COMP
      "segment_led[8]" cannot be found in design. This preference has been
-
-                                    Page 3
-
-
-
-
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
-
-Design Errors/Warnings (cont)
------------------------------
      disabled.
 
 IO (PIO) Attributes
 -------------------
 
 +---------------------+-----------+-----------+------------+
+
+                                    Page 3
+
+
+
+
+Design:  spi_lcd                                       Date:  01/18/25  14:12:11
+
+IO (PIO) Attributes (cont)
+--------------------------
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
@@ -231,59 +225,47 @@ IO (PIO) Attributes
 Removed logic
 -------------
 
-Signal lcd_show_char_inst/n14237 was merged into signal
+Signal lcd_show_char_inst/char_ram_inst/n11086 was merged into signal
      lcd_show_char_inst/rom_addr_5
-Signal lcd_show_char_inst/n6875 was merged into signal state_2_adj_790
-Signal lcd_init_inst/n14259 was merged into signal lcd_init_inst/state_2
-Signal n1213 was merged into signal state_5
-Signal lcd_init_inst/n14214 was merged into signal state_4
-Signal lcd_init_inst/n6878 was merged into signal lcd_init_inst/state_0
+Signal lcd_init_inst/n11079 was merged into signal state_2_adj_725
+Signal lcd_init_inst/n11059 was merged into signal state_4
+Signal lcd_init_inst/n5366 was merged into signal lcd_init_inst/state_0
+Signal n5363 was merged into signal state_5
 Signal lcd_write_inst/n1 was merged into signal lcd_write_inst/mosi_N_65
-Signal n1338 was merged into signal wr_done
+Signal n907 was merged into signal wr_done
 Signal GND_net undriven or does not drive anything - clipped.
-Signal lcd_show_char_inst/add_590_1/S0 undriven or does not drive anything -
-     clipped.
-Signal lcd_show_char_inst/add_590_1/CI undriven or does not drive anything -
-     clipped.
-Signal lcd_show_char_inst/add_590_cout/S1 undriven or does not drive anything -
-     clipped.
-Signal lcd_show_char_inst/add_590_cout/CO undriven or does not drive anything -
-     clipped.
+Signal lcd_init_inst/cnt_150ms_453_add_4_23/CO undriven or does not drive
+     anything - clipped.
 Signal lcd_init_inst/add_153_19/S1 undriven or does not drive anything -
      clipped.
 Signal lcd_init_inst/add_153_19/CO undriven or does not drive anything -
      clipped.
-Signal lcd_init_inst/cnt_150ms_608_add_4_1/S0 undriven or does not drive
+Signal lcd_init_inst/cnt_150ms_453_add_4_1/S0 undriven or does not drive
      anything - clipped.
-Signal lcd_init_inst/cnt_150ms_608_add_4_1/CI undriven or does not drive
+Signal lcd_init_inst/cnt_150ms_453_add_4_1/CI undriven or does not drive
      anything - clipped.
-Signal lcd_init_inst/cnt_150ms_608_add_4_23/CO undriven or does not drive
+Signal lcd_init_inst/add_153_1/S0 undriven or does not drive anything - clipped.
+     
+Signal lcd_init_inst/add_153_1/CI undriven or does not drive anything - clipped.
+     
+Block lcd_show_char_inst/char_ram_inst/i3_1_lut_rep_245 was optimized away.
+Block lcd_init_inst/i465_1_lut_rep_238 was optimized away.
+Block lcd_init_inst/i468_1_lut_rep_218 was optimized away.
+Block lcd_init_inst/i4768_1_lut was optimized away.
+Block lcd_init_inst/i4765_1_lut was optimized away.
+Block lcd_write_inst/i1_1_lut was optimized away.
+Block lcd_write_inst/i487_1_lut was optimized away.
+Block i1 was optimized away.
+
+     
 
                                     Page 4
 
 
 
 
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
+Design:  spi_lcd                                       Date:  01/18/25  14:12:11
 
-Removed logic (cont)
---------------------
-     anything - clipped.
-Signal lcd_init_inst/add_153_1/S0 undriven or does not drive anything - clipped.
-     
-Signal lcd_init_inst/add_153_1/CI undriven or does not drive anything - clipped.
-     
-Block lcd_show_char_inst/i2283_1_lut_rep_320 was optimized away.
-Block lcd_show_char_inst/i6018_1_lut was optimized away.
-Block lcd_init_inst/i616_1_lut_rep_342 was optimized away.
-Block lcd_init_inst/i533_1_lut was optimized away.
-Block lcd_init_inst/i619_1_lut_rep_297 was optimized away.
-Block lcd_init_inst/i6021_1_lut was optimized away.
-Block lcd_write_inst/i1_1_lut was optimized away.
-Block lcd_write_inst/i640_1_lut was optimized away.
-Block i1 was optimized away.
-
-     
 
 PLL/DLL Summary
 ---------------
@@ -324,16 +306,6 @@ PLL 1:                                     Pin/Node Value
   PLL Data Out bus Data0:                           NONE
   PLL Data Out bus Data1:                           NONE
   PLL Data Out bus Data2:                           NONE
-
-                                    Page 5
-
-
-
-
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
-
-PLL/DLL Summary (cont)
-----------------------
   PLL Data Out bus Data3:                           NONE
   PLL Data Out bus Data4:                           NONE
   PLL Data Out bus Data5:                           NONE
@@ -352,6 +324,16 @@ PLL/DLL Summary (cont)
   Pre Divider B Input:                              VCO_PHASE
   Pre Divider C Input:                              VCO_PHASE
   Pre Divider D Input:                              VCO_PHASE
+
+                                    Page 5
+
+
+
+
+Design:  spi_lcd                                       Date:  01/18/25  14:12:11
+
+PLL/DLL Summary (cont)
+----------------------
   VCO Bypass A Input:                               VCO_PHASE
   VCO Bypass B Input:                               VCO_PHASE
   VCO Bypass C Input:                               VCO_PHASE
@@ -390,16 +372,6 @@ GSR Component:
      GSR Property:
    The design components with GSR property set to ENABLED will respond to global
         set reset while the components with GSR property set to DISABLED will
-
-                                    Page 6
-
-
-
-
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
-
-GSR Usage (cont)
-----------------
         not.
         
 
@@ -412,23 +384,27 @@ GSR Usage (cont)
      component.
 
      Type and number of components of the type: 
-   Register = 120 
+   Register = 107 
 
      Type and instance name of component: 
    Register : lcd_write_inst/state_FSM_i0
    Register : lcd_write_inst/cnt_sclk__i0
-   Register : lcd_write_inst/cnt_sclk__i3
-   Register : lcd_write_inst/cnt_sclk__i2
-   Register : lcd_write_inst/cnt_sclk__i1
-   Register : lcd_write_inst/state_FSM_i3
    Register : lcd_write_inst/state2_finish_flag_98
+
+                                    Page 6
+
+
+
+
+Design:  spi_lcd                                       Date:  01/18/25  14:12:11
+
+GSR Usage (cont)
+----------------
    Register : lcd_write_inst/sclk_99
-   Register : lcd_write_inst/cnt_delay_606__i4
    Register : lcd_write_inst/cnt1_FSM_i0
-   Register : lcd_write_inst/cnt_delay_606__i3
-   Register : lcd_write_inst/cnt_delay_606__i2
-   Register : lcd_write_inst/cnt_delay_606__i1
-   Register : lcd_write_inst/cnt_delay_606__i0
+   Register : lcd_write_inst/cnt_delay_451__i3
+   Register : lcd_write_inst/cnt_delay_451__i2
+   Register : lcd_write_inst/cnt_delay_451__i1
    Register : lcd_write_inst/cnt1_FSM_i15
    Register : lcd_write_inst/cnt1_FSM_i14
    Register : lcd_write_inst/cnt1_FSM_i13
@@ -444,8 +420,54 @@ GSR Usage (cont)
    Register : lcd_write_inst/cnt1_FSM_i3
    Register : lcd_write_inst/cnt1_FSM_i2
    Register : lcd_write_inst/cnt1_FSM_i1
+   Register : lcd_write_inst/cnt_sclk__i3
+   Register : lcd_write_inst/cnt_sclk__i2
+   Register : lcd_write_inst/cnt_sclk__i1
+   Register : lcd_write_inst/cnt_delay_451__i4
+   Register : lcd_write_inst/state_FSM_i3
+   Register : lcd_write_inst/cnt_delay_451__i0
    Register : lcd_init_inst/cnt_s2_num__i0
+   Register : lcd_init_inst/cnt_s4_num_done_177
    Register : lcd_init_inst/cnt_s4_num__i0
+   Register : lcd_init_inst/cnt_s2_num_done_174
+   Register : lcd_init_inst/cnt_150ms_453__i21
+   Register : lcd_init_inst/cnt_150ms_453__i20
+   Register : lcd_init_inst/cnt_150ms_453__i19
+   Register : lcd_init_inst/cnt_150ms_453__i18
+   Register : lcd_init_inst/cnt_150ms_453__i17
+   Register : lcd_init_inst/cnt_150ms_453__i16
+   Register : lcd_init_inst/cnt_150ms_453__i15
+   Register : lcd_init_inst/cnt_150ms_453__i14
+   Register : lcd_init_inst/cnt_150ms_453__i13
+   Register : lcd_init_inst/cnt_150ms_453__i12
+   Register : lcd_init_inst/cnt_150ms_453__i11
+   Register : lcd_init_inst/cnt_150ms_453__i10
+   Register : lcd_init_inst/cnt_150ms_453__i9
+   Register : lcd_init_inst/cnt_150ms_453__i8
+   Register : lcd_init_inst/cnt_150ms_453__i7
+   Register : lcd_init_inst/cnt_150ms_453__i6
+   Register : lcd_init_inst/cnt_150ms_453__i5
+   Register : lcd_init_inst/cnt_150ms_453__i4
+   Register : lcd_init_inst/cnt_150ms_453__i3
+   Register : lcd_init_inst/cnt_150ms_453__i2
+   Register : lcd_init_inst/cnt_150ms_453__i1
+   Register : lcd_init_inst/cnt_s2_num__i6
+   Register : lcd_init_inst/cnt_s2_num__i5
+   Register : lcd_init_inst/cnt_s2_num__i4
+   Register : lcd_init_inst/cnt_s2_num__i3
+   Register : lcd_init_inst/cnt_s2_num__i2
+
+                                    Page 7
+
+
+
+
+Design:  spi_lcd                                       Date:  01/18/25  14:12:11
+
+GSR Usage (cont)
+----------------
+   Register : lcd_init_inst/cnt_s2_num__i1
+   Register : lcd_init_inst/cnt_150ms_453__i22
    Register : lcd_init_inst/cnt_s4_num__i17
    Register : lcd_init_inst/cnt_s4_num__i16
    Register : lcd_init_inst/cnt_s4_num__i15
@@ -456,16 +478,6 @@ GSR Usage (cont)
    Register : lcd_init_inst/cnt_s4_num__i10
    Register : lcd_init_inst/cnt_s4_num__i9
    Register : lcd_init_inst/cnt_s4_num__i8
-
-                                    Page 7
-
-
-
-
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
-
-GSR Usage (cont)
-----------------
    Register : lcd_init_inst/cnt_s4_num__i7
    Register : lcd_init_inst/cnt_s4_num__i6
    Register : lcd_init_inst/cnt_s4_num__i5
@@ -473,123 +485,45 @@ GSR Usage (cont)
    Register : lcd_init_inst/cnt_s4_num__i3
    Register : lcd_init_inst/cnt_s4_num__i2
    Register : lcd_init_inst/cnt_s4_num__i1
-   Register : lcd_init_inst/cnt_s2_num_done_174
-   Register : lcd_init_inst/cnt_s4_num_done_177
-   Register : lcd_init_inst/cnt_s2_num__i6
-   Register : lcd_init_inst/cnt_150ms_608__i22
-   Register : lcd_init_inst/cnt_s2_num__i5
-   Register : lcd_init_inst/cnt_s2_num__i4
-   Register : lcd_init_inst/cnt_s2_num__i3
-   Register : lcd_init_inst/cnt_s2_num__i2
-   Register : lcd_init_inst/cnt_s2_num__i1
    Register : lcd_init_inst/lcd_rst_high_flag_171
-   Register : lcd_init_inst/cnt_150ms_608__i21
-   Register : lcd_init_inst/cnt_150ms_608__i20
-   Register : lcd_init_inst/cnt_150ms_608__i19
-   Register : lcd_init_inst/cnt_150ms_608__i18
-   Register : lcd_init_inst/cnt_150ms_608__i17
-   Register : lcd_init_inst/cnt_150ms_608__i16
-   Register : lcd_init_inst/cnt_150ms_608__i15
-   Register : lcd_init_inst/cnt_150ms_608__i14
-   Register : lcd_init_inst/cnt_150ms_608__i13
-   Register : lcd_init_inst/cnt_150ms_608__i12
-   Register : lcd_init_inst/cnt_150ms_608__i11
-   Register : lcd_init_inst/cnt_150ms_608__i10
-   Register : lcd_init_inst/cnt_150ms_608__i9
-   Register : lcd_init_inst/cnt_150ms_608__i8
-   Register : lcd_init_inst/cnt_150ms_608__i7
-   Register : lcd_init_inst/cnt_150ms_608__i6
-   Register : lcd_init_inst/cnt_150ms_608__i5
-   Register : lcd_init_inst/cnt_150ms_608__i4
-   Register : lcd_init_inst/cnt_150ms_608__i3
-   Register : lcd_init_inst/cnt_150ms_608__i2
-   Register : lcd_init_inst/cnt_150ms_608__i1
-   Register : lcd_init_inst/cnt_150ms_608__i0
+   Register : lcd_init_inst/cnt_150ms_453__i0
    Register : lcd_show_char_inst/cnt_wr_color_data__i0
    Register : lcd_show_char_inst/cnt_length_num__i0
-   Register : lcd_show_char_inst/cnt_wr_color_data__i4
    Register : lcd_show_char_inst/cnt_rom_prepare__i0
+   Register : lcd_show_char_inst/cnt_wr_color_data__i5
+   Register : lcd_show_char_inst/cnt_wr_color_data__i4
+   Register : lcd_show_char_inst/cnt_wr_color_data__i3
+   Register : lcd_show_char_inst/cnt_wr_color_data__i2
+   Register : lcd_show_char_inst/cnt_wr_color_data__i1
+   Register : lcd_show_char_inst/cnt_rom_prepare__i2
+   Register : lcd_show_char_inst/cnt_rom_prepare__i1
+   Register : lcd_show_char_inst/cnt_length_num__i6
+   Register : lcd_show_char_inst/cnt_length_num__i5
    Register : lcd_show_char_inst/cnt_length_num__i4
    Register : lcd_show_char_inst/cnt_length_num__i3
    Register : lcd_show_char_inst/cnt_length_num__i2
    Register : lcd_show_char_inst/cnt_length_num__i1
-   Register : lcd_show_char_inst/cnt_wr_color_data__i2
-   Register : lcd_show_char_inst/cnt_wr_color_data__i3
-   Register : lcd_show_char_inst/cnt_wr_color_data__i5
-   Register : lcd_show_char_inst/cnt_wr_color_data__i1
-   Register : lcd_show_char_inst/data_i1
-   Register : lcd_show_char_inst/temp_i7
-   Register : lcd_show_char_inst/state_FSM_i0
-   Register : lcd_show_char_inst/data_i0
-   Register : lcd_show_char_inst/cnt_rom_prepare__i2
-
-                                    Page 8
-
-
-
-
-Design:  spi_lcd                                       Date:  01/16/25  22:16:10
-
-GSR Usage (cont)
-----------------
-   Register : lcd_show_char_inst/cnt_rom_prepare__i1
+   Register : lcd_show_char_inst/data_i6
    Register : lcd_show_char_inst/state_FSM_i3
+   Register : lcd_show_char_inst/state_FSM_i0
+   Register : show_string_number_ctrl_inst/cnt_ascii_num__i0
    Register : show_string_number_ctrl_inst/cnt1__i0
-   Register : show_string_number_ctrl_inst/start_x__i1
    Register : show_string_number_ctrl_inst/start_y__i1
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i1
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i13
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i12
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i11
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i10
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i9
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i8
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i7
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i6
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i5
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i4
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i3
-   Register : show_string_number_ctrl_inst/cnt_ascii_num_FSM_i2
    Register : show_string_number_ctrl_inst/cnt1__i1
-   Register : show_string_number_ctrl_inst/start_x__i5
-   Register : show_string_number_ctrl_inst/start_x__i4
-   Register : show_string_number_ctrl_inst/start_x__i3
-   Register : show_string_number_ctrl_inst/start_x__i2
+   Register : show_string_number_ctrl_inst/cnt_ascii_num__i4
+   Register : show_string_number_ctrl_inst/cnt_ascii_num__i3
+   Register : show_string_number_ctrl_inst/cnt_ascii_num__i2
+   Register : show_string_number_ctrl_inst/cnt_ascii_num__i1
 
 Run Time and Memory Usage
 -------------------------
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 60 MB
+   Peak Memory Usage: 58 MB
         
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    Page 9
+                                    Page 8
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

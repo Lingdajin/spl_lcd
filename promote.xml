@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml" version="Diamond (64-bit) 3.13.0.56.2" date="Fri Jan 17 00:09:18 2025" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="D:/CodeField/Verilog/Diamond_design/spi_lcd/promote.xml" version="Diamond (64-bit) 3.13.0.56.2" date="Fri Jan 17 20:44:30 2025" vendor="Lattice Semiconductor Corporation" >
   <msg mid="35931002" type="Warning" />
+  <msg mid="35901208" type="Warning" />
+  <msg mid="35901209" type="Warning" />
   <msg mid="35901199" type="Warning" />
 </userSetting>

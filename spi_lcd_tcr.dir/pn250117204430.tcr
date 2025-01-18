@@ -1,0 +1,15 @@
+#Start recording tcl command: 1/17/2025 11:50:58
+#Project Location: D:/CodeField/Verilog/Diamond_design/spi_lcd; Project name: spi_lcd
+prj_project open "D:/CodeField/Verilog/Diamond_design/spi_lcd/spi_lcd.ldf"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+prj_run Synthesis -impl impl1
+prj_run Export -impl impl1
+#Stop recording: 1/17/2025 20:44:30

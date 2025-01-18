@@ -1,5 +1,5 @@
 // Verilog netlist produced by program LSE :  version Diamond (64-bit) 3.13.0.56.2
-// Netlist written on Thu Jan 16 22:16:09 2025
+// Netlist written on Sat Jan 18 14:12:10 2025
 //
 // Verilog Description of module spi_lcd
 //
@@ -18,616 +18,694 @@ module spi_lcd (sys_clk, sys_rst_n, lcd_rst, lcd_dc, lcd_sclk, lcd_mosi,
     wire sys_clk_c /* synthesis is_clock=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(20[21:28])
     wire sys_clk_50MHz /* synthesis SET_AS_NETWORK=sys_clk_50MHz, is_clock=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(33[17:30])
     
-    wire VCC_net, sys_rst_n_c, lcd_rst_c, lcd_dc_c_8, lcd_sclk_c, 
-        lcd_mosi_c, lcd_cs_c, GND_net;
+    wire sys_rst_n_c, lcd_rst_c, lcd_dc_c_8, lcd_sclk_c, lcd_mosi_c, 
+        lcd_cs_c, GND_net;
     wire [8:0]data;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(34[17:21])
     
     wire wr_done;
     wire [8:0]init_data;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(38[17:26])
-    
-    wire en_write_init;
     wire [6:0]ascii_num;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(44[17:26])
     wire [8:0]show_char_data;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(48[17:31])
-    
-    wire en_write_show_char;
     wire [3:0]state;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(44[17:22])
     wire [3:0]cnt_sclk;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(50[17:25])
     wire [3:0]state_3__N_25;
-    wire [5:0]state_adj_797;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(61[13:18])
+    
+    wire n20;
+    wire [5:0]state_adj_733;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(61[13:18])
     wire [6:0]cnt_s2_num;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(71[13:23])
     wire [8:0]init_data_8__N_240;
-    wire [3:0]state_adj_802;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(62[17:22])
-    wire [2:0]cnt_rom_prepare;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(72[17:32])
+    wire [3:0]state_adj_738;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(66[17:22])
+    wire [2:0]cnt_rom_prepare;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(76[17:32])
     
     wire length_num_flag;
-    wire [4:0]cnt_length_num;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(85[17:31])
-    wire [8:0]end_x_8__N_295;
-    
-    wire n14;
+    wire [6:0]cnt_length_num;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(89[17:31])
     wire [8:0]end_y_8__N_313;
-    wire [3:0]state_3__N_368;
-    wire [1:0]cnt1_adj_810;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(67[17:21])
+    wire [3:0]state_3__N_370;
+    wire [1:0]cnt1_adj_748;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(67[17:21])
     
-    wire sys_clk_50MHz_enable_50, n1338, sys_clk_50MHz_enable_84, sys_clk_50MHz_enable_45, 
-        n5, n1213, n14114, n15564, n8443, n14240, sys_clk_50MHz_enable_58, 
-        sys_clk_50MHz_enable_42;
+    wire n5, sys_clk_50MHz_enable_24, sys_clk_50MHz_enable_80, n907, 
+        sys_clk_50MHz_enable_48, sys_clk_50MHz_enable_54, n6637, n5363, 
+        n11081, VCC_net, sys_clk_50MHz_enable_55, n11051, n11908, 
+        n11016;
     
     VLO i1 (.Z(GND_net));
-    lcd_write lcd_write_inst (.sys_clk_50MHz(sys_clk_50MHz), .wr_done(wr_done), 
-            .lcd_cs_c(lcd_cs_c), .cnt_sclk({cnt_sclk}), .n14114(n14114), 
-            .sys_clk_50MHz_enable_50(sys_clk_50MHz_enable_50), .\state[2] (state[2]), 
-            .lcd_sclk_c(lcd_sclk_c), .\state_3__N_25[1] (state_3__N_25[1]), 
-            .\data[7] (data[7]), .n1338(n1338), .n14240(n14240), .\data[0] (data[0]), 
-            .\data[1] (data[1]), .\data[4] (data[4]), .\data[2] (data[2]), 
-            .\data[3] (data[3]), .\data[5] (data[5]), .\data[6] (data[6]), 
+    lcd_write lcd_write_inst (.sys_clk_50MHz(sys_clk_50MHz), .lcd_cs_c(lcd_cs_c), 
+            .wr_done(wr_done), .cnt_sclk({cnt_sclk}), .n11016(n11016), 
+            .lcd_sclk_c(lcd_sclk_c), .\state[2] (state[2]), .n907(n907), 
+            .\data[7] (data[7]), .n11081(n11081), .sys_clk_50MHz_enable_48(sys_clk_50MHz_enable_48), 
+            .\data[0] (data[0]), .\data[1] (data[1]), .\data[2] (data[2]), 
+            .\data[3] (data[3]), .\data[4] (data[4]), .\data[5] (data[5]), 
+            .\data[6] (data[6]), .\state_3__N_25[1] (state_3__N_25[1]), 
             .lcd_mosi_c(lcd_mosi_c)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(85[12] 97[2])
-    ROM128X1A mux_283_Mux_5 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
+    ROM128X1A mux_210_Mux_5 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
             .AD3(cnt_s2_num[3]), .AD4(cnt_s2_num[4]), .AD5(cnt_s2_num[5]), 
             .AD6(cnt_s2_num[6]), .DO0(init_data_8__N_240[5])) /* synthesis initstate=0x000000000000000003C3038607107E2E */ ;
-    defparam mux_283_Mux_5.initval = 128'h000000000000000003C3038607107E2E;
-    ROM128X1A mux_283_Mux_2 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
+    defparam mux_210_Mux_5.initval = 128'h000000000000000003C3038607107E2E;
+    ROM128X1A mux_210_Mux_2 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
             .AD3(cnt_s2_num[3]), .AD4(cnt_s2_num[4]), .AD5(cnt_s2_num[5]), 
             .AD6(cnt_s2_num[6]), .DO0(init_data_8__N_240[2])) /* synthesis initstate=0x000000000000000000B89171216C18D2 */ ;
-    defparam mux_283_Mux_2.initval = 128'h000000000000000000B89171216C18D2;
-    ROM128X1A mux_283_Mux_0 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
+    defparam mux_210_Mux_2.initval = 128'h000000000000000000B89171216C18D2;
+    ROM128X1A mux_210_Mux_0 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
             .AD3(cnt_s2_num[3]), .AD4(cnt_s2_num[4]), .AD5(cnt_s2_num[5]), 
             .AD6(cnt_s2_num[6]), .DO0(init_data_8__N_240[0])) /* synthesis initstate=0x0000000000000000036BE2D7C2473E11 */ ;
-    defparam mux_283_Mux_0.initval = 128'h0000000000000000036BE2D7C2473E11;
-    LUT4 i1_4_lut (.A(cnt_sclk[3]), .B(n14240), .C(state[2]), .D(cnt_sclk[2]), 
-         .Z(sys_clk_50MHz_enable_50)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B !(C+(D))))) */ ;
-    defparam i1_4_lut.init = 16'h1150;
+    defparam mux_210_Mux_0.initval = 128'h0000000000000000036BE2D7C2473E11;
     OB lcd_dc_pad (.I(lcd_dc_c_8), .O(lcd_dc));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(24[21:27])
-    ROM128X1A mux_283_Mux_4 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
+    ROM128X1A mux_210_Mux_4 (.AD0(cnt_s2_num[0]), .AD1(cnt_s2_num[1]), .AD2(cnt_s2_num[2]), 
             .AD3(cnt_s2_num[3]), .AD4(cnt_s2_num[4]), .AD5(cnt_s2_num[5]), 
             .AD6(cnt_s2_num[6]), .DO0(init_data_8__N_240[4])) /* synthesis initstate=0x000000000000000000FB85F608847E2B */ ;
-    defparam mux_283_Mux_4.initval = 128'h000000000000000000FB85F608847E2B;
-    LUT4 m1_lut (.Z(n15564)) /* synthesis lut_function=1, syn_instantiated=1 */ ;
-    defparam m1_lut.init = 16'hffff;
+    defparam mux_210_Mux_4.initval = 128'h000000000000000000FB85F608847E2B;
     OB lcd_rst_pad (.I(lcd_rst_c), .O(lcd_rst));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(23[21:28])
-    LUT4 i626_4_lut_rep_288 (.A(state_adj_797[5]), .B(state_3__N_368[1]), 
-         .C(cnt1_adj_810[0]), .D(cnt1_adj_810[1]), .Z(sys_clk_50MHz_enable_42)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B)) */ ;
-    defparam i626_4_lut_rep_288.init = 16'hceee;
-    LUT4 i1919_2_lut_4_lut (.A(state_adj_797[5]), .B(state_3__N_368[1]), 
-         .C(cnt1_adj_810[0]), .D(cnt1_adj_810[1]), .Z(n5)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B (C)+!B !(C)))) */ ;
-    defparam i1919_2_lut_4_lut.init = 16'h3e1e;
-    VHI i2 (.Z(VCC_net));
-    TSALL TSALL_INST (.TSALL(GND_net));
-    LUT4 i621_4_lut (.A(state_adj_802[2]), .B(length_num_flag), .C(n8443), 
-         .D(cnt_rom_prepare[2]), .Z(sys_clk_50MHz_enable_84)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B)) */ ;
-    defparam i621_4_lut.init = 16'hceee;
-    LUT4 i1_2_lut_rep_295 (.A(length_num_flag), .B(cnt_length_num[4]), .Z(sys_clk_50MHz_enable_58)) /* synthesis lut_function=(!((B)+!A)) */ ;
-    defparam i1_2_lut_rep_295.init = 16'h2222;
-    LUT4 i1923_2_lut_3_lut (.A(length_num_flag), .B(cnt_length_num[4]), 
-         .C(cnt_length_num[0]), .Z(n14)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A (C)) */ ;
-    defparam i1923_2_lut_3_lut.init = 16'hd2d2;
-    LUT4 i620_2_lut (.A(wr_done), .B(state_adj_797[4]), .Z(sys_clk_50MHz_enable_45)) /* synthesis lut_function=(A+!(B)) */ ;
-    defparam i620_2_lut.init = 16'hbbbb;
-    GSR GSR_INST (.GSR(sys_rst_n_c));
-    lcd_init lcd_init_inst (.cnt_s2_num({cnt_s2_num}), .init_data({init_data}), 
-            .sys_clk_50MHz(sys_clk_50MHz), .sys_clk_50MHz_enable_45(sys_clk_50MHz_enable_45), 
-            .state({state_adj_797[5], Open_0, Open_1, Open_2, Open_3, 
-            Open_4}), .n15564(n15564), .GND_net(GND_net), .lcd_rst_c(lcd_rst_c), 
-            .n1338(n1338), .\state[4] (state_adj_797[4]), .\init_data_8__N_240[0] (init_data_8__N_240[0]), 
-            .en_write_init(en_write_init), .\init_data_8__N_240[5] (init_data_8__N_240[5]), 
+    LUT4 m1_lut (.Z(n11908)) /* synthesis lut_function=1, syn_instantiated=1 */ ;
+    defparam m1_lut.init = 16'hffff;
+    LUT4 i8800_2_lut_rep_240 (.A(cnt_sclk[0]), .B(cnt_sclk[1]), .Z(n11081)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i8800_2_lut_rep_240.init = 16'heeee;
+    LUT4 i9909_3_lut_rep_175_4_lut (.A(cnt_sclk[0]), .B(cnt_sclk[1]), .C(cnt_sclk[3]), 
+         .D(cnt_sclk[2]), .Z(n11016)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;
+    defparam i9909_3_lut_rep_175_4_lut.init = 16'h0100;
+    LUT4 i1_4_lut (.A(cnt_sclk[3]), .B(n11081), .C(state[2]), .D(cnt_sclk[2]), 
+         .Z(sys_clk_50MHz_enable_48)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B !(C+(D))))) */ ;
+    defparam i1_4_lut.init = 16'h1150;
+    lcd_init lcd_init_inst (.cnt_s2_num({cnt_s2_num}), .sys_clk_50MHz(sys_clk_50MHz), 
+            .GND_net(GND_net), .init_data({init_data}), .n907(n907), .sys_clk_50MHz_enable_80(sys_clk_50MHz_enable_80), 
+            .state({state_adj_733[5:4], Open_0, state_adj_733[2], Open_1, 
+            Open_2}), .n11908(n11908), .lcd_rst_c(lcd_rst_c), .\init_data_8__N_240[0] (init_data_8__N_240[0]), 
+            .n5363(n5363), .\init_data_8__N_240[5] (init_data_8__N_240[5]), 
             .\init_data_8__N_240[4] (init_data_8__N_240[4]), .\init_data_8__N_240[2] (init_data_8__N_240[2]), 
-            .n1213(n1213), .wr_done(wr_done)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(113[11] 123[2])
+            .wr_done(wr_done)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(113[11] 123[2])
+    LUT4 i1847_2_lut_4_lut (.A(length_num_flag), .B(cnt_length_num[4]), 
+         .C(n11051), .D(cnt_length_num[0]), .Z(n20)) /* synthesis lut_function=(A (B (D)+!B (C (D)+!C !(D)))+!A (D)) */ ;
+    defparam i1847_2_lut_4_lut.init = 16'hfd02;
+    LUT4 i469_2_lut (.A(wr_done), .B(state_adj_733[4]), .Z(sys_clk_50MHz_enable_80)) /* synthesis lut_function=(A+!(B)) */ ;
+    defparam i469_2_lut.init = 16'hbbbb;
+    TSALL TSALL_INST (.TSALL(GND_net));
+    LUT4 i8845_2_lut_rep_210 (.A(cnt_length_num[6]), .B(cnt_length_num[5]), 
+         .Z(n11051)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i8845_2_lut_rep_210.init = 16'heeee;
+    LUT4 i1_3_lut_rep_143_4_lut (.A(cnt_length_num[6]), .B(cnt_length_num[5]), 
+         .C(cnt_length_num[4]), .D(length_num_flag), .Z(sys_clk_50MHz_enable_54)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;
+    defparam i1_3_lut_rep_143_4_lut.init = 16'h0100;
+    LUT4 i477_4_lut_rep_211 (.A(state_adj_733[5]), .B(state_3__N_370[1]), 
+         .C(cnt1_adj_748[0]), .D(cnt1_adj_748[1]), .Z(sys_clk_50MHz_enable_55)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B)) */ ;
+    defparam i477_4_lut_rep_211.init = 16'hceee;
+    LUT4 i1848_2_lut_4_lut (.A(state_adj_733[5]), .B(state_3__N_370[1]), 
+         .C(cnt1_adj_748[0]), .D(cnt1_adj_748[1]), .Z(n5)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B (C)+!B !(C)))) */ ;
+    defparam i1848_2_lut_4_lut.init = 16'h3e1e;
+    LUT4 i470_4_lut (.A(state_adj_738[2]), .B(length_num_flag), .C(n6637), 
+         .D(cnt_rom_prepare[2]), .Z(sys_clk_50MHz_enable_24)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B)) */ ;
+    defparam i470_4_lut.init = 16'hceee;
     pll pll_u1 (.sys_clk_c(sys_clk_c), .sys_clk_50MHz(sys_clk_50MHz), .GND_net(GND_net)) /* synthesis NGD_DRC_MASK=1, syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(79[5] 83[2])
-    LUT4 i11232_2_lut_rep_323 (.A(cnt_sclk[0]), .B(cnt_sclk[1]), .Z(n14240)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i11232_2_lut_rep_323.init = 16'heeee;
-    LUT4 i12550_3_lut_rep_197_4_lut (.A(cnt_sclk[0]), .B(cnt_sclk[1]), .C(cnt_sclk[3]), 
-         .D(cnt_sclk[2]), .Z(n14114)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;
-    defparam i12550_3_lut_rep_197_4_lut.init = 16'h0100;
+    GSR GSR_INST (.GSR(sys_rst_n_c));
+    lcd_show_char lcd_show_char_inst (.sys_clk_50MHz(sys_clk_50MHz), .wr_done(wr_done), 
+            .length_num_flag(length_num_flag), .show_char_data({show_char_data}), 
+            .cnt_length_num({Open_3, Open_4, Open_5, Open_6, Open_7, 
+            Open_8, cnt_length_num[0]}), .n20(n20), .cnt_rom_prepare({cnt_rom_prepare}), 
+            .n11908(n11908), .\ascii_num[5] (ascii_num[5]), .\cnt_length_num[5] (cnt_length_num[5]), 
+            .\cnt_length_num[4] (cnt_length_num[4]), .sys_clk_50MHz_enable_24(sys_clk_50MHz_enable_24), 
+            .\cnt_length_num[6] (cnt_length_num[6]), .sys_clk_50MHz_enable_54(sys_clk_50MHz_enable_54), 
+            .state({state_adj_738[3:1], Open_9}), .\end_y_8__N_313[4] (end_y_8__N_313[4]), 
+            .\state_3__N_370[1] (state_3__N_370[1]), .n11051(n11051), .n6637(n6637)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(125[16] 139[2])
+    OB lcd_sclk_pad (.I(lcd_sclk_c), .O(lcd_sclk));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(25[21:29])
+    show_string_number_ctrl show_string_number_ctrl_inst (.\ascii_num[5] (ascii_num[5]), 
+            .sys_clk_50MHz(sys_clk_50MHz), .\state[5] (state_adj_733[5]), 
+            .cnt1({cnt1_adj_748}), .\state_3__N_370[1] (state_3__N_370[1]), 
+            .n5(n5), .\end_y_8__N_313[4] (end_y_8__N_313[4]), .n5363(n5363), 
+            .\state[3] (state_adj_738[3]), .sys_clk_50MHz_enable_55(sys_clk_50MHz_enable_55)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(141[26] 153[2])
+    control control_inst (.\data[0] (data[0]), .sys_clk_50MHz(sys_clk_50MHz), 
+            .\state_3__N_25[1] (state_3__N_25[1]), .\state[2] (state_adj_733[2]), 
+            .\state[4] (state_adj_733[4]), .\state[1] (state_adj_738[1]), 
+            .cnt_rom_prepare({cnt_rom_prepare}), .init_data({init_data}), 
+            .show_char_data({show_char_data}), .\state[5] (state_adj_733[5]), 
+            .lcd_dc_c_8(lcd_dc_c_8), .\data[7] (data[7]), .\data[6] (data[6]), 
+            .\data[5] (data[5]), .\data[4] (data[4]), .\data[3] (data[3]), 
+            .\data[2] (data[2]), .\data[1] (data[1])) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(99[10] 111[2])
     PUR PUR_INST (.PUR(VCC_net));
     defparam PUR_INST.RST_PULSE = 1;
-    OB lcd_sclk_pad (.I(lcd_sclk_c), .O(lcd_sclk));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(25[21:29])
-    lcd_show_char lcd_show_char_inst (.state({Open_5, state_adj_802[2], 
-            Open_6, Open_7}), .sys_clk_50MHz(sys_clk_50MHz), .cnt_length_num({cnt_length_num[4], 
-            Open_8, Open_9, Open_10, cnt_length_num[0]}), .wr_done(wr_done), 
-            .length_num_flag(length_num_flag), .n14(n14), .show_char_data({show_char_data}), 
-            .sys_clk_50MHz_enable_58(sys_clk_50MHz_enable_58), .\end_y_8__N_313[4] (end_y_8__N_313[4]), 
-            .\end_x_8__N_295[6] (end_x_8__N_295[6]), .\end_x_8__N_295[5] (end_x_8__N_295[5]), 
-            .\end_x_8__N_295[4] (end_x_8__N_295[4]), .\end_x_8__N_295[3] (end_x_8__N_295[3]), 
-            .sys_clk_50MHz_enable_84(sys_clk_50MHz_enable_84), .n8443(n8443), 
-            .\cnt_rom_prepare[2] (cnt_rom_prepare[2]), .\state_3__N_368[1] (state_3__N_368[1]), 
-            .\state[3] (state_adj_802[3]), .GND_net(GND_net), .ascii_num({ascii_num}), 
-            .en_write_show_char(en_write_show_char), .\end_x_8__N_295[7] (end_x_8__N_295[7])) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(125[16] 139[2])
-    show_string_number_ctrl show_string_number_ctrl_inst (.ascii_num({ascii_num}), 
-            .sys_clk_50MHz(sys_clk_50MHz), .\state[5] (state_adj_797[5]), 
-            .cnt1({cnt1_adj_810}), .\state_3__N_368[1] (state_3__N_368[1]), 
-            .n5(n5), .\end_x_8__N_295[3] (end_x_8__N_295[3]), .\end_y_8__N_313[4] (end_y_8__N_313[4]), 
-            .n1213(n1213), .sys_clk_50MHz_enable_42(sys_clk_50MHz_enable_42), 
-            .\end_x_8__N_295[7] (end_x_8__N_295[7]), .\end_x_8__N_295[6] (end_x_8__N_295[6]), 
-            .\end_x_8__N_295[5] (end_x_8__N_295[5]), .\end_x_8__N_295[4] (end_x_8__N_295[4]), 
-            .\state[3] (state_adj_802[3])) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(141[26] 153[2])
-    control control_inst (.\data[0] (data[0]), .sys_clk_50MHz(sys_clk_50MHz), 
-            .\state_3__N_25[1] (state_3__N_25[1]), .lcd_dc_c_8(lcd_dc_c_8), 
-            .\data[7] (data[7]), .\data[6] (data[6]), .\data[5] (data[5]), 
-            .\data[4] (data[4]), .\data[3] (data[3]), .\data[2] (data[2]), 
-            .\data[1] (data[1]), .init_data({init_data}), .show_char_data({show_char_data}), 
-            .\state[5] (state_adj_797[5]), .en_write_init(en_write_init), 
-            .en_write_show_char(en_write_show_char)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(99[10] 111[2])
     OB lcd_mosi_pad (.I(lcd_mosi_c), .O(lcd_mosi));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(26[21:29])
     OB lcd_cs_pad (.I(lcd_cs_c), .O(lcd_cs));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(27[21:27])
     OB lcd_led_pad (.I(VCC_net), .O(lcd_led));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(28[21:28])
     IB sys_clk_pad (.I(sys_clk), .O(sys_clk_c));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(20[21:28])
     IB sys_rst_n_pad (.I(sys_rst_n), .O(sys_rst_n_c));   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(21[21:30])
+    VHI i11091 (.Z(VCC_net));
     
 endmodule
 //
 // Verilog Description of module lcd_write
 //
 
-module lcd_write (sys_clk_50MHz, wr_done, lcd_cs_c, cnt_sclk, n14114, 
-            sys_clk_50MHz_enable_50, \state[2] , lcd_sclk_c, \state_3__N_25[1] , 
-            \data[7] , n1338, n14240, \data[0] , \data[1] , \data[4] , 
-            \data[2] , \data[3] , \data[5] , \data[6] , lcd_mosi_c) /* synthesis syn_module_defined=1 */ ;
+module lcd_write (sys_clk_50MHz, lcd_cs_c, wr_done, cnt_sclk, n11016, 
+            lcd_sclk_c, \state[2] , n907, \data[7] , n11081, sys_clk_50MHz_enable_48, 
+            \data[0] , \data[1] , \data[2] , \data[3] , \data[4] , 
+            \data[5] , \data[6] , \state_3__N_25[1] , lcd_mosi_c) /* synthesis syn_module_defined=1 */ ;
     input sys_clk_50MHz;
-    output wr_done;
     output lcd_cs_c;
+    output wr_done;
     output [3:0]cnt_sclk;
-    input n14114;
-    input sys_clk_50MHz_enable_50;
-    output \state[2] ;
+    input n11016;
     output lcd_sclk_c;
-    input \state_3__N_25[1] ;
+    output \state[2] ;
+    output n907;
     input \data[7] ;
-    output n1338;
-    input n14240;
+    input n11081;
+    input sys_clk_50MHz_enable_48;
     input \data[0] ;
     input \data[1] ;
-    input \data[4] ;
     input \data[2] ;
     input \data[3] ;
+    input \data[4] ;
     input \data[5] ;
     input \data[6] ;
+    input \state_3__N_25[1] ;
     output lcd_mosi_c;
     
     wire sys_clk_50MHz /* synthesis SET_AS_NETWORK=sys_clk_50MHz, is_clock=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(33[17:30])
-    
-    wire sclk_flag, sclk_flag_N_70;
     wire [3:0]state;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(44[17:22])
     wire [3:0]state_3__N_33;
     wire [3:0]n15;
-    wire [3:0]n100;
     
-    wire n2779, n2778, n2776, n1, sclk_N_53;
-    wire [4:0]cnt_delay;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(46[17:26])
-    
-    wire n6879;
-    wire [4:0]n25;
-    
-    wire n2793, mosi_N_56, n11951, mosi_N_55;
+    wire sclk_flag, sclk_N_53;
     wire [3:0]state_3__N_29;
     
-    wire n6, n14110, n5867, n5868, mosi_N_65, sys_clk_50MHz_enable_99, 
-        n14253, n11912, mosi_N_63, mosi_N_64, n2760, sys_clk_50MHz_enable_80, 
-        n11948, n5900, mosi_N_60, mosi_N_61, mosi_N_58, mosi_N_59, 
-        n11940, mosi_N_62, n11926, sys_clk_50MHz_enable_82, n13, n14, 
-        n1461;
-    wire [15:0]n120;
+    wire n9317, sys_clk_50MHz_enable_91, n1, sclk_flag_N_70, n13, 
+        n14, mosi_N_65, mosi_N_63, mosi_N_59, mosi_N_61, mosi_N_62, 
+        mosi_N_64, mosi_N_60, mosi_N_58, mosi_N_55, n1011;
+    wire [4:0]cnt_delay;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(46[17:26])
+    wire [4:0]n25;
+    wire [15:0]n114;
     
-    FD1S3AX sclk_flag_97 (.D(sclk_flag_N_70), .CK(sys_clk_50MHz), .Q(sclk_flag)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(104[10] 109[27])
-    defparam sclk_flag_97.GSR = "ENABLED";
-    FD1S3AX wr_done_101 (.D(state[3]), .CK(sys_clk_50MHz), .Q(wr_done)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(163[10] 166[25])
-    defparam wr_done_101.GSR = "ENABLED";
+    wire sys_clk_50MHz_enable_8, n5367, n10953, n2928, n2929, n2449, 
+        n2446, mosi_N_56, n9366, sys_clk_50MHz_enable_39, n11080, 
+        n9217;
+    wire [3:0]n100;
+    wire [0:0]n653;
+    
+    wire n4576, n9363, n6, n9355, n2416, n2415;
+    
     FD1S3IX state_FSM_i0 (.D(state_3__N_33[3]), .CK(sys_clk_50MHz), .CD(lcd_cs_c), 
             .Q(state[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
     defparam state_FSM_i0.GSR = "ENABLED";
-    FD1S3IX cnt_sclk__i0 (.D(n15[0]), .CK(sys_clk_50MHz), .CD(n14114), 
+    FD1S3AX wr_done_101 (.D(state[3]), .CK(sys_clk_50MHz), .Q(wr_done)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(163[10] 166[25])
+    defparam wr_done_101.GSR = "ENABLED";
+    FD1S3IX cnt_sclk__i0 (.D(n15[0]), .CK(sys_clk_50MHz), .CD(n11016), 
             .Q(cnt_sclk[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
     defparam cnt_sclk__i0.GSR = "ENABLED";
-    LUT4 i735_3_lut_4_lut (.A(cnt_sclk[1]), .B(cnt_sclk[0]), .C(cnt_sclk[2]), 
-         .D(cnt_sclk[3]), .Z(n100[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(97[21:36])
-    defparam i735_3_lut_4_lut.init = 16'h7f80;
-    FD1P3IX cnt_sclk__i3 (.D(n100[3]), .SP(sys_clk_50MHz_enable_50), .CD(n14114), 
-            .CK(sys_clk_50MHz), .Q(cnt_sclk[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
-    defparam cnt_sclk__i3.GSR = "ENABLED";
-    FD1P3IX cnt_sclk__i2 (.D(n100[2]), .SP(sys_clk_50MHz_enable_50), .CD(n14114), 
-            .CK(sys_clk_50MHz), .Q(cnt_sclk[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
-    defparam cnt_sclk__i2.GSR = "ENABLED";
-    FD1P3IX cnt_sclk__i1 (.D(n100[1]), .SP(sys_clk_50MHz_enable_50), .CD(n14114), 
-            .CK(sys_clk_50MHz), .Q(cnt_sclk[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
-    defparam cnt_sclk__i1.GSR = "ENABLED";
-    FD1S3JX state_FSM_i3 (.D(n2779), .CK(sys_clk_50MHz), .PD(state[3]), 
-            .Q(state[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
-    defparam state_FSM_i3.GSR = "ENABLED";
-    FD1S3AX state_FSM_i2 (.D(n2778), .CK(sys_clk_50MHz), .Q(state[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
-    defparam state_FSM_i2.GSR = "ENABLED";
-    FD1S3AX state_FSM_i1 (.D(n2776), .CK(sys_clk_50MHz), .Q(\state[2] ));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
-    defparam state_FSM_i1.GSR = "ENABLED";
-    LUT4 state_3__N_22_I_0_118_1_lut (.A(\state[2] ), .Z(lcd_cs_c)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(169[13:44])
-    defparam state_3__N_22_I_0_118_1_lut.init = 16'h5555;
+    LUT4 sclk_I_0_2_lut (.A(lcd_sclk_c), .B(sclk_flag), .Z(sclk_N_53)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(134[9:22])
+    defparam sclk_I_0_2_lut.init = 16'h6666;
+    LUT4 i9926_4_lut (.A(state[0]), .B(state_3__N_29[1]), .C(n9317), .D(state[1]), 
+         .Z(sys_clk_50MHz_enable_91)) /* synthesis lut_function=(A+(B (C)+!B (C+(D)))) */ ;
+    defparam i9926_4_lut.init = 16'hfbfa;
     FD1S3IX state2_finish_flag_98 (.D(sclk_flag_N_70), .CK(sys_clk_50MHz), 
             .CD(n1), .Q(state_3__N_33[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(115[10] 118[36])
     defparam state2_finish_flag_98.GSR = "ENABLED";
     FD1S3IX sclk_99 (.D(sclk_N_53), .CK(sys_clk_50MHz), .CD(state[0]), 
             .Q(lcd_sclk_c)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(126[10] 134[22])
     defparam sclk_99.GSR = "ENABLED";
-    FD1S3IX cnt_delay_606__i4 (.D(n25[4]), .CK(sys_clk_50MHz), .CD(n6879), 
-            .Q(cnt_delay[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam cnt_delay_606__i4.GSR = "ENABLED";
-    LUT4 i728_2_lut_3_lut (.A(cnt_sclk[1]), .B(cnt_sclk[0]), .C(cnt_sclk[2]), 
-         .Z(n100[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(97[21:36])
-    defparam i728_2_lut_3_lut.init = 16'h7878;
-    PFUMX mosi_I_1 (.BLUT(n2793), .ALUT(mosi_N_56), .C0(n11951), .Z(mosi_N_55)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;
-    LUT4 i721_2_lut (.A(cnt_sclk[1]), .B(cnt_sclk[0]), .Z(n100[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(97[21:36])
-    defparam i721_2_lut.init = 16'h6666;
-    LUT4 i1967_2_lut (.A(state[0]), .B(\state_3__N_25[1] ), .Z(n2779)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
-    defparam i1967_2_lut.init = 16'h2222;
-    LUT4 i1966_4_lut (.A(state[1]), .B(\state_3__N_25[1] ), .C(state_3__N_29[1]), 
-         .D(state[0]), .Z(n2778)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
-    defparam i1966_4_lut.init = 16'heca0;
-    LUT4 i4_4_lut (.A(cnt_delay[3]), .B(cnt_delay[2]), .C(cnt_delay[0]), 
-         .D(n6), .Z(state_3__N_29[1])) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[32:55])
-    defparam i4_4_lut.init = 16'hfffb;
-    LUT4 i1_2_lut (.A(cnt_delay[1]), .B(cnt_delay[4]), .Z(n6)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[32:55])
-    defparam i1_2_lut.init = 16'heeee;
-    LUT4 state_3__N_21_I_0_2_lut_rep_193 (.A(state[1]), .B(state_3__N_29[1]), 
-         .Z(n14110)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
-    defparam state_3__N_21_I_0_2_lut_rep_193.init = 16'h2222;
-    LUT4 i5036_3_lut_4_lut (.A(state[1]), .B(state_3__N_29[1]), .C(\data[7] ), 
-         .D(n5867), .Z(n5868)) /* synthesis lut_function=(A (B (D)+!B (C))+!A (D)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
-    defparam i5036_3_lut_4_lut.init = 16'hfd20;
-    LUT4 i1964_3_lut_4_lut (.A(state[1]), .B(state_3__N_29[1]), .C(state_3__N_33[3]), 
-         .D(\state[2] ), .Z(n2776)) /* synthesis lut_function=(!(A (B (C+!(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
-    defparam i1964_3_lut_4_lut.init = 16'h2f22;
-    LUT4 i640_1_lut (.A(wr_done), .Z(n1338)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(163[10] 166[25])
-    defparam i640_1_lut.init = 16'h5555;
-    LUT4 i1_1_lut (.A(mosi_N_65), .Z(n1)) /* synthesis lut_function=(!(A)) */ ;
-    defparam i1_1_lut.init = 16'h5555;
-    LUT4 i32_2_lut_rep_155_4_lut (.A(n14240), .B(cnt_sclk[2]), .C(cnt_sclk[3]), 
-         .D(\state[2] ), .Z(sys_clk_50MHz_enable_99)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(87[32:56])
-    defparam i32_2_lut_rep_155_4_lut.init = 16'h0400;
-    LUT4 sclk_I_0_2_lut (.A(lcd_sclk_c), .B(sclk_flag), .Z(sclk_N_53)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(134[9:22])
-    defparam sclk_I_0_2_lut.init = 16'h6666;
-    LUT4 i9933_3_lut_4_lut (.A(cnt_delay[2]), .B(n14253), .C(cnt_delay[3]), 
-         .D(cnt_delay[4]), .Z(n25[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam i9933_3_lut_4_lut.init = 16'h7f80;
-    LUT4 i12596_4_lut (.A(n11912), .B(cnt_delay[4]), .C(state[1]), .D(state[3]), 
-         .Z(n6879)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(76[10] 79[26])
-    defparam i12596_4_lut.init = 16'hffef;
-    LUT4 i11290_2_lut (.A(cnt_delay[2]), .B(cnt_delay[3]), .Z(n11912)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i11290_2_lut.init = 16'heeee;
-    LUT4 i1949_4_lut (.A(\data[0] ), .B(\data[1] ), .C(mosi_N_63), .D(mosi_N_64), 
-         .Z(n2760)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
-    defparam i1949_4_lut.init = 16'hcac0;
-    LUT4 i1_2_lut_3_lut (.A(\state[2] ), .B(n14114), .C(state[1]), .Z(sys_clk_50MHz_enable_80)) /* synthesis lut_function=(A (B+(C))+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(87[13:56])
-    defparam i1_2_lut_3_lut.init = 16'hf8f8;
-    LUT4 i12541_4_lut (.A(cnt_sclk[0]), .B(cnt_sclk[3]), .C(cnt_sclk[2]), 
-         .D(cnt_sclk[1]), .Z(sclk_flag_N_70)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(106[13:44])
-    defparam i12541_4_lut.init = 16'h0200;
-    LUT4 i12390_4_lut_4_lut (.A(n14110), .B(n11948), .C(n5868), .D(n2760), 
-         .Z(mosi_N_56)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
-    defparam i12390_4_lut_4_lut.init = 16'hf4b0;
-    LUT4 i5066_3_lut (.A(n5900), .B(\data[4] ), .C(mosi_N_60), .Z(n2793)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
-    defparam i5066_3_lut.init = 16'hcaca;
-    LUT4 i5065_3_lut (.A(\data[2] ), .B(\data[3] ), .C(mosi_N_61), .Z(n5900)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
-    defparam i5065_3_lut.init = 16'hcaca;
-    LUT4 i11323_2_lut (.A(mosi_N_58), .B(mosi_N_59), .Z(n11948)) /* synthesis lut_function=(!(A+(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
-    defparam i11323_2_lut.init = 16'h1111;
-    LUT4 i12646_4_lut (.A(n14110), .B(mosi_N_58), .C(mosi_N_59), .D(n11940), 
-         .Z(n11951)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(144[10] 157[22])
-    defparam i12646_4_lut.init = 16'hfffe;
-    LUT4 i11315_3_lut (.A(mosi_N_60), .B(mosi_N_61), .C(mosi_N_62), .Z(n11940)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
-    defparam i11315_3_lut.init = 16'h0101;
-    LUT4 i1924_2_lut (.A(cnt_sclk[0]), .B(sys_clk_50MHz_enable_50), .Z(n15[0])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
-    defparam i1924_2_lut.init = 16'h6666;
-    LUT4 i5035_3_lut (.A(\data[5] ), .B(\data[6] ), .C(mosi_N_58), .Z(n5867)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
-    defparam i5035_3_lut.init = 16'hcaca;
-    LUT4 i12527_4_lut (.A(state[0]), .B(state_3__N_29[1]), .C(n11926), 
-         .D(state[1]), .Z(sys_clk_50MHz_enable_82)) /* synthesis lut_function=(A+(B (C)+!B (C+(D)))) */ ;
-    defparam i12527_4_lut.init = 16'hfbfa;
-    LUT4 i11303_4_lut (.A(\state[2] ), .B(n13), .C(sclk_flag), .D(n14), 
-         .Z(n11926)) /* synthesis lut_function=(A (B (C)+!B (C (D)))) */ ;
-    defparam i11303_4_lut.init = 16'ha080;
+    LUT4 i8902_4_lut (.A(\state[2] ), .B(n13), .C(sclk_flag), .D(n14), 
+         .Z(n9317)) /* synthesis lut_function=(A (B (C)+!B (C (D)))) */ ;
+    defparam i8902_4_lut.init = 16'ha080;
     LUT4 i5_4_lut (.A(mosi_N_65), .B(mosi_N_63), .C(mosi_N_59), .D(mosi_N_61), 
          .Z(n13)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
     defparam i5_4_lut.init = 16'hfffe;
     LUT4 i6_4_lut (.A(mosi_N_62), .B(mosi_N_64), .C(mosi_N_60), .D(mosi_N_58), 
          .Z(n14)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
     defparam i6_4_lut.init = 16'hfffe;
-    LUT4 i6990_2_lut (.A(mosi_N_55), .B(state[0]), .Z(n1461)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(140[10] 157[22])
-    defparam i6990_2_lut.init = 16'h2222;
-    LUT4 i9912_2_lut (.A(cnt_delay[1]), .B(cnt_delay[0]), .Z(n25[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam i9912_2_lut.init = 16'h6666;
-    LUT4 i9910_1_lut (.A(cnt_delay[0]), .Z(n25[0])) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam i9910_1_lut.init = 16'h5555;
-    LUT4 i9915_2_lut_rep_336 (.A(cnt_delay[1]), .B(cnt_delay[0]), .Z(n14253)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam i9915_2_lut_rep_336.init = 16'h8888;
-    LUT4 i9919_2_lut_3_lut (.A(cnt_delay[1]), .B(cnt_delay[0]), .C(cnt_delay[2]), 
+    LUT4 i5635_2_lut (.A(mosi_N_55), .B(state[0]), .Z(n1011)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(140[10] 157[22])
+    defparam i5635_2_lut.init = 16'h2222;
+    LUT4 i7699_2_lut_3_lut (.A(cnt_delay[1]), .B(cnt_delay[0]), .C(cnt_delay[2]), 
          .Z(n25[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam i9919_2_lut_3_lut.init = 16'h7878;
-    LUT4 i9926_2_lut_3_lut_4_lut (.A(cnt_delay[1]), .B(cnt_delay[0]), .C(cnt_delay[3]), 
-         .D(cnt_delay[2]), .Z(n25[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam i9926_2_lut_3_lut_4_lut.init = 16'h78f0;
-    FD1P3JX cnt1_FSM_i0 (.D(mosi_N_65), .SP(sys_clk_50MHz_enable_80), .PD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    defparam i7699_2_lut_3_lut.init = 16'h7878;
+    LUT4 i7690_1_lut (.A(cnt_delay[0]), .Z(n25[0])) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
+    defparam i7690_1_lut.init = 16'h5555;
+    FD1P3JX cnt1_FSM_i0 (.D(mosi_N_65), .SP(sys_clk_50MHz_enable_8), .PD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i0.GSR = "ENABLED";
-    FD1P3AX mosi_100 (.D(n1461), .SP(sys_clk_50MHz_enable_82), .CK(sys_clk_50MHz), 
-            .Q(lcd_mosi_c)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(140[10] 157[22])
-    defparam mosi_100.GSR = "ENABLED";
-    FD1S3IX cnt_delay_606__i3 (.D(n25[3]), .CK(sys_clk_50MHz), .CD(n6879), 
+    FD1S3IX cnt_delay_451__i3 (.D(n25[3]), .CK(sys_clk_50MHz), .CD(n5367), 
             .Q(cnt_delay[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam cnt_delay_606__i3.GSR = "ENABLED";
-    FD1S3IX cnt_delay_606__i2 (.D(n25[2]), .CK(sys_clk_50MHz), .CD(n6879), 
+    defparam cnt_delay_451__i3.GSR = "ENABLED";
+    FD1S3IX cnt_delay_451__i2 (.D(n25[2]), .CK(sys_clk_50MHz), .CD(n5367), 
             .Q(cnt_delay[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam cnt_delay_606__i2.GSR = "ENABLED";
-    FD1S3IX cnt_delay_606__i1 (.D(n25[1]), .CK(sys_clk_50MHz), .CD(n6879), 
+    defparam cnt_delay_451__i2.GSR = "ENABLED";
+    FD1S3IX cnt_delay_451__i1 (.D(n25[1]), .CK(sys_clk_50MHz), .CD(n5367), 
             .Q(cnt_delay[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam cnt_delay_606__i1.GSR = "ENABLED";
-    FD1S3IX cnt_delay_606__i0 (.D(n25[0]), .CK(sys_clk_50MHz), .CD(n6879), 
-            .Q(cnt_delay[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
-    defparam cnt_delay_606__i0.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i15 (.D(n120[14]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    defparam cnt_delay_451__i1.GSR = "ENABLED";
+    LUT4 i9906_4_lut (.A(cnt_sclk[0]), .B(cnt_sclk[3]), .C(cnt_sclk[2]), 
+         .D(cnt_sclk[1]), .Z(sclk_flag_N_70)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(106[13:44])
+    defparam i9906_4_lut.init = 16'h0200;
+    LUT4 i487_1_lut (.A(wr_done), .Z(n907)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(163[10] 166[25])
+    defparam i487_1_lut.init = 16'h5555;
+    LUT4 state_3__N_21_I_0_2_lut_rep_112 (.A(state[1]), .B(state_3__N_29[1]), 
+         .Z(n10953)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
+    defparam state_3__N_21_I_0_2_lut_rep_112.init = 16'h2222;
+    LUT4 i2373_3_lut_4_lut (.A(state[1]), .B(state_3__N_29[1]), .C(\data[7] ), 
+         .D(n2928), .Z(n2929)) /* synthesis lut_function=(A (B (D)+!B (C))+!A (D)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
+    defparam i2373_3_lut_4_lut.init = 16'hfd20;
+    LUT4 i1893_3_lut_4_lut (.A(state[1]), .B(state_3__N_29[1]), .C(state_3__N_33[3]), 
+         .D(\state[2] ), .Z(n2449)) /* synthesis lut_function=(!(A (B (C+!(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
+    defparam i1893_3_lut_4_lut.init = 16'h2f22;
+    PFUMX mosi_I_1 (.BLUT(n2446), .ALUT(mosi_N_56), .C0(n9366), .Z(mosi_N_55)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;
+    FD1P3IX cnt1_FSM_i15 (.D(n114[14]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_65));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i15.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i14 (.D(mosi_N_64), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    FD1P3IX cnt1_FSM_i14 (.D(mosi_N_64), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i14.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i13 (.D(n120[12]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    FD1P3IX cnt1_FSM_i13 (.D(n114[12]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_64));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i13.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i12 (.D(mosi_N_63), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    FD1P3IX cnt1_FSM_i12 (.D(mosi_N_63), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i12.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i11 (.D(n120[10]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    FD1P3IX cnt1_FSM_i11 (.D(n114[10]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_63));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i11.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i10 (.D(mosi_N_62), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    FD1P3IX cnt1_FSM_i10 (.D(mosi_N_62), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i10.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i9 (.D(n120[8]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    FD1P3IX cnt1_FSM_i9 (.D(n114[8]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_62));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i9.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i8 (.D(mosi_N_61), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    FD1P3IX cnt1_FSM_i8 (.D(mosi_N_61), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i8.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i7 (.D(n120[6]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    FD1P3IX cnt1_FSM_i7 (.D(n114[6]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_61));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i7.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i6 (.D(mosi_N_60), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    FD1P3IX cnt1_FSM_i6 (.D(mosi_N_60), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i6.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i5 (.D(n120[4]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    FD1P3IX cnt1_FSM_i5 (.D(n114[4]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_60));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i5.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i4 (.D(mosi_N_59), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    FD1P3IX cnt1_FSM_i4 (.D(mosi_N_59), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i4.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i3 (.D(n120[2]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    FD1P3IX cnt1_FSM_i3 (.D(n114[2]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_59));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i3.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i2 (.D(mosi_N_58), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
-            .CK(sys_clk_50MHz), .Q(n120[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
+    FD1P3IX cnt1_FSM_i2 (.D(mosi_N_58), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
+            .CK(sys_clk_50MHz), .Q(n114[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i2.GSR = "ENABLED";
-    FD1P3IX cnt1_FSM_i1 (.D(n120[0]), .SP(sys_clk_50MHz_enable_99), .CD(state[1]), 
+    FD1P3IX cnt1_FSM_i1 (.D(n114[0]), .SP(sys_clk_50MHz_enable_39), .CD(state[1]), 
             .CK(sys_clk_50MHz), .Q(mosi_N_58));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(88[17:28])
     defparam cnt1_FSM_i1.GSR = "ENABLED";
+    LUT4 i1_2_lut_3_lut (.A(\state[2] ), .B(n11016), .C(state[1]), .Z(sys_clk_50MHz_enable_8)) /* synthesis lut_function=(A (B+(C))+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(87[13:56])
+    defparam i1_2_lut_3_lut.init = 16'hf8f8;
+    LUT4 i7713_3_lut_4_lut (.A(cnt_delay[2]), .B(n11080), .C(cnt_delay[3]), 
+         .D(cnt_delay[4]), .Z(n25[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
+    defparam i7713_3_lut_4_lut.init = 16'h7f80;
+    LUT4 state_3__N_22_I_0_118_1_lut (.A(\state[2] ), .Z(lcd_cs_c)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(169[13:44])
+    defparam state_3__N_22_I_0_118_1_lut.init = 16'h5555;
+    LUT4 i32_2_lut_rep_122_4_lut (.A(n11081), .B(cnt_sclk[2]), .C(cnt_sclk[3]), 
+         .D(\state[2] ), .Z(sys_clk_50MHz_enable_39)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(87[32:56])
+    defparam i32_2_lut_rep_122_4_lut.init = 16'h0400;
+    LUT4 i1846_2_lut (.A(cnt_sclk[0]), .B(sys_clk_50MHz_enable_48), .Z(n15[0])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
+    defparam i1846_2_lut.init = 16'h6666;
+    LUT4 i9936_4_lut (.A(cnt_delay[4]), .B(state[1]), .C(n9217), .D(cnt_delay[2]), 
+         .Z(n5367)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(76[10] 79[26])
+    defparam i9936_4_lut.init = 16'hfffb;
+    LUT4 i8808_2_lut (.A(state[3]), .B(cnt_delay[3]), .Z(n9217)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i8808_2_lut.init = 16'heeee;
+    LUT4 i7692_2_lut (.A(cnt_delay[1]), .B(cnt_delay[0]), .Z(n25[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
+    defparam i7692_2_lut.init = 16'h6666;
+    FD1P3IX cnt_sclk__i3 (.D(n100[3]), .SP(sys_clk_50MHz_enable_48), .CD(n11016), 
+            .CK(sys_clk_50MHz), .Q(cnt_sclk[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
+    defparam cnt_sclk__i3.GSR = "ENABLED";
+    FD1P3IX cnt_sclk__i2 (.D(n100[2]), .SP(sys_clk_50MHz_enable_48), .CD(n11016), 
+            .CK(sys_clk_50MHz), .Q(cnt_sclk[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
+    defparam cnt_sclk__i2.GSR = "ENABLED";
+    FD1P3IX cnt_sclk__i1 (.D(n100[1]), .SP(sys_clk_50MHz_enable_48), .CD(n11016), 
+            .CK(sys_clk_50MHz), .Q(cnt_sclk[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(94[10] 97[37])
+    defparam cnt_sclk__i1.GSR = "ENABLED";
+    LUT4 i1899_4_lut (.A(\data[0] ), .B(\data[1] ), .C(mosi_N_63), .D(mosi_N_64), 
+         .Z(n653[0])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
+    defparam i1899_4_lut.init = 16'hcac0;
+    LUT4 i4006_3_lut (.A(\data[2] ), .B(\data[3] ), .C(mosi_N_61), .Z(n4576)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
+    defparam i4006_3_lut.init = 16'hcaca;
+    LUT4 i8940_2_lut (.A(mosi_N_58), .B(mosi_N_59), .Z(n9363)) /* synthesis lut_function=(!(A+(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
+    defparam i8940_2_lut.init = 16'h1111;
+    LUT4 i4_4_lut (.A(cnt_delay[3]), .B(cnt_delay[2]), .C(cnt_delay[0]), 
+         .D(n6), .Z(state_3__N_29[1])) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[32:55])
+    defparam i4_4_lut.init = 16'hfffb;
+    LUT4 i1_2_lut (.A(cnt_delay[1]), .B(cnt_delay[4]), .Z(n6)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[32:55])
+    defparam i1_2_lut.init = 16'heeee;
+    LUT4 i9999_4_lut (.A(n10953), .B(mosi_N_58), .C(mosi_N_59), .D(n9355), 
+         .Z(n9366)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(144[10] 157[22])
+    defparam i9999_4_lut.init = 16'hfffe;
+    LUT4 i8932_3_lut (.A(mosi_N_60), .B(mosi_N_61), .C(mosi_N_62), .Z(n9355)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
+    defparam i8932_3_lut.init = 16'h0101;
+    LUT4 i561_2_lut (.A(cnt_sclk[1]), .B(cnt_sclk[0]), .Z(n100[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(97[21:36])
+    defparam i561_2_lut.init = 16'h6666;
+    LUT4 i9799_4_lut_4_lut (.A(n10953), .B(n9363), .C(n2929), .D(n653[0]), 
+         .Z(mosi_N_56)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(142[13:55])
+    defparam i9799_4_lut_4_lut.init = 16'hf4b0;
+    LUT4 i4007_3_lut (.A(n4576), .B(\data[4] ), .C(mosi_N_60), .Z(n2446)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
+    defparam i4007_3_lut.init = 16'hcaca;
+    LUT4 i2372_3_lut (.A(\data[5] ), .B(\data[6] ), .C(mosi_N_58), .Z(n2928)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(145[9] 155[16])
+    defparam i2372_3_lut.init = 16'hcaca;
+    FD1S3IX cnt_delay_451__i4 (.D(n25[4]), .CK(sys_clk_50MHz), .CD(n5367), 
+            .Q(cnt_delay[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
+    defparam cnt_delay_451__i4.GSR = "ENABLED";
+    FD1S3JX state_FSM_i3 (.D(n2416), .CK(sys_clk_50MHz), .PD(state[3]), 
+            .Q(state[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
+    defparam state_FSM_i3.GSR = "ENABLED";
+    FD1S3AX state_FSM_i2 (.D(n2415), .CK(sys_clk_50MHz), .Q(state[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
+    defparam state_FSM_i2.GSR = "ENABLED";
+    FD1S3AX state_FSM_i1 (.D(n2449), .CK(sys_clk_50MHz), .Q(\state[2] ));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
+    defparam state_FSM_i1.GSR = "ENABLED";
+    LUT4 i1861_2_lut (.A(state[0]), .B(\state_3__N_25[1] ), .Z(n2416)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
+    defparam i1861_2_lut.init = 16'h2222;
+    LUT4 i1860_4_lut (.A(state[1]), .B(\state_3__N_25[1] ), .C(state_3__N_29[1]), 
+         .D(state[0]), .Z(n2415)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(62[9] 67[16])
+    defparam i1860_4_lut.init = 16'heca0;
+    LUT4 i575_3_lut_4_lut (.A(cnt_sclk[1]), .B(cnt_sclk[0]), .C(cnt_sclk[2]), 
+         .D(cnt_sclk[3]), .Z(n100[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(97[21:36])
+    defparam i575_3_lut_4_lut.init = 16'h7f80;
+    LUT4 i568_2_lut_3_lut (.A(cnt_sclk[1]), .B(cnt_sclk[0]), .C(cnt_sclk[2]), 
+         .Z(n100[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(97[21:36])
+    defparam i568_2_lut_3_lut.init = 16'h7878;
+    LUT4 i1_1_lut (.A(mosi_N_65), .Z(n1)) /* synthesis lut_function=(!(A)) */ ;
+    defparam i1_1_lut.init = 16'h5555;
+    LUT4 i7695_2_lut_rep_239 (.A(cnt_delay[1]), .B(cnt_delay[0]), .Z(n11080)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
+    defparam i7695_2_lut_rep_239.init = 16'h8888;
+    FD1P3AX mosi_100 (.D(n1011), .SP(sys_clk_50MHz_enable_91), .CK(sys_clk_50MHz), 
+            .Q(lcd_mosi_c)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(140[10] 157[22])
+    defparam mosi_100.GSR = "ENABLED";
+    LUT4 i7706_2_lut_3_lut_4_lut (.A(cnt_delay[1]), .B(cnt_delay[0]), .C(cnt_delay[3]), 
+         .D(cnt_delay[2]), .Z(n25[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
+    defparam i7706_2_lut_3_lut_4_lut.init = 16'h78f0;
+    FD1S3AX sclk_flag_97 (.D(sclk_flag_N_70), .CK(sys_clk_50MHz), .Q(sclk_flag)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=12, LSE_RCOL=2, LSE_LLINE=85, LSE_RLINE=97 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(104[10] 109[27])
+    defparam sclk_flag_97.GSR = "ENABLED";
+    FD1S3IX cnt_delay_451__i0 (.D(n25[0]), .CK(sys_clk_50MHz), .CD(n5367), 
+            .Q(cnt_delay[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_write.v(77[22:38])
+    defparam cnt_delay_451__i0.GSR = "ENABLED";
     
 endmodule
-//
-// Verilog Description of module TSALL
-// module not written out since it is a black-box. 
-//
-
 //
 // Verilog Description of module lcd_init
 //
 
-module lcd_init (cnt_s2_num, init_data, sys_clk_50MHz, sys_clk_50MHz_enable_45, 
-            state, n15564, GND_net, lcd_rst_c, n1338, \state[4] , 
-            \init_data_8__N_240[0] , en_write_init, \init_data_8__N_240[5] , 
-            \init_data_8__N_240[4] , \init_data_8__N_240[2] , n1213, wr_done) /* synthesis syn_module_defined=1 */ ;
+module lcd_init (cnt_s2_num, sys_clk_50MHz, GND_net, init_data, n907, 
+            sys_clk_50MHz_enable_80, state, n11908, lcd_rst_c, \init_data_8__N_240[0] , 
+            n5363, \init_data_8__N_240[5] , \init_data_8__N_240[4] , \init_data_8__N_240[2] , 
+            wr_done) /* synthesis syn_module_defined=1 */ ;
     output [6:0]cnt_s2_num;
-    output [8:0]init_data;
     input sys_clk_50MHz;
-    input sys_clk_50MHz_enable_45;
-    output [5:0]state;
-    input n15564;
     input GND_net;
+    output [8:0]init_data;
+    input n907;
+    input sys_clk_50MHz_enable_80;
+    output [5:0]state;
+    input n11908;
     output lcd_rst_c;
-    input n1338;
-    output \state[4] ;
     input \init_data_8__N_240[0] ;
-    output en_write_init;
+    output n5363;
     input \init_data_8__N_240[5] ;
     input \init_data_8__N_240[4] ;
     input \init_data_8__N_240[2] ;
-    output n1213;
     input wr_done;
     
     wire sys_clk_50MHz /* synthesis SET_AS_NETWORK=sys_clk_50MHz, is_clock=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(33[17:30])
     
-    wire n14262;
-    wire [8:0]init_data_8__N_97;
-    
-    wire n14259;
+    wire n11079;
     wire [6:0]n24;
-    wire [17:0]cnt_s4_num;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(73[13:23])
     
-    wire n14214;
-    wire [17:0]n357;
-    
-    wire sys_clk_50MHz_enable_5, n13749, n13748, n6342, n13750, n10534, 
-        n10535, n13741, n13742, n13743, lcd_rst_high_flag;
-    wire [5:0]state_5__N_180;
-    
-    wire cnt_s2_num_done_N_272;
-    wire [5:0]state_5__N_192;
-    
-    wire cnt_s4_num_done_N_274, n12101, n12102, n12103, n10531, n10532, 
-        n10529, sys_clk_50MHz_enable_76;
-    wire [6:0]n159;
+    wire n8119;
     wire [22:0]cnt_150ms;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(69[13:22])
-    
-    wire cnt_150ms_22__N_221;
     wire [22:0]n97;
     
-    wire n14247, n6878, lcd_rst_high_flag_N_270;
+    wire n8120;
+    wire [8:0]init_data_8__N_97;
+    wire [5:0]state_5__N_192;
+    
+    wire cnt_s4_num_done_N_274, n8105;
+    wire [17:0]cnt_s4_num;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(73[13:23])
+    wire [17:0]n357;
+    
+    wire n8106, n11263, n11059, sys_clk_50MHz_enable_4, lcd_rst_high_flag;
+    wire [5:0]state_5__N_180;
+    
+    wire cnt_s2_num_done_N_272, n8118, n11219, n11216, n8117, cnt_150ms_22__N_221, 
+        n11265, n11262, n8116, n9603, n9602, n8115;
     wire [8:0]init_data_8__N_231;
     wire [8:0]init_data_8__N_240;
+    
+    wire n8104, n8107, n8114, n8109, n8110, n11217, n4951, n8108, 
+        n10256, n10280, n9594, n10998;
+    wire [6:0]n159;
+    
+    wire n46, n11039, n30, n15, n9614, n9613, n9611, n10255, 
+        n10989, sys_clk_50MHz_enable_45, n10893, n11222, n11224, n10891, 
+        n15_adj_719, n9624, n11160, n11161, n11162, n8113, n30_adj_720, 
+        n10279, n10931;
     wire [5:0]state_c;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(61[13:18])
     
-    wire n13740, n14067, n14066, n11800, n6564, n14050, n46, n12110, 
-        n12111, n13099, n14192, n12099, n12100, n15, n15543, n14261, 
-        n13100, n13101, n12097, n30, n15553, n14178, n13953, n13951, 
-        n14562, n14560, n14103, n13152, n13151, n11670, n6, n10589, 
-        n12089, n17, n16, n14190, n12098, n14561, n11920, n14254, 
-        n10533, n12088, n11782, n11672, n11781, n11900, n6537, 
-        n6549, n11906, n14335, n13562, n13563, n14334, n11729, 
-        n14333, n14045, n30_adj_783, n63, n11728, n10552, n10551, 
-        n10550, n14211, n6_adj_784, n10549, n10548, n9, n10547, 
-        n10546, n10545, n15_adj_785, n10544, n13153;
+    wire n21, n9077, n11070, n18, n14, n2442, n2441, n2439, 
+        n2435, n2433, n10257, n23, n9305, n9331, n16, n11154, 
+        n8139, n11153, n30_adj_721, n10926, n63, n10743, n10, 
+        n10990, n10948, n8163, n5, n10927, n11155, n10952;
     wire [5:0]state_5__N_168;
     
-    wire n2807, n11783, n6534, n6_adj_786;
+    wire n5183, n9190, n9195, n9327, n5134, n6674;
     wire [5:0]state_5__N_174;
     
-    wire n2810, n11805, n6_adj_787, n12, n11818, n10543, n6_adj_788, 
-        n2812;
+    wire n9185, n10_adj_722, n11058;
     wire [5:0]state_5__N_186;
     
-    wire n2814, n11820, n11898, n2816, n30_adj_789, n10542, n15552, 
-        n15551, n10537, n10536, n10530;
+    wire n9, n8, n10947, n9612, n9615, n8112, n11064, n8111, 
+        n9616, n5366, n9_adj_723, n8_adj_724, lcd_rst_high_flag_N_270, 
+        n9329, n10278, n9133, n9007, n9625, n12, n9307, n8123, 
+        n8122, n11102, n10742, n8121, n11221;
     
-    LUT4 i1_2_lut_rep_345 (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), .Z(n14262)) /* synthesis lut_function=((B)+!A) */ ;
-    defparam i1_2_lut_rep_345.init = 16'hdddd;
+    FD1S3IX cnt_s2_num__i0 (.D(n24[0]), .CK(sys_clk_50MHz), .CD(n11079), 
+            .Q(cnt_s2_num[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
+    defparam cnt_s2_num__i0.GSR = "ENABLED";
+    CCU2D cnt_150ms_453_add_4_15 (.A0(cnt_150ms[13]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[14]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8119), .COUT(n8120), .S0(n97[13]), .S1(n97[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_15.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_15.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_15.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_15.INJECT1_1 = "NO";
     FD1S3AX init_data_i0 (.D(init_data_8__N_97[0]), .CK(sys_clk_50MHz), 
             .Q(init_data[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
     defparam init_data_i0.GSR = "ENABLED";
-    FD1S3IX cnt_s2_num__i0 (.D(n24[0]), .CK(sys_clk_50MHz), .CD(n14259), 
-            .Q(cnt_s2_num[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
-    defparam cnt_s2_num__i0.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i0 (.D(n357[0]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
+    FD1S3IX cnt_s4_num_done_177 (.D(cnt_s4_num_done_N_274), .CK(sys_clk_50MHz), 
+            .CD(n907), .Q(state_5__N_192[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(271[10] 274[33])
+    defparam cnt_s4_num_done_177.GSR = "ENABLED";
+    CCU2D add_153_5 (.A0(cnt_s4_num[3]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
+          .A1(cnt_s4_num[4]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
+          .CIN(n8105), .COUT(n8106), .S0(n357[3]), .S1(n357[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+    defparam add_153_5.INIT0 = 16'h5aaa;
+    defparam add_153_5.INIT1 = 16'h5aaa;
+    defparam add_153_5.INJECT1_0 = "NO";
+    defparam add_153_5.INJECT1_1 = "NO";
+    LUT4 cnt_s4_num_3__bdd_4_lut (.A(cnt_s4_num[3]), .B(cnt_s4_num[1]), 
+         .C(cnt_s4_num[0]), .D(cnt_s4_num[2]), .Z(n11263)) /* synthesis lut_function=(!(A (B+(C+!(D)))+!A ((C+(D))+!B))) */ ;
+    defparam cnt_s4_num_3__bdd_4_lut.init = 16'h0204;
+    FD1P3IX cnt_s4_num__i0 (.D(n357[0]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
             .CK(sys_clk_50MHz), .Q(cnt_s4_num[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
     defparam cnt_s4_num__i0.GSR = "ENABLED";
-    FD1P3AX state_FSM_i0 (.D(n15564), .SP(sys_clk_50MHz_enable_5), .CK(sys_clk_50MHz), 
+    FD1P3AX state_FSM_i0 (.D(n11908), .SP(sys_clk_50MHz_enable_4), .CK(sys_clk_50MHz), 
             .Q(state[5]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
     defparam state_FSM_i0.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i17 (.D(n357[17]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[17])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i17.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i16 (.D(n357[16]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[16])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i16.GSR = "ENABLED";
-    PFUMX i13197 (.BLUT(n13749), .ALUT(n13748), .C0(n6342), .Z(n13750));
-    FD1P3IX cnt_s4_num__i15 (.D(n357[15]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[15])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i15.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i14 (.D(n357[14]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[14])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i14.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i13 (.D(n357[13]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[13])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i13.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i12 (.D(n357[12]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[12])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i12.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i11 (.D(n357[11]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[11])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i11.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i10 (.D(n357[10]), .SP(sys_clk_50MHz_enable_45), 
-            .CD(n14214), .CK(sys_clk_50MHz), .Q(cnt_s4_num[10])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i10.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i9 (.D(n357[9]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[9])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i9.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i8 (.D(n357[8]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i8.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i7 (.D(n357[7]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i7.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i6 (.D(n357[6]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i6.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i5 (.D(n357[5]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i5.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i4 (.D(n357[4]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i4.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i3 (.D(n357[3]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i3.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i2 (.D(n357[2]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i2.GSR = "ENABLED";
-    FD1P3IX cnt_s4_num__i1 (.D(n357[1]), .SP(sys_clk_50MHz_enable_45), .CD(n14214), 
-            .CK(sys_clk_50MHz), .Q(cnt_s4_num[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
-    defparam cnt_s4_num__i1.GSR = "ENABLED";
-    CCU2D add_153_13 (.A0(cnt_s4_num[11]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_s4_num[12]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10534), .COUT(n10535), .S0(n357[11]), 
-          .S1(n357[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
-    defparam add_153_13.INIT0 = 16'h5aaa;
-    defparam add_153_13.INIT1 = 16'h5aaa;
-    defparam add_153_13.INJECT1_0 = "NO";
-    defparam add_153_13.INJECT1_1 = "NO";
-    LUT4 cnt_s2_num_2__bdd_4_lut_13191_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), 
-         .C(cnt_s2_num[4]), .D(cnt_s2_num[3]), .Z(n13741)) /* synthesis lut_function=((B (C (D)+!C !(D))+!B (C (D)))+!A) */ ;
-    defparam cnt_s2_num_2__bdd_4_lut_13191_4_lut.init = 16'hf55d;
-    PFUMX i13192 (.BLUT(n13742), .ALUT(n13741), .C0(cnt_s2_num[2]), .Z(n13743));
-    FD1P3AX lcd_rst_172 (.D(n15564), .SP(lcd_rst_high_flag), .CK(sys_clk_50MHz), 
+    FD1P3AX lcd_rst_172 (.D(n11908), .SP(lcd_rst_high_flag), .CK(sys_clk_50MHz), 
             .Q(lcd_rst_c)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(121[10] 124[28])
     defparam lcd_rst_172.GSR = "ENABLED";
     FD1S3IX cnt_s2_num_done_174 (.D(cnt_s2_num_done_N_272), .CK(sys_clk_50MHz), 
-            .CD(n1338), .Q(state_5__N_180[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[10] 144[33])
+            .CD(n907), .Q(state_5__N_180[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[10] 144[33])
     defparam cnt_s2_num_done_174.GSR = "ENABLED";
-    FD1S3IX cnt_s4_num_done_177 (.D(cnt_s4_num_done_N_274), .CK(sys_clk_50MHz), 
-            .CD(n1338), .Q(state_5__N_192[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(271[10] 274[33])
-    defparam cnt_s4_num_done_177.GSR = "ENABLED";
-    L6MUX21 i11478 (.D0(n12101), .D1(n12102), .SD(cnt_s2_num[5]), .Z(n12103));
+    CCU2D cnt_150ms_453_add_4_13 (.A0(cnt_150ms[11]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[12]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8118), .COUT(n8119), .S0(n97[11]), .S1(n97[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_13.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_13.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_13.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_13.INJECT1_1 = "NO";
+    PFUMX i10625 (.BLUT(n11219), .ALUT(n11216), .C0(state[2]), .Z(init_data_8__N_97[1]));
+    CCU2D cnt_150ms_453_add_4_11 (.A0(cnt_150ms[9]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[10]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8117), .COUT(n8118), .S0(n97[9]), .S1(n97[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_11.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_11.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_11.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_11.INJECT1_1 = "NO";
+    FD1S3IX cnt_150ms_453__i21 (.D(n97[21]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[21])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i21.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i20 (.D(n97[20]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[20])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i20.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i19 (.D(n97[19]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[19])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i19.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i18 (.D(n97[18]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[18])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i18.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i17 (.D(n97[17]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[17])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i17.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i16 (.D(n97[16]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[16])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i16.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i15 (.D(n97[15]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[15])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i15.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i14 (.D(n97[14]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[14])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i14.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i13 (.D(n97[13]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[13])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i13.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i12 (.D(n97[12]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[12])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i12.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i11 (.D(n97[11]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[11])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i11.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i10 (.D(n97[10]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[10])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i10.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i9 (.D(n97[9]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[9])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i9.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i8 (.D(n97[8]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[8])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i8.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i7 (.D(n97[7]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[7])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i7.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i6 (.D(n97[6]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[6])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i6.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i5 (.D(n97[5]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[5])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i5.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i4 (.D(n97[4]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[4])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i4.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i3 (.D(n97[3]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[3])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i3.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i2 (.D(n97[2]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[2])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i2.GSR = "ENABLED";
+    FD1S3IX cnt_150ms_453__i1 (.D(n97[1]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[1])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i1.GSR = "ENABLED";
+    PFUMX i10662 (.BLUT(n11265), .ALUT(n11262), .C0(state[2]), .Z(init_data_8__N_97[6]));
+    CCU2D cnt_150ms_453_add_4_9 (.A0(cnt_150ms[7]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[8]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8116), .COUT(n8117), .S0(n97[7]), .S1(n97[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_9.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_9.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_9.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_9.INJECT1_1 = "NO";
+    LUT4 n9603_bdd_4_lut (.A(n9603), .B(n9602), .C(cnt_s2_num[6]), .D(cnt_s2_num[5]), 
+         .Z(n11262)) /* synthesis lut_function=(!(A (B (C)+!B (C+!(D)))+!A ((C+(D))+!B))) */ ;
+    defparam n9603_bdd_4_lut.init = 16'h0a0c;
+    CCU2D cnt_150ms_453_add_4_7 (.A0(cnt_150ms[5]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[6]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8115), .COUT(n8116), .S0(n97[5]), .S1(n97[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_7.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_7.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_7.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_7.INJECT1_1 = "NO";
+    PFUMX init_data_8__I_0_i9 (.BLUT(init_data_8__N_231[8]), .ALUT(init_data_8__N_240[8]), 
+          .C0(state[2]), .Z(init_data_8__N_97[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;
+    CCU2D add_153_3 (.A0(cnt_s4_num[1]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
+          .A1(cnt_s4_num[2]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
+          .CIN(n8104), .COUT(n8105), .S0(n357[1]), .S1(n357[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+    defparam add_153_3.INIT0 = 16'h5aaa;
+    defparam add_153_3.INIT1 = 16'h5aaa;
+    defparam add_153_3.INJECT1_0 = "NO";
+    defparam add_153_3.INJECT1_1 = "NO";
+    FD1S3AX init_data_i8 (.D(init_data_8__N_97[8]), .CK(sys_clk_50MHz), 
+            .Q(init_data[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
+    defparam init_data_i8.GSR = "ENABLED";
     CCU2D add_153_7 (.A0(cnt_s4_num[5]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
           .A1(cnt_s4_num[6]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .CIN(n10531), .COUT(n10532), .S0(n357[5]), .S1(n357[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+          .CIN(n8106), .COUT(n8107), .S0(n357[5]), .S1(n357[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
     defparam add_153_7.INIT0 = 16'h5aaa;
     defparam add_153_7.INIT1 = 16'h5aaa;
     defparam add_153_7.INJECT1_0 = "NO";
     defparam add_153_7.INJECT1_1 = "NO";
+    PFUMX init_data_8__I_0_i8 (.BLUT(init_data_8__N_231[7]), .ALUT(init_data_8__N_240[7]), 
+          .C0(state[2]), .Z(init_data_8__N_97[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;
+    CCU2D cnt_150ms_453_add_4_5 (.A0(cnt_150ms[3]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[4]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8114), .COUT(n8115), .S0(n97[3]), .S1(n97[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_5.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_5.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_5.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_5.INJECT1_1 = "NO";
     CCU2D add_153_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
           .A1(cnt_s4_num[0]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .COUT(n10529), .S1(n357[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+          .COUT(n8104), .S1(n357[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
     defparam add_153_1.INIT0 = 16'hF000;
     defparam add_153_1.INIT1 = 16'h5555;
     defparam add_153_1.INJECT1_0 = "NO";
     defparam add_153_1.INJECT1_1 = "NO";
-    FD1P3IX cnt_s2_num__i6 (.D(n159[6]), .SP(sys_clk_50MHz_enable_76), .CD(n14259), 
-            .CK(sys_clk_50MHz), .Q(cnt_s2_num[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
-    defparam cnt_s2_num__i6.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i22 (.D(n97[22]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[22])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i22.GSR = "ENABLED";
-    FD1P3IX cnt_s2_num__i5 (.D(n159[5]), .SP(sys_clk_50MHz_enable_76), .CD(n14259), 
-            .CK(sys_clk_50MHz), .Q(cnt_s2_num[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
-    defparam cnt_s2_num__i5.GSR = "ENABLED";
-    FD1P3IX cnt_s2_num__i4 (.D(n159[4]), .SP(sys_clk_50MHz_enable_76), .CD(n14259), 
-            .CK(sys_clk_50MHz), .Q(cnt_s2_num[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
-    defparam cnt_s2_num__i4.GSR = "ENABLED";
-    FD1P3IX cnt_s2_num__i3 (.D(n159[3]), .SP(sys_clk_50MHz_enable_76), .CD(n14259), 
-            .CK(sys_clk_50MHz), .Q(cnt_s2_num[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
-    defparam cnt_s2_num__i3.GSR = "ENABLED";
-    FD1P3IX cnt_s2_num__i2 (.D(n159[2]), .SP(sys_clk_50MHz_enable_76), .CD(n14259), 
-            .CK(sys_clk_50MHz), .Q(cnt_s2_num[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
-    defparam cnt_s2_num__i2.GSR = "ENABLED";
-    FD1P3IX cnt_s2_num__i1 (.D(n14247), .SP(sys_clk_50MHz_enable_76), .CD(n14259), 
-            .CK(sys_clk_50MHz), .Q(cnt_s2_num[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
-    defparam cnt_s2_num__i1.GSR = "ENABLED";
-    FD1S3AX init_data_i8 (.D(init_data_8__N_97[8]), .CK(sys_clk_50MHz), 
-            .Q(init_data[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
-    defparam init_data_i8.GSR = "ENABLED";
+    CCU2D add_153_13 (.A0(cnt_s4_num[11]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_s4_num[12]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8109), .COUT(n8110), .S0(n357[11]), .S1(n357[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+    defparam add_153_13.INIT0 = 16'h5aaa;
+    defparam add_153_13.INIT1 = 16'h5aaa;
+    defparam add_153_13.INJECT1_0 = "NO";
+    defparam add_153_13.INJECT1_1 = "NO";
+    LUT4 n11218_bdd_2_lut_3_lut (.A(n11217), .B(state[4]), .C(n4951), 
+         .Z(n11219)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;
+    defparam n11218_bdd_2_lut_3_lut.init = 16'h0808;
+    CCU2D add_153_9 (.A0(cnt_s4_num[7]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
+          .A1(cnt_s4_num[8]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
+          .CIN(n8107), .COUT(n8108), .S0(n357[7]), .S1(n357[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+    defparam add_153_9.INIT0 = 16'h5aaa;
+    defparam add_153_9.INIT1 = 16'h5aaa;
+    defparam add_153_9.INJECT1_0 = "NO";
+    defparam add_153_9.INJECT1_1 = "NO";
+    LUT4 n4951_bdd_4_lut_10421 (.A(n4951), .B(cnt_s4_num[1]), .C(cnt_s4_num[2]), 
+         .D(cnt_s4_num[0]), .Z(n10256)) /* synthesis lut_function=(!(A (B (C))+!A (B (C+!(D))+!B (C)))) */ ;
+    defparam n4951_bdd_4_lut_10421.init = 16'h2f2b;
+    LUT4 i5651_2_lut_2_lut_4_lut (.A(cnt_s2_num[6]), .B(n10280), .C(n9594), 
+         .D(cnt_s2_num[5]), .Z(init_data_8__N_240[8])) /* synthesis lut_function=(!(A+!(B (C+!(D))+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[13:32])
+    defparam i5651_2_lut_2_lut_4_lut.init = 16'h5044;
+    LUT4 i618_2_lut_3_lut_4_lut (.A(cnt_s2_num[3]), .B(n10998), .C(cnt_s2_num[5]), 
+         .D(cnt_s2_num[4]), .Z(n159[5])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i618_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 mux_210_Mux_6_i46_4_lut_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
+         .C(cnt_s2_num[0]), .D(cnt_s2_num[1]), .Z(n46)) /* synthesis lut_function=(!(A+(B (C (D)+!C !(D))+!B !(C (D))))) */ ;
+    defparam mux_210_Mux_6_i46_4_lut_4_lut_4_lut.init = 16'h1440;
+    LUT4 i9923_4_lut (.A(cnt_s2_num[5]), .B(n11039), .C(cnt_s2_num[4]), 
+         .D(cnt_s2_num[6]), .Z(cnt_s2_num_done_N_272)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[13:32])
+    defparam i9923_4_lut.init = 16'h1000;
+    LUT4 mux_210_Mux_1_i30_3_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), 
+         .C(cnt_s2_num[2]), .D(cnt_s2_num[3]), .Z(n30)) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A (((D)+!C)+!B))) */ ;
+    defparam mux_210_Mux_1_i30_3_lut_4_lut.init = 16'h2062;
+    LUT4 mux_210_Mux_6_i15_4_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), 
+         .C(cnt_s2_num[2]), .D(cnt_s2_num[3]), .Z(n15)) /* synthesis lut_function=(A (B (C (D)))+!A !((C+(D))+!B)) */ ;
+    defparam mux_210_Mux_6_i15_4_lut_4_lut_4_lut.init = 16'h8004;
+    LUT4 i9191_4_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), 
+         .C(cnt_s2_num[2]), .D(cnt_s2_num[3]), .Z(n9614)) /* synthesis lut_function=(!(A (B+(C+!(D)))+!A ((C+(D))+!B))) */ ;
+    defparam i9191_4_lut_4_lut_4_lut.init = 16'h0204;
+    LUT4 i9190_3_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), 
+         .C(cnt_s2_num[2]), .D(cnt_s2_num[3]), .Z(n9613)) /* synthesis lut_function=(!(A (B (C)+!B !(C (D)))+!A !(C (D)))) */ ;
+    defparam i9190_3_lut_4_lut_4_lut.init = 16'h7808;
+    LUT4 i9188_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[0]), .C(cnt_s2_num[1]), 
+         .D(cnt_s2_num[3]), .Z(n9611)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B ((D)+!C))+!A (((D)+!C)+!B))) */ ;
+    defparam i9188_4_lut_4_lut.init = 16'h08e0;
     FD1S3AX init_data_i7 (.D(init_data_8__N_97[7]), .CK(sys_clk_50MHz), 
             .Q(init_data[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
     defparam init_data_i7.GSR = "ENABLED";
-    FD1S3IX lcd_rst_high_flag_171 (.D(lcd_rst_high_flag_N_270), .CK(sys_clk_50MHz), 
-            .CD(n6878), .Q(lcd_rst_high_flag)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(112[10] 115[35])
-    defparam lcd_rst_high_flag_171.GSR = "ENABLED";
     FD1S3AX init_data_i6 (.D(init_data_8__N_97[6]), .CK(sys_clk_50MHz), 
             .Q(init_data[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
     defparam init_data_i6.GSR = "ENABLED";
     FD1S3AX init_data_i5 (.D(init_data_8__N_97[5]), .CK(sys_clk_50MHz), 
             .Q(init_data[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
     defparam init_data_i5.GSR = "ENABLED";
+    LUT4 n4951_bdd_3_lut_10514 (.A(cnt_s4_num[1]), .B(cnt_s4_num[2]), .C(cnt_s4_num[0]), 
+         .Z(n10255)) /* synthesis lut_function=(!(A+!(B (C)+!B !(C)))) */ ;
+    defparam n4951_bdd_3_lut_10514.init = 16'h4141;
+    LUT4 i5838_2_lut_3_lut_4_lut (.A(n4951), .B(cnt_s4_num[0]), .C(state[4]), 
+         .D(n10989), .Z(init_data_8__N_231[7])) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(238[13:17])
+    defparam i5838_2_lut_3_lut_4_lut.init = 16'h0010;
     FD1S3AX init_data_i4 (.D(init_data_8__N_97[4]), .CK(sys_clk_50MHz), 
             .Q(init_data[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
     defparam init_data_i4.GSR = "ENABLED";
@@ -640,541 +718,443 @@ module lcd_init (cnt_s2_num, init_data, sys_clk_50MHz, sys_clk_50MHz_enable_45,
     FD1S3AX init_data_i1 (.D(init_data_8__N_97[1]), .CK(sys_clk_50MHz), 
             .Q(init_data[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(150[10] 254[32])
     defparam init_data_i1.GSR = "ENABLED";
-    PFUMX init_data_8__I_0_i9 (.BLUT(init_data_8__N_231[8]), .ALUT(init_data_8__N_240[8]), 
-          .C0(state_c[2]), .Z(init_data_8__N_97[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;
-    PFUMX init_data_8__I_0_i4 (.BLUT(init_data_8__N_231[3]), .ALUT(init_data_8__N_240[3]), 
-          .C0(state_c[2]), .Z(init_data_8__N_97[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;
-    LUT4 cnt_s2_num_2__bdd_4_lut_13854 (.A(cnt_s2_num[0]), .B(cnt_s2_num[3]), 
-         .C(cnt_s2_num[4]), .D(cnt_s2_num[1]), .Z(n13742)) /* synthesis lut_function=(A (B (C+!(D)))+!A !(B (C (D))+!B !(C+(D)))) */ ;
-    defparam cnt_s2_num_2__bdd_4_lut_13854.init = 16'h95dc;
-    PFUMX init_data_8__I_0_i8 (.BLUT(init_data_8__N_231[7]), .ALUT(init_data_8__N_240[7]), 
-          .C0(state_c[2]), .Z(init_data_8__N_97[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;
-    LUT4 i7005_2_lut_2_lut_4_lut (.A(cnt_s2_num[6]), .B(n13743), .C(n13740), 
-         .D(cnt_s2_num[5]), .Z(init_data_8__N_240[8])) /* synthesis lut_function=(!(A+!(B (C+!(D))+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[13:32])
-    defparam i7005_2_lut_2_lut_4_lut.init = 16'h5044;
-    LUT4 i1_2_lut_rep_150 (.A(n6342), .B(cnt_s4_num[0]), .Z(n14067)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(238[13:17])
-    defparam i1_2_lut_rep_150.init = 16'heeee;
-    LUT4 i6993_3_lut_rep_133_4_lut (.A(cnt_s4_num[1]), .B(n14066), .C(n11800), 
-         .D(n6564), .Z(n14050)) /* synthesis lut_function=(A (B+(C))+!A (D)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(231[13:16])
-    defparam i6993_3_lut_rep_133_4_lut.init = 16'hfda8;
-    LUT4 mux_283_Mux_6_i46_4_lut_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
-         .C(cnt_s2_num[1]), .D(cnt_s2_num[0]), .Z(n46)) /* synthesis lut_function=(!(A+(B (C (D)+!C !(D))+!B !(C (D))))) */ ;
-    defparam mux_283_Mux_6_i46_4_lut_4_lut_4_lut.init = 16'h1440;
-    LUT4 n6564_bdd_4_lut_12721 (.A(n12110), .B(n12111), .C(cnt_s2_num[6]), 
-         .D(cnt_s2_num[5]), .Z(n13099)) /* synthesis lut_function=(!(A (B (C)+!B (C+(D)))+!A ((C+!(D))+!B))) */ ;
-    defparam n6564_bdd_4_lut_12721.init = 16'h0c0a;
-    LUT4 i7127_2_lut_2_lut_3_lut_4_lut (.A(n6342), .B(cnt_s4_num[0]), .C(\state[4] ), 
-         .D(n14192), .Z(init_data_8__N_231[7])) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(238[13:17])
-    defparam i7127_2_lut_2_lut_3_lut_4_lut.init = 16'h0010;
-    LUT4 i11474_3_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[1]), .D(cnt_s2_num[3]), .Z(n12099)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C))+!A !(B (D)))) */ ;
-    defparam i11474_3_lut_4_lut_4_lut.init = 16'h6c20;
-    LUT4 i11475_4_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[1]), .D(cnt_s2_num[3]), .Z(n12100)) /* synthesis lut_function=(!(A (B+(C+!(D)))+!A (B+((D)+!C)))) */ ;
-    defparam i11475_4_lut_4_lut_4_lut.init = 16'h0210;
-    LUT4 mux_283_Mux_6_i15_4_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[1]), .D(cnt_s2_num[3]), .Z(n15)) /* synthesis lut_function=(A (B (C (D)))+!A !(B+((D)+!C))) */ ;
-    defparam mux_283_Mux_6_i15_4_lut_4_lut_4_lut.init = 16'h8010;
-    LUT4 n6564_bdd_4_lut_12727 (.A(n6564), .B(n15543), .C(n14261), .D(n14067), 
-         .Z(n13100)) /* synthesis lut_function=(!(A (B (C+(D))))) */ ;
-    defparam n6564_bdd_4_lut_12727.init = 16'h777f;
-    LUT4 n165_bdd_2_lut_12760 (.A(n13100), .B(\state[4] ), .Z(n13101)) /* synthesis lut_function=(A (B)) */ ;
-    defparam n165_bdd_2_lut_12760.init = 16'h8888;
-    LUT4 i11472_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[0]), .C(cnt_s2_num[1]), 
-         .D(cnt_s2_num[3]), .Z(n12097)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B ((D)+!C))+!A (((D)+!C)+!B))) */ ;
-    defparam i11472_4_lut_4_lut.init = 16'h08e0;
-    LUT4 mux_283_Mux_1_i30_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), 
-         .C(cnt_s2_num[2]), .D(cnt_s2_num[3]), .Z(n30)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A !(B (C+!(D))))) */ ;
-    defparam mux_283_Mux_1_i30_3_lut_4_lut.init = 16'h4064;
-    LUT4 init_data_8__I_0_i1_4_lut (.A(n15553), .B(\init_data_8__N_240[0] ), 
-         .C(state_c[2]), .D(\state[4] ), .Z(init_data_8__N_97[0])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
-    defparam init_data_8__I_0_i1_4_lut.init = 16'hcac0;
-    LUT4 i778_2_lut_3_lut_4_lut (.A(cnt_s2_num[3]), .B(n14178), .C(cnt_s2_num[5]), 
-         .D(cnt_s2_num[4]), .Z(n159[5])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i778_2_lut_3_lut_4_lut.init = 16'h78f0;
+    FD1P3IX cnt_s2_num__i6 (.D(n159[6]), .SP(sys_clk_50MHz_enable_45), .CD(n11079), 
+            .CK(sys_clk_50MHz), .Q(cnt_s2_num[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
+    defparam cnt_s2_num__i6.GSR = "ENABLED";
+    FD1P3IX cnt_s2_num__i5 (.D(n159[5]), .SP(sys_clk_50MHz_enable_45), .CD(n11079), 
+            .CK(sys_clk_50MHz), .Q(cnt_s2_num[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
+    defparam cnt_s2_num__i5.GSR = "ENABLED";
     LUT4 cnt_s2_num_5__bdd_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[3]), .D(cnt_s2_num[1]), .Z(n13953)) /* synthesis lut_function=(A (B (C+!(D))+!B (C (D)))) */ ;
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[1]), .Z(n10893)) /* synthesis lut_function=(A (B (C+!(D))+!B (C (D)))) */ ;
     defparam cnt_s2_num_5__bdd_4_lut.init = 16'ha088;
-    LUT4 cnt_s2_num_0__bdd_4_lut_13369 (.A(cnt_s2_num[0]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[3]), .D(cnt_s2_num[1]), .Z(n13951)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B+!(C (D))))) */ ;
-    defparam cnt_s2_num_0__bdd_4_lut_13369.init = 16'h1020;
-    LUT4 state_5__N_164_I_0_2_lut (.A(state_c[2]), .B(\state[4] ), .Z(en_write_init)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(276[19:72])
-    defparam state_5__N_164_I_0_2_lut.init = 16'heeee;
-    LUT4 n14562_bdd_4_lut (.A(n14562), .B(n6342), .C(n14560), .D(state_c[2]), 
-         .Z(init_data_8__N_97[6])) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))+!A (C (D))) */ ;
-    defparam n14562_bdd_4_lut.init = 16'hf022;
-    LUT4 i785_3_lut_4_lut (.A(cnt_s2_num[4]), .B(n14103), .C(cnt_s2_num[5]), 
-         .D(cnt_s2_num[6]), .Z(n159[6])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i785_3_lut_4_lut.init = 16'h7f80;
-    LUT4 n6342_bdd_4_lut_13523 (.A(cnt_s4_num[1]), .B(cnt_s4_num[3]), .C(cnt_s4_num[2]), 
-         .D(cnt_s4_num[0]), .Z(n13152)) /* synthesis lut_function=(A (B (C)+!B !(D))+!A !(B+!(C))) */ ;
-    defparam n6342_bdd_4_lut_13523.init = 16'h90b2;
-    LUT4 n6342_bdd_2_lut (.A(cnt_s4_num[1]), .B(cnt_s4_num[2]), .Z(n13151)) /* synthesis lut_function=(A (B)) */ ;
-    defparam n6342_bdd_2_lut.init = 16'h8888;
-    LUT4 i1_4_lut (.A(n11670), .B(cnt_s4_num[14]), .C(n6), .D(cnt_s4_num[12]), 
-         .Z(n6342)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i1_4_lut.init = 16'hfffe;
-    PFUMX i11464 (.BLUT(n46), .ALUT(n10589), .C0(cnt_s2_num[4]), .Z(n12089));
-    LUT4 i2_2_lut (.A(cnt_s4_num[17]), .B(cnt_s4_num[11]), .Z(n6)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i2_2_lut.init = 16'heeee;
-    LUT4 i9_4_lut (.A(n17), .B(cnt_s4_num[5]), .C(n16), .D(cnt_s4_num[15]), 
-         .Z(n11670)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i9_4_lut.init = 16'hfffe;
-    LUT4 i7_4_lut (.A(cnt_s4_num[9]), .B(cnt_s4_num[8]), .C(cnt_s4_num[4]), 
-         .D(cnt_s4_num[13]), .Z(n17)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i7_4_lut.init = 16'hfffe;
-    LUT4 i12536_4_lut (.A(cnt_s2_num[5]), .B(n14190), .C(cnt_s2_num[4]), 
-         .D(cnt_s2_num[6]), .Z(cnt_s2_num_done_N_272)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[13:32])
-    defparam i12536_4_lut.init = 16'h1000;
-    LUT4 i6_4_lut (.A(cnt_s4_num[16]), .B(cnt_s4_num[7]), .C(cnt_s4_num[6]), 
-         .D(cnt_s4_num[10]), .Z(n16)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i6_4_lut.init = 16'hfffe;
-    PFUMX i11476 (.BLUT(n12097), .ALUT(n12098), .C0(cnt_s2_num[4]), .Z(n12101));
-    PFUMX i11477 (.BLUT(n12099), .ALUT(n12100), .C0(cnt_s2_num[4]), .Z(n12102));
-    LUT4 cnt_s4_num_2__bdd_4_lut_14182 (.A(cnt_s4_num[2]), .B(cnt_s4_num[3]), 
-         .C(cnt_s4_num[1]), .D(cnt_s4_num[0]), .Z(n14561)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A (B+((D)+!C)))) */ ;
-    defparam cnt_s4_num_2__bdd_4_lut_14182.init = 16'h0018;
-    LUT4 i1_2_lut (.A(cnt_s4_num[3]), .B(cnt_s4_num[2]), .Z(n11800)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(230[13:16])
-    defparam i1_2_lut.init = 16'hbbbb;
-    LUT4 i1_3_lut_rep_363 (.A(n6342), .B(cnt_s4_num[0]), .C(n11800), .D(cnt_s4_num[1]), 
-         .Z(n15543)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(235[13:16])
-    defparam i1_3_lut_rep_363.init = 16'hfbff;
-    LUT4 i12579_4_lut (.A(n14192), .B(n11670), .C(cnt_s4_num[0]), .D(n11920), 
-         .Z(cnt_s4_num_done_N_274)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(271[13:36])
-    defparam i12579_4_lut.init = 16'h1000;
-    LUT4 i11298_4_lut (.A(cnt_s4_num[14]), .B(cnt_s4_num[11]), .C(cnt_s4_num[17]), 
-         .D(cnt_s4_num[12]), .Z(n11920)) /* synthesis lut_function=(A (B (C (D)))) */ ;
-    defparam i11298_4_lut.init = 16'h8000;
-    LUT4 n165_bdd_2_lut_13596 (.A(n14561), .B(\state[4] ), .Z(n14562)) /* synthesis lut_function=(A (B)) */ ;
-    defparam n165_bdd_2_lut_13596.init = 16'h8888;
-    LUT4 i771_2_lut_3_lut_4_lut (.A(cnt_s2_num[2]), .B(n14254), .C(cnt_s2_num[4]), 
-         .D(cnt_s2_num[3]), .Z(n159[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i771_2_lut_3_lut_4_lut.init = 16'h78f0;
-    CCU2D add_153_9 (.A0(cnt_s4_num[7]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
-          .A1(cnt_s4_num[8]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .CIN(n10532), .COUT(n10533), .S0(n357[7]), .S1(n357[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
-    defparam add_153_9.INIT0 = 16'h5aaa;
-    defparam add_153_9.INIT1 = 16'h5aaa;
-    defparam add_153_9.INJECT1_0 = "NO";
-    defparam add_153_9.INJECT1_1 = "NO";
-    LUT4 i12655_3_lut (.A(state_c[3]), .B(state_c[1]), .C(state_c[0]), 
-         .Z(cnt_150ms_22__N_221)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(103[13:86])
-    defparam i12655_3_lut.init = 16'h0101;
-    LUT4 n12089_bdd_4_lut_14181 (.A(n12089), .B(n12088), .C(cnt_s2_num[6]), 
-         .D(cnt_s2_num[5]), .Z(n14560)) /* synthesis lut_function=(!(A (B (C)+!B (C+!(D)))+!A ((C+(D))+!B))) */ ;
-    defparam n12089_bdd_4_lut_14181.init = 16'h0a0c;
-    LUT4 i6021_1_lut (.A(state_c[0]), .Z(n6878)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i6021_1_lut.init = 16'h5555;
-    LUT4 i12563_4_lut (.A(n11782), .B(n11672), .C(cnt_150ms[5]), .D(cnt_150ms[6]), 
-         .Z(lcd_rst_high_flag_N_270)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(112[39:70])
-    defparam i12563_4_lut.init = 16'h0010;
-    LUT4 i1_4_lut_adj_31 (.A(cnt_150ms[3]), .B(n11781), .C(n11900), .D(cnt_150ms[0]), 
-         .Z(n11782)) /* synthesis lut_function=((B+!(C (D)))+!A) */ ;
-    defparam i1_4_lut_adj_31.init = 16'hdfff;
-    LUT4 i11279_3_lut (.A(cnt_150ms[2]), .B(cnt_150ms[1]), .C(cnt_150ms[4]), 
-         .Z(n11900)) /* synthesis lut_function=(A (B (C))) */ ;
-    defparam i11279_3_lut.init = 16'h8080;
-    LUT4 i2_4_lut (.A(cnt_150ms[18]), .B(n6537), .C(cnt_150ms[9]), .D(n6549), 
-         .Z(n11781)) /* synthesis lut_function=((B+((D)+!C))+!A) */ ;
-    defparam i2_4_lut.init = 16'hffdf;
-    LUT4 i3_4_lut (.A(cnt_150ms[7]), .B(cnt_150ms[17]), .C(cnt_150ms[22]), 
-         .D(cnt_150ms[20]), .Z(n11672)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(112[39:70])
-    defparam i3_4_lut.init = 16'hffef;
-    LUT4 i3_4_lut_adj_32 (.A(cnt_150ms[21]), .B(cnt_150ms[13]), .C(cnt_150ms[12]), 
-         .D(n11906), .Z(n6537)) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(90[26:50])
-    defparam i3_4_lut_adj_32.init = 16'hfeff;
-    LUT4 i11284_3_lut (.A(cnt_150ms[11]), .B(cnt_150ms[19]), .C(cnt_150ms[8]), 
-         .Z(n11906)) /* synthesis lut_function=(A (B (C))) */ ;
-    defparam i11284_3_lut.init = 16'h8080;
-    LUT4 i3_4_lut_adj_33 (.A(cnt_150ms[15]), .B(cnt_150ms[14]), .C(cnt_150ms[16]), 
-         .D(cnt_150ms[10]), .Z(n6549)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(86[26:50])
-    defparam i3_4_lut_adj_33.init = 16'hfffb;
-    LUT4 init_data_8__I_0_i6_4_lut (.A(n14335), .B(\init_data_8__N_240[5] ), 
-         .C(state_c[2]), .D(\state[4] ), .Z(init_data_8__N_97[5])) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
-    defparam init_data_8__I_0_i6_4_lut.init = 16'hc5c0;
-    LUT4 init_data_8__I_0_i5_4_lut (.A(n14050), .B(\init_data_8__N_240[4] ), 
-         .C(state_c[2]), .D(\state[4] ), .Z(init_data_8__N_97[4])) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
-    defparam init_data_8__I_0_i5_4_lut.init = 16'hc5c0;
-    LUT4 cnt_s2_num_0__bdd_3_lut (.A(cnt_s2_num[4]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[3]), .Z(n13562)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;
-    defparam cnt_s2_num_0__bdd_3_lut.init = 16'h0202;
-    LUT4 cnt_s2_num_0__bdd_4_lut_13358 (.A(cnt_s2_num[4]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[1]), .D(cnt_s2_num[3]), .Z(n13563)) /* synthesis lut_function=(!(A+(B (C)+!B ((D)+!C)))) */ ;
-    defparam cnt_s2_num_0__bdd_4_lut_13358.init = 16'h0414;
-    LUT4 n11681_bdd_3_lut_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
-         .C(cnt_s2_num[4]), .D(n14262), .Z(n13740)) /* synthesis lut_function=(!(A (B (C))+!A (B (C+!(D))))) */ ;
-    defparam n11681_bdd_3_lut_4_lut_4_lut.init = 16'h3f3b;
-    LUT4 i2_4_lut_then_4_lut (.A(cnt_s4_num[0]), .B(cnt_s4_num[3]), .C(cnt_s4_num[1]), 
-         .D(n6342), .Z(n14334)) /* synthesis lut_function=(A (B (C+(D))+!B ((D)+!C))+!A ((C+(D))+!B)) */ ;
-    defparam i2_4_lut_then_4_lut.init = 16'hffd3;
-    LUT4 init_data_8__I_0_i3_4_lut (.A(n11729), .B(\init_data_8__N_240[2] ), 
-         .C(state_c[2]), .D(\state[4] ), .Z(init_data_8__N_97[2])) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
-    defparam init_data_8__I_0_i3_4_lut.init = 16'hc5c0;
-    LUT4 i2_4_lut_else_4_lut (.A(cnt_s4_num[0]), .B(cnt_s4_num[3]), .C(cnt_s4_num[1]), 
-         .D(n6342), .Z(n14333)) /* synthesis lut_function=(A (B+(D))+!A (B (C+(D))+!B (D))) */ ;
-    defparam i2_4_lut_else_4_lut.init = 16'hffc8;
-    LUT4 n13951_bdd_4_lut (.A(n13951), .B(cnt_s2_num[4]), .C(n13953), 
-         .D(cnt_s2_num[5]), .Z(n14045)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A ((D)+!C))) */ ;
-    defparam n13951_bdd_4_lut.init = 16'h22f0;
-    PFUMX i13432 (.BLUT(n14333), .ALUT(n14334), .C0(cnt_s4_num[2]), .Z(n14335));
-    PFUMX i13062 (.BLUT(n13563), .ALUT(n13562), .C0(cnt_s2_num[0]), .Z(n12111));
-    LUT4 i12464_4_lut (.A(n30_adj_783), .B(n14045), .C(cnt_s2_num[5]), 
-         .D(cnt_s2_num[4]), .Z(n63)) /* synthesis lut_function=(A (B+!(C+!(D)))+!A (B (C+!(D)))) */ ;
-    defparam i12464_4_lut.init = 16'hcacc;
-    LUT4 i1_2_lut_4_lut (.A(n15543), .B(cnt_s4_num[1]), .C(n6564), .D(n11728), 
-         .Z(n11729)) /* synthesis lut_function=(A (B (D)+!B (C (D)))) */ ;
-    defparam i1_2_lut_4_lut.init = 16'ha800;
-    CCU2D cnt_150ms_608_add_4_23 (.A0(cnt_150ms[21]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[22]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10552), .S0(n97[21]), .S1(n97[22]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_23.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_23.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_23.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_23.INJECT1_1 = "NO";
-    CCU2D cnt_150ms_608_add_4_21 (.A0(cnt_150ms[19]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[20]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10551), .COUT(n10552), .S0(n97[19]), .S1(n97[20]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_21.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_21.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_21.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_21.INJECT1_1 = "NO";
-    CCU2D cnt_150ms_608_add_4_19 (.A0(cnt_150ms[17]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[18]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10550), .COUT(n10551), .S0(n97[17]), .S1(n97[18]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_19.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_19.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_19.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_19.INJECT1_1 = "NO";
-    LUT4 i1_2_lut_rep_294 (.A(cnt_150ms[9]), .B(cnt_150ms[18]), .Z(n14211)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i1_2_lut_rep_294.init = 16'heeee;
-    LUT4 i2_2_lut_3_lut (.A(cnt_150ms[9]), .B(cnt_150ms[18]), .C(cnt_150ms[14]), 
-         .Z(n6_adj_784)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i2_2_lut_3_lut.init = 16'hfefe;
-    CCU2D cnt_150ms_608_add_4_17 (.A0(cnt_150ms[15]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[16]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10549), .COUT(n10550), .S0(n97[15]), .S1(n97[16]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_17.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_17.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_17.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_17.INJECT1_1 = "NO";
-    CCU2D cnt_150ms_608_add_4_15 (.A0(cnt_150ms[13]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[14]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10548), .COUT(n10549), .S0(n97[13]), .S1(n97[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_15.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_15.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_15.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_15.INJECT1_1 = "NO";
-    LUT4 i24_3_lut_4_lut (.A(cnt_s4_num[2]), .B(n14067), .C(cnt_s4_num[1]), 
-         .D(n6564), .Z(n9)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(254[9:32])
-    defparam i24_3_lut_4_lut.init = 16'hfe0e;
-    LUT4 i619_1_lut_rep_297 (.A(\state[4] ), .Z(n14214)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i619_1_lut_rep_297.init = 16'h5555;
-    LUT4 i8_3_lut_4_lut_4_lut (.A(\state[4] ), .B(n9), .C(n11728), .D(n15543), 
-         .Z(init_data_8__N_231[3])) /* synthesis lut_function=(!((B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i8_3_lut_4_lut_4_lut.init = 16'h2aaa;
-    CCU2D cnt_150ms_608_add_4_13 (.A0(cnt_150ms[11]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[12]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10547), .COUT(n10548), .S0(n97[11]), .S1(n97[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_13.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_13.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_13.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_13.INJECT1_1 = "NO";
-    CCU2D cnt_150ms_608_add_4_11 (.A0(cnt_150ms[9]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[10]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10546), .COUT(n10547), .S0(n97[9]), .S1(n97[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_11.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_11.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_11.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_11.INJECT1_1 = "NO";
-    CCU2D cnt_150ms_608_add_4_9 (.A0(cnt_150ms[7]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[8]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10545), .COUT(n10546), .S0(n97[7]), .S1(n97[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_9.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_9.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_9.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_9.INJECT1_1 = "NO";
-    LUT4 i533_1_lut (.A(state[5]), .Z(n1213)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i533_1_lut.init = 16'h5555;
-    LUT4 i2_2_lut_rep_273_3_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
-         .C(cnt_s2_num[1]), .D(cnt_s2_num[0]), .Z(n14190)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;
-    defparam i2_2_lut_rep_273_3_lut_4_lut.init = 16'hfbff;
-    PFUMX i11485 (.BLUT(n15_adj_785), .ALUT(n30), .C0(cnt_s2_num[4]), 
-          .Z(n12110));
-    LUT4 cnt_s4_num_2__bdd_4_lut_13562 (.A(cnt_s4_num[2]), .B(cnt_s4_num[0]), 
-         .C(cnt_s4_num[3]), .D(cnt_s4_num[1]), .Z(n13749)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C (D)+!C !(D)))+!A !(B (C)+!B (C (D))))) */ ;
-    defparam cnt_s4_num_2__bdd_4_lut_13562.init = 16'h5a60;
-    CCU2D cnt_150ms_608_add_4_7 (.A0(cnt_150ms[5]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[6]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10544), .COUT(n10545), .S0(n97[5]), .S1(n97[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_7.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_7.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_7.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_7.INJECT1_1 = "NO";
-    LUT4 i1_4_lut_adj_34 (.A(\state[4] ), .B(n6342), .C(n13153), .D(n13750), 
-         .Z(init_data_8__N_231[8])) /* synthesis lut_function=(A (B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(254[9:32])
-    defparam i1_4_lut_adj_34.init = 16'haaa8;
-    LUT4 i1995_2_lut (.A(state_c[0]), .B(state_5__N_168[0]), .Z(n2807)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i1995_2_lut.init = 16'h8888;
-    LUT4 i1_2_lut_rep_149 (.A(n6342), .B(cnt_s4_num[0]), .Z(n14066)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(235[13:16])
-    defparam i1_2_lut_rep_149.init = 16'hbbbb;
-    LUT4 i1_4_lut_adj_35 (.A(n11672), .B(n11783), .C(cnt_150ms[6]), .D(cnt_150ms[5]), 
-         .Z(state_5__N_168[0])) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(112[39:70])
-    defparam i1_4_lut_adj_35.init = 16'hffef;
-    LUT4 i1_2_lut_adj_36 (.A(n6534), .B(n11781), .Z(n11783)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(112[39:70])
-    defparam i1_2_lut_adj_36.init = 16'heeee;
-    LUT4 i4_4_lut (.A(cnt_150ms[3]), .B(cnt_150ms[0]), .C(cnt_150ms[1]), 
-         .D(n6_adj_786), .Z(n6534)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i4_4_lut.init = 16'hfffe;
-    LUT4 i1_2_lut_adj_37 (.A(cnt_150ms[2]), .B(cnt_150ms[4]), .Z(n6_adj_786)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i1_2_lut_adj_37.init = 16'heeee;
-    LUT4 i1998_4_lut (.A(state_c[1]), .B(state_5__N_168[0]), .C(state_5__N_174[1]), 
-         .D(state_c[0]), .Z(n2810)) /* synthesis lut_function=(A (B (C)+!B (C+(D)))+!A !(B+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i1998_4_lut.init = 16'hb3a0;
-    LUT4 i1_4_lut_adj_38 (.A(cnt_150ms[6]), .B(n11805), .C(n6_adj_787), 
-         .D(n6549), .Z(state_5__N_174[1])) /* synthesis lut_function=((B+(C+(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i1_4_lut_adj_38.init = 16'hfffd;
-    LUT4 i6_4_lut_adj_39 (.A(n14211), .B(n12), .C(cnt_150ms[21]), .D(cnt_150ms[11]), 
-         .Z(n11805)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i6_4_lut_adj_39.init = 16'hffef;
-    LUT4 i2_2_lut_adj_40 (.A(cnt_150ms[13]), .B(n11818), .Z(n6_adj_787)) /* synthesis lut_function=((B)+!A) */ ;
-    defparam i2_2_lut_adj_40.init = 16'hdddd;
-    CCU2D cnt_150ms_608_add_4_5 (.A0(cnt_150ms[3]), .B0(GND_net), .C0(GND_net), 
-          .D0(GND_net), .A1(cnt_150ms[4]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10543), .COUT(n10544), .S0(n97[3]), .S1(n97[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_5.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_5.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_5.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_5.INJECT1_1 = "NO";
-    LUT4 i5_4_lut (.A(cnt_150ms[19]), .B(cnt_150ms[5]), .C(cnt_150ms[12]), 
-         .D(cnt_150ms[8]), .Z(n12)) /* synthesis lut_function=(A+(((D)+!C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i5_4_lut.init = 16'hffbf;
-    LUT4 i1_4_lut_adj_41 (.A(n6534), .B(cnt_150ms[22]), .C(n6_adj_788), 
-         .D(cnt_150ms[7]), .Z(n11818)) /* synthesis lut_function=(A+!(B (C (D)))) */ ;
-    defparam i1_4_lut_adj_41.init = 16'hbfff;
-    LUT4 i2_2_lut_adj_42 (.A(cnt_150ms[17]), .B(cnt_150ms[20]), .Z(n6_adj_788)) /* synthesis lut_function=(A (B)) */ ;
-    defparam i2_2_lut_adj_42.init = 16'h8888;
-    LUT4 cnt_s4_num_2__bdd_3_lut (.A(cnt_s4_num[2]), .B(cnt_s4_num[3]), 
-         .C(cnt_s4_num[1]), .Z(n13748)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;
-    defparam cnt_s4_num_2__bdd_3_lut.init = 16'h4040;
-    LUT4 i2000_4_lut (.A(state_c[2]), .B(state_5__N_174[1]), .C(state_5__N_180[3]), 
-         .D(state_c[1]), .Z(n2812)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i2000_4_lut.init = 16'h3b0a;
-    LUT4 i2002_4_lut (.A(state_c[3]), .B(state_5__N_180[3]), .C(state_5__N_186[3]), 
-         .D(state_c[2]), .Z(n2814)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i2002_4_lut.init = 16'heca0;
-    LUT4 i1_4_lut_adj_43 (.A(n11820), .B(cnt_150ms[5]), .C(n6_adj_784), 
-         .D(cnt_150ms[6]), .Z(state_5__N_186[3])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
-    defparam i1_4_lut_adj_43.init = 16'hfffe;
-    LUT4 i2_4_lut_adj_44 (.A(n11818), .B(n6537), .C(cnt_150ms[16]), .D(n11898), 
-         .Z(n11820)) /* synthesis lut_function=(A+(B+!(C (D)))) */ ;
-    defparam i2_4_lut_adj_44.init = 16'hefff;
-    LUT4 i11277_2_lut (.A(cnt_150ms[10]), .B(cnt_150ms[15]), .Z(n11898)) /* synthesis lut_function=(A (B)) */ ;
-    defparam i11277_2_lut.init = 16'h8888;
-    LUT4 i2004_4_lut (.A(\state[4] ), .B(state_5__N_186[3]), .C(state_5__N_192[5]), 
-         .D(state_c[3]), .Z(n2816)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i2004_4_lut.init = 16'h3b0a;
-    LUT4 i2_3_lut_4_lut (.A(n6342), .B(cnt_s4_num[0]), .C(cnt_s4_num[3]), 
-         .D(cnt_s4_num[2]), .Z(n6564)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(235[13:16])
-    defparam i2_3_lut_4_lut.init = 16'hfffb;
-    LUT4 mux_283_Mux_1_i15_4_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[2]), 
-         .C(cnt_s2_num[3]), .D(cnt_s2_num[0]), .Z(n15_adj_785)) /* synthesis lut_function=(A (B (C)+!B (C+(D)))+!A (D)) */ ;
-    defparam mux_283_Mux_1_i15_4_lut_4_lut.init = 16'hf7a0;
-    LUT4 i11473_4_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[3]), 
-         .C(cnt_s2_num[2]), .D(cnt_s2_num[1]), .Z(n12098)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i11473_4_lut_4_lut_4_lut.init = 16'hd0c0;
-    PFUMX i11463 (.BLUT(n15), .ALUT(n30_adj_789), .C0(cnt_s2_num[4]), 
-          .Z(n12088));
-    CCU2D cnt_150ms_608_add_4_3 (.A0(cnt_150ms[1]), .B0(GND_net), .C0(GND_net), 
+    LUT4 n11223_bdd_2_lut_3_lut (.A(n11222), .B(state[4]), .C(n4951), 
+         .Z(n11224)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;
+    defparam n11223_bdd_2_lut_3_lut.init = 16'h0808;
+    LUT4 n11264_bdd_2_lut_3_lut (.A(n11263), .B(state[4]), .C(n4951), 
+         .Z(n11265)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;
+    defparam n11264_bdd_2_lut_3_lut.init = 16'h0808;
+    LUT4 cnt_s2_num_0__bdd_4_lut_10550 (.A(cnt_s2_num[0]), .B(cnt_s2_num[2]), 
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[1]), .Z(n10891)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B+!(C (D))))) */ ;
+    defparam cnt_s2_num_0__bdd_4_lut_10550.init = 16'h1020;
+    PFUMX i9201 (.BLUT(n15_adj_719), .ALUT(n30), .C0(cnt_s2_num[4]), .Z(n9624));
+    PFUMX i10593 (.BLUT(n11160), .ALUT(n11161), .C0(cnt_s4_num[1]), .Z(n11162));
+    CCU2D cnt_150ms_453_add_4_3 (.A0(cnt_150ms[1]), .B0(GND_net), .C0(GND_net), 
           .D0(GND_net), .A1(cnt_150ms[2]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10542), .COUT(n10543), .S0(n97[1]), .S1(n97[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_3.INIT0 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_3.INIT1 = 16'hfaaa;
-    defparam cnt_150ms_608_add_4_3.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_3.INJECT1_1 = "NO";
-    CCU2D cnt_150ms_608_add_4_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), 
+          .D1(GND_net), .CIN(n8113), .COUT(n8114), .S0(n97[1]), .S1(n97[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_3.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_3.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_3.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_3.INJECT1_1 = "NO";
+    PFUMX i9179 (.BLUT(n15), .ALUT(n30_adj_720), .C0(cnt_s2_num[4]), .Z(n9602));
+    LUT4 cnt_s2_num_0__bdd_4_lut_10527 (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), 
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[2]), .Z(n10279)) /* synthesis lut_function=(!(A (B (C+!(D))+!B ((D)+!C))+!A !(B+(C+(D))))) */ ;
+    defparam cnt_s2_num_0__bdd_4_lut_10527.init = 16'h5d74;
+    CCU2D cnt_150ms_453_add_4_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), 
           .D0(GND_net), .A1(cnt_150ms[0]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .COUT(n10542), .S1(n97[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608_add_4_1.INIT0 = 16'hF000;
-    defparam cnt_150ms_608_add_4_1.INIT1 = 16'h0555;
-    defparam cnt_150ms_608_add_4_1.INJECT1_0 = "NO";
-    defparam cnt_150ms_608_add_4_1.INJECT1_1 = "NO";
-    LUT4 mux_283_Mux_7_i30_3_lut_3_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
-         .C(cnt_s2_num[0]), .Z(n30_adj_783)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B+(C)))) */ ;
-    defparam mux_283_Mux_7_i30_3_lut_3_lut.init = 16'h7474;
-    LUT4 mux_283_Mux_6_i30_3_lut_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[0]), 
-         .C(cnt_s2_num[3]), .D(cnt_s2_num[1]), .Z(n30_adj_789)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;
-    defparam mux_283_Mux_6_i30_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 i13468_then_3_lut (.A(n6342), .B(cnt_s4_num[3]), .C(cnt_s4_num[2]), 
-         .Z(n15552)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
-    defparam i13468_then_3_lut.init = 16'h1010;
-    LUT4 i2_2_lut_3_lut_4_lut_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[1]), 
-         .C(cnt_s2_num[0]), .D(cnt_s2_num[3]), .Z(n10589)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;
-    defparam i2_2_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h0004;
-    LUT4 i750_2_lut_rep_330 (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), .Z(n14247)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i750_2_lut_rep_330.init = 16'h6666;
-    LUT4 i13468_else_3_lut (.A(cnt_s4_num[0]), .B(n6342), .C(cnt_s4_num[3]), 
-         .D(cnt_s4_num[2]), .Z(n15551)) /* synthesis lut_function=(!(A+(B+!(C+!(D))))) */ ;
-    defparam i13468_else_3_lut.init = 16'h1011;
-    PFUMX i14200 (.BLUT(n15551), .ALUT(n15552), .C0(cnt_s4_num[1]), .Z(n15553));
-    LUT4 i752_2_lut_rep_337 (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), .Z(n14254)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i752_2_lut_rep_337.init = 16'h8888;
-    LUT4 i759_2_lut_rep_261_3_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), 
-         .C(cnt_s2_num[2]), .Z(n14178)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i759_2_lut_rep_261_3_lut.init = 16'h8080;
-    LUT4 i757_2_lut_3_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), .C(cnt_s2_num[2]), 
-         .Z(n159[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i757_2_lut_3_lut.init = 16'h7878;
-    LUT4 i766_2_lut_rep_186_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), 
-         .C(cnt_s2_num[3]), .D(cnt_s2_num[2]), .Z(n14103)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i766_2_lut_rep_186_3_lut_4_lut.init = 16'h8000;
-    LUT4 i764_2_lut_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), .C(cnt_s2_num[3]), 
-         .D(cnt_s2_num[2]), .Z(n159[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
-    defparam i764_2_lut_3_lut_4_lut.init = 16'h78f0;
-    PFUMX i12753 (.BLUT(n13152), .ALUT(n13151), .C0(n6342), .Z(n13153));
+          .D1(GND_net), .COUT(n8113), .S1(n97[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_1.INIT0 = 16'hF000;
+    defparam cnt_150ms_453_add_4_1.INIT1 = 16'h0555;
+    defparam cnt_150ms_453_add_4_1.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_1.INJECT1_1 = "NO";
+    LUT4 i1_2_lut_rep_90 (.A(n4951), .B(cnt_s4_num[0]), .Z(n10931)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(235[13:16])
+    defparam i1_2_lut_rep_90.init = 16'hbbbb;
+    LUT4 i9939_3_lut (.A(state_c[3]), .B(state_c[1]), .C(state_c[0]), 
+         .Z(cnt_150ms_22__N_221)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(103[13:86])
+    defparam i9939_3_lut.init = 16'h0101;
+    LUT4 init_data_8__I_0_i1_4_lut (.A(n11162), .B(\init_data_8__N_240[0] ), 
+         .C(state[2]), .D(state[4]), .Z(init_data_8__N_97[0])) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
+    defparam init_data_8__I_0_i1_4_lut.init = 16'hc5c0;
+    LUT4 i4765_1_lut (.A(state[5]), .Z(n5363)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i4765_1_lut.init = 16'h5555;
+    FD1P3IX cnt_s2_num__i4 (.D(n159[4]), .SP(sys_clk_50MHz_enable_45), .CD(n11079), 
+            .CK(sys_clk_50MHz), .Q(cnt_s2_num[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
+    defparam cnt_s2_num__i4.GSR = "ENABLED";
+    FD1P3IX cnt_s2_num__i3 (.D(n159[3]), .SP(sys_clk_50MHz_enable_45), .CD(n11079), 
+            .CK(sys_clk_50MHz), .Q(cnt_s2_num[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
+    defparam cnt_s2_num__i3.GSR = "ENABLED";
+    FD1P3IX cnt_s2_num__i2 (.D(n159[2]), .SP(sys_clk_50MHz_enable_45), .CD(n11079), 
+            .CK(sys_clk_50MHz), .Q(cnt_s2_num[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
+    defparam cnt_s2_num__i2.GSR = "ENABLED";
+    FD1P3IX cnt_s2_num__i1 (.D(n21), .SP(sys_clk_50MHz_enable_45), .CD(n11079), 
+            .CK(sys_clk_50MHz), .Q(cnt_s2_num[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(130[10] 135[34])
+    defparam cnt_s2_num__i1.GSR = "ENABLED";
+    LUT4 i1_4_lut (.A(n9077), .B(cnt_s4_num[14]), .C(n11070), .D(cnt_s4_num[12]), 
+         .Z(n4951)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
+    defparam i1_4_lut.init = 16'hfffe;
+    LUT4 i9_4_lut (.A(cnt_s4_num[9]), .B(n18), .C(n14), .D(cnt_s4_num[6]), 
+         .Z(n9077)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
+    defparam i9_4_lut.init = 16'hfffe;
+    FD1S3AY state_FSM_i5 (.D(n2442), .CK(sys_clk_50MHz), .Q(state_c[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam state_FSM_i5.GSR = "ENABLED";
+    FD1S3AX state_FSM_i4 (.D(n2441), .CK(sys_clk_50MHz), .Q(state_c[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam state_FSM_i4.GSR = "ENABLED";
+    FD1S3AX state_FSM_i3 (.D(n2439), .CK(sys_clk_50MHz), .Q(state[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam state_FSM_i3.GSR = "ENABLED";
+    FD1S3AX state_FSM_i2 (.D(n2435), .CK(sys_clk_50MHz), .Q(state_c[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam state_FSM_i2.GSR = "ENABLED";
+    FD1S3AX state_FSM_i1 (.D(n2433), .CK(sys_clk_50MHz), .Q(state[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam state_FSM_i1.GSR = "ENABLED";
+    LUT4 i8_3_lut (.A(n10257), .B(cnt_s4_num[12]), .C(cnt_s4_num[10]), 
+         .Z(n23)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(254[9:32])
+    defparam i8_3_lut.init = 16'h0202;
+    LUT4 i8913_4_lut (.A(n9305), .B(n14), .C(cnt_s4_num[9]), .D(cnt_s4_num[13]), 
+         .Z(n9331)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
+    defparam i8913_4_lut.init = 16'hfffe;
+    LUT4 i8892_4_lut (.A(cnt_s4_num[15]), .B(cnt_s4_num[6]), .C(cnt_s4_num[5]), 
+         .D(cnt_s4_num[8]), .Z(n9305)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
+    defparam i8892_4_lut.init = 16'hfffe;
+    LUT4 i8_3_lut_adj_29 (.A(cnt_s4_num[5]), .B(n16), .C(cnt_s4_num[13]), 
+         .Z(n18)) /* synthesis lut_function=(A+(B+(C))) */ ;
+    defparam i8_3_lut_adj_29.init = 16'hfefe;
+    LUT4 i2_2_lut_4_lut_then_4_lut (.A(cnt_s4_num[2]), .B(cnt_s4_num[3]), 
+         .C(cnt_s4_num[0]), .D(n4951), .Z(n11154)) /* synthesis lut_function=((B+((D)+!C))+!A) */ ;
+    defparam i2_2_lut_4_lut_then_4_lut.init = 16'hffdf;
+    LUT4 i6_4_lut (.A(cnt_s4_num[15]), .B(cnt_s4_num[10]), .C(cnt_s4_num[8]), 
+         .D(cnt_s4_num[16]), .Z(n16)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
+    defparam i6_4_lut.init = 16'hfffe;
+    LUT4 i4_2_lut (.A(cnt_s4_num[7]), .B(cnt_s4_num[4]), .Z(n14)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i4_2_lut.init = 16'heeee;
+    PFUMX i9180 (.BLUT(n46), .ALUT(n8139), .C0(cnt_s2_num[4]), .Z(n9603));
+    LUT4 i2_2_lut_4_lut_else_4_lut (.A(cnt_s4_num[2]), .B(cnt_s4_num[3]), 
+         .C(cnt_s4_num[0]), .D(n4951), .Z(n11153)) /* synthesis lut_function=(A ((D)+!B)+!A (B+((D)+!C))) */ ;
+    defparam i2_2_lut_4_lut_else_4_lut.init = 16'hff67;
+    LUT4 i9852_4_lut (.A(n30_adj_721), .B(n10926), .C(cnt_s2_num[5]), 
+         .D(cnt_s2_num[4]), .Z(n63)) /* synthesis lut_function=(A (B+!(C+!(D)))+!A (B (C+!(D)))) */ ;
+    defparam i9852_4_lut.init = 16'hcacc;
+    LUT4 init_data_8__I_0_i6_4_lut (.A(state[4]), .B(\init_data_8__N_240[5] ), 
+         .C(state[2]), .D(n10743), .Z(init_data_8__N_97[5])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
+    defparam init_data_8__I_0_i6_4_lut.init = 16'hcac0;
+    LUT4 i5_3_lut_rep_149 (.A(cnt_150ms[0]), .B(n10), .C(cnt_150ms[3]), 
+         .Z(n10990)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i5_3_lut_rep_149.init = 16'hfefe;
+    LUT4 i1_2_lut_rep_107_4_lut (.A(cnt_150ms[0]), .B(n10), .C(cnt_150ms[3]), 
+         .D(cnt_150ms[5]), .Z(n10948)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i1_2_lut_rep_107_4_lut.init = 16'hfffe;
+    LUT4 i1_2_lut_4_lut (.A(cnt_150ms[0]), .B(n10), .C(cnt_150ms[3]), 
+         .D(n8163), .Z(n5)) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i1_2_lut_4_lut.init = 16'hfeff;
+    LUT4 init_data_8__I_0_i5_4_lut (.A(n10927), .B(\init_data_8__N_240[4] ), 
+         .C(state[2]), .D(state[4]), .Z(init_data_8__N_97[4])) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
+    defparam init_data_8__I_0_i5_4_lut.init = 16'hc5c0;
+    LUT4 init_data_8__I_0_i3_4_lut (.A(n11155), .B(\init_data_8__N_240[2] ), 
+         .C(state[2]), .D(state[4]), .Z(init_data_8__N_97[2])) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(216[10] 254[32])
+    defparam init_data_8__I_0_i3_4_lut.init = 16'hc5c0;
+    LUT4 n10891_bdd_4_lut (.A(n10891), .B(cnt_s2_num[4]), .C(n10893), 
+         .D(cnt_s2_num[5]), .Z(n10926)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A ((D)+!C))) */ ;
+    defparam n10891_bdd_4_lut.init = 16'h22f0;
+    LUT4 i625_3_lut_4_lut (.A(cnt_s2_num[4]), .B(n10952), .C(cnt_s2_num[5]), 
+         .D(cnt_s2_num[6]), .Z(n159[6])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i625_3_lut_4_lut.init = 16'h7f80;
+    LUT4 i2_3_lut_then_3_lut (.A(n4951), .B(cnt_s4_num[3]), .C(cnt_s4_num[2]), 
+         .Z(n11161)) /* synthesis lut_function=(A+(B+!(C))) */ ;
+    defparam i2_3_lut_then_3_lut.init = 16'hefef;
+    LUT4 i2_3_lut_else_3_lut (.A(n4951), .B(cnt_s4_num[3]), .C(cnt_s4_num[2]), 
+         .D(cnt_s4_num[0]), .Z(n11160)) /* synthesis lut_function=(A+(B (D)+!B (C+(D)))) */ ;
+    defparam i2_3_lut_else_3_lut.init = 16'hffba;
+    LUT4 i336_2_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), .Z(n21)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;
+    defparam i336_2_lut.init = 16'h6666;
+    PFUMX i10588 (.BLUT(n11153), .ALUT(n11154), .C0(cnt_s4_num[1]), .Z(n11155));
+    LUT4 i1886_2_lut (.A(state_c[0]), .B(state_5__N_168[0]), .Z(n2442)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i1886_2_lut.init = 16'h8888;
+    LUT4 i3_4_lut (.A(n5183), .B(n9190), .C(n10948), .D(n9195), .Z(state_5__N_168[0])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i3_4_lut.init = 16'hfffe;
+    LUT4 i3_4_lut_adj_30 (.A(cnt_150ms[21]), .B(cnt_150ms[12]), .C(cnt_150ms[13]), 
+         .D(n9327), .Z(n5183)) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;
+    defparam i3_4_lut_adj_30.init = 16'hfeff;
+    LUT4 i8909_3_lut (.A(cnt_150ms[8]), .B(cnt_150ms[19]), .C(cnt_150ms[11]), 
+         .Z(n9327)) /* synthesis lut_function=(A (B (C))) */ ;
+    defparam i8909_3_lut.init = 16'h8080;
+    LUT4 i1_2_lut (.A(n5134), .B(cnt_150ms[6]), .Z(n9190)) /* synthesis lut_function=(A+!(B)) */ ;
+    defparam i1_2_lut.init = 16'hbbbb;
+    LUT4 i3_4_lut_adj_31 (.A(cnt_150ms[17]), .B(n6674), .C(cnt_150ms[7]), 
+         .D(cnt_150ms[20]), .Z(n9195)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;
+    defparam i3_4_lut_adj_31.init = 16'hfffb;
+    LUT4 i6084_2_lut (.A(cnt_150ms[18]), .B(cnt_150ms[9]), .Z(n6674)) /* synthesis lut_function=(A (B)) */ ;
+    defparam i6084_2_lut.init = 16'h8888;
+    LUT4 i4_4_lut (.A(cnt_150ms[4]), .B(cnt_150ms[22]), .C(cnt_150ms[1]), 
+         .D(cnt_150ms[2]), .Z(n10)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i4_4_lut.init = 16'hfffb;
+    LUT4 i3_4_lut_adj_32 (.A(cnt_150ms[15]), .B(cnt_150ms[14]), .C(cnt_150ms[16]), 
+         .D(cnt_150ms[10]), .Z(n5134)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(86[26:50])
+    defparam i3_4_lut_adj_32.init = 16'hfffb;
+    LUT4 i1885_4_lut (.A(state_c[1]), .B(state_5__N_168[0]), .C(state_5__N_174[1]), 
+         .D(state_c[0]), .Z(n2441)) /* synthesis lut_function=(A (B (C)+!B (C+(D)))+!A !(B+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i1885_4_lut.init = 16'hb3a0;
+    LUT4 i1_4_lut_adj_33 (.A(n5), .B(n9185), .C(cnt_150ms[13]), .D(n9190), 
+         .Z(state_5__N_174[1])) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i1_4_lut_adj_33.init = 16'hffef;
+    LUT4 i5_4_lut (.A(cnt_150ms[21]), .B(n10_adj_722), .C(n11058), .D(cnt_150ms[12]), 
+         .Z(n9185)) /* synthesis lut_function=((B+(C+!(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i5_4_lut.init = 16'hfdff;
+    LUT4 i4_4_lut_adj_34 (.A(cnt_150ms[11]), .B(cnt_150ms[5]), .C(cnt_150ms[19]), 
+         .D(cnt_150ms[8]), .Z(n10_adj_722)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i4_4_lut_adj_34.init = 16'hfffb;
+    LUT4 i2_3_lut (.A(cnt_150ms[20]), .B(cnt_150ms[7]), .C(cnt_150ms[17]), 
+         .Z(n8163)) /* synthesis lut_function=(A (B (C))) */ ;
+    defparam i2_3_lut.init = 16'h8080;
+    LUT4 i1883_4_lut (.A(state[2]), .B(state_5__N_174[1]), .C(state_5__N_180[3]), 
+         .D(state_c[1]), .Z(n2439)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i1883_4_lut.init = 16'h3b0a;
+    LUT4 i1879_4_lut (.A(state_c[3]), .B(state_5__N_180[3]), .C(state_5__N_186[3]), 
+         .D(state[2]), .Z(n2435)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i1879_4_lut.init = 16'heca0;
+    LUT4 i5_4_lut_adj_35 (.A(n9), .B(cnt_150ms[14]), .C(n8), .D(n8163), 
+         .Z(state_5__N_186[3])) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;
+    defparam i5_4_lut_adj_35.init = 16'hfeff;
+    LUT4 i2_4_lut (.A(cnt_150ms[16]), .B(n10947), .C(cnt_150ms[10]), .D(cnt_150ms[15]), 
+         .Z(n8)) /* synthesis lut_function=((B+!(C (D)))+!A) */ ;
+    defparam i2_4_lut.init = 16'hdfff;
+    LUT4 i1877_4_lut (.A(state[4]), .B(state_5__N_186[3]), .C(state_5__N_192[5]), 
+         .D(state_c[3]), .Z(n2433)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i1877_4_lut.init = 16'h3b0a;
+    PFUMX i9192 (.BLUT(n9611), .ALUT(n9612), .C0(cnt_s2_num[4]), .Z(n9615));
     CCU2D add_153_19 (.A0(cnt_s4_num[17]), .B0(GND_net), .C0(GND_net), 
           .D0(GND_net), .A1(GND_net), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .CIN(n10537), .S0(n357[17]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+          .CIN(n8112), .S0(n357[17]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
     defparam add_153_19.INIT0 = 16'h5aaa;
     defparam add_153_19.INIT1 = 16'h0000;
     defparam add_153_19.INJECT1_0 = "NO";
     defparam add_153_19.INJECT1_1 = "NO";
-    LUT4 i253_2_lut (.A(state_5__N_192[5]), .B(\state[4] ), .Z(sys_clk_50MHz_enable_5)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i253_2_lut.init = 16'h8888;
+    LUT4 cnt_s4_num_1__bdd_3_lut_rep_86_4_lut (.A(cnt_s4_num[3]), .B(n10931), 
+         .C(cnt_s4_num[2]), .D(cnt_s4_num[1]), .Z(n10927)) /* synthesis lut_function=(A+(B+!(C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(229[13:16])
+    defparam cnt_s4_num_1__bdd_3_lut_rep_86_4_lut.init = 16'heffe;
+    LUT4 i611_2_lut_3_lut_4_lut (.A(cnt_s2_num[2]), .B(n11064), .C(cnt_s2_num[4]), 
+         .D(cnt_s2_num[3]), .Z(n159[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i611_2_lut_3_lut_4_lut.init = 16'h78f0;
+    FD1S3IX cnt_150ms_453__i22 (.D(n97[22]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[22])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i22.GSR = "ENABLED";
+    LUT4 state_4__bdd_4_lut_10927 (.A(cnt_s4_num[1]), .B(cnt_s4_num[0]), 
+         .C(cnt_s4_num[2]), .D(cnt_s4_num[3]), .Z(n11217)) /* synthesis lut_function=(!(A ((D)+!B)+!A (B (C+(D))+!B !(D)))) */ ;
+    defparam state_4__bdd_4_lut_10927.init = 16'h118c;
+    FD1P3IX cnt_s4_num__i17 (.D(n357[17]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[17])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i17.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i16 (.D(n357[16]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[16])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i16.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i15 (.D(n357[15]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[15])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i15.GSR = "ENABLED";
     CCU2D add_153_17 (.A0(cnt_s4_num[15]), .B0(GND_net), .C0(GND_net), 
           .D0(GND_net), .A1(cnt_s4_num[16]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10536), .COUT(n10537), .S0(n357[15]), 
-          .S1(n357[16]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+          .D1(GND_net), .CIN(n8111), .COUT(n8112), .S0(n357[15]), .S1(n357[16]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
     defparam add_153_17.INIT0 = 16'h5aaa;
     defparam add_153_17.INIT1 = 16'h5aaa;
     defparam add_153_17.INJECT1_0 = "NO";
     defparam add_153_17.INJECT1_1 = "NO";
-    LUT4 i7009_2_lut_2_lut (.A(cnt_s2_num[6]), .B(n63), .Z(init_data_8__N_240[7])) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[13:32])
-    defparam i7009_2_lut_2_lut.init = 16'h4444;
-    LUT4 i7018_2_lut_2_lut (.A(cnt_s2_num[6]), .B(n12103), .Z(init_data_8__N_240[3])) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[13:32])
-    defparam i7018_2_lut_2_lut.init = 16'h4444;
-    LUT4 i616_1_lut_rep_342 (.A(state_c[2]), .Z(n14259)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i616_1_lut_rep_342.init = 16'h5555;
-    LUT4 i1921_2_lut_3_lut_3_lut (.A(state_c[2]), .B(cnt_s2_num[0]), .C(wr_done), 
-         .Z(n24[0])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i1921_2_lut_3_lut_3_lut.init = 16'h3939;
-    LUT4 i617_2_lut_rep_267_2_lut (.A(state_c[2]), .B(wr_done), .Z(sys_clk_50MHz_enable_76)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam i617_2_lut_rep_267_2_lut.init = 16'hdddd;
-    LUT4 i1_2_lut_rep_344 (.A(cnt_s4_num[1]), .B(cnt_s4_num[3]), .Z(n14261)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(235[13:16])
-    defparam i1_2_lut_rep_344.init = 16'hbbbb;
-    LUT4 i1_2_lut_rep_275_3_lut (.A(cnt_s4_num[1]), .B(cnt_s4_num[3]), .C(cnt_s4_num[2]), 
-         .Z(n14192)) /* synthesis lut_function=(A+!(B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(235[13:16])
-    defparam i1_2_lut_rep_275_3_lut.init = 16'hbfbf;
-    LUT4 i11253_2_lut_3_lut_4_lut (.A(cnt_s4_num[1]), .B(cnt_s4_num[3]), 
-         .C(n6342), .D(cnt_s4_num[2]), .Z(n11728)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(235[13:16])
-    defparam i11253_2_lut_3_lut_4_lut.init = 16'hfbff;
-    FD1S3IX cnt_150ms_608__i21 (.D(n97[21]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[21])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i21.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i20 (.D(n97[20]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[20])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i20.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i19 (.D(n97[19]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[19])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i19.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i18 (.D(n97[18]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[18])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i18.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i17 (.D(n97[17]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[17])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i17.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i16 (.D(n97[16]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[16])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i16.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i15 (.D(n97[15]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[15])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i15.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i14 (.D(n97[14]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[14])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i14.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i13 (.D(n97[13]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[13])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i13.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i12 (.D(n97[12]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[12])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i12.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i11 (.D(n97[11]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[11])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i11.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i10 (.D(n97[10]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[10])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i10.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i9 (.D(n97[9]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[9])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i9.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i8 (.D(n97[8]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[8])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i8.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i7 (.D(n97[7]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[7])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i7.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i6 (.D(n97[6]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[6])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i6.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i5 (.D(n97[5]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[5])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i5.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i4 (.D(n97[4]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[4])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i4.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i3 (.D(n97[3]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[3])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i3.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i2 (.D(n97[2]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[2])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i2.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i1 (.D(n97[1]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[1])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i1.GSR = "ENABLED";
-    FD1S3IX cnt_150ms_608__i0 (.D(n97[0]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
-            .Q(cnt_150ms[0])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
-    defparam cnt_150ms_608__i0.GSR = "ENABLED";
+    PFUMX i9193 (.BLUT(n9613), .ALUT(n9614), .C0(cnt_s2_num[4]), .Z(n9616));
+    FD1P3IX cnt_s4_num__i14 (.D(n357[14]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[14])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i14.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i13 (.D(n357[13]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[13])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i13.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i12 (.D(n357[12]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[12])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i12.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i11 (.D(n357[11]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[11])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i11.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i10 (.D(n357[10]), .SP(sys_clk_50MHz_enable_80), 
+            .CD(n11059), .CK(sys_clk_50MHz), .Q(cnt_s4_num[10])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i10.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i9 (.D(n357[9]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[9])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i9.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i8 (.D(n357[8]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i8.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i7 (.D(n357[7]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i7.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i6 (.D(n357[6]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i6.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i5 (.D(n357[5]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i5.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i4 (.D(n357[4]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i4.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i3 (.D(n357[3]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i3.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i2 (.D(n357[2]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i2.GSR = "ENABLED";
+    FD1P3IX cnt_s4_num__i1 (.D(n357[1]), .SP(sys_clk_50MHz_enable_80), .CD(n11059), 
+            .CK(sys_clk_50MHz), .Q(cnt_s4_num[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(260[10] 265[34])
+    defparam cnt_s4_num__i1.GSR = "ENABLED";
+    LUT4 i4768_1_lut (.A(state_c[0]), .Z(n5366)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i4768_1_lut.init = 16'h5555;
+    LUT4 i9942_4_lut (.A(n9_adj_723), .B(cnt_150ms[5]), .C(n8_adj_724), 
+         .D(cnt_150ms[22]), .Z(lcd_rst_high_flag_N_270)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(112[39:70])
+    defparam i9942_4_lut.init = 16'h0400;
+    LUT4 i2_4_lut_adj_36 (.A(n5134), .B(cnt_150ms[3]), .C(n9329), .D(cnt_150ms[0]), 
+         .Z(n8_adj_724)) /* synthesis lut_function=(A+!(B (C (D)))) */ ;
+    defparam i2_4_lut_adj_36.init = 16'hbfff;
+    LUT4 i8911_3_lut (.A(cnt_150ms[2]), .B(cnt_150ms[1]), .C(cnt_150ms[4]), 
+         .Z(n9329)) /* synthesis lut_function=(A (B (C))) */ ;
+    defparam i8911_3_lut.init = 16'h8080;
+    LUT4 i180_2_lut (.A(state_5__N_192[5]), .B(state[4]), .Z(sys_clk_50MHz_enable_4)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i180_2_lut.init = 16'h8888;
+    LUT4 cnt_s2_num_0__bdd_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[2]), 
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[0]), .Z(n10278)) /* synthesis lut_function=(A (B (C+!(D))+!B (C (D)+!C !(D)))+!A (C+!(D))) */ ;
+    defparam cnt_s2_num_0__bdd_3_lut_4_lut.init = 16'hf0df;
+    LUT4 mux_210_Mux_6_i30_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[2]), 
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[0]), .Z(n30_adj_720)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;
+    defparam mux_210_Mux_6_i30_3_lut_4_lut.init = 16'h2f20;
+    LUT4 i2_2_lut_3_lut_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[2]), 
+         .C(cnt_s2_num[0]), .D(cnt_s2_num[3]), .Z(n8139)) /* synthesis lut_function=(!((B+(C+(D)))+!A)) */ ;
+    defparam i2_2_lut_3_lut_3_lut_4_lut.init = 16'h0002;
+    LUT4 i1_2_lut_3_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), .C(cnt_s2_num[0]), 
+         .Z(n9133)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
+    defparam i1_2_lut_3_lut.init = 16'h1010;
+    LUT4 i1_2_lut_rep_148_3_lut (.A(cnt_s4_num[1]), .B(cnt_s4_num[2]), .C(cnt_s4_num[3]), 
+         .Z(n10989)) /* synthesis lut_function=(A+!(B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(254[9:32])
+    defparam i1_2_lut_rep_148_3_lut.init = 16'hbfbf;
+    LUT4 i1_4_lut_4_lut_4_lut (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), .C(cnt_s2_num[3]), 
+         .D(cnt_s2_num[2]), .Z(n9007)) /* synthesis lut_function=(!(A+(B (C+(D))+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i1_4_lut_4_lut_4_lut.init = 16'h1104;
     CCU2D add_153_15 (.A0(cnt_s4_num[13]), .B0(GND_net), .C0(GND_net), 
           .D0(GND_net), .A1(cnt_s4_num[14]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10535), .COUT(n10536), .S0(n357[13]), 
-          .S1(n357[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+          .D1(GND_net), .CIN(n8110), .COUT(n8111), .S0(n357[13]), .S1(n357[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
     defparam add_153_15.INIT0 = 16'h5aaa;
     defparam add_153_15.INIT1 = 16'h5aaa;
     defparam add_153_15.INJECT1_0 = "NO";
     defparam add_153_15.INJECT1_1 = "NO";
-    CCU2D add_153_5 (.A0(cnt_s4_num[3]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
-          .A1(cnt_s4_num[4]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .CIN(n10530), .COUT(n10531), .S0(n357[3]), .S1(n357[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
-    defparam add_153_5.INIT0 = 16'h5aaa;
-    defparam add_153_5.INIT1 = 16'h5aaa;
-    defparam add_153_5.INJECT1_0 = "NO";
-    defparam add_153_5.INJECT1_1 = "NO";
-    CCU2D add_153_3 (.A0(cnt_s4_num[1]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
-          .A1(cnt_s4_num[2]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .CIN(n10529), .COUT(n10530), .S0(n357[1]), .S1(n357[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
-    defparam add_153_3.INIT0 = 16'h5aaa;
-    defparam add_153_3.INIT1 = 16'h5aaa;
-    defparam add_153_3.INJECT1_0 = "NO";
-    defparam add_153_3.INJECT1_1 = "NO";
-    PFUMX i12722 (.BLUT(n13101), .ALUT(n13099), .C0(state_c[2]), .Z(init_data_8__N_97[1]));
-    FD1S3AY state_FSM_i5 (.D(n2807), .CK(sys_clk_50MHz), .Q(state_c[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam state_FSM_i5.GSR = "ENABLED";
-    FD1S3AX state_FSM_i4 (.D(n2810), .CK(sys_clk_50MHz), .Q(state_c[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam state_FSM_i4.GSR = "ENABLED";
-    FD1S3AX state_FSM_i3 (.D(n2812), .CK(sys_clk_50MHz), .Q(state_c[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam state_FSM_i3.GSR = "ENABLED";
-    FD1S3AX state_FSM_i2 (.D(n2814), .CK(sys_clk_50MHz), .Q(state_c[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam state_FSM_i2.GSR = "ENABLED";
-    FD1S3AX state_FSM_i1 (.D(n2816), .CK(sys_clk_50MHz), .Q(\state[4] ));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
-    defparam state_FSM_i1.GSR = "ENABLED";
+    LUT4 n9624_bdd_4_lut (.A(n9624), .B(n9625), .C(cnt_s2_num[6]), .D(cnt_s2_num[5]), 
+         .Z(n11216)) /* synthesis lut_function=(!(A (B (C)+!B (C+(D)))+!A ((C+!(D))+!B))) */ ;
+    defparam n9624_bdd_4_lut.init = 16'h0c0a;
+    LUT4 i1_2_lut_rep_217 (.A(cnt_150ms[9]), .B(cnt_150ms[18]), .Z(n11058)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i1_2_lut_rep_217.init = 16'heeee;
+    LUT4 i3_2_lut_3_lut_4_lut (.A(cnt_150ms[9]), .B(cnt_150ms[18]), .C(n10990), 
+         .D(cnt_150ms[5]), .Z(n9)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(84[26:50])
+    defparam i3_2_lut_3_lut_4_lut.init = 16'hfffe;
+    LUT4 i468_1_lut_rep_218 (.A(state[4]), .Z(n11059)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i468_1_lut_rep_218.init = 16'h5555;
+    PFUMX i10078 (.BLUT(n10279), .ALUT(n10278), .C0(cnt_s2_num[4]), .Z(n10280));
+    LUT4 i9963_4_lut (.A(cnt_s4_num[11]), .B(n12), .C(n10989), .D(cnt_s4_num[14]), 
+         .Z(cnt_s4_num_done_N_274)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(271[13:36])
+    defparam i9963_4_lut.init = 16'h0200;
+    LUT4 i89_4_lut_4_lut (.A(state[4]), .B(n9307), .C(n9331), .D(n23), 
+         .Z(init_data_8__N_231[8])) /* synthesis lut_function=(A (B+(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i89_4_lut_4_lut.init = 16'ha8aa;
+    LUT4 i5_4_lut_adj_37 (.A(cnt_s4_num[0]), .B(cnt_s4_num[17]), .C(n9077), 
+         .D(cnt_s4_num[12]), .Z(n12)) /* synthesis lut_function=(((C+!(D))+!B)+!A) */ ;
+    defparam i5_4_lut_adj_37.init = 16'hf7ff;
+    LUT4 i9189_4_lut_4_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[2]), 
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[0]), .Z(n9612)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C))) */ ;
+    defparam i9189_4_lut_4_lut_4_lut.init = 16'hc0c8;
+    LUT4 mux_210_Mux_1_i15_4_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[2]), 
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[0]), .Z(n15_adj_719)) /* synthesis lut_function=(A (B (C)+!B (C+(D)))+!A (D)) */ ;
+    defparam mux_210_Mux_1_i15_4_lut_4_lut.init = 16'hf7a0;
+    CCU2D cnt_150ms_453_add_4_23 (.A0(cnt_150ms[21]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[22]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8123), .S0(n97[21]), .S1(n97[22]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_23.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_23.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_23.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_23.INJECT1_1 = "NO";
+    CCU2D cnt_150ms_453_add_4_21 (.A0(cnt_150ms[19]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[20]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8122), .COUT(n8123), .S0(n97[19]), .S1(n97[20]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_21.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_21.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_21.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_21.INJECT1_1 = "NO";
+    FD1S3IX lcd_rst_high_flag_171 (.D(lcd_rst_high_flag_N_270), .CK(sys_clk_50MHz), 
+            .CD(n5366), .Q(lcd_rst_high_flag)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=11, LSE_RCOL=2, LSE_LLINE=113, LSE_RLINE=123 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(112[10] 115[35])
+    defparam lcd_rst_high_flag_171.GSR = "ENABLED";
+    LUT4 i5624_2_lut_rep_261 (.A(cnt_s2_num[0]), .B(cnt_s2_num[1]), .Z(n11102)) /* synthesis lut_function=((B)+!A) */ ;
+    defparam i5624_2_lut_rep_261.init = 16'hdddd;
+    LUT4 i1_2_lut_rep_106 (.A(cnt_150ms[6]), .B(n5183), .Z(n10947)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i1_2_lut_rep_106.init = 16'heeee;
+    LUT4 i2_2_lut_rep_198_3_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
+         .C(cnt_s2_num[1]), .D(cnt_s2_num[0]), .Z(n11039)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;
+    defparam i2_2_lut_rep_198_3_lut_4_lut.init = 16'hfbff;
+    FD1S3IX cnt_150ms_453__i0 (.D(n97[0]), .CK(sys_clk_50MHz), .CD(cnt_150ms_22__N_221), 
+            .Q(cnt_150ms[0])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453__i0.GSR = "ENABLED";
+    LUT4 i9171_3_lut_4_lut_4_lut_4_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
+         .C(n11102), .D(cnt_s2_num[4]), .Z(n9594)) /* synthesis lut_function=(!(A (B (D))+!A (B ((D)+!C)))) */ ;
+    defparam i9171_3_lut_4_lut_4_lut_4_lut.init = 16'h33fb;
+    LUT4 i592_2_lut_rep_223 (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), .Z(n11064)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i592_2_lut_rep_223.init = 16'h8888;
+    LUT4 i3_2_lut_3_lut (.A(cnt_150ms[6]), .B(n5183), .C(n9195), .Z(n9_adj_723)) /* synthesis lut_function=(A+(B+(C))) */ ;
+    defparam i3_2_lut_3_lut.init = 16'hfefe;
+    LUT4 i599_2_lut_rep_157_3_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), 
+         .C(cnt_s2_num[2]), .Z(n10998)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i599_2_lut_rep_157_3_lut.init = 16'h8080;
+    LUT4 i597_2_lut_3_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), .C(cnt_s2_num[2]), 
+         .Z(n159[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i597_2_lut_3_lut.init = 16'h7878;
+    LUT4 i606_2_lut_rep_111_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), 
+         .C(cnt_s2_num[3]), .D(cnt_s2_num[2]), .Z(n10952)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i606_2_lut_rep_111_3_lut_4_lut.init = 16'h8000;
+    LUT4 i604_2_lut_3_lut_4_lut (.A(cnt_s2_num[1]), .B(cnt_s2_num[0]), .C(cnt_s2_num[3]), 
+         .D(cnt_s2_num[2]), .Z(n159[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(133[23:40])
+    defparam i604_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 n10742_bdd_2_lut (.A(n10742), .B(n4951), .Z(n10743)) /* synthesis lut_function=(!((B)+!A)) */ ;
+    defparam n10742_bdd_2_lut.init = 16'h2222;
+    PFUMX i9202 (.BLUT(n9007), .ALUT(n9133), .C0(cnt_s2_num[4]), .Z(n9625));
+    LUT4 cnt_s4_num_2__bdd_4_lut_10521 (.A(cnt_s4_num[2]), .B(cnt_s4_num[1]), 
+         .C(cnt_s4_num[0]), .D(cnt_s4_num[3]), .Z(n10742)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(D))+!A (B (D)+!B (C (D))))) */ ;
+    defparam cnt_s4_num_2__bdd_4_lut_10521.init = 16'h23d5;
+    LUT4 mux_210_Mux_7_i30_3_lut_3_lut (.A(cnt_s2_num[2]), .B(cnt_s2_num[3]), 
+         .C(cnt_s2_num[0]), .Z(n30_adj_721)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B+(C)))) */ ;
+    defparam mux_210_Mux_7_i30_3_lut_3_lut.init = 16'h7474;
+    CCU2D cnt_150ms_453_add_4_19 (.A0(cnt_150ms[17]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[18]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8121), .COUT(n8122), .S0(n97[17]), .S1(n97[18]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_19.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_19.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_19.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_19.INJECT1_1 = "NO";
+    LUT4 i465_1_lut_rep_238 (.A(state[2]), .Z(n11079)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i465_1_lut_rep_238.init = 16'h5555;
+    LUT4 i1845_2_lut_3_lut_3_lut (.A(state[2]), .B(cnt_s2_num[0]), .C(wr_done), 
+         .Z(n24[0])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i1845_2_lut_3_lut_3_lut.init = 16'h3939;
+    LUT4 i466_2_lut_rep_172_2_lut (.A(state[2]), .B(wr_done), .Z(sys_clk_50MHz_enable_45)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(82[9] 97[16])
+    defparam i466_2_lut_rep_172_2_lut.init = 16'hdddd;
+    CCU2D cnt_150ms_453_add_4_17 (.A0(cnt_150ms[15]), .B0(GND_net), .C0(GND_net), 
+          .D0(GND_net), .A1(cnt_150ms[16]), .B1(GND_net), .C1(GND_net), 
+          .D1(GND_net), .CIN(n8120), .COUT(n8121), .S0(n97[15]), .S1(n97[16]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(104[22:38])
+    defparam cnt_150ms_453_add_4_17.INIT0 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_17.INIT1 = 16'hfaaa;
+    defparam cnt_150ms_453_add_4_17.INJECT1_0 = "NO";
+    defparam cnt_150ms_453_add_4_17.INJECT1_1 = "NO";
+    LUT4 cnt_s4_num_2__bdd_4_lut_11076 (.A(cnt_s4_num[2]), .B(cnt_s4_num[0]), 
+         .C(cnt_s4_num[3]), .D(cnt_s4_num[1]), .Z(n11222)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B ((D)+!C))+!A (B (C+!(D))+!B (D)))) */ ;
+    defparam cnt_s4_num_2__bdd_4_lut_11076.init = 16'h0cb1;
+    LUT4 n4951_bdd_4_lut_10700 (.A(n9615), .B(n9616), .C(cnt_s2_num[6]), 
+         .D(cnt_s2_num[5]), .Z(n11221)) /* synthesis lut_function=(!(A (B (C)+!B (C+(D)))+!A ((C+!(D))+!B))) */ ;
+    defparam n4951_bdd_4_lut_10700.init = 16'h0c0a;
+    LUT4 i8830_2_lut_rep_229 (.A(cnt_s4_num[17]), .B(cnt_s4_num[11]), .Z(n11070)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i8830_2_lut_rep_229.init = 16'heeee;
+    LUT4 i8894_3_lut_4_lut (.A(cnt_s4_num[17]), .B(cnt_s4_num[11]), .C(cnt_s4_num[16]), 
+         .D(cnt_s4_num[14]), .Z(n9307)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
+    defparam i8894_3_lut_4_lut.init = 16'hfffe;
+    LUT4 i5661_2_lut_2_lut (.A(cnt_s2_num[6]), .B(n63), .Z(init_data_8__N_240[7])) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(141[13:32])
+    defparam i5661_2_lut_2_lut.init = 16'h4444;
+    PFUMX i10061 (.BLUT(n10256), .ALUT(n10255), .C0(cnt_s4_num[3]), .Z(n10257));
+    PFUMX i10629 (.BLUT(n11224), .ALUT(n11221), .C0(state[2]), .Z(init_data_8__N_97[3]));
     CCU2D add_153_11 (.A0(cnt_s4_num[9]), .B0(GND_net), .C0(GND_net), 
           .D0(GND_net), .A1(cnt_s4_num[10]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10533), .COUT(n10534), .S0(n357[9]), .S1(n357[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
+          .D1(GND_net), .CIN(n8108), .COUT(n8109), .S0(n357[9]), .S1(n357[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_init.v(263[23:40])
     defparam add_153_11.INIT0 = 16'h5aaa;
     defparam add_153_11.INIT1 = 16'h5aaa;
     defparam add_153_11.INJECT1_0 = "NO";
     defparam add_153_11.INJECT1_1 = "NO";
     
 endmodule
+//
+// Verilog Description of module TSALL
+// module not written out since it is a black-box. 
+//
+
 //
 // Verilog Description of module pll
 //
@@ -1247,4718 +1227,3599 @@ module pll (sys_clk_c, sys_clk_50MHz, GND_net) /* synthesis NGD_DRC_MASK=1, syn_
     
 endmodule
 //
-// Verilog Description of module PUR
-// module not written out since it is a black-box. 
-//
-
-//
 // Verilog Description of module lcd_show_char
 //
 
-module lcd_show_char (state, sys_clk_50MHz, cnt_length_num, wr_done, 
-            length_num_flag, n14, show_char_data, sys_clk_50MHz_enable_58, 
-            \end_y_8__N_313[4] , \end_x_8__N_295[6] , \end_x_8__N_295[5] , 
-            \end_x_8__N_295[4] , \end_x_8__N_295[3] , sys_clk_50MHz_enable_84, 
-            n8443, \cnt_rom_prepare[2] , \state_3__N_368[1] , \state[3] , 
-            GND_net, ascii_num, en_write_show_char, \end_x_8__N_295[7] ) /* synthesis syn_module_defined=1 */ ;
-    output [3:0]state;
+module lcd_show_char (sys_clk_50MHz, wr_done, length_num_flag, show_char_data, 
+            cnt_length_num, n20, cnt_rom_prepare, n11908, \ascii_num[5] , 
+            \cnt_length_num[5] , \cnt_length_num[4] , sys_clk_50MHz_enable_24, 
+            \cnt_length_num[6] , sys_clk_50MHz_enable_54, state, \end_y_8__N_313[4] , 
+            \state_3__N_370[1] , n11051, n6637) /* synthesis syn_module_defined=1 */ ;
     input sys_clk_50MHz;
-    output [4:0]cnt_length_num;
     input wr_done;
     output length_num_flag;
-    input n14;
     output [8:0]show_char_data;
-    input sys_clk_50MHz_enable_58;
+    output [6:0]cnt_length_num;
+    input n20;
+    output [2:0]cnt_rom_prepare;
+    input n11908;
+    input \ascii_num[5] ;
+    output \cnt_length_num[5] ;
+    output \cnt_length_num[4] ;
+    input sys_clk_50MHz_enable_24;
+    output \cnt_length_num[6] ;
+    input sys_clk_50MHz_enable_54;
+    output [3:0]state;
     input \end_y_8__N_313[4] ;
-    input \end_x_8__N_295[6] ;
-    input \end_x_8__N_295[5] ;
-    input \end_x_8__N_295[4] ;
-    input \end_x_8__N_295[3] ;
-    input sys_clk_50MHz_enable_84;
-    output n8443;
-    output \cnt_rom_prepare[2] ;
-    input \state_3__N_368[1] ;
-    output \state[3] ;
-    input GND_net;
-    input [6:0]ascii_num;
-    output en_write_show_char;
-    input \end_x_8__N_295[7] ;
+    input \state_3__N_370[1] ;
+    input n11051;
+    output n6637;
     
     wire sys_clk_50MHz /* synthesis SET_AS_NETWORK=sys_clk_50MHz, is_clock=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(33[17:30])
-    wire [5:0]cnt_wr_color_data;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(88[17:34])
+    wire [5:0]cnt_wr_color_data;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(92[17:34])
     
-    wire n6, n14203;
-    wire [15:0]n1;
+    wire cnt_wr_color_data_5__N_443;
+    wire [5:0]n1;
     
-    wire n5863, n11775, n14202, n5875, n14276;
-    wire [5:0]n422;
-    wire [11:0]rom_addr;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(75[17:25])
+    wire the1_wr_done;
+    wire [3:0]state_3__N_374;
     
-    wire sys_clk_50MHz_enable_79, n1285, cnt_wr_color_data_5__N_439;
-    wire [5:0]n21;
-    wire [7:0]temp;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(79[17:21])
+    wire state1_finish_flag_N_463;
+    wire [15:0]n203;
     
-    wire n8539, the1_wr_done;
-    wire [3:0]state_3__N_372;
+    wire cnt_set_windows_3__N_386;
+    wire [7:0]temp;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(83[17:21])
     
-    wire state1_finish_flag_N_459, sys_clk_50MHz_enable_78;
+    wire sys_clk_50MHz_enable_90;
     wire [7:0]temp_7__N_345;
     
-    wire n14298, n14299, n14300, length_num_flag_N_462;
-    wire [3:0]state_3__N_376;
-    
-    wire sys_clk_50MHz_enable_81;
+    wire length_num_flag_N_466, sys_clk_50MHz_enable_63;
     wire [8:0]show_char_data_8__N_275;
     
-    wire sys_clk_50MHz_enable_62, n14281, n14130, n14295, n14296, 
-        n14297;
-    wire [2:0]cnt_rom_prepare;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(72[17:32])
+    wire n10943;
     wire [2:0]n12;
+    wire [11:0]rom_addr;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(79[17:25])
     
-    wire n14200, n15554, n15555, n15556;
-    wire [6:0]n1277;
-    
-    wire n655;
+    wire n9243, sys_clk_50MHz_enable_22, n9401;
     wire [15:0]n33;
     
-    wire n14055;
-    wire [4:0]n365;
-    wire [4:0]cnt_length_num_c;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(85[17:31])
+    wire sys_clk_50MHz_enable_12;
+    wire [5:0]n436;
     
-    wire n5865, n11710, n13, n11007, n14280;
-    wire [4:0]n1270;
+    wire n11117, n11118, n11119, n1120, n11111, n11112, n11113, 
+        n11020, n5039, n11108, n11109, n125;
+    wire [6:0]n850;
     
-    wire n10701, n2770, n14196;
-    wire [3:0]state_c;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(62[17:22])
+    wire n4926, n4928, n4930;
+    wire [4:0]n843;
+    wire [6:0]cnt_length_num_c;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(89[17:31])
     
-    wire n6873, n723, n14162, n1565, n5988, n10633;
-    wire [8:0]show_char_data_8__N_449;
+    wire n364, n10959, n380, n9916, n10991;
+    wire [6:0]n367;
     
-    wire cnt_set_windows_3__N_384, n6856, n891, n12633, n14069, n14282;
-    wire [7:0]rom_q;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(76[17:22])
-    
-    wire n14235, n5857, n15548, n14124, n1851, n14197, n14213, 
-        n4, n12250, n1276, n5855, n1069, n14246, n1084, n11908, 
-        n6875, n1673;
+    wire n891;
     wire [2:0]n132;
     
-    wire n2823, n2826, n2828, n6876, n14106, n14159, n1148, n14153, 
-        n14181, n158, n1676, n3913, n13325, n11747, n14277, n14068, 
-        n14062, n10541, n10540, n10539, n15568, n14189, n125, 
-        n14218, n14058, n349, n10538, n1101, n1149, n14215, n14174, 
-        n508, n4_adj_764, n14148, n126, n14087, n2428, n11731, 
-        n5840, n158_adj_765, n892, n10821, n1534, n14231, n1233, 
-        n11858, n14183, n14265, n6657, n14122, n15549, n12119, 
-        n14239, n13473, n14177, n270, n12179, n6042, n3559, n10773, 
-        n509, n1661, n1723, n6699, n1405, n1278_adj_766, n12287, 
-        n510, n127, n12278, n14102, n14095, n14079, n1851_adj_767, 
-        n14104, n14237, n14096, n14109, n2300, n11860, n12067, 
-        n4_adj_768, n14086, n12213, n14111, n2141, n1172, n2025, 
-        n12575, n5, n11689, n14275, n1565_adj_769, n2395, n1596, 
-        n6_adj_770, n14146, n14078, n46, n62, n14132, n14127, 
-        n13893, n2332, n2364, n14234, n10819, n796, n14176, n828, 
-        n1211, n14163, n1530, n1643, n1530_adj_771, n14107, n379, 
-        n380_adj_772, n4660, n14170, n828_adj_773, n3865, n1467, 
-        n46_adj_774, n14084, n62_adj_775, n4_adj_776, n380_adj_777, 
-        n8577, n1403, n14278, n14082, n13190, n13191, n14047, 
-        n6_adj_778, n14166, n14097, n1076, n1085, n2652, n14060, 
-        n2621, n14048, n12353, n4094, n3069, n12317, n4094_adj_779, 
-        n1596_adj_780, n11748, n13222, n4094_adj_781, n14091, n14057, 
-        n14074, n4_adj_782, n14065, n14064, n14179, n603, n14175, 
-        n11755, n14244, n1436, n308, n301, n317, n15546, n94, 
-        n6044, n14126, n13853, n14092, n12165, n14129, n13894, 
-        n13772, n13477;
+    wire n11008, n11024, n11078, n11105, n11106, n11107, n11091, 
+        n11046;
+    wire [7:0]rom_q;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(80[17:22])
     
+    wire n2046, n10957, n272, n11056;
+    wire [8:0]show_char_data_8__N_453;
+    
+    wire n10949, n11043, n9087, n8_adj_713, n10981, n11073, n9247, 
+        n10530, n6, n11060, n8_adj_714, n3949, n10944, n764, n8234, 
+        n10966, n11095, n1755;
+    wire [3:0]state_3__N_378;
+    
+    wire n11057, n9114, n9169, n469, n4528, n11055, n9223, sys_clk_50MHz_enable_58, 
+        n557, n10986, n9, n9161, n4183, n4, n9309, n6_adj_715;
+    wire [3:0]state_c;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(66[17:22])
+    
+    wire n2412, n6854, n2421, n2457, n10272, n11074, n1596, n1172, 
+        n2025, n9468, n11899, n301, n9777, n11030, n11034, n158, 
+        n9414, n308, n317, n270, n286, n9431, n11049, n4688, 
+        n11098, n1436, n9249, n1181, n10980, n1723, n5226, n1676, 
+        n94, n332, n5246, n10748, n10992, n10954, n126, n9127, 
+        n3295, n891_adj_716, n892, n8373, n1534, n270_adj_717, n9596, 
+        n11090, n349, n11089, n10987, n1148, n1069, n1084, n10950, 
+        n1101, n1149, n11900, n11023, n1851, n1275, n460, n452, 
+        n10483, n3699, n10709, n1405, n1278, n9686, n1661, n10531, 
+        n5259, n2974, n2975, n21, n16, n23, n8427, n127, n9509, 
+        n10607, n723, n1565, n10970, n11094, n94_adj_718, n1529, 
+        n9588;
+    
+    FD1S3IX cnt_wr_color_data__i0 (.D(n1[0]), .CK(sys_clk_50MHz), .CD(cnt_wr_color_data_5__N_443), 
+            .Q(cnt_wr_color_data[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(246[10] 251[55])
+    defparam cnt_wr_color_data__i0.GSR = "ENABLED";
+    FD1S3AX the1_wr_done_178 (.D(wr_done), .CK(sys_clk_50MHz), .Q(the1_wr_done)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(122[10] 125[30])
+    defparam the1_wr_done_178.GSR = "ENABLED";
+    FD1S3AX state1_finish_flag_180 (.D(state1_finish_flag_N_463), .CK(sys_clk_50MHz), 
+            .Q(state_3__N_374[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(140[10] 143[36])
+    defparam state1_finish_flag_180.GSR = "ENABLED";
+    FD1P3AY cnt_set_windows_FSM_i0_i0 (.D(n203[15]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i0.GSR = "ENABLED";
+    FD1P3AX temp_i0 (.D(temp_7__N_345[0]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i0.GSR = "ENABLED";
+    FD1S3AX length_num_flag_184 (.D(length_num_flag_N_466), .CK(sys_clk_50MHz), 
+            .Q(length_num_flag)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(206[10] 223[32])
+    defparam length_num_flag_184.GSR = "ENABLED";
+    FD1P3AX data_i0 (.D(show_char_data_8__N_275[0]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i0.GSR = "ENABLED";
+    FD1S3IX cnt_length_num__i0 (.D(n20), .CK(sys_clk_50MHz), .CD(n10943), 
+            .Q(cnt_length_num[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(229[10] 236[49])
+    defparam cnt_length_num__i0.GSR = "ENABLED";
+    FD1S3IX cnt_rom_prepare__i0 (.D(n12[0]), .CK(sys_clk_50MHz), .CD(length_num_flag), 
+            .Q(cnt_rom_prepare[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(149[10] 152[51])
+    defparam cnt_rom_prepare__i0.GSR = "ENABLED";
+    LUT4 i8834_2_lut_2_lut (.A(rom_addr[3]), .B(rom_addr[0]), .Z(n9243)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i8834_2_lut_2_lut.init = 16'hdddd;
+    FD1P3AX rom_addr__i1 (.D(cnt_length_num[0]), .SP(sys_clk_50MHz_enable_22), 
+            .CK(sys_clk_50MHz), .Q(rom_addr[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i1.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i12 (.D(n203[11]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i12.GSR = "ENABLED";
+    LUT4 i9954_3_lut_3_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[5]), 
+         .Z(n9401)) /* synthesis lut_function=(A+((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9954_3_lut_3_lut.init = 16'hfbfb;
+    FD1P3AX cnt_set_windows_FSM_i0_i11 (.D(n33[10]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[11]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i11.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i10 (.D(n203[9]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n33[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i10.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i9 (.D(n203[8]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[9]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i9.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i8 (.D(n203[7]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i8.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i7 (.D(n203[6]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[7]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i7.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i6 (.D(n203[5]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i6.GSR = "ENABLED";
+    FD1P3AX temp_i7 (.D(temp_7__N_345[7]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i7.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i5 (.D(n203[4]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[5]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i5.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i4 (.D(n203[3]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i4.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i3 (.D(n203[2]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i3.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i2 (.D(n203[1]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i2.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i1 (.D(n203[0]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i1.GSR = "ENABLED";
+    FD1P3IX cnt_wr_color_data__i5 (.D(n436[5]), .SP(sys_clk_50MHz_enable_12), 
+            .CD(cnt_wr_color_data_5__N_443), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(246[10] 251[55])
+    defparam cnt_wr_color_data__i5.GSR = "ENABLED";
+    PFUMX i10564 (.BLUT(n11117), .ALUT(n11118), .C0(rom_addr[3]), .Z(n11119));
+    FD1P3IX cnt_wr_color_data__i4 (.D(n436[4]), .SP(sys_clk_50MHz_enable_12), 
+            .CD(cnt_wr_color_data_5__N_443), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(246[10] 251[55])
+    defparam cnt_wr_color_data__i4.GSR = "ENABLED";
+    FD1P3IX cnt_wr_color_data__i3 (.D(n436[3]), .SP(sys_clk_50MHz_enable_12), 
+            .CD(cnt_wr_color_data_5__N_443), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(246[10] 251[55])
+    defparam cnt_wr_color_data__i3.GSR = "ENABLED";
+    FD1P3IX cnt_wr_color_data__i2 (.D(n436[2]), .SP(sys_clk_50MHz_enable_12), 
+            .CD(cnt_wr_color_data_5__N_443), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(246[10] 251[55])
+    defparam cnt_wr_color_data__i2.GSR = "ENABLED";
+    FD1P3IX cnt_wr_color_data__i1 (.D(n436[1]), .SP(sys_clk_50MHz_enable_12), 
+            .CD(cnt_wr_color_data_5__N_443), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(246[10] 251[55])
+    defparam cnt_wr_color_data__i1.GSR = "ENABLED";
+    FD1P3AX rom_addr__i11 (.D(n11908), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[10])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i11.GSR = "ENABLED";
+    FD1P3AX rom_addr__i9 (.D(n1120), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i9.GSR = "ENABLED";
+    PFUMX i10560 (.BLUT(n11111), .ALUT(n11112), .C0(rom_addr[4]), .Z(n11113));
+    LUT4 i8982_2_lut_rep_179_2_lut (.A(rom_addr[4]), .B(rom_addr[5]), .Z(n11020)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i8982_2_lut_rep_179_2_lut.init = 16'h4444;
+    LUT4 i1_2_lut_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), .C(rom_addr[3]), 
+         .D(rom_addr[1]), .Z(n5039)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i1_2_lut_3_lut_4_lut_4_lut.init = 16'h0400;
+    PFUMX i10558 (.BLUT(n11108), .ALUT(n11109), .C0(rom_addr[3]), .Z(n125));
+    FD1P3AX rom_addr__i10 (.D(\ascii_num[5] ), .SP(sys_clk_50MHz_enable_22), 
+            .CK(sys_clk_50MHz), .Q(rom_addr[9])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i10.GSR = "ENABLED";
+    FD1P3AX rom_addr__i8 (.D(n850[3]), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i8.GSR = "ENABLED";
+    FD1P3AX rom_addr__i7 (.D(n4926), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i7.GSR = "ENABLED";
+    FD1P3AX rom_addr__i6 (.D(n4928), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i6.GSR = "ENABLED";
+    FD1P3AX rom_addr__i5 (.D(n4930), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i5.GSR = "ENABLED";
+    FD1P3AX rom_addr__i4 (.D(n843[1]), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i4.GSR = "ENABLED";
+    FD1P3AX rom_addr__i3 (.D(n843[0]), .SP(sys_clk_50MHz_enable_22), .CK(sys_clk_50MHz), 
+            .Q(rom_addr[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i3.GSR = "ENABLED";
+    FD1P3AX rom_addr__i2 (.D(cnt_length_num_c[1]), .SP(sys_clk_50MHz_enable_22), 
+            .CK(sys_clk_50MHz), .Q(rom_addr[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam rom_addr__i2.GSR = "ENABLED";
+    LUT4 address_11__I_0_Mux_1_i380_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n364), 
+         .C(rom_addr[4]), .D(n10959), .Z(n380)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_1_i380_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i9528_1_lut_4_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
+         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n9916)) /* synthesis lut_function=(!(A (B (C+(D))+!B (C (D)))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9528_1_lut_4_lut_4_lut_4_lut.init = 16'h026a;
+    LUT4 i718_2_lut_3_lut_4_lut (.A(cnt_length_num_c[3]), .B(n10991), .C(\cnt_length_num[5] ), 
+         .D(\cnt_length_num[4] ), .Z(n367[5])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i718_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 i5810_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[1]), 
+         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n891)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5810_4_lut_4_lut_4_lut_4_lut.init = 16'h0140;
+    FD1P3IX cnt_rom_prepare__i2 (.D(n132[2]), .SP(sys_clk_50MHz_enable_24), 
+            .CD(length_num_flag), .CK(sys_clk_50MHz), .Q(cnt_rom_prepare[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(149[10] 152[51])
+    defparam cnt_rom_prepare__i2.GSR = "ENABLED";
+    FD1P3IX cnt_rom_prepare__i1 (.D(n132[1]), .SP(sys_clk_50MHz_enable_24), 
+            .CD(length_num_flag), .CK(sys_clk_50MHz), .Q(cnt_rom_prepare[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(149[10] 152[51])
+    defparam cnt_rom_prepare__i1.GSR = "ENABLED";
+    LUT4 i655_2_lut_3_lut_4_lut (.A(\cnt_length_num[5] ), .B(n11008), .C(\ascii_num[5] ), 
+         .D(\cnt_length_num[6] ), .Z(n1120)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i655_2_lut_3_lut_4_lut.init = 16'hf0e0;
+    LUT4 i653_2_lut_3_lut_4_lut (.A(\cnt_length_num[5] ), .B(n11008), .C(\ascii_num[5] ), 
+         .D(\cnt_length_num[6] ), .Z(n850[3])) /* synthesis lut_function=(!(A (C)+!A (B (C)+!B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i653_2_lut_3_lut_4_lut.init = 16'h0f1e;
+    LUT4 i768_3_lut_4_lut (.A(cnt_wr_color_data[3]), .B(n11024), .C(cnt_wr_color_data[4]), 
+         .D(cnt_wr_color_data[5]), .Z(n436[5])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(251[30:54])
+    defparam i768_3_lut_4_lut.init = 16'h7f80;
+    LUT4 i1_2_lut_3_lut_4_lut (.A(\cnt_length_num[4] ), .B(n11078), .C(\cnt_length_num[6] ), 
+         .D(\cnt_length_num[5] ), .Z(n4926)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i1_2_lut_3_lut_4_lut.init = 16'hf0e1;
+    PFUMX i10556 (.BLUT(n11105), .ALUT(n11106), .C0(rom_addr[4]), .Z(n11107));
+    LUT4 i740_2_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
+         .Z(n436[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(251[30:54])
+    defparam i740_2_lut.init = 16'h6666;
+    LUT4 i761_2_lut_3_lut_4_lut (.A(cnt_wr_color_data[2]), .B(n11091), .C(cnt_wr_color_data[4]), 
+         .D(cnt_wr_color_data[3]), .Z(n436[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(251[30:54])
+    defparam i761_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 temp_7__I_0_i4_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), 
+         .C(temp[4]), .D(rom_q[3]), .Z(temp_7__N_345[3])) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;
+    defparam temp_7__I_0_i4_3_lut_4_lut.init = 16'hf2d0;
+    LUT4 i2_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), .C(rom_addr[10]), 
+         .D(n2046), .Z(temp_7__N_345[7])) /* synthesis lut_function=(!((B+!(C (D)))+!A)) */ ;
+    defparam i2_3_lut_4_lut.init = 16'h2000;
+    LUT4 temp_7__I_0_i1_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), 
+         .C(temp[1]), .D(rom_q[0]), .Z(temp_7__N_345[0])) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;
+    defparam temp_7__I_0_i1_3_lut_4_lut.init = 16'hf2d0;
+    FD1P3IX cnt_length_num__i6 (.D(n367[6]), .SP(sys_clk_50MHz_enable_54), 
+            .CD(n10943), .CK(sys_clk_50MHz), .Q(\cnt_length_num[6] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(229[10] 236[49])
+    defparam cnt_length_num__i6.GSR = "ENABLED";
+    FD1P3IX cnt_length_num__i5 (.D(n367[5]), .SP(sys_clk_50MHz_enable_54), 
+            .CD(n10943), .CK(sys_clk_50MHz), .Q(\cnt_length_num[5] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(229[10] 236[49])
+    defparam cnt_length_num__i5.GSR = "ENABLED";
+    FD1P3IX cnt_length_num__i4 (.D(n367[4]), .SP(sys_clk_50MHz_enable_54), 
+            .CD(n10943), .CK(sys_clk_50MHz), .Q(\cnt_length_num[4] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(229[10] 236[49])
+    defparam cnt_length_num__i4.GSR = "ENABLED";
+    FD1P3IX cnt_length_num__i3 (.D(n367[3]), .SP(sys_clk_50MHz_enable_54), 
+            .CD(n10943), .CK(sys_clk_50MHz), .Q(cnt_length_num_c[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(229[10] 236[49])
+    defparam cnt_length_num__i3.GSR = "ENABLED";
+    FD1P3IX cnt_length_num__i2 (.D(n367[2]), .SP(sys_clk_50MHz_enable_54), 
+            .CD(n10943), .CK(sys_clk_50MHz), .Q(cnt_length_num_c[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(229[10] 236[49])
+    defparam cnt_length_num__i2.GSR = "ENABLED";
+    FD1P3IX cnt_length_num__i1 (.D(n367[1]), .SP(sys_clk_50MHz_enable_54), 
+            .CD(n10943), .CK(sys_clk_50MHz), .Q(cnt_length_num_c[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(229[10] 236[49])
+    defparam cnt_length_num__i1.GSR = "ENABLED";
+    FD1P3AX data_i8 (.D(show_char_data_8__N_275[8]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i8.GSR = "ENABLED";
+    LUT4 i2_2_lut_rep_116_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
+         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n10957)) /* synthesis lut_function=((B+(C+(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i2_2_lut_rep_116_3_lut_4_lut_4_lut.init = 16'hfffd;
+    LUT4 temp_7__I_0_i5_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), 
+         .C(temp[5]), .D(rom_q[4]), .Z(temp_7__N_345[4])) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;
+    defparam temp_7__I_0_i5_3_lut_4_lut.init = 16'hf2d0;
+    LUT4 temp_7__I_0_i6_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), 
+         .C(temp[6]), .D(rom_q[5]), .Z(temp_7__N_345[5])) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;
+    defparam temp_7__I_0_i6_3_lut_4_lut.init = 16'hf2d0;
+    LUT4 i2_3_lut_rep_99_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), .C(n272), 
+         .D(state[3]), .Z(sys_clk_50MHz_enable_12)) /* synthesis lut_function=(A ((C+(D))+!B)+!A (C+(D))) */ ;
+    defparam i2_3_lut_rep_99_4_lut.init = 16'hfff2;
+    LUT4 address_11__I_0_Mux_0_i1851_4_lut_4_lut_then_4_lut (.A(rom_addr[3]), 
+         .B(rom_addr[0]), .C(rom_addr[1]), .D(rom_addr[2]), .Z(n11106)) /* synthesis lut_function=(!(A+!(B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_0_i1851_4_lut_4_lut_then_4_lut.init = 16'h4004;
+    LUT4 temp_7__I_0_i3_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), 
+         .C(temp[3]), .D(rom_q[2]), .Z(temp_7__N_345[2])) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;
+    defparam temp_7__I_0_i3_3_lut_4_lut.init = 16'hf2d0;
+    LUT4 temp_7__I_0_i2_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(n11046), 
+         .C(temp[2]), .D(rom_q[1]), .Z(temp_7__N_345[1])) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;
+    defparam temp_7__I_0_i2_3_lut_4_lut.init = 16'hf2d0;
+    LUT4 show_char_data_8__I_0_i8_3_lut_4_lut (.A(cnt_wr_color_data[0]), .B(n11056), 
+         .C(state[1]), .D(show_char_data_8__N_453[7]), .Z(show_char_data_8__N_275[7])) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam show_char_data_8__I_0_i8_3_lut_4_lut.init = 16'hf101;
+    LUT4 i834_2_lut (.A(cnt_length_num_c[3]), .B(cnt_length_num_c[2]), .Z(n843[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i834_2_lut.init = 16'h6666;
+    LUT4 i832_1_lut (.A(cnt_length_num_c[2]), .Z(n843[0])) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i832_1_lut.init = 16'h5555;
+    LUT4 i725_3_lut_4_lut (.A(\cnt_length_num[4] ), .B(n10949), .C(\cnt_length_num[5] ), 
+         .D(\cnt_length_num[6] ), .Z(n367[6])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i725_3_lut_4_lut.init = 16'h7f80;
+    LUT4 address_11__I_0_Mux_0_i1851_4_lut_4_lut_else_4_lut (.A(rom_addr[3]), 
+         .B(rom_addr[0]), .C(rom_addr[1]), .D(rom_addr[2]), .Z(n11105)) /* synthesis lut_function=(!(A+!(B (C)+!B !((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_0_i1851_4_lut_4_lut_else_4_lut.init = 16'h4050;
+    LUT4 i8796_2_lut_rep_202 (.A(cnt_wr_color_data[4]), .B(cnt_wr_color_data[5]), 
+         .Z(n11043)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i8796_2_lut_rep_202.init = 16'heeee;
+    LUT4 i3_2_lut_3_lut (.A(cnt_wr_color_data[4]), .B(cnt_wr_color_data[5]), 
+         .C(n9087), .Z(n8_adj_713)) /* synthesis lut_function=(A+(B+(C))) */ ;
+    defparam i3_2_lut_3_lut.init = 16'hfefe;
+    LUT4 i647_3_lut (.A(cnt_rom_prepare[2]), .B(cnt_rom_prepare[1]), .C(cnt_rom_prepare[0]), 
+         .Z(n132[2])) /* synthesis lut_function=(!(A (B (C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[28:50])
+    defparam i647_3_lut.init = 16'h6a6a;
+    LUT4 i640_2_lut (.A(cnt_rom_prepare[1]), .B(cnt_rom_prepare[0]), .Z(n132[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[28:50])
+    defparam i640_2_lut.init = 16'h6666;
+    LUT4 i1850_2_lut_4_lut (.A(state[3]), .B(n272), .C(n10981), .D(cnt_wr_color_data[0]), 
+         .Z(n1[0])) /* synthesis lut_function=(!(A (D)+!A (B (D)+!B !(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(246[13:52])
+    defparam i1850_2_lut_4_lut.init = 16'h10ef;
+    LUT4 n1898_bdd_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[0]), .C(n11073), 
+         .D(n9247), .Z(n10530)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam n1898_bdd_4_lut_4_lut.init = 16'h0400;
+    LUT4 i4_4_lut (.A(the1_wr_done), .B(n11043), .C(n9087), .D(n6), 
+         .Z(length_num_flag_N_466)) /* synthesis lut_function=(!((B+!(C (D)))+!A)) */ ;
+    defparam i4_4_lut.init = 16'h2000;
     LUT4 i1_2_lut (.A(cnt_wr_color_data[0]), .B(state[2]), .Z(n6)) /* synthesis lut_function=(A (B)) */ ;
     defparam i1_2_lut.init = 16'h8888;
-    LUT4 i1_3_lut_4_lut (.A(n14203), .B(n1[7]), .C(n1[5]), .D(n5863), 
-         .Z(n11775)) /* synthesis lut_function=(!(A+(B+!(C+(D))))) */ ;
-    defparam i1_3_lut_4_lut.init = 16'h1110;
-    LUT4 i5043_3_lut_4_lut (.A(n14203), .B(n1[7]), .C(n1[9]), .D(n14202), 
-         .Z(n5875)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (C+(D)))) */ ;
-    defparam i5043_3_lut_4_lut.init = 16'hf1f0;
-    LUT4 i879_2_lut_3_lut_4_lut (.A(cnt_wr_color_data[2]), .B(n14276), .C(cnt_wr_color_data[4]), 
-         .D(cnt_wr_color_data[3]), .Z(n422[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(228[30:54])
-    defparam i879_2_lut_3_lut_4_lut.init = 16'h78f0;
-    FD1P3AX rom_addr_i0_i11 (.D(n1285), .SP(sys_clk_50MHz_enable_79), .CK(sys_clk_50MHz), 
-            .Q(rom_addr[11])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i11.GSR = "ENABLED";
-    FD1P3AX rom_addr_i0_i0 (.D(cnt_length_num[0]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i0.GSR = "ENABLED";
-    FD1S3IX cnt_wr_color_data__i0 (.D(n21[0]), .CK(sys_clk_50MHz), .CD(cnt_wr_color_data_5__N_439), 
-            .Q(cnt_wr_color_data[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(223[10] 228[55])
-    defparam cnt_wr_color_data__i0.GSR = "ENABLED";
-    LUT4 i7683_3_lut (.A(cnt_wr_color_data[0]), .B(state[2]), .C(temp[0]), 
-         .Z(n8539)) /* synthesis lut_function=(A+!((C)+!B)) */ ;
-    defparam i7683_3_lut.init = 16'haeae;
-    FD1S3AX the1_wr_done_178 (.D(wr_done), .CK(sys_clk_50MHz), .Q(the1_wr_done)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(116[10] 119[30])
-    defparam the1_wr_done_178.GSR = "ENABLED";
-    FD1S3AX state1_finish_flag_180 (.D(state1_finish_flag_N_459), .CK(sys_clk_50MHz), 
-            .Q(state_3__N_372[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[10] 137[36])
-    defparam state1_finish_flag_180.GSR = "ENABLED";
-    FD1P3AX temp_i0 (.D(temp_7__N_345[0]), .SP(sys_clk_50MHz_enable_78), 
-            .CK(sys_clk_50MHz), .Q(temp[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i0.GSR = "ENABLED";
-    PFUMX i13409 (.BLUT(n14298), .ALUT(n14299), .C0(rom_addr[3]), .Z(n14300));
-    FD1S3AX length_num_flag_184 (.D(length_num_flag_N_462), .CK(sys_clk_50MHz), 
-            .Q(length_num_flag)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(189[10] 204[32])
-    defparam length_num_flag_184.GSR = "ENABLED";
-    FD1S3IX cnt_length_num__i0 (.D(n14), .CK(sys_clk_50MHz), .CD(state_3__N_376[3]), 
-            .Q(cnt_length_num[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(210[10] 217[49])
-    defparam cnt_length_num__i0.GSR = "ENABLED";
-    FD1P3AX data_i8 (.D(show_char_data_8__N_275[8]), .SP(sys_clk_50MHz_enable_81), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i8.GSR = "ENABLED";
-    FD1P3AX data_i7 (.D(show_char_data_8__N_275[7]), .SP(sys_clk_50MHz_enable_81), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i7.GSR = "ENABLED";
-    FD1P3AX data_i6 (.D(show_char_data_8__N_275[6]), .SP(sys_clk_50MHz_enable_81), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i6.GSR = "ENABLED";
-    FD1P3AX data_i5 (.D(show_char_data_8__N_275[5]), .SP(sys_clk_50MHz_enable_81), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i5.GSR = "ENABLED";
-    FD1P3IX cnt_wr_color_data__i4 (.D(n422[4]), .SP(sys_clk_50MHz_enable_62), 
-            .CD(cnt_wr_color_data_5__N_439), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(223[10] 228[55])
-    defparam cnt_wr_color_data__i4.GSR = "ENABLED";
-    LUT4 i7251_4_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14281)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7251_4_lut_4_lut_then_4_lut.init = 16'h0004;
-    FD1P3AX data_i4 (.D(show_char_data_8__N_275[4]), .SP(sys_clk_50MHz_enable_81), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i4.GSR = "ENABLED";
-    FD1P3AX data_i3 (.D(show_char_data_8__N_275[3]), .SP(sys_clk_50MHz_enable_81), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i3.GSR = "ENABLED";
-    FD1P3AX temp_i6 (.D(temp_7__N_345[6]), .SP(sys_clk_50MHz_enable_78), 
-            .CK(sys_clk_50MHz), .Q(temp[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i6.GSR = "ENABLED";
-    FD1P3AX data_i2 (.D(show_char_data_8__N_275[2]), .SP(sys_clk_50MHz_enable_81), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i2.GSR = "ENABLED";
-    FD1P3AX temp_i5 (.D(temp_7__N_345[5]), .SP(sys_clk_50MHz_enable_78), 
-            .CK(sys_clk_50MHz), .Q(temp[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i5.GSR = "ENABLED";
-    FD1P3AX temp_i4 (.D(temp_7__N_345[4]), .SP(sys_clk_50MHz_enable_78), 
-            .CK(sys_clk_50MHz), .Q(temp[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i4.GSR = "ENABLED";
-    LUT4 i11365_2_lut_rep_213_2_lut (.A(rom_addr[4]), .B(rom_addr[3]), .Z(n14130)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11365_2_lut_rep_213_2_lut.init = 16'h4444;
-    FD1P3AX temp_i3 (.D(temp_7__N_345[3]), .SP(sys_clk_50MHz_enable_78), 
-            .CK(sys_clk_50MHz), .Q(temp[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i3.GSR = "ENABLED";
-    FD1P3AX temp_i2 (.D(temp_7__N_345[2]), .SP(sys_clk_50MHz_enable_78), 
-            .CK(sys_clk_50MHz), .Q(temp[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i2.GSR = "ENABLED";
-    FD1P3AX temp_i1 (.D(temp_7__N_345[1]), .SP(sys_clk_50MHz_enable_78), 
-            .CK(sys_clk_50MHz), .Q(temp[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i1.GSR = "ENABLED";
-    PFUMX i13407 (.BLUT(n14295), .ALUT(n14296), .C0(rom_addr[3]), .Z(n14297));
-    FD1S3IX cnt_rom_prepare__i0 (.D(n12[0]), .CK(sys_clk_50MHz), .CD(length_num_flag), 
-            .Q(cnt_rom_prepare[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(143[10] 146[51])
-    defparam cnt_rom_prepare__i0.GSR = "ENABLED";
-    LUT4 i485_2_lut_rep_283 (.A(n1[7]), .B(n1[9]), .Z(n14200)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i485_2_lut_rep_283.init = 16'heeee;
-    PFUMX i14202 (.BLUT(n15554), .ALUT(n15555), .C0(rom_addr[1]), .Z(n15556));
-    FD1P3AX rom_addr_i0_i10 (.D(n1277[6]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[10])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i10.GSR = "ENABLED";
-    LUT4 i493_2_lut_rep_138_3_lut_4_lut (.A(n1[7]), .B(n1[9]), .C(n655), 
-         .D(n33[10]), .Z(n14055)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i493_2_lut_rep_138_3_lut_4_lut.init = 16'hfffe;
-    FD1P3IX cnt_length_num__i4 (.D(n365[4]), .SP(sys_clk_50MHz_enable_58), 
-            .CD(state_3__N_376[3]), .CK(sys_clk_50MHz), .Q(cnt_length_num[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(210[10] 217[49])
-    defparam cnt_length_num__i4.GSR = "ENABLED";
-    FD1P3IX cnt_length_num__i3 (.D(n365[3]), .SP(sys_clk_50MHz_enable_58), 
-            .CD(state_3__N_376[3]), .CK(sys_clk_50MHz), .Q(cnt_length_num_c[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(210[10] 217[49])
-    defparam cnt_length_num__i3.GSR = "ENABLED";
-    FD1P3IX cnt_length_num__i2 (.D(n365[2]), .SP(sys_clk_50MHz_enable_58), 
-            .CD(state_3__N_376[3]), .CK(sys_clk_50MHz), .Q(cnt_length_num_c[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(210[10] 217[49])
-    defparam cnt_length_num__i2.GSR = "ENABLED";
-    FD1P3AX rom_addr_i0_i9 (.D(n1277[5]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[9])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i9.GSR = "ENABLED";
-    FD1P3IX cnt_length_num__i1 (.D(n365[1]), .SP(sys_clk_50MHz_enable_58), 
-            .CD(state_3__N_376[3]), .CK(sys_clk_50MHz), .Q(cnt_length_num_c[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(210[10] 217[49])
-    defparam cnt_length_num__i1.GSR = "ENABLED";
-    FD1P3IX cnt_wr_color_data__i2 (.D(n422[2]), .SP(sys_clk_50MHz_enable_62), 
-            .CD(cnt_wr_color_data_5__N_439), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(223[10] 228[55])
-    defparam cnt_wr_color_data__i2.GSR = "ENABLED";
-    FD1P3IX cnt_wr_color_data__i3 (.D(n422[3]), .SP(sys_clk_50MHz_enable_62), 
-            .CD(cnt_wr_color_data_5__N_439), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(223[10] 228[55])
-    defparam cnt_wr_color_data__i3.GSR = "ENABLED";
-    FD1P3IX cnt_wr_color_data__i5 (.D(n422[5]), .SP(sys_clk_50MHz_enable_62), 
-            .CD(cnt_wr_color_data_5__N_439), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(223[10] 228[55])
-    defparam cnt_wr_color_data__i5.GSR = "ENABLED";
-    FD1P3IX cnt_wr_color_data__i1 (.D(n422[1]), .SP(sys_clk_50MHz_enable_62), 
-            .CD(cnt_wr_color_data_5__N_439), .CK(sys_clk_50MHz), .Q(cnt_wr_color_data[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(223[10] 228[55])
-    defparam cnt_wr_color_data__i1.GSR = "ENABLED";
-    FD1P3AX rom_addr_i0_i8 (.D(n1277[4]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[8])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i8.GSR = "ENABLED";
-    FD1P3AX rom_addr_i0_i7 (.D(n1277[3]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i7.GSR = "ENABLED";
-    LUT4 i1_3_lut_4_lut_adj_24 (.A(n1[7]), .B(n1[9]), .C(n1[5]), .D(n5865), 
-         .Z(n11710)) /* synthesis lut_function=(!(A+(B+!(C+(D))))) */ ;
-    defparam i1_3_lut_4_lut_adj_24.init = 16'h1110;
-    FD1P3AX rom_addr_i0_i6 (.D(n1277[2]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i6.GSR = "ENABLED";
-    LUT4 i25_3_lut_4_lut (.A(n1[7]), .B(n1[9]), .C(\end_y_8__N_313[4] ), 
-         .D(n13), .Z(n11007)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (D))) */ ;
-    defparam i25_3_lut_4_lut.init = 16'hf1e0;
-    FD1P3AX rom_addr_i0_i5 (.D(n1277[1]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i5.GSR = "ENABLED";
-    LUT4 i7251_4_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14280)) /* synthesis lut_function=(!(A+(B+!((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7251_4_lut_4_lut_else_4_lut.init = 16'h1101;
-    FD1P3AX rom_addr_i0_i4 (.D(n1277[0]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i4.GSR = "ENABLED";
-    FD1P3AX rom_addr_i0_i3 (.D(n1270[1]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i3.GSR = "ENABLED";
-    LUT4 i481_2_lut_rep_285 (.A(n1[4]), .B(n1[5]), .Z(n14202)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i481_2_lut_rep_285.init = 16'heeee;
-    FD1P3AX rom_addr_i0_i2 (.D(n1270[0]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i2.GSR = "ENABLED";
-    LUT4 i7567_4_lut_4_lut (.A(n1[4]), .B(n1[5]), .C(n14203), .D(n10701), 
-         .Z(n2770)) /* synthesis lut_function=(A ((C)+!B)+!A (B (C)+!B (C+(D)))) */ ;
-    defparam i7567_4_lut_4_lut.init = 16'hf3f2;
-    LUT4 i483_2_lut_rep_286 (.A(n1[6]), .B(n1[8]), .Z(n14203)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i483_2_lut_rep_286.init = 16'heeee;
-    FD1P3AX rom_addr_i0_i1 (.D(cnt_length_num_c[1]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(rom_addr[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i1.GSR = "ENABLED";
-    LUT4 i1_2_lut_rep_279_3_lut (.A(n1[6]), .B(n1[8]), .C(n1[7]), .Z(n14196)) /* synthesis lut_function=(A+(B+(C))) */ ;
-    defparam i1_2_lut_rep_279_3_lut.init = 16'hfefe;
-    LUT4 i2_2_lut_rep_289 (.A(state_c[1]), .B(state[2]), .Z(sys_clk_50MHz_enable_81)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i2_2_lut_rep_289.init = 16'heeee;
-    LUT4 i6016_3_lut_4_lut_4_lut (.A(state_c[1]), .B(state[2]), .C(n655), 
-         .D(n33[10]), .Z(n6873)) /* synthesis lut_function=(A (C+(D))+!A (B)) */ ;
-    defparam i6016_3_lut_4_lut_4_lut.init = 16'heee4;
-    LUT4 i7253_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n723), .C(rom_addr[3]), 
-         .D(n14162), .Z(n1565)) /* synthesis lut_function=(!(A+!(B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7253_4_lut_4_lut_4_lut.init = 16'h4045;
-    LUT4 i5146_3_lut (.A(n1[3]), .B(n1[4]), .C(n1[2]), .Z(n5988)) /* synthesis lut_function=(!(A (B)+!A (B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i5146_3_lut.init = 16'h2323;
-    LUT4 show_char_data_8__I_0_i7_4_lut (.A(n8539), .B(\end_x_8__N_295[6] ), 
-         .C(state_c[1]), .D(n10633), .Z(show_char_data_8__N_275[6])) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B (C (D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(249[10] 260[22])
-    defparam show_char_data_8__I_0_i7_4_lut.init = 16'h05c5;
-    LUT4 show_char_data_8__I_0_i6_3_lut (.A(n8539), .B(show_char_data_8__N_449[5]), 
-         .C(state_c[1]), .Z(show_char_data_8__N_275[5])) /* synthesis lut_function=(A (B (C))+!A (B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(249[10] 260[22])
-    defparam show_char_data_8__I_0_i6_3_lut.init = 16'hc5c5;
-    FD1P3AX cnt_set_windows_FSM_i0_i15 (.D(n1[14]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[15]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i15.GSR = "ENABLED";
-    LUT4 i5033_3_lut (.A(n10701), .B(\end_x_8__N_295[5] ), .C(n6856), 
-         .Z(n5865)) /* synthesis lut_function=(A (B (C))+!A (B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i5033_3_lut.init = 16'hc5c5;
-    LUT4 i6001_3_lut (.A(n1[2]), .B(n1[4]), .C(n1[3]), .Z(n6856)) /* synthesis lut_function=(A (B+!(C))+!A (B)) */ ;
-    defparam i6001_3_lut.init = 16'hcece;
-    LUT4 i7135_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n891)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7135_4_lut_4_lut_4_lut_4_lut.init = 16'h0140;
-    LUT4 i12057_1_lut_4_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n12633)) /* synthesis lut_function=(!(A (B (C+(D))+!B (C (D)))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i12057_1_lut_4_lut_4_lut_4_lut.init = 16'h026a;
-    LUT4 show_char_data_8__I_0_i5_4_lut (.A(n8539), .B(n11007), .C(state_c[1]), 
-         .D(n14069), .Z(show_char_data_8__N_275[4])) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B (C (D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(249[10] 260[22])
-    defparam show_char_data_8__I_0_i5_4_lut.init = 16'h05c5;
-    LUT4 i2_4_lut (.A(n5988), .B(\end_x_8__N_295[4] ), .C(n1[5]), .D(n14203), 
-         .Z(n13)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i2_4_lut.init = 16'h0004;
-    PFUMX i13397 (.BLUT(n14280), .ALUT(n14281), .C0(rom_addr[3]), .Z(n14282));
-    LUT4 show_char_data_8__I_0_i4_3_lut (.A(n8539), .B(show_char_data_8__N_449[3]), 
-         .C(state_c[1]), .Z(show_char_data_8__N_275[3])) /* synthesis lut_function=(A (B (C))+!A (B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(249[10] 260[22])
-    defparam show_char_data_8__I_0_i4_3_lut.init = 16'hc5c5;
-    LUT4 i5031_3_lut (.A(n10701), .B(\end_x_8__N_295[3] ), .C(n6856), 
-         .Z(n5863)) /* synthesis lut_function=(A (B (C))+!A (B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i5031_3_lut.init = 16'hc5c5;
-    LUT4 temp_7__I_0_i7_3_lut (.A(rom_q[6]), .B(temp[7]), .C(n14235), 
-         .Z(temp_7__N_345[6])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(163[10] 182[16])
-    defparam temp_7__I_0_i7_3_lut.init = 16'hcaca;
-    LUT4 i5025_4_lut (.A(n14196), .B(n1[9]), .C(n1[5]), .D(n1[4]), .Z(n5857)) /* synthesis lut_function=(A (B)+!A (B+!(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i5025_4_lut.init = 16'hcdcc;
-    LUT4 temp_7__I_0_i6_3_lut (.A(rom_q[5]), .B(temp[6]), .C(n14235), 
-         .Z(temp_7__N_345[5])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(163[10] 182[16])
-    defparam temp_7__I_0_i6_3_lut.init = 16'hcaca;
-    FD1P3AX cnt_set_windows_FSM_i0_i14 (.D(n1[13]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i14.GSR = "ENABLED";
-    FD1P3AX cnt_set_windows_FSM_i0_i13 (.D(n1[12]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[13]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i13.GSR = "ENABLED";
-    FD1P3AX cnt_set_windows_FSM_i0_i12 (.D(n1[11]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[12]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i12.GSR = "ENABLED";
-    FD1P3AX cnt_set_windows_FSM_i0_i11 (.D(n33[10]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[11]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i11.GSR = "ENABLED";
-    FD1P3AX cnt_set_windows_FSM_i0_i10 (.D(n1[9]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n33[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i10.GSR = "ENABLED";
-    LUT4 i487_2_lut_rep_152 (.A(n33[10]), .B(n655), .Z(n14069)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i487_2_lut_rep_152.init = 16'heeee;
-    FD1P3AX cnt_set_windows_FSM_i0_i9 (.D(n1[8]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[9]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i9.GSR = "ENABLED";
-    LUT4 temp_7__I_0_i5_3_lut (.A(rom_q[4]), .B(temp[5]), .C(n14235), 
-         .Z(temp_7__N_345[4])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(163[10] 182[16])
-    defparam temp_7__I_0_i5_3_lut.init = 16'hcaca;
-    FD1P3AX cnt_set_windows_FSM_i0_i8 (.D(n1[7]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i8.GSR = "ENABLED";
-    LUT4 i2020_4_lut_4_lut (.A(n33[10]), .B(n655), .C(n1[9]), .D(n11775), 
-         .Z(show_char_data_8__N_449[3])) /* synthesis lut_function=(!(A (B)+!A (B+!(C+(D))))) */ ;
-    defparam i2020_4_lut_4_lut.init = 16'h3332;
-    LUT4 i7016_4_lut_4_lut (.A(n33[10]), .B(n655), .C(state_c[1]), .D(n5857), 
-         .Z(show_char_data_8__N_275[2])) /* synthesis lut_function=(!(A (B+!(C))+!A (B+!(C (D))))) */ ;
-    defparam i7016_4_lut_4_lut.init = 16'h3020;
-    LUT4 i7190_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(n15548), 
-         .D(n14124), .Z(n1851)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7190_4_lut_4_lut.init = 16'h5140;
-    LUT4 temp_7__I_0_i4_3_lut (.A(rom_q[3]), .B(temp[4]), .C(n14235), 
-         .Z(temp_7__N_345[3])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(163[10] 182[16])
-    defparam temp_7__I_0_i4_3_lut.init = 16'hcaca;
-    LUT4 i2008_4_lut_4_lut (.A(n33[10]), .B(n655), .C(n11710), .D(n14203), 
-         .Z(show_char_data_8__N_449[5])) /* synthesis lut_function=(!(A (B)+!A (B+((D)+!C)))) */ ;
-    defparam i2008_4_lut_4_lut.init = 16'h2232;
-    LUT4 temp_7__I_0_i3_3_lut (.A(rom_q[2]), .B(temp[3]), .C(n14235), 
-         .Z(temp_7__N_345[2])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(163[10] 182[16])
-    defparam temp_7__I_0_i3_3_lut.init = 16'hcaca;
-    LUT4 temp_7__I_0_i2_3_lut (.A(rom_q[1]), .B(temp[2]), .C(n14235), 
-         .Z(temp_7__N_345[1])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(163[10] 182[16])
-    defparam temp_7__I_0_i2_3_lut.init = 16'hcaca;
-    LUT4 i1922_2_lut (.A(cnt_rom_prepare[0]), .B(sys_clk_50MHz_enable_84), 
-         .Z(n12[0])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(143[10] 146[51])
-    defparam i1922_2_lut.init = 16'h6666;
-    LUT4 i7591_2_lut (.A(cnt_rom_prepare[0]), .B(cnt_rom_prepare[1]), .Z(n8443)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i7591_2_lut.init = 16'heeee;
-    FD1P3AX cnt_set_windows_FSM_i0_i7 (.D(n1[6]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[7]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i7.GSR = "ENABLED";
-    LUT4 i7014_4_lut_4_lut (.A(n14200), .B(n14069), .C(state_c[1]), .D(n2770), 
-         .Z(show_char_data_8__N_275[8])) /* synthesis lut_function=(!(A (B (C))+!A (B (C)+!B !((D)+!C)))) */ ;
-    defparam i7014_4_lut_4_lut.init = 16'h3f2f;
-    FD1P3AX cnt_set_windows_FSM_i0_i6 (.D(n1[5]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i6.GSR = "ENABLED";
-    LUT4 i886_3_lut_4_lut (.A(cnt_wr_color_data[3]), .B(n14197), .C(cnt_wr_color_data[4]), 
-         .D(cnt_wr_color_data[5]), .Z(n422[5])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(228[30:54])
-    defparam i886_3_lut_4_lut.init = 16'h7f80;
-    FD1P3AX cnt_set_windows_FSM_i0_i5 (.D(n1[4]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[5]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i5.GSR = "ENABLED";
-    LUT4 i2_3_lut (.A(n1[3]), .B(n1[1]), .C(n1[2]), .Z(n10701)) /* synthesis lut_function=(A+(B+(C))) */ ;
+    LUT4 i711_2_lut_3_lut_4_lut (.A(cnt_length_num_c[2]), .B(n11060), .C(\cnt_length_num[4] ), 
+         .D(cnt_length_num_c[3]), .Z(n367[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i711_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 i690_2_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), .Z(n367[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i690_2_lut.init = 16'h6666;
+    LUT4 i1_2_lut_adj_16 (.A(state[2]), .B(state[1]), .Z(sys_clk_50MHz_enable_63)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i1_2_lut_adj_16.init = 16'heeee;
+    LUT4 i118_4_lut_rep_102 (.A(\cnt_length_num[4] ), .B(length_num_flag), 
+         .C(n8_adj_714), .D(cnt_length_num_c[2]), .Z(n10943)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(233[13:77])
+    defparam i118_4_lut_rep_102.init = 16'h0400;
+    LUT4 i5958_4_lut (.A(n3949), .B(state[1]), .C(n10944), .D(n764), 
+         .Z(show_char_data_8__N_275[8])) /* synthesis lut_function=(!(A (B (C (D)))+!A (B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[10] 285[22])
+    defparam i5958_4_lut.init = 16'h3fbb;
+    LUT4 i2_3_lut (.A(n203[3]), .B(n203[1]), .C(n203[2]), .Z(n8234)) /* synthesis lut_function=(A+(B+(C))) */ ;
     defparam i2_3_lut.init = 16'hfefe;
-    LUT4 i822_2_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), .Z(n365[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(217[27:48])
-    defparam i822_2_lut.init = 16'h6666;
-    FD1P3AX cnt_set_windows_FSM_i0_i4 (.D(n1[3]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i4.GSR = "ENABLED";
-    FD1P3AX cnt_set_windows_FSM_i0_i3 (.D(n1[2]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i3.GSR = "ENABLED";
-    LUT4 i858_2_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
-         .Z(n422[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(228[30:54])
-    defparam i858_2_lut.init = 16'h6666;
-    FD1P3AX cnt_set_windows_FSM_i0_i2 (.D(n1[1]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i2.GSR = "ENABLED";
-    LUT4 i916_2_lut (.A(cnt_length_num_c[3]), .B(cnt_length_num_c[2]), .Z(n1270[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam i916_2_lut.init = 16'h6666;
-    LUT4 i914_1_lut (.A(cnt_length_num_c[2]), .Z(n1270[0])) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam i914_1_lut.init = 16'h5555;
-    FD1P3AX cnt_set_windows_FSM_i0_i1 (.D(n1[0]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i1.GSR = "ENABLED";
-    LUT4 i843_3_lut_4_lut (.A(cnt_length_num_c[2]), .B(n14213), .C(cnt_length_num_c[3]), 
-         .D(cnt_length_num[4]), .Z(n365[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(217[27:48])
-    defparam i843_3_lut_4_lut.init = 16'h7f80;
-    LUT4 i7250_4_lut_4_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
-         .C(rom_addr[3]), .D(rom_addr[2]), .Z(n15555)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7250_4_lut_4_lut_4_lut_then_4_lut.init = 16'h0100;
-    LUT4 address_11__I_0_Mux_2_i1276_4_lut_4_lut (.A(rom_addr[4]), .B(n4), 
-         .C(rom_addr[5]), .D(n12250), .Z(n1276)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_2_i1276_4_lut_4_lut.init = 16'h4f40;
-    FD1P3IX data_i1 (.D(n5855), .SP(sys_clk_50MHz_enable_81), .CD(n6873), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
+    LUT4 address_11__I_0_Mux_5_i1755_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n10966), 
+         .C(rom_addr[4]), .D(n11095), .Z(n1755)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_5_i1755_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 i26_1_lut_4_lut (.A(\cnt_length_num[4] ), .B(length_num_flag), 
+         .C(n8_adj_714), .D(cnt_length_num_c[2]), .Z(state_3__N_378[2])) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(233[13:77])
+    defparam i26_1_lut_4_lut.init = 16'hfbff;
+    LUT4 i1_4_lut (.A(n11057), .B(n9114), .C(n203[9]), .D(n9169), .Z(show_char_data_8__N_275[0])) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C))) */ ;
+    defparam i1_4_lut.init = 16'hc0c8;
+    LUT4 i5745_4_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
+         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n11109)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5745_4_lut_4_lut_then_4_lut.init = 16'h0100;
+    LUT4 i375_2_lut_rep_103 (.A(n33[10]), .B(n469), .Z(n10944)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i375_2_lut_rep_103.init = 16'heeee;
+    LUT4 i2_3_lut_4_lut_adj_17 (.A(n33[10]), .B(n469), .C(n203[9]), .D(n203[8]), 
+         .Z(n764)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
+    defparam i2_3_lut_4_lut_adj_17.init = 16'hfffe;
+    LUT4 i5745_4_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
+         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n11108)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5745_4_lut_4_lut_else_4_lut.init = 16'h0004;
+    LUT4 i5961_4_lut_4_lut (.A(n33[10]), .B(n469), .C(state[1]), .D(n4528), 
+         .Z(show_char_data_8__N_275[2])) /* synthesis lut_function=(!(A (B+!(C))+!A (B+!(C (D))))) */ ;
+    defparam i5961_4_lut_4_lut.init = 16'h3020;
+    LUT4 i3_4_lut (.A(\end_y_8__N_313[4] ), .B(n203[5]), .C(n11055), .D(n9223), 
+         .Z(show_char_data_8__N_453[7])) /* synthesis lut_function=(!((B+(C+(D)))+!A)) */ ;
+    defparam i3_4_lut.init = 16'h0002;
+    LUT4 i8814_4_lut (.A(n203[3]), .B(n764), .C(n203[4]), .D(n203[2]), 
+         .Z(n9223)) /* synthesis lut_function=(A (B+!(C))+!A (B+!(C+(D)))) */ ;
+    defparam i8814_4_lut.init = 16'hcecf;
+    LUT4 i158_2_lut (.A(state[2]), .B(temp[0]), .Z(sys_clk_50MHz_enable_58)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279[13:55])
+    defparam i158_2_lut.init = 16'h8888;
+    LUT4 i887_1_lut (.A(cnt_wr_color_data[0]), .Z(n557)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(216[13:50])
+    defparam i887_1_lut.init = 16'h5555;
+    LUT4 i21_4_lut (.A(n10986), .B(n469), .C(state[1]), .D(n9), .Z(show_char_data_8__N_275[5])) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B (C)+!B !((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[10] 285[22])
+    defparam i21_4_lut.init = 16'h3505;
+    LUT4 i1_3_lut (.A(n203[9]), .B(n33[10]), .C(n9161), .Z(n9)) /* synthesis lut_function=(A (B)+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[10] 285[22])
+    defparam i1_3_lut.init = 16'hdcdc;
+    LUT4 i1_4_lut_adj_18 (.A(n203[4]), .B(n9169), .C(n203[5]), .D(n8234), 
+         .Z(n9161)) /* synthesis lut_function=(!(A (B+!(C))+!A (B+!(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(260[9] 273[16])
+    defparam i1_4_lut_adj_18.init = 16'h3031;
+    FD1P3AX data_i7 (.D(show_char_data_8__N_275[7]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i7.GSR = "ENABLED";
+    FD1P3IX data_i6 (.D(n557), .SP(sys_clk_50MHz_enable_58), .CD(n4183), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i6.GSR = "ENABLED";
+    FD1P3AX data_i5 (.D(show_char_data_8__N_275[5]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i5.GSR = "ENABLED";
+    FD1P3AX data_i4 (.D(show_char_data_8__N_275[4]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i4.GSR = "ENABLED";
+    FD1P3AX data_i3 (.D(show_char_data_8__N_275[3]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i3.GSR = "ENABLED";
+    FD1P3AX data_i2 (.D(show_char_data_8__N_275[2]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
+    defparam data_i2.GSR = "ENABLED";
+    FD1P3AX data_i1 (.D(show_char_data_8__N_275[1]), .SP(sys_clk_50MHz_enable_63), 
+            .CK(sys_clk_50MHz), .Q(show_char_data[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(259[10] 285[22])
     defparam data_i1.GSR = "ENABLED";
-    LUT4 state_3__N_365_I_0_196_2_lut (.A(state_c[1]), .B(the1_wr_done), 
-         .Z(cnt_set_windows_3__N_384)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(127[13:44])
-    defparam state_3__N_365_I_0_196_2_lut.init = 16'h8888;
-    LUT4 i5023_4_lut (.A(n14202), .B(n1[9]), .C(n14196), .D(n10701), 
-         .Z(n5855)) /* synthesis lut_function=(A (B+!(C))+!A (B+!(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i5023_4_lut.init = 16'hcecf;
-    LUT4 i7250_4_lut_4_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
-         .C(rom_addr[3]), .D(rom_addr[2]), .Z(n15554)) /* synthesis lut_function=(!(A+(B (C)+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7250_4_lut_4_lut_4_lut_else_4_lut.init = 16'h0414;
-    LUT4 address_11__I_0_Mux_1_i1084_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n1069), 
-         .C(n14246), .D(rom_addr[0]), .Z(n1084)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_1_i1084_3_lut_4_lut_4_lut.init = 16'h4e44;
-    LUT4 i11218_2_lut_rep_296 (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
-         .Z(n14213)) /* synthesis lut_function=(A (B)) */ ;
-    defparam i11218_2_lut_rep_296.init = 16'h8888;
-    LUT4 i836_2_lut_3_lut_4_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
-         .C(cnt_length_num_c[3]), .D(cnt_length_num_c[2]), .Z(n365[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;
-    defparam i836_2_lut_3_lut_4_lut.init = 16'h78f0;
-    LUT4 i11286_2_lut_3_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
-         .C(cnt_length_num_c[3]), .Z(n11908)) /* synthesis lut_function=(A (B (C))) */ ;
-    defparam i11286_2_lut_3_lut.init = 16'h8080;
-    LUT4 i6018_1_lut (.A(state[2]), .Z(n6875)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
-    defparam i6018_1_lut.init = 16'h5555;
-    LUT4 i829_2_lut_3_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
-         .C(cnt_length_num_c[2]), .Z(n365[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;
-    defparam i829_2_lut_3_lut.init = 16'h7878;
-    LUT4 i918_2_lut (.A(cnt_length_num_c[3]), .B(cnt_length_num_c[2]), .Z(n1673)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam i918_2_lut.init = 16'h8888;
-    LUT4 state1_finish_flag_I_0_2_lut (.A(n33[10]), .B(the1_wr_done), .Z(state1_finish_flag_N_459)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[13:52])
-    defparam state1_finish_flag_I_0_2_lut.init = 16'h8888;
-    LUT4 address_11__I_0_Mux_4_i2141_4_lut_4_lut_else_1_lut (.A(rom_addr[4]), 
-         .B(rom_addr[2]), .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14295)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C (D)))+!A !(B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i2141_4_lut_4_lut_else_1_lut.init = 16'h4e62;
-    LUT4 i118_4_lut (.A(n11908), .B(length_num_flag), .C(cnt_length_num[4]), 
-         .D(cnt_length_num_c[2]), .Z(state_3__N_376[3])) /* synthesis lut_function=(!(((C+!(D))+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(214[13:77])
-    defparam i118_4_lut.init = 16'h0800;
-    LUT4 i807_3_lut (.A(\cnt_rom_prepare[2] ), .B(cnt_rom_prepare[1]), .C(cnt_rom_prepare[0]), 
-         .Z(n132[2])) /* synthesis lut_function=(!(A (B (C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(146[28:50])
-    defparam i807_3_lut.init = 16'h6a6a;
-    LUT4 i800_2_lut (.A(cnt_rom_prepare[1]), .B(cnt_rom_prepare[0]), .Z(n132[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(146[28:50])
-    defparam i800_2_lut.init = 16'h6666;
-    LUT4 i2011_2_lut (.A(state_c[0]), .B(\state_3__N_368[1] ), .Z(n2823)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
-    defparam i2011_2_lut.init = 16'h2222;
-    LUT4 i2014_4_lut (.A(state_c[1]), .B(\state_3__N_368[1] ), .C(state_3__N_372[2]), 
-         .D(state_c[0]), .Z(n2826)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
-    defparam i2014_4_lut.init = 16'hce0a;
-    LUT4 i2016_4_lut (.A(state[2]), .B(state_3__N_372[2]), .C(state_3__N_376[3]), 
-         .D(state_c[1]), .Z(n2828)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
-    defparam i2016_4_lut.init = 16'hce0a;
-    FD1P3IX temp_i7 (.D(rom_q[7]), .SP(sys_clk_50MHz_enable_78), .CD(n6876), 
-            .CK(sys_clk_50MHz), .Q(temp[7])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[10] 182[16])
-    defparam temp_i7.GSR = "ENABLED";
-    FD1P3AY cnt_set_windows_FSM_i0_i0 (.D(n1[15]), .SP(cnt_set_windows_3__N_384), 
-            .CK(sys_clk_50MHz), .Q(n1[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(128[28:50])
-    defparam cnt_set_windows_FSM_i0_i0.GSR = "ENABLED";
-    FD1S3IX state_FSM_i0 (.D(state_3__N_376[3]), .CK(sys_clk_50MHz), .CD(n6875), 
-            .Q(\state[3] ));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
-    defparam state_FSM_i0.GSR = "ENABLED";
-    LUT4 i7219_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(n14106), 
-         .D(n14159), .Z(n1148)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7219_4_lut_4_lut.init = 16'h5140;
-    LUT4 i7207_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n14153), .C(rom_addr[3]), 
-         .D(n14181), .Z(n158)) /* synthesis lut_function=(!(A+(B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7207_4_lut_4_lut_4_lut.init = 16'h0454;
-    LUT4 n1676_bdd_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n1676), .C(n3913), 
-         .D(rom_addr[3]), .Z(n13325)) /* synthesis lut_function=(A (B)+!A (B (C+!(D))+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n1676_bdd_3_lut_4_lut_4_lut.init = 16'hd8cc;
-    LUT4 i1_2_lut_rep_151_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(n11747), .D(n14277), .Z(n14068)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_151_3_lut_4_lut_4_lut.init = 16'h8000;
-    LUT4 i1_2_lut_rep_145_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(rom_addr[5]), .D(n14277), .Z(n14062)) /* synthesis lut_function=((B+(C+!(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_145_3_lut_4_lut_4_lut.init = 16'hfdff;
-    CCU2D add_590_cout (.A0(GND_net), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
-          .A1(GND_net), .B1(GND_net), .C1(GND_net), .D1(GND_net), .CIN(n10541), 
-          .S0(n1285));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam add_590_cout.INIT0 = 16'h0000;
-    defparam add_590_cout.INIT1 = 16'h0000;
-    defparam add_590_cout.INJECT1_0 = "NO";
-    defparam add_590_cout.INJECT1_1 = "NO";
-    CCU2D add_590_7 (.A0(ascii_num[5]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
-          .A1(ascii_num[6]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .CIN(n10540), .COUT(n10541), .S0(n1277[5]), .S1(n1277[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam add_590_7.INIT0 = 16'hfaaa;
-    defparam add_590_7.INIT1 = 16'h0555;
-    defparam add_590_7.INJECT1_0 = "NO";
-    defparam add_590_7.INJECT1_1 = "NO";
-    CCU2D add_590_5 (.A0(ascii_num[3]), .B0(cnt_length_num_c[2]), .C0(cnt_length_num_c[3]), 
-          .D0(cnt_length_num[4]), .A1(ascii_num[4]), .B1(GND_net), .C1(GND_net), 
-          .D1(GND_net), .CIN(n10539), .COUT(n10540), .S0(n1277[3]), 
-          .S1(n1277[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam add_590_5.INIT0 = 16'h556a;
-    defparam add_590_5.INIT1 = 16'hfaaa;
-    defparam add_590_5.INJECT1_0 = "NO";
-    defparam add_590_5.INJECT1_1 = "NO";
-    FD1P3AX rom_addr_i0_i1_rep_371 (.D(cnt_length_num_c[1]), .SP(sys_clk_50MHz_enable_79), 
-            .CK(sys_clk_50MHz), .Q(n15568)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_i0_i1_rep_371.GSR = "ENABLED";
-    LUT4 i7073_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(n14189), 
-         .D(n14106), .Z(n125)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7073_4_lut_4_lut.init = 16'h5140;
-    LUT4 n1834_bdd_4_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14299)) /* synthesis lut_function=(!(A+(B (C (D)+!C !(D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n1834_bdd_4_lut_4_lut_then_4_lut.init = 16'h0450;
-    LUT4 i7419_2_lut_rep_141_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(n14218), .D(rom_addr[0]), .Z(n14058)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7419_2_lut_rep_141_3_lut_4_lut_4_lut_4_lut.init = 16'h0010;
-    LUT4 i7360_2_lut_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(n14277), .Z(n349)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7360_2_lut_3_lut_4_lut_4_lut.init = 16'h8000;
-    CCU2D add_590_3 (.A0(cnt_length_num[4]), .B0(n1673), .C0(ascii_num[1]), 
-          .D0(GND_net), .A1(cnt_length_num[4]), .B1(n1673), .C1(ascii_num[2]), 
-          .D1(GND_net), .CIN(n10538), .COUT(n10539), .S0(n1277[1]), 
-          .S1(n1277[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam add_590_3.INIT0 = 16'he1e1;
-    defparam add_590_3.INIT1 = 16'he1e1;
-    defparam add_590_3.INJECT1_0 = "NO";
-    defparam add_590_3.INJECT1_1 = "NO";
-    LUT4 address_11__I_0_Mux_4_i1149_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[5]), 
-         .C(n14058), .D(n1101), .Z(n1149)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i1149_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 n1834_bdd_4_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14298)) /* synthesis lut_function=(!(A (B (D)+!B !(C (D)))+!A (B (D)+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n1834_bdd_4_lut_4_lut_else_4_lut.init = 16'h20dc;
-    LUT4 i12644_2_lut_3_lut (.A(cnt_rom_prepare[1]), .B(cnt_rom_prepare[0]), 
-         .C(\cnt_rom_prepare[2] ), .Z(sys_clk_50MHz_enable_79)) /* synthesis lut_function=(!(A+((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[13:35])
-    defparam i12644_2_lut_3_lut.init = 16'h0404;
-    LUT4 address_11__I_0_Mux_5_i508_4_lut_4_lut (.A(rom_addr[6]), .B(n14215), 
-         .C(n14068), .D(n14174), .Z(n508)) /* synthesis lut_function=(A (B (D))+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_5_i508_4_lut_4_lut.init = 16'hd850;
-    LUT4 address_11__I_0_Mux_5_i126_4_lut_4_lut (.A(rom_addr[6]), .B(n4_adj_764), 
-         .C(n14148), .D(n125), .Z(n126)) /* synthesis lut_function=(A (D)+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_5_i126_4_lut_4_lut.init = 16'hae04;
-    LUT4 address_11__I_0_Mux_7_i2428_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[6]), 
-         .B(rom_addr[0]), .C(n14087), .D(rom_addr[5]), .Z(n2428)) /* synthesis lut_function=(!(A ((C)+!B)+!A ((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_7_i2428_4_lut_4_lut_4_lut_4_lut.init = 16'h080c;
-    LUT4 address_11__I_0_Mux_5_i892_4_lut_4_lut (.A(rom_addr[6]), .B(n11731), 
-         .C(n5840), .D(n158_adj_765), .Z(n892)) /* synthesis lut_function=(A (D)+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_5_i892_4_lut_4_lut.init = 16'hae04;
-    LUT4 i7584_3_lut_3_lut (.A(rom_addr[6]), .B(n10821), .C(rom_addr[0]), 
-         .Z(n1534)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7584_3_lut_3_lut.init = 16'h0202;
-    LUT4 i76_2_lut_rep_314 (.A(state[2]), .B(the1_wr_done), .Z(n14231)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(172[13:55])
-    defparam i76_2_lut_rep_314.init = 16'h8888;
-    LUT4 i2_3_lut_rep_232_4_lut (.A(state[2]), .B(the1_wr_done), .C(n14235), 
-         .D(\state[3] ), .Z(sys_clk_50MHz_enable_62)) /* synthesis lut_function=(A (B+((D)+!C))+!A ((D)+!C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(172[13:55])
-    defparam i2_3_lut_rep_232_4_lut.init = 16'hff8f;
-    LUT4 state_3__N_365_I_0_3_lut_4_lut (.A(cnt_rom_prepare[1]), .B(cnt_rom_prepare[0]), 
-         .C(\cnt_rom_prepare[2] ), .D(state_c[1]), .Z(en_write_show_char)) /* synthesis lut_function=(A (D)+!A (B (C+(D))+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[13:35])
-    defparam state_3__N_365_I_0_3_lut_4_lut.init = 16'hff40;
-    CCU2D add_590_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
-          .A1(cnt_length_num[4]), .B1(n1673), .C1(ascii_num[0]), .D1(GND_net), 
-          .COUT(n10538), .S1(n1277[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(155[21:85])
-    defparam add_590_1.INIT0 = 16'hF000;
-    defparam add_590_1.INIT1 = 16'h6969;
-    defparam add_590_1.INJECT1_0 = "NO";
-    defparam add_590_1.INJECT1_1 = "NO";
-    LUT4 i2_3_lut_rep_318 (.A(cnt_rom_prepare[0]), .B(cnt_rom_prepare[1]), 
-         .C(\cnt_rom_prepare[2] ), .Z(n14235)) /* synthesis lut_function=(((C)+!B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[13:35])
-    defparam i2_3_lut_rep_318.init = 16'hf7f7;
-    LUT4 i12557_2_lut_2_lut_4_lut (.A(cnt_rom_prepare[0]), .B(cnt_rom_prepare[1]), 
-         .C(\cnt_rom_prepare[2] ), .D(n1233), .Z(sys_clk_50MHz_enable_78)) /* synthesis lut_function=(!(A (B (C (D))+!B (D))+!A (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[13:35])
-    defparam i12557_2_lut_2_lut_4_lut.init = 16'h08ff;
-    LUT4 temp_7__N_424_I_0_2_lut_4_lut (.A(cnt_rom_prepare[0]), .B(cnt_rom_prepare[1]), 
-         .C(\cnt_rom_prepare[2] ), .D(\state[3] ), .Z(cnt_wr_color_data_5__N_439)) /* synthesis lut_function=(A (B ((D)+!C)+!B (D))+!A (D)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[13:35])
-    defparam temp_7__N_424_I_0_2_lut_4_lut.init = 16'hff08;
-    LUT4 i11240_2_lut_2_lut (.A(rom_addr[3]), .B(rom_addr[0]), .Z(n11858)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11240_2_lut_2_lut.init = 16'hdddd;
-    LUT4 i5812_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(n14183), 
-         .D(n14265), .Z(n6657)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i5812_4_lut_4_lut.init = 16'h7340;
-    LUT4 i11494_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n14122), .C(rom_addr[4]), 
-         .D(n15549), .Z(n12119)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11494_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i6019_2_lut_4_lut (.A(cnt_rom_prepare[0]), .B(cnt_rom_prepare[1]), 
-         .C(\cnt_rom_prepare[2] ), .D(n1233), .Z(n6876)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (D))+!A (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[13:35])
-    defparam i6019_2_lut_4_lut.init = 16'h00f7;
-    LUT4 n11756_bdd_3_lut_13323_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(n14239), .D(rom_addr[4]), .Z(n13473)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n11756_bdd_3_lut_13323_4_lut_4_lut.init = 16'h4000;
-    LUT4 i1_2_lut_rep_260_3_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[1]), .Z(n14177)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_260_3_lut_3_lut.init = 16'h1010;
-    LUT4 i12109_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n270), .C(rom_addr[4]), 
-         .D(n14153), .Z(n12179)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i12109_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 i2747_4_lut_4_lut (.A(rom_addr[7]), .B(rom_addr[6]), .C(n6042), 
-         .D(n14062), .Z(n3559)) /* synthesis lut_function=(!(A (B (C)+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i2747_4_lut_4_lut.init = 16'h7f5d;
-    LUT4 i12394_3_lut_3_lut (.A(rom_addr[7]), .B(n10773), .C(n508), .Z(n509)) /* synthesis lut_function=(A (C)+!A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i12394_3_lut_3_lut.init = 16'he4e4;
-    LUT4 i12410_3_lut_3_lut (.A(rom_addr[7]), .B(n1661), .C(n1723), .Z(n6699)) /* synthesis lut_function=(A (C)+!A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i12410_3_lut_3_lut.init = 16'he4e4;
-    LUT4 i11662_4_lut_4_lut (.A(rom_addr[7]), .B(rom_addr[8]), .C(n1405), 
-         .D(n1278_adj_766), .Z(n12287)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11662_4_lut_4_lut.init = 16'h7340;
-    LUT4 i11653_4_lut_4_lut (.A(rom_addr[7]), .B(rom_addr[8]), .C(n510), 
-         .D(n127), .Z(n12278)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11653_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 i7344_2_lut_rep_185_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[0]), 
-         .C(rom_addr[2]), .D(n15568), .Z(n14102)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7344_2_lut_rep_185_3_lut_4_lut_4_lut.init = 16'h0100;
-    LUT4 address_11__I_0_Mux_0_i1851_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(n14095), .D(n14079), .Z(n1851_adj_767)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_0_i1851_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 i7053_2_lut_rep_187_4_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14104)) /* synthesis lut_function=(!(A+!(B (C (D))+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7053_2_lut_rep_187_4_lut_4_lut_4_lut.init = 16'h4101;
-    LUT4 i2283_1_lut_rep_320 (.A(rom_addr[5]), .Z(n14237)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i2283_1_lut_rep_320.init = 16'h5555;
-    LUT4 i7110_2_lut_4_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), .C(n14096), 
-         .D(n14109), .Z(n2300)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7110_2_lut_4_lut_4_lut.init = 16'h5140;
-    LUT4 i860_2_lut_rep_359 (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
-         .Z(n14276)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(228[30:54])
-    defparam i860_2_lut_rep_359.init = 16'h8888;
-    LUT4 i11442_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n11860), .C(rom_addr[4]), 
-         .D(n15549), .Z(n12067)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11442_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 i11588_4_lut_4_lut (.A(rom_addr[3]), .B(n4_adj_768), .C(rom_addr[6]), 
-         .D(n14086), .Z(n12213)) /* synthesis lut_function=(A (C+(D))+!A !(B (C+!(D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11588_4_lut_4_lut.init = 16'hbfb0;
-    LUT4 address_11__I_0_Mux_3_i2141_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(n14265), .D(n14111), .Z(n2141)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_3_i2141_4_lut_4_lut.init = 16'h7340;
-    LUT4 i1_2_lut_rep_231_3_lut_3_lut (.A(rom_addr[5]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .Z(n14148)) /* synthesis lut_function=((B+(C))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_231_3_lut_3_lut.init = 16'hfdfd;
-    LUT4 i11950_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(n1172), 
-         .D(n2025), .Z(n12575)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11950_4_lut_4_lut.init = 16'h7340;
-    LUT4 i867_2_lut_rep_280_3_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
-         .C(cnt_wr_color_data[2]), .Z(n14197)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(228[30:54])
-    defparam i867_2_lut_rep_280_3_lut.init = 16'h8080;
-    LUT4 temp_7__I_0_i1_3_lut (.A(rom_q[0]), .B(temp[1]), .C(n14235), 
-         .Z(temp_7__N_345[0])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(163[10] 182[16])
-    defparam temp_7__I_0_i1_3_lut.init = 16'hcaca;
-    LUT4 i3_4_lut (.A(n5), .B(n11689), .C(cnt_wr_color_data[0]), .D(n14231), 
-         .Z(n1233)) /* synthesis lut_function=(A+(B+!(C (D)))) */ ;
-    defparam i3_4_lut.init = 16'hefff;
-    LUT4 i1_2_lut_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n14275), .C(rom_addr[5]), 
-         .D(rom_addr[4]), .Z(n6042)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_3_lut_4_lut_4_lut.init = 16'h4000;
-    FD1P3IX data_i0 (.D(n5875), .SP(sys_clk_50MHz_enable_81), .CD(n6873), 
-            .CK(sys_clk_50MHz), .Q(show_char_data[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(234[10] 260[22])
-    defparam data_i0.GSR = "ENABLED";
-    LUT4 i865_2_lut_3_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
-         .C(cnt_wr_color_data[2]), .Z(n422[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(228[30:54])
-    defparam i865_2_lut_3_lut.init = 16'h7878;
-    LUT4 address_11__I_0_Mux_3_i1596_3_lut_3_lut (.A(rom_addr[5]), .B(n1565_adj_769), 
-         .C(n2395), .Z(n1596)) /* synthesis lut_function=(A (C)+!A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_3_i1596_3_lut_3_lut.init = 16'he4e4;
-    LUT4 i4_4_lut (.A(n1[15]), .B(n1[11]), .C(n1[13]), .D(n6_adj_770), 
-         .Z(n655)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i4_4_lut.init = 16'hfffe;
-    LUT4 i872_2_lut_3_lut_4_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
-         .C(cnt_wr_color_data[3]), .D(cnt_wr_color_data[2]), .Z(n422[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(228[30:54])
-    defparam i872_2_lut_3_lut_4_lut.init = 16'h78f0;
-    LUT4 i1_2_lut_rep_169_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n14277), 
-         .C(rom_addr[2]), .D(rom_addr[4]), .Z(n14086)) /* synthesis lut_function=(((C+(D))+!B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_169_3_lut_3_lut_4_lut_4_lut.init = 16'hfff7;
-    LUT4 i11245_2_lut_rep_229_2_lut (.A(rom_addr[4]), .B(rom_addr[2]), .Z(n14146)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11245_2_lut_rep_229_2_lut.init = 16'hdddd;
-    LUT4 address_11__I_0_Mux_4_i62_4_lut_4_lut (.A(rom_addr[5]), .B(n14078), 
-         .C(rom_addr[0]), .D(n46), .Z(n62)) /* synthesis lut_function=(A (D)+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i62_4_lut_4_lut.init = 16'hba10;
-    LUT4 show_char_data_8__I_0_i8_4_lut (.A(n8539), .B(\end_x_8__N_295[7] ), 
-         .C(state_c[1]), .D(n10633), .Z(show_char_data_8__N_275[7])) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B (C (D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(249[10] 260[22])
-    defparam show_char_data_8__I_0_i8_4_lut.init = 16'h05c5;
-    LUT4 rom_addr_6__bdd_4_lut_4_lut (.A(rom_addr[4]), .B(n14132), .C(rom_addr[5]), 
-         .D(n14127), .Z(n13893)) /* synthesis lut_function=(!(A (C+(D))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_6__bdd_4_lut_4_lut.init = 16'h404a;
-    LUT4 address_11__I_0_Mux_4_i2364_4_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), 
-         .C(n2332), .D(n14109), .Z(n2364)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i2364_4_lut_4_lut.init = 16'hea40;
-    LUT4 i1_2_lut_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n14277), 
-         .C(n14234), .D(rom_addr[7]), .Z(n10819)) /* synthesis lut_function=(((C+!(D))+!B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'hf7ff;
-    LUT4 address_11__I_0_Mux_4_i828_4_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), 
-         .C(n796), .D(n14176), .Z(n828)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i828_4_lut_4_lut.init = 16'hea40;
-    LUT4 address_11__I_0_Mux_3_i1530_3_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n1211), 
-         .C(n14163), .D(rom_addr[0]), .Z(n1530)) /* synthesis lut_function=(A (B)+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_3_i1530_3_lut_4_lut_4_lut.init = 16'h8d88;
-    LUT4 address_11__I_0_Mux_4_i1530_3_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n1643), 
-         .C(n14163), .D(rom_addr[0]), .Z(n1530_adj_771)) /* synthesis lut_function=(A (B)+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i1530_3_lut_4_lut_4_lut.init = 16'h8d88;
-    LUT4 address_11__I_0_Mux_3_i380_4_lut_4_lut (.A(rom_addr[5]), .B(n14107), 
-         .C(rom_addr[1]), .D(n379), .Z(n380_adj_772)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_3_i380_4_lut_4_lut.init = 16'hea40;
-    LUT4 address_11__I_0_Mux_3_i828_4_lut_4_lut (.A(rom_addr[5]), .B(n11731), 
-         .C(n4660), .D(n14170), .Z(n828_adj_773)) /* synthesis lut_function=(A (D)+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_3_i828_4_lut_4_lut.init = 16'hae04;
-    LUT4 address_11__I_0_Mux_4_i1467_4_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n3865), 
-         .C(n14163), .D(rom_addr[0]), .Z(n1467)) /* synthesis lut_function=(!(A (C+!(D))+!A (B+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i1467_4_lut_4_lut_4_lut.init = 16'h1b00;
-    LUT4 address_11__I_0_Mux_3_i62_3_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n46_adj_774), 
-         .C(n14084), .D(rom_addr[1]), .Z(n62_adj_775)) /* synthesis lut_function=(A (B)+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_3_i62_3_lut_4_lut_4_lut.init = 16'h8d88;
-    LUT4 address_11__I_0_Mux_4_i380_4_lut_4_lut (.A(rom_addr[5]), .B(n4_adj_776), 
-         .C(rom_addr[4]), .D(n14096), .Z(n380_adj_777)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i380_4_lut_4_lut.init = 16'hea40;
-    LUT4 address_11__I_0_Mux_2_i1403_4_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n8577), 
-         .C(rom_addr[4]), .D(n14162), .Z(n1403)) /* synthesis lut_function=(!(A (D)+!A (B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_2_i1403_4_lut_4_lut_4_lut.init = 16'h01ab;
-    LUT4 i1_2_lut_rep_165_3_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n14278), 
-         .C(rom_addr[2]), .D(rom_addr[4]), .Z(n14082)) /* synthesis lut_function=((B+(C+(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_165_3_lut_4_lut_4_lut.init = 16'hfffd;
-    LUT4 n13191_bdd_4_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), .C(n13190), 
-         .D(n13191), .Z(n14047)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n13191_bdd_4_lut_4_lut.init = 16'h5140;
-    LUT4 address_11__I_0_Mux_0_i1723_4_lut_4_lut (.A(rom_addr[5]), .B(n6_adj_778), 
-         .C(n14166), .D(n14097), .Z(n1723)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_0_i1723_4_lut_4_lut.init = 16'hea40;
-    LUT4 i12281_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n1084), .C(n1076), 
-         .D(rom_addr[4]), .Z(n1085)) /* synthesis lut_function=(A (B)+!A (B (C+!(D))+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i12281_3_lut_3_lut_4_lut_4_lut.init = 16'hd8cc;
-    LUT4 address_11__I_0_Mux_1_i2621_4_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[6]), 
-         .C(n2652), .D(n14060), .Z(n2621)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_1_i2621_4_lut_4_lut.init = 16'h7340;
-    LUT4 i1_2_lut_adj_25 (.A(n1[12]), .B(n1[14]), .Z(n6_adj_770)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i1_2_lut_adj_25.init = 16'heeee;
-    LUT4 i1_2_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[0]), .Z(n4)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_4_lut_4_lut.init = 16'h5140;
-    LUT4 i7266_2_lut_4_lut_4_lut (.A(rom_addr[10]), .B(rom_addr[9]), .C(n14048), 
-         .D(n12353), .Z(n4094)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7266_2_lut_4_lut_4_lut.init = 16'h5140;
-    LUT4 i7112_4_lut_4_lut (.A(rom_addr[10]), .B(rom_addr[9]), .C(n3069), 
-         .D(n12317), .Z(n4094_adj_779)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7112_4_lut_4_lut.init = 16'h5140;
-    LUT4 i7426_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), .C(n14278), 
-         .D(rom_addr[2]), .Z(n1596_adj_780)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7426_3_lut_4_lut_4_lut.init = 16'h0200;
-    LUT4 i7578_4_lut_4_lut (.A(rom_addr[10]), .B(rom_addr[9]), .C(n11748), 
-         .D(n13222), .Z(n4094_adj_781)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7578_4_lut_4_lut.init = 16'h5140;
-    LUT4 i1_2_lut_rep_174_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n15568), .Z(n14091)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_174_3_lut_4_lut_4_lut.init = 16'h1000;
-    LUT4 i1917_2_lut_4_lut (.A(\state[3] ), .B(n14231), .C(n14235), .D(cnt_wr_color_data[0]), 
-         .Z(n21[0])) /* synthesis lut_function=(!(A (D)+!A (B (D)+!B !(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(223[13:52])
-    defparam i1917_2_lut_4_lut.init = 16'h10ef;
-    LUT4 i1_2_lut_rep_140_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[1]), .D(rom_addr[4]), .Z(n14057)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_140_3_lut_4_lut_4_lut.init = 16'h4000;
-    LUT4 i2_2_lut_3_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(rom_addr[6]), 
-         .Z(n6_adj_778)) /* synthesis lut_function=(!(A+!(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i2_2_lut_3_lut_3_lut.init = 16'h5454;
-    LUT4 i1_2_lut_rep_157_3_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .Z(n14074)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_157_3_lut_3_lut.init = 16'h4040;
-    LUT4 i1_2_lut_rep_190_3_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[0]), 
-         .C(rom_addr[4]), .Z(n14107)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_190_3_lut_3_lut.init = 16'h4040;
-    LUT4 i1_2_lut_3_lut_4_lut_4_lut_adj_26 (.A(rom_addr[3]), .B(n14275), 
-         .C(rom_addr[0]), .D(rom_addr[4]), .Z(n4_adj_782)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_3_lut_4_lut_4_lut_adj_26.init = 16'h4000;
-    LUT4 i1_2_lut_rep_148_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[0]), 
-         .C(n14215), .D(rom_addr[4]), .Z(n14065)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_148_3_lut_4_lut_4_lut.init = 16'h4000;
-    LUT4 i12582_2_lut_rep_147_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n14275), 
-         .C(rom_addr[5]), .D(rom_addr[4]), .Z(n14064)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i12582_2_lut_rep_147_3_lut_4_lut_4_lut.init = 16'hfbff;
-    LUT4 i4_4_lut_adj_27 (.A(the1_wr_done), .B(n5), .C(n11689), .D(n6), 
-         .Z(length_num_flag_N_462)) /* synthesis lut_function=(!((B+!(C (D)))+!A)) */ ;
-    defparam i4_4_lut_adj_27.init = 16'h2000;
-    LUT4 i11405_2_lut_rep_262_2_lut (.A(rom_addr[3]), .B(rom_addr[4]), .Z(n14179)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11405_2_lut_rep_262_2_lut.init = 16'h4444;
-    LUT4 i1_2_lut_rep_167_3_lut_3_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .Z(n14084)) /* synthesis lut_function=((B+!(C))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i1_2_lut_rep_167_3_lut_3_lut_3_lut.init = 16'hdfdf;
-    LUT4 address_11__I_0_Mux_1_i2652_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(n603), .D(n14111), .Z(n2652)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_1_i2652_4_lut_4_lut.init = 16'h7340;
-    LUT4 i2_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(n14175), 
-         .D(rom_addr[0]), .Z(n11755)) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i2_3_lut_4_lut_4_lut_4_lut.init = 16'h0040;
-    LUT4 i7673_2_lut_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(n14244), .D(rom_addr[4]), .Z(n1436)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i7673_2_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h0200;
-    LUT4 address_11__I_0_Mux_1_i317_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(n308), .D(n301), .Z(n317)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_1_i317_4_lut_4_lut.init = 16'h7340;
-    LUT4 address_11__I_0_Mux_5_i94_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(n14109), .D(n15546), .Z(n94)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_5_i94_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 i2_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n14215), .C(rom_addr[5]), 
-         .D(rom_addr[4]), .Z(n6044)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i2_3_lut_4_lut_4_lut.init = 16'h4000;
-    LUT4 n1293_bdd_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(n14126), 
-         .D(n14111), .Z(n13853)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n1293_bdd_4_lut_4_lut.init = 16'h7340;
-    LUT4 i11540_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(n14102), 
-         .D(n14092), .Z(n12165)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i11540_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 i5788_2_lut_rep_212_3_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[1]), .Z(n14129)) /* synthesis lut_function=(!(A (B (C)+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam i5788_2_lut_rep_212_3_lut_3_lut.init = 16'h7d7d;
-    LUT4 rom_addr_6__bdd_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[5]), 
-         .C(n14215), .D(rom_addr[4]), .Z(n13894)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam rom_addr_6__bdd_3_lut_4_lut_4_lut.init = 16'h1000;
-    LUT4 n2880_bdd_4_lut_4_lut (.A(rom_addr[3]), .B(n15549), .C(rom_addr[4]), 
-         .D(n14109), .Z(n13772)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n2880_bdd_4_lut_4_lut.init = 16'hf404;
-    LUT4 n1969_bdd_4_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[0]), .Z(n13477)) /* synthesis lut_function=(!(A (B+(C))+!A !(B (C (D))+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam n1969_bdd_4_lut_4_lut_4_lut.init = 16'h4303;
-    LUT4 i1_2_lut_adj_28 (.A(cnt_wr_color_data[5]), .B(cnt_wr_color_data[4]), 
-         .Z(n5)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i1_2_lut_adj_28.init = 16'heeee;
-    LUT4 i2_3_lut_adj_29 (.A(cnt_wr_color_data[2]), .B(cnt_wr_color_data[1]), 
-         .C(cnt_wr_color_data[3]), .Z(n11689)) /* synthesis lut_function=(A (B (C))) */ ;
-    defparam i2_3_lut_adj_29.init = 16'h8080;
-    LUT4 address_11__I_0_Mux_4_i2141_4_lut_4_lut_then_1_lut (.A(rom_addr[4]), 
-         .Z(n14296)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(152[10] 155[86])
-    defparam address_11__I_0_Mux_4_i2141_4_lut_4_lut_then_1_lut.init = 16'h5555;
-    LUT4 i3_4_lut_adj_30 (.A(n5988), .B(n1[5]), .C(n14203), .D(n14055), 
-         .Z(n10633)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(235[9] 248[16])
-    defparam i3_4_lut_adj_30.init = 16'hfffe;
-    FD1P3IX cnt_rom_prepare__i2 (.D(n132[2]), .SP(sys_clk_50MHz_enable_84), 
-            .CD(length_num_flag), .CK(sys_clk_50MHz), .Q(\cnt_rom_prepare[2] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(143[10] 146[51])
-    defparam cnt_rom_prepare__i2.GSR = "ENABLED";
-    FD1P3IX cnt_rom_prepare__i1 (.D(n132[1]), .SP(sys_clk_50MHz_enable_84), 
-            .CD(length_num_flag), .CK(sys_clk_50MHz), .Q(cnt_rom_prepare[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(143[10] 146[51])
-    defparam cnt_rom_prepare__i1.GSR = "ENABLED";
-    FD1S3JX state_FSM_i3 (.D(n2823), .CK(sys_clk_50MHz), .PD(\state[3] ), 
-            .Q(state_c[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
+    LUT4 show_char_data_8__I_0_i5_4_lut (.A(n10986), .B(n10944), .C(state[1]), 
+         .D(n4), .Z(show_char_data_8__N_275[4])) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B (C)+!B !((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[10] 285[22])
+    defparam show_char_data_8__I_0_i5_4_lut.init = 16'h3505;
+    LUT4 i1_4_lut_adj_19 (.A(\end_y_8__N_313[4] ), .B(n203[7]), .C(n203[9]), 
+         .D(n203[8]), .Z(n4)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(260[9] 273[16])
+    defparam i1_4_lut_adj_19.init = 16'ha0a8;
+    LUT4 i22_4_lut (.A(n10986), .B(n9309), .C(state[1]), .D(n469), .Z(show_char_data_8__N_275[3])) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B (C (D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[10] 285[22])
+    defparam i22_4_lut.init = 16'h05c5;
+    LUT4 i4_4_lut_adj_20 (.A(n203[15]), .B(n203[11]), .C(n203[13]), .D(n6_adj_715), 
+         .Z(n469)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(260[9] 273[16])
+    defparam i4_4_lut_adj_20.init = 16'hfffe;
+    LUT4 i8896_3_lut (.A(n203[9]), .B(n9161), .C(n33[10]), .Z(n9309)) /* synthesis lut_function=(A+(B+(C))) */ ;
+    defparam i8896_3_lut.init = 16'hfefe;
+    LUT4 i3961_4_lut (.A(n9169), .B(n203[9]), .C(n203[5]), .D(n203[4]), 
+         .Z(n4528)) /* synthesis lut_function=(A (B)+!A (B+!(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(260[9] 273[16])
+    defparam i3961_4_lut.init = 16'hcdcc;
+    FD1S3JX state_FSM_i3 (.D(n2412), .CK(sys_clk_50MHz), .PD(state[3]), 
+            .Q(state_c[0]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(112[9] 117[16])
     defparam state_FSM_i3.GSR = "ENABLED";
-    FD1S3AX state_FSM_i2 (.D(n2826), .CK(sys_clk_50MHz), .Q(state_c[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
+    LUT4 i1_4_lut_adj_21 (.A(n6854), .B(n9114), .C(n203[9]), .D(n9169), 
+         .Z(show_char_data_8__N_275[1])) /* synthesis lut_function=(A (B (C))+!A (B (C+!(D)))) */ ;
+    defparam i1_4_lut_adj_21.init = 16'hc0c4;
+    FD1S3AX state_FSM_i2 (.D(n2421), .CK(sys_clk_50MHz), .Q(state[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(112[9] 117[16])
     defparam state_FSM_i2.GSR = "ENABLED";
-    FD1S3AX state_FSM_i1 (.D(n2828), .CK(sys_clk_50MHz), .Q(state[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(106[9] 111[16])
+    LUT4 i1857_2_lut (.A(state_c[0]), .B(\state_3__N_370[1] ), .Z(n2412)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(112[9] 117[16])
+    defparam i1857_2_lut.init = 16'h2222;
+    LUT4 i1866_4_lut (.A(state[1]), .B(\state_3__N_370[1] ), .C(state_3__N_374[2]), 
+         .D(state_c[0]), .Z(n2421)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(112[9] 117[16])
+    defparam i1866_4_lut.init = 16'hce0a;
+    LUT4 i1_2_lut_rep_205 (.A(cnt_rom_prepare[2]), .B(cnt_rom_prepare[0]), 
+         .Z(n11046)) /* synthesis lut_function=(A+!(B)) */ ;
+    defparam i1_2_lut_rep_205.init = 16'hbbbb;
+    LUT4 i1_2_lut_rep_140_3_lut (.A(cnt_rom_prepare[2]), .B(cnt_rom_prepare[0]), 
+         .C(cnt_rom_prepare[1]), .Z(n10981)) /* synthesis lut_function=(A+!(B (C))) */ ;
+    defparam i1_2_lut_rep_140_3_lut.init = 16'hbfbf;
+    LUT4 i9994_2_lut_3_lut (.A(cnt_rom_prepare[2]), .B(cnt_rom_prepare[0]), 
+         .C(cnt_rom_prepare[1]), .Z(sys_clk_50MHz_enable_22)) /* synthesis lut_function=(!(A+((C)+!B))) */ ;
+    defparam i9994_2_lut_3_lut.init = 16'h0404;
+    LUT4 temp_7__N_426_I_0_2_lut_3_lut_4_lut (.A(cnt_rom_prepare[2]), .B(cnt_rom_prepare[0]), 
+         .C(state[3]), .D(cnt_rom_prepare[1]), .Z(cnt_wr_color_data_5__N_443)) /* synthesis lut_function=(A (C)+!A (B (C+(D))+!B (C))) */ ;
+    defparam temp_7__N_426_I_0_2_lut_3_lut_4_lut.init = 16'hf4f0;
+    LUT4 i1_2_lut_3_lut (.A(n33[10]), .B(n469), .C(state[1]), .Z(n9114)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
+    defparam i1_2_lut_3_lut.init = 16'h1010;
+    LUT4 i1901_4_lut (.A(state[2]), .B(state_3__N_374[2]), .C(n10943), 
+         .D(state[1]), .Z(n2457)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(112[9] 117[16])
+    defparam i1901_4_lut.init = 16'hce0a;
+    LUT4 temp_7__I_0_i7_4_lut (.A(n10272), .B(temp[7]), .C(n10981), .D(rom_addr[10]), 
+         .Z(temp_7__N_345[6])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(171[10] 190[16])
+    defparam temp_7__I_0_i7_4_lut.init = 16'hcac0;
+    LUT4 i1_2_lut_adj_22 (.A(n203[12]), .B(n203[14]), .Z(n6_adj_715)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(260[9] 273[16])
+    defparam i1_2_lut_adj_22.init = 16'heeee;
+    LUT4 i3_4_lut_adj_23 (.A(cnt_length_num_c[1]), .B(n11051), .C(cnt_length_num[0]), 
+         .D(cnt_length_num_c[3]), .Z(n8_adj_714)) /* synthesis lut_function=((B+!(C (D)))+!A) */ ;
+    defparam i3_4_lut_adj_23.init = 16'hdfff;
+    LUT4 i2226_3_lut_4_lut_4_lut_then_4_lut (.A(rom_addr[2]), .B(rom_addr[1]), 
+         .C(rom_addr[5]), .D(rom_addr[3]), .Z(n11112)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i2226_3_lut_4_lut_4_lut_then_4_lut.init = 16'hffef;
+    LUT4 i2226_3_lut_4_lut_4_lut_else_4_lut (.A(rom_addr[2]), .B(rom_addr[1]), 
+         .C(rom_addr[5]), .Z(n11111)) /* synthesis lut_function=((B+(C))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i2226_3_lut_4_lut_4_lut_else_4_lut.init = 16'hfdfd;
+    LUT4 i6206_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), .C(n11074), 
+         .D(rom_addr[3]), .Z(n1596)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i6206_3_lut_4_lut_4_lut.init = 16'h0200;
+    LUT4 i9045_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(n1172), 
+         .D(n2025), .Z(n9468)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9045_4_lut_4_lut.init = 16'h7340;
+    LUT4 i371_2_lut_rep_214 (.A(n203[6]), .B(n203[7]), .Z(n11055)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i371_2_lut_rep_214.init = 16'heeee;
+    LUT4 i1_2_lut_3_lut_adj_24 (.A(n203[6]), .B(n203[7]), .C(n203[8]), 
+         .Z(n9169)) /* synthesis lut_function=(A+(B+(C))) */ ;
+    defparam i1_2_lut_3_lut_adj_24.init = 16'hfefe;
+    LUT4 i9354_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(n11899), 
+         .D(n301), .Z(n9777)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9354_4_lut_4_lut.init = 16'h7340;
+    LUT4 i5893_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n11030), .C(rom_addr[3]), 
+         .D(n11034), .Z(n158)) /* synthesis lut_function=(!(A+(B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5893_4_lut_4_lut_4_lut.init = 16'h0454;
+    LUT4 i153_2_lut_rep_215 (.A(state[2]), .B(temp[0]), .Z(n11056)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[13:55])
+    defparam i153_2_lut_rep_215.init = 16'h2222;
+    LUT4 i3624_2_lut_3_lut (.A(state[2]), .B(temp[0]), .C(state[1]), .Z(n4183)) /* synthesis lut_function=(A ((C)+!B)+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[13:55])
+    defparam i3624_2_lut_3_lut.init = 16'hf2f2;
+    LUT4 i6025_2_lut_rep_145_3_lut (.A(state[2]), .B(temp[0]), .C(cnt_wr_color_data[0]), 
+         .Z(n10986)) /* synthesis lut_function=(A ((C)+!B)+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(274[13:55])
+    defparam i6025_2_lut_rep_145_3_lut.init = 16'hf2f2;
+    LUT4 i8983_1_lut_2_lut_2_lut (.A(rom_addr[4]), .B(rom_addr[5]), .Z(n9414)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i8983_1_lut_2_lut_2_lut.init = 16'hbbbb;
+    LUT4 i369_2_lut_rep_216 (.A(n203[4]), .B(n203[5]), .Z(n11057)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i369_2_lut_rep_216.init = 16'heeee;
+    LUT4 i6093_4_lut_4_lut (.A(n203[4]), .B(n203[5]), .C(n11055), .D(n8234), 
+         .Z(n3949)) /* synthesis lut_function=(A ((C)+!B)+!A (B (C)+!B (C+(D)))) */ ;
+    defparam i6093_4_lut_4_lut.init = 16'hf3f2;
+    LUT4 i6255_2_lut_3_lut (.A(n203[4]), .B(n203[5]), .C(n8234), .Z(n6854)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
+    defparam i6255_2_lut_3_lut.init = 16'h1010;
+    LUT4 address_11__I_0_Mux_1_i317_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
+         .C(n308), .D(n301), .Z(n317)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_1_i317_4_lut_4_lut.init = 16'h7340;
+    LUT4 address_11__I_0_Mux_1_i286_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n270), 
+         .C(rom_addr[4]), .D(n10959), .Z(n286)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_1_i286_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i692_2_lut_rep_219 (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
+         .Z(n11060)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i692_2_lut_rep_219.init = 16'h8888;
+    LUT4 i9960_2_lut_3_lut_3_lut (.A(rom_addr[4]), .B(rom_addr[7]), .C(rom_addr[5]), 
+         .Z(n9431)) /* synthesis lut_function=(A+!(B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9960_2_lut_3_lut_3_lut.init = 16'hbfbf;
+    LUT4 i699_2_lut_rep_150_3_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
+         .C(cnt_length_num_c[2]), .Z(n10991)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i699_2_lut_rep_150_3_lut.init = 16'h8080;
+    LUT4 i697_2_lut_3_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
+         .C(cnt_length_num_c[2]), .Z(n367[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i697_2_lut_3_lut.init = 16'h7878;
+    LUT4 i706_2_lut_rep_108_3_lut_4_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
+         .C(cnt_length_num_c[3]), .D(cnt_length_num_c[2]), .Z(n10949)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i706_2_lut_rep_108_3_lut_4_lut.init = 16'h8000;
+    LUT4 i704_2_lut_3_lut_4_lut (.A(cnt_length_num_c[1]), .B(cnt_length_num[0]), 
+         .C(cnt_length_num_c[3]), .D(cnt_length_num_c[2]), .Z(n367[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(236[27:48])
+    defparam i704_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 i4105_4_lut_4_lut (.A(rom_addr[3]), .B(n11049), .C(rom_addr[5]), 
+         .D(n10957), .Z(n4688)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i4105_4_lut_4_lut.init = 16'hfd0d;
+    LUT4 i6223_2_lut_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n11098), .C(rom_addr[1]), 
+         .D(rom_addr[0]), .Z(n1436)) /* synthesis lut_function=(!((B+(C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i6223_2_lut_3_lut_4_lut_4_lut.init = 16'h0222;
+    LUT4 i8839_2_lut_2_lut (.A(rom_addr[4]), .B(rom_addr[2]), .Z(n9249)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i8839_2_lut_2_lut.init = 16'hdddd;
+    LUT4 i1_2_lut_3_lut_4_lut_4_lut_adj_25 (.A(rom_addr[3]), .B(rom_addr[1]), 
+         .C(rom_addr[2]), .D(rom_addr[4]), .Z(n1181)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i1_2_lut_3_lut_4_lut_4_lut_adj_25.init = 16'h4000;
+    LUT4 address_11__I_0_Mux_5_i1723_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[3]), 
+         .B(n10980), .C(rom_addr[4]), .D(n11095), .Z(n1723)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_5_i1723_3_lut_3_lut_4_lut_4_lut.init = 16'h3530;
+    FD1S3AX state_FSM_i1 (.D(n2457), .CK(sys_clk_50MHz), .Q(state[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(112[9] 117[16])
     defparam state_FSM_i1.GSR = "ENABLED";
-    char_ram char_ram_inst (.rom_addr({rom_addr}), .n14082(n14082), .n13772(n13772), 
-            .n14057(n14057), .n14087(n14087), .n6044(n6044), .n317(n317), 
-            .n15556(n15556), .n14239(n14239), .n15568(n15568), .n14162(n14162), 
-            .n13222(n13222), .n158(n158_adj_765), .n14107(n14107), .n14146(n14146), 
-            .n14265(n14265), .n14109(n14109), .n14102(n14102), .n14183(n14183), 
-            .n1148(n1148), .n12165(n12165), .n12179(n12179), .n4094(n4094), 
-            .rom_q({rom_q}), .n158_adj_1(n158), .n4094_adj_2(n4094_adj_781), 
-            .n4094_adj_3(n4094_adj_779), .n14163(n14163), .n14092(n14092), 
-            .n1851(n1851), .n12278(n12278), .n1530(n1530), .n828(n828_adj_773), 
-            .n12213(n12213), .n14096(n14096), .n14181(n14181), .n380(n380_adj_772), 
-            .n14106(n14106), .n6657(n6657), .n301(n301), .n14126(n14126), 
-            .n4(n4_adj_776), .n46(n46), .n1069(n1069), .n3865(n3865), 
-            .n12287(n12287), .n62(n62_adj_775), .n12317(n12317), .n2395(n2395), 
-            .n379(n379), .n5840(n5840), .n13191(n13191), .n1530_adj_4(n1530_adj_771), 
-            .n14127(n14127), .n14166(n14166), .n14275(n14275), .n270(n270), 
-            .n11747(n11747), .n828_adj_5(n828), .n1278(n1278_adj_766), 
-            .n1643(n1643), .n1565(n1565), .n1596(n1596_adj_780), .n6699(n6699), 
-            .n62_adj_6(n62), .n1101(n1101), .n14122(n14122), .n15546(n15546), 
-            .n509(n509), .n510(n510), .n15549(n15549), .n2621(n2621), 
-            .n14048(n14048), .n13853(n13853), .n12633(n12633), .n2332(n2332), 
-            .n15548(n15548), .n14300(n14300), .n14177(n14177), .n14246(n14246), 
-            .n1211(n1211), .n14153(n14153), .n14189(n14189), .n14097(n14097), 
-            .n14104(n14104), .n14277(n14277), .n14215(n14215), .n14129(n14129), 
-            .n11860(n11860), .n891(n891), .n14074(n14074), .n1149(n1149), 
-            .n11731(n11731), .n14079(n14079), .n14244(n14244), .n603(n603), 
-            .n10773(n10773), .n14179(n14179), .n2141(n2141), .n1534(n1534), 
-            .n14078(n14078), .n12119(n12119), .n14095(n14095), .n11748(n11748), 
-            .n14132(n14132), .n3069(n3069), .n14091(n14091), .n1276(n1276), 
-            .n2025(n2025), .n1565_adj_7(n1565_adj_769), .n14130(n14130), 
-            .n14218(n14218), .n4_adj_8(n4_adj_782), .n1085(n1085), .n1661(n1661), 
-            .n1851_adj_9(n1851_adj_767), .n796(n796), .n11858(n11858), 
-            .n14064(n14064), .n14084(n14084), .n892(n892), .n1676(n1676), 
-            .n1596_adj_10(n1596), .n2364(n2364), .n1467(n1467), .n46_adj_11(n46_adj_774), 
-            .n4_adj_12(n4_adj_764), .n3559(n3559), .n380_adj_13(n380_adj_777), 
-            .n12353(n12353), .n2428(n2428), .n2300(n2300), .n14047(n14047), 
-            .n94(n94), .n126(n126), .n127(n127), .n14176(n14176), .n3913(n3913), 
-            .n14124(n14124), .n14175(n14175), .n10819(n10819), .n10821(n10821), 
-            .n14297(n14297), .n1436(n1436), .n14278(n14278), .n8577(n8577), 
-            .n12250(n12250), .n308(n308), .n13477(n13477), .n11755(n11755), 
-            .n13473(n13473), .n723(n723), .n1076(n1076), .n4_adj_14(n4_adj_768), 
-            .n13190(n13190), .n4660(n4660), .n125(n125), .n1405(n1405), 
-            .n14159(n14159), .n14234(n14234), .n14060(n14060), .n14148(n14148), 
-            .n14174(n14174), .n14282(n14282), .n14065(n14065), .n1172(n1172), 
-            .n1403(n1403), .n12067(n12067), .n14111(n14111), .n13894(n13894), 
-            .n13893(n13893), .n14170(n14170), .n13325(n13325), .n349(n349), 
-            .n12575(n12575), .n14237(n14237)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(279[10] 283[2])
+    LUT4 i5950_4_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
+         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n11118)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5950_4_lut_4_lut_then_4_lut.init = 16'h0010;
+    LUT4 i5950_4_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
+         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n11117)) /* synthesis lut_function=(!(A+(B (C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5950_4_lut_4_lut_else_4_lut.init = 16'h0405;
+    LUT4 i1849_2_lut (.A(cnt_rom_prepare[0]), .B(sys_clk_50MHz_enable_24), 
+         .Z(n12[0])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(149[10] 152[51])
+    defparam i1849_2_lut.init = 16'h6666;
+    LUT4 i4638_4_lut_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), .C(rom_addr[1]), 
+         .D(rom_addr[0]), .Z(n5226)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C))+!A (B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i4638_4_lut_4_lut_4_lut.init = 16'h313d;
+    LUT4 address_11__I_0_Mux_0_i94_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n1676), 
+         .C(rom_addr[4]), .D(n11095), .Z(n94)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_0_i94_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 n5246_bdd_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(n332), 
+         .D(n5246), .Z(n10748)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam n5246_bdd_4_lut_4_lut.init = 16'h7340;
+    FD1P3AX temp_i6 (.D(temp_7__N_345[6]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i6.GSR = "ENABLED";
+    FD1P3AX temp_i5 (.D(temp_7__N_345[5]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i5.GSR = "ENABLED";
+    FD1P3AX temp_i4 (.D(temp_7__N_345[4]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i4.GSR = "ENABLED";
+    FD1P3AX temp_i3 (.D(temp_7__N_345[3]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i3.GSR = "ENABLED";
+    FD1P3AX temp_i2 (.D(temp_7__N_345[2]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i2.GSR = "ENABLED";
+    FD1P3AX temp_i1 (.D(temp_7__N_345[1]), .SP(sys_clk_50MHz_enable_90), 
+            .CK(sys_clk_50MHz), .Q(temp[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=16, LSE_RCOL=2, LSE_LLINE=125, LSE_RLINE=139 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(169[10] 190[16])
+    defparam temp_i1.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i15 (.D(n203[14]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[15]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i15.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i14 (.D(n203[13]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[14]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i14.GSR = "ENABLED";
+    FD1P3AX cnt_set_windows_FSM_i0_i13 (.D(n203[12]), .SP(cnt_set_windows_3__N_386), 
+            .CK(sys_clk_50MHz), .Q(n203[13]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(134[28:50])
+    defparam cnt_set_windows_FSM_i0_i13.GSR = "ENABLED";
+    LUT4 i742_2_lut_rep_250 (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
+         .Z(n11091)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(251[30:54])
+    defparam i742_2_lut_rep_250.init = 16'h8888;
+    LUT4 i749_2_lut_rep_183_3_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
+         .C(cnt_wr_color_data[2]), .Z(n11024)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(251[30:54])
+    defparam i749_2_lut_rep_183_3_lut.init = 16'h8080;
+    LUT4 i747_2_lut_3_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
+         .C(cnt_wr_color_data[2]), .Z(n436[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(251[30:54])
+    defparam i747_2_lut_3_lut.init = 16'h7878;
+    LUT4 i836_2_lut_rep_237 (.A(cnt_length_num_c[3]), .B(cnt_length_num_c[2]), 
+         .Z(n11078)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i836_2_lut_rep_237.init = 16'h8888;
+    LUT4 i754_2_lut_3_lut_4_lut (.A(cnt_wr_color_data[1]), .B(cnt_wr_color_data[0]), 
+         .C(cnt_wr_color_data[3]), .D(cnt_wr_color_data[2]), .Z(n436[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(251[30:54])
+    defparam i754_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 i1_2_lut_3_lut_adj_26 (.A(cnt_length_num_c[3]), .B(cnt_length_num_c[2]), 
+         .C(\cnt_length_num[4] ), .Z(n4930)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i1_2_lut_3_lut_adj_26.init = 16'h8787;
+    LUT4 i1_2_lut_rep_151_3_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
+         .C(rom_addr[4]), .Z(n10992)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i1_2_lut_rep_151_3_lut_3_lut.init = 16'h4040;
+    LUT4 i846_2_lut_rep_167_3_lut (.A(cnt_length_num_c[3]), .B(cnt_length_num_c[2]), 
+         .C(\cnt_length_num[4] ), .Z(n11008)) /* synthesis lut_function=(A (B+(C))+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i846_2_lut_rep_167_3_lut.init = 16'hf8f8;
+    LUT4 address_11__I_0_Mux_5_i126_4_lut_4_lut (.A(rom_addr[6]), .B(n10954), 
+         .C(n11020), .D(n125), .Z(n126)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_5_i126_4_lut_4_lut.init = 16'hea40;
+    LUT4 i1_2_lut_3_lut_4_lut_adj_27 (.A(cnt_length_num_c[3]), .B(cnt_length_num_c[2]), 
+         .C(\cnt_length_num[5] ), .D(\cnt_length_num[4] ), .Z(n4928)) /* synthesis lut_function=(A (B (C)+!B (C (D)+!C !(D)))+!A (C (D)+!C !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(161[21:85])
+    defparam i1_2_lut_3_lut_4_lut_adj_27.init = 16'hf087;
+    LUT4 address_11__I_0_Mux_5_i892_4_lut_4_lut (.A(rom_addr[6]), .B(n9127), 
+         .C(n3295), .D(n891_adj_716), .Z(n892)) /* synthesis lut_function=(A (D)+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_5_i892_4_lut_4_lut.init = 16'hae04;
+    LUT4 i6047_2_lut (.A(cnt_rom_prepare[0]), .B(cnt_rom_prepare[1]), .Z(n6637)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i6047_2_lut.init = 16'heeee;
+    LUT4 i6042_3_lut_3_lut (.A(rom_addr[6]), .B(n8373), .C(rom_addr[0]), 
+         .Z(n1534)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i6042_3_lut_3_lut.init = 16'h0202;
+    LUT4 i76_2_lut (.A(state[2]), .B(the1_wr_done), .Z(n272)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(180[13:55])
+    defparam i76_2_lut.init = 16'h8888;
+    LUT4 i9557_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n270_adj_717), .C(rom_addr[4]), 
+         .D(n11030), .Z(n9596)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9557_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i6083_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), .C(n11090), 
+         .D(rom_addr[2]), .Z(n349)) /* synthesis lut_function=(!(((C+!(D))+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i6083_3_lut_4_lut_4_lut.init = 16'h0800;
+    LUT4 i5910_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(n11089), 
+         .D(n10987), .Z(n1148)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5910_4_lut_4_lut.init = 16'h5140;
+    LUT4 address_11__I_0_Mux_1_i1084_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n1069), 
+         .C(n11074), .D(rom_addr[0]), .Z(n1084)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_1_i1084_3_lut_4_lut_4_lut.init = 16'h4e44;
+    LUT4 address_11__I_0_Mux_4_i1149_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[5]), 
+         .C(n10950), .D(n1101), .Z(n1149)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_4_i1149_4_lut_4_lut.init = 16'hd1c0;
+    LUT4 i5876_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(n11900), 
+         .D(n11023), .Z(n1851)) /* synthesis lut_function=(!(A+!(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5876_4_lut_4_lut.init = 16'h5140;
+    LUT4 i5949_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n332), .C(rom_addr[3]), 
+         .D(n10980), .Z(n1275)) /* synthesis lut_function=(!(A+(B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5949_4_lut_4_lut_4_lut.init = 16'h0454;
+    LUT4 n460_bdd_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n460), .C(n452), 
+         .D(rom_addr[3]), .Z(n10483)) /* synthesis lut_function=(A (B)+!A (B (C+(D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam n460_bdd_4_lut_4_lut_4_lut.init = 16'hccd8;
+    LUT4 n9663_bdd_3_lut_10393_3_lut_3_lut (.A(rom_addr[4]), .B(n3699), 
+         .C(rom_addr[3]), .Z(n10709)) /* synthesis lut_function=(!(A+((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam n9663_bdd_3_lut_10393_3_lut_3_lut.init = 16'h0404;
+    LUT4 i9263_4_lut_4_lut (.A(rom_addr[7]), .B(rom_addr[8]), .C(n1405), 
+         .D(n1278), .Z(n9686)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9263_4_lut_4_lut.init = 16'h7340;
+    LUT4 i9831_3_lut_3_lut (.A(rom_addr[7]), .B(n1661), .C(n10531), .Z(n5259)) /* synthesis lut_function=(A (C)+!A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9831_3_lut_3_lut.init = 16'he4e4;
+    LUT4 i2419_2_lut_2_lut (.A(rom_addr[7]), .B(n2974), .Z(n2975)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i2419_2_lut_2_lut.init = 16'hdddd;
+    LUT4 i9834_3_lut_3_lut (.A(rom_addr[7]), .B(n21), .C(n16), .Z(n23)) /* synthesis lut_function=(A (C)+!A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9834_3_lut_3_lut.init = 16'he4e4;
+    LUT4 i9086_4_lut_4_lut (.A(rom_addr[7]), .B(rom_addr[8]), .C(n8427), 
+         .D(n127), .Z(n9509)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9086_4_lut_4_lut.init = 16'hd1c0;
+    LUT4 state1_finish_flag_I_0_2_lut (.A(n33[10]), .B(the1_wr_done), .Z(state1_finish_flag_N_463)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(140[13:52])
+    defparam state1_finish_flag_I_0_2_lut.init = 16'h8888;
+    LUT4 state_3__N_367_I_0_196_2_lut (.A(state[1]), .B(the1_wr_done), .Z(cnt_set_windows_3__N_386)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(133[13:44])
+    defparam state_3__N_367_I_0_196_2_lut.init = 16'h8888;
+    LUT4 i9978_4_lut (.A(cnt_wr_color_data[0]), .B(n10981), .C(n8_adj_713), 
+         .D(n272), .Z(sys_clk_50MHz_enable_90)) /* synthesis lut_function=(!(A (B (C+!(D)))+!A (B))) */ ;
+    defparam i9978_4_lut.init = 16'h3b33;
+    LUT4 n4801_bdd_2_lut_3_lut_4_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[0]), 
+         .C(n11098), .D(rom_addr[1]), .Z(n10607)) /* synthesis lut_function=(!((B+(C+(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam n4801_bdd_2_lut_3_lut_4_lut_4_lut.init = 16'h0002;
+    LUT4 i5952_4_lut_4_lut_4_lut (.A(rom_addr[4]), .B(n723), .C(rom_addr[3]), 
+         .D(n10980), .Z(n1565)) /* synthesis lut_function=(!(A+!(B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i5952_4_lut_4_lut_4_lut.init = 16'h4045;
+    LUT4 address_11__I_0_Mux_5_i94_4_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
+         .C(n10970), .D(n11094), .Z(n94_adj_718)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam address_11__I_0_Mux_5_i94_4_lut_4_lut.init = 16'hd1c0;
+    LUT4 i9165_3_lut_4_lut_4_lut (.A(rom_addr[3]), .B(n1529), .C(rom_addr[4]), 
+         .D(n11095), .Z(n9588)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(158[10] 161[86])
+    defparam i9165_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 i2_3_lut_adj_28 (.A(cnt_wr_color_data[2]), .B(cnt_wr_color_data[1]), 
+         .C(cnt_wr_color_data[3]), .Z(n9087)) /* synthesis lut_function=(A (B (C))) */ ;
+    defparam i2_3_lut_adj_28.init = 16'h8080;
+    FD1S3IX state_FSM_i0 (.D(state[2]), .CK(sys_clk_50MHz), .CD(state_3__N_378[2]), 
+            .Q(state[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(112[9] 117[16])
+    defparam state_FSM_i0.GSR = "ENABLED";
+    char_ram char_ram_inst (.\rom_addr[3] (rom_addr[3]), .\rom_addr[0] (rom_addr[0]), 
+            .\rom_addr[5] (rom_addr[5]), .\rom_addr[8] (rom_addr[8]), .\rom_addr[4] (rom_addr[4]), 
+            .\rom_addr[2] (rom_addr[2]), .n11089(n11089), .\rom_addr[7] (rom_addr[7]), 
+            .\rom_addr[1] (rom_addr[1]), .\rom_addr[6] (rom_addr[6]), .n11899(n11899), 
+            .n10987(n10987), .n158(n158), .n301(n301), .n11030(n11030), 
+            .n1851(n1851), .n10748(n10748), .n9414(n9414), .n1565(n1565), 
+            .n1596(n1596), .n1181(n1181), .n308(n308), .n723(n723), 
+            .n11900(n11900), .\rom_addr[10] (rom_addr[10]), .\rom_q[4] (rom_q[4]), 
+            .\rom_q[2] (rom_q[2]), .\rom_q[5] (rom_q[5]), .n286(n286), 
+            .n317(n317), .\rom_addr[9] (rom_addr[9]), .n11074(n11074), 
+            .n9509(n9509), .n11049(n11049), .n9588(n9588), .n9686(n9686), 
+            .n9596(n9596), .n10709(n10709), .n1534(n1534), .n2046(n2046), 
+            .n10980(n10980), .n9127(n9127), .n11090(n11090), .n10959(n10959), 
+            .n23(n23), .n8427(n8427), .n11094(n11094), .n5259(n5259), 
+            .n9431(n9431), .n5246(n5246), .n1278(n1278), .n1529(n1529), 
+            .n1676(n1676), .n8373(n8373), .n9916(n9916), .n11095(n11095), 
+            .n1101(n1101), .n380(n380), .n349(n349), .n9247(n9247), 
+            .n1405(n1405), .n10970(n10970), .n891(n891_adj_716), .n11073(n11073), 
+            .n1149(n1149), .n9243(n9243), .n11098(n11098), .n332(n332), 
+            .n11034(n11034), .n3295(n3295), .n5226(n5226), .n10957(n10957), 
+            .n2974(n2974), .n9401(n9401), .n3699(n3699), .n11113(n11113), 
+            .n94(n94_adj_718), .n126(n126), .n127(n127), .n10992(n10992), 
+            .n2025(n2025), .n1436(n1436), .n16(n16), .n21(n21), .n11107(n11107), 
+            .n1661(n1661), .n5039(n5039), .n4688(n4688), .n892(n892), 
+            .n11020(n11020), .\rom_q[3] (rom_q[3]), .n1723(n1723), .n1755(n1755), 
+            .n125(n125), .n2975(n2975), .n270(n270_adj_717), .\rom_q[1] (rom_q[1]), 
+            .n94_adj_1(n94), .n10607(n10607), .n10950(n10950), .n9777(n9777), 
+            .n270_adj_2(n270), .n10954(n10954), .n1069(n1069), .n891_adj_3(n891), 
+            .n1172(n1172), .n10272(n10272), .n460(n460), .n1275(n1275), 
+            .n10530(n10530), .n10531(n10531), .n452(n452), .n9249(n9249), 
+            .n1084(n1084), .n11119(n11119), .n10483(n10483), .n11023(n11023), 
+            .n364(n364), .n9468(n9468), .n10966(n10966), .\rom_q[0] (rom_q[0]), 
+            .n1148(n1148)) /* synthesis syn_module_defined=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/lcd_show_char.v(305[10] 309[2])
     
 endmodule
 //
 // Verilog Description of module char_ram
 //
 
-module char_ram (rom_addr, n14082, n13772, n14057, n14087, n6044, 
-            n317, n15556, n14239, n15568, n14162, n13222, n158, 
-            n14107, n14146, n14265, n14109, n14102, n14183, n1148, 
-            n12165, n12179, n4094, rom_q, n158_adj_1, n4094_adj_2, 
-            n4094_adj_3, n14163, n14092, n1851, n12278, n1530, n828, 
-            n12213, n14096, n14181, n380, n14106, n6657, n301, 
-            n14126, n4, n46, n1069, n3865, n12287, n62, n12317, 
-            n2395, n379, n5840, n13191, n1530_adj_4, n14127, n14166, 
-            n14275, n270, n11747, n828_adj_5, n1278, n1643, n1565, 
-            n1596, n6699, n62_adj_6, n1101, n14122, n15546, n509, 
-            n510, n15549, n2621, n14048, n13853, n12633, n2332, 
-            n15548, n14300, n14177, n14246, n1211, n14153, n14189, 
-            n14097, n14104, n14277, n14215, n14129, n11860, n891, 
-            n14074, n1149, n11731, n14079, n14244, n603, n10773, 
-            n14179, n2141, n1534, n14078, n12119, n14095, n11748, 
-            n14132, n3069, n14091, n1276, n2025, n1565_adj_7, n14130, 
-            n14218, n4_adj_8, n1085, n1661, n1851_adj_9, n796, n11858, 
-            n14064, n14084, n892, n1676, n1596_adj_10, n2364, n1467, 
-            n46_adj_11, n4_adj_12, n3559, n380_adj_13, n12353, n2428, 
-            n2300, n14047, n94, n126, n127, n14176, n3913, n14124, 
-            n14175, n10819, n10821, n14297, n1436, n14278, n8577, 
-            n12250, n308, n13477, n11755, n13473, n723, n1076, 
-            n4_adj_14, n13190, n4660, n125, n1405, n14159, n14234, 
-            n14060, n14148, n14174, n14282, n14065, n1172, n1403, 
-            n12067, n14111, n13894, n13893, n14170, n13325, n349, 
-            n12575, n14237) /* synthesis syn_module_defined=1 */ ;
-    input [11:0]rom_addr;
-    input n14082;
-    input n13772;
-    input n14057;
-    output n14087;
-    input n6044;
-    input n317;
-    input n15556;
-    output n14239;
-    input n15568;
-    output n14162;
-    output n13222;
-    output n158;
-    input n14107;
-    input n14146;
-    output n14265;
-    output n14109;
-    input n14102;
-    output n14183;
-    input n1148;
-    input n12165;
-    input n12179;
-    input n4094;
-    output [7:0]rom_q;
-    input n158_adj_1;
-    input n4094_adj_2;
-    input n4094_adj_3;
-    output n14163;
-    output n14092;
-    input n1851;
-    input n12278;
-    input n1530;
-    input n828;
-    input n12213;
-    output n14096;
-    output n14181;
-    input n380;
-    output n14106;
-    input n6657;
+module char_ram (\rom_addr[3] , \rom_addr[0] , \rom_addr[5] , \rom_addr[8] , 
+            \rom_addr[4] , \rom_addr[2] , n11089, \rom_addr[7] , \rom_addr[1] , 
+            \rom_addr[6] , n11899, n10987, n158, n301, n11030, n1851, 
+            n10748, n9414, n1565, n1596, n1181, n308, n723, n11900, 
+            \rom_addr[10] , \rom_q[4] , \rom_q[2] , \rom_q[5] , n286, 
+            n317, \rom_addr[9] , n11074, n9509, n11049, n9588, n9686, 
+            n9596, n10709, n1534, n2046, n10980, n9127, n11090, 
+            n10959, n23, n8427, n11094, n5259, n9431, n5246, n1278, 
+            n1529, n1676, n8373, n9916, n11095, n1101, n380, n349, 
+            n9247, n1405, n10970, n891, n11073, n1149, n9243, 
+            n11098, n332, n11034, n3295, n5226, n10957, n2974, 
+            n9401, n3699, n11113, n94, n126, n127, n10992, n2025, 
+            n1436, n16, n21, n11107, n1661, n5039, n4688, n892, 
+            n11020, \rom_q[3] , n1723, n1755, n125, n2975, n270, 
+            \rom_q[1] , n94_adj_1, n10607, n10950, n9777, n270_adj_2, 
+            n10954, n1069, n891_adj_3, n1172, n10272, n460, n1275, 
+            n10530, n10531, n452, n9249, n1084, n11119, n10483, 
+            n11023, n364, n9468, n10966, \rom_q[0] , n1148) /* synthesis syn_module_defined=1 */ ;
+    input \rom_addr[3] ;
+    input \rom_addr[0] ;
+    input \rom_addr[5] ;
+    input \rom_addr[8] ;
+    input \rom_addr[4] ;
+    input \rom_addr[2] ;
+    output n11089;
+    input \rom_addr[7] ;
+    input \rom_addr[1] ;
+    input \rom_addr[6] ;
+    output n11899;
+    output n10987;
+    input n158;
     output n301;
-    output n14126;
-    output n4;
-    output n46;
-    output n1069;
-    output n3865;
-    input n12287;
-    input n62;
-    output n12317;
-    output n2395;
-    output n379;
-    output n5840;
-    output n13191;
-    input n1530_adj_4;
-    output n14127;
-    output n14166;
-    output n14275;
-    output n270;
-    output n11747;
-    input n828_adj_5;
-    output n1278;
-    output n1643;
+    output n11030;
+    input n1851;
+    input n10748;
+    input n9414;
     input n1565;
     input n1596;
-    input n6699;
-    input n62_adj_6;
-    output n1101;
-    output n14122;
-    output n15546;
-    input n509;
-    output n510;
-    output n15549;
-    input n2621;
-    output n14048;
-    input n13853;
-    input n12633;
-    output n2332;
-    output n15548;
-    input n14300;
-    input n14177;
-    output n14246;
-    output n1211;
-    output n14153;
-    output n14189;
-    output n14097;
-    input n14104;
-    output n14277;
-    output n14215;
-    input n14129;
-    output n11860;
-    input n891;
-    input n14074;
-    input n1149;
-    output n11731;
-    output n14079;
-    output n14244;
-    output n603;
-    output n10773;
-    input n14179;
-    input n2141;
+    input n1181;
+    output n308;
+    output n723;
+    output n11900;
+    input \rom_addr[10] ;
+    output \rom_q[4] ;
+    output \rom_q[2] ;
+    output \rom_q[5] ;
+    input n286;
+    input n317;
+    input \rom_addr[9] ;
+    output n11074;
+    input n9509;
+    output n11049;
+    input n9588;
+    input n9686;
+    input n9596;
+    input n10709;
     input n1534;
-    output n14078;
-    input n12119;
-    output n14095;
-    output n11748;
-    output n14132;
-    output n3069;
-    input n14091;
-    input n1276;
-    output n2025;
-    output n1565_adj_7;
-    input n14130;
-    output n14218;
-    input n4_adj_8;
-    input n1085;
-    output n1661;
-    input n1851_adj_9;
-    output n796;
-    input n11858;
-    input n14064;
-    input n14084;
-    input n892;
+    output n2046;
+    output n10980;
+    output n9127;
+    output n11090;
+    output n10959;
+    input n23;
+    output n8427;
+    output n11094;
+    input n5259;
+    input n9431;
+    output n5246;
+    output n1278;
+    output n1529;
     output n1676;
-    input n1596_adj_10;
-    input n2364;
-    input n1467;
-    output n46_adj_11;
-    output n4_adj_12;
-    input n3559;
-    input n380_adj_13;
-    output n12353;
-    input n2428;
-    input n2300;
-    input n14047;
+    output n8373;
+    input n9916;
+    output n11095;
+    output n1101;
+    input n380;
+    input n349;
+    output n9247;
+    output n1405;
+    output n10970;
+    output n891;
+    output n11073;
+    input n1149;
+    input n9243;
+    output n11098;
+    output n332;
+    output n11034;
+    output n3295;
+    input n5226;
+    input n10957;
+    output n2974;
+    input n9401;
+    output n3699;
+    input n11113;
     input n94;
     input n126;
     output n127;
-    output n14176;
-    output n3913;
-    output n14124;
-    output n14175;
-    input n10819;
-    output n10821;
-    input n14297;
+    input n10992;
+    output n2025;
     input n1436;
-    output n14278;
-    output n8577;
-    output n12250;
-    output n308;
-    input n13477;
-    input n11755;
-    input n13473;
-    output n723;
-    output n1076;
-    output n4_adj_14;
-    output n13190;
-    output n4660;
+    output n16;
+    output n21;
+    input n11107;
+    output n1661;
+    input n5039;
+    input n4688;
+    input n892;
+    input n11020;
+    output \rom_q[3] ;
+    input n1723;
+    input n1755;
     input n125;
-    output n1405;
-    output n14159;
-    output n14234;
-    output n14060;
-    input n14148;
-    output n14174;
-    input n14282;
-    input n14065;
+    input n2975;
+    output n270;
+    output \rom_q[1] ;
+    input n94_adj_1;
+    input n10607;
+    output n10950;
+    input n9777;
+    output n270_adj_2;
+    output n10954;
+    output n1069;
+    input n891_adj_3;
     output n1172;
-    input n1403;
-    input n12067;
-    output n14111;
-    input n13894;
-    input n13893;
-    output n14170;
-    input n13325;
-    input n349;
-    input n12575;
-    input n14237;
+    output n10272;
+    output n460;
+    input n1275;
+    input n10530;
+    output n10531;
+    output n452;
+    input n9249;
+    input n1084;
+    input n11119;
+    input n10483;
+    output n11023;
+    output n364;
+    input n9468;
+    output n10966;
+    output \rom_q[0] ;
+    input n1148;
     
     
-    wire n2411, n1086, n12457, n14389, n14390, n14391, n1117, 
-        n11771, n12606, n924, n955, n956, n13308, n12421, n1021, 
-        n14080, n13773, n13770, n13774, n14383, n14384, n14385, 
-        n13771, n12205, n5376, n12418, n5191, n13769, n14327, 
-        n126_c, n12408, n476, n507, n12579, n12614, n12615, n12618, 
-        n13767, n13765, n13768, n12414, n12415, n510_c, n14318, 
-        n1978, n12400, n13766, n13764, n1275, n12616, n12617, 
-        n12619, n12085, n12086, n12087, n14380, n14381, n14382, 
-        n94_c, n11766, n14279, n30, n13910, n12091, n12092, n12093, 
-        n12094, n12095, n12096, n3624, n14088, n4232, n924_adj_542, 
-        n13848, n2173, n12318, n286, n12569, n1785, n1243, n1244, 
-        n12104, n12105, n12106, n12609, n14377, n14378, n14379, 
-        n12320, n12321, n12323, n12107, n12108, n12109, n14292, 
-        n14293, n14294, n14201, n14115, n1946, n1947, n12116, 
-        n12117, n12118, n236, n251, n12122, n12123, n12124, n15560, 
-        n15561, n15562, n12125, n12126, n12127, n12128, n12129, 
-        n12130, n14180, n14302, n1707, n1723, n12417, n766, n13221, 
-        n13219, n13481, n12131, n12132, n12133, n14374, n14375, 
-        n14376, n13696, n13694, n13697, n13695, n653, n668, n14090, 
-        n12212, n14289, n14290, n14291, n397, n6648, n12245, n13693, 
-        n13692, n14301, n12137, n12138, n12139, n14255, n2620, 
-        n13476, n13604, n255, n12140, n12141, n12142, n15557, 
-        n15558, n15559, n13561, n12389, n1533, n3252, n1278_c, 
-        n1789, n2044, n12281, n14371, n14372, n14373, n12143, 
-        n12144, n12145, n13559, n2523, n2554, n2555, n12072, n12270, 
-        n12050, n6687, n12269, n1898, n1914, n12149, n12150, n12151, 
-        n1309, n12152, n12153, n12154, n12571, n12580, n12264, 
-        n14286, n14287, n14288, n12549, n12562, n12263, n12265, 
-        n12266, n12272, n14369, n2173_adj_543, n12158, n12159, n12160, 
-        n14271, n14284, n14285, n12161, n12162, n12163, n14089, 
-        n860, n1117_adj_544, n1149_c, n12164, n12166, n14367, n14368, 
-        n13486, n12508, n12520, n2283, n2298, n2299, n12173, n12174, 
-        n12175, n12176, n12177, n12178, n205, n220, n12180, n12181, 
-        n14364, n14365, n14366, n12505, n12506, n12519, n12182, 
-        n12183, n12184, n12185, n12186, n12187, n12277, n189, 
-        n190, n12526, n12291, n12188, n12189, n12190, n12451, 
-        n12452, n12453, n12498, n12499, n12500, n12529, n12530, 
-        n12531, n2047, n14144, n14117, n12194, n12195, n12196, 
-        n12282, n12283, n12284, n14361, n14362, n14363, n443, 
-        n2268, n12197, n12198, n12199, n12447, n12448, n12449, 
-        n12450, n12496, n12497, n12476, n12477, n12489, n12200, 
-        n12201, n12202, n12527, n12528, n12203, n12204, n12206, 
-        n12207, n12208, n12273, n12274, n12276, n1820, n1852, 
-        n12279, n12472, n12473, n12487, n12280, n12322, n12324, 
-        n1514, n14238, n1531, n12470, n12486, n11737, n956_adj_548, 
-        n12439, n12440, n12441, n12442, n12443, n12444, n12209, 
-        n12210, n12211, n12445, n12446, n12494, n12495, n827, 
-        n11973, n829, n12525, n12214, n971, n986, n12600, n2009, 
-        n954, n12599, n908, n205_adj_549, n12598, n301_c, n12237, 
-        n12338, n3069_c, n3070, n1676_c, n812, n668_adj_550, n12331, 
-        n3069_adj_551, n3070_adj_552, n13639, n14195, n2237, n364, 
-        n381, n2522, n2220, n12257, n12258, n12259, n61, n8547, 
-        n1243_adj_553, n986_adj_554, n14242, n12235, n318, n270_c, 
-        n828_adj_555, n14272, n797, n14073, n5720, n5723, n6652, 
-        n731, n604, n1084, n526, n491, n12227, n12228, n12229, 
-        n12301, n3069_adj_557, n3070_adj_558, n1002, n557, n12267, 
-        n12268, n13187, n1691, n2283_adj_559, n4661, n3064, n12271, 
-        n12275, n14120, n14152, n12556, n12285, n12286, n12289, 
-        n732, n12288, n12290, n14150, n1196, n1212, n61_adj_560, 
-        n63, n12306, n12307, n12308, n13354, n12239, n12632, n364_adj_561, 
-        n12315, n12316, n1243_adj_562, n14137, n12248, n1564, n379_c, 
-        n2077, n14358, n14359, n14360, n1228, n859, n620, n12584, 
-        n1466, n12402, n12403, n12488, n12478, n12479, n12490, 
-        n12484, n12485, n12493, n604_adj_563, n12583, n13145, n5294, 
-        n2426, n2298_adj_564, n2300_c, n12581, n460, n13482, n14138, 
-        n14164, n1085_c, n893, n11966, n1021_adj_565, n2475, n1676_adj_566, 
-        n13640, n13637, n13641, n2283_adj_568, n1549, n12236, n12238, 
-        n1851_adj_569, n2348, n3070_adj_570, n12246, n12247, n2685, 
-        n14273, n2108, n205_adj_571, n747, n506, n14199, n15547, 
-        n2554_adj_572, n14172, n1054, n14155, n1514_adj_573, n1531_adj_575, 
-        n506_adj_576, n1529, n2427, n13588, n14151, n2588, n12167, 
-        n12461, n526_adj_577, n2492, n13638, n14232, n14236, n2428_c, 
-        n1931, n635, n2040, n12297, n12298, n12300, n14158, n1676_adj_578, 
-        n2365, n2428_adj_579, n13306, n1770, n124, n14128, n12576, 
-        n13522, n12327, n12328, n12330, n12332, n12333, n12336, 
-        n12349, n12350, n12352, n12381, n12382, n766_adj_581, n1466_adj_582, 
-        n12052, n6671, n12401, n4876, n1947_adj_583, n1181, n1212_adj_584, 
-        n1213, n1786, n1787, n4433, n2523_adj_585, n1786_adj_586, 
-        n1787_adj_587, n1549_adj_588, n1565_c, n3933, n13323, n14311, 
-        n12535, n12046, n731_adj_589, n1435, n1436_c, n1835, n12379, 
-        n428, n15544, n381_adj_590, n12425, n12311, n764, n12428, 
-        n13038, n14121, n2522_adj_591, n2523_adj_592, n1019, n12430, 
-        n6627, n6628, n526_adj_593, n860_adj_594, n14230, n892_c, 
-        n1913, n1692, n14112, n1755, n1468, n12434, n2078, n2009_adj_595, 
-        n829_adj_597, n12458, n14336, n12412, n12467, n12468, n2044_adj_599, 
-        n1038, n1053, n12572, n731_adj_600, n1692_adj_601, n12574, 
-        n1149_adj_602, n1597, n12056, n12482, n1914_adj_603, n12464, 
-        n12048, n2396, n1851_adj_605, n12398, n1915, n2109, n1595, 
-        n12361, n12362, n13142, n109, n12474, n12475, n1707_adj_606, 
-        n12038, n1789_adj_607, n14100, n2009_adj_608, n13186, n61_adj_609, 
-        n63_adj_611, n14093, n13846, n2025_c, n2040_adj_612, n12069, 
-        n1979, n12516, n14113, n13189, n12501, n12502, n12517, 
-        n12503, n12504, n12518, n12513, n12514, n12523, n14355, 
-        n14356, n14357, n12605, n12607, n15545, n1755_adj_613, n844, 
-        n859_adj_614, n12566, n12045, n12563, n1403_c, n14188, n12234, 
-        n1628, n2490, n1914_adj_615, n1658, n12055, n2009_adj_616, 
-        n2010, n14352, n14353, n14354, n1529_adj_617, n1530_adj_618, 
-        n1820_adj_619, n1017, n221, n12534, n13143, n14191, n12564, 
-        n12460, n1692_adj_620, n2555_adj_621, n14101, n507_adj_622, 
-        n11962, n1451, n1467_c, n1451_adj_624, n1723_adj_625, n14147, 
-        n2205, n12260, n12261, n12262, n12215, n12587, n12594, 
-        n2573, n13356, n12375, n12376, n13139, n3070_adj_626, n12597, 
-        n12604, n2685_adj_627, n12462, n15550, n428_adj_628, n14328, 
-        n12559, n14315, n14233, n12296, n2365_adj_629, n12148, n12368, 
-        n12369, n13140, n220_adj_630, n12558, n2538, n12157, n2429, 
-        n13895, n684, n699, n12554, n2589, n15541, n12303, n380_adj_631, 
-        n12193, n12304, n124_adj_632, n6622, n1467_adj_633, n78, 
-        n8028, n14059, n13384, n14304, n890, n13590, n12305, n14061, 
-        n13636, n2009_adj_634, n14349, n14350, n14351, n589, n604_adj_635, 
-        n12550, n14370, n14258, n1867, n1883, n2283_adj_636, n12557, 
-        n542, n12454, n12084, n2428_adj_637, n2333, n14052, n12063, 
-        n1244_adj_638, n1275_adj_639, n1276_c, n14185, n1739, n2492_adj_640, 
-        n2555_adj_641, n2301, n428_adj_642, n14221, n12221, n14331, 
-        n12548, n2110, n14306, n12545, n14193, n2237_adj_643, n12169, 
-        n1483, n12335, n1308, n1309_adj_644, n13421, n684_adj_645, 
-        n12601, n14305, n890_adj_646, n12567, n1723_adj_647, n316, 
-        n12341, n12342, n12348, n6663, n12060, n12343, n12344, 
-        n1483_adj_648, n428_adj_649, n13557, n12345, n12346, n12357, 
-        n12358, n444, n14309, n620_adj_650, n14308, n14260, n14346, 
-        n14347, n14348, n1341, n12359, n12360, n1435_adj_651, n2267, 
-        n13843, n1659, n557_adj_652, n1565_adj_653, n1403_adj_654, 
-        n12590, n1084_adj_655, n14314, n1243_adj_656, n12042, n13464, 
-        n13465, n12364, n12365, n13061, n2522_adj_657, n364_adj_658, 
-        n12366, n12367, n12371, n12372, n12373, n12374, n13470, 
-        n1883_adj_659, n1915_adj_660, n14160, n13471, n13603, n13602, 
-        n13425, n1883_adj_661, n1914_adj_662, n12399, n1786_adj_663, 
-        n13307, n12386, n12387, n12391, n12392, n12395, n1676_adj_664, 
-        n1691_adj_665, n1692_adj_666, n1659_adj_667, n14317, n14216, 
-        n10570, n14343, n14344, n14345, n13911, n12393, n12394, 
-        n12396, n1212_adj_668, n13062, n13063, n1530_adj_669, n1228_adj_670, 
-        n1499, n14316, n12582, n13478, n13479, n604_adj_671, n684_adj_672, 
-        n699_adj_673, n1228_adj_674, n12378, n13485, n13484, n12068, 
-        n2010_adj_675, n190_adj_676, n253, n12424, n13040, n13600, 
-        n13601, n14156, n908_adj_677, n12429, n14044, n1213_adj_678, 
-        n589_adj_679, n285, n12314, n12431, n12380, n12432, n220_adj_681, 
-        n653_adj_682, n14075, n1786_adj_683, n2492_adj_684, n2555_adj_685, 
-        n2556, n14319, n2573_adj_686, n2964, n14171, n1597_adj_687, 
-        n5064, n1597_adj_688, n1660, n12435, n2491, n12407, n12437, 
-        n2459, n2427_adj_689, n2364_c, n12413, n12456, n12438, n12463, 
-        n14081, n6459, n10820, n6650, n12309, n14248, n13381, 
-        n14142, n653_adj_690, n14340, n14341, n14342, n2110_adj_691, 
-        n2174, n604_adj_692, n14323, n14322, n443_adj_693, n12216, 
-        n12217, n13591, n13592, n3127, n987, n13533, n12465, n12466, 
-        n14210, n2317, n14108, n637, n13460, n13537, n716, n14326, 
-        n14325, n2045, n12608, n12588, n12553, n12537, n14330, 
-        n14329, n1882, n475, n14337, n14338, n14339, n12252, n12120, 
-        n12121, n2237_adj_694, n12319, n6625, n445, n508, n1435_adj_695, 
-        n12546, n12552, n12555, n12565, n12251, n444_adj_696, n12578, 
-        n12568, n12577, n12044, n12222, n12047, n1404, n12480, 
-        n1946_adj_697, n12411, n13589, n1915_adj_698, n5933, n1852_adj_699, 
-        n12061, n12053, n12481, n1724, n12483, n12051, n12405, 
-        n445_adj_700, n12062, n12065, n2396_adj_701, n2396_adj_702, 
-        n13042, n1883_adj_703, n2025_adj_704, n12064, n11720, n2621_adj_705, 
-        n2684, n14161, n12455, n12241, n12509, n12491, n12492, 
-        n13184, n12510, n1038_adj_708, n1054_adj_709, n12512, n1660_adj_710, 
-        n1724_adj_712, n12515, n12049, n508_adj_713, n12426, n13386, 
-        n12427, n1596_adj_715, n14076, n12223, n12547, n13480, n12351, 
-        n14139, n6308, n12337, n12560, n12561, n12070, n12071, 
-        n12551, n2685_adj_716, n12570, n2299_adj_717, n12054, n14223, 
-        n12589, n5737, n13466, n13538, n12329, n12585, n12586, 
-        n12592, n12593, n12595, n12596, n13220, n13560, n13558, 
-        n12602, n12603, n14070, n11756, n1659_adj_720, n6857, n12610, 
-        n12573, n12611, n12612, n12613, n12295, n12299, n12620, 
-        n12423, n574, n380_adj_721, n13523, n13524, n2173_adj_722, 
-        n2491_adj_723, n14274, n6691, n6718, n13423, n12082, n12536, 
-        n1292, n12043, n13188, n13185, n14307, n2380, n1020, n62_adj_725, 
-        n1867_adj_726, n1883_adj_727, n1101_adj_731, n1117_adj_732, 
-        n270_adj_733, n12146, n14324, n12240, n12066, n2444, n2460, 
-        n2554_adj_735, n2298_adj_737, n12729, n716_adj_740, n14228, 
-        n12233, n4_adj_741, n476_adj_742, n364_adj_743, n14229, n12524, 
-        n13358, n12522, n12521, n13327, n4707, n14116, n13525, 
-        n2205_adj_747, n2109_adj_750, n891_adj_751, n12310, n13111, 
-        n475_adj_752, n14219, n6686, n2236, n2268_adj_753, n14099, 
-        n2298_adj_754, n2444_adj_755, n333, n1499_adj_757, n348, n541, 
-        n14267, n12544, n526_adj_758, n2426_adj_759, n14133, n12168, 
-        n12249, n4690, n13483, n4699, n10563, n1210, n13474, n13472, 
-        n13218, n12147, n12253, n557_adj_761, n13041, n13039, n13909, 
-        n4764, n14310, n14194, n635_adj_762, n13424, n13422, n13144, 
-        n13141, n14303, n13382, n13844, n13112, n13357, n13355, 
-        n14241, n12591, n13326, n13324, n13847, n13845;
+    wire n11067, n11025, n10229, n9899, n9900, n9903, n9860, n9861, 
+        n9868, n506, n475, n9605, n11065, n30, n9810, n10691, 
+        n9826, n205, n9793, n9794, n9802, n9901, n9902, n9904, 
+        n10794, n10791, n10795, n10793, n10792, n428, n684, n9600, 
+        n9791, n9792, n9801, n1017, n9599, n10476, n9790, n9800, 
+        n9787, n9788, n9799, n4171, n10790, n9785, n9786, n9798, 
+        n9783, n9784, n9797, n9781, n9782, n9796, n9484, n9485, 
+        n9486, n844, n557, n10230, n10227, n10231, n9674, n891_c, 
+        n9488, n10772, n10769, n10773, n9779, n9780, n9795, n9136, 
+        n11004, n11041, n9493, n9494, n9495, n1789, n2044, n9687, 
+        n9496, n9497, n9500, n9498, n9499, n9501, n9503, n9504, 
+        n9505, n9506, n9507, n9508, n1549, n1564, n1565_c, n189, 
+        n190, n9760, n9761, n766, n10228, n10751, n10749, n10752, 
+        n9516, n9517, n9518, n11022, n61, n348, n1820, n1852, 
+        n10962, n10750, n10838, n11017, n10747, n1643, n1549_adj_545, 
+        n9587, n1514, n1530, n1531, n9519, n9520, n9521, n1117, 
+        n9143, n9523, n9562, n11084, n1278_c, n1533, n9511, n924, 
+        n956, n827, n828, n9410, n829, n9525, n9526, n9527, 
+        n1038, n11904, n11905, n11906, n9528, n9529, n9530, n2025_c, 
+        n2040, n9583, n766_adj_547, n1021, n9510, n11048, n10982, 
+        n364_c, n380_c, n381, n10735, n10733, n10736, n9537, n9538, 
+        n9539, n10734, n9543, n9544, n9545, n10946, n4511, n61_adj_548, 
+        n62, n63, n10976, n11114, n11115, n11116, n9546, n9547, 
+        n9548, n9549, n9550, n9553, n9551, n9552, n9554, n10350, 
+        n10349, n10351, n1739, n1786, n1787, n1514_adj_549, n1530_adj_550, 
+        n1531_adj_551, n1628, n1659, n9563, n797, n828_adj_552, 
+        n9487, n10958, n1181_adj_553, n1212, n1213, n9866, n9867, 
+        n9871, n859, n860, n11077, n892_c, n10942, n9864, n9865, 
+        n9870, n812, n828_adj_554, n829_adj_555, n716, n732, n11075, 
+        n764, n11901, n11902, n11903, n1451, n11007, n4046, n699, 
+        n5223, n11015, n11021, n1450, n9565, n9566, n9567, n3824, 
+        n9807, n9808, n3767, n364_adj_556, n380_adj_557, n381_adj_558, 
+        n9872, n9873, n9568, n9569, n9570, n9513, n9514, n9443, 
+        n9684, n9685, n9688, n620, n9574, n9575, n9576, n10732, 
+        n1275_c, n9803, n9804, n9805, n9806, n9577, n9578, n9579, 
+        n10207, n10206, n10208, n205_adj_559, n220, n11088, n9580, 
+        n9581, n9584, n9885, n9886, n9888, n9582, n9585, n5228, 
+        n11086, n9512, n9589, n10713, n10711, n10714, n9590, n9591, 
+        n9592, n11124, n1021_adj_560, n9689, n9597, n9598, n10226, 
+        n10225, n9601, n10712, n9606, n9607, n9832, n9833, n9837, 
+        n9869, n11083, n10710, n9879, n9880, n9883, n9884, n9887, 
+        n9608, n9609, n9610, n2045, n9745, n9746, n2044_adj_561, 
+        n684_adj_562, n6852, n1403, n5230, n9818, n9819, n9830, 
+        n9824, n9825, n9618, n9619, n9620, n255, n510, n9621, 
+        n9622, n9623, n11166, n11167, n11168, n3720, n1786_adj_563, 
+        n1787_adj_564, n890, n9627, n9628, n9629, n9633, n9634, 
+        n9635, n9854, n9855, n1786_adj_565, n1787_adj_566, n731, 
+        n9636, n9637, n9638, n10527, n11001, n542, n574, n11050, 
+        n4657, n428_adj_567, n908, n3249, n1978, n986, n10941, 
+        n10221, n2580, n1435, n3759, n971, n11018, n124, n10967, 
+        n1786_adj_568, n10935, n635, n428_adj_569, n443, n9649, 
+        n9881, n9882, n1387, n1403_adj_570, n1946, n1947, n1707, 
+        n1723_c, n526, n526_adj_571, n1882, n1883, n860_adj_572, 
+        n893, n9377, n731_adj_573, n5224, n11093, n1658, n26, 
+        n9433, n5241, n251, n221, n1228, n1707_adj_574, n557_adj_575, 
+        n9721, n10925, n1691, n603, n699_adj_576, n1867, n491, 
+        n9743, n9744, n9654, n9655, n9656, n5204, n46, n747, 
+        n9766, n9767, n6692, n9154, n9915, n9773, n9774, n5235, 
+        n364_adj_578, n635_adj_579, n63_adj_580, n236, n379, n506_adj_581, 
+        n956_adj_582, n1019, n11027, n4744, n4299, n1785, n1913, 
+        n5238, n124_adj_583, n251_adj_584, n1676_c, n9673, n9651, 
+        n1691_adj_585, n9663, n1468, n1724, n1466, n6838, n9460, 
+        n1149_c, n1915, n9814, n9815, n9828, n9822, n9823, n1341, 
+        n1404, n10623, n1979, n9859, n9669, n9670, n9671, n9844, 
+        n9845, n9846, n9847, n1243, n3181, n9856, n9857, n9467, 
+        n9480, n9877, n9489, n9502, n9878, n9522, n9524, n10474, 
+        n668, n1483, n1387_adj_587, n8371, n8372, n1514_adj_588, 
+        n1196, n1770, n2040_adj_589, n1243_adj_590, n10939, n604, 
+        n11035, n11037, n10591, n604_adj_591, n1435_adj_592, n1244, 
+        n1275_adj_593, n1276, n9841, n10897, n10270, n653, n1228_adj_594, 
+        n9471, n6453, n11356, n1467, n3750, n9697, n9698, n9701, 
+        n1451_adj_595, n1723_adj_596, n476, n507, n11355, n11044, 
+        n9469, n11359, n5254, n11360, n1466_adj_598, n10471, n2009, 
+        n1692, n9691, n9699, n9700, n9702, n9719, n9704, n9705, 
+        n9708, n10932, n10473, n1676_adj_599, n1692_adj_600, n1914, 
+        n9770, n1851_adj_601, n9741, n1692_adj_602, n11163, n11164, 
+        n11165, n9706, n9707, n9709, n11127, n1676_adj_603, n9245, 
+        n9482, n9652, n10485, n9711, n9712, n9715, n9713, n9714, 
+        n9716, n10995, n10896, n1883_adj_604, n11133, n9751, n10979, 
+        n2009_adj_605, n1341_adj_606, n10267, n1435_adj_607, n1436_c, 
+        n9464, n2009_adj_608, n2010, n9463, n11003, n1565_adj_609, 
+        n1597, n397, n9648, n10933, n9729, n9730, n9732, n124_adj_610, 
+        n10690, n10688, n1467_adj_611, n11126, n9736, n9737, n9739, 
+        n10266, n1274, n9682, n10269, n11028, n2025_adj_612, n1054, 
+        n9742, n1978_adj_613, n78, n10689, n2009_adj_614, n9724, 
+        n443_adj_615, n9461, n9831, n11226, n11104, n9755, n188, 
+        n11227, n9769, n11033, n11898, n1002, n285, n9771, n9772, 
+        n890_adj_616, n9456, n11099, n1084_c, n11103, n11076, n9148, 
+        n9753, n190_adj_617, n253, n11040, n11032, n1596_adj_618, 
+        n796, n10973, n9641, n9677, n604_adj_620, n1038_adj_621, 
+        n1053, n9458, n9680, n9462, n9630, n9631, n9632, n9683, 
+        n859_adj_623, n9455, n1597_adj_624, n1660, n11129, n9449, 
+        n11092, n61_adj_625, n9447, n9693, n1915_adj_626, n11131, 
+        n10687, n10686, n1243_adj_627, n1676_adj_628, n5207, n10969, 
+        n9725, n9720, n9726, n11130, n1883_adj_629, n589, n9440, 
+        n10955, n9829, n11228, n526_adj_630, n9438, n9778, n9812, 
+        n637, n10842, n11136, n285_adj_631, n270_c, n9439, n9442, 
+        n9448, n9451, n9457, n9816, n9470, n9473, n9483, n1404_adj_632, 
+        n9820, n9481, n11135, n1467_adj_633, n9821, n1946_adj_634, 
+        n9718, n1597_adj_635, n9492, n10487, n11229, n1117_adj_636, 
+        n1724_adj_637, n9764, n1612, n10605, n954, n270_adj_638, 
+        n9776, n10604, n1755_c, n3937, n1913_adj_639, n1914_adj_640, 
+        n11139, n11138, n9111, n5220, n10608, n10618, n10619, 
+        n109, n2010_adj_641, n11159, n11230, n11231, n11142, n4216, 
+        n10620, n9848, n11141, n1786_adj_642, n10622, n1692_adj_643, 
+        n9851, n1149_adj_644, n9852, n11145, n1530_adj_645, n1211, 
+        n1499, n11144, n557_adj_646, n1660_adj_647, n1466_adj_648, 
+        n11148, n11006, n11147, n1724_adj_649, n10997, n1085, n1852_adj_650, 
+        n1915_adj_651, n9858, n1054_adj_652, n1627, n4835, n11157, 
+        n11158, n1931, n1947_adj_653, n333, n11151, n1243_adj_654, 
+        n9893, n9894, n9895, n11150, n10972, n3418, n1308, n11097, 
+        n10936, n1596_adj_655, n10956, n10209, n301_adj_656, n9476, 
+        n10222, n1628_adj_657, n1309, n10951, n46_adj_658, n62_adj_659, 
+        n1914_adj_660, n11071, n9465, n9466, n9905, n1228_adj_661, 
+        n9681, n9478, n9479, n11047, n572, n10610, n1789_adj_662, 
+        n1867_adj_663, n1883_adj_664, n653_adj_665, n9675, n1101_adj_666, 
+        n1117_adj_667, n1403_adj_668, n9658, n986_adj_669, n11062, 
+        n541, n9657, n9531, n9532, n9533, n11143, n9650, n508, 
+        n11137, n9659, n10844, n924_adj_670, n987, n9555, n1085_adj_671, 
+        n1883_adj_672, n3229, n9817, n380_adj_673, n9754, n10968, 
+        n316, n10224, n9849, n10624, n9850, n2791, n955, n1212_adj_674, 
+        n9564, n428_adj_675, n444, n11072, n459, n9586, n11066, 
+        n604_adj_676, n445, n9121, n10211, n1212_adj_677, n4, n9639, 
+        n9640, n220_adj_678, n10593, n11140, n1084_adj_679, n10223, 
+        n10220, n5255, n9676, n11149, n10529, n11000, n10993, 
+        n10960, n668_adj_681, n10895, n475_adj_682, n9441, n9491, 
+        n9475, n2009_adj_683, n1820_adj_685, n1529_adj_686, n1530_adj_687, 
+        n1499_adj_688, n10961, n1692_adj_689, n10996, n9752, n1483_adj_690, 
+        n6, n9123, n1851_adj_691, n9985, n9474, n1914_adj_692, n1020, 
+        n379_adj_694, n11011, n9450, n653_adj_695, n9446, n11152, 
+        n1086, n126_adj_696, n9748, n11132, n9664, n10595, n9875, 
+        n9863, n9862, n10937, n9477, n1612_adj_697, n9490, n10621, 
+        n11361, n11012, n444_adj_701, n10617, n11357, n11358, n10965, 
+        n8152, n1898, n10609, n10606, n3612, n10594, n10592, n9459, 
+        n9437, n5236, n684_adj_705, n10528, n908_adj_706, n526_adj_707, 
+        n10271, n10268, n9672, n1244_adj_708, n220_adj_710, n1292, 
+        n9472, n1076, n10841, n10839, n10486, n10484, n10210, 
+        n10475, n10472, n10843, n10840;
     
-    LUT4 address_11__I_0_Mux_6_i2411_3_lut_3_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .Z(n2411)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B !(C))) */ ;
-    defparam address_11__I_0_Mux_6_i2411_3_lut_3_lut_3_lut.init = 16'hc1c1;
-    LUT4 i11832_4_lut (.A(n1086), .B(rom_addr[0]), .C(rom_addr[6]), .D(n14082), 
-         .Z(n12457)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;
-    defparam i11832_4_lut.init = 16'h0aca;
-    PFUMX i13470 (.BLUT(n14389), .ALUT(n14390), .C0(rom_addr[3]), .Z(n14391));
-    PFUMX i11981 (.BLUT(n1117), .ALUT(n11771), .C0(rom_addr[5]), .Z(n12606));
-    LUT4 address_11__I_0_Mux_4_i956_3_lut (.A(n924), .B(n955), .C(rom_addr[5]), 
-         .Z(n956)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i956_3_lut.init = 16'hcaca;
-    LUT4 i12441_3_lut (.A(n13308), .B(n12421), .C(rom_addr[7]), .Z(n1021)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12441_3_lut.init = 16'hcaca;
-    LUT4 i1_2_lut_rep_163_3_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[2]), .Z(n14080)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_163_3_lut_4_lut.init = 16'h8000;
-    L6MUX21 i13219 (.D0(n13773), .D1(n13770), .SD(rom_addr[5]), .Z(n13774));
-    PFUMX i13466 (.BLUT(n14383), .ALUT(n14384), .C0(rom_addr[0]), .Z(n14385));
-    PFUMX i13217 (.BLUT(n13772), .ALUT(n13771), .C0(rom_addr[6]), .Z(n13773));
-    LUT4 i11793_4_lut (.A(n12205), .B(rom_addr[0]), .C(rom_addr[6]), .D(n5376), 
-         .Z(n12418)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;
-    defparam i11793_4_lut.init = 16'h0aca;
-    PFUMX i13215 (.BLUT(n5191), .ALUT(n13769), .C0(rom_addr[6]), .Z(n13770));
-    LUT4 i11783_4_lut (.A(n14327), .B(n126_c), .C(rom_addr[6]), .D(rom_addr[5]), 
-         .Z(n12408)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
-    defparam i11783_4_lut.init = 16'hcac0;
-    LUT4 i11954_3_lut (.A(n476), .B(n507), .C(rom_addr[5]), .Z(n12579)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11954_3_lut.init = 16'hcaca;
-    PFUMX i11993 (.BLUT(n12614), .ALUT(n12615), .C0(rom_addr[5]), .Z(n12618));
-    L6MUX21 i13213 (.D0(n13767), .D1(n13765), .SD(rom_addr[6]), .Z(n13768));
-    LUT4 i11791_3_lut (.A(n12414), .B(n12415), .C(rom_addr[7]), .Z(n510_c)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11791_3_lut.init = 16'hcaca;
-    LUT4 i11775_3_lut (.A(n14318), .B(n1978), .C(rom_addr[5]), .Z(n12400)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11775_3_lut.init = 16'hcaca;
-    PFUMX i13211 (.BLUT(n14057), .ALUT(n13766), .C0(rom_addr[5]), .Z(n13767));
-    PFUMX i13209 (.BLUT(n13764), .ALUT(n1275), .C0(rom_addr[5]), .Z(n13765));
-    PFUMX i11994 (.BLUT(n12616), .ALUT(n12617), .C0(rom_addr[5]), .Z(n12619));
-    PFUMX i11462 (.BLUT(n12085), .ALUT(n12086), .C0(rom_addr[5]), .Z(n12087));
-    PFUMX i13464 (.BLUT(n14380), .ALUT(n14381), .C0(rom_addr[0]), .Z(n14382));
-    PFUMX address_11__I_0_Mux_0_i126 (.BLUT(n94_c), .ALUT(n11766), .C0(rom_addr[5]), 
-          .Z(n126_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11460_3_lut_4_lut (.A(rom_addr[1]), .B(n14279), .C(rom_addr[4]), 
-         .D(n30), .Z(n12085)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11460_3_lut_4_lut.init = 16'hf808;
-    LUT4 rom_addr_0__bdd_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n13910)) /* synthesis lut_function=(!(A (C+!(D))+!A (B+(C+(D))))) */ ;
-    defparam rom_addr_0__bdd_4_lut_4_lut_4_lut.init = 16'h0a01;
-    PFUMX i11468 (.BLUT(n12091), .ALUT(n12092), .C0(rom_addr[5]), .Z(n12093));
-    PFUMX i11471 (.BLUT(n12094), .ALUT(n12095), .C0(rom_addr[5]), .Z(n12096));
-    LUT4 i2812_3_lut_4_lut (.A(rom_addr[5]), .B(n14087), .C(rom_addr[6]), 
-         .D(n6044), .Z(n3624)) /* synthesis lut_function=(!(A (C (D))+!A (B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2812_3_lut_4_lut.init = 16'h0efe;
-    LUT4 address_11__I_0_Mux_3_i924_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[4]), 
-         .C(n14088), .D(n4232), .Z(n924_adj_542)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i924_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 i12435_3_lut (.A(n13848), .B(n2173), .C(rom_addr[6]), .Z(n12318)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12435_3_lut.init = 16'hcaca;
-    PFUMX i11944 (.BLUT(n286), .ALUT(n317), .C0(rom_addr[5]), .Z(n12569));
-    LUT4 address_11__I_0_Mux_1_i1244_3_lut (.A(n1785), .B(n1243), .C(rom_addr[4]), 
-         .Z(n1244)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1244_3_lut.init = 16'hcaca;
-    PFUMX i11481 (.BLUT(n12104), .ALUT(n12105), .C0(rom_addr[5]), .Z(n12106));
-    LUT4 i12279_3_lut (.A(n1244), .B(n15556), .C(rom_addr[5]), .Z(n12609)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12279_3_lut.init = 16'hcaca;
-    PFUMX i13462 (.BLUT(n14377), .ALUT(n14378), .C0(rom_addr[0]), .Z(n14379));
-    LUT4 i11698_3_lut (.A(n12320), .B(n12321), .C(rom_addr[7]), .Z(n12323)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11698_3_lut.init = 16'hcaca;
-    L6MUX21 i11484 (.D0(n12107), .D1(n12108), .SD(rom_addr[5]), .Z(n12109));
-    PFUMX i13405 (.BLUT(n14292), .ALUT(n14293), .C0(n14239), .Z(n14294));
-    LUT4 i7165_2_lut_rep_284 (.A(rom_addr[2]), .B(rom_addr[3]), .Z(n14201)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7165_2_lut_rep_284.init = 16'heeee;
-    LUT4 i12610_2_lut_rep_198_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(n15568), 
-         .Z(n14115)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12610_2_lut_rep_198_3_lut.init = 16'h0101;
-    LUT4 i11530_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .Z(n14389)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11530_3_lut_4_lut_else_4_lut.init = 16'h2222;
-    LUT4 address_11__I_0_Mux_6_i1947_3_lut_4_lut (.A(n14162), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1946), .Z(n1947)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1947_3_lut_4_lut.init = 16'hf808;
-    PFUMX i11493 (.BLUT(n12116), .ALUT(n12117), .C0(rom_addr[5]), .Z(n12118));
-    LUT4 i11470_3_lut (.A(n236), .B(n251), .C(rom_addr[4]), .Z(n12095)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11470_3_lut.init = 16'hcaca;
-    PFUMX i11499 (.BLUT(n12122), .ALUT(n12123), .C0(rom_addr[5]), .Z(n12124));
-    PFUMX i14206 (.BLUT(n15560), .ALUT(n15561), .C0(rom_addr[0]), .Z(n15562));
-    L6MUX21 i11502 (.D0(n12125), .D1(n12126), .SD(rom_addr[5]), .Z(n12127));
-    PFUMX i11505 (.BLUT(n12128), .ALUT(n12129), .C0(rom_addr[5]), .Z(n12130));
-    LUT4 i4868_3_lut_4_lut_4_lut_then_4_lut (.A(n14180), .B(rom_addr[2]), 
-         .C(rom_addr[5]), .D(rom_addr[4]), .Z(n14302)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C+!(D)))+!A (B+!(C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4868_3_lut_4_lut_4_lut_then_4_lut.init = 16'hcf5c;
-    LUT4 address_11__I_0_Mux_6_i1723_3_lut_4_lut (.A(n14162), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1707), .Z(n1723)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1723_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i11794_3_lut (.A(n12417), .B(n12418), .C(rom_addr[7]), .Z(n766)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11794_3_lut.init = 16'hcaca;
-    PFUMX i12790 (.BLUT(n13221), .ALUT(n13219), .C0(rom_addr[8]), .Z(n13222));
-    LUT4 rom_addr_0__bdd_3_lut_13326_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[4]), .D(rom_addr[2]), .Z(n13481)) /* synthesis lut_function=(A (B+(C+(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam rom_addr_0__bdd_3_lut_13326_4_lut_4_lut.init = 16'hafa8;
-    PFUMX i11508 (.BLUT(n12131), .ALUT(n12132), .C0(rom_addr[5]), .Z(n12133));
-    LUT4 i11530_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14390)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)))+!A !(B+(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11530_3_lut_4_lut_then_4_lut.init = 16'h744c;
-    PFUMX i13460 (.BLUT(n14374), .ALUT(n14375), .C0(rom_addr[0]), .Z(n14376));
-    L6MUX21 i13168 (.D0(n13696), .D1(n13694), .SD(rom_addr[6]), .Z(n13697));
-    PFUMX i13166 (.BLUT(n158), .ALUT(n13695), .C0(rom_addr[5]), .Z(n13696));
-    PFUMX i11500 (.BLUT(n653), .ALUT(n668), .C0(rom_addr[4]), .Z(n12125));
-    LUT4 i11587_3_lut_4_lut_4_lut (.A(rom_addr[5]), .B(n14090), .C(rom_addr[6]), 
-         .D(n14087), .Z(n12212)) /* synthesis lut_function=(A+!(B (C+!(D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11587_3_lut_4_lut_4_lut.init = 16'hbfba;
-    PFUMX i13403 (.BLUT(n14289), .ALUT(n14290), .C0(n15568), .Z(n14291));
-    PFUMX i11620 (.BLUT(n397), .ALUT(n6648), .C0(rom_addr[4]), .Z(n12245));
-    PFUMX i13164 (.BLUT(n13693), .ALUT(n13692), .C0(rom_addr[5]), .Z(n13694));
-    LUT4 i4868_3_lut_4_lut_4_lut_else_4_lut (.A(n14180), .B(rom_addr[5]), 
-         .C(rom_addr[4]), .Z(n14301)) /* synthesis lut_function=(((C)+!B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4868_3_lut_4_lut_4_lut_else_4_lut.init = 16'hf7f7;
-    PFUMX i11514 (.BLUT(n12137), .ALUT(n12138), .C0(rom_addr[5]), .Z(n12139));
-    LUT4 n2172_bdd_3_lut_4_lut (.A(n14255), .B(n14107), .C(rom_addr[5]), 
-         .D(n2620), .Z(n13476)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam n2172_bdd_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i12443_3_lut (.A(n12408), .B(n13604), .C(rom_addr[7]), .Z(n255)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12443_3_lut.init = 16'hcaca;
-    PFUMX i11517 (.BLUT(n12140), .ALUT(n12141), .C0(rom_addr[5]), .Z(n12142));
-    PFUMX i14204 (.BLUT(n15557), .ALUT(n15558), .C0(rom_addr[4]), .Z(n15559));
-    LUT4 i7349_4_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .D(n14146), .Z(n5191)) /* synthesis lut_function=(A (B (C+(D))+!B (C+!(D)))+!A (B (C)+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7349_4_lut_4_lut_4_lut.init = 16'hf8f3;
-    LUT4 i11765_3_lut (.A(n13561), .B(n12389), .C(rom_addr[7]), .Z(n1533)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11765_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_5_i1278_4_lut (.A(rom_addr[0]), .B(n13768), 
-         .C(rom_addr[7]), .D(n3252), .Z(n1278_c)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1278_4_lut.init = 16'hc0ca;
-    LUT4 i11656_3_lut (.A(n1789), .B(n2044), .C(rom_addr[8]), .Z(n12281)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11656_3_lut.init = 16'hcaca;
-    PFUMX i13458 (.BLUT(n14371), .ALUT(n14372), .C0(rom_addr[0]), .Z(n14373));
-    PFUMX i11520 (.BLUT(n12143), .ALUT(n12144), .C0(rom_addr[5]), .Z(n12145));
-    LUT4 n1962_bdd_3_lut_4_lut (.A(n14265), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n14109), .Z(n13559)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n1962_bdd_3_lut_4_lut.init = 16'h8f80;
-    PFUMX address_11__I_0_Mux_2_i2555 (.BLUT(n2523), .ALUT(n2554), .C0(rom_addr[5]), 
-          .Z(n2555)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11645_3_lut (.A(n13774), .B(n12072), .C(rom_addr[7]), .Z(n12270)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11645_3_lut.init = 16'hcaca;
-    LUT4 i11644_3_lut (.A(n12050), .B(n6687), .C(rom_addr[7]), .Z(n12269)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11644_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_6_i1914_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(n1898), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n1914)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1914_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    PFUMX i11526 (.BLUT(n12149), .ALUT(n12150), .C0(rom_addr[5]), .Z(n12151));
-    LUT4 address_11__I_0_Mux_6_i1309_3_lut_4_lut (.A(n14265), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n14102), .Z(n1309)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1309_3_lut_4_lut.init = 16'h8f80;
-    PFUMX i11529 (.BLUT(n12152), .ALUT(n12153), .C0(rom_addr[5]), .Z(n12154));
-    LUT4 i11639_3_lut (.A(n12571), .B(n12580), .C(rom_addr[7]), .Z(n12264)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11639_3_lut.init = 16'hcaca;
-    PFUMX i13401 (.BLUT(n14286), .ALUT(n14287), .C0(rom_addr[2]), .Z(n14288));
-    LUT4 i11638_3_lut (.A(n12549), .B(n12562), .C(rom_addr[7]), .Z(n12263)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11638_3_lut.init = 16'hcaca;
-    LUT4 i11647_3_lut (.A(n12265), .B(n12266), .C(rom_addr[8]), .Z(n12272)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11647_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i2173_3_lut_4_lut (.A(n14255), .B(n14107), 
-         .C(rom_addr[5]), .D(n14369), .Z(n2173_adj_543)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_2_i2173_3_lut_4_lut.init = 16'h8f80;
-    PFUMX i11535 (.BLUT(n12158), .ALUT(n12159), .C0(rom_addr[5]), .Z(n12160));
-    PFUMX i13399 (.BLUT(n14271), .ALUT(n14284), .C0(rom_addr[0]), .Z(n14285));
-    PFUMX i11538 (.BLUT(n12161), .ALUT(n12162), .C0(rom_addr[5]), .Z(n12163));
-    LUT4 address_11__I_0_Mux_5_i860_4_lut (.A(n14089), .B(n14183), .C(rom_addr[4]), 
-         .D(rom_addr[3]), .Z(n860)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i860_4_lut.init = 16'hca0a;
-    PFUMX address_11__I_0_Mux_2_i1149 (.BLUT(n1117_adj_544), .ALUT(n1148), 
-          .C0(rom_addr[5]), .Z(n1149_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11541 (.BLUT(n12164), .ALUT(n12165), .C0(rom_addr[5]), .Z(n12166));
-    PFUMX i13455 (.BLUT(n14367), .ALUT(n14368), .C0(rom_addr[0]), .Z(n14369));
-    LUT4 i11895_3_lut (.A(n13486), .B(n12508), .C(rom_addr[7]), .Z(n12520)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11895_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i2299_3_lut (.A(n2283), .B(n2298), .C(rom_addr[4]), 
-         .Z(n2299)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2299_3_lut.init = 16'hcaca;
-    PFUMX i11550 (.BLUT(n12173), .ALUT(n12174), .C0(rom_addr[5]), .Z(n12175));
-    PFUMX i11553 (.BLUT(n12176), .ALUT(n12177), .C0(rom_addr[5]), .Z(n12178));
-    LUT4 i11469_3_lut (.A(n205), .B(n220), .C(rom_addr[4]), .Z(n12094)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11469_3_lut.init = 16'hcaca;
-    PFUMX i11556 (.BLUT(n12179), .ALUT(n12180), .C0(rom_addr[5]), .Z(n12181));
-    PFUMX i13453 (.BLUT(n14364), .ALUT(n14365), .C0(rom_addr[0]), .Z(n14366));
-    LUT4 i11894_3_lut (.A(n12505), .B(n12506), .C(rom_addr[7]), .Z(n12519)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11894_3_lut.init = 16'hcaca;
-    PFUMX i11559 (.BLUT(n12182), .ALUT(n12183), .C0(rom_addr[5]), .Z(n12184));
-    PFUMX i11562 (.BLUT(n12185), .ALUT(n12186), .C0(rom_addr[5]), .Z(n12187));
-    PFUMX address_11__I_0_Mux_1_i4095 (.BLUT(n12277), .ALUT(n4094), .C0(rom_addr[11]), 
-          .Z(rom_q[1])) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX address_11__I_0_Mux_2_i190 (.BLUT(n158_adj_1), .ALUT(n189), .C0(rom_addr[5]), 
-          .Z(n190)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i12473_3_lut (.A(n12519), .B(n12520), .C(rom_addr[8]), .Z(n12526)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12473_3_lut.init = 16'hcaca;
-    PFUMX address_11__I_0_Mux_0_i4095 (.BLUT(n12291), .ALUT(n4094_adj_2), 
-          .C0(rom_addr[11]), .Z(rom_q[0])) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11565 (.BLUT(n12188), .ALUT(n12189), .C0(rom_addr[5]), .Z(n12190));
-    L6MUX21 i11828 (.D0(n12451), .D1(n12452), .SD(rom_addr[10]), .Z(n12453));
-    L6MUX21 i11875 (.D0(n12498), .D1(n12499), .SD(rom_addr[10]), .Z(n12500));
-    L6MUX21 i11906 (.D0(n12529), .D1(n12530), .SD(rom_addr[10]), .Z(n12531));
-    PFUMX address_11__I_0_Mux_7_i4095 (.BLUT(n2047), .ALUT(n4094_adj_3), 
-          .C0(rom_addr[11]), .Z(rom_q[7])) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i7248_4_lut (.A(rom_addr[0]), .B(n14144), .C(n14117), .D(rom_addr[4]), 
-         .Z(n1117)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7248_4_lut.init = 16'h0a22;
-    PFUMX i11571 (.BLUT(n12194), .ALUT(n12195), .C0(rom_addr[5]), .Z(n12196));
-    L6MUX21 i11659 (.D0(n12282), .D1(n12283), .SD(rom_addr[10]), .Z(n12284));
-    PFUMX i13451 (.BLUT(n14361), .ALUT(n14362), .C0(rom_addr[2]), .Z(n14363));
-    LUT4 i7159_4_lut (.A(rom_addr[0]), .B(n443), .C(n14163), .D(rom_addr[4]), 
-         .Z(n2268)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7159_4_lut.init = 16'h0a22;
-    PFUMX i11574 (.BLUT(n12197), .ALUT(n12198), .C0(rom_addr[5]), .Z(n12199));
-    L6MUX21 i11826 (.D0(n12447), .D1(n12448), .SD(rom_addr[9]), .Z(n12451));
-    LUT4 i7614_2_lut_rep_175_3_lut_3_lut (.A(rom_addr[2]), .B(rom_addr[1]), 
-         .C(rom_addr[0]), .Z(n14092)) /* synthesis lut_function=(!(A (B+!(C))+!A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7614_2_lut_rep_175_3_lut_3_lut.init = 16'h3131;
-    L6MUX21 i11827 (.D0(n12449), .D1(n12450), .SD(rom_addr[9]), .Z(n12452));
-    PFUMX i11874 (.BLUT(n12496), .ALUT(n12497), .C0(rom_addr[9]), .Z(n12499));
-    LUT4 i11864_3_lut (.A(n12476), .B(n12477), .C(rom_addr[7]), .Z(n12489)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11864_3_lut.init = 16'hcaca;
-    PFUMX i11577 (.BLUT(n12200), .ALUT(n12201), .C0(rom_addr[5]), .Z(n12202));
-    PFUMX i11905 (.BLUT(n12527), .ALUT(n12528), .C0(rom_addr[9]), .Z(n12530));
-    PFUMX i11580 (.BLUT(n12203), .ALUT(n12204), .C0(rom_addr[5]), .Z(n12205));
-    LUT4 i11566_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14381)) /* synthesis lut_function=(A (B (C+(D))+!B (C (D)+!C !(D)))+!A !(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11566_3_lut_4_lut_then_4_lut.init = 16'ha883;
-    PFUMX i11583 (.BLUT(n12206), .ALUT(n12207), .C0(rom_addr[5]), .Z(n12208));
-    L6MUX21 i11651 (.D0(n12273), .D1(n12274), .SD(rom_addr[9]), .Z(n12276));
-    PFUMX address_11__I_0_Mux_3_i1852 (.BLUT(n1820), .ALUT(n1851), .C0(rom_addr[5]), 
-          .Z(n1852)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11657 (.BLUT(n12278), .ALUT(n12279), .C0(rom_addr[9]), .Z(n12282));
-    LUT4 i11862_3_lut (.A(n12472), .B(n12473), .C(rom_addr[7]), .Z(n12487)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11862_3_lut.init = 16'hcaca;
-    PFUMX i11658 (.BLUT(n12280), .ALUT(n12281), .C0(rom_addr[9]), .Z(n12283));
-    PFUMX i11699 (.BLUT(n12322), .ALUT(n12323), .C0(rom_addr[8]), .Z(n12324));
-    PFUMX address_11__I_0_Mux_3_i1531 (.BLUT(n1514), .ALUT(n1530), .C0(n14238), 
-          .Z(n1531)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11861_3_lut (.A(n12470), .B(n13697), .C(rom_addr[7]), .Z(n12486)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11861_3_lut.init = 16'hcaca;
-    PFUMX address_11__I_0_Mux_3_i956 (.BLUT(n924_adj_542), .ALUT(n11737), 
-          .C0(rom_addr[5]), .Z(n956_adj_548)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11822 (.BLUT(n12439), .ALUT(n12440), .C0(rom_addr[8]), .Z(n12447));
-    PFUMX i11823 (.BLUT(n12441), .ALUT(n12442), .C0(rom_addr[8]), .Z(n12448));
-    PFUMX i11824 (.BLUT(n12443), .ALUT(n12444), .C0(rom_addr[8]), .Z(n12449));
-    PFUMX i11586 (.BLUT(n12209), .ALUT(n12210), .C0(rom_addr[5]), .Z(n12211));
-    PFUMX i11825 (.BLUT(n12445), .ALUT(n12446), .C0(rom_addr[8]), .Z(n12450));
-    PFUMX i11873 (.BLUT(n12494), .ALUT(n12495), .C0(rom_addr[9]), .Z(n12498));
-    PFUMX address_11__I_0_Mux_3_i829 (.BLUT(n827), .ALUT(n828), .C0(n11973), 
-          .Z(n829)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11904 (.BLUT(n12525), .ALUT(n12526), .C0(rom_addr[9]), .Z(n12529));
-    PFUMX i11589 (.BLUT(n12212), .ALUT(n12213), .C0(rom_addr[7]), .Z(n12214));
-    LUT4 address_11__I_0_Mux_6_i1387_3_lut_3_lut_rep_179_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n14096)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1387_3_lut_3_lut_rep_179_4_lut_4_lut_4_lut.init = 16'h0180;
-    LUT4 i12161_3_lut (.A(n971), .B(n986), .C(rom_addr[4]), .Z(n12600)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12161_3_lut.init = 16'hcaca;
-    LUT4 i11974_3_lut (.A(n2009), .B(n954), .C(rom_addr[4]), .Z(n12599)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11974_3_lut.init = 16'hcaca;
-    LUT4 i11973_3_lut (.A(n908), .B(n205_adj_549), .C(rom_addr[4]), .Z(n12598)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11973_3_lut.init = 16'hcaca;
-    LUT4 i11612_3_lut_4_lut (.A(n14181), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n301_c), .Z(n12237)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i11612_3_lut_4_lut.init = 16'h1f10;
-    PFUMX address_11__I_0_Mux_2_i3070 (.BLUT(n12338), .ALUT(n3069_c), .C0(rom_addr[9]), 
-          .Z(n3070)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_1_i1676_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1676_c)) /* synthesis lut_function=(A (B (C (D)))+!A (B (C (D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1676_3_lut_3_lut_4_lut_4_lut.init = 16'hc001;
-    LUT4 address_11__I_0_Mux_4_i812_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n812)) /* synthesis lut_function=(!(A (B+!(D))+!A (B (C+!(D))+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i812_3_lut_3_lut_4_lut_4_lut.init = 16'h2601;
-    LUT4 address_11__I_0_Mux_3_i188_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n668_adj_550)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i188_3_lut_3_lut_4_lut_4_lut.init = 16'h01c0;
-    PFUMX address_11__I_0_Mux_3_i3070 (.BLUT(n12331), .ALUT(n3069_adj_551), 
-          .C0(rom_addr[9]), .Z(n3070_adj_552)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 n1251_bdd_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n13639)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(D))+!A !(B (D)+!B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n1251_bdd_3_lut_3_lut_4_lut_4_lut.init = 16'h7e01;
-    LUT4 i7442_2_lut_3_lut_4_lut (.A(rom_addr[2]), .B(n14195), .C(rom_addr[0]), 
-         .D(rom_addr[5]), .Z(n2237)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7442_2_lut_3_lut_4_lut.init = 16'h0010;
-    PFUMX address_11__I_0_Mux_3_i381 (.BLUT(n364), .ALUT(n380), .C0(n14238), 
-          .Z(n381)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_5_i2522_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2522)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A !(B (C (D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2522_3_lut_3_lut_4_lut_4_lut.init = 16'h6801;
-    LUT4 address_11__I_0_Mux_5_i2220_3_lut_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2220)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (B+(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2220_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h0801;
-    LUT4 i12164_3_lut (.A(n12257), .B(n12258), .C(rom_addr[4]), .Z(n12259)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12164_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i61_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n61)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C (D)))+!A !(B (C (D))+!B (C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i61_3_lut_4_lut_4_lut.init = 16'h87fe;
-    LUT4 i5779_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[4]), .Z(n8547)) /* synthesis lut_function=(A (B (C+(D))+!B (D))+!A (B (C+(D))+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5779_3_lut_4_lut_4_lut.init = 16'hfec0;
-    LUT4 address_11__I_0_Mux_4_i1243_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1243_adj_553)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1243_3_lut_3_lut_4_lut_4_lut.init = 16'h9701;
-    LUT4 address_11__I_0_Mux_4_i986_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n986_adj_554)) /* synthesis lut_function=(!(A (B (D)+!B !(C+!(D)))+!A (B (D)+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i986_3_lut_4_lut_4_lut_4_lut.init = 16'h20fe;
-    LUT4 address_11__I_0_Mux_2_i30_4_lut (.A(n14242), .B(n14106), .C(rom_addr[3]), 
-         .D(rom_addr[2]), .Z(n30)) /* synthesis lut_function=(A (B+!(C))+!A (B (C+!(D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i30_4_lut.init = 16'hcacf;
-    PFUMX address_11__I_0_Mux_3_i318 (.BLUT(n12235), .ALUT(n6657), .C0(rom_addr[5]), 
-          .Z(n318)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11235_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n236)) /* synthesis lut_function=(!(A (B+!((D)+!C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11235_3_lut_4_lut_3_lut_4_lut.init = 16'h2242;
-    LUT4 i11239_3_lut_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n15568), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n270_c)) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A ((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11239_3_lut_3_lut_4_lut_3_lut_4_lut.init = 16'h2422;
-    LUT4 address_11__I_0_Mux_1_i828_3_lut (.A(n954), .B(n668_adj_550), .C(rom_addr[4]), 
-         .Z(n828_adj_555)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i828_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i301_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n301)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i301_3_lut_4_lut_3_lut_4_lut.init = 16'h4224;
-    LUT4 i7246_4_lut (.A(n14126), .B(rom_addr[4]), .C(n14272), .D(rom_addr[3]), 
-         .Z(n797)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7246_4_lut.init = 16'hc088;
-    LUT4 address_11__I_0_Mux_3_i364_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[2]), 
-         .B(rom_addr[0]), .C(rom_addr[1]), .D(rom_addr[3]), .Z(n364)) /* synthesis lut_function=(A (B (C (D)))+!A (B (C)+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i364_3_lut_4_lut_4_lut_4_lut.init = 16'hc041;
-    LUT4 i1_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n4)) /* synthesis lut_function=(!(A+(B (C+(D))+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_4_lut_4_lut_4_lut_4_lut.init = 16'h0104;
-    LUT4 i4903_3_lut (.A(n14073), .B(n5720), .C(rom_addr[5]), .Z(n5723)) /* synthesis lut_function=(A (B (C))+!A (B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4903_3_lut.init = 16'hc5c5;
-    LUT4 i5807_4_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n6652)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C))+!A ((C)+!B))) */ ;
-    defparam i5807_4_lut_4_lut_4_lut.init = 16'h242c;
-    LUT4 address_11__I_0_Mux_1_i908_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n908)) /* synthesis lut_function=(!(A (B (D)+!B !(C+(D)))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i908_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h77a8;
-    LUT4 address_11__I_0_Mux_3_i731_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n731)) /* synthesis lut_function=(A (B)+!A (B (C (D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i731_3_lut_4_lut_4_lut_4_lut.init = 16'hc898;
-    LUT4 address_11__I_0_Mux_4_i604_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[0]), 
-         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n604)) /* synthesis lut_function=(A (B (C (D))+!B !(C (D)))+!A (B ((D)+!C)+!B !(C))) */ ;
-    defparam address_11__I_0_Mux_4_i604_3_lut_4_lut_4_lut.init = 16'hc727;
-    LUT4 address_11__I_0_Mux_2_i1084_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[0]), 
-         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n1084)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C))+!A !((C+(D))+!B)) */ ;
-    defparam address_11__I_0_Mux_2_i1084_3_lut_4_lut_4_lut.init = 16'h828e;
-    LUT4 address_11__I_0_Mux_1_i526_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n526)) /* synthesis lut_function=(!(A (B (D)+!B !((D)+!C))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i526_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h778a;
-    LUT4 address_11__I_0_Mux_4_i46_3_lut_4_lut_4_lut_4_lut (.A(n15568), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n46)) /* synthesis lut_function=(!(A (B (C)+!B !(C (D)))+!A (B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i46_3_lut_4_lut_4_lut_4_lut.init = 16'h3818;
-    LUT4 address_11__I_0_Mux_4_i491_3_lut_4_lut_4_lut (.A(n15568), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n491)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (B (C)+!B !(C)))) */ ;
-    defparam address_11__I_0_Mux_4_i491_3_lut_4_lut_4_lut.init = 16'h1e9e;
-    PFUMX i11604 (.BLUT(n12227), .ALUT(n12228), .C0(rom_addr[5]), .Z(n12229));
-    PFUMX address_11__I_0_Mux_6_i3070 (.BLUT(n12301), .ALUT(n3069_adj_557), 
-          .C0(rom_addr[9]), .Z(n3070_adj_558)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_3_i1069_3_lut_4_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n1069)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A (B ((D)+!C)+!B !(D)))) */ ;
-    defparam address_11__I_0_Mux_3_i1069_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h1148;
-    LUT4 address_11__I_0_Mux_1_i1002_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n1002)) /* synthesis lut_function=(!(A (B+(C+!(D)))+!A !(B (C (D))+!B (C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_1_i1002_3_lut_3_lut_4_lut_4_lut.init = 16'h5211;
-    LUT4 address_11__I_0_Mux_3_i557_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n557)) /* synthesis lut_function=(A (B (D)+!B !(C+!(D)))+!A !(B+(D))) */ ;
-    defparam address_11__I_0_Mux_3_i557_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h8a11;
-    PFUMX i11648 (.BLUT(n12267), .ALUT(n12268), .C0(rom_addr[8]), .Z(n12273));
-    LUT4 n2545_bdd_3_lut_13083_3_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(rom_addr[3]), .Z(n13187)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A !(B (C (D))+!B !(D)))) */ ;
-    defparam n2545_bdd_3_lut_13083_3_lut_4_lut_4_lut.init = 16'h6811;
-    LUT4 address_11__I_0_Mux_6_i1691_3_lut_4_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n1691)) /* synthesis lut_function=(A (B (D))+!A (B (C (D))+!B !(D))) */ ;
-    defparam address_11__I_0_Mux_6_i1691_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'hc811;
-    LUT4 address_11__I_0_Mux_3_i2283_3_lut_4_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n2283_adj_559)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A (B+(D)))) */ ;
-    defparam address_11__I_0_Mux_3_i2283_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h2811;
-    LUT4 i3849_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .D(rom_addr[4]), .Z(n4661)) /* synthesis lut_function=(A (C+!(D))+!A (B+!((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3849_3_lut_4_lut_4_lut.init = 16'he4fe;
-    LUT4 i2252_3_lut_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[4]), .Z(n3064)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2252_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h0140;
-    PFUMX i11650 (.BLUT(n12271), .ALUT(n12272), .C0(rom_addr[9]), .Z(n12275));
-    LUT4 i3053_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .D(rom_addr[4]), .Z(n3865)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C (D)))+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3053_3_lut_4_lut_4_lut.init = 16'hd6fe;
-    LUT4 i4900_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(n15568), .D(rom_addr[4]), .Z(n5720)) /* synthesis lut_function=(A+!(B (C (D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4900_3_lut_4_lut_4_lut_4_lut.init = 16'hbffe;
-    LUT4 i11931_3_lut_4_lut (.A(rom_addr[0]), .B(n14120), .C(rom_addr[4]), 
-         .D(n14152), .Z(n12556)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11931_3_lut_4_lut.init = 16'hf202;
-    L6MUX21 i11664 (.D0(n12285), .D1(n12286), .SD(rom_addr[9]), .Z(n12289));
-    LUT4 address_11__I_0_Mux_4_i732_4_lut_4_lut (.A(rom_addr[0]), .B(n14120), 
-         .C(n14080), .D(rom_addr[5]), .Z(n732)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i732_4_lut_4_lut.init = 16'ha022;
-    PFUMX i11665 (.BLUT(n12287), .ALUT(n12288), .C0(rom_addr[9]), .Z(n12290));
-    LUT4 address_11__I_0_Mux_2_i1212_3_lut_4_lut (.A(rom_addr[0]), .B(n14150), 
-         .C(rom_addr[4]), .D(n1196), .Z(n1212)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1212_3_lut_4_lut.init = 16'h8f80;
-    PFUMX address_11__I_0_Mux_3_i63 (.BLUT(n61_adj_560), .ALUT(n62), .C0(n11973), 
-          .Z(n63)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11683 (.BLUT(n12306), .ALUT(n12307), .C0(rom_addr[8]), .Z(n12308));
-    LUT4 n1403_bdd_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n13354)) /* synthesis lut_function=(A (B (C (D)))+!A !(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n1403_bdd_3_lut_4_lut_4_lut_4_lut.init = 16'h8101;
-    LUT4 i11614_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(rom_addr[3]), .Z(n12239)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+(D)))+!A (B (C+(D))+!B !(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11614_3_lut_4_lut_4_lut_4_lut.init = 16'h1086;
-    LUT4 i12056_1_lut_3_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[4]), .Z(n12632)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B ((D)+!C)+!B !(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12056_1_lut_3_lut_4_lut_4_lut.init = 16'h4d14;
-    LUT4 address_11__I_0_Mux_1_i364_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n364_adj_561)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B+!(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i364_3_lut_4_lut_4_lut_4_lut.init = 16'h1021;
-    PFUMX i11692 (.BLUT(n12315), .ALUT(n12316), .C0(rom_addr[8]), .Z(n12317));
-    LUT4 address_11__I_0_Mux_5_i1243_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n1243_adj_562)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (D)+!B !((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1243_3_lut_4_lut_4_lut_4_lut.init = 16'h4c10;
-    LUT4 i5180_4_lut_rep_220_4_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .D(rom_addr[4]), .Z(n14137)) /* synthesis lut_function=(A+(B (C (D)+!C !(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5180_4_lut_rep_220_4_lut.init = 16'hebae;
-    LUT4 address_11__I_0_Mux_3_i205_3_lut_4_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n205_adj_549)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A (B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i205_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h1002;
-    LUT4 i11623_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n12248)) /* synthesis lut_function=(A (C)+!A !(B+!(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11623_3_lut_4_lut_4_lut_4_lut.init = 16'hb1b0;
-    LUT4 address_11__I_0_Mux_3_i1580_3_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2395)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1580_3_lut_4_lut_4_lut_4_lut.init = 16'h2101;
-    LUT4 address_11__I_0_Mux_4_i1564_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1564)) /* synthesis lut_function=(!(A (B+!(C))+!A (B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1564_3_lut_4_lut_4_lut_4_lut.init = 16'h2120;
-    LUT4 i11633_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(rom_addr[3]), .Z(n12258)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (D)+!B !((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11633_3_lut_4_lut_4_lut_4_lut.init = 16'h4e10;
-    LUT4 address_11__I_0_Mux_2_i379_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n379_c)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A (B (C (D)+!C !(D))+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i379_3_lut_3_lut_4_lut_4_lut.init = 16'h2c41;
-    LUT4 address_11__I_0_Mux_5_i2077_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2077)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2077_3_lut_4_lut_4_lut_4_lut.init = 16'h1810;
-    PFUMX i13449 (.BLUT(n14358), .ALUT(n14359), .C0(rom_addr[1]), .Z(n14360));
-    LUT4 address_11__I_0_Mux_3_i1228_3_lut_4_lut_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .Z(n1228)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1228_3_lut_4_lut_3_lut.init = 16'h1919;
-    LUT4 address_11__I_0_Mux_4_i859_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n859)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A (B (C (D))+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i859_3_lut_4_lut_4_lut_4_lut.init = 16'hd210;
-    LUT4 i11959_3_lut (.A(n620), .B(n205), .C(rom_addr[4]), .Z(n12584)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11959_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i1466_3_lut_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1466)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1466_3_lut_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h0190;
-    L6MUX21 i11779 (.D0(n12402), .D1(n12403), .SD(rom_addr[7]), .Z(n2044));
-    LUT4 i11870_3_lut (.A(n12488), .B(n12489), .C(rom_addr[8]), .Z(n12495)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11870_3_lut.init = 16'hcaca;
-    L6MUX21 i11865 (.D0(n12478), .D1(n12479), .SD(rom_addr[7]), .Z(n12490));
-    L6MUX21 i11868 (.D0(n12484), .D1(n12485), .SD(rom_addr[7]), .Z(n12493));
-    LUT4 i11958_3_lut (.A(n491), .B(n604_adj_563), .C(rom_addr[4]), .Z(n12583)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11958_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_6_i4095_4_lut (.A(n13145), .B(n3070_adj_558), 
-         .C(rom_addr[11]), .D(rom_addr[10]), .Z(rom_q[6])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (C+!(D)))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i4095_4_lut.init = 16'h0ac0;
-    LUT4 i4482_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[1]), 
-         .C(rom_addr[3]), .D(rom_addr[4]), .Z(n5294)) /* synthesis lut_function=(A+!(B (C (D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4482_3_lut_4_lut_4_lut_4_lut.init = 16'hbfef;
-    LUT4 address_11__I_0_Mux_3_i1785_3_lut_4_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2426)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1785_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h0140;
-    LUT4 i7260_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .D(rom_addr[2]), .Z(n2298_adj_564)) /* synthesis lut_function=(A (B (C+(D))+!B (C+!(D)))+!A (B (C+!(D))+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7260_4_lut_4_lut.init = 16'hf8f6;
-    PFUMX address_11__I_0_Mux_4_i2300 (.BLUT(n2268), .ALUT(n2299), .C0(rom_addr[5]), 
-          .Z(n2300_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11956_3_lut (.A(n526), .B(n443), .C(rom_addr[4]), .Z(n12581)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11956_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_3_i460_3_lut_4_lut (.A(rom_addr[0]), .B(n15568), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n460)) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A !(B ((D)+!C)+!B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i460_3_lut_4_lut.init = 16'h7427;
-    LUT4 rom_addr_0__bdd_4_lut_13004_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(rom_addr[4]), .Z(n13482)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam rom_addr_0__bdd_4_lut_13004_4_lut_4_lut_4_lut.init = 16'h1170;
-    LUT4 i7306_4_lut (.A(rom_addr[0]), .B(n14138), .C(n14164), .D(rom_addr[4]), 
-         .Z(n1085_c)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7306_4_lut.init = 16'h0a22;
-    PFUMX address_11__I_0_Mux_5_i1021 (.BLUT(n860), .ALUT(n893), .C0(n11966), 
-          .Z(n1021_adj_565)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_1_i2475_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2475)) /* synthesis lut_function=(!(A+!(B (C)+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2475_3_lut_4_lut_4_lut_4_lut.init = 16'h4140;
-    LUT4 address_11__I_0_Mux_2_i1676_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1676_adj_566)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (C)+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1676_3_lut_4_lut_4_lut_4_lut.init = 16'h6160;
-    L6MUX21 i13123 (.D0(n13640), .D1(n13637), .SD(rom_addr[6]), .Z(n13641));
-    LUT4 address_11__I_0_Mux_3_i379_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n379)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A (B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i379_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h1008;
-    LUT4 address_11__I_0_Mux_1_i2283_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n2283_adj_568)) /* synthesis lut_function=(A (B (C (D)))+!A (B (D)+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2283_3_lut_4_lut_4_lut_4_lut.init = 16'hc410;
-    LUT4 i7149_2_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .D(rom_addr[0]), .Z(n1549)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (C (D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7149_2_lut_4_lut_4_lut.init = 16'h4900;
-    PFUMX i11649 (.BLUT(n12269), .ALUT(n12270), .C0(rom_addr[8]), .Z(n12274));
-    PFUMX i11613 (.BLUT(n12236), .ALUT(n12237), .C0(rom_addr[5]), .Z(n12238));
-    LUT4 i7052_2_lut_4_lut_4_lut (.A(n14144), .B(rom_addr[0]), .C(rom_addr[4]), 
-         .D(n14180), .Z(n1851_adj_569)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7052_2_lut_4_lut_4_lut.init = 16'h4c40;
-    LUT4 i2389_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[5]), .Z(n5840)) /* synthesis lut_function=(A (B+(C+(D)))+!A ((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2389_3_lut_4_lut_4_lut_4_lut.init = 16'hfbfd;
-    LUT4 address_11__I_0_Mux_5_i2298_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n15568), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2298)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B+(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2298_3_lut_4_lut_4_lut.init = 16'h0809;
-    LUT4 address_11__I_0_Mux_4_i2348_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2348)) /* synthesis lut_function=(A (B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2348_3_lut_4_lut_4_lut.init = 16'hd808;
-    LUT4 address_11__I_0_Mux_5_i4095_4_lut (.A(n12284), .B(n3070_adj_570), 
-         .C(rom_addr[11]), .D(rom_addr[10]), .Z(rom_q[5])) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i4095_4_lut.init = 16'h0aca;
-    LUT4 n2552_bdd_3_lut_13298_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n13191)) /* synthesis lut_function=(A (B (C)+!B (D))+!A (B (C+(D))+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2552_bdd_3_lut_13298_4_lut_4_lut.init = 16'hf7c0;
-    L6MUX21 i11622 (.D0(n12245), .D1(n12246), .SD(rom_addr[5]), .Z(n12247));
-    LUT4 address_11__I_0_Mux_5_i3070_4_lut (.A(n12308), .B(n2685), .C(rom_addr[9]), 
-         .D(n14273), .Z(n3070_adj_570)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i3070_4_lut.init = 16'hca0a;
-    LUT4 address_11__I_0_Mux_5_i2108_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2108)) /* synthesis lut_function=(A (B (C (D)))+!A !((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2108_3_lut_4_lut_4_lut_4_lut.init = 16'h8004;
-    PFUMX i11660 (.BLUT(n255), .ALUT(n510_c), .C0(rom_addr[8]), .Z(n12285));
-    LUT4 address_11__I_0_Mux_1_i205_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n205_adj_571)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A !((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i205_3_lut_4_lut_4_lut_4_lut.init = 16'h8204;
-    LUT4 address_11__I_0_Mux_3_i747_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n747)) /* synthesis lut_function=(!(A (B (C+(D))+!B (D))+!A (B (C (D))+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i747_3_lut_4_lut_4_lut_4_lut.init = 16'h047f;
-    LUT4 address_11__I_0_Mux_4_i506_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n506)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A ((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i506_3_lut_4_lut_4_lut_4_lut.init = 16'h0420;
-    LUT4 address_11__I_0_Mux_4_i2554_4_lut (.A(n14199), .B(n15547), .C(rom_addr[4]), 
-         .D(rom_addr[3]), .Z(n2554_adj_572)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2554_4_lut.init = 16'hca0a;
-    LUT4 address_11__I_0_Mux_0_i1054_4_lut (.A(rom_addr[0]), .B(n14152), 
-         .C(rom_addr[4]), .D(n14172), .Z(n1054)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i1054_4_lut.init = 16'hcac0;
-    PFUMX i11661 (.BLUT(n766), .ALUT(n1021), .C0(rom_addr[8]), .Z(n12286));
-    LUT4 i11548_3_lut_4_lut (.A(rom_addr[0]), .B(n14155), .C(rom_addr[4]), 
-         .D(n2426), .Z(n12173)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11548_3_lut_4_lut.init = 16'hf808;
-    PFUMX address_11__I_0_Mux_4_i1531 (.BLUT(n1514_adj_573), .ALUT(n1530_adj_4), 
-          .C0(n14238), .Z(n1531_adj_575)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_2_i506_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n506_adj_576)) /* synthesis lut_function=(!(A (B (C+(D))+!B (D))+!A (B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i506_3_lut_4_lut_4_lut.init = 16'h043f;
-    LUT4 i7085_4_lut_4_lut (.A(rom_addr[0]), .B(n15568), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n1529)) /* synthesis lut_function=(!((B (C (D)+!C !(D))+!B !(C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7085_4_lut_4_lut.init = 16'h2880;
-    LUT4 address_11__I_0_Mux_3_i2460_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), 
-         .C(rom_addr[4]), .D(n2426), .Z(n2427)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i2460_3_lut_4_lut.init = 16'hf202;
-    LUT4 n2062_bdd_3_lut_13152_4_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n13588)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A !(B (C (D))))) */ ;
-    defparam n2062_bdd_3_lut_13152_4_lut_4_lut_4_lut.init = 16'h4008;
-    LUT4 i11576_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), .C(rom_addr[4]), 
-         .D(n14151), .Z(n12201)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11576_3_lut_4_lut.init = 16'h2f20;
-    LUT4 i11584_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), .C(rom_addr[4]), 
-         .D(n2522), .Z(n12209)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11584_3_lut_4_lut.init = 16'hf202;
-    LUT4 i11552_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), .C(rom_addr[4]), 
-         .D(n2283_adj_559), .Z(n12177)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11552_3_lut_4_lut.init = 16'h2f20;
-    LUT4 i11542_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), .C(rom_addr[4]), 
-         .D(n2588), .Z(n12167)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11542_3_lut_4_lut.init = 16'h2f20;
-    LUT4 i11836_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), .C(rom_addr[4]), 
-         .D(n14201), .Z(n12461)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11836_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_5_i526_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n526_adj_577)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (((D)+!C)+!B))) */ ;
-    defparam address_11__I_0_Mux_5_i526_3_lut_4_lut_4_lut_4_lut.init = 16'h2040;
-    LUT4 address_11__I_0_Mux_4_i2492_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), 
-         .C(n14238), .D(n2283), .Z(n2492)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2492_3_lut_4_lut.init = 16'h2f20;
-    PFUMX i13121 (.BLUT(n13639), .ALUT(n13638), .C0(n14232), .Z(n13640));
-    LUT4 i6008_3_lut_4_lut (.A(rom_addr[0]), .B(n14127), .C(n14236), .D(n2426), 
-         .Z(n2428_c)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i6008_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_2_i1931_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1931)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+(D)))+!A !(B (C (D))))) */ ;
-    defparam address_11__I_0_Mux_2_i1931_3_lut_4_lut_4_lut_4_lut.init = 16'h4082;
-    LUT4 address_11__I_0_Mux_0_i635_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n635)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A !(B (C (D)+!C !(D))))) */ ;
-    defparam address_11__I_0_Mux_0_i635_3_lut_4_lut_4_lut.init = 16'h400c;
-    LUT4 address_11__I_0_Mux_2_i2040_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2040)) /* synthesis lut_function=(A (B (C)+!B !(C+!(D)))+!A (B (D))) */ ;
-    defparam address_11__I_0_Mux_2_i2040_3_lut_4_lut_4_lut.init = 16'hc680;
-    L6MUX21 i11675 (.D0(n12297), .D1(n12298), .SD(rom_addr[7]), .Z(n12300));
-    LUT4 address_11__I_0_Mux_3_i1676_3_lut_4_lut (.A(n14158), .B(rom_addr[1]), 
-         .C(rom_addr[3]), .D(n14166), .Z(n1676_adj_578)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1676_3_lut_4_lut.init = 16'h2f20;
-    L6MUX21 i11695 (.D0(n2365), .D1(n2428_adj_579), .SD(rom_addr[6]), 
-            .Z(n12320));
-    LUT4 address_11__I_0_Mux_5_i1196_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1196)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A !(B (D)+!B !(C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_5_i1196_3_lut_4_lut_4_lut.init = 16'h4780;
-    LUT4 rom_addr_4__bdd_3_lut_12853 (.A(rom_addr[4]), .B(n205_adj_549), 
-         .C(rom_addr[5]), .Z(n13306)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;
-    defparam rom_addr_4__bdd_3_lut_12853.init = 16'h4040;
-    LUT4 address_11__I_0_Mux_5_i1770_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1770)) /* synthesis lut_function=(A (B (C)+!B (D))+!A (B (C (D))+!B !(C+!(D)))) */ ;
-    defparam address_11__I_0_Mux_5_i1770_3_lut_4_lut_4_lut.init = 16'he380;
-    LUT4 address_11__I_0_Mux_3_i124_3_lut_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n124)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i124_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h601f;
-    LUT4 i11951_4_lut (.A(n14128), .B(n14275), .C(rom_addr[4]), .D(rom_addr[3]), 
-         .Z(n12576)) /* synthesis lut_function=(A (B+((D)+!C))+!A (B (C)+!B (C (D)))) */ ;
-    defparam i11951_4_lut.init = 16'hfaca;
-    LUT4 n2506_bdd_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n13522)) /* synthesis lut_function=(A (B (D)+!B !(C+(D)))+!A (B (C (D)+!C !(D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2506_bdd_3_lut_4_lut_4_lut.init = 16'hc807;
-    L6MUX21 i11705 (.D0(n12327), .D1(n12328), .SD(rom_addr[7]), .Z(n12330));
-    L6MUX21 i11711 (.D0(n12332), .D1(n12333), .SD(rom_addr[7]), .Z(n12336));
-    LUT4 i11557_3_lut_4_lut (.A(rom_addr[0]), .B(n14163), .C(rom_addr[4]), 
-         .D(n2588), .Z(n12182)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11557_3_lut_4_lut.init = 16'h2f20;
-    L6MUX21 i11727 (.D0(n12349), .D1(n12350), .SD(rom_addr[7]), .Z(n12352));
-    LUT4 address_11__I_0_Mux_0_i270_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n270)) /* synthesis lut_function=(A (B (D)+!B (C (D)+!C !(D)))+!A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i270_3_lut_4_lut_4_lut.init = 16'hf813;
-    LUT4 i11549_3_lut_4_lut (.A(rom_addr[0]), .B(n14163), .C(rom_addr[4]), 
-         .D(n2220), .Z(n12174)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11549_3_lut_4_lut.init = 16'h2f20;
-    L6MUX21 i11758 (.D0(n12381), .D1(n12382), .SD(rom_addr[7]), .Z(n766_adj_581));
-    LUT4 i11427_3_lut_4_lut (.A(rom_addr[0]), .B(n14163), .C(rom_addr[4]), 
-         .D(n1466_adj_582), .Z(n12052)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11427_3_lut_4_lut.init = 16'hf202;
-    LUT4 i5826_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .D(rom_addr[4]), .Z(n6671)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B ((D)+!C)+!B !(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5826_3_lut_4_lut_4_lut.init = 16'h10c0;
-    PFUMX i11778 (.BLUT(n12400), .ALUT(n12401), .C0(rom_addr[6]), .Z(n12403));
-    LUT4 address_11__I_0_Mux_2_i1947_4_lut_4_lut (.A(rom_addr[0]), .B(n14163), 
-         .C(n4876), .D(rom_addr[5]), .Z(n1947_adj_583)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1947_4_lut_4_lut.init = 16'h0a22;
-    PFUMX address_11__I_0_Mux_4_i1213 (.BLUT(n1181), .ALUT(n1212_adj_584), 
-          .C0(rom_addr[5]), .Z(n1213)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_2_i1787_3_lut_4_lut (.A(rom_addr[0]), .B(n14163), 
-         .C(rom_addr[5]), .D(n1786), .Z(n1787)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1787_3_lut_4_lut.init = 16'hf202;
-    LUT4 i7163_4_lut (.A(rom_addr[0]), .B(n14144), .C(n4433), .D(rom_addr[4]), 
-         .Z(n2523_adj_585)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7163_4_lut.init = 16'h0a22;
-    LUT4 address_11__I_0_Mux_3_i1787_3_lut_4_lut (.A(rom_addr[0]), .B(n14163), 
-         .C(rom_addr[5]), .D(n1786_adj_586), .Z(n1787_adj_587)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1787_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_5_i1565_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), 
-         .C(rom_addr[4]), .D(n1549_adj_588), .Z(n1565_c)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_5_i1565_3_lut_4_lut.init = 16'h1f10;
-    LUT4 n2426_bdd_4_lut_14168 (.A(n2426), .B(n3933), .C(rom_addr[0]), 
-         .D(rom_addr[4]), .Z(n13323)) /* synthesis lut_function=(A (B (C+(D))+!B (D))+!A !(((D)+!C)+!B)) */ ;
-    defparam n2426_bdd_4_lut_14168.init = 16'haac0;
-    LUT4 i11910_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n14311), .Z(n12535)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i11910_3_lut_4_lut.init = 16'h1f10;
-    LUT4 i11421_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(rom_addr[3]), .Z(n12046)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i11421_3_lut_4_lut.init = 16'h1f10;
-    LUT4 address_11__I_0_Mux_1_i731_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n731_adj_589)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)+!C !(D)))+!A ((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i731_3_lut_4_lut_4_lut.init = 16'h200e;
-    LUT4 address_11__I_0_Mux_1_i604_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n604_adj_563)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C))+!A (B (D)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i604_3_lut_4_lut_4_lut.init = 16'hfc28;
-    LUT4 address_11__I_0_Mux_5_i1436_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), 
-         .C(rom_addr[4]), .D(n1435), .Z(n1436_c)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
-    defparam address_11__I_0_Mux_5_i1436_3_lut_4_lut.init = 16'hf101;
-    LUT4 i11754_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n1835), .Z(n12379)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
-    defparam i11754_3_lut_4_lut.init = 16'hf101;
-    LUT4 i1_2_lut (.A(rom_addr[0]), .B(rom_addr[5]), .Z(n11747)) /* synthesis lut_function=(!((B)+!A)) */ ;
-    defparam i1_2_lut.init = 16'h2222;
-    LUT4 address_11__I_0_Mux_1_i428_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n428)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A (B ((D)+!C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i428_3_lut_4_lut_4_lut.init = 16'h2043;
-    LUT4 i5876_2_lut_rep_364 (.A(rom_addr[2]), .B(rom_addr[3]), .Z(n15544)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5876_2_lut_rep_364.init = 16'h6666;
-    LUT4 address_11__I_0_Mux_4_i2588_3_lut_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2588)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A (B+(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2588_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h2801;
-    L6MUX21 i11800 (.D0(n12238), .D1(n381_adj_590), .SD(rom_addr[6]), 
-            .Z(n12425));
-    L6MUX21 i11803 (.D0(n12311), .D1(n764), .SD(rom_addr[6]), .Z(n12428));
-    LUT4 n730_bdd_3_lut_12687_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n13038)) /* synthesis lut_function=(A (B (C (D))+!B !((D)+!C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n730_bdd_3_lut_12687_4_lut_4_lut.init = 16'hc020;
-    LUT4 address_11__I_0_Mux_1_i2523_3_lut_4_lut (.A(n14121), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n2522_adj_591), .Z(n2523_adj_592)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2523_3_lut_4_lut.init = 16'hf808;
-    PFUMX i11805 (.BLUT(n956), .ALUT(n1019), .C0(rom_addr[6]), .Z(n12430));
-    LUT4 i5783_3_lut_4_lut (.A(n14121), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n6627), .Z(n6628)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5783_3_lut_4_lut.init = 16'hf808;
-    LUT4 address_11__I_0_Mux_0_i526_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n526_adj_593)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A ((D)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i526_3_lut_4_lut_4_lut.init = 16'h2046;
-    PFUMX address_11__I_0_Mux_4_i892 (.BLUT(n859), .ALUT(n860_adj_594), 
-          .C0(n14230), .Z(n892_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_2_i1786_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), 
-         .C(rom_addr[4]), .D(n1913), .Z(n1786)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1786_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_2_i1692_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14164), 
-         .C(rom_addr[5]), .D(n14163), .Z(n1692)) /* synthesis lut_function=(!((B (C+(D))+!B !(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1692_3_lut_4_lut_4_lut.init = 16'h202a;
-    LUT4 address_11__I_0_Mux_5_i1755_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), 
-         .C(rom_addr[4]), .D(n14112), .Z(n1755)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1755_3_lut_4_lut.init = 16'h2f20;
-    L6MUX21 i11809 (.D0(n1468), .D1(n1531_adj_575), .SD(rom_addr[6]), 
-            .Z(n12434));
-    LUT4 address_11__I_0_Mux_0_i2078_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14164), 
-         .C(rom_addr[4]), .D(n14120), .Z(n2078)) /* synthesis lut_function=(!(A (B+(C))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i2078_3_lut_4_lut_4_lut.init = 16'h0252;
-    LUT4 i11536_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), .C(rom_addr[4]), 
-         .D(n2009_adj_595), .Z(n12161)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11536_3_lut_4_lut.init = 16'hf202;
-    PFUMX address_11__I_0_Mux_4_i829 (.BLUT(n812), .ALUT(n828_adj_5), .C0(n14238), 
-          .Z(n829_adj_597)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11834 (.BLUT(n12457), .ALUT(n12458), .C0(rom_addr[7]), .Z(n1278));
-    LUT4 i11528_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), .C(rom_addr[4]), 
-         .D(n14336), .Z(n12153)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11528_3_lut_4_lut.init = 16'hf202;
-    LUT4 i11787_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), .C(rom_addr[4]), 
-         .D(n1643), .Z(n12412)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11787_3_lut_4_lut.init = 16'h2f20;
-    L6MUX21 i11844 (.D0(n12467), .D1(n12468), .SD(rom_addr[7]), .Z(n2044_adj_599));
-    LUT4 i1_4_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(n14242), 
-         .D(rom_addr[4]), .Z(n11737)) /* synthesis lut_function=(A (B (C))+!A (B (C (D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_4_lut_4_lut_4_lut.init = 16'hc090;
-    LUT4 i7209_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .D(rom_addr[0]), .Z(n653)) /* synthesis lut_function=(A (B (C (D)))+!A !((C+!(D))+!B)) */ ;
-    defparam i7209_4_lut_4_lut_4_lut.init = 16'h8400;
-    LUT4 i12180_3_lut (.A(n1038), .B(n1053), .C(rom_addr[4]), .Z(n12572)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12180_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i731_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n731_adj_600)) /* synthesis lut_function=(!(A (B+!(C))+!A (B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i731_3_lut_4_lut_4_lut.init = 16'h2030;
-    LUT4 address_11__I_0_Mux_3_i1692_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14164), 
-         .C(rom_addr[5]), .D(n14150), .Z(n1692_adj_601)) /* synthesis lut_function=(!((B (C+!(D))+!B !(C+(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1692_3_lut_4_lut_4_lut.init = 16'h2a20;
-    L6MUX21 i11853 (.D0(n12574), .D1(n1149_adj_602), .SD(rom_addr[6]), 
-            .Z(n12478));
-    L6MUX21 i11857 (.D0(n1597), .D1(n12056), .SD(rom_addr[6]), .Z(n12482));
-    LUT4 i11839_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), .C(rom_addr[5]), 
-         .D(n1914_adj_603), .Z(n12464)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11839_3_lut_4_lut.init = 16'hf202;
-    PFUMX i11423 (.BLUT(n1565), .ALUT(n1596), .C0(rom_addr[5]), .Z(n12048));
-    LUT4 address_11__I_0_Mux_7_i2396_3_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[4]), .Z(n2396)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B ((D)+!C)+!B (C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_7_i2396_3_lut_4_lut_4_lut.init = 16'h01c0;
-    LUT4 i11773_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), .C(rom_addr[5]), 
-         .D(n1851_adj_605), .Z(n12398)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11773_3_lut_4_lut.init = 16'hf202;
-    L6MUX21 i11859 (.D0(n1852), .D1(n1915), .SD(rom_addr[6]), .Z(n12484));
-    LUT4 address_11__I_0_Mux_1_i2109_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[4]), .Z(n2109)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (B+(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_1_i2109_4_lut_4_lut_4_lut.init = 16'h0801;
-    LUT4 address_11__I_0_Mux_3_i1595_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1595)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A !(B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1595_3_lut_4_lut_4_lut.init = 16'h4406;
-    LUT4 n12361_bdd_3_lut_13354 (.A(n12361), .B(n12362), .C(rom_addr[7]), 
-         .Z(n13142)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n12361_bdd_3_lut_13354.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_3_i109_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n109)) /* synthesis lut_function=(A (B (C+!(D))+!B !((D)+!C))+!A !(B ((D)+!C)+!B (C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i109_3_lut_4_lut_4_lut_4_lut.init = 16'h81f8;
-    LUT4 i7089_2_lut_rep_195_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n14112)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7089_2_lut_rep_195_4_lut_4_lut.init = 16'h0081;
-    L6MUX21 i11863 (.D0(n12474), .D1(n12475), .SD(rom_addr[7]), .Z(n12488));
-    PFUMX address_11__I_0_Mux_0_i1789 (.BLUT(n1707_adj_606), .ALUT(n6699), 
-          .C0(n12038), .Z(n1789_adj_607)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i7061_2_lut_rep_183_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n14100)) /* synthesis lut_function=(A (B (C+(D))+!B (D))+!A (B (D)+!B ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7061_2_lut_rep_183_4_lut_4_lut.init = 16'hff81;
-    LUT4 address_11__I_0_Mux_1_i2009_3_lut_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2009_adj_608)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A (B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2009_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h0781;
-    LUT4 address_11__I_0_Mux_4_i1913_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1913)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+(D)))+!A (B+!(C (D))))) */ ;
-    defparam address_11__I_0_Mux_4_i1913_3_lut_4_lut_4_lut_4_lut.init = 16'h1082;
-    LUT4 address_11__I_0_Mux_4_i1529_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1643)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+!(C (D))))) */ ;
-    defparam address_11__I_0_Mux_4_i1529_3_lut_4_lut_4_lut_4_lut.init = 16'h1080;
-    LUT4 n2545_bdd_2_lut_13292_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n13186)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2545_bdd_2_lut_13292_4_lut_4_lut.init = 16'h1800;
-    PFUMX address_11__I_0_Mux_4_i63 (.BLUT(n61_adj_609), .ALUT(n62_adj_6), 
-          .C0(n11973), .Z(n63_adj_611)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_2_i2009_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2009_adj_595)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2009_3_lut_4_lut_4_lut.init = 16'h7882;
-    LUT4 address_11__I_0_Mux_4_i1514_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n1514_adj_573)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (C+(D)))+!A ((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1514_3_lut_4_lut_4_lut.init = 16'h0c82;
-    LUT4 i7095_2_lut_rep_176_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n14093)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A (B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7095_2_lut_rep_176_4_lut_4_lut.init = 16'h2900;
-    LUT4 n549_bdd_4_lut_13381_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .D(rom_addr[4]), .Z(n13846)) /* synthesis lut_function=(A (B (C))+!A !(B+!(C (D)))) */ ;
-    defparam n549_bdd_4_lut_13381_4_lut.init = 16'h9080;
-    LUT4 i11444_3_lut (.A(n2025_c), .B(n2040_adj_612), .C(rom_addr[4]), 
-         .Z(n12069)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11444_3_lut.init = 16'hcaca;
-    L6MUX21 i11891 (.D0(n1979), .D1(n12163), .SD(rom_addr[6]), .Z(n12516));
-    LUT4 address_11__I_0_Mux_5_i2685_3_lut_4_lut (.A(n14113), .B(n11747), 
-         .C(rom_addr[6]), .D(n13189), .Z(n2685)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_5_i2685_3_lut_4_lut.init = 16'h8f80;
-    L6MUX21 i11892 (.D0(n12501), .D1(n12502), .SD(rom_addr[7]), .Z(n12517));
-    PFUMX i11893 (.BLUT(n12503), .ALUT(n12504), .C0(rom_addr[7]), .Z(n12518));
-    L6MUX21 i11898 (.D0(n12513), .D1(n12514), .SD(rom_addr[7]), .Z(n12523));
-    PFUMX i13447 (.BLUT(n14355), .ALUT(n14356), .C0(rom_addr[1]), .Z(n14357));
-    L6MUX21 i11982 (.D0(n12605), .D1(n12606), .SD(rom_addr[6]), .Z(n12607));
-    LUT4 address_11__I_0_Mux_6_i1755_4_lut_4_lut (.A(n14162), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n15545), .Z(n1755_adj_613)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (C+(D))+!B (C)))) */ ;
-    defparam address_11__I_0_Mux_6_i1755_4_lut_4_lut.init = 16'h5c50;
-    LUT4 i12184_3_lut (.A(n844), .B(n859_adj_614), .C(rom_addr[4]), .Z(n12566)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12184_3_lut.init = 16'hcaca;
-    LUT4 i11420_4_lut_4_lut (.A(n14162), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n1835), .Z(n12045)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (C+(D))) */ ;
-    defparam i11420_4_lut_4_lut.init = 16'hdfd0;
-    LUT4 i11938_3_lut (.A(n1101), .B(n731), .C(rom_addr[4]), .Z(n12563)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11938_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_6_i1403_3_lut_4_lut_4_lut (.A(n14162), .B(rom_addr[3]), 
-         .C(n14122), .D(rom_addr[4]), .Z(n1403_c)) /* synthesis lut_function=(A (B (D)+!B !((D)+!C))+!A !(B (D)+!B ((D)+!C))) */ ;
-    defparam address_11__I_0_Mux_6_i1403_3_lut_4_lut_4_lut.init = 16'h8874;
-    LUT4 i11609_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14272), .C(n14188), 
-         .D(rom_addr[3]), .Z(n12234)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11609_3_lut_3_lut_4_lut.init = 16'h11f0;
-    LUT4 address_11__I_0_Mux_3_i1786_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), 
-         .C(rom_addr[4]), .D(n2426), .Z(n1786_adj_586)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1786_3_lut_4_lut.init = 16'hf808;
-    LUT4 address_11__I_0_Mux_1_i1628_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), 
-         .C(rom_addr[4]), .D(n14128), .Z(n1628)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1628_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_0_i1914_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), 
-         .C(rom_addr[4]), .D(n2490), .Z(n1914_adj_603)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i1914_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_4_i1914_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), 
-         .C(rom_addr[4]), .D(n1913), .Z(n1914_adj_615)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1914_3_lut_4_lut.init = 16'hf808;
-    LUT4 i11525_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), .C(rom_addr[4]), 
-         .D(n1084), .Z(n12150)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11525_3_lut_4_lut.init = 16'hf808;
-    LUT4 i11430_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), .C(rom_addr[4]), 
-         .D(n1658), .Z(n12055)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11430_3_lut_4_lut.init = 16'hf808;
-    LUT4 address_11__I_0_Mux_5_i2010_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), 
-         .C(rom_addr[4]), .D(n2009_adj_616), .Z(n2010)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2010_3_lut_4_lut.init = 16'hf808;
-    PFUMX i13445 (.BLUT(n14352), .ALUT(n14353), .C0(rom_addr[0]), .Z(n14354));
-    LUT4 address_11__I_0_Mux_6_i1530_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), 
-         .C(rom_addr[4]), .D(n1529_adj_617), .Z(n1530_adj_618)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1530_3_lut_4_lut.init = 16'hf808;
-    LUT4 address_11__I_0_Mux_6_i1820_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), 
-         .C(rom_addr[4]), .D(n14115), .Z(n1820_adj_619)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1820_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_4_i221_3_lut_4_lut (.A(n15546), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1017), .Z(n221)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i221_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_2_i2554_3_lut_4_lut (.A(n15546), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n14199), .Z(n2554)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2554_3_lut_4_lut.init = 16'h8f80;
-    LUT4 n12361_bdd_2_lut_13355 (.A(n12534), .B(rom_addr[7]), .Z(n13143)) /* synthesis lut_function=(A (B)) */ ;
-    defparam n12361_bdd_2_lut_13355.init = 16'h8888;
-    LUT4 i11507_3_lut_4_lut (.A(rom_addr[0]), .B(n14191), .C(rom_addr[4]), 
-         .D(n379), .Z(n12132)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11507_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i11939_3_lut_4_lut (.A(rom_addr[0]), .B(n14191), .C(rom_addr[4]), 
-         .D(n747), .Z(n12564)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11939_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i11835_3_lut_4_lut (.A(rom_addr[0]), .B(n14191), .C(rom_addr[4]), 
-         .D(n2588), .Z(n12460)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11835_3_lut_4_lut.init = 16'hf808;
-    LUT4 address_11__I_0_Mux_6_i1692_3_lut_4_lut (.A(rom_addr[0]), .B(n14191), 
-         .C(rom_addr[4]), .D(n1691), .Z(n1692_adj_620)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1692_3_lut_4_lut.init = 16'hf808;
-    LUT4 i12377_3_lut (.A(n2523_adj_585), .B(n2554_adj_572), .C(rom_addr[5]), 
-         .Z(n2555_adj_621)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12377_3_lut.init = 16'hcaca;
-    LUT4 i11504_3_lut_4_lut (.A(n15545), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n14101), .Z(n12129)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11504_3_lut_4_lut.init = 16'hefe0;
-    PFUMX address_11__I_0_Mux_5_i510 (.BLUT(n507_adj_622), .ALUT(n509), 
-          .C0(n11962), .Z(n510)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_5_i1467_3_lut_4_lut (.A(n15545), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1451), .Z(n1467_c)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1467_3_lut_4_lut.init = 16'hefe0;
-    LUT4 address_11__I_0_Mux_1_i1723_3_lut_4_lut (.A(n15545), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1451_adj_624), .Z(n1723_adj_625)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1723_3_lut_4_lut.init = 16'hefe0;
-    LUT4 address_11__I_0_Mux_1_i2205_3_lut_4_lut (.A(n15545), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n14147), .Z(n2205)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2205_3_lut_4_lut.init = 16'hefe0;
-    L6MUX21 i11637 (.D0(n12260), .D1(n12261), .SD(rom_addr[5]), .Z(n12262));
-    LUT4 address_11__I_0_Mux_6_i1706_3_lut_rep_369 (.A(rom_addr[0]), .B(n15568), 
-         .C(rom_addr[2]), .Z(n15549)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1706_3_lut_rep_369.init = 16'h8383;
-    LUT4 i11590_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n12215)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A (B (C (D))+!B !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11590_3_lut_4_lut_4_lut.init = 16'hc383;
-    L6MUX21 i11640 (.D0(n12587), .D1(n12594), .SD(rom_addr[7]), .Z(n12265));
-    LUT4 n2573_bdd_3_lut_4_lut (.A(rom_addr[0]), .B(n14180), .C(rom_addr[4]), 
-         .D(n2573), .Z(n13356)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2573_bdd_3_lut_4_lut.init = 16'hf404;
-    LUT4 n12368_bdd_3_lut_12743 (.A(n12375), .B(n12376), .C(rom_addr[7]), 
-         .Z(n13139)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n12368_bdd_3_lut_12743.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i4095_4_lut (.A(n12453), .B(n3070_adj_626), 
-         .C(rom_addr[11]), .D(rom_addr[10]), .Z(rom_q[4])) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i4095_4_lut.init = 16'h0aca;
-    L6MUX21 i11641 (.D0(n12597), .D1(n12604), .SD(rom_addr[7]), .Z(n12266));
-    LUT4 address_11__I_0_Mux_4_i3070_4_lut (.A(n12324), .B(n2685_adj_627), 
-         .C(rom_addr[9]), .D(n14273), .Z(n3070_adj_626)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i3070_4_lut.init = 16'hca0a;
-    LUT4 address_11__I_0_Mux_4_i2685_4_lut (.A(n12462), .B(n14366), .C(rom_addr[6]), 
-         .D(rom_addr[5]), .Z(n2685_adj_627)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2685_4_lut.init = 16'h0aca;
-    LUT4 address_11__I_0_Mux_5_i2282_3_lut_rep_370 (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n15550)) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A (B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2282_3_lut_rep_370.init = 16'h3838;
-    LUT4 i11934_3_lut (.A(n428_adj_628), .B(n14328), .C(rom_addr[4]), 
-         .Z(n12559)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11934_3_lut.init = 16'hcaca;
-    LUT4 i7336_2_lut_rep_131_4_lut (.A(n14315), .B(n2621), .C(n14233), 
-         .D(n14273), .Z(n14048)) /* synthesis lut_function=(A (B (D)+!B !(C+!(D)))+!A (B (C (D)))) */ ;
-    defparam i7336_2_lut_rep_131_4_lut.init = 16'hca00;
-    L6MUX21 i11671 (.D0(n12130), .D1(n12139), .SD(rom_addr[6]), .Z(n12296));
-    PFUMX i11672 (.BLUT(n2365_adj_629), .ALUT(n12148), .C0(rom_addr[6]), 
-          .Z(n12297));
-    LUT4 n12368_bdd_3_lut_13350 (.A(n12368), .B(n12369), .C(rom_addr[7]), 
-         .Z(n13140)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n12368_bdd_3_lut_13350.init = 16'hcaca;
-    LUT4 i11933_3_lut (.A(n205_adj_571), .B(n220_adj_630), .C(rom_addr[4]), 
-         .Z(n12558)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11933_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_3_i2538_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2538)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)+!C !(D)))+!A (B+!(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i2538_3_lut_3_lut_4_lut_4_lut.init = 16'h3803;
-    PFUMX i11673 (.BLUT(n12157), .ALUT(n6628), .C0(rom_addr[6]), .Z(n12298));
-    LUT4 i11691_4_lut (.A(n2429), .B(rom_addr[0]), .C(rom_addr[7]), .D(n13895), 
-         .Z(n12316)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
-    defparam i11691_4_lut.init = 16'hca0a;
-    LUT4 i11929_3_lut (.A(n684), .B(n699), .C(rom_addr[4]), .Z(n12554)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11929_3_lut.init = 16'hcaca;
-    LUT4 rom_addr_5__bdd_4_lut (.A(rom_addr[5]), .B(n13853), .C(n2589), 
-         .D(rom_addr[6]), .Z(n15541)) /* synthesis lut_function=(!(A ((D)+!C)+!A !(B (C+(D))+!B !((D)+!C)))) */ ;
-    defparam rom_addr_5__bdd_4_lut.init = 16'h44f0;
-    LUT4 address_11__I_0_Mux_1_i286_3_lut_4_lut (.A(n14183), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n270_c), .Z(n286)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i286_3_lut_4_lut.init = 16'h2f20;
-    L6MUX21 i11678 (.D0(n12175), .D1(n12184), .SD(rom_addr[6]), .Z(n12303));
-    LUT4 address_11__I_0_Mux_1_i380_3_lut_4_lut (.A(n14183), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n364_adj_561), .Z(n380_adj_631)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i380_3_lut_4_lut.init = 16'h2f20;
-    PFUMX i11679 (.BLUT(n12193), .ALUT(n2428_c), .C0(rom_addr[6]), .Z(n12304));
-    LUT4 i11467_3_lut_4_lut (.A(rom_addr[0]), .B(n14191), .C(rom_addr[4]), 
-         .D(n124_adj_632), .Z(n12092)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11467_3_lut_4_lut.init = 16'hf404;
-    LUT4 address_11__I_0_Mux_6_i1467_3_lut_4_lut (.A(rom_addr[0]), .B(n14191), 
-         .C(rom_addr[4]), .D(n6622), .Z(n1467_adj_633)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1467_3_lut_4_lut.init = 16'h4f40;
-    LUT4 i11602_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n78), .Z(n12227)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11602_3_lut_4_lut.init = 16'h2f20;
-    PFUMX i9943 (.BLUT(n12632), .ALUT(n12633), .C0(rom_addr[5]), .Z(n8028));
-    LUT4 address_11__I_0_Mux_5_i636_3_lut_rep_142_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n14144), .C(rom_addr[4]), .D(n14191), .Z(n14059)) /* synthesis lut_function=(!(A (B+(C))+!A !(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i636_3_lut_rep_142_4_lut_4_lut.init = 16'h5202;
-    LUT4 rom_addr_4__bdd_3_lut_12923 (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .Z(n13384)) /* synthesis lut_function=(!((B (C)+!B !(C))+!A)) */ ;
-    defparam rom_addr_4__bdd_3_lut_12923.init = 16'h2828;
-    LUT4 rom_addr_1__bdd_4_lut_13417 (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[0]), .Z(n14304)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (C+!(D))+!B !(C+!(D))))) */ ;
-    defparam rom_addr_1__bdd_4_lut_13417.init = 16'h6144;
-    LUT4 address_11__I_0_Mux_5_i1275_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14144), 
-         .C(rom_addr[4]), .D(n14180), .Z(n1275)) /* synthesis lut_function=(!(A (B+(C))+!A !(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1275_3_lut_4_lut_4_lut.init = 16'h5202;
-    LUT4 i11582_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n890), .Z(n12207)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11582_3_lut_4_lut.init = 16'h2f20;
-    LUT4 n2332_bdd_3_lut_13155_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n2332), .Z(n13590)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2332_bdd_3_lut_13155_4_lut.init = 16'h2f20;
-    LUT4 n668_bdd_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n668_adj_550), .Z(n13695)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n668_bdd_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_6_i1738_3_lut_rep_365 (.A(rom_addr[0]), .B(n15568), 
-         .C(rom_addr[2]), .Z(n15545)) /* synthesis lut_function=(A (B (C))+!A !(B+(C))) */ ;
-    defparam address_11__I_0_Mux_6_i1738_3_lut_rep_365.init = 16'h8181;
-    LUT4 i4064_3_lut_4_lut (.A(n14255), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n14163), .Z(n4876)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4064_3_lut_4_lut.init = 16'hefe0;
-    LUT4 address_11__I_0_Mux_2_i189_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), 
-         .C(rom_addr[4]), .D(n14152), .Z(n189)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i189_3_lut_4_lut.init = 16'hf202;
-    L6MUX21 i11680 (.D0(n12202), .D1(n12211), .SD(rom_addr[6]), .Z(n12305));
-    PFUMX i13119 (.BLUT(n14061), .ALUT(n13636), .C0(rom_addr[5]), .Z(n13637));
-    LUT4 address_11__I_0_Mux_6_i2009_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2009_adj_634)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A (B+(C)))) */ ;
-    defparam address_11__I_0_Mux_6_i2009_3_lut_3_lut_4_lut_4_lut.init = 16'h0381;
-    LUT4 address_11__I_0_Mux_3_i4095_4_lut (.A(n12500), .B(n3070_adj_552), 
-         .C(rom_addr[11]), .D(rom_addr[10]), .Z(rom_q[3])) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i4095_4_lut.init = 16'h0aca;
-    PFUMX i11696 (.BLUT(n2492), .ALUT(n2555_adj_621), .C0(rom_addr[6]), 
-          .Z(n12321));
-    PFUMX i13443 (.BLUT(n14349), .ALUT(n14350), .C0(rom_addr[1]), .Z(n14351));
-    LUT4 i12191_3_lut (.A(n589), .B(n604_adj_635), .C(rom_addr[4]), .Z(n12550)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12191_3_lut.init = 16'hcaca;
-    LUT4 i11466_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n14370), .Z(n12091)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11466_3_lut_4_lut.init = 16'h2f20;
-    LUT4 address_11__I_0_Mux_2_i1883_3_lut_4_lut (.A(rom_addr[1]), .B(n14258), 
-         .C(rom_addr[4]), .D(n1867), .Z(n1883)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_2_i1883_3_lut_4_lut.init = 16'h4f40;
-    LUT4 i11932_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n2283_adj_636), .Z(n12557)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11932_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_5_i542_3_lut_4_lut (.A(rom_addr[1]), .B(n14258), 
-         .C(rom_addr[4]), .D(n526_adj_577), .Z(n542)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_5_i542_3_lut_4_lut.init = 16'h4f40;
-    LUT4 i11829_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), .C(rom_addr[4]), 
-         .D(n2009), .Z(n12454)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11829_3_lut_4_lut.init = 16'hf202;
-    PFUMX i11702 (.BLUT(n12084), .ALUT(n2428_adj_637), .C0(rom_addr[6]), 
-          .Z(n12327));
-    LUT4 address_11__I_0_Mux_1_i2333_3_lut_4_lut (.A(rom_addr[0]), .B(n14144), 
-         .C(rom_addr[4]), .D(n2395), .Z(n2333)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2333_3_lut_4_lut.init = 16'h2f20;
-    LUT4 address_11__I_0_Mux_7_i2268_3_lut_rep_135_4_lut (.A(rom_addr[0]), 
-         .B(n14144), .C(rom_addr[4]), .D(n14096), .Z(n14052)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_7_i2268_3_lut_rep_135_4_lut.init = 16'hf202;
-    LUT4 i11438_4_lut (.A(n14115), .B(rom_addr[0]), .C(rom_addr[4]), .D(n4433), 
-         .Z(n12063)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;
-    defparam i11438_4_lut.init = 16'h0aca;
-    PFUMX address_11__I_0_Mux_0_i1276 (.BLUT(n1244_adj_638), .ALUT(n1275_adj_639), 
-          .C0(rom_addr[5]), .Z(n1276_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_4_i1739_3_lut_4_lut (.A(rom_addr[0]), .B(n14255), 
-         .C(rom_addr[3]), .D(n14185), .Z(n1739)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1739_3_lut_4_lut.init = 16'hf202;
-    PFUMX i11703 (.BLUT(n2492_adj_640), .ALUT(n2555_adj_641), .C0(rom_addr[6]), 
-          .Z(n12328));
-    LUT4 address_11__I_0_Mux_2_i4095_4_lut (.A(n12531), .B(n3070), .C(rom_addr[11]), 
-         .D(rom_addr[10]), .Z(rom_q[2])) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i4095_4_lut.init = 16'h0aca;
-    LUT4 i11690_4_lut (.A(rom_addr[0]), .B(n2301), .C(rom_addr[7]), .D(n3624), 
-         .Z(n12315)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;
-    defparam i11690_4_lut.init = 16'hc0ca;
-    LUT4 address_11__I_0_Mux_0_i428_3_lut_4_lut (.A(rom_addr[0]), .B(n14255), 
-         .C(rom_addr[3]), .D(n14181), .Z(n428_adj_642)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i428_3_lut_4_lut.init = 16'h02f2;
-    LUT4 i11596_3_lut_4_lut (.A(rom_addr[0]), .B(n14255), .C(rom_addr[3]), 
-         .D(n14221), .Z(n12221)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11596_3_lut_4_lut.init = 16'h02f2;
-    LUT4 address_11__I_0_Mux_5_i2009_3_lut_4_lut (.A(rom_addr[0]), .B(n14255), 
-         .C(rom_addr[3]), .D(n15548), .Z(n2009_adj_616)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2009_3_lut_4_lut.init = 16'hf202;
-    LUT4 i12292_3_lut (.A(n14300), .B(n14331), .C(rom_addr[5]), .Z(n12548)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12292_3_lut.init = 16'hcaca;
-    PFUMX i11707 (.BLUT(n2110), .ALUT(n2173_adj_543), .C0(rom_addr[6]), 
-          .Z(n12332));
-    LUT4 i11531_4_lut_then_3_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .Z(n14306)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;
-    defparam i11531_4_lut_then_3_lut.init = 16'h4040;
-    LUT4 i11920_3_lut (.A(n557), .B(n526_adj_577), .C(rom_addr[4]), .Z(n12545)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11920_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_7_i2620_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14193), 
-         .C(rom_addr[4]), .D(n14177), .Z(n2620)) /* synthesis lut_function=(!(A (B+(C))+!A !(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_7_i2620_3_lut_4_lut_4_lut.init = 16'h5202;
-    PFUMX i11708 (.BLUT(n2237_adj_643), .ALUT(n12169), .C0(rom_addr[6]), 
-          .Z(n12333));
-    LUT4 address_11__I_0_Mux_6_i1483_3_lut_4_lut (.A(rom_addr[0]), .B(n14255), 
-         .C(rom_addr[3]), .D(n14181), .Z(n1483)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1483_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_5_i1435_3_lut_4_lut (.A(rom_addr[0]), .B(n14255), 
-         .C(rom_addr[3]), .D(n15546), .Z(n1435)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1435_3_lut_4_lut.init = 16'hf202;
-    L6MUX21 i11710 (.D0(n12178), .D1(n2555), .SD(rom_addr[6]), .Z(n12335));
-    LUT4 address_11__I_0_Mux_1_i1309_3_lut_4_lut (.A(rom_addr[0]), .B(n14193), 
-         .C(rom_addr[4]), .D(n1308), .Z(n1309_adj_644)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1309_3_lut_4_lut.init = 16'hf202;
-    LUT4 n2172_bdd_3_lut_13283_4_lut (.A(rom_addr[0]), .B(n14193), .C(rom_addr[4]), 
-         .D(n14115), .Z(n13421)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2172_bdd_3_lut_13283_4_lut.init = 16'h2f20;
-    LUT4 i11564_3_lut_4_lut (.A(rom_addr[0]), .B(n14193), .C(rom_addr[4]), 
-         .D(n684_adj_645), .Z(n12189)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11564_3_lut_4_lut.init = 16'h2f20;
-    LUT4 i11976_3_lut_4_lut (.A(rom_addr[0]), .B(n14193), .C(rom_addr[4]), 
-         .D(n1002), .Z(n12601)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11976_3_lut_4_lut.init = 16'h2f20;
-    LUT4 i11531_4_lut_else_3_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .D(rom_addr[2]), .Z(n14305)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A ((C+!(D))+!B))) */ ;
-    defparam i11531_4_lut_else_3_lut.init = 16'h0402;
-    LUT4 i11942_3_lut_4_lut (.A(rom_addr[0]), .B(n14193), .C(rom_addr[4]), 
-         .D(n890_adj_646), .Z(n12567)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11942_3_lut_4_lut.init = 16'hf202;
-    LUT4 i11534_3_lut_4_lut (.A(n15545), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n1529), .Z(n12159)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11534_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_0_i94_3_lut_4_lut (.A(n15545), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1676_c), .Z(n94_c)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i94_3_lut_4_lut.init = 16'h2f20;
-    LUT4 address_11__I_0_Mux_5_i1723_3_lut_3_lut_4_lut (.A(n15545), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n14162), .Z(n1723_adj_647)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1723_3_lut_3_lut_4_lut.init = 16'h02f2;
-    LUT4 address_11__I_0_Mux_5_i1785_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n15545), .Z(n1785)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_5_i1785_3_lut_4_lut.init = 16'h1f10;
-    LUT4 address_11__I_0_Mux_5_i1483_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n15549), .Z(n1211)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_5_i1483_3_lut_4_lut.init = 16'h1f10;
-    LUT4 address_11__I_0_Mux_2_i316_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14265), .Z(n316)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_2_i316_3_lut_4_lut.init = 16'h1f10;
-    L6MUX21 i11723 (.D0(n12341), .D1(n12342), .SD(rom_addr[6]), .Z(n12348));
-    LUT4 i11435_4_lut (.A(n6663), .B(n14093), .C(rom_addr[4]), .D(n14275), 
-         .Z(n12060)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
-    defparam i11435_4_lut.init = 16'hcac0;
-    L6MUX21 i11724 (.D0(n12343), .D1(n12344), .SD(rom_addr[6]), .Z(n12349));
-    LUT4 i11991_3_lut_4_lut (.A(n14162), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n1483_adj_648), .Z(n12616)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !(C+(D)))) */ ;
-    defparam i11991_3_lut_4_lut.init = 16'h9f90;
-    LUT4 address_11__I_0_Mux_4_i428_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14153), .Z(n428_adj_649)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_4_i428_3_lut_4_lut.init = 16'h1f10;
-    LUT4 n1340_bdd_3_lut_4_lut (.A(rom_addr[0]), .B(n14120), .C(rom_addr[4]), 
-         .D(n14152), .Z(n13557)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam n1340_bdd_3_lut_4_lut.init = 16'h1f10;
-    L6MUX21 i11725 (.D0(n12345), .D1(n12346), .SD(rom_addr[6]), .Z(n12350));
-    PFUMX i11736 (.BLUT(n12357), .ALUT(n12358), .C0(rom_addr[6]), .Z(n12361));
-    LUT4 address_11__I_0_Mux_3_i444_3_lut (.A(n428_adj_628), .B(n684_adj_645), 
-         .C(rom_addr[4]), .Z(n444)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i444_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_6_i2521_3_lut_rep_366 (.A(rom_addr[0]), .B(n15568), 
-         .C(rom_addr[2]), .Z(n15546)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B+!(C)))) */ ;
-    defparam address_11__I_0_Mux_6_i2521_3_lut_rep_366.init = 16'h1818;
-    LUT4 i11607_then_4_lut (.A(rom_addr[4]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n14309)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !((D)+!C))+!A (B ((D)+!C)+!B !(C (D))))) */ ;
-    defparam i11607_then_4_lut.init = 16'h3ac2;
-    LUT4 address_11__I_0_Mux_4_i620_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n620_adj_650)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (C+(D)))+!A (B ((D)+!C)+!B !(C (D)+!C !(D))))) */ ;
-    defparam address_11__I_0_Mux_4_i620_3_lut_4_lut_4_lut.init = 16'h18c3;
-    LUT4 i11607_else_4_lut (.A(rom_addr[4]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n14308)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D))))) */ ;
-    defparam i11607_else_4_lut.init = 16'h6802;
-    LUT4 rom_addr_0__bdd_4_lut_13428 (.A(rom_addr[0]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[2]), .Z(n14311)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (D))+!A (B (C+!(D))+!B (C)))) */ ;
-    defparam rom_addr_0__bdd_4_lut_13428.init = 16'h0da3;
-    LUT4 i11682_3_lut (.A(n12304), .B(n12305), .C(rom_addr[7]), .Z(n12307)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11682_3_lut.init = 16'hcaca;
-    LUT4 i11516_3_lut_4_lut (.A(n14260), .B(n14242), .C(rom_addr[4]), 
-         .D(n890), .Z(n12141)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
-    defparam i11516_3_lut_4_lut.init = 16'h4f40;
-    PFUMX i13441 (.BLUT(n14346), .ALUT(n14347), .C0(rom_addr[0]), .Z(n14348));
-    LUT4 address_11__I_0_Mux_0_i1341_4_lut (.A(n14265), .B(n14061), .C(rom_addr[5]), 
-         .D(n14271), .Z(n1341)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i1341_4_lut.init = 16'hcac0;
-    L6MUX21 i11737 (.D0(n12359), .D1(n12360), .SD(rom_addr[6]), .Z(n12362));
-    LUT4 i11989_3_lut_4_lut (.A(rom_addr[0]), .B(n14120), .C(rom_addr[4]), 
-         .D(n1435_adj_651), .Z(n12614)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
-    defparam i11989_3_lut_4_lut.init = 16'hf101;
-    LUT4 i11512_3_lut_4_lut (.A(rom_addr[1]), .B(n15544), .C(rom_addr[4]), 
-         .D(n2267), .Z(n12137)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11512_3_lut_4_lut.init = 16'hf101;
-    LUT4 address_11__I_0_Mux_5_i1851_3_lut_4_lut (.A(rom_addr[1]), .B(n14201), 
-         .C(rom_addr[4]), .D(n1835), .Z(n1851_adj_605)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_5_i1851_3_lut_4_lut.init = 16'h1f10;
-    LUT4 i11555_3_lut_4_lut (.A(rom_addr[1]), .B(n14201), .C(rom_addr[4]), 
-         .D(n301_c), .Z(n12180)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i11555_3_lut_4_lut.init = 16'h1f10;
-    LUT4 n915_bdd_3_lut_13377_4_lut (.A(n14239), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .D(n14189), .Z(n13843)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n915_bdd_3_lut_13377_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_1_i1659_4_lut (.A(n1435_adj_651), .B(n15549), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n1659)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1659_4_lut.init = 16'hca0a;
-    LUT4 address_11__I_0_Mux_1_i476_3_lut (.A(n557_adj_652), .B(n1211), 
-         .C(rom_addr[4]), .Z(n476)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i476_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i507_3_lut (.A(n491), .B(n506), .C(rom_addr[4]), 
-         .Z(n507)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i507_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i1565_3_lut_4_lut (.A(rom_addr[1]), .B(n14201), 
-         .C(rom_addr[4]), .D(n1549_adj_588), .Z(n1565_adj_653)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_2_i1565_3_lut_4_lut.init = 16'h1f10;
-    LUT4 address_11__I_0_Mux_3_i1403_4_lut (.A(n14239), .B(n14097), .C(rom_addr[4]), 
-         .D(n14279), .Z(n1403_adj_654)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1403_4_lut.init = 16'hcac0;
-    LUT4 address_11__I_0_Mux_3_i1820_3_lut_4_lut (.A(n14122), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n14104), .Z(n1820)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1820_3_lut_4_lut.init = 16'hfe0e;
-    LUT4 i11965_3_lut_4_lut (.A(rom_addr[1]), .B(n14201), .C(rom_addr[4]), 
-         .D(n731_adj_589), .Z(n12590)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
-    defparam i11965_3_lut_4_lut.init = 16'hf101;
-    LUT4 address_11__I_0_Mux_3_i1084_3_lut_4_lut (.A(n14239), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n15546), .Z(n1084_adj_655)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1084_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i5848_4_lut_then_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), .C(rom_addr[2]), 
-         .D(rom_addr[1]), .Z(n14314)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5848_4_lut_then_4_lut.init = 16'h0e01;
-    LUT4 i12208_3_lut (.A(n1228), .B(n1243_adj_656), .C(rom_addr[4]), 
-         .Z(n12042)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12208_3_lut.init = 16'hcaca;
-    LUT4 n13464_bdd_3_lut (.A(n13464), .B(n14354), .C(rom_addr[5]), .Z(n13465)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n13464_bdd_3_lut.init = 16'hcaca;
-    PFUMX i11743 (.BLUT(n12364), .ALUT(n12365), .C0(rom_addr[6]), .Z(n12368));
-    LUT4 n858_bdd_3_lut_12700_4_lut (.A(rom_addr[0]), .B(n14246), .C(n14185), 
-         .D(rom_addr[3]), .Z(n13061)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n858_bdd_3_lut_12700_4_lut.init = 16'h22f0;
-    LUT4 address_11__I_0_Mux_6_i2522_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2522_adj_657)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C+(D)))+!A (B+!(C (D)+!C !(D))))) */ ;
-    defparam address_11__I_0_Mux_6_i2522_3_lut_3_lut_4_lut_4_lut.init = 16'h1803;
-    LUT4 address_11__I_0_Mux_5_i1690_3_lut_4_lut_3_lut_rep_367 (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .Z(n15547)) /* synthesis lut_function=(A (B+(C))+!A (B (C))) */ ;
-    defparam address_11__I_0_Mux_5_i1690_3_lut_4_lut_3_lut_rep_367.init = 16'he8e8;
-    PFUMX i11483 (.BLUT(n364_adj_658), .ALUT(n379_c), .C0(rom_addr[4]), 
-          .Z(n12108));
-    L6MUX21 i11744 (.D0(n12366), .D1(n12367), .SD(rom_addr[6]), .Z(n12369));
-    L6MUX21 i11750 (.D0(n12371), .D1(n12372), .SD(rom_addr[6]), .Z(n12375));
-    L6MUX21 i11751 (.D0(n12373), .D1(n12374), .SD(rom_addr[6]), .Z(n12376));
-    LUT4 n6498_bdd_4_lut_12989 (.A(n14277), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .D(rom_addr[4]), .Z(n13470)) /* synthesis lut_function=(A (B (C (D))+!B !((D)+!C))) */ ;
-    defparam n6498_bdd_4_lut_12989.init = 16'h8020;
-    LUT4 address_11__I_0_Mux_4_i1915_3_lut (.A(n1883_adj_659), .B(n1914_adj_615), 
-         .C(rom_addr[5]), .Z(n1915_adj_660)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1915_3_lut.init = 16'hcaca;
-    LUT4 n6498_bdd_4_lut (.A(n14160), .B(rom_addr[0]), .C(rom_addr[4]), 
-         .D(n14172), .Z(n13471)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B+!(C (D))))) */ ;
-    defparam n6498_bdd_4_lut.init = 16'h3a0a;
-    LUT4 address_11__I_0_Mux_2_i890_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14185), .Z(n890)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i890_3_lut_4_lut.init = 16'h2f20;
-    PFUMX i13097 (.BLUT(n13603), .ALUT(n13602), .C0(rom_addr[6]), .Z(n13604));
-    LUT4 address_11__I_0_Mux_3_i844_3_lut_4_lut_4_lut (.A(n14275), .B(n14265), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n844)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;
+    LUT4 n1443_bdd_4_lut_10249_4_lut (.A(n11067), .B(\rom_addr[3] ), .C(\rom_addr[0] ), 
+         .D(n11025), .Z(n10229)) /* synthesis lut_function=(A (B (D))+!A (B (D)+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n1443_bdd_4_lut_10249_4_lut.init = 16'hdc10;
+    PFUMX i9480 (.BLUT(n9899), .ALUT(n9900), .C0(\rom_addr[5] ), .Z(n9903));
+    LUT4 i9445_3_lut (.A(n9860), .B(n9861), .C(\rom_addr[8] ), .Z(n9868)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9445_3_lut.init = 16'hcaca;
+    LUT4 i9182_3_lut (.A(n506), .B(n475), .C(\rom_addr[4] ), .Z(n9605)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9182_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_2_i30_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(n11089), .D(n11065), .Z(n30)) /* synthesis lut_function=(A (B (C)+!B (D))+!A ((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i30_4_lut_4_lut.init = 16'hf3d1;
+    LUT4 i9403_3_lut (.A(n9810), .B(n10691), .C(\rom_addr[7] ), .Z(n9826)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9403_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_2_i205_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n205)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A (B (C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i205_3_lut_4_lut_4_lut_4_lut.init = 16'hc204;
+    LUT4 i9379_3_lut (.A(n9793), .B(n9794), .C(\rom_addr[7] ), .Z(n9802)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9379_3_lut.init = 16'hcaca;
+    PFUMX i9481 (.BLUT(n9901), .ALUT(n9902), .C0(\rom_addr[5] ), .Z(n9904));
+    L6MUX21 i10458 (.D0(n10794), .D1(n10791), .SD(\rom_addr[5] ), .Z(n10795));
+    PFUMX i10456 (.BLUT(n10793), .ALUT(n10792), .C0(\rom_addr[6] ), .Z(n10794));
+    LUT4 i9177_3_lut (.A(n428), .B(n684), .C(\rom_addr[4] ), .Z(n9600)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9177_3_lut.init = 16'hcaca;
+    LUT4 i9378_3_lut (.A(n9791), .B(n9792), .C(\rom_addr[7] ), .Z(n9801)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9378_3_lut.init = 16'hcaca;
+    LUT4 i9176_3_lut (.A(n1017), .B(n506), .C(\rom_addr[4] ), .Z(n9599)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9176_3_lut.init = 16'hcaca;
+    LUT4 i9377_3_lut (.A(n10476), .B(n9790), .C(\rom_addr[7] ), .Z(n9800)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9377_3_lut.init = 16'hcaca;
+    LUT4 i9376_3_lut (.A(n9787), .B(n9788), .C(\rom_addr[7] ), .Z(n9799)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9376_3_lut.init = 16'hcaca;
+    PFUMX i10454 (.BLUT(n4171), .ALUT(n10790), .C0(\rom_addr[6] ), .Z(n10791));
+    LUT4 i9375_3_lut (.A(n9785), .B(n9786), .C(\rom_addr[7] ), .Z(n9798)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9375_3_lut.init = 16'hcaca;
+    LUT4 i9374_3_lut (.A(n9783), .B(n9784), .C(\rom_addr[7] ), .Z(n9797)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9374_3_lut.init = 16'hcaca;
+    LUT4 i9373_3_lut (.A(n9781), .B(n9782), .C(\rom_addr[7] ), .Z(n9796)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9373_3_lut.init = 16'hcaca;
+    PFUMX i9063 (.BLUT(n9484), .ALUT(n9485), .C0(\rom_addr[5] ), .Z(n9486));
+    LUT4 address_11__I_0_Mux_3_i844_3_lut_4_lut_4_lut (.A(n11067), .B(n11899), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n844)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_3_i844_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i12428_3_lut (.A(n2010), .B(n14348), .C(rom_addr[5]), .Z(n12401)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12428_3_lut.init = 16'hcaca;
-    LUT4 i11681_3_lut (.A(n13425), .B(n12303), .C(rom_addr[7]), .Z(n12306)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11681_3_lut.init = 16'hcaca;
-    LUT4 i12347_3_lut (.A(n1883_adj_661), .B(n1914_adj_662), .C(rom_addr[5]), 
-         .Z(n12399)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12347_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_5_i1786_3_lut (.A(n1770), .B(n1785), .C(rom_addr[4]), 
-         .Z(n1786_adj_663)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1786_3_lut.init = 16'hcaca;
-    LUT4 rom_addr_4__bdd_3_lut_12918_4_lut (.A(rom_addr[0]), .B(n14271), 
-         .C(n14215), .D(rom_addr[5]), .Z(n13307)) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam rom_addr_4__bdd_3_lut_12918_4_lut.init = 16'h0040;
-    L6MUX21 i11764 (.D0(n12386), .D1(n12387), .SD(rom_addr[6]), .Z(n12389));
-    PFUMX i11770 (.BLUT(n12391), .ALUT(n12392), .C0(rom_addr[6]), .Z(n12395));
-    LUT4 address_11__I_0_Mux_5_i1692_3_lut (.A(n1676_adj_664), .B(n1691_adj_665), 
-         .C(rom_addr[4]), .Z(n1692_adj_666)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1692_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_5_i1659_4_lut (.A(n1643), .B(rom_addr[0]), 
-         .C(rom_addr[4]), .D(n14129), .Z(n1659_adj_667)) /* synthesis lut_function=(!(A (B (C)+!B (C (D)))+!A (B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1659_4_lut.init = 16'h0a3a;
-    LUT4 address_11__I_0_Mux_5_i1947_then_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[2]), .Z(n14317)) /* synthesis lut_function=(A (B (C)+!B (C (D)))) */ ;
-    defparam address_11__I_0_Mux_5_i1947_then_4_lut.init = 16'ha080;
-    LUT4 i2_3_lut_4_lut (.A(rom_addr[5]), .B(n14215), .C(rom_addr[0]), 
-         .D(n14216), .Z(n10570)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2_3_lut_4_lut.init = 16'h4000;
-    LUT4 address_11__I_0_Mux_3_i428_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14183), .Z(n428_adj_628)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i428_3_lut_4_lut.init = 16'h2f20;
-    PFUMX i13439 (.BLUT(n14343), .ALUT(n14344), .C0(rom_addr[0]), .Z(n14345));
-    LUT4 i12350_3_lut (.A(n13911), .B(n1659_adj_667), .C(rom_addr[5]), 
-         .Z(n12392)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12350_3_lut.init = 16'hcaca;
-    L6MUX21 i11771 (.D0(n12393), .D1(n12394), .SD(rom_addr[6]), .Z(n12396));
-    LUT4 address_11__I_0_Mux_1_i1212_3_lut_4_lut (.A(n14272), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n11860), .Z(n1212_adj_668)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1212_3_lut_4_lut.init = 16'hf808;
-    PFUMX i12701 (.BLUT(n13062), .ALUT(n13061), .C0(rom_addr[4]), .Z(n13063));
-    LUT4 address_11__I_0_Mux_5_i1530_3_lut (.A(n2009_adj_634), .B(n1529), 
-         .C(rom_addr[4]), .Z(n1530_adj_669)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1530_3_lut.init = 16'hcaca;
-    PFUMX i11777 (.BLUT(n12398), .ALUT(n12399), .C0(rom_addr[6]), .Z(n12402));
-    LUT4 address_11__I_0_Mux_5_i1499_3_lut (.A(n1211), .B(n1228_adj_670), 
-         .C(rom_addr[4]), .Z(n1499)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1499_3_lut.init = 16'hcaca;
-    LUT4 i11498_3_lut_4_lut (.A(n14272), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n236), .Z(n12123)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11498_3_lut_4_lut.init = 16'h6f60;
-    LUT4 address_11__I_0_Mux_5_i1947_else_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[2]), .Z(n14316)) /* synthesis lut_function=(A (B (C (D))+!B !(D))+!A !((C+(D))+!B)) */ ;
-    defparam address_11__I_0_Mux_5_i1947_else_4_lut.init = 16'h8026;
-    LUT4 i11957_3_lut_4_lut (.A(n14272), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n428), .Z(n12582)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (B (C (D))+!B ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11957_3_lut_4_lut.init = 16'hf909;
-    LUT4 n13478_bdd_3_lut_13902 (.A(n13478), .B(n2109), .C(rom_addr[5]), 
-         .Z(n13479)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n13478_bdd_3_lut_13902.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i604_3_lut_4_lut (.A(rom_addr[0]), .B(n14255), 
-         .C(rom_addr[3]), .D(n14265), .Z(n604_adj_671)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i604_3_lut_4_lut.init = 16'hf808;
-    PFUMX i11501 (.BLUT(n684_adj_672), .ALUT(n699_adj_673), .C0(rom_addr[4]), 
-          .Z(n12126));
-    LUT4 i11632_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), .C(rom_addr[3]), 
-         .D(n15548), .Z(n12257)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11632_3_lut_4_lut.init = 16'h2f20;
-    LUT4 i12222_3_lut (.A(n1228_adj_674), .B(n1243_adj_553), .C(rom_addr[4]), 
-         .Z(n12378)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12222_3_lut.init = 16'hcaca;
-    LUT4 n13485_bdd_3_lut (.A(n13485), .B(n13484), .C(rom_addr[6]), .Z(n13486)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n13485_bdd_3_lut.init = 16'hcaca;
-    LUT4 i12070_3_lut (.A(n6652), .B(n891), .C(rom_addr[5]), .Z(n860_adj_594)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12070_3_lut.init = 16'hcaca;
-    LUT4 n858_bdd_3_lut_12707_4_lut (.A(rom_addr[0]), .B(n14246), .C(rom_addr[3]), 
-         .D(n14183), .Z(n13062)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n858_bdd_3_lut_12707_4_lut.init = 16'hf202;
-    LUT4 i11443_3_lut_4_lut (.A(n14122), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n2009_adj_608), .Z(n12068)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11443_3_lut_4_lut.init = 16'hfe0e;
-    LUT4 address_11__I_0_Mux_6_i2010_3_lut_4_lut (.A(n14122), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n2009_adj_634), .Z(n2010_adj_675)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2010_3_lut_4_lut.init = 16'hfe0e;
-    L6MUX21 i11790 (.D0(n12187), .D1(n12190), .SD(rom_addr[6]), .Z(n12415));
-    PFUMX i11799 (.BLUT(n190_adj_676), .ALUT(n253), .C0(rom_addr[6]), 
-          .Z(n12424));
-    LUT4 n270_bdd_3_lut_12810_4_lut (.A(rom_addr[0]), .B(n14246), .C(n14183), 
-         .D(rom_addr[3]), .Z(n13040)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n270_bdd_3_lut_12810_4_lut.init = 16'h22f0;
-    PFUMX i13095 (.BLUT(n1211), .ALUT(n13600), .C0(rom_addr[4]), .Z(n13601));
-    LUT4 address_11__I_0_Mux_0_i908_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14156), .Z(n908_adj_677)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i908_3_lut_4_lut.init = 16'h2f20;
-    L6MUX21 i11804 (.D0(n829_adj_597), .D1(n892_c), .SD(rom_addr[6]), 
-            .Z(n12429));
-    LUT4 rom_addr_3__bdd_4_lut_13472 (.A(rom_addr[3]), .B(n14188), .C(n13384), 
-         .D(rom_addr[4]), .Z(n14044)) /* synthesis lut_function=(A (B (C+(D))+!B !((D)+!C))+!A !((D)+!C)) */ ;
-    defparam rom_addr_3__bdd_4_lut_13472.init = 16'h88f0;
-    LUT4 address_11__I_0_Mux_2_i1213_3_lut_4_lut (.A(rom_addr[1]), .B(n14074), 
-         .C(rom_addr[5]), .D(n1212), .Z(n1213_adj_678)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1213_3_lut_4_lut.init = 16'hf808;
-    PFUMX i11635 (.BLUT(n589_adj_679), .ALUT(n604), .C0(rom_addr[4]), 
-          .Z(n12260));
-    LUT4 address_11__I_0_Mux_2_i285_3_lut (.A(n14183), .B(n14185), .C(rom_addr[3]), 
-         .Z(n285)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i285_3_lut.init = 16'hcaca;
-    PFUMX i11806 (.BLUT(n12314), .ALUT(n1149), .C0(rom_addr[6]), .Z(n12431));
-    LUT4 address_11__I_0_Mux_2_i124_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14121), .Z(n124_adj_632)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i124_3_lut_4_lut.init = 16'hf202;
-    L6MUX21 i11807 (.D0(n1213), .D1(n12380), .SD(rom_addr[6]), .Z(n12432));
-    LUT4 address_11__I_0_Mux_3_i220_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14265), .Z(n220_adj_681)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i220_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_3_i653_3_lut_4_lut (.A(rom_addr[0]), .B(n14246), 
-         .C(rom_addr[3]), .D(n14181), .Z(n653_adj_682)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i653_3_lut_4_lut.init = 16'hf202;
-    LUT4 address_11__I_0_Mux_6_i1786_3_lut_4_lut (.A(n14122), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n14075), .Z(n1786_adj_683)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1786_3_lut_4_lut.init = 16'hefe0;
-    PFUMX address_11__I_0_Mux_0_i2556 (.BLUT(n2492_adj_684), .ALUT(n2555_adj_685), 
-          .C0(rom_addr[6]), .Z(n2556)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_4_i924_4_lut_else_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14319)) /* synthesis lut_function=(!(A+!(B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i924_4_lut_else_4_lut.init = 16'h4440;
-    LUT4 address_11__I_0_Mux_2_i2573_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2573_adj_686)) /* synthesis lut_function=(A (B (D)+!B (C (D)+!C !(D)))+!A (B (C (D))+!B !(C+(D)))) */ ;
-    defparam address_11__I_0_Mux_2_i2573_3_lut_3_lut_4_lut_4_lut.init = 16'he803;
-    LUT4 address_11__I_0_Mux_5_i2008_3_lut_3_lut_rep_368 (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .Z(n15548)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)+!B !(C)))) */ ;
-    defparam address_11__I_0_Mux_5_i2008_3_lut_3_lut_rep_368.init = 16'h1c1c;
-    LUT4 i12357_3_lut (.A(n14385), .B(n2964), .C(rom_addr[5]), .Z(n12365)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12357_3_lut.init = 16'hcaca;
-    LUT4 i12304_3_lut_4_lut (.A(n14171), .B(n11731), .C(rom_addr[5]), 
-         .D(n1565_adj_653), .Z(n1597_adj_687)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam i12304_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i12522_2_lut (.A(rom_addr[0]), .B(rom_addr[2]), .Z(n5064)) /* synthesis lut_function=(A (B)+!A !(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12522_2_lut.init = 16'h9999;
-    PFUMX i11810 (.BLUT(n1597_adj_688), .ALUT(n1660), .C0(rom_addr[6]), 
-          .Z(n12435));
-    LUT4 address_11__I_0_Mux_1_i2491_3_lut (.A(n2475), .B(n2395), .C(rom_addr[4]), 
-         .Z(n2491)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2491_3_lut.init = 16'hcaca;
-    PFUMX i11812 (.BLUT(n12407), .ALUT(n1915_adj_660), .C0(rom_addr[6]), 
-          .Z(n12437));
-    LUT4 address_11__I_0_Mux_1_i2427_3_lut (.A(n2411), .B(n2459), .C(rom_addr[4]), 
-         .Z(n2427_adj_689)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2427_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_1_i2364_4_lut (.A(n14079), .B(n14104), .C(rom_addr[4]), 
-         .D(rom_addr[3]), .Z(n2364_c)) /* synthesis lut_function=(A (B+!(C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2364_4_lut.init = 16'hcfca;
-    LUT4 address_11__I_0_Mux_5_i1676_3_lut_3_lut_4_lut (.A(n14244), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n14162), .Z(n1676_adj_664)) /* synthesis lut_function=(!(A (C+(D))+!A !(B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1676_3_lut_3_lut_4_lut.init = 16'h404f;
-    LUT4 address_11__I_0_Mux_3_i604_3_lut_4_lut (.A(n14244), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n603), .Z(n604_adj_635)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i604_3_lut_4_lut.init = 16'hf404;
-    L6MUX21 i11813 (.D0(n12413), .D1(n12456), .SD(rom_addr[6]), .Z(n12438));
-    PFUMX i11842 (.BLUT(n12463), .ALUT(n12464), .C0(rom_addr[6]), .Z(n12467));
-    LUT4 i1_4_lut (.A(n14081), .B(rom_addr[7]), .C(n6459), .D(rom_addr[5]), 
-         .Z(n10820)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B+!(C+!(D)))) */ ;
-    defparam i1_4_lut.init = 16'hcfee;
-    LUT4 i11684_3_lut (.A(n6650), .B(n668_adj_550), .C(rom_addr[4]), .Z(n12309)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11684_3_lut.init = 16'hcaca;
-    LUT4 n2203_bdd_3_lut_13364_4_lut (.A(n14248), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .D(n15549), .Z(n13381)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2203_bdd_3_lut_13364_4_lut.init = 16'h7f70;
-    LUT4 address_11__I_0_Mux_1_i653_3_lut_3_lut_4_lut (.A(n14248), .B(rom_addr[2]), 
-         .C(n14142), .D(rom_addr[3]), .Z(n653_adj_690)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))+!A (C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i653_3_lut_3_lut_4_lut.init = 16'hf077;
-    PFUMX i13437 (.BLUT(n14340), .ALUT(n14341), .C0(rom_addr[3]), .Z(n14342));
-    PFUMX address_11__I_0_Mux_0_i2174 (.BLUT(n2078), .ALUT(n2110_adj_691), 
-          .C0(n14233), .Z(n2174)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_1_i986_3_lut_4_lut (.A(n14248), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n15548), .Z(n986)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i986_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_0_i604_3_lut_3_lut_4_lut (.A(n14248), .B(rom_addr[2]), 
-         .C(n14189), .D(rom_addr[3]), .Z(n604_adj_692)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))+!A (C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i604_3_lut_3_lut_4_lut.init = 16'hf077;
-    LUT4 i2431_4_lut_then_4_lut (.A(rom_addr[1]), .B(rom_addr[4]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n14323)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2431_4_lut_then_4_lut.init = 16'hfffb;
-    LUT4 i2431_4_lut_else_4_lut (.A(rom_addr[1]), .B(rom_addr[4]), .C(rom_addr[2]), 
-         .Z(n14322)) /* synthesis lut_function=(A+(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2431_4_lut_else_4_lut.init = 16'hefef;
-    LUT4 i11663_3_lut (.A(n1789_adj_607), .B(n2044_adj_599), .C(rom_addr[8]), 
-         .Z(n12288)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11663_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i1017_3_lut_3_lut_4_lut (.A(n14244), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n14162), .Z(n1017)) /* synthesis lut_function=(!(A (C (D))+!A (B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1017_3_lut_3_lut_4_lut.init = 16'h0efe;
-    LUT4 address_11__I_0_Mux_4_i443_3_lut_4_lut (.A(n14244), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n14153), .Z(n443_adj_693)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i443_3_lut_4_lut.init = 16'hfe0e;
-    LUT4 i12226_3_lut (.A(n12215), .B(n12216), .C(rom_addr[4]), .Z(n12217)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12226_3_lut.init = 16'hcaca;
-    PFUMX i13088 (.BLUT(n13591), .ALUT(n2427), .C0(rom_addr[6]), .Z(n13592));
-    LUT4 i2_3_lut (.A(rom_addr[6]), .B(rom_addr[0]), .C(n3127), .Z(n10773)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;
-    defparam i2_3_lut.init = 16'h0808;
-    LUT4 address_11__I_0_Mux_4_i78_3_lut_4_lut (.A(n14248), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n14265), .Z(n78)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i78_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_2_i2459_3_lut_3_lut_4_lut (.A(n14244), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n14162), .Z(n2459)) /* synthesis lut_function=(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2459_3_lut_3_lut_4_lut.init = 16'he0ef;
-    LUT4 address_11__I_0_Mux_6_i1946_3_lut_3_lut_4_lut (.A(n14244), .B(rom_addr[2]), 
-         .C(n14189), .D(rom_addr[3]), .Z(n1946)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1946_3_lut_3_lut_4_lut.init = 16'h11f0;
-    LUT4 address_11__I_0_Mux_4_i987_3_lut (.A(n668_adj_550), .B(n924), .C(rom_addr[5]), 
-         .Z(n987)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i987_3_lut.init = 16'hcaca;
-    LUT4 n2283_bdd_3_lut_13090 (.A(n2283_adj_559), .B(n2298), .C(rom_addr[4]), 
-         .Z(n13533)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n2283_bdd_3_lut_13090.init = 16'hcaca;
-    PFUMX i11843 (.BLUT(n12465), .ALUT(n12466), .C0(rom_addr[6]), .Z(n12468));
-    LUT4 address_11__I_0_Mux_3_i2317_3_lut_4_lut (.A(n14210), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(n14122), .Z(n2317)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i2317_3_lut_4_lut.init = 16'hefe0;
-    LUT4 i7075_2_lut_4_lut (.A(n14109), .B(n14108), .C(rom_addr[4]), .D(rom_addr[5]), 
-         .Z(n637)) /* synthesis lut_function=(A (B (D)+!B !(C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7075_2_lut_4_lut.init = 16'hca00;
-    LUT4 n10687_bdd_3_lut_4_lut (.A(n14179), .B(n14156), .C(rom_addr[5]), 
-         .D(n2141), .Z(n13460)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n10687_bdd_3_lut_4_lut.init = 16'h8f80;
-    LUT4 n13536_bdd_3_lut (.A(n14342), .B(n13533), .C(rom_addr[5]), .Z(n13537)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n13536_bdd_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i716_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(n14221), .D(rom_addr[3]), .Z(n716)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A !(C+(D)))) */ ;
-    defparam address_11__I_0_Mux_2_i716_3_lut_3_lut_4_lut.init = 16'h77f0;
-    LUT4 address_11__I_0_Mux_0_i62_then_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14326)) /* synthesis lut_function=(A (B (C (D))+!B !(C+(D)))) */ ;
-    defparam address_11__I_0_Mux_0_i62_then_4_lut.init = 16'h8002;
-    LUT4 address_11__I_0_Mux_0_i62_else_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14325)) /* synthesis lut_function=(!(A (B (C)+!B !(C (D)))+!A !(B (C (D)+!C !(D))))) */ ;
-    defparam address_11__I_0_Mux_0_i62_else_4_lut.init = 16'h680c;
-    LUT4 address_11__I_0_Mux_3_i589_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n14265), .Z(n589)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_3_i589_3_lut_4_lut.init = 16'h4f40;
-    LUT4 i7107_2_lut_4_lut (.A(n1534), .B(n2045), .C(rom_addr[9]), .D(rom_addr[10]), 
-         .Z(n2047)) /* synthesis lut_function=(A (B (D)+!B !(C+!(D)))+!A (B (C (D)))) */ ;
-    defparam i7107_2_lut_4_lut.init = 16'hca00;
-    LUT4 address_11__I_0_Mux_3_i1053_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14272), 
-         .C(n15550), .D(rom_addr[3]), .Z(n1053)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1053_3_lut_3_lut_4_lut.init = 16'hf011;
-    LUT4 i11983_3_lut_4_lut (.A(rom_addr[0]), .B(n14078), .C(rom_addr[5]), 
-         .D(n1212_adj_668), .Z(n12608)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
-    defparam i11983_3_lut_4_lut.init = 16'hf101;
-    LUT4 i11963_3_lut_4_lut (.A(n14185), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n653_adj_690), .Z(n12588)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11963_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i11766_3_lut_4_lut (.A(rom_addr[0]), .B(n14078), .C(rom_addr[5]), 
-         .D(n1565_c), .Z(n12391)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i11766_3_lut_4_lut.init = 16'h1f10;
-    LUT4 i11928_3_lut_4_lut (.A(n14185), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n653_adj_682), .Z(n12553)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11928_3_lut_4_lut.init = 16'h8f80;
-    L6MUX21 i11845 (.D0(n63), .D1(n12537), .SD(rom_addr[6]), .Z(n12470));
-    LUT4 rom_addr_0__bdd_4_lut_13431 (.A(rom_addr[0]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n14328)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B (C (D)+!C !(D))))) */ ;
-    defparam rom_addr_0__bdd_4_lut_13431.init = 16'h480c;
-    LUT4 address_11__I_0_Mux_4_i589_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n15546), .Z(n589_adj_679)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_4_i589_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_1_i125_3_lut_4_lut_then_3_lut (.A(rom_addr[3]), 
-         .B(rom_addr[2]), .C(rom_addr[1]), .Z(n14330)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i125_3_lut_4_lut_then_3_lut.init = 16'h0808;
-    LUT4 address_11__I_0_Mux_1_i125_3_lut_4_lut_else_3_lut (.A(rom_addr[4]), 
-         .B(rom_addr[2]), .C(rom_addr[1]), .Z(n14329)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i125_3_lut_4_lut_else_3_lut.init = 16'h8080;
-    LUT4 address_11__I_0_Mux_5_i1882_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n15549), .Z(n1882)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_5_i1882_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_3_i475_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n14265), .Z(n475)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;
-    defparam address_11__I_0_Mux_3_i475_3_lut_4_lut.init = 16'hf404;
-    PFUMX i13435 (.BLUT(n14337), .ALUT(n14338), .C0(rom_addr[0]), .Z(n14339));
-    LUT4 i11627_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), .C(rom_addr[3]), 
-         .D(n14142), .Z(n12252)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11627_3_lut_4_lut.init = 16'hf808;
-    LUT4 i12268_3_lut (.A(n12119), .B(n12120), .C(rom_addr[5]), .Z(n12121)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12268_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_5_i1835_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n15545), .Z(n1835)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam address_11__I_0_Mux_5_i1835_3_lut_4_lut.init = 16'hf808;
-    LUT4 i11694_3_lut (.A(n2237_adj_694), .B(n2300_c), .C(rom_addr[6]), 
-         .Z(n12319)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11694_3_lut.init = 16'hcaca;
-    LUT4 i5780_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), .C(rom_addr[3]), 
-         .D(n8547), .Z(n6625)) /* synthesis lut_function=(!(A (B (C (D))+!B ((D)+!C))+!A ((D)+!C))) */ ;
-    defparam i5780_3_lut_4_lut.init = 16'h08f8;
-    L6MUX21 i11847 (.D0(n318), .D1(n381), .SD(rom_addr[6]), .Z(n12472));
-    PFUMX i11848 (.BLUT(n445), .ALUT(n508), .C0(rom_addr[6]), .Z(n12473));
-    LUT4 address_11__I_0_Mux_3_i1435_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n15549), .Z(n1435_adj_695)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_3_i1435_3_lut_4_lut.init = 16'h4f40;
-    LUT4 i1_2_lut_adj_17 (.A(rom_addr[4]), .B(rom_addr[0]), .Z(n11731)) /* synthesis lut_function=(A (B)) */ ;
-    defparam i1_2_lut_adj_17.init = 16'h8888;
-    L6MUX21 i11849 (.D0(n12546), .D1(n12552), .SD(rom_addr[6]), .Z(n12474));
-    L6MUX21 i11850 (.D0(n12555), .D1(n12565), .SD(rom_addr[6]), .Z(n12475));
-    LUT4 i11626_3_lut_4_lut (.A(rom_addr[0]), .B(n14215), .C(rom_addr[3]), 
-         .D(n15545), .Z(n12251)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11626_3_lut_4_lut.init = 16'h4f40;
-    LUT4 i12287_3_lut (.A(n14288), .B(n444_adj_696), .C(rom_addr[5]), 
-         .Z(n12578)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12287_3_lut.init = 16'hcaca;
-    L6MUX21 i11851 (.D0(n829), .D1(n12568), .SD(rom_addr[6]), .Z(n12476));
-    L6MUX21 i11854 (.D0(n12577), .D1(n12044), .SD(rom_addr[6]), .Z(n12479));
-    LUT4 rom_addr_0__bdd_4_lut_13434 (.A(rom_addr[0]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[2]), .Z(n301_c)) /* synthesis lut_function=(A (B (C (D))+!B (C))+!A !(B (C+(D))+!B !(D))) */ ;
-    defparam rom_addr_0__bdd_4_lut_13434.init = 16'hb124;
-    LUT4 i11597_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), .C(rom_addr[3]), 
-         .D(n14183), .Z(n12222)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11597_3_lut_4_lut.init = 16'hf808;
-    PFUMX i11855 (.BLUT(n12047), .ALUT(n1404), .C0(rom_addr[6]), .Z(n12480));
-    LUT4 address_11__I_0_Mux_6_i1707_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n15549), .Z(n1707)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam address_11__I_0_Mux_6_i1707_3_lut_4_lut.init = 16'hf808;
-    LUT4 i11786_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), .C(rom_addr[4]), 
-         .D(n1946_adj_697), .Z(n12411)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11786_3_lut_4_lut.init = 16'hf808;
-    PFUMX i13086 (.BLUT(n13588), .ALUT(n14095), .C0(rom_addr[4]), .Z(n13589));
-    LUT4 address_11__I_0_Mux_4_i684_3_lut_4_lut (.A(rom_addr[0]), .B(n14215), 
-         .C(rom_addr[3]), .D(n14183), .Z(n684_adj_645)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i684_3_lut_4_lut.init = 16'hf404;
-    LUT4 address_11__I_0_Mux_2_i1915_3_lut (.A(n1883), .B(n1786), .C(rom_addr[5]), 
-         .Z(n1915_adj_698)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1915_3_lut.init = 16'hcaca;
-    LUT4 i7228_4_lut (.A(rom_addr[0]), .B(n14164), .C(n5933), .D(rom_addr[5]), 
-         .Z(n1852_adj_699)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7228_4_lut.init = 16'ha022;
-    LUT4 i11436_3_lut_4_lut (.A(n14166), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n1643), .Z(n12061)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11436_3_lut_4_lut.init = 16'hefe0;
-    L6MUX21 i11856 (.D0(n12053), .D1(n1531), .SD(rom_addr[6]), .Z(n12481));
-    LUT4 address_11__I_0_Mux_2_i205_3_lut_4_lut (.A(rom_addr[0]), .B(n14215), 
-         .C(rom_addr[3]), .D(n14188), .Z(n205)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i205_3_lut_4_lut.init = 16'hf404;
-    PFUMX i11858 (.BLUT(n1724), .ALUT(n1787_adj_587), .C0(rom_addr[6]), 
-          .Z(n12483));
-    LUT4 address_11__I_0_Mux_3_i1243_3_lut_4_lut (.A(rom_addr[0]), .B(n14275), 
-         .C(rom_addr[3]), .D(n14156), .Z(n1243_adj_656)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam address_11__I_0_Mux_3_i1243_3_lut_4_lut.init = 16'hf808;
-    LUT4 rom_addr_0__bdd_4_lut_13457 (.A(rom_addr[0]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n14336)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A !(C (D)))) */ ;
-    defparam rom_addr_0__bdd_4_lut_13457.init = 16'h7002;
-    LUT4 i11426_3_lut_4_lut (.A(n14166), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n1435_adj_695), .Z(n12051)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11426_3_lut_4_lut.init = 16'hfe0e;
-    LUT4 address_11__I_0_Mux_1_i1308_3_lut_4_lut (.A(rom_addr[0]), .B(n14215), 
-         .C(rom_addr[3]), .D(n14265), .Z(n1308)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1308_3_lut_4_lut.init = 16'hf404;
-    LUT4 i11780_3_lut_4_lut (.A(n14166), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n14097), .Z(n12405)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11780_3_lut_4_lut.init = 16'hefe0;
-    LUT4 address_11__I_0_Mux_2_i445_3_lut (.A(n15562), .B(n444), .C(rom_addr[5]), 
-         .Z(n445_adj_700)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i445_3_lut.init = 16'hcaca;
-    L6MUX21 i11860 (.D0(n12062), .D1(n12065), .SD(rom_addr[6]), .Z(n12485));
-    LUT4 address_11__I_0_Mux_4_i2396_3_lut_4_lut (.A(rom_addr[0]), .B(n14073), 
-         .C(rom_addr[5]), .D(n2395), .Z(n2396_adj_701)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2396_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_3_i2428_3_lut_4_lut (.A(rom_addr[0]), .B(n14073), 
-         .C(rom_addr[5]), .D(n2396_adj_702), .Z(n2428_adj_637)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i2428_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_6_i2267_3_lut_4_lut (.A(rom_addr[0]), .B(n14215), 
-         .C(rom_addr[3]), .D(n15545), .Z(n2267)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2267_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_5_i1883_3_lut_4_lut (.A(n14166), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1882), .Z(n1883_adj_661)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    LUT4 address_11__I_0_Mux_2_i557_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .Z(n557)) /* synthesis lut_function=(!(A (B+(C))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i557_3_lut_4_lut_3_lut.init = 16'h4646;
+    L6MUX21 i10047 (.D0(n10230), .D1(n10227), .SD(\rom_addr[5] ), .Z(n10231));
+    PFUMX i9065 (.BLUT(n9674), .ALUT(n891_c), .C0(\rom_addr[5] ), .Z(n9488));
+    PFUMX i10442 (.BLUT(n10772), .ALUT(n10769), .C0(\rom_addr[6] ), .Z(n10773));
+    LUT4 i9372_3_lut (.A(n9779), .B(n9780), .C(\rom_addr[7] ), .Z(n9795)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9372_3_lut.init = 16'hcaca;
+    LUT4 i1_4_lut_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .C(n11065), 
+         .D(\rom_addr[4] ), .Z(n9136)) /* synthesis lut_function=(A (B (C))+!A (B (C (D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_4_lut_4_lut_4_lut.init = 16'hc090;
+    LUT4 i5702_2_lut_rep_163_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .Z(n11004)) /* synthesis lut_function=(A (B (C))+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5702_2_lut_rep_163_3_lut.init = 16'h9090;
+    LUT4 i5867_2_lut_rep_146_2_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .Z(n10987)) /* synthesis lut_function=(!(A (B (C))+!A !(B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5867_2_lut_rep_146_2_lut_3_lut.init = 16'h6f6f;
+    LUT4 i1_2_lut_rep_200_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .C(\rom_addr[1] ), 
+         .Z(n11041)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_200_3_lut.init = 16'h6060;
+    PFUMX i9072 (.BLUT(n9493), .ALUT(n9494), .C0(\rom_addr[5] ), .Z(n9495));
+    LUT4 i9264_3_lut (.A(n1789), .B(n2044), .C(\rom_addr[8] ), .Z(n9687)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9264_3_lut.init = 16'hcaca;
+    PFUMX i9077 (.BLUT(n9496), .ALUT(n9497), .C0(\rom_addr[5] ), .Z(n9500));
+    PFUMX i9078 (.BLUT(n9498), .ALUT(n9499), .C0(\rom_addr[5] ), .Z(n9501));
+    PFUMX i9082 (.BLUT(n9503), .ALUT(n9504), .C0(\rom_addr[5] ), .Z(n9505));
+    PFUMX i9085 (.BLUT(n9506), .ALUT(n9507), .C0(\rom_addr[5] ), .Z(n9508));
+    PFUMX address_11__I_0_Mux_4_i1565 (.BLUT(n1549), .ALUT(n1564), .C0(\rom_addr[4] ), 
+          .Z(n1565_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX address_11__I_0_Mux_2_i190 (.BLUT(n158), .ALUT(n189), .C0(\rom_addr[5] ), 
+          .Z(n190)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 i9339_3_lut (.A(n9760), .B(n9761), .C(\rom_addr[7] ), .Z(n766)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9339_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_3_i301_3_lut_4_lut_4_lut_3_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n301)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A (B (C+!(D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i301_3_lut_4_lut_4_lut_3_lut_4_lut.init = 16'h0690;
+    PFUMX i10045 (.BLUT(n10229), .ALUT(n10228), .C0(\rom_addr[4] ), .Z(n10230));
+    L6MUX21 i10426 (.D0(n10751), .D1(n10749), .SD(\rom_addr[6] ), .Z(n10752));
+    PFUMX i9095 (.BLUT(n9516), .ALUT(n9517), .C0(\rom_addr[5] ), .Z(n9518));
+    LUT4 address_11__I_0_Mux_4_i61_3_lut_4_lut (.A(n11022), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(n11030), .Z(n61)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i61_3_lut_4_lut.init = 16'hf808;
+    LUT4 i5659_2_lut_2_lut_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .Z(n348)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5659_2_lut_2_lut_3_lut.init = 16'h0202;
+    PFUMX address_11__I_0_Mux_3_i1852 (.BLUT(n1820), .ALUT(n1851), .C0(\rom_addr[5] ), 
+          .Z(n1852)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX i10424 (.BLUT(n10962), .ALUT(n10750), .C0(\rom_addr[5] ), .Z(n10751));
+    LUT4 n70_bdd_2_lut_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .C(\rom_addr[1] ), 
+         .Z(n10838)) /* synthesis lut_function=(A (B (C))+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n70_bdd_2_lut_3_lut.init = 16'h9090;
+    LUT4 i1_2_lut_rep_176_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n11017)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_176_3_lut_4_lut.init = 16'h0d00;
+    PFUMX i10422 (.BLUT(n10748), .ALUT(n10747), .C0(\rom_addr[5] ), .Z(n10749));
+    LUT4 i9164_3_lut (.A(n1643), .B(n1549_adj_545), .C(\rom_addr[4] ), 
+         .Z(n9587)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9164_3_lut.init = 16'hcaca;
+    PFUMX address_11__I_0_Mux_3_i1531 (.BLUT(n1514), .ALUT(n1530), .C0(n9414), 
+          .Z(n1531)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX i9098 (.BLUT(n9519), .ALUT(n9520), .C0(\rom_addr[5] ), .Z(n9521));
+    PFUMX i9100 (.BLUT(n1117), .ALUT(n9143), .C0(\rom_addr[5] ), .Z(n9523));
+    PFUMX i9139 (.BLUT(n1565), .ALUT(n1596), .C0(\rom_addr[5] ), .Z(n9562));
+    LUT4 i8802_2_lut_rep_243 (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .Z(n11084)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i8802_2_lut_rep_243.init = 16'h2222;
+    LUT4 i9873_3_lut (.A(n1278_c), .B(n1533), .C(\rom_addr[8] ), .Z(n9511)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9873_3_lut.init = 16'hcaca;
+    PFUMX address_11__I_0_Mux_3_i956 (.BLUT(n924), .ALUT(n9136), .C0(\rom_addr[5] ), 
+          .Z(n956)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX address_11__I_0_Mux_3_i829 (.BLUT(n827), .ALUT(n828), .C0(n9410), 
+          .Z(n829)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX i9104 (.BLUT(n9525), .ALUT(n9526), .C0(\rom_addr[5] ), .Z(n9527));
+    LUT4 address_11__I_0_Mux_1_i1038_3_lut_4_lut_3_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n1038)) /* synthesis lut_function=(A (C (D)+!C !(D))+!A (B (C (D)+!C !(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1038_3_lut_4_lut_3_lut_4_lut.init = 16'he10e;
+    PFUMX i11084 (.BLUT(n11904), .ALUT(n11905), .C0(\rom_addr[0] ), .Z(n11906));
+    L6MUX21 i9107 (.D0(n9528), .D1(n9529), .SD(\rom_addr[5] ), .Z(n9530));
+    LUT4 i9160_3_lut (.A(n2025_c), .B(n2040), .C(\rom_addr[4] ), .Z(n9583)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9160_3_lut.init = 16'hcaca;
+    LUT4 i9087_3_lut (.A(n766_adj_547), .B(n1021), .C(\rom_addr[8] ), 
+         .Z(n9510)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9087_3_lut.init = 16'hcaca;
+    LUT4 i1_2_lut_rep_207 (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .Z(n11048)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_207.init = 16'h2222;
+    LUT4 i1_2_lut_rep_141_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .C(\rom_addr[2] ), 
+         .Z(n10982)) /* synthesis lut_function=(!((B+!(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_141_3_lut.init = 16'h2020;
+    PFUMX address_11__I_0_Mux_3_i381 (.BLUT(n364_c), .ALUT(n380_c), .C0(n9414), 
+          .Z(n381)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    L6MUX21 i10416 (.D0(n10735), .D1(n10733), .SD(\rom_addr[6] ), .Z(n10736));
+    PFUMX i9116 (.BLUT(n9537), .ALUT(n9538), .C0(\rom_addr[5] ), .Z(n9539));
+    PFUMX i10414 (.BLUT(n1181), .ALUT(n10734), .C0(\rom_addr[5] ), .Z(n10735));
+    PFUMX i9122 (.BLUT(n9543), .ALUT(n9544), .C0(\rom_addr[5] ), .Z(n9545));
+    LUT4 i5641_2_lut_rep_105_3_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[0] ), .Z(n10946)) /* synthesis lut_function=(!((B+((D)+!C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5641_2_lut_rep_105_3_lut_3_lut_4_lut.init = 16'h0020;
+    LUT4 i3945_2_lut_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .C(\rom_addr[1] ), 
+         .Z(n4511)) /* synthesis lut_function=(A ((C)+!B)+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3945_2_lut_3_lut.init = 16'hf6f6;
+    PFUMX address_11__I_0_Mux_3_i63 (.BLUT(n61_adj_548), .ALUT(n62), .C0(n9410), 
+          .Z(n63)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 i3008_3_lut_rep_135_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n10976)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3008_3_lut_rep_135_4_lut_3_lut.init = 16'hd6d6;
+    PFUMX i10562 (.BLUT(n11114), .ALUT(n11115), .C0(\rom_addr[1] ), .Z(n11116));
+    L6MUX21 i9125 (.D0(n9546), .D1(n9547), .SD(\rom_addr[5] ), .Z(n9548));
+    PFUMX i9130 (.BLUT(n9549), .ALUT(n9550), .C0(\rom_addr[5] ), .Z(n9553));
+    PFUMX i9131 (.BLUT(n9551), .ALUT(n9552), .C0(\rom_addr[5] ), .Z(n9554));
+    PFUMX i10119 (.BLUT(n10350), .ALUT(n10349), .C0(\rom_addr[6] ), .Z(n10351));
+    PFUMX address_11__I_0_Mux_4_i1787 (.BLUT(n1739), .ALUT(n1786), .C0(\rom_addr[5] ), 
+          .Z(n1787)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX address_11__I_0_Mux_4_i1531 (.BLUT(n1514_adj_549), .ALUT(n1530_adj_550), 
+          .C0(n9414), .Z(n1531_adj_551)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX i9140 (.BLUT(n1628), .ALUT(n1659), .C0(\rom_addr[5] ), .Z(n9563));
+    PFUMX i9064 (.BLUT(n797), .ALUT(n828_adj_552), .C0(\rom_addr[5] ), 
+          .Z(n9487));
+    LUT4 address_11__I_0_Mux_1_i308_3_lut_4_lut_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .Z(n308)) /* synthesis lut_function=(!(A (B+(C))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i308_3_lut_4_lut_4_lut_3_lut.init = 16'h4646;
+    LUT4 i1_2_lut_rep_117_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(\rom_addr[2] ), .Z(n10958)) /* synthesis lut_function=(!((B+!(C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_117_3_lut_4_lut.init = 16'h2000;
+    PFUMX address_11__I_0_Mux_4_i1213 (.BLUT(n1181_adj_553), .ALUT(n1212), 
+          .C0(\rom_addr[5] ), .Z(n1213)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 i9448_3_lut (.A(n9866), .B(n9867), .C(\rom_addr[8] ), .Z(n9871)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9448_3_lut.init = 16'hcaca;
+    PFUMX address_11__I_0_Mux_4_i892 (.BLUT(n859), .ALUT(n860), .C0(n11077), 
+          .Z(n892_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 i5664_2_lut_rep_101_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[2] ), .Z(n10942)) /* synthesis lut_function=(!((B+!(C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5664_2_lut_rep_101_3_lut_4_lut.init = 16'h2000;
+    LUT4 i9447_3_lut (.A(n9864), .B(n9865), .C(\rom_addr[8] ), .Z(n9870)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9447_3_lut.init = 16'hcaca;
+    PFUMX address_11__I_0_Mux_4_i829 (.BLUT(n812), .ALUT(n828_adj_554), 
+          .C0(n9414), .Z(n829_adj_555)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX address_11__I_0_Mux_4_i764 (.BLUT(n716), .ALUT(n732), .C0(n11075), 
+          .Z(n764)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX i11082 (.BLUT(n11901), .ALUT(n11902), .C0(\rom_addr[0] ), .Z(n11903));
+    LUT4 address_11__I_0_Mux_5_i1451_3_lut_4_lut_4_lut_3_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1451)) /* synthesis lut_function=(!(A (B (C+!(D))+!B ((D)+!C))+!A (B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1451_3_lut_4_lut_4_lut_3_lut_4_lut.init = 16'h0960;
+    LUT4 i5758_2_lut_rep_166_2_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .Z(n11007)) /* synthesis lut_function=(!(A (B+(C))+!A ((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5758_2_lut_rep_166_2_lut_3_lut.init = 16'h0606;
+    LUT4 i5944_2_lut_3_lut_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[0] ), .Z(n723)) /* synthesis lut_function=(!(A+!(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5944_2_lut_3_lut_3_lut.init = 16'h5454;
+    LUT4 address_11__I_0_Mux_3_i699_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(n11900), .D(n4046), .Z(n699)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i699_4_lut_4_lut.init = 16'hd1c0;
+    LUT4 i4635_3_lut_4_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .Z(n5223)) /* synthesis lut_function=(A (B)+!A !(B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4635_3_lut_4_lut_4_lut_3_lut.init = 16'h9d9d;
+    LUT4 address_11__I_0_Mux_3_i1514_3_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1514)) /* synthesis lut_function=(A (B (C+(D)))+!A (B (C)+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1514_3_lut_4_lut_4_lut.init = 16'hc9c0;
+    LUT4 address_11__I_0_Mux_4_i1738_3_lut_rep_174_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .Z(n11015)) /* synthesis lut_function=(!(A (B)+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1738_3_lut_rep_174_4_lut_3_lut.init = 16'h7676;
+    LUT4 i4629_2_lut_rep_180_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n11021)) /* synthesis lut_function=(A ((C)+!B)+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4629_2_lut_rep_180_3_lut.init = 16'hf6f6;
+    LUT4 address_11__I_0_Mux_6_i1450_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .Z(n1450)) /* synthesis lut_function=(A (B)+!A ((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1450_3_lut_4_lut_3_lut.init = 16'hd9d9;
+    PFUMX i9144 (.BLUT(n9565), .ALUT(n9566), .C0(\rom_addr[5] ), .Z(n9567));
+    LUT4 i3265_3_lut_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n3824)) /* synthesis lut_function=(!(A (B)+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3265_3_lut_3_lut_4_lut_3_lut.init = 16'h7676;
+    L6MUX21 i9386 (.D0(n9807), .D1(n9808), .SD(\rom_addr[10] ), .Z(\rom_q[4] ));
+    LUT4 i3208_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .Z(n3767)) /* synthesis lut_function=(A (B)+!A ((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3208_3_lut_4_lut_3_lut.init = 16'hd9d9;
+    PFUMX address_11__I_0_Mux_4_i381 (.BLUT(n364_adj_556), .ALUT(n380_adj_557), 
+          .C0(n9414), .Z(n381_adj_558)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    L6MUX21 i9451 (.D0(n9872), .D1(n9873), .SD(\rom_addr[10] ), .Z(\rom_q[2] ));
+    PFUMX i9147 (.BLUT(n9568), .ALUT(n9569), .C0(\rom_addr[5] ), .Z(n9570));
+    L6MUX21 i9092 (.D0(n9513), .D1(n9514), .SD(\rom_addr[10] ), .Z(\rom_q[5] ));
+    PFUMX i9020 (.BLUT(n286), .ALUT(n317), .C0(\rom_addr[5] ), .Z(n9443));
+    L6MUX21 i9265 (.D0(n9684), .D1(n9685), .SD(\rom_addr[9] ), .Z(n9688));
+    LUT4 address_11__I_0_Mux_1_i620_3_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n620)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A !(B (C (D))+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i620_3_lut_4_lut_4_lut.init = 16'h5019;
+    PFUMX i9153 (.BLUT(n9574), .ALUT(n9575), .C0(\rom_addr[5] ), .Z(n9576));
+    PFUMX i10412 (.BLUT(n10732), .ALUT(n1275_c), .C0(\rom_addr[5] ), .Z(n10733));
+    L6MUX21 i9384 (.D0(n9803), .D1(n9804), .SD(\rom_addr[9] ), .Z(n9807));
+    L6MUX21 i9385 (.D0(n9805), .D1(n9806), .SD(\rom_addr[9] ), .Z(n9808));
+    LUT4 i3183_2_lut_rep_233 (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .Z(n11074)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3183_2_lut_rep_233.init = 16'hbbbb;
+    PFUMX i9156 (.BLUT(n9577), .ALUT(n9578), .C0(\rom_addr[5] ), .Z(n9579));
+    PFUMX i10024 (.BLUT(n10207), .ALUT(n10206), .C0(\rom_addr[3] ), .Z(n10208));
+    LUT4 i9478_3_lut (.A(n205_adj_559), .B(n220), .C(\rom_addr[4] ), .Z(n9901)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9478_3_lut.init = 16'hcaca;
+    LUT4 i5817_2_lut_3_lut_3_lut_4_lut (.A(\rom_addr[3] ), .B(\rom_addr[0] ), 
+         .C(\rom_addr[4] ), .D(n11088), .Z(n1181_adj_553)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A ((D)+!C))) */ ;
+    defparam i5817_2_lut_3_lut_3_lut_4_lut.init = 16'h0070;
+    PFUMX i9450 (.BLUT(n9870), .ALUT(n9871), .C0(\rom_addr[9] ), .Z(n9873));
+    PFUMX i9161 (.BLUT(n9580), .ALUT(n9581), .C0(\rom_addr[5] ), .Z(n9584));
+    L6MUX21 i9465 (.D0(n9885), .D1(n9886), .SD(\rom_addr[9] ), .Z(n9888));
+    PFUMX i9162 (.BLUT(n9582), .ALUT(n9583), .C0(\rom_addr[5] ), .Z(n9585));
+    LUT4 i4640_4_lut_4_lut_4_lut (.A(\rom_addr[3] ), .B(\rom_addr[0] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[1] ), .Z(n5228)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A (B (C (D)+!C !(D))+!B (C+!(D))))) */ ;
+    defparam i4640_4_lut_4_lut_4_lut.init = 16'h07c0;
+    PFUMX i9090 (.BLUT(n9509), .ALUT(n9510), .C0(\rom_addr[9] ), .Z(n9513));
+    LUT4 i3_1_lut_rep_245 (.A(\rom_addr[5] ), .Z(n11086)) /* synthesis lut_function=(!(A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3_1_lut_rep_245.init = 16'h5555;
+    LUT4 i1_2_lut_rep_208 (.A(\rom_addr[4] ), .B(\rom_addr[1] ), .Z(n11049)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_208.init = 16'heeee;
+    PFUMX i9091 (.BLUT(n9511), .ALUT(n9512), .C0(\rom_addr[9] ), .Z(n9514));
+    PFUMX i9166 (.BLUT(n9587), .ALUT(n9588), .C0(\rom_addr[5] ), .Z(n9589));
+    L6MUX21 i10398 (.D0(n10713), .D1(n10711), .SD(\rom_addr[6] ), .Z(n10714));
+    PFUMX i9169 (.BLUT(n9590), .ALUT(n9591), .C0(\rom_addr[5] ), .Z(n9592));
+    LUT4 address_11__I_0_Mux_1_i413_3_lut_then_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n11124)) /* synthesis lut_function=(A ((C)+!B)+!A (B+!(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i413_3_lut_then_4_lut.init = 16'he7e6;
+    PFUMX i9262 (.BLUT(n766), .ALUT(n1021_adj_560), .C0(\rom_addr[8] ), 
+          .Z(n9685));
+    PFUMX i9266 (.BLUT(n9686), .ALUT(n9687), .C0(\rom_addr[9] ), .Z(n9689));
+    PFUMX i9175 (.BLUT(n9596), .ALUT(n9597), .C0(\rom_addr[5] ), .Z(n9598));
+    PFUMX i10043 (.BLUT(n10226), .ALUT(n10225), .C0(\rom_addr[4] ), .Z(n10227));
+    PFUMX i9380 (.BLUT(n9795), .ALUT(n9796), .C0(\rom_addr[8] ), .Z(n9803));
+    PFUMX i9381 (.BLUT(n9797), .ALUT(n9798), .C0(\rom_addr[8] ), .Z(n9804));
+    PFUMX i9382 (.BLUT(n9799), .ALUT(n9800), .C0(\rom_addr[8] ), .Z(n9805));
+    PFUMX i9178 (.BLUT(n9599), .ALUT(n9600), .C0(\rom_addr[5] ), .Z(n9601));
+    PFUMX i9383 (.BLUT(n9801), .ALUT(n9802), .C0(\rom_addr[8] ), .Z(n9806));
+    PFUMX i10396 (.BLUT(n1181), .ALUT(n10712), .C0(\rom_addr[5] ), .Z(n10713));
+    PFUMX i9184 (.BLUT(n9605), .ALUT(n9606), .C0(\rom_addr[5] ), .Z(n9607));
+    L6MUX21 i9414 (.D0(n9832), .D1(n9833), .SD(\rom_addr[8] ), .Z(n9837));
+    PFUMX i9449 (.BLUT(n9868), .ALUT(n9869), .C0(\rom_addr[9] ), .Z(n9872));
+    LUT4 i9984_2_lut_rep_242 (.A(\rom_addr[0] ), .B(\rom_addr[4] ), .Z(n11083)) /* synthesis lut_function=(!(A+(B))) */ ;
+    defparam i9984_2_lut_rep_242.init = 16'h1111;
+    PFUMX i10394 (.BLUT(n10710), .ALUT(n10709), .C0(\rom_addr[5] ), .Z(n10711));
+    PFUMX i9462 (.BLUT(n9879), .ALUT(n9880), .C0(\rom_addr[8] ), .Z(n9885));
+    PFUMX i9464 (.BLUT(n9883), .ALUT(n9884), .C0(\rom_addr[9] ), .Z(n9887));
+    PFUMX i9187 (.BLUT(n9608), .ALUT(n9609), .C0(\rom_addr[5] ), .Z(n9610));
+    PFUMX address_11__I_0_Mux_7_i2046 (.BLUT(n1534), .ALUT(n2045), .C0(\rom_addr[9] ), 
+          .Z(n2046)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    L6MUX21 i9324 (.D0(n9745), .D1(n9746), .SD(\rom_addr[7] ), .Z(n2044_adj_561));
+    LUT4 n1241_bdd_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n684_adj_562)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+!(D)))+!A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n1241_bdd_4_lut_4_lut.init = 16'hc39c;
+    LUT4 address_11__I_0_Mux_2_i1403_4_lut_4_lut_4_lut (.A(\rom_addr[5] ), 
+         .B(n6852), .C(\rom_addr[4] ), .D(n10980), .Z(n1403)) /* synthesis lut_function=(!(A (D)+!A (B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1403_4_lut_4_lut_4_lut.init = 16'h01ab;
+    LUT4 i4642_2_lut_2_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), .Z(n5230)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4642_2_lut_2_lut.init = 16'hdddd;
+    L6MUX21 i9407 (.D0(n9818), .D1(n9819), .SD(\rom_addr[7] ), .Z(n9830));
+    L6MUX21 i9410 (.D0(n9824), .D1(n9825), .SD(\rom_addr[7] ), .Z(n9833));
+    PFUMX i9197 (.BLUT(n9618), .ALUT(n9619), .C0(\rom_addr[5] ), .Z(n9620));
+    PFUMX i9261 (.BLUT(n255), .ALUT(n510), .C0(\rom_addr[8] ), .Z(n9684));
+    PFUMX i9200 (.BLUT(n9621), .ALUT(n9622), .C0(\rom_addr[5] ), .Z(n9623));
+    PFUMX i10597 (.BLUT(n11166), .ALUT(n11167), .C0(\rom_addr[1] ), .Z(n11168));
+    LUT4 address_11__I_0_Mux_3_i828_4_lut_4_lut (.A(\rom_addr[5] ), .B(n9127), 
+         .C(n3720), .D(n11017), .Z(n828)) /* synthesis lut_function=(A (D)+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i828_4_lut_4_lut.init = 16'hae04;
+    LUT4 address_11__I_0_Mux_2_i1787_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10976), 
+         .C(\rom_addr[5] ), .D(n1786_adj_563), .Z(n1787_adj_564)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1787_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_2_i890_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11015), .Z(n890)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i890_3_lut_4_lut.init = 16'h2f20;
+    PFUMX i9206 (.BLUT(n9627), .ALUT(n9628), .C0(\rom_addr[5] ), .Z(n9629));
+    PFUMX i9212 (.BLUT(n9633), .ALUT(n9634), .C0(\rom_addr[5] ), .Z(n9635));
+    L6MUX21 i9442 (.D0(n9854), .D1(n9855), .SD(\rom_addr[7] ), .Z(n9865));
+    LUT4 address_11__I_0_Mux_3_i1787_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10976), 
+         .C(\rom_addr[5] ), .D(n1786_adj_565), .Z(n1787_adj_566)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1787_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_1_i731_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n731)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)+!C !(D)))+!A ((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i731_3_lut_4_lut_4_lut.init = 16'h200e;
+    LUT4 address_11__I_0_Mux_4_i1530_3_lut_4_lut_4_lut (.A(\rom_addr[5] ), 
+         .B(n1643), .C(n10976), .D(\rom_addr[0] ), .Z(n1530_adj_550)) /* synthesis lut_function=(A (B)+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1530_3_lut_4_lut_4_lut.init = 16'h8d88;
+    LUT4 n483_bdd_3_lut_10030_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[4] ), .Z(n10207)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (B (C+!(D))+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n483_bdd_3_lut_10030_4_lut_4_lut.init = 16'h3f20;
+    LUT4 i9071_3_lut_4_lut (.A(n11004), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n1643), .Z(n9494)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9071_3_lut_4_lut.init = 16'hefe0;
+    PFUMX i9215 (.BLUT(n9636), .ALUT(n9637), .C0(\rom_addr[4] ), .Z(n9638));
+    LUT4 n3435_bdd_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n10527)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A ((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n3435_bdd_3_lut_4_lut_4_lut.init = 16'h2006;
+    LUT4 address_11__I_0_Mux_5_i574_3_lut_4_lut (.A(n11001), .B(n11083), 
+         .C(\rom_addr[5] ), .D(n542), .Z(n574)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i574_3_lut_4_lut.init = 16'h8f80;
+    LUT4 i4077_4_lut_4_lut (.A(n11021), .B(\rom_addr[1] ), .C(\rom_addr[4] ), 
+         .D(n11050), .Z(n4657)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A !(B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4077_4_lut_4_lut.init = 16'h505c;
+    LUT4 address_11__I_0_Mux_1_i428_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n428_adj_567)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A (B ((D)+!C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i428_3_lut_4_lut_4_lut.init = 16'h2043;
+    LUT4 address_11__I_0_Mux_0_i908_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n908)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i908_3_lut_4_lut_4_lut.init = 16'h2048;
+    LUT4 i5765_4_lut_4_lut (.A(n11021), .B(\rom_addr[4] ), .C(n3249), 
+         .D(\rom_addr[0] ), .Z(n1978)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (D)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5765_4_lut_4_lut.init = 16'h7400;
+    LUT4 address_11__I_0_Mux_4_i986_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n986)) /* synthesis lut_function=(!(A (B (D)+!B !(C+!(D)))+!A (B (D)+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i986_3_lut_4_lut_4_lut_4_lut.init = 16'h20fe;
+    LUT4 i1_2_lut_rep_100_3_lut_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n10941)) /* synthesis lut_function=(A+(B+!(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_100_3_lut_4_lut.init = 16'hefff;
+    LUT4 rom_addr_1__bdd_3_lut_10467_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[4] ), .Z(n10221)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C+!(D)))+!A (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam rom_addr_1__bdd_3_lut_10467_4_lut_4_lut_4_lut.init = 16'h207f;
+    LUT4 address_11__I_0_Mux_3_i364_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[0] ), .C(\rom_addr[1] ), .D(\rom_addr[3] ), .Z(n364_c)) /* synthesis lut_function=(A (B (C (D)))+!A (B (C)+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i364_3_lut_4_lut_4_lut_4_lut.init = 16'hc041;
+    LUT4 i2024_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[4] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n2580)) /* synthesis lut_function=(A (B ((D)+!C))+!A ((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2024_3_lut_4_lut_4_lut_4_lut.init = 16'hdd59;
+    LUT4 i9061_3_lut_4_lut (.A(n11004), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n1435), .Z(n9484)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9061_3_lut_4_lut.init = 16'hfe0e;
+    LUT4 i9146_4_lut (.A(\rom_addr[0] ), .B(n1017), .C(\rom_addr[4] ), 
+         .D(n3759), .Z(n9569)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;
+    defparam i9146_4_lut.init = 16'hc0ca;
+    LUT4 address_11__I_0_Mux_1_i971_3_lut_4_lut_3_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[0] ), .D(\rom_addr[1] ), .Z(n971)) /* synthesis lut_function=(!(A (B+!(C+(D)))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i971_3_lut_4_lut_3_lut_4_lut.init = 16'h6664;
+    LUT4 n5246_bdd_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11018), .C(\rom_addr[4] ), 
+         .D(n124), .Z(n10747)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n5246_bdd_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_6_i1786_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11018), 
+         .C(\rom_addr[4] ), .D(n10967), .Z(n1786_adj_568)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1786_3_lut_4_lut.init = 16'hf202;
+    LUT4 i1_2_lut_rep_94_3_lut_4_lut_4_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), 
+         .C(n11090), .D(\rom_addr[2] ), .Z(n10935)) /* synthesis lut_function=((B+(C+(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_94_3_lut_4_lut_4_lut.init = 16'hfffd;
+    LUT4 n635_bdd_3_lut_10131_3_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), 
+         .C(n635), .Z(n10349)) /* synthesis lut_function=(!((B+!(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n635_bdd_3_lut_10131_3_lut.init = 16'h2020;
+    PFUMX i9226 (.BLUT(n428_adj_569), .ALUT(n443), .C0(\rom_addr[4] ), 
+          .Z(n9649));
+    PFUMX i9463 (.BLUT(n9881), .ALUT(n9882), .C0(\rom_addr[8] ), .Z(n9886));
+    LUT4 address_11__I_0_Mux_6_i1403_3_lut_4_lut (.A(n10980), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1387), .Z(n1403_adj_570)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1403_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_6_i1947_3_lut_4_lut (.A(n10980), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1946), .Z(n1947)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1947_3_lut_4_lut.init = 16'hf808;
+    LUT4 address_11__I_0_Mux_6_i1723_3_lut_4_lut (.A(n10980), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1707), .Z(n1723_c)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1723_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_0_i526_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n526)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A ((D)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i526_3_lut_4_lut_4_lut.init = 16'h2046;
+    LUT4 address_11__I_0_Mux_1_i526_3_lut_4_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n526_adj_571)) /* synthesis lut_function=(!(A (B (D)+!B !((D)+!C))+!A !(D))) */ ;
+    defparam address_11__I_0_Mux_1_i526_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h778a;
+    LUT4 address_11__I_0_Mux_4_i1514_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1514_adj_549)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (C+(D)))+!A ((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1514_3_lut_4_lut_4_lut.init = 16'h0c82;
+    LUT4 address_11__I_0_Mux_5_i1883_3_lut_4_lut (.A(n11004), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1882), .Z(n1883)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_5_i1883_3_lut_4_lut.init = 16'hfe0e;
-    L6MUX21 i11877 (.D0(n190), .D1(n12096), .SD(rom_addr[6]), .Z(n12502));
-    LUT4 address_11__I_0_Mux_6_i2141_4_lut_then_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n14338)) /* synthesis lut_function=(!((B+(C+(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2141_4_lut_then_4_lut.init = 16'h0002;
-    LUT4 i12404_3_lut (.A(n445_adj_700), .B(n13042), .C(rom_addr[6]), 
-         .Z(n12504)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12404_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_6_i1883_3_lut_4_lut (.A(n14166), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n14104), .Z(n1883_adj_703)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1883_3_lut_4_lut.init = 16'hefe0;
-    LUT4 i11439_3_lut_4_lut (.A(n15550), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n2025_adj_704), .Z(n12064)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11439_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i3_4_lut (.A(rom_addr[7]), .B(n11720), .C(rom_addr[6]), .D(n11747), 
-         .Z(n11748)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;
-    defparam i3_4_lut.init = 16'h0400;
-    LUT4 i1_4_lut_adj_18 (.A(n14132), .B(rom_addr[8]), .C(n14177), .D(rom_addr[4]), 
-         .Z(n11720)) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A (B+!(C (D))))) */ ;
-    defparam i1_4_lut_adj_18.init = 16'h3022;
-    LUT4 address_11__I_0_Mux_6_i2141_4_lut_else_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n14337)) /* synthesis lut_function=(!((B ((D)+!C)+!B (C+(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2141_4_lut_else_4_lut.init = 16'h0082;
-    LUT4 i7434_4_lut (.A(n2621_adj_705), .B(n14273), .C(n2684), .D(rom_addr[6]), 
-         .Z(n3069)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7434_4_lut.init = 16'hc088;
-    LUT4 address_11__I_0_Mux_7_i2621_4_lut (.A(rom_addr[0]), .B(n2620), 
-         .C(rom_addr[5]), .D(n14091), .Z(n2621_adj_705)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_7_i2621_4_lut.init = 16'hcac0;
-    LUT4 i12318_3_lut (.A(n12045), .B(n12046), .C(rom_addr[5]), .Z(n12047)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12318_3_lut.init = 16'hcaca;
-    LUT4 i11830_3_lut_4_lut (.A(n15550), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n14161), .Z(n12455)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11830_3_lut_4_lut.init = 16'h8f80;
-    L6MUX21 i11880 (.D0(n12118), .D1(n12124), .SD(rom_addr[6]), .Z(n12505));
-    L6MUX21 i11883 (.D0(n12142), .D1(n12145), .SD(rom_addr[6]), .Z(n12508));
-    LUT4 address_11__I_0_Mux_3_i445_3_lut (.A(n12241), .B(n444), .C(rom_addr[5]), 
-         .Z(n445)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i445_3_lut.init = 16'hcaca;
-    L6MUX21 i11884 (.D0(n12151), .D1(n1149_c), .SD(rom_addr[6]), .Z(n12509));
-    LUT4 i11866_3_lut (.A(n12480), .B(n12481), .C(rom_addr[7]), .Z(n12491)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11866_3_lut.init = 16'hcaca;
-    LUT4 i11867_3_lut (.A(n12482), .B(n12483), .C(rom_addr[7]), .Z(n12492)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11867_3_lut.init = 16'hcaca;
-    LUT4 n2596_bdd_3_lut_13289_4_lut (.A(rom_addr[0]), .B(n14215), .C(rom_addr[3]), 
-         .D(n14188), .Z(n13184)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2596_bdd_3_lut_13289_4_lut.init = 16'h7f70;
-    PFUMX i11885 (.BLUT(n1213_adj_678), .ALUT(n1276), .C0(rom_addr[6]), 
-          .Z(n12510));
-    LUT4 address_11__I_0_Mux_1_i1054_3_lut_4_lut (.A(n15550), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1038_adj_708), .Z(n1054_adj_709)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1054_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i11458_4_lut_then_4_lut (.A(rom_addr[2]), .B(rom_addr[1]), .C(rom_addr[4]), 
-         .D(rom_addr[3]), .Z(n14284)) /* synthesis lut_function=(A (B (C)+!B (D))+!A (B (C (D)+!C !(D))+!B (C (D)))) */ ;
-    defparam i11458_4_lut_then_4_lut.init = 16'hf284;
-    L6MUX21 i11887 (.D0(n12154), .D1(n12160), .SD(rom_addr[6]), .Z(n12512));
-    PFUMX i11888 (.BLUT(n1597_adj_687), .ALUT(n1660_adj_710), .C0(rom_addr[6]), 
-          .Z(n12513));
-    LUT4 n1699_bdd_4_lut_then_4_lut (.A(rom_addr[0]), .B(rom_addr[2]), .C(rom_addr[1]), 
-         .D(rom_addr[4]), .Z(n14341)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C+(D)))+!A (D)) */ ;
-    defparam n1699_bdd_4_lut_then_4_lut.init = 16'hff28;
-    LUT4 i11841_4_lut (.A(n14097), .B(n2025), .C(rom_addr[5]), .D(rom_addr[4]), 
-         .Z(n12466)) /* synthesis lut_function=(A (B+((D)+!C))+!A !(((D)+!C)+!B)) */ ;
-    defparam i11841_4_lut.init = 16'haaca;
-    LUT4 i11772_3_lut (.A(n12395), .B(n12396), .C(rom_addr[7]), .Z(n1789)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11772_3_lut.init = 16'hcaca;
-    LUT4 i11840_3_lut (.A(n1914_adj_603), .B(n14052), .C(rom_addr[5]), 
-         .Z(n12465)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11840_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_0_i1244_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(n14160), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n1244_adj_638)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i1244_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    PFUMX i11889 (.BLUT(n1724_adj_712), .ALUT(n1787), .C0(rom_addr[6]), 
-          .Z(n12514));
-    LUT4 n13590_bdd_3_lut (.A(n13590), .B(n13589), .C(rom_addr[5]), .Z(n13591)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n13590_bdd_3_lut.init = 16'hcaca;
-    PFUMX i11890 (.BLUT(n1852_adj_699), .ALUT(n1915_adj_698), .C0(rom_addr[6]), 
-          .Z(n12515));
-    LUT4 n1699_bdd_4_lut_else_4_lut (.A(rom_addr[0]), .B(rom_addr[2]), .C(rom_addr[1]), 
-         .Z(n14340)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;
-    defparam n1699_bdd_4_lut_else_4_lut.init = 16'h0202;
-    L6MUX21 i11425 (.D0(n12048), .D1(n12049), .SD(rom_addr[6]), .Z(n12050));
-    LUT4 n221_bdd_4_lut (.A(n14059), .B(n5294), .C(rom_addr[0]), .D(rom_addr[5]), 
-         .Z(n13603)) /* synthesis lut_function=(A (B (D)+!B (C+(D)))+!A !(B+((D)+!C))) */ ;
-    defparam n221_bdd_4_lut.init = 16'haa30;
-    LUT4 i11801_3_lut (.A(n12247), .B(n508_adj_713), .C(rom_addr[6]), 
-         .Z(n12426)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11801_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i508_3_lut (.A(n14291), .B(n507), .C(rom_addr[5]), 
-         .Z(n508_adj_713)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i508_3_lut.init = 16'hcaca;
-    LUT4 i11802_3_lut (.A(n13386), .B(n12262), .C(rom_addr[6]), .Z(n12427)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11802_3_lut.init = 16'hcaca;
-    LUT4 i12334_3_lut (.A(n12405), .B(n14376), .C(rom_addr[5]), .Z(n12407)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12334_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i1597_3_lut (.A(n1565_adj_7), .B(n1596_adj_715), 
-         .C(rom_addr[5]), .Z(n1597_adj_688)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1597_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_0_i2555_4_lut (.A(n14076), .B(n14121), .C(rom_addr[5]), 
-         .D(n14130), .Z(n2555_adj_685)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i2555_4_lut.init = 16'hca0a;
-    LUT4 i5816_3_lut_4_lut_then_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14344)) /* synthesis lut_function=(A (B (C+(D)))+!A !((D)+!C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5816_3_lut_4_lut_then_4_lut.init = 16'h88d0;
-    LUT4 i5816_3_lut_4_lut_else_4_lut (.A(rom_addr[3]), .B(rom_addr[4]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14343)) /* synthesis lut_function=(A (B (C+(D))+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5816_3_lut_4_lut_else_4_lut.init = 16'ha880;
-    LUT4 i12341_3_lut (.A(n14294), .B(n14363), .C(rom_addr[5]), .Z(n12314)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12341_3_lut.init = 16'hcaca;
-    LUT4 n221_bdd_3_lut_13109 (.A(n221), .B(n13601), .C(rom_addr[5]), 
-         .Z(n13602)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n221_bdd_3_lut_13109.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i253_3_lut (.A(n221), .B(n12223), .C(rom_addr[5]), 
-         .Z(n253)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i253_3_lut.init = 16'hcaca;
-    PFUMX i11924 (.BLUT(n12547), .ALUT(n12548), .C0(rom_addr[6]), .Z(n12549));
-    LUT4 i11726_3_lut (.A(n13480), .B(n12348), .C(rom_addr[7]), .Z(n12351)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11726_3_lut.init = 16'hcaca;
-    LUT4 i7114_4_lut (.A(rom_addr[0]), .B(n14139), .C(n6308), .D(rom_addr[5]), 
-         .Z(n190_adj_676)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7114_4_lut.init = 16'h0a22;
-    LUT4 address_11__I_0_Mux_2_i699_3_lut (.A(n14185), .B(n603), .C(rom_addr[3]), 
-         .Z(n699_adj_673)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i699_3_lut.init = 16'hcaca;
-    LUT4 i11712_3_lut (.A(n13592), .B(n12335), .C(rom_addr[7]), .Z(n12337)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11712_3_lut.init = 16'hcaca;
-    L6MUX21 i11937 (.D0(n12560), .D1(n12561), .SD(rom_addr[6]), .Z(n12562));
-    L6MUX21 i11447 (.D0(n12070), .D1(n12071), .SD(rom_addr[6]), .Z(n12072));
-    LUT4 i11926_3_lut (.A(n475), .B(n205_adj_549), .C(rom_addr[4]), .Z(n12551)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11926_3_lut.init = 16'hcaca;
-    LUT4 i12469_4_lut (.A(n2573_adj_686), .B(n15541), .C(rom_addr[6]), 
-         .D(n14232), .Z(n2685_adj_716)) /* synthesis lut_function=(A (B+!(C+(D)))+!A (B (C+(D)))) */ ;
-    defparam i12469_4_lut.init = 16'hccca;
-    L6MUX21 i11946 (.D0(n12569), .D1(n12570), .SD(rom_addr[6]), .Z(n12571));
-    LUT4 i12240_3_lut (.A(n2283_adj_568), .B(n2298_adj_564), .C(rom_addr[4]), 
-         .Z(n2299_adj_717)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12240_3_lut.init = 16'hcaca;
-    PFUMX i11955 (.BLUT(n12578), .ALUT(n12579), .C0(rom_addr[6]), .Z(n12580));
-    LUT4 i11429_3_lut_4_lut (.A(rom_addr[0]), .B(n14129), .C(rom_addr[4]), 
-         .D(n14128), .Z(n12054)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11429_3_lut_4_lut.init = 16'h2f20;
-    LUT4 address_11__I_0_Mux_4_i1596_3_lut_4_lut (.A(rom_addr[0]), .B(n14129), 
-         .C(rom_addr[4]), .D(n14115), .Z(n1596_adj_715)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1596_3_lut_4_lut.init = 16'h2f20;
-    LUT4 i11964_4_lut_4_lut (.A(n14223), .B(rom_addr[4]), .C(n5064), .D(n684), 
-         .Z(n12589)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11964_4_lut_4_lut.init = 16'h7340;
-    LUT4 address_11__I_0_Mux_1_i1435_3_lut_4_lut_4_lut (.A(n14272), .B(n14121), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1435_adj_651)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1435_3_lut_4_lut_4_lut.init = 16'h3530;
-    LUT4 address_11__I_0_Mux_5_i2283_3_lut_4_lut_4_lut (.A(n14272), .B(n15550), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2283_adj_636)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2283_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 address_11__I_0_Mux_1_i1243_3_lut_4_lut_4_lut (.A(n14272), .B(n14181), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1243)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1243_3_lut_4_lut_4_lut.init = 16'h3530;
-    LUT4 address_11__I_0_Mux_6_i2573_3_lut_4_lut_4_lut (.A(n14272), .B(n15546), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2573)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2573_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i4917_3_lut_4_lut (.A(rom_addr[2]), .B(n14218), .C(rom_addr[4]), 
-         .D(n14177), .Z(n5737)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4917_3_lut_4_lut.init = 16'h4f40;
-    LUT4 i11704_3_lut (.A(n13466), .B(n13538), .C(rom_addr[7]), .Z(n12329)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11704_3_lut.init = 16'hcaca;
-    L6MUX21 i11962 (.D0(n12585), .D1(n12586), .SD(rom_addr[6]), .Z(n12587));
-    L6MUX21 i11969 (.D0(n12592), .D1(n12593), .SD(rom_addr[6]), .Z(n12594));
-    L6MUX21 i11972 (.D0(n12595), .D1(n12596), .SD(rom_addr[6]), .Z(n12597));
-    LUT4 n2174_bdd_3_lut (.A(n2174), .B(n13220), .C(rom_addr[7]), .Z(n13221)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n2174_bdd_3_lut.init = 16'hcaca;
-    L6MUX21 i13060 (.D0(n13560), .D1(n13558), .SD(rom_addr[6]), .Z(n13561));
-    L6MUX21 i11979 (.D0(n12602), .D1(n12603), .SD(rom_addr[6]), .Z(n12604));
-    LUT4 i4887_3_lut_rep_156_4_lut (.A(rom_addr[2]), .B(n14218), .C(rom_addr[4]), 
-         .D(n14127), .Z(n14073)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4887_3_lut_rep_156_4_lut.init = 16'h04f4;
-    LUT4 i11739_4_lut (.A(n14070), .B(n4_adj_8), .C(rom_addr[5]), .D(rom_addr[4]), 
-         .Z(n12364)) /* synthesis lut_function=(A (B (C))+!A (B (C+!(D))+!B !(C+(D)))) */ ;
-    defparam i11739_4_lut.init = 16'hc0c5;
-    PFUMX i11980 (.BLUT(n1054_adj_709), .ALUT(n1085), .C0(rom_addr[5]), 
-          .Z(n12605));
-    LUT4 i7369_4_lut (.A(n11756), .B(rom_addr[6]), .C(n1659_adj_720), 
-         .D(rom_addr[5]), .Z(n1661)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7369_4_lut.init = 16'hc088;
-    LUT4 i7157_4_lut (.A(rom_addr[0]), .B(n14155), .C(n14127), .D(n6857), 
-         .Z(n2237_adj_694)) /* synthesis lut_function=(!((B (C (D))+!B (C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7157_4_lut.init = 16'h0a88;
-    LUT4 i6002_2_lut (.A(rom_addr[4]), .B(rom_addr[5]), .Z(n6857)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i6002_2_lut.init = 16'heeee;
-    LUT4 address_11__I_0_Mux_5_i2041_3_lut_then_3_lut (.A(rom_addr[1]), .B(rom_addr[4]), 
-         .C(rom_addr[2]), .Z(n14347)) /* synthesis lut_function=(A (C)+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2041_3_lut_then_3_lut.init = 16'ha4a4;
-    PFUMX i13429 (.BLUT(n14329), .ALUT(n14330), .C0(rom_addr[0]), .Z(n14331));
-    LUT4 address_11__I_0_Mux_5_i2041_3_lut_else_3_lut (.A(rom_addr[1]), .B(rom_addr[4]), 
-         .C(rom_addr[3]), .D(rom_addr[2]), .Z(n14346)) /* synthesis lut_function=(A (B (C)+!B (C (D)))+!A !((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2041_3_lut_else_3_lut.init = 16'ha084;
-    PFUMX i11985 (.BLUT(n12608), .ALUT(n12609), .C0(rom_addr[6]), .Z(n12610));
-    LUT4 i7399_4_lut_4_lut (.A(n14087), .B(rom_addr[5]), .C(n5737), .D(rom_addr[0]), 
-         .Z(n2492_adj_684)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (D)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7399_4_lut_4_lut.init = 16'h7400;
-    LUT4 i11948_3_lut (.A(n1069), .B(n1084_adj_655), .C(rom_addr[4]), 
-         .Z(n12573)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11948_3_lut.init = 16'hcaca;
-    PFUMX i11988 (.BLUT(n12611), .ALUT(n12612), .C0(rom_addr[6]), .Z(n12613));
-    LUT4 address_11__I_0_Mux_6_i2365_4_lut_4_lut (.A(n14087), .B(n3064), 
-         .C(rom_addr[5]), .D(rom_addr[0]), .Z(n2365_adj_629)) /* synthesis lut_function=(A (B (C (D)))+!A (B ((D)+!C)+!B !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2365_4_lut_4_lut.init = 16'hc505;
-    LUT4 address_11__I_0_Mux_4_i2283_3_lut_4_lut_4_lut (.A(n14272), .B(n14156), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2283)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2283_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i11674_3_lut (.A(n12295), .B(n12296), .C(rom_addr[7]), .Z(n12299)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11674_3_lut.init = 16'hcaca;
-    L6MUX21 i11995 (.D0(n12618), .D1(n12619), .SD(rom_addr[6]), .Z(n12620));
-    LUT4 i5098_4_lut_4_lut (.A(n14164), .B(rom_addr[1]), .C(rom_addr[4]), 
-         .D(n14279), .Z(n5933)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A !(B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5098_4_lut_4_lut.init = 16'h505c;
-    LUT4 address_11__I_0_Mux_4_i1212_3_lut_4_lut (.A(n14272), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1211), .Z(n1212_adj_584)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1212_3_lut_4_lut.init = 16'hf808;
-    L6MUX21 i11876 (.D0(n12087), .D1(n12093), .SD(rom_addr[6]), .Z(n12501));
-    LUT4 i11852_4_lut (.A(n956_adj_548), .B(rom_addr[0]), .C(rom_addr[6]), 
-         .D(n8028), .Z(n12477)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
-    defparam i11852_4_lut.init = 16'hca0a;
-    L6MUX21 i11798 (.D0(n63_adj_611), .D1(n12229), .SD(rom_addr[6]), .Z(n12423));
-    L6MUX21 i11792 (.D0(n12196), .D1(n12199), .SD(rom_addr[6]), .Z(n12417));
-    PFUMX i11756 (.BLUT(n574), .ALUT(n637), .C0(rom_addr[6]), .Z(n12381));
-    LUT4 i11881_3_lut (.A(n12127), .B(n12133), .C(rom_addr[6]), .Z(n12506)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11881_3_lut.init = 16'hcaca;
-    LUT4 i12987_then_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[5]), 
-         .D(rom_addr[4]), .Z(n14350)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;
-    defparam i12987_then_4_lut.init = 16'h0004;
-    LUT4 i12370_3_lut (.A(n14373), .B(n14379), .C(rom_addr[5]), .Z(n2110)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12370_3_lut.init = 16'hcaca;
-    LUT4 i11789_4_lut (.A(n12181), .B(n380_adj_721), .C(rom_addr[6]), 
-         .D(rom_addr[5]), .Z(n12414)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
-    defparam i11789_4_lut.init = 16'hca0a;
-    LUT4 address_11__I_0_Mux_0_i380_4_lut (.A(n14210), .B(n14096), .C(rom_addr[4]), 
-         .D(n14201), .Z(n380_adj_721)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i380_4_lut.init = 16'hc0ca;
-    LUT4 n13523_bdd_3_lut_4_lut (.A(rom_addr[0]), .B(n14087), .C(rom_addr[5]), 
-         .D(n13523), .Z(n13524)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n13523_bdd_3_lut_4_lut.init = 16'h2f20;
-    LUT4 address_11__I_0_Mux_0_i2110_4_lut_4_lut (.A(rom_addr[0]), .B(n14087), 
-         .C(n6044), .D(rom_addr[6]), .Z(n2110_adj_691)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i2110_4_lut_4_lut.init = 16'ha022;
-    PFUMX i11670 (.BLUT(n12121), .ALUT(n2173_adj_722), .C0(rom_addr[6]), 
-          .Z(n12295));
-    LUT4 address_11__I_0_Mux_3_i2492_3_lut (.A(n2427), .B(n2491_adj_723), 
-         .C(rom_addr[5]), .Z(n2492_adj_640)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i2492_3_lut.init = 16'hcaca;
-    LUT4 i11838_3_lut_4_lut (.A(rom_addr[0]), .B(n14087), .C(rom_addr[5]), 
-         .D(n1851_adj_9), .Z(n12463)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11838_3_lut_4_lut.init = 16'hf202;
-    LUT4 i5846_4_lut_4_lut (.A(n14272), .B(rom_addr[3]), .C(n14121), .D(n14274), 
-         .Z(n6691)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5846_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 i12987_else_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[5]), 
-         .D(rom_addr[4]), .Z(n14349)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C+(D)))+!A (B+((D)+!C)))) */ ;
-    defparam i12987_else_4_lut.init = 16'h0812;
-    LUT4 n2109_bdd_4_lut_4_lut (.A(n14272), .B(rom_addr[3]), .C(rom_addr[0]), 
-         .D(n6718), .Z(n13423)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A !(B+!((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2109_bdd_4_lut_4_lut.init = 16'h4474;
-    PFUMX i13056 (.BLUT(n14061), .ALUT(n13557), .C0(rom_addr[5]), .Z(n13558));
-    LUT4 i12374_3_lut (.A(n12082), .B(n14285), .C(rom_addr[5]), .Z(n12084)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12374_3_lut.init = 16'hcaca;
-    LUT4 i12201_3_lut (.A(n109), .B(n124), .C(rom_addr[4]), .Z(n12536)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12201_3_lut.init = 16'hcaca;
-    LUT4 n1251_bdd_4_lut (.A(n14061), .B(rom_addr[5]), .C(rom_addr[3]), 
-         .D(n15546), .Z(n13638)) /* synthesis lut_function=(A (B+(C (D)))+!A !(B+!(C (D)))) */ ;
-    defparam n1251_bdd_4_lut.init = 16'hb888;
-    LUT4 i12099_3_lut (.A(n14304), .B(n635), .C(rom_addr[4]), .Z(n12198)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12099_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_3_i827_3_lut_4_lut_4_lut (.A(n14272), .B(n14265), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n827)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i827_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 i11418_4_lut (.A(n14109), .B(n1292), .C(rom_addr[4]), .D(rom_addr[3]), 
-         .Z(n12043)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
-    defparam i11418_4_lut.init = 16'hca0a;
-    LUT4 address_11__I_0_Mux_4_i955_3_lut (.A(n796), .B(n954), .C(rom_addr[4]), 
-         .Z(n955)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i955_3_lut.init = 16'hcaca;
-    LUT4 i12981_then_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), .C(rom_addr[1]), 
-         .D(rom_addr[3]), .Z(n14353)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A !(B+((D)+!C)))) */ ;
-    defparam i12981_then_4_lut.init = 16'h7547;
-    LUT4 i12981_else_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), .C(rom_addr[1]), 
-         .D(rom_addr[3]), .Z(n14352)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+!(D)))+!A !(B (C+(D))+!B (D)))) */ ;
-    defparam i12981_else_4_lut.init = 16'h7d62;
-    PFUMX address_11__I_0_Mux_2_i1979 (.BLUT(n1931), .ALUT(n1947_adj_583), 
-          .C0(n14232), .Z(n1979)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i12380_3_lut (.A(n14382), .B(n14360), .C(rom_addr[5]), .Z(n12193)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12380_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_3_i1404_3_lut_4_lut (.A(rom_addr[0]), .B(n14081), 
-         .C(rom_addr[5]), .D(n1403_adj_654), .Z(n1404)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
-    defparam address_11__I_0_Mux_3_i1404_3_lut_4_lut.init = 16'hf101;
-    L6MUX21 i12775 (.D0(n13188), .D1(n13185), .SD(rom_addr[5]), .Z(n13189));
-    LUT4 i7093_4_lut_4_lut (.A(n14164), .B(rom_addr[4]), .C(n3933), .D(rom_addr[0]), 
-         .Z(n1978)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (D)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7093_4_lut_4_lut.init = 16'h7400;
-    LUT4 i11986_3_lut_4_lut (.A(rom_addr[0]), .B(n14081), .C(rom_addr[5]), 
-         .D(n1309_adj_644), .Z(n12611)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i11986_3_lut_4_lut.init = 16'h1f10;
-    LUT4 i12385_3_lut (.A(n14391), .B(n14307), .C(rom_addr[5]), .Z(n12157)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12385_3_lut.init = 16'hcaca;
-    LUT4 i11733_3_lut_4_lut (.A(rom_addr[0]), .B(n14081), .C(rom_addr[5]), 
-         .D(n1403_c), .Z(n12358)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
-    defparam i11733_3_lut_4_lut.init = 16'hf101;
-    LUT4 i11732_3_lut_4_lut (.A(rom_addr[0]), .B(n14081), .C(rom_addr[5]), 
-         .D(n1309), .Z(n12357)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i11732_3_lut_4_lut.init = 16'h1f10;
-    PFUMX i13426 (.BLUT(n14325), .ALUT(n14326), .C0(rom_addr[2]), .Z(n14327));
-    LUT4 address_11__I_0_Mux_4_i2380_3_lut_4_lut_4_lut (.A(n14272), .B(n14121), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2380)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2380_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 address_11__I_0_Mux_5_i1691_3_lut_4_lut_4_lut (.A(n14272), .B(n15547), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1691_adj_665)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1691_3_lut_4_lut_4_lut.init = 16'h3530;
-    LUT4 address_11__I_0_Mux_2_i1117_4_lut_4_lut (.A(n14272), .B(rom_addr[4]), 
-         .C(n14160), .D(n11858), .Z(n1117_adj_544)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i1117_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 address_11__I_0_Mux_0_i1707_3_lut_4_lut_4_lut (.A(n14272), .B(n14142), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1707_adj_606)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_0_i1707_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i7080_4_lut (.A(rom_addr[0]), .B(n15559), .C(n14064), .D(rom_addr[6]), 
-         .Z(n1020)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7080_4_lut.init = 16'h0a22;
-    LUT4 address_11__I_0_Mux_3_i1466_3_lut_4_lut_4_lut (.A(n14272), .B(n14183), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1466_adj_582)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1466_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i11922_3_lut_4_lut (.A(rom_addr[1]), .B(n14084), .C(rom_addr[5]), 
-         .D(n62_adj_725), .Z(n12547)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11922_3_lut_4_lut.init = 16'hf202;
-    PFUMX address_11__I_0_Mux_3_i1915 (.BLUT(n1867_adj_726), .ALUT(n1883_adj_727), 
-          .C0(n14232), .Z(n1915)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i12448_3_lut (.A(n892), .B(n1020), .C(rom_addr[7]), .Z(n893)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12448_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i2009_3_lut_4_lut_4_lut (.A(n14272), .B(n14181), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n2009)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2009_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i5782_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), .C(rom_addr[5]), 
-         .D(n2522_adj_657), .Z(n6627)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam i5782_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_4_i1676_3_lut_4_lut_4_lut_4_lut (.A(n14272), 
-         .B(n14150), .C(rom_addr[4]), .D(rom_addr[0]), .Z(n1676)) /* synthesis lut_function=(A (B (C (D)))+!A (B (D)+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1676_3_lut_4_lut_4_lut_4_lut.init = 16'hc500;
-    LUT4 address_11__I_0_Mux_1_i1403_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[3]), .C(rom_addr[2]), .D(rom_addr[0]), .Z(n14356)) /* synthesis lut_function=(A (B+!(C+(D)))) */ ;
-    defparam address_11__I_0_Mux_1_i1403_3_lut_4_lut_then_4_lut.init = 16'h888a;
-    LUT4 i12627_3_lut (.A(rom_addr[7]), .B(rom_addr[6]), .C(rom_addr[5]), 
-         .Z(n11962)) /* synthesis lut_function=(!(A (B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12627_3_lut.init = 16'h7f7f;
-    PFUMX address_11__I_0_Mux_3_i1597 (.BLUT(n1595), .ALUT(n1596_adj_10), 
-          .C0(n11973), .Z(n1597)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i13058 (.BLUT(n13559), .ALUT(n14061), .C0(rom_addr[5]), .Z(n13560));
-    LUT4 address_11__I_0_Mux_1_i1403_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[3]), .C(rom_addr[2]), .D(rom_addr[0]), .Z(n14355)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(B+(C))) */ ;
-    defparam address_11__I_0_Mux_1_i1403_3_lut_4_lut_else_4_lut.init = 16'h8b81;
-    LUT4 i11585_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), .C(rom_addr[4]), 
-         .D(n2522_adj_657), .Z(n12210)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11585_3_lut_4_lut.init = 16'hf808;
-    PFUMX address_11__I_0_Mux_3_i1149 (.BLUT(n1101_adj_731), .ALUT(n1117_adj_732), 
-          .C0(n14232), .Z(n1149_adj_602)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_4_i270_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n270_adj_733)) /* synthesis lut_function=(A (B (C (D)+!C !(D)))+!A (B (C (D)+!C !(D))+!B !((D)+!C))) */ ;
-    defparam address_11__I_0_Mux_4_i270_3_lut_4_lut_4_lut.init = 16'hc01c;
-    LUT4 i11521_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), .C(rom_addr[4]), 
-         .D(n14279), .Z(n12146)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11521_3_lut_4_lut.init = 16'hf808;
-    PFUMX i13424 (.BLUT(n14322), .ALUT(n14323), .C0(rom_addr[5]), .Z(n14324));
-    LUT4 address_11__I_0_Mux_4_i954_3_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .D(rom_addr[3]), .Z(n954)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C+(D)))+!A (B (C+!(D))+!B !(C (D)+!C !(D))))) */ ;
-    defparam address_11__I_0_Mux_4_i954_3_lut_3_lut_4_lut_4_lut.init = 16'h1c03;
-    LUT4 address_11__I_0_Mux_3_i2396_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), 
-         .C(rom_addr[4]), .D(n2395), .Z(n2396_adj_702)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_3_i2396_3_lut_4_lut.init = 16'h8f80;
-    PFUMX i11616 (.BLUT(n12239), .ALUT(n12240), .C0(rom_addr[4]), .Z(n12241));
-    PFUMX i13043 (.BLUT(n2237_adj_694), .ALUT(n13537), .C0(rom_addr[6]), 
-          .Z(n13538));
-    LUT4 i11878_3_lut (.A(n12106), .B(n12109), .C(rom_addr[6]), .Z(n12503)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11878_3_lut.init = 16'hcaca;
-    PFUMX address_11__I_0_Mux_4_i2428 (.BLUT(n2380), .ALUT(n2396_adj_701), 
-          .C0(n14232), .Z(n2428_adj_579)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11567_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[0]), .Z(n14359)) /* synthesis lut_function=(!(A+(B (C+!(D))+!B (C+(D))))) */ ;
-    defparam i11567_3_lut_4_lut_then_4_lut.init = 16'h0401;
-    LUT4 i11539_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), .C(rom_addr[4]), 
-         .D(n2573), .Z(n12164)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam i11539_3_lut_4_lut.init = 16'h8f80;
-    PFUMX address_11__I_0_Mux_4_i2365 (.BLUT(n2348), .ALUT(n2364), .C0(n14238), 
-          .Z(n2365)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 address_11__I_0_Mux_4_i397_3_lut_4_lut_4_lut (.A(n14272), .B(n14121), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n397)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i397_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 i11567_3_lut_4_lut_else_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .Z(n14358)) /* synthesis lut_function=(!(A+(B))) */ ;
-    defparam i11567_3_lut_4_lut_else_4_lut.init = 16'h1111;
-    LUT4 i12460_3_lut (.A(n12263), .B(n12264), .C(rom_addr[8]), .Z(n12271)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12460_3_lut.init = 16'hcaca;
-    LUT4 i11441_3_lut_4_lut_4_lut (.A(n14272), .B(rom_addr[3]), .C(n15545), 
-         .D(rom_addr[4]), .Z(n12066)) /* synthesis lut_function=(A (B (C+(D))+!B (C (D)))+!A (B (C+(D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11441_3_lut_4_lut_4_lut.init = 16'hfcd1;
-    LUT4 address_11__I_0_Mux_1_i2460_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), 
-         .C(rom_addr[4]), .D(n2444), .Z(n2460)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_1_i2460_3_lut_4_lut.init = 16'h8f80;
-    LUT4 address_11__I_0_Mux_1_i2554_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), 
-         .C(rom_addr[4]), .D(n2395), .Z(n2554_adj_735)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam address_11__I_0_Mux_1_i2554_3_lut_4_lut.init = 16'hf808;
-    PFUMX address_11__I_0_Mux_4_i1468 (.BLUT(n1466), .ALUT(n1467), .C0(n11973), 
-          .Z(n1468)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11513_3_lut_4_lut (.A(rom_addr[0]), .B(n14132), .C(rom_addr[4]), 
-         .D(n2298_adj_737), .Z(n12138)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam i11513_3_lut_4_lut.init = 16'hf808;
-    LUT4 address_11__I_0_Mux_3_i2491_3_lut (.A(n2283), .B(n2490), .C(rom_addr[4]), 
-         .Z(n2491_adj_723)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i2491_3_lut.init = 16'hcaca;
-    LUT4 n1340_bdd_4_lut (.A(n14097), .B(rom_addr[4]), .C(rom_addr[3]), 
-         .D(n15546), .Z(n13636)) /* synthesis lut_function=(A (B+(C (D)))+!A !(B+!(C (D)))) */ ;
-    defparam n1340_bdd_4_lut.init = 16'hb888;
-    LUT4 i11643_3_lut (.A(n12613), .B(n12620), .C(rom_addr[7]), .Z(n12268)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11643_3_lut.init = 16'hcaca;
-    LUT4 i12514_2_lut_rep_293 (.A(rom_addr[0]), .B(n15568), .Z(n14210)) /* synthesis lut_function=(A (B)+!A !(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12514_2_lut_rep_293.init = 16'h9999;
-    LUT4 i11642_3_lut (.A(n12607), .B(n12610), .C(rom_addr[7]), .Z(n12267)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11642_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_1_i62_3_lut (.A(n46_adj_11), .B(n301), .C(rom_addr[4]), 
-         .Z(n62_adj_725)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i62_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_3_i1883_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[5]), 
-         .C(n1914_adj_615), .D(n12729), .Z(n1883_adj_727)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1883_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 i1_4_lut_4_lut_4_lut_adj_19 (.A(n14274), .B(n14275), .C(rom_addr[3]), 
-         .D(n14272), .Z(n11771)) /* synthesis lut_function=(!(A+(B (C (D))+!B ((D)+!C)))) */ ;
-    defparam i1_4_lut_4_lut_4_lut_adj_19.init = 16'h0454;
-    LUT4 i11833_4_lut (.A(rom_addr[5]), .B(n1276_c), .C(rom_addr[6]), 
-         .D(n11756), .Z(n12458)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
-    defparam i11833_4_lut.init = 16'hcac0;
-    LUT4 i7489_4_lut (.A(n12166), .B(n14273), .C(n2684), .D(rom_addr[6]), 
-         .Z(n3069_adj_557)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7489_4_lut.init = 16'hc088;
-    LUT4 i1_2_lut_3_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(n14271), 
-         .D(rom_addr[2]), .Z(n11766)) /* synthesis lut_function=(A (B (C (D)))+!A !(B+!(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_3_lut_4_lut.init = 16'h9000;
-    LUT4 i11676_3_lut (.A(n12299), .B(n12300), .C(rom_addr[8]), .Z(n12301)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11676_3_lut.init = 16'hcaca;
-    LUT4 i1_2_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .Z(n4_adj_12)) /* synthesis lut_function=(A (B (C))+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_3_lut.init = 16'h9090;
-    PFUMX address_11__I_0_Mux_4_i764 (.BLUT(n716_adj_740), .ALUT(n732), 
-          .C0(n14232), .Z(n764)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 rom_addr_6__bdd_3_lut_13284_4_lut_4_lut (.A(n14272), .B(n14100), 
-         .C(rom_addr[4]), .D(n14228), .Z(n13769)) /* synthesis lut_function=(A (B (C))+!A (B (C+!(D))+!B !(C+(D)))) */ ;
-    defparam rom_addr_6__bdd_3_lut_13284_4_lut_4_lut.init = 16'hc0c5;
-    LUT4 i12084_3_lut (.A(n12233), .B(n12234), .C(rom_addr[4]), .Z(n12235)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12084_3_lut.init = 16'hcaca;
-    LUT4 i7106_4_lut (.A(rom_addr[0]), .B(n3559), .C(n12214), .D(rom_addr[8]), 
-         .Z(n2045)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7106_4_lut.init = 16'h0a22;
-    LUT4 i12516_2_lut (.A(rom_addr[1]), .B(rom_addr[3]), .Z(n12729)) /* synthesis lut_function=(A (B)+!A !(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12516_2_lut.init = 16'h9999;
-    LUT4 n2286_bdd_4_lut_4_lut (.A(rom_addr[0]), .B(n15568), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n684)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+!(D)))+!A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2286_bdd_4_lut_4_lut.init = 16'hc39c;
-    LUT4 i12962_then_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[0]), 
-         .D(rom_addr[1]), .Z(n14362)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+((D)+!C)))) */ ;
-    defparam i12962_then_4_lut.init = 16'h0090;
-    LUT4 i11706_3_lut (.A(n12329), .B(n12330), .C(rom_addr[8]), .Z(n12331)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11706_3_lut.init = 16'hcaca;
-    PFUMX i12773 (.BLUT(n13187), .ALUT(n13186), .C0(rom_addr[4]), .Z(n13188));
-    LUT4 address_11__I_0_Mux_6_i2173_3_lut_4_lut (.A(n14215), .B(n14107), 
-         .C(rom_addr[5]), .D(n14339), .Z(n2173_adj_722)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2173_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i11575_4_lut_4_lut (.A(rom_addr[2]), .B(n4_adj_741), .C(rom_addr[4]), 
-         .D(n2220), .Z(n12200)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11575_4_lut_4_lut.init = 16'h4f40;
-    LUT4 address_11__I_0_Mux_3_i476_3_lut (.A(n460), .B(n475), .C(rom_addr[4]), 
-         .Z(n476_adj_742)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i476_3_lut.init = 16'hcaca;
-    LUT4 i12324_3_lut (.A(n476_adj_742), .B(n14345), .C(rom_addr[5]), 
-         .Z(n508)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12324_3_lut.init = 16'hcaca;
-    LUT4 i11713_3_lut (.A(n12336), .B(n12337), .C(rom_addr[8]), .Z(n12338)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11713_3_lut.init = 16'hcaca;
-    PFUMX address_11__I_0_Mux_4_i381 (.BLUT(n364_adj_743), .ALUT(n380_adj_13), 
-          .C0(n14238), .Z(n381_adj_590)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11728_3_lut (.A(n12351), .B(n12352), .C(rom_addr[8]), .Z(n12353)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11728_3_lut.init = 16'hcaca;
-    LUT4 i2315_4_lut (.A(rom_addr[1]), .B(n14081), .C(rom_addr[5]), .D(n14146), 
-         .Z(n3127)) /* synthesis lut_function=(A (B+!(C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2315_4_lut.init = 16'hcfca;
-    PFUMX address_11__I_0_Mux_7_i2429 (.BLUT(n2396), .ALUT(n2428), .C0(n14229), 
-          .Z(n2429)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11900_3_lut (.A(n12517), .B(n12518), .C(rom_addr[8]), .Z(n12525)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11900_3_lut.init = 16'hcaca;
-    LUT4 i11899_3_lut (.A(n12515), .B(n12516), .C(rom_addr[7]), .Z(n12524)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11899_3_lut.init = 16'hcaca;
-    LUT4 i11897_3_lut (.A(n13358), .B(n12512), .C(rom_addr[7]), .Z(n12522)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11897_3_lut.init = 16'hcaca;
-    LUT4 i11896_3_lut (.A(n12509), .B(n12510), .C(rom_addr[7]), .Z(n12521)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11896_3_lut.init = 16'hcaca;
-    LUT4 i11903_3_lut (.A(n12523), .B(n12524), .C(rom_addr[8]), .Z(n12528)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11903_3_lut.init = 16'hcaca;
-    LUT4 i12476_3_lut (.A(n12486), .B(n12487), .C(rom_addr[8]), .Z(n12494)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12476_3_lut.init = 16'hcaca;
-    LUT4 i11821_3_lut (.A(n12437), .B(n12438), .C(rom_addr[7]), .Z(n12446)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11821_3_lut.init = 16'hcaca;
-    PFUMX address_11__I_0_Mux_7_i2301 (.BLUT(n2237), .ALUT(n2300), .C0(rom_addr[6]), 
-          .Z(n2301)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i11820_3_lut (.A(n12435), .B(n13327), .C(rom_addr[7]), .Z(n12445)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11820_3_lut.init = 16'hcaca;
-    LUT4 i11819_3_lut (.A(n13641), .B(n12434), .C(rom_addr[7]), .Z(n12444)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11819_3_lut.init = 16'hcaca;
-    LUT4 i11818_3_lut (.A(n12431), .B(n12432), .C(rom_addr[7]), .Z(n12443)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11818_3_lut.init = 16'hcaca;
-    LUT4 i11817_3_lut (.A(n12429), .B(n12430), .C(rom_addr[7]), .Z(n12442)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11817_3_lut.init = 16'hcaca;
-    LUT4 i11816_3_lut (.A(n12427), .B(n12428), .C(rom_addr[7]), .Z(n12441)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11816_3_lut.init = 16'hcaca;
-    LUT4 i11524_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[4]), .C(n4707), 
-         .D(n14116), .Z(n12149)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11524_4_lut_4_lut.init = 16'h7340;
-    PFUMX i13034 (.BLUT(n13524), .ALUT(n14047), .C0(rom_addr[6]), .Z(n13525));
-    LUT4 i11815_3_lut (.A(n12425), .B(n12426), .C(rom_addr[7]), .Z(n12440)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11815_3_lut.init = 16'hcaca;
-    LUT4 i11814_3_lut (.A(n12423), .B(n12424), .C(rom_addr[7]), .Z(n12439)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11814_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i2237_3_lut_4_lut (.A(rom_addr[0]), .B(n14172), 
-         .C(rom_addr[5]), .D(n2205_adj_747), .Z(n2237_adj_643)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_2_i2237_3_lut_4_lut.init = 16'h4f40;
-    PFUMX address_11__I_0_Mux_5_i127 (.BLUT(n94), .ALUT(n126), .C0(n14229), 
-          .Z(n127)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i12077_3_lut_4_lut (.A(rom_addr[0]), .B(n14164), .C(rom_addr[4]), 
-         .D(n270_adj_733), .Z(n12236)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
-    defparam i12077_3_lut_4_lut.init = 16'h1f10;
-    LUT4 i12483_3_lut (.A(n12318), .B(n12319), .C(rom_addr[7]), .Z(n12322)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12483_3_lut.init = 16'hcaca;
-    LUT4 i7066_2_lut_rep_204_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .Z(n14121)) /* synthesis lut_function=(A (B+(C))+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7066_2_lut_rep_204_3_lut.init = 16'hf8f8;
-    LUT4 i7278_2_lut_rep_298 (.A(n15568), .B(rom_addr[2]), .Z(n14215)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7278_2_lut_rep_298.init = 16'h2222;
-    LUT4 i7363_2_lut_rep_158_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14075)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7363_2_lut_rep_158_3_lut_4_lut.init = 16'h4000;
-    LUT4 address_11__I_0_Mux_5_i2109_3_lut_4_lut (.A(rom_addr[0]), .B(n14277), 
-         .C(rom_addr[4]), .D(n2108), .Z(n2109_adj_750)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i2109_3_lut_4_lut.init = 16'hf808;
-    LUT4 i1_2_lut_rep_222_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[4]), .Z(n14139)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_222_3_lut_4_lut.init = 16'hfffb;
-    LUT4 address_11__I_0_Mux_1_i891_3_lut_4_lut (.A(rom_addr[0]), .B(n14277), 
-         .C(rom_addr[4]), .D(n14176), .Z(n891_adj_751)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i891_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i3101_3_lut_3_lut (.A(rom_addr[2]), .B(rom_addr[1]), .C(rom_addr[0]), 
-         .Z(n3913)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3101_3_lut_3_lut.init = 16'h7474;
-    PFUMX i11621 (.BLUT(n428_adj_649), .ALUT(n443_adj_693), .C0(rom_addr[4]), 
-          .Z(n12246));
-    LUT4 i12487_3_lut (.A(n1278_c), .B(n1533), .C(rom_addr[8]), .Z(n12280)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12487_3_lut.init = 16'hcaca;
-    LUT4 i7319_2_lut_rep_272_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14189)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7319_2_lut_rep_272_3_lut.init = 16'h0202;
-    LUT4 i11654_3_lut (.A(n766_adj_581), .B(n1021_adj_565), .C(rom_addr[8]), 
-         .Z(n12279)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11654_3_lut.init = 16'hcaca;
-    LUT4 i7339_2_lut_rep_207_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14124)) /* synthesis lut_function=(!((B+!(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7339_2_lut_rep_207_3_lut.init = 16'h2020;
-    LUT4 i12962_else_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[0]), 
-         .D(rom_addr[1]), .Z(n14361)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A (((D)+!C)+!B))) */ ;
-    defparam i12962_else_4_lut.init = 16'h0260;
-    LUT4 i11581_3_lut (.A(n908_adj_677), .B(n205_adj_549), .C(rom_addr[4]), 
-         .Z(n12206)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11581_3_lut.init = 16'hcaca;
-    LUT4 i11579_4_lut (.A(n684_adj_645), .B(rom_addr[1]), .C(rom_addr[4]), 
-         .D(n14258), .Z(n12204)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
-    defparam i11579_4_lut.init = 16'hca0a;
-    LUT4 address_11__I_0_Mux_3_i1658_3_lut (.A(n15549), .B(n14183), .C(rom_addr[3]), 
+    PFUMX address_11__I_0_Mux_5_i1021 (.BLUT(n860_adj_572), .ALUT(n893), 
+          .C0(n9377), .Z(n1021)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_3_i731_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n731_adj_573)) /* synthesis lut_function=(A (B)+!A (B (C (D))+!B !((D)+!C))) */ ;
+    defparam address_11__I_0_Mux_3_i731_3_lut_4_lut_4_lut_4_lut.init = 16'hc898;
+    LUT4 i4636_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n5224)) /* synthesis lut_function=(A (B ((D)+!C)+!B !((D)+!C))+!A (B (C (D))+!B (C))) */ ;
+    defparam i4636_3_lut_4_lut_4_lut.init = 16'hd838;
+    LUT4 address_11__I_0_Mux_3_i1658_3_lut (.A(n11093), .B(n10959), .C(\rom_addr[3] ), 
          .Z(n1658)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_3_i1658_3_lut.init = 16'hcaca;
-    LUT4 i12492_3_lut (.A(n12521), .B(n12522), .C(rom_addr[8]), .Z(n12527)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12492_3_lut.init = 16'hcaca;
-    PFUMX i11686 (.BLUT(n12309), .ALUT(n12310), .C0(rom_addr[5]), .Z(n12311));
-    LUT4 i5865_2_lut (.A(rom_addr[0]), .B(rom_addr[3]), .Z(n6663)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5865_2_lut.init = 16'h6666;
-    LUT4 i11872_3_lut (.A(n12492), .B(n12493), .C(rom_addr[8]), .Z(n12497)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11872_3_lut.init = 16'hcaca;
-    LUT4 i11871_3_lut (.A(n12490), .B(n12491), .C(rom_addr[8]), .Z(n12496)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11871_3_lut.init = 16'hcaca;
-    LUT4 i1_2_lut_rep_258_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[5]), 
-         .Z(n14175)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_258_3_lut.init = 16'h0202;
-    LUT4 n2174_bdd_4_lut (.A(rom_addr[0]), .B(rom_addr[5]), .C(rom_addr[6]), 
-         .D(n14090), .Z(n13220)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))) */ ;
-    defparam n2174_bdd_4_lut.init = 16'h8200;
-    PFUMX i12770 (.BLUT(n13184), .ALUT(n14115), .C0(rom_addr[4]), .Z(n13185));
-    LUT4 i11572_3_lut (.A(n205_adj_571), .B(n604_adj_692), .C(rom_addr[4]), 
-         .Z(n12197)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11572_3_lut.init = 16'hcaca;
-    LUT4 i12533_2_lut_rep_299 (.A(rom_addr[3]), .B(rom_addr[4]), .Z(n14216)) /* synthesis lut_function=(!(A+(B))) */ ;
-    defparam i12533_2_lut_rep_299.init = 16'h1111;
-    LUT4 i11570_3_lut (.A(n506_adj_576), .B(n428_adj_642), .C(rom_addr[4]), 
-         .Z(n12195)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11570_3_lut.init = 16'hcaca;
-    PFUMX i13422 (.BLUT(n14319), .ALUT(n14088), .C0(rom_addr[4]), .Z(n924));
-    LUT4 i5805_3_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[2]), 
-         .D(rom_addr[0]), .Z(n6650)) /* synthesis lut_function=(!(A (C)+!A (B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5805_3_lut_4_lut_4_lut.init = 16'h0b5b;
-    LUT4 i7630_2_lut_rep_162_3_lut_3_lut (.A(rom_addr[2]), .B(n15568), .C(rom_addr[0]), 
-         .Z(n14079)) /* synthesis lut_function=(A (B (C))+!A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7630_2_lut_rep_162_3_lut_3_lut.init = 16'hc4c4;
-    LUT4 i11569_3_lut (.A(n526_adj_593), .B(n205), .C(rom_addr[4]), .Z(n12194)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11569_3_lut.init = 16'hcaca;
-    LUT4 i4360_2_lut_rep_301 (.A(n15568), .B(rom_addr[3]), .Z(n14218)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4360_2_lut_rep_301.init = 16'h8888;
-    LUT4 address_11__I_0_Mux_4_i2652_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[3]), .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14365)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2652_3_lut_4_lut_then_4_lut.init = 16'h0521;
-    LUT4 i1_2_lut_rep_215_3_lut (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[2]), 
-         .Z(n14132)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_215_3_lut.init = 16'h0808;
-    PFUMX i10204 (.BLUT(n10819), .ALUT(n10820), .C0(rom_addr[8]), .Z(n10821));
-    LUT4 address_11__I_0_Mux_4_i2173_3_lut_4_lut (.A(n14215), .B(n14107), 
-         .C(rom_addr[5]), .D(n14297), .Z(n2173)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2173_3_lut_4_lut.init = 16'h8f80;
-    LUT4 n1243_bdd_3_lut_4_lut (.A(rom_addr[2]), .B(n14277), .C(rom_addr[0]), 
-         .D(rom_addr[4]), .Z(n13111)) /* synthesis lut_function=(!(A+!(B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n1243_bdd_3_lut_4_lut.init = 16'h4004;
-    LUT4 address_11__I_0_Mux_4_i2652_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[3]), .C(rom_addr[2]), .Z(n14364)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2652_3_lut_4_lut_else_4_lut.init = 16'h0101;
-    LUT4 i11563_3_lut (.A(n506), .B(n475_adj_752), .C(rom_addr[4]), .Z(n12188)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11563_3_lut.init = 16'hcaca;
-    LUT4 i11666_3_lut (.A(n12289), .B(n12290), .C(rom_addr[10]), .Z(n12291)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11666_3_lut.init = 16'hcaca;
-    LUT4 i5840_4_lut_4_lut (.A(n15568), .B(rom_addr[3]), .C(rom_addr[2]), 
-         .D(rom_addr[0]), .Z(n1451_adj_624)) /* synthesis lut_function=(A (B (C (D)))+!A !(C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5840_4_lut_4_lut.init = 16'h8505;
-    LUT4 i1_2_lut_rep_203_3_lut (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[2]), 
-         .Z(n14120)) /* synthesis lut_function=(A+((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_203_3_lut.init = 16'hfbfb;
-    LUT4 i7361_2_lut_rep_171_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14088)) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7361_2_lut_rep_171_3_lut_4_lut.init = 16'h0040;
-    LUT4 i11652_3_lut (.A(n12275), .B(n12276), .C(rom_addr[10]), .Z(n12277)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11652_3_lut.init = 16'hcaca;
-    LUT4 i11561_3_lut (.A(n428_adj_642), .B(n684_adj_645), .C(rom_addr[4]), 
-         .Z(n12186)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11561_3_lut.init = 16'hcaca;
-    LUT4 i7340_2_lut_rep_159_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14076)) /* synthesis lut_function=(!((((D)+!C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7340_2_lut_rep_159_3_lut_4_lut.init = 16'h0080;
-    LUT4 i11560_3_lut (.A(n1017), .B(n506), .C(rom_addr[4]), .Z(n12185)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11560_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i61_3_lut_4_lut (.A(n14158), .B(rom_addr[1]), 
-         .C(rom_addr[3]), .D(n14153), .Z(n61_adj_609)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i61_3_lut_4_lut.init = 16'hf808;
-    LUT4 i11244_3_lut_4_lut (.A(n15549), .B(rom_addr[3]), .C(n14219), 
-         .D(n1676_c), .Z(n6686)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11244_3_lut_4_lut.init = 16'hefe0;
-    PFUMX i11716 (.BLUT(n2205), .ALUT(n2236), .C0(rom_addr[5]), .Z(n12341));
-    LUT4 i11558_3_lut (.A(n2283_adj_636), .B(n2298), .C(rom_addr[4]), 
-         .Z(n12183)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11558_3_lut.init = 16'hcaca;
-    PFUMX i11717 (.BLUT(n2268_adj_753), .ALUT(n2299_adj_717), .C0(rom_addr[5]), 
-          .Z(n12342));
-    PFUMX i11718 (.BLUT(n2333), .ALUT(n2364_c), .C0(rom_addr[5]), .Z(n12343));
-    LUT4 i1_2_lut_rep_153_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n14070)) /* synthesis lut_function=(!(A (C)+!A (B (C)+!B (C (D)+!C !(D))))) */ ;
-    defparam i1_2_lut_rep_153_3_lut_4_lut.init = 16'h0f1e;
-    LUT4 address_11__I_0_Mux_0_i475_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n475_adj_752)) /* synthesis lut_function=(!(A (B+!(C))+!A (B+!(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_0_i475_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h3130;
-    PFUMX i11719 (.BLUT(n6691), .ALUT(n2427_adj_689), .C0(rom_addr[5]), 
-          .Z(n12344));
-    LUT4 i1_2_lut_rep_274_3_lut (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[2]), 
-         .Z(n14191)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_274_3_lut.init = 16'h8080;
-    PFUMX i11720 (.BLUT(n2460), .ALUT(n2491), .C0(rom_addr[5]), .Z(n12345));
-    LUT4 i1_2_lut_rep_182_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14099)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_182_3_lut_4_lut.init = 16'h8000;
-    LUT4 i11566_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14380)) /* synthesis lut_function=(A (B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11566_3_lut_4_lut_else_4_lut.init = 16'h8088;
-    LUT4 address_11__I_0_Mux_2_i2298_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[2]), 
-         .B(rom_addr[1]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n2298_adj_754)) /* synthesis lut_function=(!(A (B+(C+!(D)))+!A (B ((D)+!C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2298_3_lut_4_lut_4_lut_4_lut.init = 16'h0241;
-    PFUMX i11721 (.BLUT(n2523_adj_592), .ALUT(n2554_adj_735), .C0(rom_addr[5]), 
-          .Z(n12346));
-    LUT4 address_11__I_0_Mux_3_i603_3_lut_4_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n603)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i603_3_lut_4_lut_3_lut.init = 16'h6464;
-    LUT4 address_11__I_0_Mux_3_i61_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n61_adj_560)) /* synthesis lut_function=(!(A (C+(D))+!A (B+!(C (D))))) */ ;
-    defparam address_11__I_0_Mux_3_i61_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h100a;
-    LUT4 i1_2_lut_rep_191_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14108)) /* synthesis lut_function=(!(((C+!(D))+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_191_3_lut_4_lut.init = 16'h0800;
-    LUT4 i11551_3_lut (.A(n2444_adj_755), .B(n2459), .C(rom_addr[4]), 
-         .Z(n12176)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11551_3_lut.init = 16'hcaca;
-    PFUMX i11734 (.BLUT(n1436), .ALUT(n1467_adj_633), .C0(rom_addr[5]), 
-          .Z(n12359));
-    LUT4 address_11__I_0_Mux_4_i2332_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(n14166), 
-         .C(rom_addr[3]), .D(n14210), .Z(n2332)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i2332_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 address_11__I_0_Mux_1_i220_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(rom_addr[3]), .Z(n220_adj_630)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i220_4_lut_4_lut.init = 16'h8240;
-    LUT4 address_11__I_0_Mux_5_i1549_3_lut_4_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1549_adj_588)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B (C (D)+!C !(D))))) */ ;
-    defparam address_11__I_0_Mux_5_i1549_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h0150;
-    LUT4 address_11__I_0_Mux_2_i2141_4_lut_4_lut_then_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[3]), .C(rom_addr[4]), .D(rom_addr[2]), .Z(n14368)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2141_4_lut_4_lut_then_4_lut.init = 16'h0100;
-    LUT4 address_11__I_0_Mux_2_i333_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n333)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (C (D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i333_3_lut_4_lut_4_lut_4_lut.init = 16'h5810;
-    PFUMX i11735 (.BLUT(n1499_adj_757), .ALUT(n1530_adj_618), .C0(rom_addr[5]), 
-          .Z(n12360));
-    PFUMX i11482 (.BLUT(n333), .ALUT(n348), .C0(rom_addr[4]), .Z(n12107));
-    LUT4 i7457_2_lut_rep_302 (.A(rom_addr[6]), .B(rom_addr[4]), .Z(n14219)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i7457_2_lut_rep_302.init = 16'heeee;
-    LUT4 address_11__I_0_Mux_4_i1228_3_lut_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1228_adj_674)) /* synthesis lut_function=(A (C)+!A (B (C (D))+!B (D))) */ ;
-    defparam address_11__I_0_Mux_4_i1228_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'hf1a0;
-    PFUMX i5842 (.BLUT(n6686), .ALUT(n1723_adj_625), .C0(rom_addr[5]), 
-          .Z(n6687));
-    LUT4 i11919_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[4]), .C(n541), 
-         .D(n14267), .Z(n12544)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11919_4_lut_4_lut.init = 16'hd1c0;
-    LUT4 address_11__I_0_Mux_3_i1867_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n1867_adj_726)) /* synthesis lut_function=(A (B (D))+!A (B (D)+!B !((D)+!C))) */ ;
-    defparam address_11__I_0_Mux_3_i1867_3_lut_4_lut_4_lut_4_lut.init = 16'hcc10;
-    LUT4 i12638_2_lut_rep_144_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(n14278), 
-         .C(rom_addr[0]), .D(rom_addr[4]), .Z(n14061)) /* synthesis lut_function=(!((B+(C+(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12638_2_lut_rep_144_3_lut_4_lut_4_lut.init = 16'h0002;
-    LUT4 address_11__I_0_Mux_2_i526_3_lut_4_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[3]), .Z(n526_adj_758)) /* synthesis lut_function=(!(A (B+!(C))+!A ((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i526_3_lut_4_lut_3_lut.init = 16'h2424;
-    LUT4 address_11__I_0_Mux_6_i2426_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14272), 
-         .C(n14181), .D(rom_addr[3]), .Z(n2426_adj_759)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2426_3_lut_3_lut_4_lut.init = 16'hf011;
-    LUT4 address_11__I_0_Mux_2_i1356_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n8577)) /* synthesis lut_function=(A (B+(C+(D)))+!A (B (C+(D))+!B !(C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    PFUMX i42 (.BLUT(n26), .ALUT(n23), .C0(n9433), .Z(n8427));
+    LUT4 i4653_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(\rom_addr[2] ), .Z(n5241)) /* synthesis lut_function=(!(A ((C)+!B)+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4653_3_lut_4_lut_4_lut_4_lut.init = 16'h0848;
+    LUT4 address_11__I_0_Mux_2_i251_3_lut_4_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n251)) /* synthesis lut_function=(!(A ((D)+!B)+!A !(B (C (D))))) */ ;
+    defparam address_11__I_0_Mux_2_i251_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h4088;
+    LUT4 address_11__I_0_Mux_4_i221_3_lut_4_lut (.A(n11094), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1017), .Z(n221)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i221_3_lut_4_lut.init = 16'h8f80;
+    LUT4 i8803_3_lut_4_lut_3_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1228)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+!((D)+!C)))) */ ;
+    defparam i8803_3_lut_4_lut_3_lut_4_lut.init = 16'h1181;
+    PFUMX address_11__I_0_Mux_0_i1789 (.BLUT(n1707_adj_574), .ALUT(n5259), 
+          .C0(n9431), .Z(n1789)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_3_i557_3_lut_4_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n557_adj_575)) /* synthesis lut_function=(A (B (D)+!B !(C+!(D)))+!A !(B+(D))) */ ;
+    defparam address_11__I_0_Mux_3_i557_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h8a11;
+    L6MUX21 i9300 (.D0(n9721), .D1(n10925), .SD(\rom_addr[7] ), .Z(n766_adj_547));
+    LUT4 address_11__I_0_Mux_6_i1691_3_lut_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1691)) /* synthesis lut_function=(A (B (C))+!A (B (C (D))+!B !(C))) */ ;
+    defparam address_11__I_0_Mux_6_i1691_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'hc181;
+    LUT4 address_11__I_0_Mux_2_i699_3_lut (.A(n11015), .B(n603), .C(\rom_addr[3] ), 
+         .Z(n699_adj_576)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i699_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i1867_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n1867)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B+!(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1867_3_lut_4_lut_4_lut_4_lut.init = 16'h6544;
+    LUT4 address_11__I_0_Mux_1_i491_3_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n491)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (B (C)+!B !(C)))) */ ;
+    defparam address_11__I_0_Mux_1_i491_3_lut_4_lut_4_lut.init = 16'h1e9e;
+    PFUMX i9323 (.BLUT(n9743), .ALUT(n9744), .C0(\rom_addr[6] ), .Z(n9746));
+    LUT4 address_11__I_0_Mux_0_i475_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n475)) /* synthesis lut_function=(!(A+!(B+!(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i475_3_lut_4_lut_4_lut_4_lut.init = 16'h4544;
+    LUT4 i4658_4_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[0] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n5246)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4658_4_lut_4_lut_4_lut_4_lut.init = 16'h5854;
+    PFUMX i9233 (.BLUT(n9654), .ALUT(n9655), .C0(\rom_addr[4] ), .Z(n9656));
+    LUT4 i4616_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[0] ), .Z(n5204)) /* synthesis lut_function=(A (B (C))+!A (B ((D)+!C)+!B !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4616_4_lut_4_lut_4_lut.init = 16'hc585;
+    LUT4 i5851_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n46)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (C)+!B !((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5851_4_lut_4_lut_4_lut.init = 16'h6070;
+    LUT4 address_11__I_0_Mux_3_i747_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n747)) /* synthesis lut_function=(!(A (B (C+(D))+!B (D))+!A (B (C (D))+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i747_3_lut_4_lut_4_lut_4_lut.init = 16'h047f;
+    LUT4 address_11__I_0_Mux_1_i205_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n205_adj_559)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A !((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i205_3_lut_4_lut_4_lut_4_lut.init = 16'h8204;
+    PFUMX i9345 (.BLUT(n9766), .ALUT(n9767), .C0(\rom_addr[7] ), .Z(n1278));
+    LUT4 i2_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[0] ), .C(n6692), 
+         .D(n11048), .Z(n9154)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2_3_lut_4_lut_4_lut.init = 16'h4000;
+    LUT4 i9527_1_lut_3_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[4] ), .Z(n9915)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B ((D)+!C)+!B !(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9527_1_lut_3_lut_4_lut_4_lut.init = 16'h4d14;
+    L6MUX21 i9352 (.D0(n9773), .D1(n9774), .SD(\rom_addr[7] ), .Z(n2044));
+    LUT4 i4647_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[4] ), .Z(n5235)) /* synthesis lut_function=(A (B (D)+!B (C (D)))+!A (B (C+(D))+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4647_3_lut_4_lut_4_lut_4_lut.init = 16'hfc40;
+    LUT4 n483_bdd_3_lut_10023_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[4] ), .Z(n10206)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A ((C (D)+!C !(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n483_bdd_3_lut_10023_4_lut_4_lut_4_lut.init = 16'h04c0;
+    LUT4 address_11__I_0_Mux_2_i364_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[1] ), .D(\rom_addr[3] ), .Z(n364_adj_578)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B+!(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i364_3_lut_4_lut_4_lut_4_lut.init = 16'h1021;
+    LUT4 address_11__I_0_Mux_0_i635_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n635_adj_579)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A !(B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i635_3_lut_4_lut_4_lut_4_lut.init = 16'h400c;
+    L6MUX21 i9356 (.D0(n63_adj_580), .D1(n9635), .SD(\rom_addr[6] ), .Z(n9779));
+    LUT4 i8823_3_lut_4_lut_4_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n236)) /* synthesis lut_function=(!(A (B (C+!(D))+!B ((D)+!C))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i8823_3_lut_4_lut_4_lut_3_lut_4_lut.init = 16'h0d20;
+    LUT4 address_11__I_0_Mux_2_i379_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n379)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A (B (C (D)+!C !(D))+!B (C+(D))))) */ ;
+    defparam address_11__I_0_Mux_2_i379_3_lut_4_lut_4_lut.init = 16'h2c41;
+    LUT4 address_11__I_0_Mux_2_i506_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n506_adj_581)) /* synthesis lut_function=(!(A (B (C+(D))+!B (D))+!A (B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i506_3_lut_4_lut_4_lut_4_lut.init = 16'h043f;
+    LUT4 address_11__I_0_Mux_1_i124_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n124)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i124_3_lut_4_lut_4_lut_4_lut.init = 16'h6040;
+    PFUMX i9363 (.BLUT(n956_adj_582), .ALUT(n1019), .C0(\rom_addr[6] ), 
+          .Z(n9786));
+    LUT4 address_11__I_0_Mux_4_i1529_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1643)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+!(C (D))))) */ ;
+    defparam address_11__I_0_Mux_4_i1529_3_lut_4_lut_4_lut_4_lut.init = 16'h1080;
+    LUT4 i3740_3_lut_4_lut (.A(\rom_addr[4] ), .B(n11027), .C(\rom_addr[5] ), 
+         .D(n4744), .Z(n4299)) /* synthesis lut_function=(!(A (C (D))+!A (B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3740_3_lut_4_lut.init = 16'h0efe;
+    LUT4 address_11__I_0_Mux_4_i1785_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1785)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A (B+!(C (D))))) */ ;
+    defparam address_11__I_0_Mux_4_i1785_3_lut_4_lut_4_lut_4_lut.init = 16'h1002;
+    LUT4 address_11__I_0_Mux_4_i1913_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1913)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+(D)))+!A (B+!(C (D))))) */ ;
+    defparam address_11__I_0_Mux_4_i1913_3_lut_4_lut_4_lut_4_lut.init = 16'h1082;
+    LUT4 i4690_2_lut (.A(\rom_addr[0] ), .B(\rom_addr[3] ), .Z(n5238)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4690_2_lut.init = 16'h6666;
+    LUT4 address_11__I_0_Mux_3_i124_3_lut_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n124_adj_583)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i124_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h601f;
+    LUT4 i5759_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n1529)) /* synthesis lut_function=(!((B (C (D)+!C !(D))+!B !(C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5759_4_lut_4_lut.init = 16'h2880;
+    LUT4 address_11__I_0_Mux_1_i251_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n251_adj_584)) /* synthesis lut_function=(!(A ((D)+!C)+!A !(B (C (D))+!B !((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i251_4_lut_4_lut.init = 16'h40b0;
+    LUT4 i5826_2_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1549)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (C (D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5826_2_lut_4_lut_4_lut.init = 16'h4900;
+    LUT4 address_11__I_0_Mux_2_i1676_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1676_c)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)+!C !(D)))+!A (B (C+!(D))+!B !(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1676_3_lut_4_lut_4_lut.init = 16'h3c02;
+    LUT4 i9250_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9673)) /* synthesis lut_function=(!(A (B+!(C (D)+!C !(D)))+!A !(B (D)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9250_3_lut_4_lut_4_lut.init = 16'h7402;
+    LUT4 i9228_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9651)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A (B (C+(D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9228_3_lut_4_lut_4_lut.init = 16'h0294;
+    LUT4 address_11__I_0_Mux_5_i1691_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1691_adj_585)) /* synthesis lut_function=(!(A (B+(C))+!A (B (C+!(D))+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1691_3_lut_4_lut_4_lut.init = 16'h1702;
+    LUT4 i9240_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9663)) /* synthesis lut_function=(A (B (D)+!B !(C))+!A (B (D)+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9240_3_lut_4_lut_4_lut.init = 16'hcf02;
+    LUT4 address_11__I_0_Mux_4_i1564_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1564)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C+(D)))+!A ((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1564_3_lut_4_lut_4_lut.init = 16'h0c02;
+    L6MUX21 i9367 (.D0(n1468), .D1(n1531_adj_551), .SD(\rom_addr[6] ), 
+            .Z(n9790));
+    L6MUX21 i9369 (.D0(n1724), .D1(n1787), .SD(\rom_addr[6] ), .Z(n9792));
+    LUT4 address_11__I_0_Mux_4_i859_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n859)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A !((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i859_3_lut_4_lut_4_lut.init = 16'ha602;
+    LUT4 address_11__I_0_Mux_4_i1466_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1466)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A !(B (C (D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1466_3_lut_4_lut_4_lut_4_lut.init = 16'h4102;
+    LUT4 address_11__I_0_Mux_1_i1676_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1676)) /* synthesis lut_function=(A (B (C (D)))+!A (B (C (D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1676_3_lut_3_lut_4_lut_4_lut.init = 16'hc001;
+    LUT4 i4618_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[4] ), .Z(n6838)) /* synthesis lut_function=(A (B (C+(D))+!B (D))+!A (B (C+(D))+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4618_3_lut_4_lut_4_lut.init = 16'hfec0;
+    L6MUX21 i9395 (.D0(n9460), .D1(n1149_c), .SD(\rom_addr[6] ), .Z(n9818));
+    L6MUX21 i9401 (.D0(n1852), .D1(n1915), .SD(\rom_addr[6] ), .Z(n9824));
+    L6MUX21 i9405 (.D0(n9814), .D1(n9815), .SD(\rom_addr[7] ), .Z(n9828));
+    L6MUX21 i9409 (.D0(n9822), .D1(n9823), .SD(\rom_addr[7] ), .Z(n9832));
+    L6MUX21 i9431 (.D0(n1341), .D1(n1404), .SD(\rom_addr[6] ), .Z(n9854));
+    LUT4 n3720_bdd_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[4] ), .Z(n10623)) /* synthesis lut_function=(!(A (B+!(D))+!A (B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n3720_bdd_3_lut_4_lut_4_lut.init = 16'h2701;
+    L6MUX21 i9436 (.D0(n1979), .D1(n9592), .SD(\rom_addr[6] ), .Z(n9859));
+    PFUMX i9248 (.BLUT(n9669), .ALUT(n9670), .C0(\rom_addr[4] ), .Z(n9671));
+    L6MUX21 i9437 (.D0(n9844), .D1(n9845), .SD(\rom_addr[7] ), .Z(n9860));
+    PFUMX i9438 (.BLUT(n9846), .ALUT(n9847), .C0(\rom_addr[7] ), .Z(n9861));
+    LUT4 address_11__I_0_Mux_4_i812_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n812)) /* synthesis lut_function=(!(A (B+!(D))+!A (B (C+!(D))+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i812_3_lut_3_lut_4_lut_4_lut.init = 16'h2601;
+    LUT4 address_11__I_0_Mux_4_i1243_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1243)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1243_3_lut_3_lut_4_lut_4_lut.init = 16'h9701;
+    LUT4 i2625_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[4] ), .Z(n3181)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C (D)))+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2625_3_lut_4_lut_4_lut.init = 16'hd6fe;
+    L6MUX21 i9443 (.D0(n9856), .D1(n9857), .SD(\rom_addr[7] ), .Z(n9866));
+    L6MUX21 i9454 (.D0(n9467), .D1(n9480), .SD(\rom_addr[7] ), .Z(n9877));
+    LUT4 address_11__I_0_Mux_2_i1356_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n6852)) /* synthesis lut_function=(A (B+(C+(D)))+!A (B (C+(D))+!B !(C (D)+!C !(D)))) */ ;
     defparam address_11__I_0_Mux_2_i1356_3_lut_4_lut_4_lut.init = 16'heff8;
-    LUT4 i7522_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[4]), .C(n14133), 
-         .D(rom_addr[3]), .Z(n2964)) /* synthesis lut_function=(A (B (C (D)))+!A (B (C (D))+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7522_4_lut_4_lut.init = 16'hd100;
-    LUT4 address_11__I_0_Mux_2_i2141_4_lut_4_lut_else_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[3]), .C(rom_addr[4]), .Z(n14367)) /* synthesis lut_function=(!((B+!(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2141_4_lut_4_lut_else_4_lut.init = 16'h2020;
-    LUT4 address_11__I_0_Mux_4_i364_4_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[1]), 
-         .C(rom_addr[0]), .D(rom_addr[3]), .Z(n364_adj_743)) /* synthesis lut_function=(!(A (C+!(D))+!A (B ((D)+!C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i364_4_lut_4_lut_4_lut.init = 16'h0a41;
-    LUT4 rom_addr_0__bdd_4_lut_13295_4_lut (.A(n14137), .B(rom_addr[5]), 
-         .C(n4661), .D(rom_addr[0]), .Z(n13485)) /* synthesis lut_function=(!(A (B+(C+!(D)))+!A !(B (D)+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam rom_addr_0__bdd_4_lut_13295_4_lut.init = 16'h4700;
-    PFUMX i11741 (.BLUT(n1692_adj_620), .ALUT(n1723), .C0(rom_addr[5]), 
-          .Z(n12366));
-    LUT4 i11543_3_lut (.A(n2283), .B(n2298_adj_754), .C(rom_addr[4]), 
-         .Z(n12168)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11543_3_lut.init = 16'hcaca;
-    PFUMX address_11__I_0_Mux_4_i1565 (.BLUT(n1549), .ALUT(n1564), .C0(rom_addr[4]), 
-          .Z(n1565_adj_7)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i11742 (.BLUT(n1755_adj_613), .ALUT(n1786_adj_683), .C0(rom_addr[5]), 
-          .Z(n12367));
-    LUT4 address_11__I_0_Mux_6_i1898_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n1898)) /* synthesis lut_function=(A (D)+!A (B (D)+!B (C+!(D)))) */ ;
-    defparam address_11__I_0_Mux_6_i1898_3_lut_4_lut_3_lut_4_lut.init = 16'hfe11;
-    LUT4 i1_2_lut_rep_164_3_lut_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(rom_addr[2]), .Z(n14081)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_164_3_lut_3_lut_4_lut.init = 16'hfbff;
-    LUT4 address_11__I_0_Mux_3_i890_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n890_adj_646)) /* synthesis lut_function=(A (B (C (D))+!B (C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i890_3_lut_4_lut_4_lut.init = 16'he420;
-    LUT4 i5795_3_lut_rep_304 (.A(rom_addr[0]), .B(rom_addr[2]), .C(rom_addr[1]), 
-         .Z(n14221)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5795_3_lut_rep_304.init = 16'hcaca;
-    LUT4 i7258_2_lut_rep_362 (.A(rom_addr[2]), .B(rom_addr[3]), .Z(n14279)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7258_2_lut_rep_362.init = 16'h8888;
-    LUT4 i12368_3_lut (.A(n12167), .B(n12168), .C(rom_addr[5]), .Z(n12169)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12368_3_lut.init = 16'hcaca;
-    PFUMX i11746 (.BLUT(n1820_adj_619), .ALUT(n1851_adj_569), .C0(rom_addr[5]), 
-          .Z(n12371));
-    LUT4 address_11__I_0_Mux_4_i716_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[0]), 
-         .C(rom_addr[1]), .D(rom_addr[3]), .Z(n716_adj_740)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)))+!A (C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    L6MUX21 i9455 (.D0(n9489), .D1(n9502), .SD(\rom_addr[7] ), .Z(n9878));
+    L6MUX21 i9101 (.D0(n9522), .D1(n9523), .SD(\rom_addr[6] ), .Z(n9524));
+    LUT4 n347_bdd_3_lut_10347_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n10474)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(D))+!A !(B (D)+!B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n347_bdd_3_lut_10347_3_lut_4_lut_4_lut.init = 16'h7e01;
+    LUT4 i9231_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9654)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C+(D)))+!A (B+(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9231_3_lut_3_lut_4_lut_4_lut.init = 16'h0803;
+    LUT4 address_11__I_0_Mux_4_i668_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n668)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i668_3_lut_3_lut_4_lut_4_lut.init = 16'h01c0;
+    LUT4 address_11__I_0_Mux_6_i1387_3_lut_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1387)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1387_3_lut_3_lut_4_lut_4_lut_4_lut.init = 16'h0180;
+    LUT4 i1_4_lut_4_lut_4_lut_adj_10 (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11083), .Z(n9143)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_4_lut_4_lut_4_lut_adj_10.init = 16'h1800;
+    LUT4 i9128_3_lut_4_lut (.A(n10980), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n1483), .Z(n9551)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !(C+(D)))) */ ;
+    defparam i9128_3_lut_4_lut.init = 16'h9f90;
+    LUT4 address_11__I_0_Mux_2_i1387_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1387_adj_587)) /* synthesis lut_function=(A (B (C (D)))+!A !(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1387_3_lut_4_lut_4_lut_4_lut.init = 16'h8101;
+    PFUMX i7965 (.BLUT(n8371), .ALUT(n8372), .C0(\rom_addr[8] ), .Z(n8373));
+    LUT4 address_11__I_0_Mux_1_i1514_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1514_adj_588)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1514_3_lut_4_lut_4_lut_4_lut.init = 16'h1810;
+    LUT4 address_11__I_0_Mux_5_i1196_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1196)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A !(B (D)+!B !(C+!(D))))) */ ;
+    defparam address_11__I_0_Mux_5_i1196_3_lut_4_lut_4_lut.init = 16'h4780;
+    LUT4 address_11__I_0_Mux_5_i1770_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1770)) /* synthesis lut_function=(A (B (C)+!B (D))+!A (B (C (D))+!B !(C+!(D)))) */ ;
+    defparam address_11__I_0_Mux_5_i1770_3_lut_4_lut_4_lut.init = 16'he380;
+    LUT4 address_11__I_0_Mux_2_i2040_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n2040_adj_589)) /* synthesis lut_function=(A (B (C)+!B !(C+!(D)))+!A (B (D))) */ ;
+    defparam address_11__I_0_Mux_2_i2040_3_lut_4_lut_4_lut.init = 16'hc680;
+    LUT4 address_11__I_0_Mux_3_i1243_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1243_adj_590)) /* synthesis lut_function=(!(A ((C (D)+!C !(D))+!B)+!A !(B (C (D))))) */ ;
+    defparam address_11__I_0_Mux_3_i1243_3_lut_4_lut_4_lut.init = 16'h4880;
+    LUT4 i5824_2_lut_rep_98_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n10939)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A (B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5824_2_lut_rep_98_4_lut_4_lut.init = 16'h2900;
+    LUT4 address_11__I_0_Mux_3_i604_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n604)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (C+(D))+!B !((D)+!C)))) */ ;
+    defparam address_11__I_0_Mux_3_i604_3_lut_4_lut_4_lut_4_lut.init = 16'h6470;
+    LUT4 n1372_bdd_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11035), .C(\rom_addr[4] ), 
+         .D(n11037), .Z(n10591)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam n1372_bdd_3_lut_4_lut.init = 16'h1f10;
+    LUT4 address_11__I_0_Mux_1_i604_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n604_adj_591)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C))+!A (B (D)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i604_3_lut_4_lut_4_lut.init = 16'hfc28;
+    LUT4 i9126_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11035), .C(\rom_addr[4] ), 
+         .D(n1435_adj_592), .Z(n9549)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam i9126_3_lut_4_lut.init = 16'hf101;
+    PFUMX address_11__I_0_Mux_0_i1276 (.BLUT(n1244), .ALUT(n1275_adj_593), 
+          .C0(\rom_addr[5] ), .Z(n1276)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 n9701_bdd_2_lut_10537_4_lut (.A(n9841), .B(n10897), .C(\rom_addr[6] ), 
+         .D(\rom_addr[7] ), .Z(n10270)) /* synthesis lut_function=(A (B (D)+!B !(C+!(D)))+!A (B (C (D)))) */ ;
+    defparam n9701_bdd_2_lut_10537_4_lut.init = 16'hca00;
+    LUT4 i5898_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n653)) /* synthesis lut_function=(A (B (C (D)))+!A !((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5898_4_lut_4_lut_4_lut.init = 16'h8400;
+    LUT4 address_11__I_0_Mux_4_i716_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[0] ), .C(\rom_addr[1] ), .D(\rom_addr[3] ), .Z(n716)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)))+!A (C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_4_i716_3_lut_4_lut_4_lut.init = 16'h200d;
-    LUT4 i7341_2_lut_rep_243_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(n15568), .D(rom_addr[0]), .Z(n14160)) /* synthesis lut_function=(A (B (C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7341_2_lut_rep_243_3_lut_4_lut.init = 16'h8880;
-    LUT4 i7299_2_lut_rep_189_2_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .Z(n14106)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
-    defparam i7299_2_lut_rep_189_2_lut_3_lut.init = 16'h1010;
-    PFUMX i11747 (.BLUT(n1883_adj_703), .ALUT(n1914), .C0(rom_addr[5]), 
-          .Z(n12372));
-    LUT4 i7347_2_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n15568), .C(n14271), 
-         .D(rom_addr[2]), .Z(n1659_adj_720)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C (D)))+!A !(B (C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7347_2_lut_4_lut_4_lut.init = 16'h70c0;
-    LUT4 i11533_3_lut (.A(n1643), .B(n1549_adj_588), .C(rom_addr[4]), 
-         .Z(n12158)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11533_3_lut.init = 16'hcaca;
-    PFUMX i11625 (.BLUT(n12248), .ALUT(n12249), .C0(rom_addr[4]), .Z(n12250));
-    LUT4 i5154_4_lut_then_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[5]), 
-         .D(rom_addr[2]), .Z(n15558)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5154_4_lut_then_4_lut.init = 16'hffef;
-    LUT4 i5094_2_lut_rep_259_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14176)) /* synthesis lut_function=(!(A (C)+!A (B (C)+!B !(C)))) */ ;
-    defparam i5094_2_lut_rep_259_3_lut.init = 16'h1e1e;
-    LUT4 rom_addr_0__bdd_4_lut_13473 (.A(rom_addr[0]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14370)) /* synthesis lut_function=(A (B (C)+!B !(C+!(D)))+!A (B (D)+!B !(C))) */ ;
-    defparam rom_addr_0__bdd_4_lut_13473.init = 16'hc781;
-    LUT4 i5821_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .D(rom_addr[0]), .Z(n2490)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (D))) */ ;
-    defparam i5821_3_lut_4_lut.init = 16'hf1e0;
-    PFUMX i11748 (.BLUT(n1947), .ALUT(n12217), .C0(rom_addr[5]), .Z(n12373));
-    LUT4 i4885_3_lut_rep_210_4_lut_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14127)) /* synthesis lut_function=(A (B+!(C))+!A (B+(C))) */ ;
-    defparam i4885_3_lut_rep_210_4_lut_3_lut.init = 16'hdede;
-    LUT4 address_11__I_0_Mux_2_i668_3_lut_3_lut_4_lut_3_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .Z(n668)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B))) */ ;
-    defparam address_11__I_0_Mux_2_i668_3_lut_3_lut_4_lut_3_lut.init = 16'h1919;
-    LUT4 address_11__I_0_Mux_3_i2025_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n2025_adj_704)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (C))+!A (B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i2025_3_lut_3_lut_4_lut.init = 16'h0f83;
-    LUT4 i7220_2_lut_rep_329 (.A(n15568), .B(rom_addr[2]), .Z(n14246)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7220_2_lut_rep_329.init = 16'hbbbb;
-    PFUMX i13032 (.BLUT(n14109), .ALUT(n13522), .C0(rom_addr[4]), .Z(n13523));
-    LUT4 address_11__I_0_Mux_1_i413_3_lut_then_3_lut (.A(rom_addr[1]), .B(rom_addr[4]), 
-         .C(rom_addr[3]), .Z(n14287)) /* synthesis lut_function=(A (B (C))+!A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i413_3_lut_then_3_lut.init = 16'hc4c4;
-    PFUMX i11749 (.BLUT(n2010_adj_675), .ALUT(n6625), .C0(rom_addr[5]), 
-          .Z(n12374));
-    LUT4 i5828_3_lut_4_lut_then_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[1]), .Z(n14372)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A !(B (D)+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5828_3_lut_4_lut_then_4_lut.init = 16'h4691;
-    LUT4 i7217_2_lut_rep_199_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14116)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7217_2_lut_rep_199_3_lut.init = 16'h4040;
-    LUT4 address_11__I_0_Mux_1_i413_3_lut_else_3_lut (.A(rom_addr[1]), .B(rom_addr[4]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n14286)) /* synthesis lut_function=(A (B+!(C+(D)))+!A !(B (C+!(D))+!B !(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i413_3_lut_else_3_lut.init = 16'h9c8a;
-    LUT4 i7406_3_lut_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .D(rom_addr[3]), .Z(n859_adj_614)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C))) */ ;
-    defparam i7406_3_lut_3_lut_4_lut.init = 16'hf010;
-    LUT4 i7300_2_lut_rep_245_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14162)) /* synthesis lut_function=(A+(B+(C))) */ ;
-    defparam i7300_2_lut_rep_245_3_lut.init = 16'hfefe;
-    LUT4 i7660_2_lut_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[4]), 
-         .D(rom_addr[0]), .Z(n1275_adj_639)) /* synthesis lut_function=(!(A+(B+(C+(D))))) */ ;
-    defparam i7660_2_lut_3_lut_4_lut.init = 16'h0001;
-    LUT4 address_11__I_0_Mux_1_i443_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .Z(n443)) /* synthesis lut_function=(A (B+!(C))+!A !(B (C)+!B !(C))) */ ;
-    defparam address_11__I_0_Mux_1_i443_3_lut_4_lut_3_lut.init = 16'h9e9e;
-    LUT4 i12607_2_lut_rep_356 (.A(rom_addr[7]), .B(rom_addr[8]), .Z(n14273)) /* synthesis lut_function=(!(A+(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12607_2_lut_rep_356.init = 16'h1111;
-    LUT4 i3878_3_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n4690)) /* synthesis lut_function=(A (B+!(C))+!A (B (C)+!B !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3878_3_lut_3_lut.init = 16'hcbcb;
-    LUT4 address_11__I_0_Mux_2_i2444_4_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n2444_adj_755)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B (C+!(D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2444_4_lut_4_lut_4_lut_4_lut.init = 16'h0430;
-    LUT4 i7389_2_lut_3_lut (.A(rom_addr[7]), .B(rom_addr[8]), .C(n13525), 
-         .Z(n3069_adj_551)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7389_2_lut_3_lut.init = 16'h1010;
-    PFUMX i11755 (.BLUT(n12378), .ALUT(n12379), .C0(rom_addr[5]), .Z(n12380));
-    LUT4 i7366_2_lut_3_lut (.A(rom_addr[7]), .B(rom_addr[8]), .C(n2685_adj_716), 
-         .Z(n3069_c)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7366_2_lut_3_lut.init = 16'h1010;
-    LUT4 i11259_2_lut_rep_357 (.A(rom_addr[0]), .B(rom_addr[4]), .Z(n14274)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i11259_2_lut_rep_357.init = 16'heeee;
-    LUT4 i1_2_lut_2_lut_3_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[4]), .C(rom_addr[3]), 
-         .D(rom_addr[1]), .Z(n11756)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;
-    defparam i1_2_lut_2_lut_3_lut_4_lut.init = 16'h1000;
-    L6MUX21 i13002 (.D0(n13483), .D1(n13063), .SD(rom_addr[5]), .Z(n13484));
-    LUT4 i4985_2_lut_rep_306 (.A(rom_addr[1]), .B(rom_addr[3]), .Z(n14223)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4985_2_lut_rep_306.init = 16'h6666;
-    PFUMX i13000 (.BLUT(n13482), .ALUT(n13481), .C0(rom_addr[3]), .Z(n13483));
-    LUT4 i7279_2_lut_rep_358 (.A(n15568), .B(rom_addr[2]), .Z(n14275)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7279_2_lut_rep_358.init = 16'h8888;
-    LUT4 i7653_2_lut_rep_331 (.A(rom_addr[0]), .B(n15568), .Z(n14248)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i7653_2_lut_rep_331.init = 16'heeee;
-    LUT4 address_11__I_0_Mux_1_i2444_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[3]), .D(rom_addr[2]), .Z(n2444)) /* synthesis lut_function=(A (C (D)+!C !(D))+!A (B (C (D)+!C !(D))+!B !(C+(D)))) */ ;
-    defparam address_11__I_0_Mux_1_i2444_3_lut_4_lut_3_lut_4_lut.init = 16'he00f;
-    LUT4 i3887_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n4699)) /* synthesis lut_function=(A (B+!(C))+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3887_3_lut_4_lut_3_lut.init = 16'h8e8e;
-    LUT4 address_11__I_0_Mux_4_i1101_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1101)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1101_3_lut_4_lut_4_lut_4_lut.init = 16'h0580;
-    PFUMX i12998 (.BLUT(n13479), .ALUT(n13476), .C0(rom_addr[6]), .Z(n13480));
-    LUT4 i5777_4_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n6622)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (B (C (D))+!B !(C))) */ ;
-    defparam i5777_4_lut_4_lut_4_lut.init = 16'he303;
-    PFUMX i13420 (.BLUT(n14316), .ALUT(n14317), .C0(rom_addr[0]), .Z(n14318));
-    LUT4 address_11__I_0_Mux_1_i308_3_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n308)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i308_3_lut_3_lut.init = 16'h3434;
-    PFUMX i12996 (.BLUT(n13477), .ALUT(n14122), .C0(rom_addr[4]), .Z(n13478));
-    LUT4 address_11__I_0_Mux_4_i1292_3_lut_4_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n1292)) /* synthesis lut_function=(!(A (B (C))+!A !(B+(C)))) */ ;
-    defparam address_11__I_0_Mux_4_i1292_3_lut_4_lut_3_lut.init = 16'h7e7e;
-    PFUMX i11757 (.BLUT(n11755), .ALUT(n10563), .C0(rom_addr[6]), .Z(n12382));
-    LUT4 address_11__I_0_Mux_5_i1210_3_lut_3_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n1210)) /* synthesis lut_function=(A ((C)+!B)+!A (B (C)+!B !(C))) */ ;
-    defparam address_11__I_0_Mux_5_i1210_3_lut_3_lut_3_lut.init = 16'he3e3;
-    LUT4 i11601_then_3_lut (.A(rom_addr[4]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14290)) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A (B+!(C)))) */ ;
-    defparam i11601_then_3_lut.init = 16'h3838;
-    LUT4 n205_bdd_3_lut_13245 (.A(n205_adj_549), .B(n220_adj_681), .C(rom_addr[4]), 
-         .Z(n13693)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n205_bdd_3_lut_13245.init = 16'hcaca;
-    PFUMX i11761 (.BLUT(n1436_c), .ALUT(n1467_c), .C0(rom_addr[5]), .Z(n12386));
-    LUT4 i4937_2_lut_rep_221_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .Z(n14138)) /* synthesis lut_function=(A (B+(C))+!A ((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4937_2_lut_rep_221_3_lut.init = 16'hf9f9;
-    LUT4 i5154_4_lut_else_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[5]), 
-         .Z(n15557)) /* synthesis lut_function=(A+((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5154_4_lut_else_4_lut.init = 16'hfbfb;
-    LUT4 address_11__I_0_Mux_3_i699_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(n15548), .D(n5064), .Z(n699)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i699_4_lut_4_lut.init = 16'hd1c0;
-    PFUMX i11762 (.BLUT(n1499), .ALUT(n1530_adj_669), .C0(rom_addr[5]), 
-          .Z(n12387));
-    L6MUX21 i12994 (.D0(n13474), .D1(n13472), .SD(rom_addr[6]), .Z(n12534));
-    LUT4 i5828_3_lut_4_lut_else_4_lut (.A(rom_addr[3]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[1]), .Z(n14371)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5828_3_lut_4_lut_else_4_lut.init = 16'h8200;
-    PFUMX i12992 (.BLUT(n13473), .ALUT(n11756), .C0(rom_addr[5]), .Z(n13474));
-    LUT4 i7244_2_lut_2_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .Z(n723)) /* synthesis lut_function=(!(A (C)+!A ((C)+!B))) */ ;
-    defparam i7244_2_lut_2_lut_3_lut.init = 16'h0e0e;
-    LUT4 i7048_2_lut_rep_264_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .Z(n14181)) /* synthesis lut_function=(A (C)+!A (B (C))) */ ;
-    defparam i7048_2_lut_rep_264_3_lut.init = 16'he0e0;
-    LUT4 address_11__I_0_Mux_1_i971_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[3]), .D(rom_addr[2]), .Z(n971)) /* synthesis lut_function=(!(A (C (D)+!C !(D))+!A (B (C (D)+!C !(D))+!B ((D)+!C)))) */ ;
-    defparam address_11__I_0_Mux_1_i971_3_lut_4_lut_3_lut_4_lut.init = 16'h0ef0;
-    PFUMX i11768 (.BLUT(n1692_adj_666), .ALUT(n1723_adj_647), .C0(rom_addr[5]), 
-          .Z(n12393));
-    LUT4 i3420_3_lut_4_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .Z(n4232)) /* synthesis lut_function=(A ((C)+!B)+!A (B+!(C))) */ ;
-    defparam i3420_3_lut_4_lut_3_lut.init = 16'he7e7;
-    LUT4 i7372_2_lut_rep_244_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14161)) /* synthesis lut_function=(!(((C (D))+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7372_2_lut_rep_244_3_lut_4_lut.init = 16'h0888;
-    LUT4 i11503_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[4]), 
-         .D(n1691), .Z(n12128)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11503_3_lut_4_lut.init = 16'hf808;
-    LUT4 i3121_3_lut_4_lut_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n3933)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3121_3_lut_4_lut_3_lut.init = 16'h4848;
-    PFUMX i11769 (.BLUT(n1755), .ALUT(n1786_adj_663), .C0(rom_addr[5]), 
-          .Z(n12394));
-    LUT4 i11603_3_lut_4_lut (.A(n14210), .B(n14279), .C(rom_addr[4]), 
-         .D(n205_adj_549), .Z(n12228)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam i11603_3_lut_4_lut.init = 16'h8f80;
-    LUT4 n13218_bdd_3_lut (.A(n13218), .B(n2556), .C(rom_addr[7]), .Z(n13219)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam n13218_bdd_3_lut.init = 16'hcaca;
-    PFUMX i12990 (.BLUT(n13471), .ALUT(n13470), .C0(rom_addr[5]), .Z(n13472));
-    LUT4 i3895_3_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .Z(n4707)) /* synthesis lut_function=(A ((C)+!B)+!A (B (C)+!B !(C))) */ ;
-    defparam i3895_3_lut_3_lut.init = 16'he3e3;
-    LUT4 n205_bdd_3_lut_13163 (.A(n491), .B(n236), .C(rom_addr[4]), .Z(n13692)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
-    defparam n205_bdd_3_lut_13163.init = 16'hacac;
-    LUT4 address_11__I_0_Mux_1_i1076_3_lut_4_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n1076)) /* synthesis lut_function=(A (B+!(C))+!A !((C)+!B)) */ ;
-    defparam address_11__I_0_Mux_1_i1076_3_lut_4_lut_3_lut.init = 16'h8e8e;
-    LUT4 address_11__I_0_Mux_1_i2268_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n2220), .Z(n2268_adj_753)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2268_3_lut_4_lut.init = 16'hf808;
-    PFUMX i13418 (.BLUT(n14330), .ALUT(n14314), .C0(rom_addr[0]), .Z(n14315));
-    LUT4 i11601_else_3_lut (.A(rom_addr[4]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .D(rom_addr[0]), .Z(n14289)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A ((C)+!B))) */ ;
-    defparam i11601_else_3_lut.init = 16'h0484;
-    LUT4 i7233_4_lut (.A(n14106), .B(rom_addr[4]), .C(n15547), .D(rom_addr[3]), 
-         .Z(n2523)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7233_4_lut.init = 16'hc088;
-    LUT4 i11522_3_lut (.A(n2411), .B(n2426_adj_759), .C(rom_addr[4]), 
-         .Z(n12147)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11522_3_lut.init = 16'hcaca;
-    LUT4 i12387_3_lut (.A(n12146), .B(n12147), .C(rom_addr[5]), .Z(n12148)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12387_3_lut.init = 16'hcaca;
-    LUT4 i11519_4_lut (.A(rom_addr[0]), .B(n1017), .C(rom_addr[4]), .D(n4699), 
-         .Z(n12144)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;
-    defparam i11519_4_lut.init = 16'hc0ca;
-    PFUMX i11628 (.BLUT(n12251), .ALUT(n12252), .C0(rom_addr[4]), .Z(n12253));
-    LUT4 i11518_4_lut (.A(rom_addr[0]), .B(n1101), .C(rom_addr[4]), .D(n4690), 
-         .Z(n12143)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;
-    defparam i11518_4_lut.init = 16'hc0ca;
-    LUT4 i7181_4_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .D(rom_addr[3]), .Z(n1038)) /* synthesis lut_function=(A (B (C (D)))+!A !((D)+!C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7181_4_lut_4_lut_4_lut.init = 16'h8050;
-    LUT4 i11461_3_lut (.A(n46), .B(n61), .C(rom_addr[4]), .Z(n12086)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11461_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_2_i251_3_lut_4_lut_4_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n251)) /* synthesis lut_function=(!((B (C (D)+!C !(D))+!B (C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i251_3_lut_4_lut_4_lut_4_lut.init = 16'h0a80;
-    LUT4 i5869_3_lut_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .Z(n6718)) /* synthesis lut_function=(!(A (B)+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5869_3_lut_3_lut_4_lut_3_lut.init = 16'h7676;
-    LUT4 address_11__I_0_Mux_6_i2025_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n2025)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2025_3_lut_4_lut_3_lut_4_lut.init = 16'h7780;
-    LUT4 address_11__I_0_Mux_4_i60_3_lut_rep_236_3_lut (.A(rom_addr[0]), .B(n15568), 
-         .C(rom_addr[2]), .Z(n14153)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B !(C))) */ ;
-    defparam address_11__I_0_Mux_4_i60_3_lut_rep_236_3_lut.init = 16'hc1c1;
-    LUT4 address_11__I_0_Mux_4_i796_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .Z(n796)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i796_3_lut_4_lut_3_lut.init = 16'h8686;
-    LUT4 i7611_2_lut_rep_311 (.A(rom_addr[3]), .B(rom_addr[0]), .Z(n14228)) /* synthesis lut_function=(A (B)) */ ;
-    defparam i7611_2_lut_rep_311.init = 16'h8888;
-    PFUMX i11788 (.BLUT(n12411), .ALUT(n12412), .C0(rom_addr[5]), .Z(n12413));
-    LUT4 address_11__I_0_Mux_4_i1657_3_lut_rep_268_3_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .Z(n14185)) /* synthesis lut_function=(!(A (B (C))+!A (B (C)+!B !(C)))) */ ;
-    defparam address_11__I_0_Mux_4_i1657_3_lut_rep_268_3_lut.init = 16'h3e3e;
-    LUT4 i7144_2_lut_3_lut_3_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[0]), 
-         .C(rom_addr[4]), .D(n14272), .Z(n1181)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A ((D)+!C))) */ ;
-    defparam i7144_2_lut_3_lut_3_lut_4_lut.init = 16'h0070;
-    LUT4 address_11__I_0_Mux_4_i250_3_lut_rep_266_4_lut_3_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .Z(n14183)) /* synthesis lut_function=(!(A (B+(C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i250_3_lut_rep_266_4_lut_3_lut.init = 16'h4242;
-    LUT4 i11515_4_lut (.A(rom_addr[0]), .B(n14176), .C(rom_addr[4]), .D(n14171), 
-         .Z(n12140)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
-    defparam i11515_4_lut.init = 16'hcac0;
-    LUT4 i12573_2_lut_rep_312 (.A(rom_addr[6]), .B(rom_addr[5]), .Z(n14229)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12573_2_lut_rep_312.init = 16'hdddd;
-    LUT4 i1_2_lut_rep_263_2_lut_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14180)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_263_2_lut_3_lut.init = 16'h0808;
-    LUT4 i12576_2_lut_3_lut (.A(rom_addr[6]), .B(rom_addr[5]), .C(rom_addr[7]), 
-         .Z(n11966)) /* synthesis lut_function=((B+(C))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12576_2_lut_3_lut.init = 16'hfdfd;
-    PFUMX i12984 (.BLUT(n13465), .ALUT(n13460), .C0(rom_addr[6]), .Z(n13466));
-    PFUMX i11831 (.BLUT(n12454), .ALUT(n12455), .C0(rom_addr[5]), .Z(n12456));
-    LUT4 address_11__I_0_Mux_1_i1038_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[3]), .D(rom_addr[2]), .Z(n1038_adj_708)) /* synthesis lut_function=(A (C (D)+!C !(D))+!A (B (C (D)+!C !(D))+!B !(C+!(D)))) */ ;
-    defparam address_11__I_0_Mux_1_i1038_3_lut_4_lut_3_lut_4_lut.init = 16'he10e;
-    LUT4 address_11__I_0_Mux_4_i557_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .Z(n557_adj_652)) /* synthesis lut_function=(A ((C)+!B)+!A (B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i557_3_lut_4_lut_3_lut.init = 16'he7e7;
-    LUT4 i7410_2_lut_rep_327 (.A(rom_addr[0]), .B(n15568), .Z(n14244)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7410_2_lut_rep_327.init = 16'h8888;
-    PFUMX i11837 (.BLUT(n12460), .ALUT(n12461), .C0(rom_addr[5]), .Z(n12462));
-    LUT4 address_11__I_0_Mux_6_i1307_3_lut_rep_348 (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n14265)) /* synthesis lut_function=(!(A (B+!(C))+!A ((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i1307_3_lut_rep_348.init = 16'h2424;
-    LUT4 i11615_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n12240)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)+!C !(D)))+!A (B (C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11615_3_lut_3_lut_4_lut.init = 16'h240f;
-    LUT4 i11619_then_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .D(rom_addr[2]), .Z(n15561)) /* synthesis lut_function=(!(A (B (C+!(D))+!B ((D)+!C))+!A !(B (C (D)+!C !(D))+!B (D)))) */ ;
-    defparam i11619_then_4_lut.init = 16'h5924;
-    LUT4 i1_2_lut_3_lut_4_lut_adj_20 (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[5]), .Z(n4_adj_14)) /* synthesis lut_function=(A (B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_3_lut_4_lut_adj_20.init = 16'h8088;
-    PFUMX i11419 (.BLUT(n12042), .ALUT(n12043), .C0(rom_addr[5]), .Z(n12044));
-    LUT4 i11619_else_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .D(rom_addr[2]), .Z(n15560)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+(D)))+!A !(B (C (D))+!B (C)))) */ ;
-    defparam i11619_else_4_lut.init = 16'h5092;
-    LUT4 i11624_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n12249)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C (D)))+!A (B+!(C (D)+!C !(D))))) */ ;
-    defparam i11624_3_lut_4_lut_4_lut.init = 16'h3081;
-    LUT4 n2552_bdd_2_lut_13297_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[0]), 
-         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n13190)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A (C+(D)))) */ ;
-    defparam n2552_bdd_2_lut_13297_3_lut_4_lut.init = 16'h0007;
-    LUT4 i11781_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14375)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A (B (D)+!B !(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11781_3_lut_4_lut_then_4_lut.init = 16'h1047;
-    LUT4 i11781_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14374)) /* synthesis lut_function=(!(A+!(B (C (D))+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11781_3_lut_4_lut_else_4_lut.init = 16'h4101;
-    LUT4 address_11__I_0_Mux_2_i220_3_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n220)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i220_3_lut_4_lut_4_lut.init = 16'h07a7;
-    LUT4 i11227_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .D(rom_addr[3]), .Z(n2025_c)) /* synthesis lut_function=(A (B (C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11227_3_lut_4_lut.init = 16'h8880;
-    LUT4 i12547_2_lut_rep_313 (.A(rom_addr[5]), .B(rom_addr[4]), .Z(n14230)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12547_2_lut_rep_313.init = 16'hbbbb;
-    PFUMX i11424 (.BLUT(n1628), .ALUT(n1659), .C0(rom_addr[5]), .Z(n12049));
-    LUT4 i12420_3_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), .C(n987), 
-         .D(n986_adj_554), .Z(n1019)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12420_3_lut_4_lut.init = 16'hf4b0;
-    LUT4 i5874_2_lut_rep_338 (.A(n15568), .B(rom_addr[2]), .Z(n14255)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5874_2_lut_rep_338.init = 16'h6666;
-    LUT4 address_11__I_0_Mux_2_i557_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .Z(n557_adj_761)) /* synthesis lut_function=(!(A (B+(C))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i557_3_lut_4_lut_3_lut.init = 16'h4646;
-    LUT4 i4055_3_lut_rep_246_4_lut_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14163)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4055_3_lut_rep_246_4_lut_3_lut.init = 16'hd6d6;
-    LUT4 i3979_3_lut_rep_254_4_lut_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14171)) /* synthesis lut_function=(!(A (B)+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3979_3_lut_rep_254_4_lut_3_lut.init = 16'h6262;
-    LUT4 i3848_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n4660)) /* synthesis lut_function=(A (B+(C))+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3848_3_lut_4_lut_3_lut.init = 16'hb8b8;
-    LUT4 i12538_2_lut_rep_315 (.A(rom_addr[5]), .B(rom_addr[4]), .Z(n14232)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12538_2_lut_rep_315.init = 16'heeee;
-    PFUMX i11428 (.BLUT(n12051), .ALUT(n12052), .C0(rom_addr[5]), .Z(n12053));
-    LUT4 i12302_3_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), .C(n1692), 
-         .D(n1676_adj_566), .Z(n1724_adj_712)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12302_3_lut_4_lut.init = 16'hf1e0;
-    L6MUX21 i12685 (.D0(n13041), .D1(n13039), .SD(rom_addr[5]), .Z(n13042));
-    LUT4 i12315_3_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), .C(n1692_adj_601), 
-         .D(n1676_adj_578), .Z(n1724)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12315_3_lut_4_lut.init = 16'hf1e0;
-    LUT4 rom_addr_0__bdd_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[4]), .Z(n13909)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam rom_addr_0__bdd_3_lut_4_lut.init = 16'h6000;
-    LUT4 i12613_2_lut_rep_316 (.A(rom_addr[6]), .B(rom_addr[5]), .Z(n14233)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12613_2_lut_rep_316.init = 16'heeee;
-    LUT4 i7042_2_lut_rep_249_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14166)) /* synthesis lut_function=(A (B (C))+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7042_2_lut_rep_249_3_lut.init = 16'h9090;
-    LUT4 i7045_2_lut_rep_216_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14133)) /* synthesis lut_function=(A ((C)+!B)+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7045_2_lut_rep_216_3_lut.init = 16'hf6f6;
-    LUT4 address_11__I_0_Mux_3_i1117_3_lut_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(n125), .D(rom_addr[5]), .Z(n1117_adj_732)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))+!A (C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1117_3_lut_3_lut_4_lut.init = 16'hf077;
-    LUT4 address_11__I_0_Mux_1_i1211_3_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n11860)) /* synthesis lut_function=(A (B (C (D))+!B !((D)+!C))+!A !(B)) */ ;
-    defparam address_11__I_0_Mux_1_i1211_3_lut_4_lut_4_lut_4_lut.init = 16'h9131;
-    LUT4 address_11__I_0_Mux_3_i1514_3_lut_4_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1514)) /* synthesis lut_function=(A (B (C+(D)))+!A (B (C)+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1514_3_lut_4_lut_4_lut.init = 16'hc9c0;
-    LUT4 address_11__I_0_Mux_5_i1451_3_lut_4_lut_4_lut_3_lut_4_lut (.A(rom_addr[1]), 
-         .B(rom_addr[2]), .C(rom_addr[3]), .D(rom_addr[0]), .Z(n1451)) /* synthesis lut_function=(!(A (B (C+!(D))+!B ((D)+!C))+!A (B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i1451_3_lut_4_lut_4_lut_3_lut_4_lut.init = 16'h0960;
-    PFUMX address_11__I_0_Mux_0_i1405 (.BLUT(n1341), .ALUT(n10570), .C0(rom_addr[6]), 
-          .Z(n1405)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    LUT4 i7183_2_lut_rep_242_2_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .Z(n14159)) /* synthesis lut_function=(!(A (B (C))+!A !(B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7183_2_lut_rep_242_2_lut_3_lut.init = 16'h6f6f;
-    LUT4 i7090_2_lut_rep_178_3_lut_4_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .D(rom_addr[3]), .Z(n14095)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7090_2_lut_rep_178_3_lut_4_lut.init = 16'h0090;
-    LUT4 i1_2_lut_rep_317 (.A(rom_addr[4]), .B(rom_addr[2]), .Z(n14234)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_317.init = 16'heeee;
-    LUT4 i5796_2_lut_rep_247_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14164)) /* synthesis lut_function=(A ((C)+!B)+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5796_2_lut_rep_247_3_lut.init = 16'hf6f6;
-    LUT4 i3637_2_lut_rep_238_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[3]), 
-         .Z(n14155)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3637_2_lut_rep_238_3_lut.init = 16'h6060;
-    PFUMX i11912 (.BLUT(n12535), .ALUT(n12536), .C0(rom_addr[5]), .Z(n12537));
-    LUT4 address_11__I_0_Mux_1_i620_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .D(rom_addr[3]), .Z(n620)) /* synthesis lut_function=(!(A (B+!((D)+!C))+!A (B ((D)+!C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i620_3_lut_4_lut_4_lut.init = 16'h2243;
-    LUT4 i7304_2_lut_rep_143_3_lut_3_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(n14277), .Z(n14060)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7304_2_lut_rep_143_3_lut_3_lut_4_lut.init = 16'h1000;
-    LUT4 address_11__I_0_Mux_1_i652_3_lut_rep_225_3_lut (.A(rom_addr[0]), 
-         .B(rom_addr[1]), .C(rom_addr[2]), .Z(n14142)) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i652_3_lut_rep_225_3_lut.init = 16'h7c7c;
-    LUT4 i11992_3_lut (.A(n2077), .B(n1529_adj_617), .C(rom_addr[4]), 
-         .Z(n12617)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11992_3_lut.init = 16'hcaca;
-    LUT4 i3952_3_lut_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .Z(n4764)) /* synthesis lut_function=(!(A (B)+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3952_3_lut_3_lut_4_lut_3_lut.init = 16'h7676;
-    LUT4 i2440_3_lut_4_lut (.A(n14278), .B(n14148), .C(rom_addr[6]), .D(n14324), 
-         .Z(n3252)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2440_3_lut_4_lut.init = 16'hefe0;
-    PFUMX i13415 (.BLUT(n14308), .ALUT(n14309), .C0(rom_addr[0]), .Z(n14310));
-    LUT4 i11591_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14272), .C(n15545), 
-         .D(rom_addr[3]), .Z(n12216)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11591_3_lut_3_lut_4_lut.init = 16'h11f0;
-    LUT4 i1_2_lut_rep_173_3_lut_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n14090)) /* synthesis lut_function=(!((((D)+!C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_173_3_lut_3_lut_4_lut.init = 16'h0080;
-    LUT4 i7235_2_lut_rep_209_2_lut_3_lut (.A(n15568), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14126)) /* synthesis lut_function=(!(A (B+(C))+!A ((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7235_2_lut_rep_209_2_lut_3_lut.init = 16'h0606;
-    LUT4 n2506_bdd_3_lut_13031_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[4]), .D(n1211), .Z(n13464)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2506_bdd_3_lut_13031_4_lut.init = 16'hf808;
-    LUT4 address_11__I_0_Mux_4_i1867_3_lut_4_lut_4_lut_4_lut (.A(n15568), 
-         .B(rom_addr[2]), .C(rom_addr[0]), .D(rom_addr[3]), .Z(n1867)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(D))+!A (B+!(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1867_3_lut_4_lut_4_lut_4_lut.init = 16'h3390;
-    LUT4 i1_2_lut_rep_354 (.A(rom_addr[4]), .B(rom_addr[3]), .Z(n14271)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_354.init = 16'h8888;
-    LUT4 i7043_4_lut_4_lut (.A(rom_addr[0]), .B(n15568), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n1529_adj_617)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A (B (D)+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7043_4_lut_4_lut.init = 16'hc700;
-    PFUMX i11431 (.BLUT(n12054), .ALUT(n12055), .C0(rom_addr[5]), .Z(n12056));
-    LUT4 address_11__I_0_Mux_6_i1499_3_lut_4_lut (.A(n14248), .B(n14279), 
-         .C(rom_addr[4]), .D(n1483), .Z(n1499_adj_757)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_6_i1499_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i11527_4_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14272), .C(rom_addr[4]), 
-         .D(n4764), .Z(n12152)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11527_4_lut_4_lut_4_lut.init = 16'h01a1;
-    LUT4 address_11__I_0_Mux_4_i1946_3_lut_3_lut_3_lut_4_lut (.A(rom_addr[2]), 
-         .B(rom_addr[3]), .C(rom_addr[1]), .D(rom_addr[0]), .Z(n1946_adj_697)) /* synthesis lut_function=(!(A (B (C)+!B !(C (D)))+!A !(B (C (D))+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_4_i1946_3_lut_3_lut_3_lut_4_lut.init = 16'h6909;
-    LUT4 address_11__I_0_Mux_5_i1914_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14272), 
-         .C(n1785), .D(rom_addr[4]), .Z(n1914_adj_662)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    LUT4 i9626_3_lut (.A(n1228_adj_594), .B(n1243_adj_590), .C(\rom_addr[4] ), 
+         .Z(n9471)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9626_3_lut.init = 16'hcaca;
+    PFUMX i7723 (.BLUT(n9915), .ALUT(n9916), .C0(\rom_addr[5] ), .Z(n6453));
+    LUT4 n635_bdd_3_lut_10910 (.A(n635), .B(n11124), .C(\rom_addr[4] ), 
+         .Z(n11356)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n635_bdd_3_lut_10910.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_5_i1467_3_lut_4_lut (.A(n11095), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1451), .Z(n1467)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1467_3_lut_4_lut.init = 16'hefe0;
+    LUT4 i9145_4_lut (.A(\rom_addr[0] ), .B(n1101), .C(\rom_addr[4] ), 
+         .D(n3750), .Z(n9568)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;
+    defparam i9145_4_lut.init = 16'hc0ca;
+    PFUMX i9278 (.BLUT(n9697), .ALUT(n9698), .C0(\rom_addr[6] ), .Z(n9701));
+    LUT4 address_11__I_0_Mux_1_i1723_3_lut_4_lut (.A(n11095), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1451_adj_595), .Z(n1723_adj_596)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1723_3_lut_4_lut.init = 16'hefe0;
+    LUT4 n476_bdd_3_lut_11036 (.A(n476), .B(n507), .C(\rom_addr[5] ), 
+         .Z(n11355)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n476_bdd_3_lut_11036.init = 16'hcaca;
+    LUT4 i9046_4_lut (.A(n11044), .B(n11067), .C(\rom_addr[4] ), .D(\rom_addr[3] ), 
+         .Z(n9469)) /* synthesis lut_function=(A (B+((D)+!C))+!A (B (C)+!B (C (D)))) */ ;
+    defparam i9046_4_lut.init = 16'hfaca;
+    LUT4 n9443_bdd_3_lut_10723 (.A(n380), .B(n349), .C(\rom_addr[5] ), 
+         .Z(n11359)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
+    defparam n9443_bdd_3_lut_10723.init = 16'hacac;
+    LUT4 i8838_3_lut_4_lut (.A(n11093), .B(\rom_addr[3] ), .C(n9247), 
+         .D(n1676), .Z(n5254)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i8838_3_lut_4_lut.init = 16'hefe0;
+    LUT4 n9443_bdd_3_lut_11075 (.A(n9443), .B(n11359), .C(\rom_addr[6] ), 
+         .Z(n11360)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n9443_bdd_3_lut_11075.init = 16'hcaca;
+    LUT4 i9155_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), .C(\rom_addr[4] ), 
+         .D(n1466_adj_598), .Z(n9578)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9155_3_lut_4_lut.init = 16'hf202;
+    LUT4 n1372_bdd_4_lut_10250 (.A(n10942), .B(\rom_addr[4] ), .C(\rom_addr[3] ), 
+         .D(n11094), .Z(n10471)) /* synthesis lut_function=(A (B+(C (D)))+!A !(B+!(C (D)))) */ ;
+    defparam n1372_bdd_4_lut_10250.init = 16'hb888;
+    LUT4 i9167_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), .C(\rom_addr[4] ), 
+         .D(n2009), .Z(n9590)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9167_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_2_i1692_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11021), .C(\rom_addr[5] ), .D(n10976), .Z(n1692)) /* synthesis lut_function=(!((B (C+(D))+!B !(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1692_3_lut_4_lut_4_lut.init = 16'h202a;
+    LUT4 i9268_3_lut_4_lut (.A(n11004), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n10942), .Z(n9691)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9268_3_lut_4_lut.init = 16'hefe0;
+    L6MUX21 i9279 (.D0(n9699), .D1(n9700), .SD(\rom_addr[6] ), .Z(n9702));
+    LUT4 address_11__I_0_Mux_2_i1786_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), 
+         .C(\rom_addr[4] ), .D(n1913), .Z(n1786_adj_563)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1786_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9296_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), .C(\rom_addr[4] ), 
+         .D(n1643), .Z(n9719)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9296_3_lut_4_lut.init = 16'h2f20;
+    PFUMX i9285 (.BLUT(n9704), .ALUT(n9705), .C0(\rom_addr[6] ), .Z(n9708));
+    LUT4 n347_bdd_4_lut (.A(n10932), .B(\rom_addr[5] ), .C(\rom_addr[3] ), 
+         .D(n11094), .Z(n10473)) /* synthesis lut_function=(A (B+(C (D)))+!A !(B+!(C (D)))) */ ;
+    defparam n347_bdd_4_lut.init = 16'hb888;
+    LUT4 address_11__I_0_Mux_4_i1692_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), 
+         .C(\rom_addr[5] ), .D(n1676_adj_599), .Z(n1692_adj_600)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1692_3_lut_4_lut.init = 16'h2f20;
+    LUT4 i9347_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), .C(\rom_addr[5] ), 
+         .D(n1914), .Z(n9770)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9347_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9318_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), .C(\rom_addr[5] ), 
+         .D(n1851_adj_601), .Z(n9741)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9318_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_3_i1692_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11041), .C(\rom_addr[5] ), .D(n11021), .Z(n1692_adj_602)) /* synthesis lut_function=(!((B (C (D))+!B ((D)+!C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1692_3_lut_4_lut_4_lut.init = 16'h08a8;
+    PFUMX i10595 (.BLUT(n11163), .ALUT(n11164), .C0(\rom_addr[0] ), .Z(n11165));
+    LUT4 i1_2_lut_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), 
+         .C(n11027), .D(\rom_addr[7] ), .Z(n8371)) /* synthesis lut_function=((B+(C+!(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_3_lut_4_lut_4_lut_4_lut.init = 16'hfdff;
+    L6MUX21 i9286 (.D0(n9706), .D1(n9707), .SD(\rom_addr[6] ), .Z(n9709));
+    LUT4 n1181_bdd_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11041), .C(\rom_addr[4] ), 
+         .D(n1196), .Z(n10712)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n1181_bdd_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_4_i924_4_lut_4_lut_then_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[4] ), .D(\rom_addr[3] ), .Z(n11127)) /* synthesis lut_function=(!(A+(B (C+!(D))+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i924_4_lut_4_lut_then_4_lut.init = 16'h1500;
+    LUT4 address_11__I_0_Mux_3_i1676_3_lut_4_lut (.A(n11022), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(n11004), .Z(n1676_adj_603)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1676_3_lut_4_lut.init = 16'h2f20;
+    LUT4 i9158_3_lut_4_lut (.A(n11093), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n9245), .Z(n9581)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9158_3_lut_4_lut.init = 16'h2f20;
+    LUT4 i9059_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(\rom_addr[3] ), .Z(n9482)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam i9059_3_lut_4_lut.init = 16'h1f10;
+    LUT4 n444_bdd_3_lut_11059 (.A(n9651), .B(n9652), .C(\rom_addr[4] ), 
+         .Z(n10485)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n444_bdd_3_lut_11059.init = 16'hcaca;
+    L6MUX21 i9292 (.D0(n9711), .D1(n9712), .SD(\rom_addr[6] ), .Z(n9715));
+    L6MUX21 i9293 (.D0(n9713), .D1(n9714), .SD(\rom_addr[6] ), .Z(n9716));
+    LUT4 n4842_bdd_4_lut (.A(n10995), .B(n4511), .C(\rom_addr[0] ), .D(\rom_addr[4] ), 
+         .Z(n10896)) /* synthesis lut_function=(!(A (B (D)+!B (C (D)))+!A (B+(C+!(D))))) */ ;
+    defparam n4842_bdd_4_lut.init = 16'h03aa;
+    LUT4 address_11__I_0_Mux_6_i1883_3_lut_4_lut_4_lut (.A(n11093), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n11004), .Z(n1883_adj_604)) /* synthesis lut_function=(A (B (C)+!B ((D)+!C))+!A (B (C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1883_3_lut_4_lut_4_lut.init = 16'hf2c2;
+    LUT4 i9328_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n11133), .Z(n9751)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam i9328_3_lut_4_lut.init = 16'h1f10;
+    LUT4 i9159_3_lut_4_lut (.A(n10979), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n2009_adj_605), .Z(n9582)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9159_3_lut_4_lut.init = 16'hfe0e;
+    PFUMX address_11__I_0_Mux_0_i1405 (.BLUT(n1341_adj_606), .ALUT(n9154), 
+          .C0(\rom_addr[6] ), .Z(n1405)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 n9716_bdd_3_lut_10532 (.A(n9708), .B(n9709), .C(\rom_addr[7] ), 
+         .Z(n10267)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n9716_bdd_3_lut_10532.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_5_i1436_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), 
+         .C(\rom_addr[4] ), .D(n1435_adj_607), .Z(n1436_c)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam address_11__I_0_Mux_5_i1436_3_lut_4_lut.init = 16'hf101;
+    LUT4 i9041_3_lut (.A(n620), .B(n205), .C(\rom_addr[4] ), .Z(n9464)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9041_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_6_i2010_3_lut_4_lut (.A(n10979), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n2009_adj_608), .Z(n2010)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i2010_3_lut_4_lut.init = 16'hfe0e;
+    LUT4 address_11__I_0_Mux_3_i1820_3_lut_4_lut_4_lut (.A(n10979), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n11093), .Z(n1820)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B (C)+!B !(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1820_3_lut_4_lut_4_lut.init = 16'h3e0e;
+    LUT4 i9040_3_lut (.A(n491), .B(n604_adj_591), .C(\rom_addr[4] ), .Z(n9463)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9040_3_lut.init = 16'hcaca;
+    LUT4 i9734_3_lut_4_lut (.A(n11003), .B(n9127), .C(\rom_addr[5] ), 
+         .D(n1565_adj_609), .Z(n1597)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
+    defparam i9734_3_lut_4_lut.init = 16'h8f80;
+    PFUMX i9225 (.BLUT(n397), .ALUT(n5224), .C0(\rom_addr[4] ), .Z(n9648));
+    L6MUX21 i9421 (.D0(n9508), .D1(n9518), .SD(\rom_addr[6] ), .Z(n9844));
+    LUT4 address_11__I_0_Mux_5_i636_3_lut_rep_92_4_lut (.A(\rom_addr[2] ), 
+         .B(n11044), .C(\rom_addr[4] ), .D(n10970), .Z(n10933)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i636_3_lut_rep_92_4_lut.init = 16'h8f80;
+    L6MUX21 i9309 (.D0(n9729), .D1(n9730), .SD(\rom_addr[6] ), .Z(n9732));
+    LUT4 i9094_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11044), .C(\rom_addr[4] ), 
+         .D(n124_adj_610), .Z(n9517)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9094_3_lut_4_lut.init = 16'hf808;
+    L6MUX21 i10377 (.D0(n10690), .D1(n10688), .SD(\rom_addr[6] ), .Z(n10691));
+    LUT4 address_11__I_0_Mux_6_i1467_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11044), 
+         .C(\rom_addr[4] ), .D(n5204), .Z(n1467_adj_611)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1467_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_4_i924_4_lut_4_lut_else_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[4] ), .D(\rom_addr[3] ), .Z(n11126)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i924_4_lut_4_lut_else_4_lut.init = 16'h0400;
+    L6MUX21 i9316 (.D0(n9736), .D1(n9737), .SD(\rom_addr[6] ), .Z(n9739));
+    LUT4 n9716_bdd_3_lut_10067 (.A(n9716), .B(n9715), .C(\rom_addr[7] ), 
+         .Z(n10266)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
+    defparam n9716_bdd_3_lut_10067.init = 16'hacac;
+    LUT4 i9259_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n1274), .Z(n9682)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam i9259_3_lut_4_lut.init = 16'hf101;
+    LUT4 n9701_bdd_3_lut_10536 (.A(n9701), .B(n9702), .C(\rom_addr[7] ), 
+         .Z(n10269)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n9701_bdd_3_lut_10536.init = 16'hcaca;
+    LUT4 i9081_3_lut_4_lut (.A(n11028), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n2025_adj_612), .Z(n9504)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9081_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_1_i1054_3_lut_4_lut (.A(n11028), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1038), .Z(n1054)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1054_3_lut_4_lut.init = 16'h8f80;
+    PFUMX i9322 (.BLUT(n9741), .ALUT(n9742), .C0(\rom_addr[6] ), .Z(n9745));
+    LUT4 address_11__I_0_Mux_0_i1978_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), 
+         .C(\rom_addr[4] ), .D(n1387), .Z(n1978_adj_613)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i1978_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9205_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n890), .Z(n9628)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9205_3_lut_4_lut.init = 16'h2f20;
+    LUT4 i9210_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n78), .Z(n9633)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9210_3_lut_4_lut.init = 16'h2f20;
+    LUT4 n668_bdd_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n668), .Z(n10689)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n668_bdd_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9301_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n2009_adj_614), .Z(n9724)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9301_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9038_3_lut (.A(n526_adj_571), .B(n443_adj_615), .C(\rom_addr[4] ), 
+         .Z(n9461)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9038_3_lut.init = 16'hcaca;
+    LUT4 n9837_bdd_3_lut_11018 (.A(n9830), .B(n9831), .C(\rom_addr[8] ), 
+         .Z(n11226)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n9837_bdd_3_lut_11018.init = 16'hcaca;
+    LUT4 i9093_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n11104), .Z(n9516)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9093_3_lut_4_lut.init = 16'h2f20;
+    LUT4 address_11__I_0_Mux_2_i189_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), 
+         .C(\rom_addr[4] ), .D(n11037), .Z(n189)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i189_3_lut_4_lut.init = 16'hf202;
+    L6MUX21 i9332 (.D0(n9601), .D1(n9607), .SD(\rom_addr[6] ), .Z(n9755));
+    LUT4 i9477_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(\rom_addr[4] ), 
+         .D(n188), .Z(n9900)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9477_3_lut_4_lut.init = 16'hf202;
+    LUT4 n11226_bdd_3_lut (.A(n11226), .B(n9837), .C(\rom_addr[9] ), .Z(n11227)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n11226_bdd_3_lut.init = 16'hcaca;
+    PFUMX i9350 (.BLUT(n9769), .ALUT(n9770), .C0(\rom_addr[6] ), .Z(n9773));
+    LUT4 i9183_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11033), .C(\rom_addr[4] ), 
+         .D(n684), .Z(n9606)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9183_3_lut_4_lut.init = 16'h2f20;
+    LUT4 i9896_2_lut_rep_263 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .Z(n11898)) /* synthesis lut_function=(A (B)+!A !(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9896_2_lut_rep_263.init = 16'h9999;
+    LUT4 i9076_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11033), .C(\rom_addr[4] ), 
+         .D(n1002), .Z(n9499)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9076_3_lut_4_lut.init = 16'h2f20;
+    LUT4 address_11__I_0_Mux_3_i285_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n285)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+(D)))+!A (B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i285_3_lut_3_lut_4_lut_4_lut.init = 16'h01c2;
+    PFUMX i9351 (.BLUT(n9771), .ALUT(n9772), .C0(\rom_addr[6] ), .Z(n9774));
+    LUT4 i9033_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11033), .C(\rom_addr[4] ), 
+         .D(n890_adj_616), .Z(n9456)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9033_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_3_i1084_3_lut_4_lut (.A(n11099), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11094), .Z(n1084_c)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1084_3_lut_4_lut.init = 16'h8f80;
+    LUT4 i9476_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11035), .C(\rom_addr[4] ), 
+         .D(n11037), .Z(n9899)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9476_3_lut_4_lut.init = 16'hf202;
+    LUT4 i2_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11103), .C(\rom_addr[5] ), 
+         .D(n11076), .Z(n9148)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2_3_lut_4_lut.init = 16'h8000;
+    L6MUX21 i9387 (.D0(n63), .D1(n9753), .SD(\rom_addr[6] ), .Z(n9810));
+    LUT4 address_11__I_0_Mux_4_i732_4_lut_4_lut (.A(\rom_addr[0] ), .B(n11035), 
+         .C(n4744), .D(\rom_addr[5] ), .Z(n732)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i732_4_lut_4_lut.init = 16'ha022;
+    PFUMX i9357 (.BLUT(n190_adj_617), .ALUT(n253), .C0(\rom_addr[6] ), 
+          .Z(n9780));
+    LUT4 address_11__I_0_Mux_4_i1596_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11040), 
+         .C(\rom_addr[4] ), .D(n11032), .Z(n1596_adj_618)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1596_3_lut_4_lut.init = 16'h2f20;
+    PFUMX i10375 (.BLUT(n891), .ALUT(n10689), .C0(\rom_addr[5] ), .Z(n10690));
+    LUT4 address_11__I_0_Mux_4_i828_4_lut_4_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), 
+         .C(n796), .D(n10973), .Z(n828_adj_554)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i828_4_lut_4_lut.init = 16'hea40;
+    L6MUX21 i9358 (.D0(n9641), .D1(n381_adj_558), .SD(\rom_addr[6] ), 
+            .Z(n9781));
+    L6MUX21 i9361 (.D0(n9677), .D1(n764), .SD(\rom_addr[6] ), .Z(n9784));
+    LUT4 i9121_3_lut_4_lut (.A(n11088), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n236), .Z(n9544)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9121_3_lut_4_lut.init = 16'h6f60;
+    LUT4 address_11__I_0_Mux_2_i604_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11073), 
+         .C(\rom_addr[3] ), .D(n11899), .Z(n604_adj_620)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i604_3_lut_4_lut.init = 16'hf808;
+    LUT4 i9636_3_lut (.A(n1038_adj_621), .B(n1053), .C(\rom_addr[4] ), 
+         .Z(n9458)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9636_3_lut.init = 16'hcaca;
+    L6MUX21 i9337 (.D0(n9610), .D1(n9620), .SD(\rom_addr[6] ), .Z(n9760));
+    L6MUX21 i9362 (.D0(n829_adj_555), .D1(n892_c), .SD(\rom_addr[6] ), 
+            .Z(n9785));
+    PFUMX i9364 (.BLUT(n9680), .ALUT(n1149), .C0(\rom_addr[6] ), .Z(n9787));
+    LUT4 i9039_3_lut_4_lut (.A(n11088), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n428_adj_567), .Z(n9462)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (B (C (D))+!B ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9039_3_lut_4_lut.init = 16'hf909;
+    LUT4 i9669_3_lut (.A(n9630), .B(n9631), .C(\rom_addr[4] ), .Z(n9632)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9669_3_lut.init = 16'hcaca;
+    L6MUX21 i9365 (.D0(n1213), .D1(n9683), .SD(\rom_addr[6] ), .Z(n9788));
+    LUT4 i9638_3_lut (.A(n844), .B(n859_adj_623), .C(\rom_addr[4] ), .Z(n9455)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9638_3_lut.init = 16'hcaca;
+    PFUMX i9368 (.BLUT(n1597_adj_624), .ALUT(n1660), .C0(\rom_addr[6] ), 
+          .Z(n9791));
+    LUT4 rom_addr_1__bdd_4_lut_10575 (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[0] ), .Z(n11129)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (C+!(D))+!B !(C+!(D))))) */ ;
+    defparam rom_addr_1__bdd_4_lut_10575.init = 16'h6144;
+    LUT4 i9026_3_lut (.A(n1101), .B(n731_adj_573), .C(\rom_addr[4] ), 
+         .Z(n9449)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9026_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_2_i61_3_lut_4_lut (.A(n11092), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n10980), .Z(n61_adj_625)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i61_3_lut_4_lut.init = 16'h9f90;
+    LUT4 address_11__I_0_Mux_2_i2009_3_lut_4_lut (.A(n11092), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11004), .Z(n2009)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i2009_3_lut_4_lut.init = 16'h6f60;
+    LUT4 i9024_3_lut (.A(n684_adj_562), .B(n699), .C(\rom_addr[4] ), .Z(n9447)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9024_3_lut.init = 16'hcaca;
+    PFUMX i9370 (.BLUT(n9693), .ALUT(n1915_adj_626), .C0(\rom_addr[6] ), 
+          .Z(n9793));
+    LUT4 address_11__I_0_Mux_5_i1947_then_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[2] ), .Z(n11131)) /* synthesis lut_function=(A (B (C)+!B (C (D)))) */ ;
+    defparam address_11__I_0_Mux_5_i1947_then_4_lut.init = 16'ha080;
+    LUT4 i9609_3_lut_4_lut (.A(\rom_addr[1] ), .B(n11050), .C(\rom_addr[4] ), 
+         .D(n30), .Z(n9506)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
+    defparam i9609_3_lut_4_lut.init = 16'hf808;
+    PFUMX i10373 (.BLUT(n10687), .ALUT(n10686), .C0(\rom_addr[5] ), .Z(n10688));
+    LUT4 address_11__I_0_Mux_5_i1243_3_lut_4_lut_4_lut (.A(n11092), .B(n11089), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n1243_adj_627)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;
+    defparam address_11__I_0_Mux_5_i1243_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 address_11__I_0_Mux_5_i1676_3_lut_3_lut_4_lut_4_lut (.A(n11092), 
+         .B(n10980), .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n1676_adj_628)) /* synthesis lut_function=(!(A (B+(C))+!A !(B (C (D))+!B ((D)+!C)))) */ ;
+    defparam address_11__I_0_Mux_5_i1676_3_lut_3_lut_4_lut_4_lut.init = 16'h5303;
+    LUT4 i4619_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11067), .C(\rom_addr[3] ), 
+         .D(n6838), .Z(n5207)) /* synthesis lut_function=(!(A (B (C (D))+!B ((D)+!C))+!A ((D)+!C))) */ ;
+    defparam i4619_3_lut_4_lut.init = 16'h08f8;
+    LUT4 i9302_3_lut_4_lut_4_lut (.A(n11092), .B(n10969), .C(\rom_addr[4] ), 
+         .D(n11050), .Z(n9725)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;
+    defparam i9302_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 address_11__I_0_Mux_5_i1882_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11067), 
+         .C(\rom_addr[3] ), .D(n11093), .Z(n1882)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
+    defparam address_11__I_0_Mux_5_i1882_3_lut_4_lut.init = 16'h8f80;
+    L6MUX21 i9371 (.D0(n9720), .D1(n9726), .SD(\rom_addr[6] ), .Z(n9794));
+    LUT4 address_11__I_0_Mux_5_i1947_else_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[2] ), .Z(n11130)) /* synthesis lut_function=(A (B (C (D))+!B !(D))+!A !((C+(D))+!B)) */ ;
+    defparam address_11__I_0_Mux_5_i1947_else_4_lut.init = 16'h8026;
+    LUT4 address_11__I_0_Mux_4_i1883_3_lut_4_lut_4_lut (.A(n11092), .B(n1867), 
+         .C(\rom_addr[4] ), .D(n11050), .Z(n1883_adj_629)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;
+    defparam address_11__I_0_Mux_4_i1883_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i9168_3_lut_4_lut_4_lut (.A(n11092), .B(n2040_adj_589), .C(\rom_addr[4] ), 
+         .D(n11050), .Z(n9591)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;
+    defparam i9168_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 i9643_3_lut (.A(n589), .B(n604), .C(\rom_addr[4] ), .Z(n9440)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9643_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i70_3_lut_rep_264 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .Z(n11899)) /* synthesis lut_function=(!(A (B+!(C))+!A ((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i70_3_lut_rep_264.init = 16'h2424;
+    LUT4 i9247_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11067), .C(\rom_addr[3] ), 
+         .D(n10955), .Z(n9670)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
+    defparam i9247_3_lut_4_lut.init = 16'hf808;
+    LUT4 i9229_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9652)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)+!C !(D)))+!A (B (C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9229_3_lut_3_lut_4_lut.init = 16'h240f;
+    LUT4 i9143_3_lut_4_lut (.A(n11084), .B(n11065), .C(\rom_addr[4] ), 
+         .D(n890), .Z(n9566)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
+    defparam i9143_3_lut_4_lut.init = 16'h4f40;
+    LUT4 address_11__I_0_Mux_4_i262_3_lut_3_lut_rep_265 (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n11900)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i262_3_lut_3_lut_rep_265.init = 16'h1c1c;
+    LUT4 n9826_bdd_3_lut_10631 (.A(n9828), .B(n9829), .C(\rom_addr[8] ), 
+         .Z(n11228)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n9826_bdd_3_lut_10631.init = 16'hcaca;
+    LUT4 rom_addr_0__bdd_4_lut_10590 (.A(\rom_addr[0] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[2] ), .Z(n11133)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (D))+!A (B (C+!(D))+!B (C)))) */ ;
+    defparam rom_addr_0__bdd_4_lut_10590.init = 16'h0da3;
+    LUT4 i9015_3_lut (.A(n557_adj_575), .B(n526_adj_630), .C(\rom_addr[4] ), 
+         .Z(n9438)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9015_3_lut.init = 16'hcaca;
+    L6MUX21 i9389 (.D0(n9778), .D1(n381), .SD(\rom_addr[6] ), .Z(n9812));
+    LUT4 i1_2_lut (.A(\rom_addr[4] ), .B(\rom_addr[0] ), .Z(n9127)) /* synthesis lut_function=(A (B)) */ ;
+    defparam i1_2_lut.init = 16'h8888;
+    LUT4 i9945_2_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), .Z(n9410)) /* synthesis lut_function=(!(A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9945_2_lut.init = 16'h7777;
+    PFUMX i9298 (.BLUT(n574), .ALUT(n637), .C0(\rom_addr[6] ), .Z(n9721));
+    LUT4 n1923_bdd_3_lut_10522_4_lut (.A(\rom_addr[0] ), .B(n11067), .C(\rom_addr[3] ), 
+         .D(n11094), .Z(n10842)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
+    defparam n1923_bdd_3_lut_10522_4_lut.init = 16'h8f80;
+    LUT4 i9221_then_3_lut (.A(\rom_addr[4] ), .B(\rom_addr[2] ), .C(\rom_addr[3] ), 
+         .Z(n11136)) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A (B+!(C)))) */ ;
+    defparam i9221_then_3_lut.init = 16'h3838;
+    LUT4 address_11__I_0_Mux_2_i285_3_lut (.A(n10959), .B(n11015), .C(\rom_addr[3] ), 
+         .Z(n285_adj_631)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i285_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i270_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n270_c)) /* synthesis lut_function=(A (B (C (D)+!C !(D)))+!A (B (C (D)+!C !(D))+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i270_3_lut_4_lut_4_lut.init = 16'hc01c;
+    L6MUX21 i9391 (.D0(n9439), .D1(n9442), .SD(\rom_addr[6] ), .Z(n9814));
+    L6MUX21 i9392 (.D0(n9448), .D1(n9451), .SD(\rom_addr[6] ), .Z(n9815));
+    L6MUX21 i9393 (.D0(n829), .D1(n9457), .SD(\rom_addr[6] ), .Z(n9816));
+    L6MUX21 i9396 (.D0(n9470), .D1(n9473), .SD(\rom_addr[6] ), .Z(n9819));
+    PFUMX i9397 (.BLUT(n9483), .ALUT(n1404_adj_632), .C0(\rom_addr[6] ), 
+          .Z(n9820));
+    LUT4 address_11__I_0_Mux_6_i1707_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11067), 
+         .C(\rom_addr[3] ), .D(n11093), .Z(n1707)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
+    defparam address_11__I_0_Mux_6_i1707_3_lut_4_lut.init = 16'hf808;
+    LUT4 i9547_3_lut (.A(n11129), .B(n635_adj_579), .C(\rom_addr[4] ), 
+         .Z(n9619)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9547_3_lut.init = 16'hcaca;
+    LUT4 i9058_4_lut_4_lut (.A(n10980), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n1274), .Z(n9481)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (C+(D))) */ ;
+    defparam i9058_4_lut_4_lut.init = 16'hdfd0;
+    LUT4 i9221_else_3_lut (.A(\rom_addr[4] ), .B(\rom_addr[2] ), .C(\rom_addr[3] ), 
+         .D(\rom_addr[0] ), .Z(n11135)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A ((C)+!B))) */ ;
+    defparam i9221_else_3_lut.init = 16'h0484;
+    LUT4 address_11__I_0_Mux_4_i1467_4_lut_4_lut_4_lut (.A(\rom_addr[5] ), 
+         .B(n3181), .C(n10976), .D(\rom_addr[0] ), .Z(n1467_adj_633)) /* synthesis lut_function=(!(A (C+!(D))+!A (B+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1467_4_lut_4_lut_4_lut.init = 16'h1b00;
+    LUT4 address_11__I_0_Mux_4_i1274_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11067), 
+         .C(\rom_addr[3] ), .D(n11095), .Z(n1274)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
+    defparam address_11__I_0_Mux_4_i1274_3_lut_4_lut.init = 16'hf808;
+    L6MUX21 i9398 (.D0(n9486), .D1(n1531), .SD(\rom_addr[6] ), .Z(n9821));
+    LUT4 i9295_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11067), .C(\rom_addr[4] ), 
+         .D(n1946_adj_634), .Z(n9718)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
+    defparam i9295_3_lut_4_lut.init = 16'hf808;
+    LUT4 i3191_3_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .C(\rom_addr[3] ), 
+         .Z(n3750)) /* synthesis lut_function=(A (B+!(C))+!A (B (C)+!B !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3191_3_lut_3_lut.init = 16'hcbcb;
+    PFUMX i9399 (.BLUT(n1597_adj_635), .ALUT(n9492), .C0(\rom_addr[6] ), 
+          .Z(n9822));
+    LUT4 n9826_bdd_3_lut_11019 (.A(n10487), .B(n9812), .C(\rom_addr[7] ), 
+         .Z(n11229)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
+    defparam n9826_bdd_3_lut_11019.init = 16'hacac;
+    LUT4 address_11__I_0_Mux_2_i1117_4_lut_4_lut (.A(n11088), .B(\rom_addr[4] ), 
+         .C(n10995), .D(n9243), .Z(n1117_adj_636)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1117_4_lut_4_lut.init = 16'hd1c0;
+    LUT4 i9157_3_lut_4_lut_4_lut (.A(n11088), .B(\rom_addr[3] ), .C(n11095), 
+         .D(\rom_addr[4] ), .Z(n9580)) /* synthesis lut_function=(A (B (C+(D))+!B (C (D)))+!A (B (C+(D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9157_3_lut_4_lut_4_lut.init = 16'hfcd1;
+    PFUMX i9400 (.BLUT(n1724_adj_637), .ALUT(n1787_adj_566), .C0(\rom_addr[6] ), 
+          .Z(n9823));
+    LUT4 i9341_4_lut (.A(n9629), .B(\rom_addr[0] ), .C(\rom_addr[6] ), 
+         .D(n11168), .Z(n9764)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
+    defparam i9341_4_lut.init = 16'hca0a;
+    LUT4 n3820_bdd_3_lut (.A(n1612), .B(n1643), .C(\rom_addr[5] ), .Z(n10605)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n3820_bdd_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i954_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n954)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C+(D)))+!A (B (C+!(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i954_3_lut_4_lut_4_lut.init = 16'h1c03;
+    LUT4 i9649_3_lut (.A(n270_adj_638), .B(n285), .C(\rom_addr[4] ), .Z(n9776)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9649_3_lut.init = 16'hcaca;
+    LUT4 n3820_bdd_4_lut (.A(n11073), .B(\rom_addr[5] ), .C(\rom_addr[3] ), 
+         .D(\rom_addr[0] ), .Z(n10604)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (((D)+!C)+!B))) */ ;
+    defparam n3820_bdd_4_lut.init = 16'h2040;
+    LUT4 address_11__I_0_Mux_6_i1755_4_lut_4_lut (.A(n10980), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n11095), .Z(n1755_c)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A !(B (C+(D))+!B (C)))) */ ;
+    defparam address_11__I_0_Mux_6_i1755_4_lut_4_lut.init = 16'h5c50;
+    LUT4 i9214_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11067), .C(\rom_addr[3] ), 
+         .D(n10959), .Z(n9637)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
+    defparam i9214_3_lut_4_lut.init = 16'hf808;
+    LUT4 rom_addr_2__bdd_4_lut_10612 (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n11104)) /* synthesis lut_function=(A (B (C+(D)))+!A !(B ((D)+!C)+!B !(C+!(D)))) */ ;
+    defparam rom_addr_2__bdd_4_lut_10612.init = 16'h98d1;
+    LUT4 i3378_3_lut_4_lut (.A(n11073), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n10976), .Z(n3937)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3378_3_lut_4_lut.init = 16'hefe0;
+    LUT4 address_11__I_0_Mux_5_i1914_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11088), .C(n1913_adj_639), .D(\rom_addr[4] ), .Z(n1914_adj_640)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_5_i1914_3_lut_3_lut_4_lut.init = 16'hf011;
-    LUT4 i7413_2_lut_3_lut_4_lut (.A(rom_addr[4]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .D(n14278), .Z(n158)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7413_2_lut_3_lut_4_lut.init = 16'h0010;
-    LUT4 i7296_2_lut_rep_205_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), .C(rom_addr[0]), 
-         .Z(n14122)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7296_2_lut_rep_205_3_lut.init = 16'h8080;
-    PFUMX i13413 (.BLUT(n14305), .ALUT(n14306), .C0(rom_addr[0]), .Z(n14307));
-    LUT4 i1_2_lut_rep_277_3_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[2]), 
-         .Z(n14194)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_277_3_lut.init = 16'h8080;
-    LUT4 address_11__I_0_Mux_1_i2236_3_lut_4_lut (.A(n14248), .B(n14279), 
-         .C(rom_addr[4]), .D(n1691), .Z(n2236)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
-    defparam address_11__I_0_Mux_1_i2236_3_lut_4_lut.init = 16'h8f80;
-    LUT4 i7128_2_lut_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .Z(n635_adj_762)) /* synthesis lut_function=(A (B (C))+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7128_2_lut_3_lut.init = 16'h9090;
-    LUT4 i1_2_lut_rep_233_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .Z(n14150)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_233_3_lut.init = 16'h6060;
-    PFUMX i11437 (.BLUT(n12060), .ALUT(n12061), .C0(rom_addr[5]), .Z(n12062));
-    LUT4 i1_2_lut_rep_257_3_lut (.A(rom_addr[4]), .B(rom_addr[3]), .C(rom_addr[0]), 
-         .Z(n14174)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_257_3_lut.init = 16'h0808;
-    LUT4 i12554_2_lut_rep_255_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(n15568), 
-         .Z(n14172)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12554_2_lut_rep_255_3_lut.init = 16'h0909;
-    LUT4 i11990_3_lut (.A(n1451_adj_624), .B(n1676_adj_664), .C(rom_addr[4]), 
-         .Z(n12615)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11990_3_lut.init = 16'hcaca;
-    LUT4 i1_2_lut_3_lut_4_lut_adj_21 (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[4]), .D(rom_addr[3]), .Z(n6459)) /* synthesis lut_function=(!(((C+(D))+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_3_lut_4_lut_adj_21.init = 16'h0008;
-    PFUMX i12683 (.BLUT(n270_c), .ALUT(n13040), .C0(rom_addr[4]), .Z(n13041));
-    LUT4 i3621_3_lut_3_lut_4_lut_3_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .Z(n4433)) /* synthesis lut_function=(!(A (B (C))+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i3621_3_lut_3_lut_4_lut_3_lut.init = 16'h7e7e;
-    LUT4 n2880_bdd_2_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[3]), .D(rom_addr[2]), .Z(n13771)) /* synthesis lut_function=(A (B (C+(D))+!B (C+!(D)))+!A (B (C)+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n2880_bdd_2_lut_4_lut_4_lut.init = 16'hf8f3;
-    LUT4 i12277_3_lut (.A(n14282), .B(n14357), .C(rom_addr[5]), .Z(n12612)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12277_3_lut.init = 16'hcaca;
-    LUT4 i12133_3_lut (.A(n716), .B(n731_adj_600), .C(rom_addr[4]), .Z(n12131)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i12133_3_lut.init = 16'hcaca;
-    LUT4 address_11__I_0_Mux_4_i1883_3_lut_4_lut (.A(n14244), .B(n14279), 
-         .C(rom_addr[4]), .D(n1867), .Z(n1883_adj_659)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C+(D))+!B !(C+!(D))))) */ ;
-    defparam address_11__I_0_Mux_4_i1883_3_lut_4_lut.init = 16'h4f40;
-    L6MUX21 i12950 (.D0(n13424), .D1(n13422), .SD(rom_addr[6]), .Z(n13425));
-    PFUMX i11636 (.BLUT(n620_adj_650), .ALUT(n635_adj_762), .C0(rom_addr[4]), 
-          .Z(n12261));
-    LUT4 i11537_3_lut_4_lut (.A(n14244), .B(n14279), .C(rom_addr[4]), 
-         .D(n2040), .Z(n12162)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;
-    defparam i11537_3_lut_4_lut.init = 16'hf404;
-    LUT4 i7382_2_lut_rep_180_3_lut_3_lut_4_lut (.A(n15568), .B(rom_addr[2]), 
-         .C(rom_addr[0]), .D(rom_addr[3]), .Z(n14097)) /* synthesis lut_function=(!((((D)+!C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7382_2_lut_rep_180_3_lut_3_lut_4_lut.init = 16'h0080;
-    PFUMX i12948 (.BLUT(n13423), .ALUT(n2109_adj_750), .C0(rom_addr[5]), 
-          .Z(n13424));
-    PFUMX i12946 (.BLUT(n13421), .ALUT(n14065), .C0(rom_addr[5]), .Z(n13422));
-    LUT4 i11347_2_lut_rep_319 (.A(rom_addr[5]), .B(rom_addr[4]), .Z(n14236)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11347_2_lut_rep_319.init = 16'h8888;
-    LUT4 n1211_bdd_3_lut_13099_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[0]), .Z(n13600)) /* synthesis lut_function=(A (B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n1211_bdd_3_lut_13099_3_lut_4_lut.init = 16'h8088;
-    LUT4 i11384_1_lut_2_lut (.A(rom_addr[5]), .B(rom_addr[4]), .Z(n11973)) /* synthesis lut_function=(!(A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11384_1_lut_2_lut.init = 16'h7777;
-    PFUMX i11921 (.BLUT(n12544), .ALUT(n12545), .C0(rom_addr[5]), .Z(n12546));
-    LUT4 address_11__I_0_Mux_2_i2109_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[1]), .C(rom_addr[3]), .D(rom_addr[2]), .Z(n14378)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (B+(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2109_3_lut_4_lut_then_4_lut.init = 16'h0021;
-    PFUMX i11440 (.BLUT(n12063), .ALUT(n12064), .C0(rom_addr[5]), .Z(n12065));
-    LUT4 n1275_bdd_3_lut (.A(n1243_adj_562), .B(n1228_adj_670), .C(rom_addr[4]), 
-         .Z(n13764)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
-    defparam n1275_bdd_3_lut.init = 16'hacac;
-    L6MUX21 i12748 (.D0(n13144), .D1(n13141), .SD(rom_addr[9]), .Z(n13145));
-    LUT4 n2556_bdd_4_lut (.A(n14303), .B(n5723), .C(rom_addr[0]), .D(rom_addr[6]), 
-         .Z(n13218)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B ((D)+!C)+!B !(C)))) */ ;
-    defparam n2556_bdd_4_lut.init = 16'h3050;
-    LUT4 i2_3_lut_4_lut_adj_22 (.A(rom_addr[1]), .B(n14194), .C(rom_addr[5]), 
-         .D(rom_addr[0]), .Z(n10563)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i2_3_lut_4_lut_adj_22.init = 16'h8000;
-    PFUMX i11927 (.BLUT(n12550), .ALUT(n12551), .C0(rom_addr[5]), .Z(n12552));
-    LUT4 n1181_bdd_4_lut (.A(n1196), .B(n1210), .C(rom_addr[3]), .D(rom_addr[4]), 
-         .Z(n13766)) /* synthesis lut_function=(A (B (C+!(D))+!B !(D))+!A (B (C (D)))) */ ;
-    defparam n1181_bdd_4_lut.init = 16'hc0aa;
-    LUT4 address_11__I_0_Mux_2_i2589_3_lut_3_lut_4_lut_4_lut (.A(n14277), 
-         .B(rom_addr[5]), .C(n14124), .D(n14234), .Z(n2589)) /* synthesis lut_function=(!(A (B (D)+!B !(C))+!A (B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2589_3_lut_3_lut_4_lut_4_lut.init = 16'h30b8;
-    LUT4 i11796_4_lut (.A(n12208), .B(rom_addr[0]), .C(rom_addr[6]), .D(n14351), 
-         .Z(n12421)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
-    defparam i11796_4_lut.init = 16'hca0a;
-    PFUMX i12746 (.BLUT(n13143), .ALUT(n13142), .C0(rom_addr[8]), .Z(n13144));
-    L6MUX21 i12921 (.D0(n14044), .D1(n13382), .SD(rom_addr[5]), .Z(n13386));
-    PFUMX i12744 (.BLUT(n13140), .ALUT(n13139), .C0(rom_addr[8]), .Z(n13141));
-    LUT4 address_11__I_0_Mux_1_i2522_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14272), 
-         .C(n15546), .D(rom_addr[3]), .Z(n2522_adj_591)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i2522_3_lut_3_lut_4_lut.init = 16'hf011;
-    PFUMX i11930 (.BLUT(n12553), .ALUT(n12554), .C0(rom_addr[5]), .Z(n12555));
-    LUT4 address_11__I_0_Mux_1_i2040_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(n14272), 
-         .C(n15549), .D(rom_addr[3]), .Z(n2040_adj_612)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    LUT4 address_11__I_0_Mux_4_i205_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11088), .C(n11025), .D(\rom_addr[3] ), .Z(n1017)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i205_3_lut_3_lut_4_lut.init = 16'h11f0;
+    LUT4 i9224_then_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n11139)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !((D)+!C))+!A (B ((D)+!C)+!B !(C (D))))) */ ;
+    defparam i9224_then_4_lut.init = 16'h3ac2;
+    LUT4 i9224_else_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n11138)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D))))) */ ;
+    defparam i9224_else_4_lut.init = 16'h6802;
+    LUT4 address_11__I_0_Mux_4_i380_4_lut_4_lut (.A(\rom_addr[5] ), .B(n9111), 
+         .C(n5220), .D(n1387), .Z(n380_adj_557)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i380_4_lut_4_lut.init = 16'hea40;
+    LUT4 n4801_bdd_4_lut (.A(n11027), .B(n1549_adj_545), .C(\rom_addr[4] ), 
+         .D(\rom_addr[0] ), .Z(n10608)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C (D))+!B ((D)+!C)))) */ ;
+    defparam n4801_bdd_4_lut.init = 16'h0c5c;
+    L6MUX21 i9402 (.D0(n9495), .D1(n9505), .SD(\rom_addr[6] ), .Z(n9825));
+    LUT4 address_11__I_0_Mux_3_i1053_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11088), .C(n11028), .D(\rom_addr[3] ), .Z(n1053)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1053_3_lut_3_lut_4_lut.init = 16'hf011;
+    LUT4 address_11__I_0_Mux_1_i1435_3_lut_4_lut (.A(n11092), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11089), .Z(n1435_adj_592)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_1_i1435_3_lut_4_lut.init = 16'h1f10;
+    LUT4 n221_bdd_3_lut_10333 (.A(n221), .B(n10618), .C(\rom_addr[5] ), 
+         .Z(n10619)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n221_bdd_3_lut_10333.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i397_3_lut_4_lut (.A(n11092), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11089), .Z(n397)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;
+    defparam address_11__I_0_Mux_4_i397_3_lut_4_lut.init = 16'hfe0e;
+    LUT4 address_11__I_0_Mux_3_i109_3_lut_4_lut (.A(n11092), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11095), .Z(n109)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;
+    defparam address_11__I_0_Mux_3_i109_3_lut_4_lut.init = 16'hfe0e;
+    LUT4 address_11__I_0_Mux_4_i443_3_lut_4_lut (.A(n11092), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11030), .Z(n443)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;
+    defparam address_11__I_0_Mux_4_i443_3_lut_4_lut.init = 16'hfe0e;
+    L6MUX21 i9422 (.D0(n190), .D1(n9521), .SD(\rom_addr[6] ), .Z(n9845));
+    LUT4 i9828_3_lut (.A(n2010_adj_641), .B(n11159), .C(\rom_addr[5] ), 
+         .Z(n9744)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9828_3_lut.init = 16'hcaca;
+    LUT4 n11230_bdd_3_lut (.A(n11230), .B(n11228), .C(\rom_addr[9] ), 
+         .Z(n11231)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n11230_bdd_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_1_i2009_3_lut_4_lut (.A(n11092), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11095), .Z(n2009_adj_605)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_1_i2009_3_lut_4_lut.init = 16'h1f10;
+    LUT4 address_11__I_0_Mux_6_i1309_4_lut_4_lut_then_4_lut (.A(\rom_addr[3] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[4] ), .D(\rom_addr[1] ), .Z(n11142)) /* synthesis lut_function=(!((((D)+!C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1309_4_lut_4_lut_then_4_lut.init = 16'h0080;
+    LUT4 address_11__I_0_Mux_1_i2040_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11088), .C(n11093), .D(\rom_addr[3] ), .Z(n2040)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_1_i2040_3_lut_3_lut_4_lut.init = 16'h11f0;
-    LUT4 i12591_2_lut_rep_360 (.A(rom_addr[3]), .B(n15568), .Z(n14277)) /* synthesis lut_function=(!(A+(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12591_2_lut_rep_360.init = 16'h1111;
-    LUT4 n915_bdd_2_lut_13378_3_lut (.A(rom_addr[3]), .B(rom_addr[1]), .C(rom_addr[0]), 
-         .Z(n13844)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam n915_bdd_2_lut_13378_3_lut.init = 16'h1010;
-    PFUMX i12681 (.BLUT(n13038), .ALUT(n506_adj_576), .C0(rom_addr[4]), 
-          .Z(n13039));
-    LUT4 i1_2_lut_rep_227_3_lut (.A(rom_addr[3]), .B(n15568), .C(rom_addr[2]), 
-         .Z(n14144)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_227_3_lut.init = 16'hfefe;
-    LUT4 i7168_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[2]), 
-         .D(rom_addr[3]), .Z(n46_adj_11)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A (B (C+!(D))+!B !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7168_4_lut_4_lut.init = 16'h3d00;
-    LUT4 i5802_3_lut_3_lut_rep_350 (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .Z(n14267)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A ((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5802_3_lut_3_lut_rep_350.init = 16'hd3d3;
-    LUT4 i7388_2_lut_rep_282_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(n15568), 
-         .Z(n14199)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7388_2_lut_rep_282_3_lut.init = 16'h8080;
-    LUT4 i7342_2_lut_rep_230_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14147)) /* synthesis lut_function=(A (B (C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7342_2_lut_rep_230_3_lut_4_lut.init = 16'h8008;
-    LUT4 i12560_2_lut_rep_321 (.A(rom_addr[5]), .B(rom_addr[4]), .Z(n14238)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12560_2_lut_rep_321.init = 16'hdddd;
-    LUT4 address_11__I_0_Mux_6_i1628_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[3]), .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14384)) /* synthesis lut_function=(!(A+(B+(C+(D))))) */ ;
-    defparam address_11__I_0_Mux_6_i1628_3_lut_4_lut_then_4_lut.init = 16'h0001;
-    PFUMX i12916 (.BLUT(n557_adj_652), .ALUT(n13381), .C0(rom_addr[4]), 
-          .Z(n13382));
-    LUT4 i12372_3_lut_4_lut (.A(rom_addr[5]), .B(rom_addr[4]), .C(n13112), 
-         .D(n2538), .Z(n2555_adj_641)) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12372_3_lut_4_lut.init = 16'hf2d0;
-    LUT4 i12615_2_lut_3_lut (.A(rom_addr[5]), .B(rom_addr[4]), .C(rom_addr[7]), 
-         .Z(n12038)) /* synthesis lut_function=((B+!(C))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12615_2_lut_3_lut.init = 16'hdfdf;
-    PFUMX i11935 (.BLUT(n12556), .ALUT(n12557), .C0(rom_addr[5]), .Z(n12560));
-    LUT4 i11497_3_lut (.A(n301), .B(n604_adj_671), .C(rom_addr[4]), .Z(n12122)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11497_3_lut.init = 16'hcaca;
-    LUT4 i11495_4_lut (.A(n5064), .B(n14102), .C(rom_addr[4]), .D(n14277), 
-         .Z(n12120)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
-    defparam i11495_4_lut.init = 16'hcac0;
-    LUT4 i1_3_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[1]), .C(rom_addr[4]), 
-         .D(rom_addr[2]), .Z(n6308)) /* synthesis lut_function=(A+(B+!(C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_3_lut_4_lut.init = 16'heffe;
-    LUT4 i1897_2_lut_rep_322 (.A(rom_addr[0]), .B(rom_addr[1]), .Z(n14239)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1897_2_lut_rep_322.init = 16'h6666;
-    PFUMX i11936 (.BLUT(n12558), .ALUT(n12559), .C0(rom_addr[5]), .Z(n12561));
-    LUT4 i11687_3_lut_4_lut_then_4_lut (.A(rom_addr[4]), .B(n14185), .C(rom_addr[3]), 
-         .D(rom_addr[2]), .Z(n14293)) /* synthesis lut_function=(!(A ((D)+!C)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11687_3_lut_4_lut_then_4_lut.init = 16'h54a4;
-    LUT4 address_11__I_0_Mux_3_i1172_3_lut_3_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[2]), .Z(n1172)) /* synthesis lut_function=(!(A (B)+!A !(B (C)+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_3_i1172_3_lut_3_lut_3_lut.init = 16'h6363;
-    LUT4 i7317_2_lut_rep_192_3_lut_4_lut (.A(rom_addr[3]), .B(rom_addr[1]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14109)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7317_2_lut_rep_192_3_lut_4_lut.init = 16'h0010;
-    LUT4 i11492_3_lut (.A(n557_adj_761), .B(n428_adj_628), .C(rom_addr[4]), 
-         .Z(n12117)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11492_3_lut.init = 16'hcaca;
-    LUT4 i11687_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), .B(n14185), .C(rom_addr[3]), 
-         .Z(n14292)) /* synthesis lut_function=(!(A+((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11687_3_lut_4_lut_else_4_lut.init = 16'h0404;
-    LUT4 address_11__I_0_Mux_6_i2298_3_lut_3_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), 
-         .C(rom_addr[3]), .D(rom_addr[2]), .Z(n2298_adj_737)) /* synthesis lut_function=(A (B (C (D))+!B (C (D)+!C !(D)))+!A (B (C (D)+!C !(D))+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_6_i2298_3_lut_3_lut_4_lut.init = 16'hf006;
-    LUT4 i11491_3_lut (.A(n526_adj_758), .B(n205_adj_549), .C(rom_addr[4]), 
-         .Z(n12116)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11491_3_lut.init = 16'hcaca;
-    LUT4 i1_2_lut_rep_278_2_lut_3_lut (.A(rom_addr[3]), .B(rom_addr[1]), 
-         .C(rom_addr[4]), .Z(n14195)) /* synthesis lut_function=(A+(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_278_2_lut_3_lut.init = 16'hefef;
-    L6MUX21 i12897 (.D0(n13357), .D1(n13355), .SD(rom_addr[6]), .Z(n13358));
-    LUT4 i1_2_lut_rep_170_2_lut_3_lut_4_lut (.A(rom_addr[3]), .B(n15568), 
-         .C(rom_addr[2]), .D(rom_addr[4]), .Z(n14087)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_170_2_lut_3_lut_4_lut.init = 16'hfffe;
-    LUT4 i4564_3_lut_4_lut (.A(n15568), .B(n14194), .C(rom_addr[5]), .D(n14087), 
-         .Z(n5376)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4564_3_lut_4_lut.init = 16'h7f70;
-    LUT4 address_11__I_0_Mux_2_i2109_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[1]), .C(rom_addr[3]), .D(rom_addr[2]), .Z(n14377)) /* synthesis lut_function=(!((B+((D)+!C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i2109_3_lut_4_lut_else_4_lut.init = 16'h0020;
-    LUT4 i4958_2_lut_rep_324 (.A(rom_addr[0]), .B(rom_addr[2]), .Z(n14241)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i4958_2_lut_rep_324.init = 16'h6666;
-    PFUMX i11598 (.BLUT(n12221), .ALUT(n12222), .C0(rom_addr[4]), .Z(n12223));
-    LUT4 i7370_2_lut_rep_234_3_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n14151)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7370_2_lut_rep_234_3_lut_4_lut.init = 16'h6000;
-    LUT4 i7320_2_lut_rep_239_3_lut (.A(rom_addr[0]), .B(rom_addr[2]), .C(n15568), 
-         .Z(n14156)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7320_2_lut_rep_239_3_lut.init = 16'h6060;
-    LUT4 address_11__I_0_Mux_2_i2205_3_lut_4_lut (.A(n14241), .B(n14218), 
-         .C(rom_addr[4]), .D(n2426), .Z(n2205_adj_747)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;
-    defparam address_11__I_0_Mux_2_i2205_3_lut_4_lut.init = 16'hf808;
-    LUT4 i1_2_lut_rep_325 (.A(rom_addr[0]), .B(n15568), .Z(n14242)) /* synthesis lut_function=(!((B)+!A)) */ ;
-    defparam i1_2_lut_rep_325.init = 16'h2222;
-    PFUMX i12893 (.BLUT(n13354), .ALUT(n1403), .C0(n14238), .Z(n13355));
-    LUT4 address_11__I_0_Mux_1_i1483_4_lut (.A(n14122), .B(n14210), .C(rom_addr[3]), 
-         .D(rom_addr[2]), .Z(n1483_adj_648)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B (C)+!B !((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_1_i1483_4_lut.init = 16'hcafa;
-    LUT4 i1_2_lut_rep_276_3_lut (.A(rom_addr[3]), .B(n15568), .C(rom_addr[2]), 
-         .Z(n14193)) /* synthesis lut_function=(A+(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_276_3_lut.init = 16'hefef;
-    LUT4 i7123_2_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .D(rom_addr[2]), .Z(n541)) /* synthesis lut_function=(A (B (C (D))+!B !((D)+!C))+!A (B (C (D)))) */ ;
-    defparam i7123_2_lut_4_lut_4_lut.init = 16'hc020;
-    LUT4 address_11__I_0_Mux_6_i1628_3_lut_4_lut_else_4_lut (.A(rom_addr[4]), 
-         .B(rom_addr[3]), .C(rom_addr[2]), .D(rom_addr[1]), .Z(n14383)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A !(B (D)))) */ ;
-    defparam address_11__I_0_Mux_6_i1628_3_lut_4_lut_else_4_lut.init = 16'h4480;
-    PFUMX i11445 (.BLUT(n12066), .ALUT(n12067), .C0(rom_addr[5]), .Z(n12070));
-    PFUMX i12895 (.BLUT(n13356), .ALUT(n14061), .C0(rom_addr[5]), .Z(n13357));
-    LUT4 address_11__I_0_Mux_5_i2596_3_lut_rep_271_3_lut (.A(rom_addr[0]), 
-         .B(n15568), .C(rom_addr[2]), .Z(n14188)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A (B (C))) */ ;
-    defparam address_11__I_0_Mux_5_i2596_3_lut_rep_271_3_lut.init = 16'hc2c2;
-    LUT4 i7338_2_lut_rep_194_3_lut_4_lut (.A(rom_addr[3]), .B(n15568), .C(rom_addr[0]), 
-         .D(rom_addr[2]), .Z(n14111)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7338_2_lut_rep_194_3_lut_4_lut.init = 16'h1000;
-    LUT4 i11608_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .D(rom_addr[2]), .Z(n12233)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !((D)+!C))+!A (((D)+!C)+!B))) */ ;
-    defparam i11608_3_lut_4_lut_4_lut.init = 16'h22c2;
-    PFUMX i13327 (.BLUT(n13910), .ALUT(n13909), .C0(rom_addr[0]), .Z(n13911));
-    LUT4 i12600_2_lut_rep_341 (.A(rom_addr[2]), .B(rom_addr[3]), .Z(n14258)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12600_2_lut_rep_341.init = 16'h4444;
-    LUT4 i12612_2_lut_rep_196_3_lut_3_lut_4_lut (.A(rom_addr[3]), .B(n15568), 
-         .C(rom_addr[2]), .D(rom_addr[4]), .Z(n14113)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12612_2_lut_rep_196_3_lut_3_lut_4_lut.init = 16'h1000;
-    LUT4 i7325_2_lut_rep_172_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[2]), 
-         .C(rom_addr[3]), .D(rom_addr[1]), .Z(n14089)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7325_2_lut_rep_172_3_lut_4_lut_4_lut.init = 16'h1000;
-    LUT4 i5803_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[1]), .C(rom_addr[3]), 
-         .D(rom_addr[2]), .Z(n6648)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+!(D)))+!A (B (C (D))+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i5803_3_lut_4_lut_4_lut.init = 16'hd388;
-    LUT4 i7121_2_lut_rep_361 (.A(n15568), .B(rom_addr[3]), .Z(n14278)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7121_2_lut_rep_361.init = 16'hbbbb;
-    LUT4 address_11__I_0_Mux_4_i1660_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14310), 
-         .C(rom_addr[5]), .D(n14218), .Z(n1660)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    LUT4 n221_bdd_4_lut_10520 (.A(n10933), .B(n4216), .C(\rom_addr[0] ), 
+         .D(\rom_addr[5] ), .Z(n10620)) /* synthesis lut_function=(A (B (D)+!B (C+(D)))+!A !(B+((D)+!C))) */ ;
+    defparam n221_bdd_4_lut_10520.init = 16'haa30;
+    L6MUX21 i9425 (.D0(n9539), .D1(n9545), .SD(\rom_addr[6] ), .Z(n9848));
+    LUT4 i9780_3_lut (.A(n1883), .B(n1914_adj_640), .C(\rom_addr[5] ), 
+         .Z(n9742)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9780_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_6_i1309_4_lut_4_lut_else_4_lut (.A(\rom_addr[3] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[4] ), .D(\rom_addr[1] ), .Z(n11141)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1309_4_lut_4_lut_else_4_lut.init = 16'h2100;
+    LUT4 address_11__I_0_Mux_5_i1786_3_lut (.A(n1770), .B(n1913_adj_639), 
+         .C(\rom_addr[4] ), .Z(n1786_adj_642)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1786_3_lut.init = 16'hcaca;
+    LUT4 n3720_bdd_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[4] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n10622)) /* synthesis lut_function=(!(A+(B (C (D)+!C !(D))+!B !((D)+!C)))) */ ;
+    defparam n3720_bdd_4_lut.init = 16'h1541;
+    LUT4 address_11__I_0_Mux_5_i1692_3_lut (.A(n1676_adj_628), .B(n1691_adj_585), 
+         .C(\rom_addr[4] ), .Z(n1692_adj_643)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1692_3_lut.init = 16'hcaca;
+    L6MUX21 i9428 (.D0(n9567), .D1(n9570), .SD(\rom_addr[6] ), .Z(n9851));
+    L6MUX21 i9429 (.D0(n9576), .D1(n1149_adj_644), .SD(\rom_addr[6] ), 
+            .Z(n9852));
+    LUT4 address_11__I_0_Mux_0_i1914_3_lut_4_lut_then_4_lut (.A(\rom_addr[4] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[2] ), .D(\rom_addr[1] ), .Z(n11145)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B+!(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i1914_3_lut_4_lut_then_4_lut.init = 16'h6445;
+    LUT4 address_11__I_0_Mux_5_i1530_3_lut (.A(n2009_adj_608), .B(n1529), 
+         .C(\rom_addr[4] ), .Z(n1530_adj_645)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1530_3_lut.init = 16'hcaca;
+    LUT4 i9208_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), .C(n11095), 
+         .D(\rom_addr[3] ), .Z(n9631)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B ((D)+!C)+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9208_3_lut_3_lut_4_lut.init = 16'h11f0;
+    LUT4 address_11__I_0_Mux_5_i1499_3_lut (.A(n1211), .B(n1228), .C(\rom_addr[4] ), 
+         .Z(n1499)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1499_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_0_i1914_3_lut_4_lut_else_4_lut (.A(\rom_addr[4] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[2] ), .D(\rom_addr[1] ), .Z(n11144)) /* synthesis lut_function=(!(A+!(B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i1914_3_lut_4_lut_else_4_lut.init = 16'h4440;
+    LUT4 i9154_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), .C(\rom_addr[4] ), 
+         .D(n3824), .Z(n9577)) /* synthesis lut_function=(!(A ((D)+!C)+!A (B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9154_4_lut_4_lut_4_lut.init = 16'h01a1;
+    L6MUX21 i9432 (.D0(n9579), .D1(n9589), .SD(\rom_addr[6] ), .Z(n9855));
+    LUT4 address_11__I_0_Mux_1_i476_3_lut (.A(n557_adj_646), .B(n1211), 
+         .C(\rom_addr[4] ), .Z(n476)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i476_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i507_3_lut (.A(n491), .B(n506), .C(\rom_addr[4] ), 
+         .Z(n507)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i507_3_lut.init = 16'hcaca;
+    PFUMX i9433 (.BLUT(n1597), .ALUT(n1660_adj_647), .C0(\rom_addr[6] ), 
+          .Z(n9856));
+    LUT4 address_11__I_0_Mux_3_i1466_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), 
+         .C(\rom_addr[3] ), .D(n10959), .Z(n1466_adj_648)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1466_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9255_3_lut_4_lut_then_4_lut (.A(\rom_addr[4] ), .B(n11015), .C(\rom_addr[3] ), 
+         .D(\rom_addr[2] ), .Z(n11148)) /* synthesis lut_function=(!(A ((D)+!C)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9255_3_lut_4_lut_then_4_lut.init = 16'h54a4;
+    LUT4 address_11__I_0_Mux_1_i220_4_lut (.A(n11006), .B(n4046), .C(\rom_addr[3] ), 
+         .D(\rom_addr[1] ), .Z(n220)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i220_4_lut.init = 16'hca0a;
+    LUT4 i9900_2_lut (.A(\rom_addr[0] ), .B(\rom_addr[2] ), .Z(n4046)) /* synthesis lut_function=(A (B)+!A !(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9900_2_lut.init = 16'h9999;
+    LUT4 i9255_3_lut_4_lut_else_4_lut (.A(\rom_addr[4] ), .B(n11015), .C(\rom_addr[3] ), 
+         .Z(n11147)) /* synthesis lut_function=(!(A+((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9255_3_lut_4_lut_else_4_lut.init = 16'h0404;
+    PFUMX i9434 (.BLUT(n1724_adj_649), .ALUT(n1787_adj_564), .C0(\rom_addr[6] ), 
+          .Z(n9857));
+    LUT4 i6001_4_lut (.A(\rom_addr[0] ), .B(n10997), .C(n11021), .D(\rom_addr[4] ), 
+         .Z(n1085)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i6001_4_lut.init = 16'h0a22;
+    PFUMX i9435 (.BLUT(n1852_adj_650), .ALUT(n1915_adj_651), .C0(\rom_addr[6] ), 
+          .Z(n9858));
+    LUT4 address_11__I_0_Mux_0_i1054_4_lut (.A(\rom_addr[0] ), .B(n11037), 
+         .C(\rom_addr[4] ), .D(n4511), .Z(n1054_adj_652)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i1054_4_lut.init = 16'hc0ca;
+    LUT4 address_11__I_0_Mux_1_i188_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), 
+         .C(\rom_addr[3] ), .D(n11028), .Z(n188)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i188_3_lut_4_lut.init = 16'hf202;
+    LUT4 i6210_2_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n1627)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i6210_2_lut_3_lut_4_lut.init = 16'h0400;
+    LUT4 i2_3_lut_4_lut_4_lut_adj_11 (.A(\rom_addr[5] ), .B(n11098), .C(\rom_addr[1] ), 
+         .D(\rom_addr[4] ), .Z(n4835)) /* synthesis lut_function=((B+(C+(D)))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2_3_lut_4_lut_4_lut_adj_11.init = 16'hfffd;
+    PFUMX i10591 (.BLUT(n11157), .ALUT(n11158), .C0(\rom_addr[0] ), .Z(n11159));
+    PFUMX address_11__I_0_Mux_2_i1979 (.BLUT(n1931), .ALUT(n1947_adj_653), 
+          .C0(n11075), .Z(n1979)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_4_i1676_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11088), .C(\rom_addr[4] ), .D(n11041), .Z(n1676_adj_599)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1676_3_lut_4_lut_4_lut.init = 16'ha202;
+    LUT4 address_11__I_0_Mux_2_i333_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), 
+         .C(\rom_addr[3] ), .D(n332), .Z(n333)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i333_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_4_i2009_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), 
+         .C(\rom_addr[3] ), .D(n11034), .Z(n2009_adj_614)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i2009_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_1_i1403_3_lut_4_lut_then_4_lut (.A(\rom_addr[4] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[2] ), .D(\rom_addr[0] ), .Z(n11151)) /* synthesis lut_function=(A (B+!(C+(D)))) */ ;
+    defparam address_11__I_0_Mux_1_i1403_3_lut_4_lut_then_4_lut.init = 16'h888a;
+    LUT4 address_11__I_0_Mux_1_i1243_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11088), .C(\rom_addr[3] ), .D(n11034), .Z(n1243_adj_654)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1243_3_lut_3_lut_4_lut.init = 16'h02f2;
+    PFUMX i9472 (.BLUT(n9893), .ALUT(n9894), .C0(\rom_addr[7] ), .Z(n9895));
+    LUT4 address_11__I_0_Mux_1_i1403_3_lut_4_lut_else_4_lut (.A(\rom_addr[4] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[2] ), .D(\rom_addr[0] ), .Z(n11150)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(B+(C))) */ ;
+    defparam address_11__I_0_Mux_1_i1403_3_lut_4_lut_else_4_lut.init = 16'h8b81;
+    LUT4 address_11__I_0_Mux_3_i827_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), 
+         .C(\rom_addr[3] ), .D(n11899), .Z(n827)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i827_3_lut_4_lut.init = 16'h2f20;
+    PFUMX address_11__I_0_Mux_2_i1404 (.BLUT(n1387_adj_587), .ALUT(n1403), 
+          .C0(n9414), .Z(n1404)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_3_i924_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[4] ), 
+         .C(n10972), .D(n3418), .Z(n924)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i924_4_lut_4_lut.init = 16'hd1c0;
+    LUT4 address_11__I_0_Mux_2_i1308_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), 
+         .C(\rom_addr[3] ), .D(n11094), .Z(n1308)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1308_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_0_i1707_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11088), 
+         .C(\rom_addr[3] ), .D(n10955), .Z(n1707_adj_574)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i1707_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_5_i1851_3_lut_4_lut (.A(\rom_addr[1] ), .B(n11097), 
+         .C(\rom_addr[4] ), .D(n1274), .Z(n1851_adj_601)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_5_i1851_3_lut_4_lut.init = 16'h1f10;
+    LUT4 i9928_2_lut_rep_95_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11048), 
+         .C(\rom_addr[5] ), .D(\rom_addr[4] ), .Z(n10936)) /* synthesis lut_function=(((C+!(D))+!B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9928_2_lut_rep_95_3_lut_4_lut.init = 16'hf7ff;
+    LUT4 i5962_2_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11048), .C(\rom_addr[0] ), 
+         .D(\rom_addr[4] ), .Z(n1596_adj_655)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5962_2_lut_3_lut_4_lut.init = 16'h8000;
+    LUT4 n6692_bdd_4_lut (.A(n6692), .B(n10956), .C(n9148), .D(\rom_addr[6] ), 
+         .Z(n10925)) /* synthesis lut_function=(A (B (C+!(D))+!B (C (D)))+!A (C (D))) */ ;
+    defparam n6692_bdd_4_lut.init = 16'hf088;
+    LUT4 n270_bdd_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), .C(n10959), 
+         .D(\rom_addr[3] ), .Z(n10209)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n270_bdd_3_lut_4_lut.init = 16'h22f0;
+    LUT4 i9174_3_lut_4_lut (.A(\rom_addr[1] ), .B(n11097), .C(\rom_addr[4] ), 
+         .D(n301_adj_656), .Z(n9597)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam i9174_3_lut_4_lut.init = 16'h1f10;
+    LUT4 i9408_3_lut (.A(n9820), .B(n9821), .C(\rom_addr[7] ), .Z(n9831)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9408_3_lut.init = 16'hcaca;
+    LUT4 i9053_3_lut_4_lut (.A(\rom_addr[1] ), .B(n11097), .C(\rom_addr[4] ), 
+         .D(n731), .Z(n9476)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam i9053_3_lut_4_lut.init = 16'hf101;
+    LUT4 rom_addr_1__bdd_4_lut_10572 (.A(\rom_addr[1] ), .B(\rom_addr[0] ), 
+         .C(\rom_addr[4] ), .D(\rom_addr[2] ), .Z(n10222)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B ((D)+!C)+!B (C (D))))) */ ;
+    defparam rom_addr_1__bdd_4_lut_10572.init = 16'h5e04;
+    LUT4 i9282_4_lut (.A(n1628_adj_657), .B(n2580), .C(\rom_addr[5] ), 
+         .D(\rom_addr[3] ), .Z(n9705)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
+    defparam i9282_4_lut.init = 16'hca0a;
+    LUT4 address_11__I_0_Mux_2_i1565_3_lut_4_lut (.A(\rom_addr[1] ), .B(n11097), 
+         .C(\rom_addr[4] ), .D(n1549_adj_545), .Z(n1565_adj_609)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_2_i1565_3_lut_4_lut.init = 16'h1f10;
+    PFUMX address_11__I_0_Mux_2_i1341 (.BLUT(n1308), .ALUT(n1309), .C0(n11077), 
+          .Z(n1341)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_4_i62_4_lut_4_lut (.A(\rom_addr[5] ), .B(n10951), 
+         .C(\rom_addr[0] ), .D(n46_adj_658), .Z(n62_adj_659)) /* synthesis lut_function=(A (D)+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i62_4_lut_4_lut.init = 16'hba10;
+    LUT4 address_11__I_0_Mux_4_i1915_3_lut (.A(n1883_adj_629), .B(n1914_adj_660), 
+         .C(\rom_addr[5] ), .Z(n1915_adj_626)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1915_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_2_i1466_4_lut (.A(n11089), .B(n11071), .C(\rom_addr[3] ), 
+         .D(\rom_addr[1] ), .Z(n1466_adj_598)) /* synthesis lut_function=(!(A (B (C)+!B !((D)+!C))+!A (B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1466_4_lut.init = 16'h3a0a;
+    L6MUX21 i9044 (.D0(n9465), .D1(n9466), .SD(\rom_addr[6] ), .Z(n9467));
+    LUT4 i9441_3_lut (.A(n9852), .B(n10714), .C(\rom_addr[7] ), .Z(n9864)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9441_3_lut.init = 16'hcaca;
+    LUT4 i2184_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11090), .C(\rom_addr[5] ), 
+         .D(n11035), .Z(n3295)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2184_3_lut_4_lut.init = 16'hfd0d;
+    LUT4 i9444_3_lut (.A(n9858), .B(n9859), .C(\rom_addr[7] ), .Z(n9867)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9444_3_lut.init = 16'hcaca;
+    L6MUX21 i9482 (.D0(n9903), .D1(n9904), .SD(\rom_addr[6] ), .Z(n9905));
+    LUT4 i9682_3_lut (.A(n1228_adj_661), .B(n1243), .C(\rom_addr[4] ), 
+         .Z(n9681)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9682_3_lut.init = 16'hcaca;
+    L6MUX21 i9057 (.D0(n9478), .D1(n9479), .SD(\rom_addr[6] ), .Z(n9480));
+    L6MUX21 i9066 (.D0(n9487), .D1(n9488), .SD(\rom_addr[6] ), .Z(n9489));
+    L6MUX21 i9079 (.D0(n9500), .D1(n9501), .SD(\rom_addr[6] ), .Z(n9502));
+    LUT4 address_11__I_0_Mux_2_i1309_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10941), 
+         .C(\rom_addr[5] ), .D(n10946), .Z(n1309)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_2_i1309_3_lut_4_lut.init = 16'h1f10;
+    LUT4 address_11__I_0_Mux_4_i572_3_lut_3_lut_4_lut (.A(n11047), .B(\rom_addr[2] ), 
+         .C(n11093), .D(\rom_addr[3] ), .Z(n572)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i572_3_lut_3_lut_4_lut.init = 16'h77f0;
+    LUT4 i9991_2_lut_rep_91_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11049), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n10932)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9991_2_lut_rep_91_3_lut_4_lut.init = 16'h0200;
+    LUT4 i9317_3_lut (.A(n10610), .B(n9739), .C(\rom_addr[7] ), .Z(n1789_adj_662)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9317_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i78_3_lut_4_lut (.A(n11047), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11899), .Z(n78)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i78_3_lut_4_lut.init = 16'h8f80;
+    PFUMX address_11__I_0_Mux_3_i1915 (.BLUT(n1867_adj_663), .ALUT(n1883_adj_664), 
+          .C0(n11075), .Z(n1915)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_1_i653_3_lut_3_lut_4_lut (.A(n11047), .B(\rom_addr[2] ), 
+         .C(n10955), .D(\rom_addr[3] ), .Z(n653_adj_665)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))+!A (C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i653_3_lut_3_lut_4_lut.init = 16'hf077;
+    LUT4 i9252_3_lut (.A(n5226), .B(n668), .C(\rom_addr[4] ), .Z(n9675)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9252_3_lut.init = 16'hcaca;
+    PFUMX address_11__I_0_Mux_3_i1149 (.BLUT(n1101_adj_666), .ALUT(n1117_adj_667), 
+          .C0(n11075), .Z(n1149_c)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_3_i1404_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10941), 
+         .C(\rom_addr[5] ), .D(n1403_adj_668), .Z(n1404_adj_632)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam address_11__I_0_Mux_3_i1404_3_lut_4_lut.init = 16'hf101;
+    LUT4 n10771_bdd_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10941), .C(\rom_addr[5] ), 
+         .D(n11116), .Z(n10772)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam n10771_bdd_3_lut_4_lut.init = 16'h1f10;
+    LUT4 i9235_3_lut (.A(n557_adj_646), .B(n572), .C(\rom_addr[4] ), .Z(n9658)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9235_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_1_i986_3_lut_4_lut (.A(n11047), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(n11900), .Z(n986_adj_669)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i986_3_lut_4_lut.init = 16'h8f80;
+    LUT4 i9234_4_lut (.A(n11062), .B(n541), .C(\rom_addr[4] ), .D(\rom_addr[2] ), 
+         .Z(n9657)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
+    defparam i9234_4_lut.init = 16'hcac0;
+    LUT4 i9275_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10941), .C(\rom_addr[5] ), 
+         .D(n1403_adj_570), .Z(n9698)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam i9275_3_lut_4_lut.init = 16'hf101;
+    LUT4 i5831_2_lut_3_lut_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[0] ), .D(n11098), .Z(n891)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5831_2_lut_3_lut_4_lut.init = 16'h0010;
+    LUT4 i9338_4_lut (.A(n9623), .B(\rom_addr[0] ), .C(\rom_addr[6] ), 
+         .D(n4299), .Z(n9761)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;
+    defparam i9338_4_lut.init = 16'h0aca;
+    PFUMX i9110 (.BLUT(n9531), .ALUT(n9532), .C0(\rom_addr[6] ), .Z(n9533));
+    LUT4 i9274_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10941), .C(\rom_addr[5] ), 
+         .D(n11143), .Z(n9697)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam i9274_3_lut_4_lut.init = 16'h1f10;
+    LUT4 i9359_3_lut (.A(n9650), .B(n508), .C(\rom_addr[6] ), .Z(n9782)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9359_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i508_3_lut (.A(n11137), .B(n507), .C(\rom_addr[5] ), 
+         .Z(n508)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i508_3_lut.init = 16'hcaca;
+    LUT4 i9360_3_lut (.A(n9659), .B(n10844), .C(\rom_addr[6] ), .Z(n9783)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9360_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i987_3_lut (.A(n668), .B(n924_adj_670), .C(\rom_addr[5] ), 
+         .Z(n987)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i987_3_lut.init = 16'hcaca;
+    LUT4 i2418_4_lut (.A(\rom_addr[5] ), .B(n10958), .C(\rom_addr[6] ), 
+         .D(n10957), .Z(n2974)) /* synthesis lut_function=(!(A (B (C))+!A !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2418_4_lut.init = 16'h7f7a;
+    LUT4 address_11__I_0_Mux_5_i542_3_lut_4_lut (.A(\rom_addr[1] ), .B(n11098), 
+         .C(\rom_addr[4] ), .D(n526_adj_630), .Z(n542)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_5_i542_3_lut_4_lut.init = 16'h1f10;
+    L6MUX21 i9132 (.D0(n9553), .D1(n9554), .SD(\rom_addr[6] ), .Z(n9555));
+    PFUMX i9099 (.BLUT(n1054), .ALUT(n1085_adj_671), .C0(\rom_addr[5] ), 
+          .Z(n9522));
+    LUT4 address_11__I_0_Mux_2_i1883_3_lut_4_lut (.A(\rom_addr[1] ), .B(n11098), 
+         .C(\rom_addr[4] ), .D(n1867), .Z(n1883_adj_672)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_2_i1883_3_lut_4_lut.init = 16'h1f10;
+    PFUMX address_11__I_0_Mux_4_i1724 (.BLUT(n3229), .ALUT(n1692_adj_600), 
+          .C0(n9401), .Z(n1724)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 i6192_2_lut_rep_209 (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .Z(n11050)) /* synthesis lut_function=(A (B)) */ ;
+    defparam i6192_2_lut_rep_209.init = 16'h8888;
+    LUT4 i9394_4_lut (.A(n956), .B(\rom_addr[0] ), .C(\rom_addr[6] ), 
+         .D(n6453), .Z(n9817)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
+    defparam i9394_4_lut.init = 16'hca0a;
+    LUT4 rom_addr_0__bdd_4_lut_10729 (.A(\rom_addr[0] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[2] ), .Z(n301_adj_656)) /* synthesis lut_function=(A (B (C (D))+!B (C))+!A !(B (C+(D))+!B !(D))) */ ;
+    defparam rom_addr_0__bdd_4_lut_10729.init = 16'hb124;
+    LUT4 address_11__I_0_Mux_4_i1211_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11093), .Z(n1211)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_4_i1211_3_lut_4_lut.init = 16'h1f10;
+    LUT4 i9331_4_lut (.A(n9598), .B(n380_adj_673), .C(\rom_addr[6] ), 
+         .D(\rom_addr[5] ), .Z(n9754)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
+    defparam i9331_4_lut.init = 16'hca0a;
+    LUT4 address_11__I_0_Mux_0_i380_4_lut (.A(n11898), .B(n1387), .C(\rom_addr[4] ), 
+         .D(n11097), .Z(n380_adj_673)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i380_4_lut.init = 16'hc0ca;
+    LUT4 i5747_2_lut_4_lut (.A(n10970), .B(n10968), .C(\rom_addr[4] ), 
+         .D(\rom_addr[5] ), .Z(n637)) /* synthesis lut_function=(A (B (D)+!B !(C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5747_2_lut_4_lut.init = 16'hca00;
+    LUT4 address_11__I_0_Mux_5_i2041_3_lut_then_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[4] ), .C(\rom_addr[2] ), .Z(n11158)) /* synthesis lut_function=(A (C)+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i2041_3_lut_then_3_lut.init = 16'ha4a4;
+    LUT4 address_11__I_0_Mux_5_i1913_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11095), .Z(n1913_adj_639)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_5_i1913_3_lut_4_lut.init = 16'h1f10;
+    PFUMX address_11__I_0_Mux_4_i1468 (.BLUT(n1466), .ALUT(n1467_adj_633), 
+          .C0(n9410), .Z(n1468)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_2_i316_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11899), .Z(n316)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_2_i316_3_lut_4_lut.init = 16'h1f10;
+    LUT4 address_11__I_0_Mux_4_i428_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11030), .Z(n428_adj_569)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam address_11__I_0_Mux_4_i428_3_lut_4_lut.init = 16'h1f10;
+    LUT4 address_11__I_0_Mux_5_i2041_3_lut_else_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[4] ), .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n11157)) /* synthesis lut_function=(A (B (C)+!B (C (D)))+!A !((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i2041_3_lut_else_3_lut.init = 16'ha084;
+    LUT4 i4627_3_lut (.A(\rom_addr[0] ), .B(\rom_addr[2] ), .C(\rom_addr[1] ), 
+         .Z(n3699)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4627_3_lut.init = 16'hcaca;
+    LUT4 i9426_3_lut (.A(n9548), .B(n10224), .C(\rom_addr[6] ), .Z(n9849)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9426_3_lut.init = 16'hcaca;
+    LUT4 i9427_4_lut (.A(\rom_addr[0] ), .B(n10231), .C(\rom_addr[6] ), 
+         .D(n10624), .Z(n9850)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
+    defparam i9427_4_lut.init = 16'hcac0;
+    LUT4 i2235_3_lut (.A(n11113), .B(n4835), .C(\rom_addr[6] ), .Z(n2791)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2235_3_lut.init = 16'hcaca;
+    LUT4 i9981_2_lut (.A(\rom_addr[7] ), .B(\rom_addr[6] ), .Z(n9433)) /* synthesis lut_function=(!(A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9981_2_lut.init = 16'h7777;
+    LUT4 n220_bdd_3_lut_10372 (.A(n491), .B(n236), .C(\rom_addr[4] ), 
+         .Z(n10686)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
+    defparam n220_bdd_3_lut_10372.init = 16'hacac;
+    LUT4 address_11__I_0_Mux_4_i955_3_lut (.A(n796), .B(n954), .C(\rom_addr[4] ), 
+         .Z(n955)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i955_3_lut.init = 16'hcaca;
+    LUT4 i9108_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10951), .C(\rom_addr[5] ), 
+         .D(n1212_adj_674), .Z(n9531)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam i9108_3_lut_4_lut.init = 16'hf101;
+    L6MUX21 i9141 (.D0(n9562), .D1(n9563), .SD(\rom_addr[6] ), .Z(n9564));
+    LUT4 address_11__I_0_Mux_3_i444_3_lut (.A(n428_adj_675), .B(n684), .C(\rom_addr[4] ), 
+         .Z(n444)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i444_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i506_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11006), .C(\rom_addr[3] ), .D(n11072), .Z(n506)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i506_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i9471_4_lut (.A(n10935), .B(n5230), .C(\rom_addr[6] ), .D(n10982), 
+         .Z(n9894)) /* synthesis lut_function=(!(A (B (C (D)))+!A (B ((D)+!C)+!B !(C)))) */ ;
+    defparam i9471_4_lut.init = 16'h3afa;
+    LUT4 address_11__I_0_Mux_3_i1435_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11093), .C(\rom_addr[3] ), .D(n11067), .Z(n1435)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1435_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    PFUMX address_11__I_0_Mux_4_i63 (.BLUT(n61), .ALUT(n62_adj_659), .C0(n9410), 
+          .Z(n63_adj_580)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_2_i1915_3_lut (.A(n1883_adj_672), .B(n1786_adj_563), 
+         .C(\rom_addr[5] ), .Z(n1915_adj_651)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1915_3_lut.init = 16'hcaca;
+    LUT4 i5919_4_lut (.A(\rom_addr[0] ), .B(n11021), .C(n4657), .D(\rom_addr[5] ), 
+         .Z(n1852_adj_650)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5919_4_lut.init = 16'ha022;
+    LUT4 i4646_3_lut_3_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .Z(n459)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4646_3_lut_3_lut.init = 16'h7474;
+    L6MUX21 i9163 (.D0(n9584), .D1(n9585), .SD(\rom_addr[6] ), .Z(n9586));
+    PFUMX address_11__I_0_Mux_5_i127 (.BLUT(n94), .ALUT(n126), .C0(n11066), 
+          .Z(n127)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_0_i604_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11034), .C(\rom_addr[3] ), .D(n11072), .Z(n604_adj_676)) /* synthesis lut_function=(!(A (B+(C))+!A !(B (C (D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i604_3_lut_3_lut_4_lut_4_lut.init = 16'h5303;
+    PFUMX i9106 (.BLUT(n364_adj_578), .ALUT(n379), .C0(\rom_addr[4] ), 
+          .Z(n9529));
+    LUT4 i8837_2_lut (.A(\rom_addr[4] ), .B(\rom_addr[6] ), .Z(n9247)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i8837_2_lut.init = 16'heeee;
+    LUT4 address_11__I_0_Mux_2_i445_3_lut (.A(n11906), .B(n444), .C(\rom_addr[5] ), 
+         .Z(n445)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i445_3_lut.init = 16'hcaca;
+    LUT4 i1_2_lut_adj_12 (.A(\rom_addr[3] ), .B(\rom_addr[4] ), .Z(n9121)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_adj_12.init = 16'h8888;
+    LUT4 i9806_3_lut (.A(n445), .B(n10211), .C(\rom_addr[6] ), .Z(n9847)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9806_3_lut.init = 16'hcaca;
+    LUT4 i9418_4_lut (.A(n11099), .B(n1212_adj_677), .C(\rom_addr[5] ), 
+         .D(n10992), .Z(n9841)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
+    defparam i9418_4_lut.init = 16'hcac0;
+    LUT4 i1_2_lut_adj_13 (.A(\rom_addr[0] ), .B(\rom_addr[6] ), .Z(n4)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_adj_13.init = 16'h8888;
+    LUT4 i9198_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(n668), .C(\rom_addr[4] ), 
+         .D(n11001), .Z(n9621)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9198_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 address_11__I_0_Mux_5_i526_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11006), .C(\rom_addr[3] ), .D(n11067), .Z(n526_adj_630)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i526_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 i10005_2_lut (.A(\rom_addr[4] ), .B(\rom_addr[5] ), .Z(n6692)) /* synthesis lut_function=(!(A+(B))) */ ;
+    defparam i10005_2_lut.init = 16'h1111;
+    PFUMX i9218 (.BLUT(n9639), .ALUT(n9640), .C0(\rom_addr[5] ), .Z(n9641));
+    LUT4 n220_bdd_3_lut (.A(n220_adj_678), .B(n635), .C(\rom_addr[4] ), 
+         .Z(n10687)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
+    defparam n220_bdd_3_lut.init = 16'hacac;
+    LUT4 address_11__I_0_Mux_4_i684_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n10959), .C(\rom_addr[3] ), .D(n11072), .Z(n684)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i684_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 n1308_bdd_3_lut_4_lut (.A(n11899), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n10970), .Z(n10593)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n1308_bdd_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_2_i1947_4_lut_4_lut (.A(\rom_addr[0] ), .B(n10976), 
+         .C(n3937), .D(\rom_addr[5] ), .Z(n1947_adj_653)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1947_4_lut_4_lut.init = 16'h0a22;
+    L6MUX21 i9227 (.D0(n9648), .D1(n9649), .SD(\rom_addr[5] ), .Z(n9650));
+    LUT4 address_11__I_0_Mux_3_i1597_3_lut (.A(n1565_c), .B(n9656), .C(\rom_addr[5] ), 
+         .Z(n1597_adj_635)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1597_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i1660_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11140), .C(\rom_addr[5] ), .D(n11103), .Z(n1660)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_4_i1660_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    PFUMX i11940 (.BLUT(n12563), .ALUT(n12564), .C0(rom_addr[5]), .Z(n12565));
-    LUT4 i11480_3_lut (.A(n301), .B(n316), .C(rom_addr[4]), .Z(n12105)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11480_3_lut.init = 16'hcaca;
-    LUT4 i1_2_lut_3_lut_adj_23 (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[0]), 
-         .Z(n4_adj_741)) /* synthesis lut_function=(A (C)+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_3_lut_adj_23.init = 16'hb0b0;
-    LUT4 i11578_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n668_adj_550), .C(rom_addr[4]), 
-         .D(n14132), .Z(n12203)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11578_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    LUT4 i1_2_lut_rep_161_3_lut_3_lut_4_lut (.A(n15568), .B(rom_addr[3]), 
-         .C(rom_addr[2]), .D(rom_addr[4]), .Z(n14078)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_161_3_lut_3_lut_4_lut.init = 16'hfbff;
-    LUT4 i11457_3_lut (.A(n2317), .B(n2395), .C(rom_addr[4]), .Z(n12082)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11457_3_lut.init = 16'hcaca;
-    LUT4 i11479_3_lut (.A(n270_c), .B(n285), .C(rom_addr[4]), .Z(n12104)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
-    defparam i11479_3_lut.init = 16'hcaca;
-    PFUMX i11943 (.BLUT(n12566), .ALUT(n12567), .C0(rom_addr[5]), .Z(n12568));
-    LUT4 i7316_2_lut_rep_235_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(n15568), .D(rom_addr[0]), .Z(n14152)) /* synthesis lut_function=(!(A+((C (D)+!C !(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7316_2_lut_rep_235_3_lut_4_lut.init = 16'h0440;
-    LUT4 i7435_2_lut_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(rom_addr[5]), 
-         .C(n14275), .D(n14179), .Z(n2684)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7435_2_lut_3_lut_4_lut_4_lut.init = 16'h1000;
-    LUT4 i7375_2_lut_rep_211_3_lut_3_lut (.A(rom_addr[0]), .B(rom_addr[3]), 
-         .C(n15568), .Z(n14128)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7375_2_lut_rep_211_3_lut_3_lut.init = 16'h4040;
-    PFUMX i13314 (.BLUT(n13894), .ALUT(n13893), .C0(rom_addr[6]), .Z(n13895));
-    LUT4 i1_2_lut_rep_200_3_lut (.A(rom_addr[1]), .B(rom_addr[3]), .C(rom_addr[2]), 
-         .Z(n14117)) /* synthesis lut_function=(A+!(B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_200_3_lut.init = 16'hbfbf;
-    LUT4 i11234_2_lut_rep_343 (.A(rom_addr[2]), .B(rom_addr[3]), .Z(n14260)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11234_2_lut_rep_343.init = 16'h2222;
-    LUT4 i11966_4_lut_4_lut (.A(rom_addr[0]), .B(n14150), .C(rom_addr[4]), 
-         .D(n14099), .Z(n12591)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11966_4_lut_4_lut.init = 16'hf404;
-    LUT4 i1_2_lut_rep_253_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n14170)) /* synthesis lut_function=(!(A ((C+!(D))+!B)+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i1_2_lut_rep_253_3_lut_4_lut.init = 16'h0d00;
-    LUT4 i11225_3_lut_4_lut_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), 
-         .C(rom_addr[1]), .D(rom_addr[0]), .Z(n1228_adj_670)) /* synthesis lut_function=(!(A (B (C+(D))+!B !(C (D)))+!A (C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11225_3_lut_4_lut_3_lut_4_lut.init = 16'h200d;
-    LUT4 i7386_2_lut_2_lut_3_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[0]), 
-         .Z(n348)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7386_2_lut_2_lut_3_lut.init = 16'h0202;
-    LUT4 address_11__I_0_Mux_5_i574_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n542), 
-         .C(rom_addr[5]), .D(n14091), .Z(n574)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i574_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 address_11__I_0_Mux_3_i1101_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n14221), 
-         .C(rom_addr[3]), .D(n14255), .Z(n1101_adj_731)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    LUT4 address_11__I_0_Mux_3_i1786_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10982), 
+         .C(\rom_addr[4] ), .D(n1785), .Z(n1786_adj_565)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1786_3_lut_4_lut.init = 16'hf808;
+    LUT4 i9752_3_lut (.A(n9481), .B(n9482), .C(\rom_addr[5] ), .Z(n9483)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9752_3_lut.init = 16'hcaca;
+    PFUMX i9236 (.BLUT(n9657), .ALUT(n9658), .C0(\rom_addr[5] ), .Z(n9659));
+    LUT4 i9152_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10982), .C(\rom_addr[4] ), 
+         .D(n1084_adj_679), .Z(n9575)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9152_3_lut_4_lut.init = 16'hf808;
+    L6MUX21 i10040 (.D0(n10223), .D1(n10220), .SD(\rom_addr[5] ), .Z(n10224));
+    LUT4 i9763_3_lut (.A(n9691), .B(n11165), .C(\rom_addr[5] ), .Z(n9693)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9763_3_lut.init = 16'hcaca;
+    PFUMX i4667 (.BLUT(n5254), .ALUT(n1723_adj_596), .C0(\rom_addr[5] ), 
+          .Z(n5255));
+    LUT4 address_11__I_0_Mux_3_i1530_3_lut_4_lut_4_lut (.A(\rom_addr[5] ), 
+         .B(n1211), .C(n10976), .D(\rom_addr[0] ), .Z(n1530)) /* synthesis lut_function=(A (B)+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1530_3_lut_4_lut_4_lut.init = 16'h8d88;
+    PFUMX i9254 (.BLUT(n9675), .ALUT(n9676), .C0(\rom_addr[5] ), .Z(n9677));
+    LUT4 address_11__I_0_Mux_4_i1597_3_lut (.A(n1565_c), .B(n1596_adj_618), 
+         .C(\rom_addr[5] ), .Z(n1597_adj_624)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1597_3_lut.init = 16'hcaca;
+    LUT4 i9253_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(n684), .C(\rom_addr[4] ), 
+         .D(n11001), .Z(n9676)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9253_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i9767_3_lut (.A(n11149), .B(n10529), .C(\rom_addr[5] ), .Z(n9680)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9767_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i253_3_lut (.A(n221), .B(n9638), .C(\rom_addr[5] ), 
+         .Z(n253)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i253_3_lut.init = 16'hcaca;
+    LUT4 i5790_4_lut (.A(\rom_addr[0] ), .B(n11000), .C(n10993), .D(\rom_addr[5] ), 
+         .Z(n190_adj_617)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5790_4_lut.init = 16'h0a22;
+    LUT4 i9246_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(n11095), .C(\rom_addr[3] ), 
+         .D(n11072), .Z(n9669)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9246_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i9470_4_lut_4_lut (.A(\rom_addr[5] ), .B(n10958), .C(n10960), 
+         .D(\rom_addr[6] ), .Z(n9893)) /* synthesis lut_function=(A+!(B ((D)+!C)+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9470_4_lut_4_lut.init = 16'hbbfa;
+    LUT4 address_11__I_0_Mux_3_i635_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11089), .C(\rom_addr[3] ), .D(n11072), .Z(n635)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i635_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 i9349_4_lut (.A(n10942), .B(n2025), .C(\rom_addr[5] ), .D(\rom_addr[4] ), 
+         .Z(n9772)) /* synthesis lut_function=(A (B+((D)+!C))+!A !(((D)+!C)+!B)) */ ;
+    defparam i9349_4_lut.init = 16'haaca;
+    LUT4 i9348_3_lut (.A(n1914), .B(n1978_adj_613), .C(\rom_addr[5] ), 
+         .Z(n9771)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9348_3_lut.init = 16'hcaca;
+    PFUMX i10038 (.BLUT(n10222), .ALUT(n10221), .C0(\rom_addr[3] ), .Z(n10223));
+    PFUMX i9123 (.BLUT(n653), .ALUT(n668_adj_681), .C0(\rom_addr[4] ), 
+          .Z(n9546));
+    LUT4 n4842_bdd_2_lut_4_lut (.A(\rom_addr[2] ), .B(n11090), .C(\rom_addr[4] ), 
+         .D(\rom_addr[0] ), .Z(n10895)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B+(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n4842_bdd_2_lut_4_lut.init = 16'h2100;
+    PFUMX i9260 (.BLUT(n9681), .ALUT(n9682), .C0(\rom_addr[5] ), .Z(n9683));
+    LUT4 address_11__I_0_Mux_4_i1914_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10982), 
+         .C(\rom_addr[4] ), .D(n1913), .Z(n1914_adj_660)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1914_3_lut_4_lut.init = 16'hf808;
+    LUT4 i9018_3_lut (.A(n475_adj_682), .B(n635), .C(\rom_addr[4] ), .Z(n9441)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9018_3_lut.init = 16'hcaca;
+    LUT4 i9068_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10982), .C(\rom_addr[4] ), 
+         .D(n1658), .Z(n9491)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9068_3_lut_4_lut.init = 16'hf808;
+    LUT4 i9052_4_lut_4_lut (.A(n11062), .B(\rom_addr[4] ), .C(n4046), 
+         .D(n684_adj_562), .Z(n9475)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9052_4_lut_4_lut.init = 16'h7340;
+    LUT4 i9217_4_lut (.A(n301_adj_656), .B(n11034), .C(\rom_addr[4] ), 
+         .D(\rom_addr[3] ), .Z(n9640)) /* synthesis lut_function=(!(A (B (C)+!B (C (D)))+!A (B+((D)+!C)))) */ ;
+    defparam i9217_4_lut.init = 16'h0a3a;
+    LUT4 address_11__I_0_Mux_5_i2010_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10982), 
+         .C(\rom_addr[4] ), .D(n2009_adj_683), .Z(n2010_adj_641)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i2010_3_lut_4_lut.init = 16'hf808;
+    PFUMX i9276 (.BLUT(n1436), .ALUT(n1467_adj_611), .C0(\rom_addr[5] ), 
+          .Z(n9699));
+    LUT4 address_11__I_0_Mux_3_i890_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n890_adj_616)) /* synthesis lut_function=(A (B (C (D))+!B (C))+!A (B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i890_3_lut_4_lut_4_lut.init = 16'he420;
+    LUT4 i9269_3_lut_4_lut_then_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[1] ), .Z(n11164)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A (B (D)+!B !(C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9269_3_lut_4_lut_then_4_lut.init = 16'h1047;
+    LUT4 address_11__I_0_Mux_3_i589_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11899), .C(\rom_addr[3] ), .D(n11067), .Z(n589)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i589_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 address_11__I_0_Mux_6_i1820_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10982), 
+         .C(\rom_addr[4] ), .D(n11032), .Z(n1820_adj_685)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1820_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_6_i1530_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10982), 
+         .C(\rom_addr[4] ), .D(n1529_adj_686), .Z(n1530_adj_687)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1530_3_lut_4_lut.init = 16'hf808;
+    PFUMX i9277 (.BLUT(n1499_adj_688), .ALUT(n1530_adj_687), .C0(\rom_addr[5] ), 
+          .Z(n9700));
+    LUT4 address_11__I_0_Mux_0_i1341_4_lut (.A(n11899), .B(n10932), .C(\rom_addr[5] ), 
+         .D(n9121), .Z(n1341_adj_606)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i1341_4_lut.init = 16'hcac0;
+    LUT4 i9269_3_lut_4_lut_else_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[1] ), .Z(n11163)) /* synthesis lut_function=(!(A+!(B (C (D))+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9269_3_lut_4_lut_else_4_lut.init = 16'h4101;
+    LUT4 i9792_3_lut_4_lut (.A(n10961), .B(\rom_addr[4] ), .C(\rom_addr[5] ), 
+         .D(n1596_adj_655), .Z(n9704)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B ((D)+!C))) */ ;
+    defparam i9792_3_lut_4_lut.init = 16'hf101;
+    LUT4 address_11__I_0_Mux_3_i1101_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n3699), .C(\rom_addr[3] ), .D(n11073), .Z(n1101_adj_666)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_3_i1101_3_lut_4_lut_4_lut.init = 16'hfc5c;
-    PFUMX i11446 (.BLUT(n12068), .ALUT(n12069), .C0(rom_addr[5]), .Z(n12071));
-    LUT4 address_11__I_0_Mux_2_i1660_4_lut_4_lut (.A(rom_addr[0]), .B(n6671), 
-         .C(rom_addr[5]), .D(n12253), .Z(n1660_adj_710)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    PFUMX i9283 (.BLUT(n1692_adj_689), .ALUT(n1723_c), .C0(\rom_addr[5] ), 
+          .Z(n9706));
+    LUT4 address_11__I_0_Mux_0_i1244_3_lut_4_lut (.A(n11047), .B(n11050), 
+         .C(\rom_addr[4] ), .D(n10996), .Z(n1244)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
+    defparam address_11__I_0_Mux_0_i1244_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_3_i475_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11899), .C(\rom_addr[3] ), .D(n11067), .Z(n475_adj_682)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i475_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 i3_4_lut_4_lut_4_lut (.A(\rom_addr[5] ), .B(\rom_addr[0] ), .C(\rom_addr[4] ), 
+         .D(n11033), .Z(n16)) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3_4_lut_4_lut_4_lut.init = 16'h0040;
+    LUT4 i9654_3_lut (.A(n109), .B(n124_adj_583), .C(\rom_addr[4] ), .Z(n9752)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9654_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_6_i1499_3_lut_4_lut (.A(n11047), .B(n11050), 
+         .C(\rom_addr[4] ), .D(n1483_adj_690), .Z(n1499_adj_688)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;
+    defparam address_11__I_0_Mux_6_i1499_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_2_i1660_4_lut_4_lut (.A(\rom_addr[0] ), .B(n5241), 
+         .C(\rom_addr[5] ), .D(n9671), .Z(n1660_adj_647)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_2_i1660_4_lut_4_lut.init = 16'hf404;
-    LUT4 i7385_2_lut_3_lut_4_lut (.A(rom_addr[2]), .B(rom_addr[3]), .C(rom_addr[1]), 
-         .D(rom_addr[0]), .Z(n684_adj_672)) /* synthesis lut_function=(!((B+(C (D)+!C !(D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7385_2_lut_3_lut_4_lut.init = 16'h0220;
-    LUT4 i11685_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n684_adj_645), .C(rom_addr[4]), 
-         .D(n14132), .Z(n12310)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i11685_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 i12641_2_lut_rep_184_3_lut_4_lut (.A(rom_addr[1]), .B(rom_addr[3]), 
-         .C(rom_addr[0]), .D(rom_addr[2]), .Z(n14101)) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i12641_2_lut_rep_184_3_lut_4_lut.init = 16'h0400;
-    LUT4 address_11__I_0_Mux_5_i507_3_lut_4_lut_4_lut (.A(rom_addr[0]), .B(n205_adj_549), 
-         .C(rom_addr[4]), .D(n14132), .Z(n507_adj_622)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_5_i507_3_lut_4_lut_4_lut.init = 16'h5c0c;
-    LUT4 address_11__I_0_Mux_1_i444_3_lut (.A(n428), .B(n443), .C(rom_addr[4]), 
-         .Z(n444_adj_696)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    LUT4 i2_4_lut (.A(n6), .B(n4), .C(n10941), .D(\rom_addr[5] ), .Z(n21)) /* synthesis lut_function=(!(A ((C (D))+!B)+!A ((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2_4_lut.init = 16'h0c88;
+    LUT4 i9776_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10960), .C(\rom_addr[5] ), 
+         .D(n11107), .Z(n9769)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9776_3_lut_4_lut.init = 16'hf202;
+    PFUMX i9284 (.BLUT(n1755_c), .ALUT(n1786_adj_568), .C0(\rom_addr[5] ), 
+          .Z(n9707));
+    LUT4 address_11__I_0_Mux_5_i1275_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n10970), .C(\rom_addr[4] ), .D(n10982), .Z(n1275_c)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1275_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i6003_4_lut (.A(n1212_adj_677), .B(\rom_addr[6] ), .C(n9123), 
+         .D(\rom_addr[5] ), .Z(n1661)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i6003_4_lut.init = 16'hc088;
+    PFUMX i9288 (.BLUT(n1820_adj_685), .ALUT(n1851_adj_691), .C0(\rom_addr[5] ), 
+          .Z(n9711));
+    LUT4 i9892_2_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .Z(n9985)) /* synthesis lut_function=(A (B)+!A !(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9892_2_lut.init = 16'h9999;
+    LUT4 address_11__I_0_Mux_6_i1946_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11025), .C(\rom_addr[3] ), .D(n11072), .Z(n1946)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C+!(D))+!B !(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1946_3_lut_4_lut_4_lut.init = 16'h3530;
+    LUT4 i9051_3_lut_4_lut (.A(n11015), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n653_adj_665), .Z(n9474)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9051_3_lut_4_lut.init = 16'h8f80;
+    LUT4 i10508_then_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .C(\rom_addr[5] ), 
+         .D(\rom_addr[4] ), .Z(n11167)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;
+    defparam i10508_then_4_lut.init = 16'h0004;
+    LUT4 i1_4_lut (.A(n10941), .B(\rom_addr[7] ), .C(n5039), .D(\rom_addr[5] ), 
+         .Z(n8372)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B+!(C+!(D)))) */ ;
+    defparam i1_4_lut.init = 16'hcfee;
+    PFUMX i9289 (.BLUT(n1883_adj_604), .ALUT(n1914_adj_692), .C0(\rom_addr[5] ), 
+          .Z(n9712));
+    LUT4 i5752_4_lut (.A(\rom_addr[0] ), .B(n4688), .C(n10936), .D(\rom_addr[6] ), 
+         .Z(n1020)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5752_4_lut.init = 16'h0a22;
+    LUT4 address_11__I_0_Mux_1_i891_4_lut (.A(n10973), .B(\rom_addr[0] ), 
+         .C(\rom_addr[4] ), .D(n11090), .Z(n891_c)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i891_4_lut.init = 16'h0aca;
+    LUT4 i9836_3_lut (.A(n892), .B(n1020), .C(\rom_addr[7] ), .Z(n893)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9836_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_3_i379_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11089), .C(\rom_addr[3] ), .D(n11067), .Z(n379_adj_694)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i379_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 i9423_3_lut (.A(n9527), .B(n9530), .C(\rom_addr[6] ), .Z(n9846)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9423_3_lut.init = 16'hcaca;
+    LUT4 i9027_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11011), .C(\rom_addr[4] ), 
+         .D(n747), .Z(n9450)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9027_3_lut_4_lut.init = 16'h8f80;
+    LUT4 address_11__I_0_Mux_6_i1692_3_lut_4_lut (.A(\rom_addr[2] ), .B(n11011), 
+         .C(\rom_addr[4] ), .D(n1691), .Z(n1692_adj_689)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1692_3_lut_4_lut.init = 16'hf808;
+    LUT4 i9023_3_lut_4_lut (.A(n11015), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(n653_adj_695), .Z(n9446)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9023_3_lut_4_lut.init = 16'h8f80;
+    PFUMX i10586 (.BLUT(n11150), .ALUT(n11151), .C0(\rom_addr[1] ), .Z(n11152));
+    LUT4 i10508_else_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .C(\rom_addr[5] ), 
+         .D(\rom_addr[4] ), .Z(n11166)) /* synthesis lut_function=(!(A (B (C+!(D))+!B (C+(D)))+!A (B+((D)+!C)))) */ ;
+    defparam i10508_else_4_lut.init = 16'h0812;
+    PFUMX i9290 (.BLUT(n1947), .ALUT(n9632), .C0(\rom_addr[5] ), .Z(n9713));
+    LUT4 i2_2_lut_rep_177_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .C(\rom_addr[3] ), 
+         .Z(n11018)) /* synthesis lut_function=(A+!(B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2_2_lut_rep_177_3_lut.init = 16'hbfbf;
+    LUT4 address_11__I_0_Mux_4_i956_3_lut (.A(n924_adj_670), .B(n955), .C(\rom_addr[5] ), 
+         .Z(n956_adj_582)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i956_3_lut.init = 16'hcaca;
+    PFUMX i9291 (.BLUT(n2010), .ALUT(n5207), .C0(\rom_addr[5] ), .Z(n9714));
+    LUT4 i9344_4_lut (.A(n11020), .B(n1276), .C(\rom_addr[6] ), .D(n11044), 
+         .Z(n9767)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
+    defparam i9344_4_lut.init = 16'hcac0;
+    PFUMX i9105 (.BLUT(n333), .ALUT(n348), .C0(\rom_addr[4] ), .Z(n9528));
+    LUT4 i9343_4_lut (.A(n1086), .B(\rom_addr[0] ), .C(\rom_addr[6] ), 
+         .D(n4835), .Z(n9766)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;
+    defparam i9343_4_lut.init = 16'h0aca;
+    LUT4 i9325_4_lut (.A(n11903), .B(n126_adj_696), .C(\rom_addr[6] ), 
+         .D(\rom_addr[5] ), .Z(n9748)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
+    defparam i9325_4_lut.init = 16'hcac0;
+    LUT4 i9333_3_lut (.A(n9754), .B(n9755), .C(\rom_addr[7] ), .Z(n510)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9333_3_lut.init = 16'hcaca;
+    PFUMX i9297 (.BLUT(n9718), .ALUT(n9719), .C0(\rom_addr[5] ), .Z(n9720));
+    LUT4 i9320_3_lut (.A(n11132), .B(n1978), .C(\rom_addr[5] ), .Z(n9743)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9320_3_lut.init = 16'hcaca;
+    LUT4 i43_4_lut (.A(\rom_addr[5] ), .B(n10956), .C(\rom_addr[4] ), 
+         .D(n635), .Z(n26)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i43_4_lut.init = 16'hcac0;
+    PFUMX i10584 (.BLUT(n11147), .ALUT(n11148), .C0(n11099), .Z(n11149));
+    LUT4 address_11__I_0_Mux_3_i380_4_lut_4_lut (.A(\rom_addr[5] ), .B(n9127), 
+         .C(n11048), .D(n379_adj_694), .Z(n380_c)) /* synthesis lut_function=(A (D)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i380_4_lut_4_lut.init = 16'hea40;
+    LUT4 address_11__I_0_Mux_2_i1931_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11004), .C(\rom_addr[3] ), .D(n11067), .Z(n1931)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i1931_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 address_11__I_0_Mux_5_i860_4_lut (.A(n10956), .B(n10959), .C(\rom_addr[4] ), 
+         .D(\rom_addr[3] ), .Z(n860_adj_572)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i860_4_lut.init = 16'hca0a;
+    LUT4 n635_bdd_4_lut_4_lut_4_lut (.A(\rom_addr[5] ), .B(n11001), .C(\rom_addr[4] ), 
+         .D(\rom_addr[0] ), .Z(n10350)) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n635_bdd_4_lut_4_lut_4_lut.init = 16'h0040;
+    PFUMX address_11__I_0_Mux_0_i1086 (.BLUT(n1054_adj_652), .ALUT(n1085), 
+          .C0(\rom_addr[5] ), .Z(n1086)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 n9663_bdd_3_lut (.A(n9663), .B(n9664), .C(\rom_addr[4] ), .Z(n10710)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n9663_bdd_3_lut.init = 16'hcaca;
+    LUT4 i9310_3_lut (.A(n10595), .B(n9732), .C(\rom_addr[7] ), .Z(n1533)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9310_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_5_i1278_4_lut (.A(\rom_addr[0] ), .B(n10736), 
+         .C(\rom_addr[7] ), .D(n2791), .Z(n1278_c)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1278_4_lut.init = 16'hc0ca;
+    PFUMX i9303 (.BLUT(n9724), .ALUT(n9725), .C0(\rom_addr[5] ), .Z(n9726));
+    LUT4 i9089_3_lut (.A(n1789_adj_662), .B(n2044_adj_561), .C(\rom_addr[8] ), 
+         .Z(n9512)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9089_3_lut.init = 16'hcaca;
+    LUT4 i9459_3_lut (.A(n10795), .B(n9586), .C(\rom_addr[7] ), .Z(n9882)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9459_3_lut.init = 16'hcaca;
+    LUT4 i9458_3_lut (.A(n9564), .B(n5255), .C(\rom_addr[7] ), .Z(n9881)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9458_3_lut.init = 16'hcaca;
+    LUT4 i9452_3_lut (.A(n10752), .B(n9905), .C(\rom_addr[7] ), .Z(n9875)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9452_3_lut.init = 16'hcaca;
+    PFUMX i9306 (.BLUT(n1436_c), .ALUT(n1467), .C0(\rom_addr[5] ), .Z(n9729));
+    PFUMX i10582 (.BLUT(n11144), .ALUT(n11145), .C0(\rom_addr[0] ), .Z(n1914));
+    LUT4 i9461_3_lut (.A(n9877), .B(n9878), .C(\rom_addr[8] ), .Z(n9884)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9461_3_lut.init = 16'hcaca;
+    LUT4 i9440_3_lut (.A(n9850), .B(n9851), .C(\rom_addr[7] ), .Z(n9863)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9440_3_lut.init = 16'hcaca;
+    LUT4 i9439_3_lut (.A(n9848), .B(n9849), .C(\rom_addr[7] ), .Z(n9862)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9439_3_lut.init = 16'hcaca;
+    LUT4 i9858_3_lut (.A(n9862), .B(n9863), .C(\rom_addr[8] ), .Z(n9869)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9858_3_lut.init = 16'hcaca;
+    LUT4 i1_2_lut_2_lut (.A(\rom_addr[0] ), .B(\rom_addr[4] ), .Z(n9111)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_2_lut.init = 16'h4444;
+    LUT4 i10566_else_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n11901)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A (B+(C+!(D))))) */ ;
+    defparam i10566_else_4_lut.init = 16'h0320;
+    PFUMX i10634 (.BLUT(n11231), .ALUT(n11227), .C0(\rom_addr[10] ), .Z(\rom_q[3] ));
+    LUT4 i9211_4_lut (.A(n635), .B(n11898), .C(\rom_addr[4] ), .D(n11050), 
+         .Z(n9634)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
+    defparam i9211_4_lut.init = 16'hca0a;
+    PFUMX i9307 (.BLUT(n1499), .ALUT(n1530_adj_645), .C0(\rom_addr[5] ), 
+          .Z(n9730));
+    LUT4 i9054_4_lut_4_lut (.A(\rom_addr[0] ), .B(n11041), .C(\rom_addr[4] ), 
+         .D(n10937), .Z(n9477)) /* synthesis lut_function=(A (C (D))+!A (B ((D)+!C)+!B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9054_4_lut_4_lut.init = 16'hf404;
+    LUT4 i9204_3_lut (.A(n908), .B(n635), .C(\rom_addr[4] ), .Z(n9627)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9204_3_lut.init = 16'hcaca;
+    PFUMX address_11__I_0_Mux_6_i1628 (.BLUT(n1612_adj_697), .ALUT(n1627), 
+          .C0(\rom_addr[4] ), .Z(n1628_adj_657)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 address_11__I_0_Mux_1_i1628_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11103), .C(\rom_addr[4] ), .D(n10982), .Z(n1628)) /* synthesis lut_function=(A (C (D))+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1628_3_lut_4_lut_4_lut.init = 16'ha404;
+    LUT4 i9067_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(n11103), .C(\rom_addr[4] ), 
+         .D(n11040), .Z(n9490)) /* synthesis lut_function=(!(A ((D)+!C)+!A ((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9067_3_lut_4_lut_4_lut.init = 16'h04a4;
+    LUT4 i9843_3_lut (.A(n9748), .B(n10621), .C(\rom_addr[7] ), .Z(n255)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9843_3_lut.init = 16'hcaca;
+    LUT4 i9195_3_lut (.A(n205_adj_559), .B(n604_adj_676), .C(\rom_addr[4] ), 
+         .Z(n9618)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9195_3_lut.init = 16'hcaca;
+    LUT4 i9406_3_lut (.A(n9816), .B(n9817), .C(\rom_addr[7] ), .Z(n9829)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9406_3_lut.init = 16'hcaca;
+    LUT4 n442_bdd_3_lut_10042_4_lut (.A(\rom_addr[0] ), .B(n11074), .C(n11015), 
+         .D(\rom_addr[3] ), .Z(n10225)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C+(D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n442_bdd_3_lut_10042_4_lut.init = 16'h22f0;
+    LUT4 i6009_2_lut_rep_206 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .Z(n11047)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i6009_2_lut_rep_206.init = 16'heeee;
+    PFUMX i10316 (.BLUT(n10623), .ALUT(n10622), .C0(\rom_addr[5] ), .Z(n10624));
+    LUT4 i9062_3_lut_4_lut (.A(\rom_addr[0] ), .B(n10976), .C(\rom_addr[4] ), 
+         .D(n1466_adj_648), .Z(n9485)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9062_3_lut_4_lut.init = 16'hf202;
+    PFUMX i10580 (.BLUT(n11141), .ALUT(n11142), .C0(\rom_addr[0] ), .Z(n11143));
+    PFUMX i9313 (.BLUT(n1692_adj_643), .ALUT(n1723), .C0(\rom_addr[5] ), 
+          .Z(n9736));
+    LUT4 address_11__I_0_Mux_4_i60_3_lut_rep_189_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n11030)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i60_3_lut_rep_189_3_lut.init = 16'hc1c1;
+    LUT4 i9186_3_lut (.A(n506_adj_581), .B(n428), .C(\rom_addr[4] ), .Z(n9609)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9186_3_lut.init = 16'hcaca;
+    LUT4 i9869_3_lut (.A(n10351), .B(n9764), .C(\rom_addr[7] ), .Z(n1021_adj_560)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9869_3_lut.init = 16'hcaca;
+    PFUMX i9314 (.BLUT(n1755), .ALUT(n1786_adj_642), .C0(\rom_addr[5] ), 
+          .Z(n9737));
+    LUT4 i5706_2_lut_rep_193_3_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .Z(n11034)) /* synthesis lut_function=(A (C)+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5706_2_lut_rep_193_3_lut.init = 16'he0e0;
+    PFUMX i10314 (.BLUT(n10620), .ALUT(n10619), .C0(\rom_addr[6] ), .Z(n10621));
+    LUT4 i5654_2_lut_rep_154_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n10995)) /* synthesis lut_function=(A (B (C+(D)))) */ ;
+    defparam i5654_2_lut_rep_154_3_lut_4_lut.init = 16'h8880;
+    LUT4 address_11__I_0_Mux_3_i1117_3_lut_3_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[3] ), .C(n125), .D(\rom_addr[5] ), .Z(n1117_adj_667)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))+!A (C+!(D))) */ ;
+    defparam address_11__I_0_Mux_3_i1117_3_lut_3_lut_4_lut.init = 16'hf077;
+    LUT4 i9185_3_lut (.A(n526), .B(n205), .C(\rom_addr[4] ), .Z(n9608)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9185_3_lut.init = 16'hcaca;
+    LUT4 i5782_4_lut (.A(\rom_addr[0] ), .B(n2975), .C(n9895), .D(\rom_addr[8] ), 
+         .Z(n2045)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5782_4_lut.init = 16'h0a22;
+    LUT4 i9855_3_lut (.A(n9875), .B(n11361), .C(\rom_addr[8] ), .Z(n9883)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9855_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_3_i62_3_lut_4_lut_4_lut (.A(\rom_addr[5] ), .B(n46), 
+         .C(n11012), .D(\rom_addr[1] ), .Z(n62)) /* synthesis lut_function=(A (B)+!A !(C+!(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i62_3_lut_4_lut_4_lut.init = 16'h8d88;
+    LUT4 i5709_4_lut_4_lut (.A(n11027), .B(\rom_addr[4] ), .C(n10982), 
+         .D(\rom_addr[0] ), .Z(n1851_adj_691)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A !(B (D)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5709_4_lut_4_lut.init = 16'h7400;
+    LUT4 i9142_4_lut (.A(\rom_addr[0] ), .B(n10973), .C(\rom_addr[4] ), 
+         .D(n11003), .Z(n9565)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
+    defparam i9142_4_lut.init = 16'hcac0;
+    LUT4 address_11__I_0_Mux_0_i270_4_lut (.A(n11071), .B(n11025), .C(\rom_addr[3] ), 
+         .D(\rom_addr[1] ), .Z(n270)) /* synthesis lut_function=(A (B (C))+!A (B (C+!(D))+!B !(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i270_4_lut.init = 16'hc0c5;
+    LUT4 i9457_3_lut (.A(n10773), .B(n9555), .C(\rom_addr[7] ), .Z(n9880)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9457_3_lut.init = 16'hcaca;
+    PFUMX i10578 (.BLUT(n11138), .ALUT(n11139), .C0(\rom_addr[0] ), .Z(n11140));
+    LUT4 address_11__I_0_Mux_1_i444_3_lut (.A(n428_adj_567), .B(n443_adj_615), 
+         .C(\rom_addr[4] ), .Z(n444_adj_701)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
     defparam address_11__I_0_Mux_1_i444_3_lut.init = 16'hcaca;
-    L6MUX21 i12870 (.D0(n13326), .D1(n13324), .SD(rom_addr[6]), .Z(n13327));
-    PFUMX i12868 (.BLUT(n13325), .ALUT(n14095), .C0(rom_addr[5]), .Z(n13326));
-    PFUMX i11945 (.BLUT(n349), .ALUT(n380_adj_631), .C0(rom_addr[5]), 
-          .Z(n12570));
-    PFUMX i11949 (.BLUT(n12572), .ALUT(n12573), .C0(rom_addr[5]), .Z(n12574));
-    PFUMX i12866 (.BLUT(n1739), .ALUT(n13323), .C0(rom_addr[5]), .Z(n13324));
-    PFUMX i11952 (.BLUT(n12575), .ALUT(n12576), .C0(rom_addr[5]), .Z(n12577));
-    L6MUX21 i13281 (.D0(n13847), .D1(n13845), .SD(rom_addr[5]), .Z(n13848));
-    PFUMX i13279 (.BLUT(n13846), .ALUT(n14215), .C0(rom_addr[3]), .Z(n13847));
-    PFUMX i13411 (.BLUT(n14301), .ALUT(n14302), .C0(n14277), .Z(n14303));
-    LUT4 i7598_2_lut_rep_355 (.A(n15568), .B(rom_addr[2]), .Z(n14272)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i7598_2_lut_rep_355.init = 16'heeee;
-    PFUMX i13277 (.BLUT(n13844), .ALUT(n13843), .C0(rom_addr[4]), .Z(n13845));
-    PFUMX i12854 (.BLUT(n13307), .ALUT(n13306), .C0(rom_addr[6]), .Z(n13308));
-    PFUMX address_11__I_0_Mux_0_i1086 (.BLUT(n1054), .ALUT(n1085_c), .C0(rom_addr[5]), 
-          .Z(n1086)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=279, LSE_RLINE=283 */ ;
-    PFUMX i12729 (.BLUT(n14160), .ALUT(n13111), .C0(n14237), .Z(n13112));
-    PFUMX i11960 (.BLUT(n12581), .ALUT(n12582), .C0(rom_addr[5]), .Z(n12585));
-    PFUMX i11961 (.BLUT(n12583), .ALUT(n12584), .C0(rom_addr[5]), .Z(n12586));
-    PFUMX i11967 (.BLUT(n12588), .ALUT(n12589), .C0(rom_addr[5]), .Z(n12592));
-    LUT4 address_11__I_0_Mux_2_i364_3_lut_4_lut_4_lut (.A(rom_addr[2]), .B(n14189), 
-         .C(rom_addr[3]), .D(n14210), .Z(n364_adj_658)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam address_11__I_0_Mux_2_i364_3_lut_4_lut_4_lut.init = 16'hc5c0;
-    PFUMX i11968 (.BLUT(n12590), .ALUT(n12591), .C0(rom_addr[5]), .Z(n12593));
-    LUT4 i7629_2_lut_rep_241_2_lut (.A(rom_addr[2]), .B(rom_addr[0]), .Z(n14158)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
-    defparam i7629_2_lut_rep_241_2_lut.init = 16'hdddd;
-    PFUMX i11970 (.BLUT(n797), .ALUT(n828_adj_555), .C0(rom_addr[5]), 
-          .Z(n12595));
-    PFUMX i11971 (.BLUT(n12259), .ALUT(n891_adj_751), .C0(rom_addr[5]), 
-          .Z(n12596));
-    PFUMX i11977 (.BLUT(n12598), .ALUT(n12599), .C0(rom_addr[5]), .Z(n12602));
-    PFUMX i11978 (.BLUT(n12600), .ALUT(n12601), .C0(rom_addr[5]), .Z(n12603));
+    LUT4 i9466_3_lut (.A(n9887), .B(n9888), .C(\rom_addr[10] ), .Z(\rom_q[1] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9466_3_lut.init = 16'hcaca;
+    LUT4 i9456_3_lut (.A(n9524), .B(n9533), .C(\rom_addr[7] ), .Z(n9879)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9456_3_lut.init = 16'hcaca;
+    PFUMX i10632 (.BLUT(n9826), .ALUT(n11229), .C0(\rom_addr[8] ), .Z(n11230));
+    PFUMX i9330 (.BLUT(n9751), .ALUT(n9752), .C0(\rom_addr[5] ), .Z(n9753));
+    LUT4 i5640_2_lut_rep_165_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .Z(n11006)) /* synthesis lut_function=(!(A+!(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5640_2_lut_rep_165_3_lut.init = 16'h4040;
+    LUT4 i8864_2_lut_rep_247 (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .Z(n11088)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam i8864_2_lut_rep_247.init = 16'heeee;
+    PFUMX i10312 (.BLUT(n1211), .ALUT(n10617), .C0(\rom_addr[4] ), .Z(n10618));
+    LUT4 n11357_bdd_3_lut (.A(n11357), .B(n11355), .C(\rom_addr[6] ), 
+         .Z(n11358)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n11357_bdd_3_lut.init = 16'hcaca;
+    LUT4 i9952_2_lut_rep_124_2_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n10965)) /* synthesis lut_function=(!(A+(B+(C (D))))) */ ;
+    defparam i9952_2_lut_rep_124_2_lut_3_lut_4_lut.init = 16'h0111;
+    PFUMX address_11__I_0_Mux_0_i126 (.BLUT(n94_adj_1), .ALUT(n8152), .C0(\rom_addr[5] ), 
+          .Z(n126_adj_696)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    LUT4 i2693_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n3249)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2693_3_lut_4_lut_3_lut.init = 16'h4848;
+    LUT4 n442_bdd_3_lut_10329_4_lut (.A(\rom_addr[0] ), .B(n11074), .C(\rom_addr[3] ), 
+         .D(n10959), .Z(n10226)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n442_bdd_3_lut_10329_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_6_i1898_3_lut_4_lut_3_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n1898)) /* synthesis lut_function=(A (D)+!A (B (D)+!B (C+!(D)))) */ ;
+    defparam address_11__I_0_Mux_6_i1898_3_lut_4_lut_3_lut_4_lut.init = 16'hfe11;
+    L6MUX21 i10304 (.D0(n10609), .D1(n10606), .SD(\rom_addr[6] ), .Z(n10610));
+    LUT4 i5926_2_lut_rep_139_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .Z(n10980)) /* synthesis lut_function=(A+(B+(C))) */ ;
+    defparam i5926_2_lut_rep_139_3_lut.init = 16'hfefe;
+    LUT4 i2673_3_lut_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[1] ), .C(\rom_addr[0] ), 
+         .Z(n3229)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2673_3_lut_3_lut.init = 16'h7474;
+    PFUMX i10302 (.BLUT(n10608), .ALUT(n10607), .C0(\rom_addr[5] ), .Z(n10609));
+    LUT4 i3054_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n3612)) /* synthesis lut_function=(!(A (B (C))+!A !(B+(C)))) */ ;
+    defparam i3054_3_lut_4_lut_3_lut.init = 16'h7e7e;
+    LUT4 address_11__I_0_Mux_1_i443_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .Z(n443_adj_615)) /* synthesis lut_function=(A (B+!(C))+!A !(B (C)+!B !(C))) */ ;
+    defparam address_11__I_0_Mux_1_i443_3_lut_4_lut_3_lut.init = 16'h9e9e;
+    LUT4 i4632_3_lut_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n5220)) /* synthesis lut_function=(!(A (B+(C))+!A (B+!(C)))) */ ;
+    defparam i4632_3_lut_3_lut_4_lut_3_lut.init = 16'h1212;
+    LUT4 i9199_4_lut_4_lut (.A(n11098), .B(\rom_addr[4] ), .C(\rom_addr[1] ), 
+         .D(n684), .Z(n9622)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9199_4_lut_4_lut.init = 16'h7340;
+    LUT4 address_11__I_0_Mux_3_i1228_3_lut_4_lut_3_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[3] ), .C(\rom_addr[1] ), .Z(n1228_adj_594)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1228_3_lut_4_lut_3_lut.init = 16'h1919;
+    LUT4 i1_2_lut_rep_109_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), .B(n11103), 
+         .C(\rom_addr[4] ), .D(\rom_addr[0] ), .Z(n10950)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_109_3_lut_4_lut_4_lut.init = 16'h0004;
+    LUT4 i5712_2_lut_rep_155_2_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .Z(n10996)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5712_2_lut_rep_155_2_lut.init = 16'h4444;
+    LUT4 address_11__I_0_Mux_3_i1883_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[5] ), 
+         .C(n1914_adj_660), .D(n9985), .Z(n1883_adj_664)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1883_4_lut_4_lut.init = 16'hd1c0;
+    PFUMX i10576 (.BLUT(n11135), .ALUT(n11136), .C0(\rom_addr[1] ), .Z(n11137));
+    LUT4 i2_2_lut_2_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .C(\rom_addr[4] ), 
+         .Z(n6)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
+    defparam i2_2_lut_2_lut_3_lut.init = 16'h1010;
+    LUT4 i4050_2_lut_rep_132_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n10973)) /* synthesis lut_function=(!(A (C)+!A (B (C)+!B !(C)))) */ ;
+    defparam i4050_2_lut_rep_132_3_lut.init = 16'h1e1e;
+    LUT4 address_11__I_0_Mux_3_i220_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11899), .Z(n220_adj_678)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i220_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9239_then_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), .C(\rom_addr[1] ), 
+         .D(\rom_addr[2] ), .Z(n11905)) /* synthesis lut_function=(!(A (B (C+!(D))+!B ((D)+!C))+!A !(B (C (D)+!C !(D))+!B (D)))) */ ;
+    defparam i9239_then_4_lut.init = 16'h5924;
+    LUT4 i3161_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n3720)) /* synthesis lut_function=(A (B+(C))+!A !(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3161_3_lut_4_lut_3_lut.init = 16'hb8b8;
+    LUT4 address_11__I_0_Mux_4_i364_4_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n364_adj_556)) /* synthesis lut_function=(!(A (C+!(D))+!A (B ((D)+!C)+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i364_4_lut_4_lut_4_lut.init = 16'h0a41;
+    LUT4 address_11__I_0_Mux_5_i1549_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1549_adj_545)) /* synthesis lut_function=(!(A+(B ((D)+!C)+!B (C (D)+!C !(D))))) */ ;
+    defparam address_11__I_0_Mux_5_i1549_3_lut_4_lut_4_lut_4_lut.init = 16'h0150;
+    LUT4 i3200_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n3759)) /* synthesis lut_function=(A (B+!(C))+!A !((C)+!B)) */ ;
+    defparam i3200_3_lut_4_lut_3_lut.init = 16'h8e8e;
+    LUT4 i1_2_lut_rep_120_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n10961)) /* synthesis lut_function=(!(A (C)+!A (B (C)+!B (C (D)+!C !(D))))) */ ;
+    defparam i1_2_lut_rep_120_3_lut_4_lut.init = 16'h0f1e;
+    LUT4 i3047_2_lut_rep_256 (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .Z(n11097)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3047_2_lut_rep_256.init = 16'heeee;
+    LUT4 address_11__I_0_Mux_3_i1403_4_lut (.A(n11099), .B(n10942), .C(\rom_addr[4] ), 
+         .D(n11050), .Z(n1403_adj_668)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1403_4_lut.init = 16'hcac0;
+    LUT4 address_11__I_0_Mux_2_i428_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n10959), .Z(n428_adj_675)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i428_3_lut_4_lut.init = 16'h2f20;
+    PFUMX i9355 (.BLUT(n9776), .ALUT(n9777), .C0(\rom_addr[5] ), .Z(n9778));
+    LUT4 address_11__I_0_Mux_3_i1867_3_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1867_adj_663)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B !(C+!(D)))) */ ;
+    defparam address_11__I_0_Mux_3_i1867_3_lut_4_lut_4_lut.init = 16'hc1c0;
+    LUT4 i9971_2_lut_rep_191_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .Z(n11032)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9971_2_lut_rep_191_3_lut.init = 16'h0101;
+    LUT4 i8832_2_lut_rep_257 (.A(\rom_addr[2] ), .B(\rom_addr[3] ), .Z(n11098)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i8832_2_lut_rep_257.init = 16'hbbbb;
+    LUT4 n1443_bdd_3_lut_10274_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n10228)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C+!(D)))) */ ;
+    defparam n1443_bdd_3_lut_10274_3_lut_4_lut.init = 16'hf011;
+    LUT4 address_11__I_0_Mux_1_i828_3_lut (.A(n954), .B(n668), .C(\rom_addr[4] ), 
+         .Z(n828_adj_552)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i828_3_lut.init = 16'hcaca;
+    LUT4 i6046_2_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[4] ), .D(\rom_addr[0] ), .Z(n1275_adj_593)) /* synthesis lut_function=(!(A+(B+(C+(D))))) */ ;
+    defparam i6046_2_lut_3_lut_4_lut.init = 16'h0001;
+    LUT4 i5946_4_lut (.A(n11007), .B(\rom_addr[4] ), .C(n11088), .D(\rom_addr[3] ), 
+         .Z(n797)) /* synthesis lut_function=(A (B (C+!(D)))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5946_4_lut.init = 16'hc088;
+    LUT4 address_11__I_0_Mux_6_i1914_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(n1898), .C(\rom_addr[4] ), .D(\rom_addr[3] ), .Z(n1914_adj_692)) /* synthesis lut_function=(!(A ((C)+!B)+!A !(B ((D)+!C)+!B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1914_3_lut_4_lut_4_lut.init = 16'h5c0c;
+    LUT4 i6059_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n1612)) /* synthesis lut_function=(!(A (C+!(D))+!A (B+(C+(D))))) */ ;
+    defparam i6059_4_lut_4_lut_4_lut.init = 16'h0a01;
+    LUT4 i8833_3_lut_4_lut_4_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n270_adj_2)) /* synthesis lut_function=(!(A (C+!(D))+!A (B ((D)+!C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i8833_3_lut_4_lut_4_lut_3_lut_4_lut.init = 16'h0b40;
+    LUT4 address_11__I_0_Mux_2_i124_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11025), .Z(n124_adj_610)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i124_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_4_i557_3_lut_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .Z(n557_adj_646)) /* synthesis lut_function=(A ((C)+!B)+!A (B+!(C))) */ ;
+    defparam address_11__I_0_Mux_4_i557_3_lut_3_lut_4_lut_3_lut.init = 16'he7e7;
+    LUT4 address_11__I_0_Mux_1_i1659_4_lut (.A(n1435_adj_592), .B(n11093), 
+         .C(\rom_addr[4] ), .D(\rom_addr[3] ), .Z(n1659)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1659_4_lut.init = 16'hca0a;
+    LUT4 i6055_2_lut_rep_113_2_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n10954)) /* synthesis lut_function=(!(A+!(B (C (D)+!C !(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i6055_2_lut_rep_113_2_lut_3_lut_4_lut.init = 16'h4004;
+    LUT4 address_11__I_0_Mux_4_i1228_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1228_adj_661)) /* synthesis lut_function=(A (C)+!A (B (C (D))+!B (D))) */ ;
+    defparam address_11__I_0_Mux_4_i1228_3_lut_4_lut_4_lut_4_lut.init = 16'hf1a0;
+    LUT4 i5743_3_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n859_adj_623)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (C))) */ ;
+    defparam i5743_3_lut_3_lut_4_lut.init = 16'hf010;
+    LUT4 address_11__I_0_Mux_2_i668_3_lut_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .Z(n668_adj_681)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B))) */ ;
+    defparam address_11__I_0_Mux_2_i668_3_lut_3_lut_4_lut_3_lut.init = 16'h1919;
+    LUT4 i1_2_lut_rep_159_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[4] ), .Z(n11000)) /* synthesis lut_function=(A+((C+(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_159_3_lut_4_lut.init = 16'hfffb;
+    LUT4 i1_2_lut_rep_171_2_lut_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .Z(n11012)) /* synthesis lut_function=(A+!(B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_171_2_lut_3_lut.init = 16'hbfbf;
+    LUT4 i5642_2_lut_rep_248 (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .C(\rom_addr[0] ), 
+         .Z(n11089)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
+    defparam i5642_2_lut_rep_248.init = 16'h1010;
+    LUT4 i6194_2_lut_rep_194_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .Z(n11035)) /* synthesis lut_function=(A+((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i6194_2_lut_rep_194_3_lut.init = 16'hfbfb;
+    PFUMX i10300 (.BLUT(n10605), .ALUT(n10604), .C0(\rom_addr[4] ), .Z(n10606));
+    LUT4 address_11__I_0_Mux_3_i61_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n61_adj_548)) /* synthesis lut_function=(!(A (C+(D))+!A (B+!(C (D))))) */ ;
+    defparam address_11__I_0_Mux_3_i61_3_lut_4_lut_4_lut_4_lut.init = 16'h100a;
+    LUT4 n1181_bdd_4_lut (.A(n1196), .B(n1450), .C(\rom_addr[4] ), .D(\rom_addr[3] ), 
+         .Z(n10734)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
+    defparam n1181_bdd_4_lut.init = 16'hca0a;
+    LUT4 i1_2_lut_rep_110_3_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[4] ), .Z(n10951)) /* synthesis lut_function=(A+((C+!(D))+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_110_3_lut_3_lut_4_lut.init = 16'hfbff;
+    LUT4 address_11__I_0_Mux_6_i1612_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n1612_adj_697)) /* synthesis lut_function=(!(A (C+!(D))+!A (B+((D)+!C)))) */ ;
+    defparam address_11__I_0_Mux_6_i1612_3_lut_4_lut_4_lut_4_lut.init = 16'h0a10;
+    LUT4 i5964_2_lut_rep_121_3_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[4] ), .Z(n10962)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5964_2_lut_rep_121_3_lut_3_lut_4_lut.init = 16'h4000;
+    L6MUX21 i10290 (.D0(n10594), .D1(n10592), .SD(\rom_addr[6] ), .Z(n10595));
+    LUT4 i4084_2_lut_rep_249 (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .Z(n11090)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4084_2_lut_rep_249.init = 16'heeee;
+    LUT4 i5724_2_lut_rep_131_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[1] ), .Z(n10972)) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5724_2_lut_rep_131_3_lut_4_lut.init = 16'h0040;
+    LUT4 i1_3_lut_rep_152_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(\rom_addr[2] ), .Z(n10993)) /* synthesis lut_function=(A+(B+!(C (D)+!C !(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_3_lut_rep_152_4_lut.init = 16'heffe;
+    LUT4 i9036_3_lut (.A(n1069), .B(n1084_c), .C(\rom_addr[4] ), .Z(n9459)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9036_3_lut.init = 16'hcaca;
+    LUT4 i8825_3_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .D(\rom_addr[0] ), .Z(n270_adj_638)) /* synthesis lut_function=(!(A (C+!(D))+!A !(B (C)+!B !(C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i8825_3_lut_3_lut_4_lut.init = 16'h4b40;
+    LUT4 i1329_2_lut_rep_258 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .Z(n11099)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1329_2_lut_rep_258.init = 16'h6666;
+    LUT4 address_11__I_0_Mux_2_i332_3_lut_4_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n332)) /* synthesis lut_function=(!(A (B)+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i332_3_lut_4_lut_3_lut.init = 16'h6262;
+    LUT4 i10440_then_3_lut (.A(\rom_addr[4] ), .B(\rom_addr[0] ), .C(\rom_addr[2] ), 
+         .Z(n11115)) /* synthesis lut_function=(!((B+(C))+!A)) */ ;
+    defparam i10440_then_3_lut.init = 16'h0202;
+    LUT4 i1_2_lut_rep_119_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(\rom_addr[2] ), .Z(n10960)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_119_3_lut_4_lut.init = 16'hfffe;
+    LUT4 i5739_2_lut_rep_129_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[2] ), .Z(n10970)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5739_2_lut_rep_129_3_lut_4_lut.init = 16'h0010;
+    LUT4 address_11__I_0_Mux_4_i1786_4_lut (.A(\rom_addr[0] ), .B(n1785), 
+         .C(\rom_addr[4] ), .D(n3249), .Z(n1786)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1786_4_lut.init = 16'hcac0;
+    LUT4 address_11__I_0_Mux_3_i653_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), 
+         .C(\rom_addr[3] ), .D(n11034), .Z(n653_adj_695)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i653_3_lut_4_lut.init = 16'hf202;
+    LUT4 i1_2_lut_rep_186_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .C(\rom_addr[2] ), 
+         .Z(n11027)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_186_3_lut.init = 16'hfefe;
+    PFUMX i9016 (.BLUT(n9437), .ALUT(n9438), .C0(\rom_addr[5] ), .Z(n9439));
+    LUT4 i9129_3_lut (.A(n1514_adj_588), .B(n1529_adj_686), .C(\rom_addr[4] ), 
+         .Z(n9552)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9129_3_lut.init = 16'hcaca;
+    LUT4 i5668_2_lut_rep_196_3_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n11037)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5668_2_lut_rep_196_3_lut_4_lut.init = 16'h0060;
+    LUT4 i9574_3_lut (.A(n5228), .B(n891_adj_3), .C(\rom_addr[5] ), .Z(n860)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9574_3_lut.init = 16'hcaca;
+    LUT4 i4692_2_lut_rep_221 (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .Z(n11062)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4692_2_lut_rep_221.init = 16'h6666;
+    LUT4 i4648_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), .C(\rom_addr[3] ), 
+         .D(n5235), .Z(n5236)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4648_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9239_else_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), .C(\rom_addr[1] ), 
+         .D(\rom_addr[2] ), .Z(n11904)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+(D)))+!A !(B (C (D))+!B (C)))) */ ;
+    defparam i9239_else_4_lut.init = 16'h5092;
+    LUT4 i9912_2_lut_rep_234 (.A(\rom_addr[5] ), .B(\rom_addr[4] ), .Z(n11075)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9912_2_lut_rep_234.init = 16'heeee;
+    LUT4 i5622_2_lut_3_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n684_adj_705)) /* synthesis lut_function=(!(A (B+(C+!(D)))+!A ((C+!(D))+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5622_2_lut_3_lut_4_lut.init = 16'h0600;
+    LUT4 i9127_3_lut (.A(n1451_adj_595), .B(n1676_adj_628), .C(\rom_addr[4] ), 
+         .Z(n9550)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9127_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_3_i603_3_lut_4_lut_4_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n603)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i603_3_lut_4_lut_4_lut_3_lut.init = 16'h6464;
+    LUT4 i10440_else_3_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), .C(\rom_addr[0] ), 
+         .D(\rom_addr[2] ), .Z(n11114)) /* synthesis lut_function=(A (B (C (D)))+!A !(B+!(C (D)))) */ ;
+    defparam i10440_else_3_lut.init = 16'h9000;
+    LUT4 i9747_3_lut_4_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), .C(n1692_adj_602), 
+         .D(n1676_adj_603), .Z(n1724_adj_637)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9747_3_lut_4_lut.init = 16'hf1e0;
+    LUT4 n1275_bdd_3_lut (.A(n1243_adj_627), .B(n1228), .C(\rom_addr[4] ), 
+         .Z(n10732)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
+    defparam n1275_bdd_3_lut.init = 16'hacac;
+    LUT4 address_11__I_0_Mux_3_i1172_3_lut_3_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n1172)) /* synthesis lut_function=(!(A (B)+!A !(B (C)+!B !(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1172_3_lut_3_lut_3_lut.init = 16'h6363;
+    LUT4 i9732_3_lut_4_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), .C(n1692), 
+         .D(n1676_c), .Z(n1724_adj_649)) /* synthesis lut_function=(A (C)+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9732_3_lut_4_lut.init = 16'hf1e0;
+    LUT4 address_11__I_0_Mux_3_i1069_3_lut_4_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n1069)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A (B (C+!(D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i1069_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h0630;
+    PFUMX i10573 (.BLUT(n11130), .ALUT(n11131), .C0(\rom_addr[0] ), .Z(n11132));
+    PFUMX i9019 (.BLUT(n9440), .ALUT(n9441), .C0(\rom_addr[5] ), .Z(n9442));
+    PFUMX i10288 (.BLUT(n10593), .ALUT(n10932), .C0(\rom_addr[5] ), .Z(n10594));
+    LUT4 i1_2_lut_rep_235 (.A(\rom_addr[4] ), .B(\rom_addr[2] ), .Z(n11076)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_235.init = 16'h8888;
+    PFUMX i10036 (.BLUT(n379_adj_694), .ALUT(n10937), .C0(\rom_addr[4] ), 
+          .Z(n10220));
+    LUT4 i2_3_lut_4_lut_adj_14 (.A(\rom_addr[4] ), .B(\rom_addr[2] ), .C(\rom_addr[3] ), 
+         .D(n11898), .Z(n8152)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i2_3_lut_4_lut_adj_14.init = 16'h8000;
+    LUT4 i9232_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9655)) /* synthesis lut_function=(!(A (B+(C+(D)))+!A !(B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9232_3_lut_4_lut_4_lut_4_lut.init = 16'h4406;
+    LUT4 address_11__I_0_Mux_1_i1002_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1002)) /* synthesis lut_function=(!(A (B+!((D)+!C))+!A (B (C+!(D))+!B (C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1002_3_lut_4_lut_4_lut.init = 16'h2603;
+    LUT4 i1_2_lut_rep_192_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .C(\rom_addr[2] ), 
+         .Z(n11033)) /* synthesis lut_function=(A+(B+!(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_192_3_lut.init = 16'hefef;
+    LUT4 i3657_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), .B(n11035), .C(\rom_addr[4] ), 
+         .D(n11103), .Z(n4216)) /* synthesis lut_function=(A (B+(C))+!A !(B (C (D))+!B ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3657_3_lut_4_lut_4_lut.init = 16'hacfc;
+    PFUMX i10286 (.BLUT(n10932), .ALUT(n10591), .C0(\rom_addr[5] ), .Z(n10592));
+    LUT4 i9120_3_lut (.A(n301), .B(n604_adj_620), .C(\rom_addr[4] ), .Z(n9543)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9120_3_lut.init = 16'hcaca;
+    LUT4 n3435_bdd_2_lut_3_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[1] ), .Z(n10528)) /* synthesis lut_function=(!(A (B+((D)+!C))+!A (((D)+!C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam n3435_bdd_2_lut_3_lut_4_lut.init = 16'h0060;
+    LUT4 i4042_2_lut_rep_156_3_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[1] ), .Z(n10997)) /* synthesis lut_function=(A (B+(C))+!A ((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4042_2_lut_rep_156_3_lut.init = 16'hf9f9;
+    LUT4 address_11__I_0_Mux_1_i908_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(\rom_addr[0] ), .C(\rom_addr[3] ), .D(\rom_addr[1] ), .Z(n908_adj_706)) /* synthesis lut_function=(!(A (C (D)+!C !(D))+!A !(B (C+(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i908_3_lut_4_lut_4_lut_4_lut.init = 16'h5ef0;
+    PFUMX i9025 (.BLUT(n9446), .ALUT(n9447), .C0(\rom_addr[5] ), .Z(n9448));
+    LUT4 i9115_3_lut (.A(n557), .B(n428_adj_675), .C(\rom_addr[4] ), .Z(n9538)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9115_3_lut.init = 16'hcaca;
+    LUT4 i9114_3_lut (.A(n526_adj_707), .B(n635), .C(\rom_addr[4] ), .Z(n9537)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9114_3_lut.init = 16'hcaca;
+    LUT4 i3297_2_lut_rep_262 (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .Z(n11103)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3297_2_lut_rep_262.init = 16'h8888;
+    LUT4 i5835_2_lut_rep_115_3_lut_3_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[2] ), .Z(n10956)) /* synthesis lut_function=(!(((C+(D))+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5835_2_lut_rep_115_3_lut_3_lut_3_lut_4_lut.init = 16'h0008;
+    LUT4 i9691_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11021), .C(\rom_addr[4] ), 
+         .D(n270_c), .Z(n9639)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
+    defparam i9691_3_lut_4_lut.init = 16'h1f10;
+    LUT4 i9965_2_lut_rep_236 (.A(\rom_addr[5] ), .B(\rom_addr[4] ), .Z(n11077)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9965_2_lut_rep_236.init = 16'hbbbb;
+    LUT4 i1_2_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .C(\rom_addr[4] ), 
+         .D(\rom_addr[0] ), .Z(n1212_adj_677)) /* synthesis lut_function=(!(((C+(D))+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_3_lut_4_lut.init = 16'h0008;
+    LUT4 i4665_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[2] ), .Z(n1451_adj_595)) /* synthesis lut_function=(A (B (C (D)))+!A !(D)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4665_3_lut_4_lut_4_lut_4_lut.init = 16'h8055;
+    LUT4 i1_2_lut_rep_170_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), .C(\rom_addr[0] ), 
+         .Z(n11011)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_170_3_lut.init = 16'h8080;
+    LUT4 i5842_2_lut_rep_224 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .Z(n11065)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5842_2_lut_rep_224.init = 16'h2222;
+    LUT4 i9821_3_lut_4_lut (.A(\rom_addr[5] ), .B(\rom_addr[4] ), .C(n987), 
+         .D(n986), .Z(n1019)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9821_3_lut_4_lut.init = 16'hf4b0;
+    LUT4 i5837_2_lut_rep_203_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[0] ), .Z(n11044)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5837_2_lut_rep_203_3_lut.init = 16'h0808;
+    L6MUX21 i10072 (.D0(n10271), .D1(n10268), .SD(\rom_addr[9] ), .Z(n10272));
+    LUT4 i5800_2_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n541)) /* synthesis lut_function=(A (B (C (D))+!B !((D)+!C))+!A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5800_2_lut_4_lut_4_lut.init = 16'hc020;
+    LUT4 i9151_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[4] ), .C(n3767), 
+         .D(n11006), .Z(n9574)) /* synthesis lut_function=(!(A (B+!(D))+!A !(B (C)+!B (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9151_4_lut_4_lut.init = 16'h7340;
+    LUT4 i6188_2_lut_rep_251 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .Z(n11092)) /* synthesis lut_function=(A (B)) */ ;
+    defparam i6188_2_lut_rep_251.init = 16'h8888;
+    PFUMX i9028 (.BLUT(n9449), .ALUT(n9450), .C0(\rom_addr[5] ), .Z(n9451));
+    LUT4 i6240_2_lut_rep_184_3_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .Z(n11025)) /* synthesis lut_function=(A (B+(C))+!A (C)) */ ;
+    defparam i6240_2_lut_rep_184_3_lut.init = 16'hf8f8;
+    LUT4 i10566_then_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n11902)) /* synthesis lut_function=(A (B (C (D)+!C !(D))+!B !(C+!(D)))+!A !((C+!(D))+!B)) */ ;
+    defparam i10566_then_4_lut.init = 16'h8608;
+    LUT4 address_11__I_0_Mux_3_i460_3_lut (.A(n459), .B(n475_adj_682), .C(\rom_addr[4] ), 
+         .Z(n460)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i460_3_lut.init = 16'hcaca;
+    LUT4 i1_2_lut_rep_96_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[0] ), .Z(n10937)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_96_3_lut_4_lut.init = 16'h8000;
+    LUT4 address_11__I_0_Mux_3_i2025_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n2025_adj_612)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (D))+!A (B ((D)+!C)+!B (D)))) */ ;
+    defparam address_11__I_0_Mux_3_i2025_3_lut_4_lut_4_lut.init = 16'h08f3;
+    PFUMX i9034 (.BLUT(n9455), .ALUT(n9456), .C0(\rom_addr[5] ), .Z(n9457));
+    LUT4 i1_2_lut_rep_160_2_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .Z(n11001)) /* synthesis lut_function=(!(((C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_160_2_lut_3_lut.init = 16'h0808;
+    LUT4 i9249_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11074), .C(\rom_addr[3] ), 
+         .D(n11900), .Z(n9672)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+(D)))+!A (C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9249_3_lut_4_lut.init = 16'h2f20;
+    LUT4 i9479_3_lut (.A(n428_adj_675), .B(n251_adj_584), .C(\rom_addr[4] ), 
+         .Z(n9902)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9479_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_1_i1483_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[3] ), 
+         .C(n11898), .D(n10979), .Z(n1483)) /* synthesis lut_function=(A (B (C)+!B (D))+!A (B+(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1483_4_lut_4_lut.init = 16'hf7c4;
+    LUT4 address_11__I_0_Mux_1_i1244_3_lut (.A(n1913_adj_639), .B(n1243_adj_654), 
+         .C(\rom_addr[4] ), .Z(n1244_adj_708)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1244_3_lut.init = 16'hcaca;
+    LUT4 i5829_2_lut_rep_128_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n10969)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C (D)))+!A (B+!(C (D))))) */ ;
+    defparam i5829_2_lut_rep_128_4_lut_4_lut.init = 16'h3080;
+    LUT4 i1_2_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(n9121), .Z(n9123)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A !(B (D)+!B (C (D))))) */ ;
+    defparam i1_2_lut_4_lut_4_lut_4_lut.init = 16'h7c00;
+    LUT4 i1_2_lut_rep_127_3_lut_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[0] ), .Z(n10968)) /* synthesis lut_function=(!((((D)+!C)+!B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_rep_127_3_lut_3_lut_4_lut.init = 16'h0080;
+    LUT4 address_11__I_0_Mux_2_i526_3_lut_4_lut_4_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[3] ), .Z(n526_adj_707)) /* synthesis lut_function=(!(A (B+!(C))+!A ((C)+!B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_2_i526_3_lut_4_lut_4_lut_3_lut.init = 16'h2424;
+    LUT4 i1_2_lut_3_lut_4_lut_adj_15 (.A(\rom_addr[1] ), .B(\rom_addr[3] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[4] ), .Z(n4744)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i1_2_lut_3_lut_4_lut_adj_15.init = 16'h8000;
+    PFUMX i10070 (.BLUT(n10270), .ALUT(n10269), .C0(\rom_addr[8] ), .Z(n10271));
+    LUT4 i9711_3_lut (.A(n1244_adj_708), .B(n1275), .C(\rom_addr[5] ), 
+         .Z(n9532)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9711_3_lut.init = 16'hcaca;
+    PFUMX i9037 (.BLUT(n9458), .ALUT(n9459), .C0(\rom_addr[5] ), .Z(n9460));
+    LUT4 i9103_3_lut (.A(n301), .B(n316), .C(\rom_addr[4] ), .Z(n9526)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9103_3_lut.init = 16'hcaca;
+    LUT4 i9102_3_lut (.A(n270_adj_2), .B(n285_adj_631), .C(\rom_addr[4] ), 
+         .Z(n9525)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9102_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_3_i228_3_lut_rep_118_4_lut_4_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n10959)) /* synthesis lut_function=(!(A (B+(C))+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_3_i228_3_lut_rep_118_4_lut_4_lut_3_lut.init = 16'h4242;
+    PFUMX i10245 (.BLUT(n10942), .ALUT(n10530), .C0(n11086), .Z(n10531));
+    LUT4 i5703_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n1529_adj_686)) /* synthesis lut_function=(A (B (C (D))+!B !((D)+!C))+!A (B (C)+!B !((D)+!C))) */ ;
+    defparam i5703_4_lut_4_lut_4_lut.init = 16'hc070;
+    LUT4 i2860_3_lut_4_lut_3_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .Z(n3418)) /* synthesis lut_function=(A ((C)+!B)+!A (B+!(C))) */ ;
+    defparam i2860_3_lut_4_lut_3_lut.init = 16'he7e7;
+    PFUMX i10570 (.BLUT(n11126), .ALUT(n11127), .C0(\rom_addr[0] ), .Z(n924_adj_670));
+    LUT4 address_11__I_0_Mux_4_i404_3_lut_rep_187_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n11028)) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A (B+!(C)))) */ ;
+    defparam address_11__I_0_Mux_4_i404_3_lut_rep_187_3_lut.init = 16'h3838;
+    LUT4 address_11__I_0_Mux_1_i652_3_lut_rep_114_3_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n10955)) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(B+(C)))) */ ;
+    defparam address_11__I_0_Mux_1_i652_3_lut_rep_114_3_lut_3_lut.init = 16'h7c7c;
+    LUT4 address_11__I_0_Mux_3_i452_3_lut_3_lut_4_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n452)) /* synthesis lut_function=(!(A (B)+!A (C))) */ ;
+    defparam address_11__I_0_Mux_3_i452_3_lut_3_lut_4_lut_3_lut.init = 16'h2727;
+    LUT4 address_11__I_0_Mux_1_i1211_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n9245)) /* synthesis lut_function=(A (B (C (D))+!B !(D))+!A !(B ((D)+!C)+!B (D))) */ ;
+    defparam address_11__I_0_Mux_1_i1211_3_lut_4_lut_4_lut_4_lut.init = 16'h8073;
+    LUT4 i9997_2_lut_rep_225 (.A(\rom_addr[6] ), .B(\rom_addr[5] ), .Z(n11066)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9997_2_lut_rep_225.init = 16'hdddd;
+    LUT4 i9988_2_lut_3_lut (.A(\rom_addr[6] ), .B(\rom_addr[5] ), .C(\rom_addr[7] ), 
+         .Z(n9377)) /* synthesis lut_function=((B+(C))+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9988_2_lut_3_lut.init = 16'hfdfd;
+    PFUMX i10243 (.BLUT(n10528), .ALUT(n10527), .C0(\rom_addr[4] ), .Z(n10529));
+    LUT4 i9014_4_lut_4_lut (.A(\rom_addr[2] ), .B(\rom_addr[4] ), .C(n541), 
+         .D(n5223), .Z(n9437)) /* synthesis lut_function=(A (B (C))+!A (B (C)+!B (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9014_4_lut_4_lut.init = 16'hd1c0;
+    LUT4 i5948_4_lut (.A(\rom_addr[0] ), .B(n11027), .C(n11018), .D(\rom_addr[4] ), 
+         .Z(n1117)) /* synthesis lut_function=(!((B (C+!(D))+!B (C (D)))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5948_4_lut.init = 16'h0a22;
+    LUT4 i9097_3_lut (.A(n236), .B(n251), .C(\rom_addr[4] ), .Z(n9520)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9097_3_lut.init = 16'hcaca;
+    LUT4 i9096_3_lut (.A(n205), .B(n220_adj_710), .C(\rom_addr[4] ), .Z(n9519)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9096_3_lut.init = 16'hcaca;
+    LUT4 rom_addr_6__bdd_2_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n10792)) /* synthesis lut_function=(A (B (C+(D))+!B (C+!(D)))+!A (B (C)+!B (C+!(D)))) */ ;
+    defparam rom_addr_6__bdd_2_lut_4_lut_4_lut.init = 16'hf8f3;
+    LUT4 i6064_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[3] ), .D(n9249), .Z(n4171)) /* synthesis lut_function=(A (B (C+(D))+!B (C+!(D)))+!A (B (C)+!B (C+!(D)))) */ ;
+    defparam i6064_4_lut_4_lut_4_lut.init = 16'hf8f3;
+    LUT4 i9049_4_lut (.A(n10970), .B(n1292), .C(\rom_addr[4] ), .D(\rom_addr[3] ), 
+         .Z(n9472)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (C (D)))) */ ;
+    defparam i9049_4_lut.init = 16'hca0a;
+    LUT4 i6200_2_lut_rep_226 (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .Z(n11067)) /* synthesis lut_function=(A (B)) */ ;
+    defparam i6200_2_lut_rep_226.init = 16'h8888;
+    LUT4 n31_bdd_3_lut (.A(n46), .B(n301), .C(\rom_addr[4] ), .Z(n10750)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam n31_bdd_3_lut.init = 16'hcaca;
+    LUT4 address_11__I_0_Mux_4_i1292_3_lut_4_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n1292)) /* synthesis lut_function=(!(A (B (C))+!A !(B+(C)))) */ ;
+    defparam address_11__I_0_Mux_4_i1292_3_lut_4_lut_3_lut.init = 16'h7e7e;
+    LUT4 n1211_bdd_3_lut_10318_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n10617)) /* synthesis lut_function=(A (B (C+!(D)))) */ ;
+    defparam n1211_bdd_3_lut_10318_3_lut_4_lut.init = 16'h8088;
+    LUT4 address_11__I_0_Mux_4_i1101_3_lut_4_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n1101)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (C+!(D)))) */ ;
+    defparam address_11__I_0_Mux_4_i1101_3_lut_4_lut_4_lut_4_lut_4_lut.init = 16'h0580;
+    LUT4 i6151_2_lut_rep_138_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .Z(n10979)) /* synthesis lut_function=(A (B (C))) */ ;
+    defparam i6151_2_lut_rep_138_3_lut.init = 16'h8080;
+    LUT4 address_11__I_0_Mux_4_i1946_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1946_adj_634)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (B+!(C (D)+!C !(D))))) */ ;
+    defparam address_11__I_0_Mux_4_i1946_3_lut_4_lut_4_lut_4_lut.init = 16'h3883;
+    LUT4 address_11__I_0_Mux_1_i1212_3_lut_4_lut (.A(n11088), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n9245), .Z(n1212_adj_674)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i1212_3_lut_4_lut.init = 16'hf808;
+    LUT4 address_11__I_0_Mux_1_i1076_3_lut_4_lut_3_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .Z(n1076)) /* synthesis lut_function=(A (B+!(C))+!A !((C)+!B)) */ ;
+    defparam address_11__I_0_Mux_1_i1076_3_lut_4_lut_3_lut.init = 16'h8e8e;
+    LUT4 address_11__I_0_Mux_5_i1874_3_lut_rep_252 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .Z(n11093)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B+(C))) */ ;
+    defparam address_11__I_0_Mux_5_i1874_3_lut_rep_252.init = 16'h8383;
+    LUT4 address_11__I_0_Mux_6_i2025_3_lut_4_lut_3_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n2025)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(D))+!A !(D))) */ ;
+    defparam address_11__I_0_Mux_6_i2025_3_lut_4_lut_3_lut_4_lut.init = 16'h7780;
+    LUT4 address_11__I_0_Mux_4_i219_3_lut_rep_253 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .Z(n11094)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B+!(C)))) */ ;
+    defparam address_11__I_0_Mux_4_i219_3_lut_rep_253.init = 16'h1818;
+    LUT4 i5866_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n1038_adj_621)) /* synthesis lut_function=(A (B (C (D)))+!A !((D)+!C)) */ ;
+    defparam i5866_4_lut_4_lut_4_lut.init = 16'h8050;
+    LUT4 i6183_2_lut_rep_181_2_lut (.A(\rom_addr[2] ), .B(\rom_addr[0] ), 
+         .Z(n11022)) /* synthesis lut_function=((B)+!A) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i6183_2_lut_rep_181_2_lut.init = 16'hdddd;
+    LUT4 address_11__I_0_Mux_2_i220_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n220_adj_710)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A (C))) */ ;
+    defparam address_11__I_0_Mux_2_i220_3_lut_4_lut_4_lut_4_lut.init = 16'h07a7;
+    LUT4 address_11__I_0_Mux_5_i1777_3_lut_rep_254 (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .Z(n11095)) /* synthesis lut_function=(A (B (C))+!A !(B+(C))) */ ;
+    defparam address_11__I_0_Mux_5_i1777_3_lut_rep_254.init = 16'h8181;
+    LUT4 address_11__I_0_Mux_5_i1435_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11073), 
+         .C(\rom_addr[3] ), .D(n11094), .Z(n1435_adj_607)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i1435_3_lut_4_lut.init = 16'hf202;
+    LUT4 address_11__I_0_Mux_6_i1483_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11073), 
+         .C(\rom_addr[3] ), .D(n11034), .Z(n1483_adj_690)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_6_i1483_3_lut_4_lut.init = 16'hf202;
+    LUT4 i9213_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11073), .C(\rom_addr[3] ), 
+         .D(n3699), .Z(n9636)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9213_3_lut_4_lut.init = 16'h02f2;
+    LUT4 address_11__I_0_Mux_0_i428_3_lut_3_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(n11073), .C(\rom_addr[3] ), .D(n11034), .Z(n428)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C (D)))+!A ((D)+!C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_0_i428_3_lut_3_lut_4_lut.init = 16'h02f2;
+    LUT4 i8805_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .C(\rom_addr[0] ), 
+         .D(\rom_addr[3] ), .Z(n2025_c)) /* synthesis lut_function=(A (B (C+(D)))) */ ;
+    defparam i8805_3_lut_4_lut.init = 16'h8880;
+    LUT4 address_11__I_0_Mux_6_i2009_3_lut_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n2009_adj_608)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B (C+!(D)))+!A (B+(C)))) */ ;
+    defparam address_11__I_0_Mux_6_i2009_3_lut_3_lut_4_lut_4_lut.init = 16'h0381;
+    LUT4 i9080_4_lut (.A(n11032), .B(\rom_addr[0] ), .C(\rom_addr[4] ), 
+         .D(n3612), .Z(n9503)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;
+    defparam i9080_4_lut.init = 16'h0aca;
+    LUT4 i9612_3_lut (.A(n971), .B(n986_adj_669), .C(\rom_addr[4] ), .Z(n9498)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9612_3_lut.init = 16'hcaca;
+    PFUMX i9042 (.BLUT(n9461), .ALUT(n9462), .C0(\rom_addr[5] ), .Z(n9465));
+    LUT4 i9074_3_lut (.A(n2009_adj_614), .B(n954), .C(\rom_addr[4] ), 
+         .Z(n9497)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9074_3_lut.init = 16'hcaca;
+    LUT4 i9073_3_lut (.A(n908_adj_706), .B(n635), .C(\rom_addr[4] ), .Z(n9496)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9073_3_lut.init = 16'hcaca;
+    LUT4 i5708_2_lut_rep_126_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .D(\rom_addr[0] ), .Z(n10967)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (C)) */ ;
+    defparam i5708_2_lut_rep_126_3_lut_4_lut.init = 16'hf8f0;
+    LUT4 i9241_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9664)) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C (D)))+!A (B+!(C (D)+!C !(D))))) */ ;
+    defparam i9241_3_lut_4_lut_4_lut.init = 16'h3081;
+    LUT4 address_11__I_0_Mux_2_i1084_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n1084_adj_679)) /* synthesis lut_function=(A (B (C (D))+!B (C+!(D)))+!A !((D)+!C)) */ ;
+    defparam address_11__I_0_Mux_2_i1084_3_lut_4_lut_4_lut.init = 16'ha072;
+    LUT4 i9070_4_lut (.A(n5238), .B(n10939), .C(\rom_addr[4] ), .D(n11067), 
+         .Z(n9493)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;
+    defparam i9070_4_lut.init = 16'hcac0;
+    LUT4 n1923_bdd_4_lut_10552_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n10841)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C+(D)))+!A !(B (D)+!B !(C+!(D)))) */ ;
+    defparam n1923_bdd_4_lut_10552_4_lut.init = 16'h985f;
+    LUT4 n70_bdd_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), .C(\rom_addr[2] ), 
+         .D(\rom_addr[3] ), .Z(n10839)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B (C+(D)))+!A (B ((D)+!C)+!B !(C (D)+!C !(D))))) */ ;
+    defparam n70_bdd_4_lut_4_lut.init = 16'h18c3;
+    LUT4 i9207_3_lut_4_lut_4_lut (.A(\rom_addr[0] ), .B(\rom_addr[1] ), 
+         .C(\rom_addr[2] ), .D(\rom_addr[3] ), .Z(n9630)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A (B (C (D))+!B !(C))) */ ;
+    defparam i9207_3_lut_4_lut_4_lut.init = 16'hc383;
+    LUT4 i9704_3_lut_4_lut (.A(\rom_addr[4] ), .B(\rom_addr[3] ), .C(n1084), 
+         .D(n1076), .Z(n1085_adj_671)) /* synthesis lut_function=(A (B (C)+!B (D))+!A (C)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i9704_3_lut_4_lut.init = 16'hf2d0;
+    PFUMX i10068 (.BLUT(n10267), .ALUT(n10266), .C0(\rom_addr[8] ), .Z(n10268));
+    LUT4 address_11__I_0_Mux_5_i2009_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11073), 
+         .C(\rom_addr[3] ), .D(n11900), .Z(n2009_adj_683)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_5_i2009_3_lut_4_lut.init = 16'hf202;
+    PFUMX i9043 (.BLUT(n9463), .ALUT(n9464), .C0(\rom_addr[5] ), .Z(n9466));
+    LUT4 address_11__I_0_Mux_4_i46_3_lut_4_lut_4_lut_4_lut (.A(\rom_addr[0] ), 
+         .B(\rom_addr[1] ), .C(\rom_addr[3] ), .D(\rom_addr[2] ), .Z(n46_adj_658)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B ((D)+!C))+!A (B (C+!(D))+!B ((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i46_3_lut_4_lut_4_lut_4_lut.init = 16'h0cb0;
+    L6MUX21 i10218 (.D0(n10486), .D1(n10484), .SD(\rom_addr[6] ), .Z(n10487));
+    PFUMX i10216 (.BLUT(n10485), .ALUT(n444), .C0(\rom_addr[5] ), .Z(n10486));
+    LUT4 address_11__I_0_Mux_4_i1739_3_lut_4_lut (.A(\rom_addr[0] ), .B(n11073), 
+         .C(\rom_addr[3] ), .D(n11015), .Z(n1739)) /* synthesis lut_function=(A (B (C (D))+!B ((D)+!C))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1739_3_lut_4_lut.init = 16'hf202;
+    LUT4 i6202_2_lut_rep_230 (.A(\rom_addr[2] ), .B(\rom_addr[0] ), .Z(n11071)) /* synthesis lut_function=(A (B)) */ ;
+    defparam i6202_2_lut_rep_230.init = 16'h8888;
+    PFUMX i10530 (.BLUT(n10896), .ALUT(n10895), .C0(\rom_addr[5] ), .Z(n10897));
+    LUT4 i3102_2_lut_rep_231 (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .Z(n11072)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3102_2_lut_rep_231.init = 16'h2222;
+    LUT4 i9749_3_lut (.A(n9490), .B(n9491), .C(\rom_addr[5] ), .Z(n9492)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9749_3_lut.init = 16'hcaca;
+    L6MUX21 i10028 (.D0(n10210), .D1(n10208), .SD(\rom_addr[5] ), .Z(n10211));
+    LUT4 n1403_bdd_3_lut (.A(n11152), .B(n11119), .C(\rom_addr[5] ), .Z(n10769)) /* synthesis lut_function=(A (B+(C))+!A !((C)+!B)) */ ;
+    defparam n1403_bdd_3_lut.init = 16'hacac;
+    PFUMX i10214 (.BLUT(n10483), .ALUT(n5236), .C0(\rom_addr[5] ), .Z(n10484));
+    LUT4 i5670_2_lut_rep_182_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .Z(n11023)) /* synthesis lut_function=(!((B+!(C))+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5670_2_lut_rep_182_3_lut.init = 16'h2020;
+    L6MUX21 i10208 (.D0(n10475), .D1(n10472), .SD(\rom_addr[6] ), .Z(n10476));
+    LUT4 address_11__I_0_Mux_1_i364_3_lut_4_lut_4_lut (.A(\rom_addr[2] ), 
+         .B(n11089), .C(\rom_addr[3] ), .D(n11898), .Z(n364)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_1_i364_3_lut_4_lut_4_lut.init = 16'hc5c0;
+    LUT4 address_11__I_0_Mux_4_i1212_3_lut_4_lut (.A(n11088), .B(\rom_addr[3] ), 
+         .C(\rom_addr[4] ), .D(n1211), .Z(n1212)) /* synthesis lut_function=(A (B ((D)+!C)+!B (C (D)))+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i1212_3_lut_4_lut.init = 16'hf808;
+    PFUMX i10206 (.BLUT(n10474), .ALUT(n10473), .C0(n11075), .Z(n10475));
+    LUT4 i4691_2_lut_rep_232 (.A(\rom_addr[1] ), .B(\rom_addr[2] ), .Z(n11073)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4691_2_lut_rep_232.init = 16'h6666;
+    LUT4 i4684_2_lut_rep_199_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n11040)) /* synthesis lut_function=(!(A (B (C))+!A !(B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i4684_2_lut_rep_199_3_lut.init = 16'h6f6f;
+    LUT4 address_11__I_0_Mux_4_i796_3_lut_4_lut_3_lut (.A(\rom_addr[1] ), 
+         .B(\rom_addr[2] ), .C(\rom_addr[3] ), .Z(n796)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !((C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam address_11__I_0_Mux_4_i796_3_lut_4_lut_3_lut.init = 16'h8686;
+    PFUMX i9047 (.BLUT(n9468), .ALUT(n9469), .C0(\rom_addr[5] ), .Z(n9470));
+    PFUMX i10724 (.BLUT(n11360), .ALUT(n11358), .C0(\rom_addr[7] ), .Z(n11361));
+    LUT4 i5764_2_lut_rep_125_3_lut_4_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[0] ), .D(\rom_addr[3] ), .Z(n10966)) /* synthesis lut_function=(!(A (((D)+!C)+!B)+!A (B+((D)+!C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i5764_2_lut_rep_125_3_lut_4_lut.init = 16'h0090;
+    PFUMX i10204 (.BLUT(n10932), .ALUT(n10471), .C0(\rom_addr[5] ), .Z(n10472));
+    LUT4 i9617_3_lut (.A(n9672), .B(n9673), .C(\rom_addr[4] ), .Z(n9674)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9617_3_lut.init = 16'hcaca;
+    LUT4 i3181_3_lut_rep_162_4_lut_3_lut (.A(\rom_addr[1] ), .B(\rom_addr[2] ), 
+         .C(\rom_addr[3] ), .Z(n11003)) /* synthesis lut_function=(!(A (B)+!A !(B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/char_ram.v(12[3] 4114[10])
+    defparam i3181_3_lut_rep_162_4_lut_3_lut.init = 16'h6262;
+    LUT4 i9267_3_lut (.A(n9688), .B(n9689), .C(\rom_addr[10] ), .Z(\rom_q[0] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9267_3_lut.init = 16'hcaca;
+    PFUMX i10721 (.BLUT(n11356), .ALUT(n444_adj_701), .C0(\rom_addr[5] ), 
+          .Z(n11357));
+    PFUMX i10026 (.BLUT(n270_adj_2), .ALUT(n10209), .C0(\rom_addr[4] ), 
+          .Z(n10210));
+    PFUMX i9050 (.BLUT(n9471), .ALUT(n9472), .C0(\rom_addr[5] ), .Z(n9473));
+    LUT4 i9084_3_lut (.A(n46_adj_658), .B(n61_adj_625), .C(\rom_addr[4] ), 
+         .Z(n9507)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
+    defparam i9084_3_lut.init = 16'hcaca;
+    LUT4 n1738_bdd_4_lut (.A(n11095), .B(n10965), .C(\rom_addr[4] ), .D(\rom_addr[3] ), 
+         .Z(n10790)) /* synthesis lut_function=(A (B+(C))+!A (B ((D)+!C)+!B (C (D)))) */ ;
+    defparam n1738_bdd_4_lut.init = 16'hfcac;
+    LUT4 rom_addr_6__bdd_4_lut_10464 (.A(n10970), .B(\rom_addr[4] ), .C(n11093), 
+         .D(\rom_addr[3] ), .Z(n10793)) /* synthesis lut_function=(A (B+!((D)+!C))+!A !(B+((D)+!C))) */ ;
+    defparam rom_addr_6__bdd_4_lut_10464.init = 16'h88b8;
+    PFUMX i9124 (.BLUT(n684_adj_705), .ALUT(n699_adj_576), .C0(\rom_addr[4] ), 
+          .Z(n9547));
+    L6MUX21 i10503 (.D0(n10843), .D1(n10840), .SD(\rom_addr[5] ), .Z(n10844));
+    PFUMX i10501 (.BLUT(n10842), .ALUT(n10841), .C0(\rom_addr[4] ), .Z(n10843));
+    PFUMX address_11__I_0_Mux_2_i1149 (.BLUT(n1117_adj_636), .ALUT(n1148), 
+          .C0(\rom_addr[5] ), .Z(n1149_adj_644)) /* synthesis LSE_LINE_FILE_ID=7, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=305, LSE_RLINE=309 */ ;
+    PFUMX i10499 (.BLUT(n10839), .ALUT(n10838), .C0(\rom_addr[4] ), .Z(n10840));
+    PFUMX i9055 (.BLUT(n9474), .ALUT(n9475), .C0(\rom_addr[5] ), .Z(n9478));
+    PFUMX i9056 (.BLUT(n9476), .ALUT(n9477), .C0(\rom_addr[5] ), .Z(n9479));
     
 endmodule
 //
 // Verilog Description of module show_string_number_ctrl
 //
 
-module show_string_number_ctrl (ascii_num, sys_clk_50MHz, \state[5] , 
-            cnt1, \state_3__N_368[1] , n5, \end_x_8__N_295[3] , \end_y_8__N_313[4] , 
-            n1213, sys_clk_50MHz_enable_42, \end_x_8__N_295[7] , \end_x_8__N_295[6] , 
-            \end_x_8__N_295[5] , \end_x_8__N_295[4] , \state[3] ) /* synthesis syn_module_defined=1 */ ;
-    output [6:0]ascii_num;
+module show_string_number_ctrl (\ascii_num[5] , sys_clk_50MHz, \state[5] , 
+            cnt1, \state_3__N_370[1] , n5, \end_y_8__N_313[4] , n5363, 
+            \state[3] , sys_clk_50MHz_enable_55) /* synthesis syn_module_defined=1 */ ;
+    output \ascii_num[5] ;
     input sys_clk_50MHz;
     input \state[5] ;
     output [1:0]cnt1;
-    output \state_3__N_368[1] ;
+    output \state_3__N_370[1] ;
     input n5;
-    output \end_x_8__N_295[3] ;
     output \end_y_8__N_313[4] ;
-    input n1213;
-    input sys_clk_50MHz_enable_42;
-    output \end_x_8__N_295[7] ;
-    output \end_x_8__N_295[6] ;
-    output \end_x_8__N_295[5] ;
-    output \end_x_8__N_295[4] ;
+    input n5363;
     input \state[3] ;
+    input sys_clk_50MHz_enable_55;
     
     wire sys_clk_50MHz /* synthesis SET_AS_NETWORK=sys_clk_50MHz, is_clock=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(33[17:30])
-    wire [6:0]ascii_num_6__N_515;
+    wire [8:0]start_y_8__N_535;
+    wire [4:0]cnt_ascii_num;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(70[17:30])
     
-    wire n5906, n17, show_char_flag_N_540;
-    wire [8:0]start_y_8__N_531;
+    wire n10975;
+    wire [4:0]n18;
     
-    wire n54, cnt_ascii_num_4__N_514, n6868, sys_clk_50MHz_enable_23;
-    wire [31:0]n225;
-    wire [1:0]n1;
+    wire show_char_flag_N_544, n9082, sys_clk_50MHz_enable_84;
+    wire [1:0]n7;
     
-    wire n14063, n10596, n11746, n2757, n11723, n10865, n14207, 
-        n14217, n14118, n7, n1035, n14269, n980, n11918, n10, 
-        n11882, n14270, n12, n14268;
-    wire [3:0]n1393;
+    wire n11053;
+    wire [4:0]n28;
     
-    wire n24, n11878, n2803, n14222, n14225, n10_adj_541, n14224, 
-        n11675;
-    
-    FD1P3AX ascii_num_i0_i0 (.D(ascii_num_6__N_515[0]), .SP(\state[5] ), 
-            .CK(sys_clk_50MHz), .Q(ascii_num[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
-    defparam ascii_num_i0_i0.GSR = "ENABLED";
-    FD1P3AX ascii_num_i0_i5 (.D(ascii_num_6__N_515[5]), .SP(\state[5] ), 
-            .CK(sys_clk_50MHz), .Q(ascii_num[5])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
-    defparam ascii_num_i0_i5.GSR = "ENABLED";
-    FD1S3IX cnt1__i0 (.D(n5), .CK(sys_clk_50MHz), .CD(\state_3__N_368[1] ), 
+    FD1P3AX ascii_num__i1 (.D(start_y_8__N_535[4]), .SP(\state[5] ), .CK(sys_clk_50MHz), 
+            .Q(\ascii_num[5] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
+    defparam ascii_num__i1.GSR = "ENABLED";
+    FD1S3IX cnt_ascii_num__i0 (.D(n18[0]), .CK(sys_clk_50MHz), .CD(n10975), 
+            .Q(cnt_ascii_num[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[10] 105[40])
+    defparam cnt_ascii_num__i0.GSR = "ENABLED";
+    LUT4 i9919_2_lut (.A(cnt1[0]), .B(cnt1[1]), .Z(show_char_flag_N_544)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(92[13:24])
+    defparam i9919_2_lut.init = 16'h4444;
+    FD1S3AX show_char_flag_46 (.D(show_char_flag_N_544), .CK(sys_clk_50MHz), 
+            .Q(\state_3__N_370[1] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(92[10] 95[32])
+    defparam show_char_flag_46.GSR = "ENABLED";
+    FD1S3IX cnt1__i0 (.D(n5), .CK(sys_clk_50MHz), .CD(\state_3__N_370[1] ), 
             .Q(cnt1[0])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(82[10] 87[22])
     defparam cnt1__i0.GSR = "ENABLED";
-    FD1S3IX start_x__i1 (.D(n17), .CK(sys_clk_50MHz), .CD(n5906), .Q(\end_x_8__N_295[3] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(198[10] 223[24])
-    defparam start_x__i1.GSR = "ENABLED";
-    FD1S3AX show_char_flag_79 (.D(show_char_flag_N_540), .CK(sys_clk_50MHz), 
-            .Q(\state_3__N_368[1] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(92[10] 95[32])
-    defparam show_char_flag_79.GSR = "ENABLED";
-    FD1S3IX start_y__i1 (.D(start_y_8__N_531[4]), .CK(sys_clk_50MHz), .CD(n1213), 
+    FD1S3IX start_y__i1 (.D(start_y_8__N_535[4]), .CK(sys_clk_50MHz), .CD(n5363), 
             .Q(\end_y_8__N_313[4] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(228[10] 253[24])
     defparam start_y__i1.GSR = "ENABLED";
-    FD1S3JX cnt_ascii_num_FSM_i1 (.D(n6868), .CK(sys_clk_50MHz), .PD(cnt_ascii_num_4__N_514), 
-            .Q(n54));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i1.GSR = "ENABLED";
-    FD1P3AX ascii_num_i0_i4 (.D(ascii_num_6__N_515[4]), .SP(\state[5] ), 
-            .CK(sys_clk_50MHz), .Q(ascii_num[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
-    defparam ascii_num_i0_i4.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i13 (.D(n225[11]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(cnt_ascii_num_4__N_514));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i13.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i12 (.D(n225[10]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[11]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i12.GSR = "ENABLED";
-    FD1P3AX ascii_num_i0_i3 (.D(ascii_num_6__N_515[3]), .SP(\state[5] ), 
-            .CK(sys_clk_50MHz), .Q(ascii_num[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
-    defparam ascii_num_i0_i3.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i11 (.D(n225[9]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[10]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i11.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i10 (.D(n225[8]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[9]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i10.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i9 (.D(n225[7]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[8]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i9.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i8 (.D(n225[6]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[7]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i8.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i7 (.D(n225[5]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[6]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i7.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i6 (.D(n225[4]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[5]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i6.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i5 (.D(n225[3]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[4]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i5.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i4 (.D(n225[2]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[3]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i4.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i3 (.D(n225[1]), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[2]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i3.GSR = "ENABLED";
-    FD1P3IX cnt_ascii_num_FSM_i2 (.D(n54), .SP(sys_clk_50MHz_enable_23), 
-            .CD(cnt_ascii_num_4__N_514), .CK(sys_clk_50MHz), .Q(n225[1]));   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
-    defparam cnt_ascii_num_FSM_i2.GSR = "ENABLED";
-    FD1P3AX ascii_num_i0_i2 (.D(ascii_num_6__N_515[2]), .SP(\state[5] ), 
-            .CK(sys_clk_50MHz), .Q(ascii_num[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
-    defparam ascii_num_i0_i2.GSR = "ENABLED";
-    FD1P3AX ascii_num_i0_i1 (.D(ascii_num_6__N_515[1]), .SP(\state[5] ), 
-            .CK(sys_clk_50MHz), .Q(ascii_num[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
-    defparam ascii_num_i0_i1.GSR = "ENABLED";
-    FD1P3IX cnt1__i1 (.D(n1[1]), .SP(sys_clk_50MHz_enable_42), .CD(\state_3__N_368[1] ), 
+    LUT4 i9917_2_lut_rep_134 (.A(cnt_ascii_num[0]), .B(n9082), .Z(n10975)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[13:38])
+    defparam i9917_2_lut_rep_134.init = 16'h2222;
+    LUT4 i473_3_lut_rep_97_4_lut (.A(cnt_ascii_num[0]), .B(n9082), .C(\state[3] ), 
+         .D(\state[5] ), .Z(sys_clk_50MHz_enable_84)) /* synthesis lut_function=(A ((C (D))+!B)+!A (C (D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[13:38])
+    defparam i473_3_lut_rep_97_4_lut.init = 16'hf222;
+    LUT4 i1851_2_lut_4_lut_4_lut (.A(cnt_ascii_num[0]), .B(n9082), .C(\state[3] ), 
+         .D(\state[5] ), .Z(n18[0])) /* synthesis lut_function=(!(A ((C (D))+!B)+!A !(C (D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[13:38])
+    defparam i1851_2_lut_4_lut_4_lut.init = 16'h5888;
+    FD1P3IX cnt1__i1 (.D(n7[1]), .SP(sys_clk_50MHz_enable_55), .CD(\state_3__N_370[1] ), 
             .CK(sys_clk_50MHz), .Q(cnt1[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(82[10] 87[22])
     defparam cnt1__i1.GSR = "ENABLED";
-    FD1S3IX start_x__i5 (.D(n10596), .CK(sys_clk_50MHz), .CD(n14063), 
-            .Q(\end_x_8__N_295[7] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(198[10] 223[24])
-    defparam start_x__i5.GSR = "ENABLED";
-    FD1S3IX start_x__i4 (.D(n2757), .CK(sys_clk_50MHz), .CD(n11746), .Q(\end_x_8__N_295[6] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(198[10] 223[24])
-    defparam start_x__i4.GSR = "ENABLED";
-    FD1S3IX start_x__i3 (.D(n11723), .CK(sys_clk_50MHz), .CD(n14063), 
-            .Q(\end_x_8__N_295[5] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(198[10] 223[24])
-    defparam start_x__i3.GSR = "ENABLED";
-    FD1S3IX start_x__i2 (.D(n10865), .CK(sys_clk_50MHz), .CD(n5906), .Q(\end_x_8__N_295[4] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(198[10] 223[24])
-    defparam start_x__i2.GSR = "ENABLED";
-    FD1P3AX ascii_num_i0_i6 (.D(ascii_num_6__N_515[6]), .SP(\state[5] ), 
-            .CK(sys_clk_50MHz), .Q(ascii_num[6])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(110[10] 133[16])
-    defparam ascii_num_i0_i6.GSR = "ENABLED";
-    LUT4 i12530_2_lut_rep_146 (.A(start_y_8__N_531[4]), .B(\state[5] ), 
-         .Z(n14063)) /* synthesis lut_function=(!(A (B))) */ ;
-    defparam i12530_2_lut_rep_146.init = 16'h7777;
-    LUT4 i5071_2_lut_3_lut (.A(start_y_8__N_531[4]), .B(\state[5] ), .C(n54), 
-         .Z(n5906)) /* synthesis lut_function=(((C)+!B)+!A) */ ;
-    defparam i5071_2_lut_3_lut.init = 16'hf7f7;
-    LUT4 i1_2_lut_rep_290 (.A(n225[2]), .B(n225[3]), .Z(n14207)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i1_2_lut_rep_290.init = 16'heeee;
-    LUT4 i2_3_lut_rep_201_4_lut (.A(n225[2]), .B(n225[3]), .C(n225[9]), 
-         .D(n14217), .Z(n14118)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i2_3_lut_rep_201_4_lut.init = 16'hfffe;
-    LUT4 i901_2_lut (.A(cnt1[1]), .B(cnt1[0]), .Z(n1[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(85[17:28])
-    defparam i901_2_lut.init = 16'h6666;
-    LUT4 i4_4_lut (.A(n7), .B(n1035), .C(n225[11]), .D(n14269), .Z(n10596)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i4_4_lut.init = 16'hfffe;
-    LUT4 i462_2_lut (.A(n225[2]), .B(n225[1]), .Z(n980)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i462_2_lut.init = 16'heeee;
-    LUT4 i12570_4_lut (.A(n11918), .B(\state[5] ), .C(n10), .D(n225[1]), 
-         .Z(n11746)) /* synthesis lut_function=(A+(((D)+!C)+!B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(198[10] 223[24])
-    defparam i12570_4_lut.init = 16'hffbf;
-    LUT4 i11261_2_lut (.A(n225[3]), .B(n54), .Z(n11882)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i11261_2_lut.init = 16'heeee;
-    LUT4 i1_4_lut (.A(n980), .B(n11882), .C(n14270), .D(n14217), .Z(n11723)) /* synthesis lut_function=(!(A+(B+!(C+(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i1_4_lut.init = 16'h1110;
-    LUT4 i1_4_lut_adj_10 (.A(n225[1]), .B(n12), .C(n14207), .D(n14268), 
-         .Z(n10865)) /* synthesis lut_function=(!(A+!(B (C+!(D))+!B (C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i1_4_lut_adj_10.init = 16'h5054;
-    LUT4 i1_4_lut_adj_11 (.A(n225[6]), .B(n225[8]), .C(n225[7]), .D(n1393[1]), 
-         .Z(n12)) /* synthesis lut_function=(A+(B (C)+!B (C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i1_4_lut_adj_11.init = 16'hfbfa;
-    LUT4 i2_3_lut_4_lut (.A(n225[10]), .B(n14118), .C(n225[1]), .D(n225[8]), 
-         .Z(ascii_num_6__N_515[6])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i2_3_lut_4_lut.init = 16'hfffe;
-    LUT4 i1_2_lut_4_lut (.A(n14207), .B(n14217), .C(n225[9]), .D(n54), 
-         .Z(ascii_num_6__N_515[3])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(229[9] 251[16])
-    defparam i1_2_lut_4_lut.init = 16'hfffe;
-    LUT4 i11271_2_lut_rep_351 (.A(n225[5]), .B(n225[4]), .Z(n14268)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i11271_2_lut_rep_351.init = 16'heeee;
-    LUT4 i12619_4_lut (.A(n225[1]), .B(n225[2]), .C(n225[3]), .D(n24), 
-         .Z(n17)) /* synthesis lut_function=(A+!(B+!(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i12619_4_lut.init = 16'hbabb;
-    LUT4 i1_4_lut_adj_12 (.A(n225[4]), .B(n225[5]), .C(n225[6]), .D(n11878), 
-         .Z(n24)) /* synthesis lut_function=(A+!(B+!(C+!(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i1_4_lut_adj_12.init = 16'hbabb;
-    LUT4 i11257_4_lut (.A(n225[8]), .B(n225[7]), .C(n2803), .D(n225[9]), 
-         .Z(n11878)) /* synthesis lut_function=(A (B)+!A (B+(C+(D)))) */ ;
-    defparam i11257_4_lut.init = 16'hdddc;
-    LUT4 i1991_2_lut (.A(n225[10]), .B(n225[11]), .Z(n2803)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(199[9] 221[16])
-    defparam i1991_2_lut.init = 16'h4444;
-    LUT4 i1_4_lut_adj_13 (.A(n14222), .B(n14225), .C(n10_adj_541), .D(n14224), 
-         .Z(start_y_8__N_531[4])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(229[9] 251[16])
-    defparam i1_4_lut_adj_13.init = 16'hfffe;
-    LUT4 i19_2_lut_rep_292 (.A(\state[5] ), .B(\state[3] ), .Z(sys_clk_50MHz_enable_23)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(102[13:40])
-    defparam i19_2_lut_rep_292.init = 16'h8888;
-    LUT4 i4_4_lut_adj_14 (.A(n225[5]), .B(n11675), .C(n54), .D(n225[2]), 
-         .Z(n10_adj_541)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(229[9] 251[16])
-    defparam i4_4_lut_adj_14.init = 16'hfffe;
-    LUT4 i2_3_lut (.A(n225[7]), .B(n225[11]), .C(n225[8]), .Z(n11675)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(229[9] 251[16])
-    defparam i2_3_lut.init = 16'hfefe;
-    LUT4 i6011_2_lut_3_lut (.A(\state[5] ), .B(\state[3] ), .C(n54), .Z(n6868)) /* synthesis lut_function=(!(A (B+!(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(102[13:40])
-    defparam i6011_2_lut_3_lut.init = 16'h7070;
-    LUT4 i12543_2_lut (.A(cnt1[0]), .B(cnt1[1]), .Z(show_char_flag_N_540)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(92[13:24])
-    defparam i12543_2_lut.init = 16'h4444;
-    LUT4 reduce_or_598_i1_2_lut (.A(n225[6]), .B(n54), .Z(ascii_num_6__N_515[5])) /* synthesis lut_function=(A+(B)) */ ;
-    defparam reduce_or_598_i1_2_lut.init = 16'heeee;
-    LUT4 i1_2_lut_rep_300 (.A(n225[4]), .B(n225[7]), .Z(n14217)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i1_2_lut_rep_300.init = 16'heeee;
-    LUT4 i2_3_lut_4_lut_adj_15 (.A(n225[4]), .B(n225[7]), .C(n225[8]), 
-         .D(n225[6]), .Z(ascii_num_6__N_515[1])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i2_3_lut_4_lut_adj_15.init = 16'hfffe;
-    LUT4 i2_3_lut_4_lut_adj_16 (.A(n225[4]), .B(n225[7]), .C(n225[11]), 
-         .D(n14222), .Z(ascii_num_6__N_515[0])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i2_3_lut_4_lut_adj_16.init = 16'hfffe;
-    LUT4 i11296_3_lut_4_lut (.A(n225[5]), .B(n225[4]), .C(n225[2]), .D(n225[6]), 
-         .Z(n11918)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i11296_3_lut_4_lut.init = 16'hfffe;
-    LUT4 i456_2_lut_rep_352 (.A(n225[8]), .B(n225[7]), .Z(n14269)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i456_2_lut_rep_352.init = 16'heeee;
-    LUT4 i1946_4_lut_4_lut (.A(n225[8]), .B(n225[7]), .C(n14225), .D(n225[11]), 
-         .Z(n2757)) /* synthesis lut_function=(!(A (B)+!A (B+!(C+(D))))) */ ;
-    defparam i1946_4_lut_4_lut.init = 16'h3332;
-    LUT4 i458_2_lut_rep_353 (.A(n225[6]), .B(n225[5]), .Z(n14270)) /* synthesis lut_function=(A+(B)) */ ;
-    defparam i458_2_lut_rep_353.init = 16'heeee;
-    LUT4 i1_2_lut_rep_305 (.A(n225[6]), .B(n225[1]), .Z(n14222)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(229[9] 251[16])
-    defparam i1_2_lut_rep_305.init = 16'heeee;
-    LUT4 i1_2_lut_3_lut_4_lut (.A(n225[6]), .B(n225[1]), .C(n14118), .D(n225[10]), 
-         .Z(ascii_num_6__N_515[2])) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(229[9] 251[16])
-    defparam i1_2_lut_3_lut_4_lut.init = 16'hfffe;
-    LUT4 i1_2_lut_rep_307 (.A(n225[4]), .B(n225[3]), .Z(n14224)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(111[9] 133[16])
-    defparam i1_2_lut_rep_307.init = 16'heeee;
-    LUT4 i472_3_lut_4_lut (.A(n225[4]), .B(n225[3]), .C(n54), .D(n980), 
-         .Z(n1035)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(111[9] 133[16])
-    defparam i472_3_lut_4_lut.init = 16'hfffe;
-    LUT4 i454_2_lut_rep_308 (.A(n225[10]), .B(n225[9]), .Z(n14225)) /* synthesis lut_function=(A+(B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(111[9] 133[16])
-    defparam i454_2_lut_rep_308.init = 16'heeee;
-    LUT4 i3_3_lut_4_lut (.A(n225[10]), .B(n225[9]), .C(n11882), .D(n11675), 
-         .Z(n10)) /* synthesis lut_function=(!(A (C)+!A (B (C)+!B (C+!(D))))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(111[9] 133[16])
-    defparam i3_3_lut_4_lut.init = 16'h0f0e;
-    LUT4 mux_670_i2_3_lut_3_lut (.A(n225[10]), .B(n225[9]), .C(n225[11]), 
-         .Z(n1393[1])) /* synthesis lut_function=(!(A (B)+!A (B+!(C)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(111[9] 133[16])
-    defparam mux_670_i2_3_lut_3_lut.init = 16'h3232;
-    LUT4 i2_2_lut_3_lut_4_lut (.A(n225[6]), .B(n225[5]), .C(n225[9]), 
-         .D(n225[10]), .Z(n7)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
-    defparam i2_2_lut_3_lut_4_lut.init = 16'hfffe;
-    LUT4 reduce_or_599_i1_2_lut (.A(n225[8]), .B(n225[6]), .Z(ascii_num_6__N_515[4])) /* synthesis lut_function=(A+(B)) */ ;
-    defparam reduce_or_599_i1_2_lut.init = 16'heeee;
+    LUT4 i819_3_lut_4_lut (.A(cnt_ascii_num[2]), .B(n11053), .C(cnt_ascii_num[3]), 
+         .D(cnt_ascii_num[4]), .Z(n28[4])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
+    defparam i819_3_lut_4_lut.init = 16'h7f80;
+    LUT4 i783_2_lut (.A(cnt1[1]), .B(cnt1[0]), .Z(n7[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(85[17:28])
+    defparam i783_2_lut.init = 16'h6666;
+    FD1P3IX cnt_ascii_num__i4 (.D(n28[4]), .SP(sys_clk_50MHz_enable_84), 
+            .CD(n10975), .CK(sys_clk_50MHz), .Q(cnt_ascii_num[4])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[10] 105[40])
+    defparam cnt_ascii_num__i4.GSR = "ENABLED";
+    FD1P3IX cnt_ascii_num__i3 (.D(n28[3]), .SP(sys_clk_50MHz_enable_84), 
+            .CD(n10975), .CK(sys_clk_50MHz), .Q(cnt_ascii_num[3])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[10] 105[40])
+    defparam cnt_ascii_num__i3.GSR = "ENABLED";
+    FD1P3IX cnt_ascii_num__i2 (.D(n28[2]), .SP(sys_clk_50MHz_enable_84), 
+            .CD(n10975), .CK(sys_clk_50MHz), .Q(cnt_ascii_num[2])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[10] 105[40])
+    defparam cnt_ascii_num__i2.GSR = "ENABLED";
+    LUT4 i798_2_lut (.A(cnt_ascii_num[1]), .B(cnt_ascii_num[0]), .Z(n28[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
+    defparam i798_2_lut.init = 16'h6666;
+    LUT4 i800_2_lut_rep_212 (.A(cnt_ascii_num[1]), .B(cnt_ascii_num[0]), 
+         .Z(n11053)) /* synthesis lut_function=(A (B)) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
+    defparam i800_2_lut_rep_212.init = 16'h8888;
+    LUT4 i812_2_lut_3_lut_4_lut (.A(cnt_ascii_num[1]), .B(cnt_ascii_num[0]), 
+         .C(cnt_ascii_num[3]), .D(cnt_ascii_num[2]), .Z(n28[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
+    defparam i812_2_lut_3_lut_4_lut.init = 16'h78f0;
+    LUT4 i805_2_lut_3_lut (.A(cnt_ascii_num[1]), .B(cnt_ascii_num[0]), .C(cnt_ascii_num[2]), 
+         .Z(n28[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(103[26:46])
+    defparam i805_2_lut_3_lut.init = 16'h7878;
+    FD1P3IX cnt_ascii_num__i1 (.D(n28[1]), .SP(sys_clk_50MHz_enable_84), 
+            .CD(n10975), .CK(sys_clk_50MHz), .Q(cnt_ascii_num[1])) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=26, LSE_RCOL=2, LSE_LLINE=141, LSE_RLINE=153 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(100[10] 105[40])
+    defparam cnt_ascii_num__i1.GSR = "ENABLED";
+    LUT4 i9915_2_lut (.A(cnt_ascii_num[0]), .B(n9082), .Z(start_y_8__N_535[4])) /* synthesis lut_function=(!(A+(B))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(112[13:14])
+    defparam i9915_2_lut.init = 16'h1111;
+    LUT4 i3_4_lut (.A(cnt_ascii_num[2]), .B(cnt_ascii_num[1]), .C(cnt_ascii_num[3]), 
+         .D(cnt_ascii_num[4]), .Z(n9082)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/show_string_number_ctrl.v(112[13:14])
+    defparam i3_4_lut.init = 16'hfffe;
     
 endmodule
 //
 // Verilog Description of module control
 //
 
-module control (\data[0] , sys_clk_50MHz, \state_3__N_25[1] , lcd_dc_c_8, 
-            \data[7] , \data[6] , \data[5] , \data[4] , \data[3] , 
-            \data[2] , \data[1] , init_data, show_char_data, \state[5] , 
-            en_write_init, en_write_show_char) /* synthesis syn_module_defined=1 */ ;
+module control (\data[0] , sys_clk_50MHz, \state_3__N_25[1] , \state[2] , 
+            \state[4] , \state[1] , cnt_rom_prepare, init_data, show_char_data, 
+            \state[5] , lcd_dc_c_8, \data[7] , \data[6] , \data[5] , 
+            \data[4] , \data[3] , \data[2] , \data[1] ) /* synthesis syn_module_defined=1 */ ;
     output \data[0] ;
     input sys_clk_50MHz;
     output \state_3__N_25[1] ;
+    input \state[2] ;
+    input \state[4] ;
+    input \state[1] ;
+    input [2:0]cnt_rom_prepare;
+    input [8:0]init_data;
+    input [8:0]show_char_data;
+    input \state[5] ;
     output lcd_dc_c_8;
     output \data[7] ;
     output \data[6] ;
@@ -5967,21 +4828,24 @@ module control (\data[0] , sys_clk_50MHz, \state_3__N_25[1] , lcd_dc_c_8,
     output \data[3] ;
     output \data[2] ;
     output \data[1] ;
-    input [8:0]init_data;
-    input [8:0]show_char_data;
-    input \state[5] ;
-    input en_write_init;
-    input en_write_show_char;
     
     wire sys_clk_50MHz /* synthesis SET_AS_NETWORK=sys_clk_50MHz, is_clock=1 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/spi_lcd.v(33[17:30])
     wire [8:0]data_8__N_73;
     
-    wire en_write_N_95;
+    wire en_write_N_95, n10905, n10904;
     
     FD1S3AX data_i0 (.D(data_8__N_73[0]), .CK(sys_clk_50MHz), .Q(\data[0] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=99, LSE_RLINE=111 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(28[10] 33[22])
     defparam data_i0.GSR = "ENABLED";
     FD1S3AX en_write_19 (.D(en_write_N_95), .CK(sys_clk_50MHz), .Q(\state_3__N_25[1] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=99, LSE_RLINE=111 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(38[10] 43[30])
     defparam en_write_19.GSR = "ENABLED";
+    LUT4 state_2__bdd_2_lut (.A(\state[2] ), .B(\state[4] ), .Z(n10905)) /* synthesis lut_function=(A+(B)) */ ;
+    defparam state_2__bdd_2_lut.init = 16'heeee;
+    LUT4 state_2__bdd_4_lut (.A(\state[1] ), .B(cnt_rom_prepare[0]), .C(cnt_rom_prepare[2]), 
+         .D(cnt_rom_prepare[1]), .Z(n10904)) /* synthesis lut_function=(A+!(((D)+!C)+!B)) */ ;
+    defparam state_2__bdd_4_lut.init = 16'haaea;
+    LUT4 mux_7_i1_3_lut (.A(init_data[0]), .B(show_char_data[0]), .C(\state[5] ), 
+         .Z(data_8__N_73[0])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(33[9:22])
+    defparam mux_7_i1_3_lut.init = 16'hcaca;
     FD1S3AX data_i8 (.D(data_8__N_73[8]), .CK(sys_clk_50MHz), .Q(lcd_dc_c_8)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=99, LSE_RLINE=111 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(28[10] 33[22])
     defparam data_i8.GSR = "ENABLED";
     FD1S3AX data_i7 (.D(data_8__N_73[7]), .CK(sys_clk_50MHz), .Q(\data[7] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=99, LSE_RLINE=111 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(28[10] 33[22])
@@ -5998,9 +4862,6 @@ module control (\data[0] , sys_clk_50MHz, \state_3__N_25[1] , lcd_dc_c_8,
     defparam data_i2.GSR = "ENABLED";
     FD1S3AX data_i1 (.D(data_8__N_73[1]), .CK(sys_clk_50MHz), .Q(\data[1] )) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=99, LSE_RLINE=111 */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(28[10] 33[22])
     defparam data_i1.GSR = "ENABLED";
-    LUT4 mux_7_i1_3_lut (.A(init_data[0]), .B(show_char_data[0]), .C(\state[5] ), 
-         .Z(data_8__N_73[0])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(33[9:22])
-    defparam mux_7_i1_3_lut.init = 16'hcaca;
     LUT4 mux_7_i9_3_lut (.A(init_data[8]), .B(show_char_data[8]), .C(\state[5] ), 
          .Z(data_8__N_73[8])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(33[9:22])
     defparam mux_7_i9_3_lut.init = 16'hcaca;
@@ -6025,7 +4886,11 @@ module control (\data[0] , sys_clk_50MHz, \state_3__N_25[1] , lcd_dc_c_8,
     LUT4 mux_7_i2_3_lut (.A(init_data[1]), .B(show_char_data[1]), .C(\state[5] ), 
          .Z(data_8__N_73[1])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/codefield/verilog/diamond_design/spi_lcd/source/control.v(33[9:22])
     defparam mux_7_i2_3_lut.init = 16'hcaca;
-    PFUMX en_write_I_0 (.BLUT(en_write_init), .ALUT(en_write_show_char), 
-          .C0(\state[5] ), .Z(en_write_N_95)) /* synthesis LSE_LINE_FILE_ID=3, LSE_LCOL=10, LSE_RCOL=2, LSE_LLINE=99, LSE_RLINE=111 */ ;
+    PFUMX i10540 (.BLUT(n10905), .ALUT(n10904), .C0(\state[5] ), .Z(en_write_N_95));
     
 endmodule
+//
+// Verilog Description of module PUR
+// module not written out since it is a black-box. 
+//
+
